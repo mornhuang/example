@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--JBuilder XML Project-->
+<project>
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner" />
+  <property category="runtime.0" name="application.class" value="Sms_GUI" />
+  <property category="runtime.0" name="jsprunner.docbase" value="." />
+  <property category="runtime.0" name="jsprunner.jspfile" value="../JBuilder4/bin" />
+  <property category="sys" name="BackupPath" value="bak" />
+  <property category="sys" name="CheckStable" value="1" />
+  <property category="sys" name="Company" value="Swisscom Corporate Technology" />
+  <property category="sys" name="Copyright" value="Copyright (c) 2002" />
+  <property category="sys" name="DefaultPackage" value="serial_sms" />
+  <property category="sys" name="Description" value="Toolkit for writing, reading and sending SMS using a serial link" />
+  <property category="sys" name="DocPath" value="doc" />
+  <property category="sys" name="ExcludeClassEnabled" value="0" />
+  <property category="sys" name="JDK" value="java 1.3.0-C" />
+  <property category="sys" name="LastTag" value="0" />
+  <property category="sys" name="Libraries" value="comm" />
+  <property category="sys" name="MakeStable" value="0" />
+  <property category="sys" name="OutPath" value="classes" />
+  <property category="sys" name="SourcePath" value="src" />
+  <property category="sys" name="Title" value="Serial SMS Client" />
+  <property category="sys" name="Version" value="1.0" />
+  <property category="sys" name="WorkingDirectory" value="." />
+  <file path="Serial_SMS.html" />
+</project>
+

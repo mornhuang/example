@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<!-- 配置数据源 -->
+	<bean id="dataSource"
+      	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>org.gjt.mm.mysql.Driver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:mysql://localhost:3306/orders?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;autoReconnectForPools=true</value>
+		</property>
+		<property name="username">
+			<value>orders</value>
+		</property>
+		<property name="password">
+			<value>orders</value>
+		</property>
+	</bean>
+
+	<!-- 配置SessionFactory -->
+	<bean id="mySessionFactory" 
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="mappingResources">
+			<list>
+				<value>cn/hxex/order/bo/Order.hbm.xml</value>
+				<value>cn/hxex/order/bo/OrderLineItem.hbm.xml</value>				
+			</list>
+		</property>		
+		
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="current_session_context_class">thread</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.EhCacheProvider
+				</prop>
+				<prop key="connection.pool_size">10</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>	
+		
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	
+	<!-- 配置TransactionManager -->
+	<bean id="myTxManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="mySessionFactory" />
+	</bean>
+
+	<!-- 配置事务策略 -->
+	<tx:advice id="txAdvice" transaction-manager="myTxManager">
+		<tx:attributes>
+			<tx:method name="find*" propagation="REQUIRED"  read-only="true"/>
+			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="*" propagation="SUPPORTS" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="productServiceMethods" expression="execution(* cn.hxex.order.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="productServiceMethods" />
+	</aop:config>
+
+	<bean id="orderDAO" 
+		class="cn.hxex.order.dao.hibernate.OrderHibernateDAO">
+		<property name="sessionFactory"><ref local="mySessionFactory"/></property>
+	</bean>
+	
+	<bean id="orderService" 
+		class="cn.hxex.order.service.spring.OrderServiceSpringImpl">
+		<property name="orderDAO"><ref local="orderDAO"/></property>
+	</bean>
+</beans>

@@ -1,0 +1,12 @@
+td,body {
+	font-size:12px;
+}
+
+A:link {COLOR: #0000ff; TEXT-DECORATION: none}
+A:visited {COLOR: #0000ff; TEXT-DECORATION: none}
+A:active {COLOR: #0000ff; TEXT-DECORATION: none}
+A:hover {COLOR: #0000ff; TEXT-DECORATION: none}
+
+td.header {
+	font-size:14px;
+}

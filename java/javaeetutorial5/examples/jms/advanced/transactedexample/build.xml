@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="transactedexample" default="default" basedir=".">
+    <description>Builds, tests, and runs the project transactedexample.</description>
+    <property name="is.app-client.module" value="true"/>
+    <import file="../../../bp-project/main.xml"/>
+
+  <target name="create-queue-a"
+    description="creates JMS queue">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Queue" />
+        <param name="jms.resource.property" value="Name=AQueueP" />
+        <param name="jms.resource.name" value="jms/AQueue" />
+    </antcall>
+  </target>
+
+  <target name="create-queue-b"
+    description="creates JMS queue">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Queue" />
+        <param name="jms.resource.property" value="Name=BQueueP" />
+        <param name="jms.resource.name" value="jms/BQueue" />
+    </antcall>
+  </target>
+
+  <target name="create-queue-c"
+    description="creates JMS queue">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Queue" />
+        <param name="jms.resource.property" value="Name=CQueueP" />
+        <param name="jms.resource.name" value="jms/CQueue" />
+    </antcall>
+  </target>
+
+  <target name="create-topic-o"
+    description="creates JMS topic">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Topic" />
+        <param name="jms.resource.property" value="Name=OTopicP" />
+        <param name="jms.resource.name" value="jms/OTopic" />
+    </antcall>
+  </target>
+
+  <target name="create-resources" depends="create-queue-a,create-queue-b,create-queue-c,create-topic-o"
+    description="creates destination resources for transactedexample">
+  </target>
+
+  <target name="delete-queue-a"
+    description="deletes JMS queue">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/AQueue" />
+    </antcall>
+  </target>
+
+  <target name="delete-queue-b"
+    description="deletes JMS queue">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/BQueue" />
+    </antcall>
+  </target>
+
+  <target name="delete-queue-c"
+    description="deletes JMS queue">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/CQueue" />
+    </antcall>
+  </target>
+
+  <target name="delete-topic-o"
+    description="deletes JMS topic">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/OTopic" />
+    </antcall>
+  </target>
+
+  <target name="delete-resources" 
+          depends="delete-queue-a,delete-queue-b,delete-queue-c,delete-topic-o"
+    description="deletes destination resources for transactedexample">
+  </target>
+
+</project>

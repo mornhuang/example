@@ -1,0 +1,86 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!-- Fig. L.9: isbn.xml                    -->
+<!-- Reads the ISBN of three Deitel books. -->
+
+<callxml>
+        <block>
+                <text>
+                        Welcome. To obtain the I S B N of the Internet and World
+                        Wide Web How to Program: Second Edition, please enter 1. 
+                        To obtain the I S B N of the X M L How to Program,
+                        please enter 2. To obtain the I S B N of the Java How
+                        to Program: Fourth Edition, please enter 3. To exit the 
+                        application, please enter 4.
+                </text>
+                
+                <!-- Obtains the numeric value entered by the user and stores it --> 
+                <!-- in the variable ISBN. The user has 60 seconds to enter one  -->
+                <!-- numeric value.                                              -->
+                <getDigits var = "ISBN"
+                        termDigits = "1234" 
+                        maxDigits = "1"
+                        maxTime = "60s" />
+                        
+                <!-- Requests that the user enter a a valid numeric value after the -->
+                <!-- elapsed time of 60 seconds                                     -->
+                <onMaxSilence>
+                        <text>
+                                Please enter either 1, 2, 3 or 4.
+                        </text>
+                        
+                        <getDigits var = "ISBN"
+                        termDigits = "1234" 
+                        maxDigits = "1"
+                        maxTime = "60s" />
+                        
+                </onMaxSilence>
+                
+                <onTermDigit value = "1">
+                        <text>
+                                The I S B N for the Internet book is 0 1 3 0 3 0 8 9 7 8.
+                                Thank you for calling our Call X M L application. Good-bye.
+                        </text>
+                </onTermDigit>
+                
+                <onTermDigit value = "2">
+                        <text>
+                                The I S B N for the XML book is 0 1 3 0 2 8 4 1 7 3.
+                                Thank you for calling our Call X M L application. Good-bye.
+                        </text>
+                </onTermDigit>
+                
+                <onTermDigit value = "3">
+                        <text>
+                                The I S B N for the Java book is 0 1 3 0 3 4 1 5 1 7.
+                                Thank you for calling our Call X M L application. Good-bye.
+                        </text>
+                </onTermDigit>
+                
+                <onTermDigit value = "4">
+                        <text>
+                                Thank you for calling our Call X M L application. Good-bye.
+                        </text>  
+                </onTermDigit>
+        </block>
+        
+        <!-- Event handler that gracefully terminates the call -->
+        <onHangup />
+</callxml>
+
+<!-- 
+ ************************************************************************** 
+ * (C) Copyright 2002 by Deitel & Associates, Inc. and Prentice Hall.     *
+ * All Rights Reserved.                                                   *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************
+-->

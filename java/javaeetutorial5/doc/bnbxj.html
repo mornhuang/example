@@ -1,0 +1,366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Working with Realms, Users, Groups, and Roles - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level3"><a href="bnbwk.html">Overview of Java EE Security</a></p>
+<p class="toc level4"><a href="bnbwk.html#bnbwl">A Simple Security Example</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwm">Step 1: Initial Request</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwo">Step 2: Initial Authentication</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwq">Step 3: URL Authorization</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbws">Step 4: Fulfilling the Original Request</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwu">Step 5: Invoking Enterprise Bean Business Methods</a></p>
+<p class="toc level4 tocsp"><a href="bnbwk.html#bnbww">Security Functions</a></p>
+<p class="toc level4"><a href="bnbwk.html#bnbwx">Characteristics of Application Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbwy.html">Security Implementation Mechanisms</a></p>
+<p class="toc level4"><a href="bnbwy.html#bnbwz">Java SE Security Implementation Mechanisms</a></p>
+<p class="toc level4"><a href="bnbwy.html#bnbxa">Java EE Security Implementation Mechanisms</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxb">Application-Layer Security</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxc">Transport-Layer Security</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxd">Message-Layer Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxe.html">Securing Containers</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxf">Using Deployment Descriptors for Declarative Security</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxg">Using Annotations</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxh">Using Programmatic Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxi.html">Securing the Application Server</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Working with Realms, Users, Groups, and Roles</a></p>
+<p class="toc level4"><a href="#bnbxk">What Are Realms, Users, Groups, and Roles?</a></p>
+<p class="toc level5"><a href="#bnbxm">What Is a Realm?</a></p>
+<p class="toc level5"><a href="#bnbxn">What Is a User?</a></p>
+<p class="toc level5"><a href="#bnbxo">What Is a Group?</a></p>
+<p class="toc level5"><a href="#bnbxp">What Is a Role?</a></p>
+<p class="toc level5"><a href="#bnbxq">Some Other Terminology</a></p>
+<p class="toc level4 tocsp"><a href="#bnbxr">Managing Users and Groups on the Application Server</a></p>
+<p class="toc level5"><a href="#bnbxs">Adding Users to the Application Server</a></p>
+<p class="toc level5"><a href="#bnbxt">Adding Users to the Certificate Realm</a></p>
+<p class="toc level4 tocsp"><a href="#bnbxu">Setting Up Security Roles</a></p>
+<p class="toc level4"><a href="#bnbxv">Mapping Roles to Users and Groups</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbxw.html">Establishing a Secure Connection Using SSL</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxx">Installing and Configuring SSL Support</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxy">Specifying a Secure Connection in Your Application Deployment Descriptor</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxz">Verifying SSL Support</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbya">Tips on Running SSL</a></p>
+<p class="toc level4 tocsp"><a href="bnbxw.html#bnbyb">Working with Digital Certificates</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyc">Creating a Server Certificate</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyd">Signing Digital Certificates</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyf">Using a Different Server Certificate with the Application Server</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyg">Miscellaneous Commands for Certificates</a></p>
+<p class="toc level4 tocsp"><a href="bnbxw.html#bnbyh">Enabling Mutual Authentication over SSL</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyi">Creating a Client Certificate for Mutual Authentication</a></p>
+<p class="toc level3 tocsp"><a href="bnbyj.html">Further Information about Security</a></p>
+<p class="toc level2 tocsp"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbxi.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbxw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbxj"></a><h3>Working with Realms, Users, Groups, and Roles</h3>
+<p><a name="indexterm-2472"></a><a name="indexterm-2473"></a><a name="indexterm-2474"></a>You often need to protect resources to ensure that only <b>authorized users</b> have
+access. <b>Authorization</b> provides controlled access to protected resources. Authorization is based on identification and
+authentication. <b>Identification</b> is a process that enables recognition of an entity by a
+system, and <b>authentication</b> is a process that verifies the identity of a user,
+device, or other entity in a computer system, usually as a prerequisite to
+allowing access to resources in a system. These concepts are discussed in more
+detail in <a href="bnbwk.html#bnbwx">Characteristics of Application Security</a>.</p><p>This section discusses setting up users so that they can be correctly identified
+and either given access to protected resources, or denied access if the user
+is not authorized to access the protected resources. To authenticate a user, you
+need to follow these basic steps:</p>
+<ol><li><p>The Application Developer writes code to prompt the user for their user name and password. The different methods of authentication are discussed in <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>.</p></li>
+<li><p>The Application Developer communicates how to set up security for the deployed application by use of a deployment descriptor. This step is discussed in <a href="#bnbxu">Setting Up Security Roles</a>.</p></li>
+<li><p>The Server Administrator sets up authorized users and groups on the Application Server. This is discussed in <a href="#bnbxr">Managing Users and Groups on the Application Server</a>.</p></li>
+<li><p>The Application Deployer maps the application&rsquo;s security roles to users, groups, and principals defined on the Application Server. This topic is discussed in <a href="#bnbxv">Mapping Roles to Users and Groups</a>.</p></li></ol>
+
+
+<a name="bnbxk"></a><h4>What Are Realms, Users, Groups, and Roles?</h4>
+<p><a name="indexterm-2475"></a>A realm is defined on a web or application server. It contains a
+collection of users, which may or may not be assigned to a group,
+that are controlled by the same authentication policy. Managing users on the Application
+Server is discussed in <a href="#bnbxr">Managing Users and Groups on the Application Server</a>.</p><p>An application will often prompt a user for their user name and
+password before allowing access to a protected resource. After the user has entered their
+user name and password, that information is passed to the server, which either
+authenticates the user and sends the protected resource, or does not authenticate the
+user, in which case access to the protected resource is denied. This type
+of user authentication is discussed in <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>.</p><p>In some applications, authorized users are assigned to roles. In this situation, the
+role assigned to the user in the application must be mapped to a
+group defined on the application server. <a href="#bnbxl">Figure&nbsp;28-6</a> shows this. More information on
+mapping roles to users and groups can be found in <a href="#bnbxu">Setting Up Security Roles</a>.</p><a name="bnbxl"></a><h6>Figure&nbsp;28-6 Mapping Roles to Users and Groups</h6><img src="figures/securityRoleMapping.gif" alt="Diagram of role mapping, showing creation of users and groups, definition of roles, and mapping of roles to users and groups"></img><p>The following sections provide more information on realms, users, groups, and roles.</p>
+
+<a name="bnbxm"></a><h5>What Is a Realm?</h5>
+<a name="indexterm-2476"></a><a name="indexterm-2477"></a><p>For a web application, a <b>realm</b> is a complete database of <b>users</b> and
+<b>groups</b> that identify valid users of a web application (or a set of
+web applications) and are controlled by the same authentication policy.</p><p>The Java EE server authentication service can govern users in multiple realms. In
+this release of the Application Server, the <tt>file</tt>, <tt>admin-realm</tt>, and <tt>certificate</tt> realms
+come preconfigured for the Application Server.</p><p><a name="indexterm-2478"></a>In the <tt>file</tt> realm, the server stores user credentials locally in a file
+named <tt>keyfile</tt>. You can use the Admin Console to manage users in the
+<tt>file</tt> realm.</p><p>When using the <tt>file</tt> realm, the server authentication service verifies user identity by
+checking the <tt>file</tt> realm. This realm is used for the authentication of all
+clients except for web browser clients that use the HTTPS protocol and certificates.</p><p><a name="indexterm-2479"></a>In the <tt>certificate</tt> realm, the server stores user credentials in a certificate database.
+When using the <tt>certificate</tt> realm, the server uses certificates with the HTTPS protocol
+to authenticate web clients. To verify the identity of a user in the
+<tt>certificate</tt> realm, the authentication service verifies an X.509 certificate. For step-by-step instructions for creating
+this type of certificate, see <a href="bnbxw.html#bnbyb">Working with Digital Certificates</a>. The common name field of the
+X.509 certificate is used as the principal name.</p><p><a name="indexterm-2480"></a>The <tt>admin-realm</tt> is also a <tt>FileRealm</tt> and stores administrator user credentials locally in
+a file named <tt>admin-keyfile</tt>. You can use the Admin Console to manage
+users in this realm in the same way you manage users in the
+<tt>file</tt> realm. For more information, see <a href="#bnbxr">Managing Users and Groups on the Application Server</a>.</p>
+
+<a name="bnbxn"></a><h5>What Is a User?</h5>
+<a name="indexterm-2481"></a><a name="indexterm-2482"></a><p>A <b>user</b> is an individual (or application program) identity that has been defined
+in the Application Server. In a web application, a user can have a
+set of <b>roles</b> associated with that identity, which entitles them to access all
+resources protected by those roles. Users can be associated with a group.</p><p>A Java EE user is similar to an operating system user. Typically,
+both types of users represent people. However, these two types of users are
+not the same. The Java EE server authentication service has no knowledge of
+the user name and password you provide when you log on to the
+operating system. The Java EE server authentication service is not connected to the
+security mechanism of the operating system. The two security services manage users that belong
+to different realms.</p>
+
+<a name="bnbxo"></a><h5>What Is a Group?</h5>
+<a name="indexterm-2483"></a><a name="indexterm-2484"></a><p>A <b>group</b> is a set of authenticated <b>users</b>, classified by common traits, defined
+in the Application Server.</p><p>A Java EE user of the <tt>file</tt> realm can belong to an
+Application Server group. (A user in the <tt>certificate</tt> realm cannot.) An Application Server
+<b>group</b> is a category of users classified by common traits, such as job
+title or customer profile. For example, most customers of an e-commerce application might
+belong to the <tt>CUSTOMER</tt> group, but the big spenders would belong to the
+<tt>PREFERRED</tt> group. Categorizing users into groups makes it easier to control the access
+of large numbers of users.</p><p>An Application Server <b>group</b> has a different scope from a <b>role</b>. An Application
+Server group is designated for the entire Application Server, whereas a role is
+associated only with a specific application in the Application Server.</p>
+
+<a name="bnbxp"></a><h5>What Is a Role?</h5>
+<a name="indexterm-2485"></a><a name="indexterm-2486"></a><p>A <b>role</b> is an abstract name for the permission to access a particular
+set of resources in an application. A <b>role</b> can be compared to a
+key that can open a lock. Many people might have a copy
+of the key. The lock doesn&rsquo;t care who you are, only that you
+have the right key.</p>
+
+<a name="bnbxq"></a><h5>Some Other Terminology</h5>
+<p>The following terminology is also used to describe the security requirements of the
+Java EE platform:</p>
+<ul><li><p><a name="indexterm-2487"></a><b>Principal</b>: A principal is an entity that can be authenticated by an authentication protocol in a security service that is deployed in an enterprise. A principal is identified using a principal name and authenticated using authentication data.</p></li>
+<li><p><a name="indexterm-2488"></a><a name="indexterm-2489"></a><b>Security policy domain</b> (also known as <b>security domain</b> or <b>realm</b>): A security policy domain is a scope over which a common security policy is defined and enforced by the security administrator of the security service.</p></li>
+<li><p><b>Security attributes</b>: A set of security attributes is associated with every principal. The security attributes have many uses, for example, access to protected resources and auditing of users. Security attributes can be associated with a principal by an authentication protocol.</p></li>
+<li><p><a name="indexterm-2490"></a><b>Credential</b>: A credential contains or references information (security attributes) used to authenticate a principal for Java EE product services. A principal acquires a credential upon authentication, or from another principal that allows its credential to be used.</p></li></ul>
+
+
+<a name="bnbxr"></a><h4>Managing Users and Groups on the Application Server</h4>
+<a name="indexterm-2491"></a><a name="indexterm-2492"></a><p>Managing users on the Application Server is discussed in more detail in
+the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p><p>This tutorial provides steps for managing users that will need to be completed
+to work through the tutorial examples.</p>
+
+<a name="bnbxs"></a><h5>Adding Users to the Application Server</h5>
+<a name="indexterm-2493"></a><a name="indexterm-2494"></a><p>To add users to the Application Server, follow these steps:</p>
+<ol><li><p>Start the Application Server if you haven&rsquo;t already done so. Information on starting the Application Server is available in <a href="bnadi.html">Starting and Stopping the Application Server</a>.</p></li>
+<li><p>Start the Admin Console if you haven&rsquo;t already done so. You can start the Admin Console by starting a web browser and entering the URL <tt>http://localhost:4848/asadmin</tt>. If you changed the default Admin port during installation, enter the correct port number in place of <tt>4848</tt>.</p></li>
+<li><p>To log in to the Admin Console, enter the user name and password of a user in the <tt>admin-realm</tt> who belongs to the <tt>asadmin</tt> group. The name and password entered during installation will work, as will any users added to this realm and group subsequent to installation.</p></li>
+<li><p>Expand the Configuration node in the Admin Console tree.</p></li>
+<li><p>Expand the Security node in the Admin Console tree.</p></li>
+<li><p>Expand the Realms node.</p>
+<ul><li><p>Select the <tt>file</tt> realm to add users you want to enable to access applications running in this realm. (For the example security applications, select the <tt>file</tt> realm.)</p></li>
+<li><p>Select the <tt>admin-realm</tt> to add users you want to enable as system administrators of the Application Server.</p></li>
+<li><p>You cannot enter users into the <tt>certificate</tt> realm using the Admin Console. You can only add certificates to the <tt>certificate</tt> realm. For information on adding (importing) certificates to the <tt>certificate</tt> realm, read <a href="#bnbxt">Adding Users to the Certificate Realm</a>.</p></li></ul>
+</li>
+<li><p>Click the Manage Users button.</p></li>
+<li><p>Click New to add a new user to the realm.</p></li>
+<li><p>Enter the correct information into the User ID, Password, and Group(s) fields.</p>
+<ul><li><p>If you are adding a user to the <tt>file</tt> realm, enter the name to identify the user, a password to allow the user access to the realm, and a group to which this user belongs. For more information on these properties, read <a href="">Working with Realms, Users, Groups, and Roles</a>.</p><p>For the example security applications, enter a user with any name and password you like, but make sure that the user is assigned to the group of <tt>user</tt>.</p></li>
+<li><p>If you are adding a user to the <tt>admin-realm</tt>, enter the name to identify the user, a password to allow the user access to the Application Server, and enter <tt>asadmin</tt> in the Group field.</p></li></ul>
+</li>
+<li><p>Click OK to add this user to the list of users in the realm.</p></li>
+<li><p>Click Logout when you have completed this task.</p></li></ol>
+
+
+<a name="bnbxt"></a><h5>Adding Users to the Certificate Realm</h5>
+<p><a name="indexterm-2495"></a><a name="indexterm-2496"></a>In the <tt>certificate</tt> realm, user identity is set up in the Application
+Server security context and populated with user data obtained from cryptographically-verified client certificates. For
+step-by-step instructions for creating this type of certificate, see <a href="bnbxw.html#bnbyb">Working with Digital Certificates</a>.</p>
+
+<a name="bnbxu"></a><h4>Setting Up Security Roles</h4>
+<a name="indexterm-2497"></a><a name="indexterm-2498"></a><a name="indexterm-2499"></a><p>When you design an enterprise bean or web component, you should always think
+about the kinds of users who will access the component. For example, a
+web application for a human resources department might have a different request URL
+for someone who has been assigned the role of <tt>DEPT_ADMIN</tt> than for someone
+who has been assigned the role of <tt>DIRECTOR</tt>. The <tt>DEPT_ADMIN</tt> role may let
+you view employee data, but the <tt>DIRECTOR</tt> role enables you to modify employee
+data, including salary data. Each of these security roles is an abstract logical grouping
+of users that is defined by the person who assembles the application. When
+an application is deployed, the deployer will map the roles to security identities
+in the operational environment, as shown in <a href="#bnbxl">Figure&nbsp;28-6</a>.</p><p>For applications, you define security roles in the Java EE deployment descriptor file
+<tt>application.xml</tt>, and the corresponding role mappings in the Application Server deployment descriptor file
+<tt>sun-application.xml</tt>. For individually deployed web or EJB modules, you define roles in the
+Java EE deployment descriptor files <tt>web.xml</tt> or <tt>ejb-jar.xml</tt> and the corresponding role
+mappings in the Application Server deployment descriptor files <tt>sun-web.xml</tt> or <tt>sun-ejb-jar.xml</tt>.</p><p>The following is an example of a security constraint from a <tt>web.xml</tt>
+application deployment descriptor file where the role of <tt>DEPT-ADMIN</tt> is authorized for
+methods that review employee data and the role of <tt>DIRECTOR</tt> is authorized for
+methods that change employee data.</p><pre><a name="indexterm-2500"></a><a name="indexterm-2501"></a><a name="indexterm-2502"></a><a name="indexterm-2503"></a><a name="indexterm-2504"></a><a name="indexterm-2505"></a><a name="indexterm-2506"></a><a name="indexterm-2507"></a><a name="indexterm-2508"></a><a name="indexterm-2509"></a><a name="indexterm-2510"></a><a name="indexterm-2511"></a><a name="indexterm-2512"></a><a name="indexterm-2513"></a><a name="indexterm-2514"></a><a name="indexterm-2515"></a><a name="indexterm-2516"></a><a name="indexterm-2517"></a>&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>view dept data&lt;/web-resource-name>
+        &lt;url-pattern>/hr/employee/*&lt;/url-pattern>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>POST&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>DEPT_ADMIN&lt;/role-name>
+    &lt;/auth-constraint>
+    &lt;user-data-constraint>
+        &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee>
+    &lt;/user-data-constraint>
+&lt;/security-constraint>
+
+&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>change dept data&lt;/web-resource-name>
+        &lt;url-pattern>/hr/employee/*&lt;/url-pattern>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>PUT&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>DIRECTOR&lt;/role-name>
+    &lt;/auth-constraint>
+    &lt;user-data-constraint>
+        &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee>
+    &lt;/user-data-constraint>
+&lt;/security-constraint></pre><p>The <tt>web.xml</tt> application deployment descriptor is described in more detail in <a href="bncbe.html#bncbj">Declaring Security Requirements in a Deployment Descriptor</a>.</p><p>After users have provided their login information, and the application has declared what
+roles are authorized to access protected parts of an application, the next step
+is to map the security role to the name of a user,
+or principal. This step is discussed in the following section.</p>
+
+<a name="bnbxv"></a><h4>Mapping Roles to Users and Groups</h4>
+<a name="indexterm-2518"></a><a name="indexterm-2519"></a><a name="indexterm-2520"></a><a name="indexterm-2521"></a><a name="indexterm-2522"></a><p>When you are developing a Java EE application, you don&rsquo;t need to know
+what categories of users have been defined for the realm in which the
+application will be run. In the Java EE platform, the security architecture provides
+a mechanism for mapping the roles defined in the application to the users
+or groups defined in the runtime realm. To map a role name
+permitted by the application or module to principals (users) and groups defined on
+the server, use the <tt>security-role-mapping</tt> element in the runtime deployment descriptor (<tt>sun-application.xml</tt>, <tt>sun-web.xml</tt>, or
+<tt>sun-ejb-jar.xml</tt>) file. The entry needs to declare a mapping between a security role
+used in the application and one or more groups or principals defined for
+the applicable realm of the Application Server. An example for the <tt>sun-web.xml</tt> file
+is shown below:</p><pre>&lt;sun-web-app>
+    &lt;security-role-mapping>
+        &lt;role-name>DIRECTOR&lt;/role-name>
+        &lt;principal-name>mcneely&lt;/principal-name>
+    &lt;/security-role-mapping>
+    &lt;security-role-mapping>
+        &lt;role-name>MANAGER&lt;/role-name>
+        &lt;group-name>manager&lt;/group-name>
+    &lt;/security-role-mapping>
+&lt;/sun-web-app></pre><p>The role name can be mapped to either a specific principal (user),
+a group, or both. The principal or group names referenced must be valid
+principals or groups in the current default realm of the Application Server. The
+<tt>role-name</tt> in this example must exactly match the <tt>role-name</tt> in the <tt>security-role</tt> element
+of the corresponding <tt>web.xml</tt> file or the role name defined in the
+<tt>@DeclareRoles</tt> or <tt>@RolesAllowed</tt> annotations.</p><p>Sometimes the role names used in the application are the same as
+the group names defined on the Application Server. Under these circumstances, you can enable
+a default principal-to-role mapping on the Application Server using the Admin Console. From
+the Admin Console, select Configuration, then Security, then check the enable box beside
+Default Principal to Role Mapping. If you need more information about using the
+Admin Console, see <a href="#bnbxs">Adding Users to the Application Server</a>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbxi.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbxw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

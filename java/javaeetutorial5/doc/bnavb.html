@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Writing Backing Bean Methods - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaty.html">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="bnaty.html#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+<p class="toc level3 tocsp"><a href="bnaum.html">Performing Localization</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaun">Creating a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnaum.html#bnauo">Localizing Dynamic Data</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaup">Localizing Messages</a></p>
+<p class="toc level5"><a href="bnaum.html#bnauq">Creating a Message with a Message Factory</a></p>
+<p class="toc level5"><a href="bnaum.html#bnaur">Using <tt>FacesMessage</tt> to Create a Message</a></p>
+<p class="toc level3 tocsp"><a href="bnaus.html">Creating a Custom Converter</a></p>
+<p class="toc level3"><a href="bnaut.html">Implementing an Event Listener</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauv">Implementing Action Listeners</a></p>
+<p class="toc level3 tocsp"><a href="bnauw.html">Creating a Custom Validator</a></p>
+<p class="toc level4"><a href="bnauw.html#bnaux">Implementing the Validator Interface</a></p>
+<p class="toc level4"><a href="bnauw.html#bnauy">Creating a Custom Tag</a></p>
+<p class="toc level5"><a href="bnauw.html#bnauz">Writing the Tag Handler</a></p>
+<p class="toc level5"><a href="bnauw.html#bnava">Writing the Tag Library Descriptor</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Writing Backing Bean Methods</a></p>
+<p class="toc level4"><a href="#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnauw.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnavg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnavb"></a><h3>Writing Backing Bean Methods</h3>
+<a name="indexterm-1419"></a><a name="indexterm-1420"></a><p>Methods of a backing bean perform application-specific functions for components on the page.
+These functions include performing validation on the component&rsquo;s value, handling action events, handling
+value-change events, and performing processing associated with navigation.</p><p><a name="indexterm-1421"></a><a name="indexterm-1422"></a><a name="indexterm-1423"></a>By using a backing bean to perform these functions, you eliminate the need
+to implement the <tt>Validator</tt> interface to handle the validation or the <tt>Listener</tt> interface
+to handle events. Also, by using a backing bean instead of a <tt>Validator</tt>
+implementation to perform validation, you eliminate the need to create a custom tag
+for the <tt>Validator</tt> implementation. <a href="bnauw.html">Creating a Custom Validator</a><a href="bnauw.html">Creating a Custom Validator</a> describes implementing a custom validator. <a href="bnaut.html">Implementing an Event Listener</a> describes implementing
+a listener class.</p><p>In general, it&rsquo;s good practice to include these methods in the same backing
+bean that defines the properties for the components referencing these methods. The reason
+is that the methods might need to access the component&rsquo;s data to determine
+how to handle the event or to perform the validation associated with the
+component.</p><p>This section describes the requirements for writing the backing bean methods.</p>
+
+<a name="bnavc"></a><h4>Writing a Method to Handle Navigation</h4>
+<a name="indexterm-1424"></a><a name="indexterm-1425"></a><p><a name="indexterm-1426"></a><a name="indexterm-1427"></a><a name="indexterm-1428"></a><a name="indexterm-1429"></a><a name="indexterm-1430"></a><a name="indexterm-1431"></a><a name="indexterm-1432"></a>A backing bean method that handles navigation processing, called an action method, must
+be a public method that takes no parameters and returns an <tt>Object</tt>, which
+is the logical outcome that the navigation system uses to determine what page
+to display next. This method is referenced using the component tag&rsquo;s <tt>action</tt> attribute.</p><p>The following action method in <tt>CashierBean</tt> is invoked when a user clicks the
+Submit button on the <tt>bookcashier.jsp</tt> page. If the user has ordered more than
+$100 (or 100 euros) worth of books, this method sets the <tt>rendered</tt> properties
+of the <tt>fanClub</tt> and <tt>specialOffer</tt> components to <tt>true</tt>. This causes them to be
+displayed on the page the next time the page is rendered.</p><p>After setting the components&rsquo; <tt>rendered</tt> properties to <tt>true</tt>, this method returns the logical
+outcome <tt>null</tt>. This causes the JavaServer Faces implementation to re-render the <tt>bookcashier.jsp</tt>
+page without creating a new view of the page. If this method were
+to return <tt>purchase</tt> (which is the logical outcome to use to advance to
+<tt>bookcashier.jsp</tt>, as defined by the application configuration resource file), the <tt>bookcashier.jsp</tt> page would re-render
+without retaining the customer&rsquo;s input. In this case, you want to re-render the
+page without clearing the data.</p><p>If the user does not purchase more than $100 (or 100 euros)
+worth of books or the <tt>thankYou</tt> component has already been rendered, the method returns
+<tt>receipt</tt>.</p><p><a name="indexterm-1433"></a>The default <tt>NavigationHandler</tt> provided by the JavaServer Faces implementation matches the logical outcome,
+as well as the starting page (<tt>bookcashier.jsp</tt>) against the navigation rules in the application
+configuration resource file to determine which page to access next. In this case,
+the JavaServer Faces implementation loads the <tt>bookreceipt.jsp</tt> page after this method returns.</p><pre>public String submit() {
+    ...
+    if(cart().getTotal() > 100.00 &amp;&amp;
+         !specialOffer.isRendered())
+    {
+        specialOfferText.setRendered(true);
+        specialOffer.setRendered(true);
+        return null;
+    } else if (specialOffer.isRendered() &amp;&amp;
+         !thankYou.isRendered()){
+        thankYou.setRendered(true);
+        return null;
+    } else {
+        clear();
+        return ("receipt");
+    }
+}</pre><p>Typically, an action method will return a <tt>String</tt> outcome, as shown in the
+previous example. Alternatively, you can define an <tt>Enum</tt> class that encapsulates all possible
+outcome strings and then make an action method return an enum constant, which
+represents a particular String outcome defined by the <tt>Enum</tt> class. In this case,
+the value returned by a call to the <tt>Enum</tt> class&rsquo;s <tt>toString</tt> method must match
+that specified by the <tt>from-outcome</tt> element in the appropriate navigation rule configuration defined
+in the application configuration file.</p><p>The Duke&rsquo;s Bank example uses an <tt>Enum</tt> class to encapsulate all logical outcomes:</p><pre>public enum Navigation  {
+    main, accountHist, accountList, atm, atmAck, transferFunds,
+     transferAck, error
+}</pre><p>When an action method returns an outcome, it uses the dot notation
+to reference the outcome from the <tt>Enum</tt> class:</p><pre>public Object submit(){
+    ...
+    return Navigation.accountHist;
+}</pre><p><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a> explains how a component tag references this method. <a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a> discusses how the
+page author can bind these components to bean properties. <a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a> discusses how to
+write the bean properties to which the components are bound. <a href="bnaxf.html">Configuring Navigation Rules</a> provides more
+information on configuring navigation rules.</p>
+
+<a name="bnavd"></a><h4>Writing a Method to Handle an Action Event</h4>
+<a name="indexterm-1434"></a><a name="indexterm-1435"></a><p><a name="indexterm-1436"></a><a name="indexterm-1437"></a><a name="indexterm-1438"></a>A backing bean method that handles an action event must be a public
+method that accepts an action event and returns <tt>void</tt>. This method is referenced
+using the component tag&rsquo;s <tt>actionListener</tt> attribute. Only components that implement <tt>ActionSource</tt> can refer
+to this method.</p><p>The following backing bean method from <tt>LocaleBean</tt> of the Duke&rsquo;s Bookstore application processes
+the event of a user clicking one of the hyperlinks on the <tt>chooselocale.jsp</tt>
+page:</p><pre>public void chooseLocaleFromLink(ActionEvent event) {
+    String current = event.getComponent().getId();
+    FacesContext context = FacesContext.getCurrentInstance();
+    context.getViewRoot().setLocale((Locale)
+        locales.get(current));
+}</pre><p>This method gets the component that generated the event from the event object.
+Then it gets the component&rsquo;s ID. The ID indicates a region of the
+world. The method matches the ID against a <tt>HashMap</tt> object that contains the
+locales available for the application. Finally, it sets the locale using the selected
+value from the <tt>HashMap</tt> object.</p><p><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a> explains how a component tag references this method.</p>
+
+<a name="bnave"></a><h4>Writing a Method to Perform Validation</h4>
+<a name="indexterm-1439"></a><a name="indexterm-1440"></a><a name="indexterm-1441"></a><p>Rather than implement the <tt>Validator</tt> interface to perform validation for a component, you
+can include a method in a backing bean to take care of validating
+input for the component.</p><p><a name="indexterm-1442"></a><a name="indexterm-1443"></a><a name="indexterm-1444"></a><a name="indexterm-1445"></a><a name="indexterm-1446"></a>A backing bean method that performs validation must accept a <tt>FacesContext</tt>, the component
+whose data must be validated, and the data to be validated, just as
+the <tt>validate</tt> method of the <tt>Validator</tt> interface does. A component refers to the backing
+bean method by using its <tt>validator</tt> attribute. Only values of <tt>UIInput</tt> components or
+values of components that extend <tt>UIInput</tt> can be validated.</p><p>Here is the backing bean method of <tt>CheckoutFormBean</tt> from the Coffee Break example:</p><pre>public void validateEmail(FacesContext context,
+     UIComponent toValidate, Object value) {
+    
+    String message = "";
+    String email = (String) value;
+    if (email.contains(&rsquo;@&rsquo;)) {
+        ((UIInput)toValidate).setValid(false);
+        message = CoffeeBreakBean.loadErrorMessage(context,
+             CoffeeBreakBean.CB_RESOURCE_BUNDLE_NAME,
+            "EMailError");
+        context.addMessage(toValidate.getClientId(context),
+            new FacesMessage(message));
+    }
+}</pre><p><a name="indexterm-1447"></a><a name="indexterm-1448"></a>The <tt>validateEmail</tt> method first gets the local value of the component. It then
+checks whether the <tt>@</tt> character is contained in the value. If it
+isn&rsquo;t, the method sets the component&rsquo;s <tt>valid</tt> property to <tt>false</tt>. The method then loads
+the error message and queues it onto the <tt>FacesContext</tt> instance, associating the
+message with the component ID.</p><p>See <a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a> for information on how a component tag references this method.</p>
+
+<a name="bnavf"></a><h4>Writing a Method to Handle a Value-Change Event</h4>
+<a name="indexterm-1449"></a><a name="indexterm-1450"></a><p><a name="indexterm-1451"></a><a name="indexterm-1452"></a>A backing bean that handles a value-change event must be a public method
+that accepts a value-change event and returns <tt>void</tt>. This method is referenced using
+the component&rsquo;s <tt>valueChangeListener</tt> attribute.</p><p>The Duke&rsquo;s Bookstore application does not have any backing bean methods that handle
+value-change events. It does have a <tt>ValueChangeListener</tt> implementation, as explained in the
+<a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a> section.</p><p>For illustration, this section explains how to write a backing bean method that
+can replace the <tt>ValueChangeListener</tt> implementation.</p><p><a name="indexterm-1453"></a><a name="indexterm-1454"></a>As explained in <a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a>, the <tt>name</tt> component of the <tt>bookcashier.jsp</tt> page has a
+<tt>ValueChangeListener</tt> instance registered on it. This <tt>ValueChangeListener</tt> instance handles the event of entering a
+value in the field corresponding to the component. When the user enters a
+value, a value-change event is generated, and the <tt>processValueChange(ValueChangeEvent)</tt> method of the
+<tt>ValueChangeListener</tt> class is invoked.</p><p>Instead of implementing <tt>ValueChangeListener</tt>, you can write a backing bean method to handle
+this event. To do this, you move the <tt>processValueChange(ValueChangeEvent)</tt> method from the <tt>ValueChangeListener</tt>
+class, called <tt>NameChanged</tt>, to your backing bean.</p><p>Here is the backing bean method that processes the event of entering a
+value in the <tt>name</tt> field on the <tt>bookcashier.jsp</tt> page:</p><pre>public void processValueChange(ValueChangeEvent event)
+    throws AbortProcessingException {
+    if (null != event.getNewValue()) {
+        FacesContext.getCurrentInstance().
+            getExternalContext().getSessionMap().
+                put("name", event.getNewValue());
+    }
+}    </pre><p>The page author can make this method handle the <tt>ValueChangeEvent</tt> object emitted by
+a <tt>UIInput</tt> component by referencing this method from the component tag&rsquo;s <tt>valueChangeListener</tt> attribute. See
+<a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a> for more information.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnauw.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnavg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,818 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Unified Expression Language - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level3"><a href="bnagy.html">What Is a JSP Page?</a></p>
+<p class="toc level4"><a href="bnagy.html#bnagz">A Simple JSP Page Example</a></p>
+<p class="toc level3 tocsp"><a href="bnahb.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnahe.html">The Life Cycle of a JSP Page</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahf">Translation and Compilation</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahg">Execution</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahh">Buffering</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahi">Handling JSP Page Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnahj.html">Creating Static Content</a></p>
+<p class="toc level4"><a href="bnahj.html#bnahk">Response and Page Encoding</a></p>
+<p class="toc level3 tocsp"><a href="bnahl.html">Creating Dynamic Content</a></p>
+<p class="toc level4"><a href="bnahl.html#bnahm">Using Objects within JSP Pages</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahn">Using Implicit Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnaho">Using Application-Specific Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahp">Using Shared Objects</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Unified Expression Language</a></p>
+<p class="toc level4"><a href="#bnahr">Immediate and Deferred Evaluation Syntax</a></p>
+<p class="toc level5"><a href="#bnahs">Immediate Evaluation</a></p>
+<p class="toc level5"><a href="#bnaht">Deferred Evaluation</a></p>
+<p class="toc level4 tocsp"><a href="#bnahu">Value and Method Expressions</a></p>
+<p class="toc level5"><a href="#bnahv">Value Expressions</a></p>
+<p class="toc level5"><a href="#bnahz">Method Expressions</a></p>
+<p class="toc level4 tocsp"><a href="#bnaia">Defining a Tag Attribute Type</a></p>
+<p class="toc level4"><a href="#bnaic">Deactivating Expression Evaluation</a></p>
+<p class="toc level4"><a href="#bnaid">Literal Expressions</a></p>
+<p class="toc level4"><a href="#bnaif">Resolving Expressions</a></p>
+<p class="toc level5"><a href="#bnaig">Process of Expression Evaluation</a></p>
+<p class="toc level5"><a href="#bnaih">EL Resolvers</a></p>
+<p class="toc level4 tocsp"><a href="#bnaij">Implicit Objects</a></p>
+<p class="toc level4"><a href="#bnaik">Operators</a></p>
+<p class="toc level4"><a href="#bnail">Reserved Words</a></p>
+<p class="toc level4"><a href="#bnaim">Examples of EL Expressions</a></p>
+<p class="toc level4"><a href="#bnaio">Functions</a></p>
+<p class="toc level5"><a href="#bnaip">Using Functions</a></p>
+<p class="toc level5"><a href="#bnaiq">Defining Functions</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnair.html">JavaBeans Components</a></p>
+<p class="toc level4"><a href="bnair.html#bnais">JavaBeans Component Design Conventions</a></p>
+<p class="toc level4"><a href="bnair.html#bnait">Creating and Using a JavaBeans Component</a></p>
+<p class="toc level4"><a href="bnair.html#bnaiu">Setting JavaBeans Component Properties</a></p>
+<p class="toc level4"><a href="bnair.html#bnaix">Retrieving JavaBeans Component Properties</a></p>
+<p class="toc level3 tocsp"><a href="bnaiy.html">Using Custom Tags</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaiz">Declaring Tag Libraries</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaja">Including the Tag Library Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bnajb.html">Reusing Content in JSP Pages</a></p>
+<p class="toc level3"><a href="bnajc.html">Transferring Control to Another Web Component</a></p>
+<p class="toc level4"><a href="bnajc.html#bnajd"><tt>jsp:param</tt> Element</a></p>
+<p class="toc level3 tocsp"><a href="bnaje.html">Including an Applet</a></p>
+<p class="toc level3"><a href="bnajg.html">Setting Properties for Groups of JSP Pages</a></p>
+<p class="toc level4"><a href="bnajg.html#bnajh">Deactivating EL Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajk">Declaring Page Encodings</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajl">Defining Implicit Includes</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajm">Eliminating Extra White Space</a></p>
+<p class="toc level3 tocsp"><a href="bnajn.html">Further Information about JavaServer Pages Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnahl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnair.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnahq"></a><h3>Unified Expression Language</h3>
+<p><a name="indexterm-339"></a>The primary new feature of JSP 2.1 is the unified expression language (unified EL),
+which represents a union of the expression language offered by JSP 2.0 and
+the expression language created for JavaServer Faces technology (see <a href="bnaph.html">Chapter&nbsp;10, JavaServer Faces Technology</a>) version 1.0.</p><p>The expression language introduced in JSP 2.0 allows page authors to use simple
+expressions to dynamically read data from JavaBeans components. For example, the <tt>test</tt> attribute
+of the following conditional tag is supplied with an EL expression that compares
+the number of items in the session-scoped bean named <tt>cart</tt> with 0.</p><pre>&lt;c:if test="${sessionScope.cart.numberOfItems > 0}">
+  ...
+&lt;/c:if></pre><p>As explained in <a href="bnahe.html">The Life Cycle of a JSP Page</a>, JSP supports a simple request/response life cycle, during which
+a page is executed and the HTML markup is rendered immediately. Therefore, the
+simple, read-only expression language offered by JSP 2.0 was well suited to the
+needs of JSP applications.</p><p><a name="indexterm-340"></a>JavaServer Faces technology, on the other hand, features a multiphase life cycle designed to
+support its sophisticated UI component model, which allows for converting and validating component
+data, propagating component data to objects, and handling component events. To facilitate these
+functions, JavaServer Faces technology introduced its own expression language that included the following functionality:</p>
+<ul><li><p>Deferred evaluation of expressions</p></li>
+<li><p>The ability to set data as well as get data</p></li>
+<li><p>The ability to invoke methods</p></li></ul>
+<p>See <a href="bnaqm.html#bnaqp">Using the Unified EL to Reference Backing Beans</a> for more information on how to use the unified EL
+in JavaServer Faces applications.</p><p>These two expression languages have been unified for a couple reasons. One reason
+is so that page authors can mix JSP content with JavaServer Faces tags
+without worrying about conflicts caused by the different life cycles these technologies support.
+Another reason is so that other JSP-based technologies could make use of the
+additional features similarly to the way JavaServer Faces technology uses them. In fact,
+although the standard JSP tags and static content continue to use only those
+features present in JSP 2.0, authors of JSP custom tags can create tags
+that take advantage of the new set of features in the unified expression
+language.</p><p>To summarize, the new, unified expression language allows page authors to use simple
+expressions to perform the following tasks:</p>
+<ul><li><p>Dynamically read application data stored in JavaBeans components, various data structures, and implicit objects</p></li>
+<li><p>Dynamically write data, such as user input into forms, to JavaBeans components</p></li>
+<li><p>Invoke arbitrary static and public methods</p></li>
+<li><p>Dynamically perform arithmetic operations</p></li></ul>
+<p>The unified EL also allows custom tag developers to specify which of the
+following kinds of expressions that a custom tag attribute will accept:</p>
+<ul><li><p><a name="indexterm-341"></a><a name="indexterm-342"></a><b>Immediate evaluation expressions</b> or <b>deferred evaluation expressions</b>. An immediate evaluation expression is evaluated immediately by the JSP engine. A deferred evaluation expression can be evaluated later by the underlying technology using the expression language.</p></li>
+<li><p><a name="indexterm-343"></a><a name="indexterm-344"></a><b>Value expression</b> or <b>method expression</b>. A value expression references data, whereas a method expression invokes a method.</p></li>
+<li><p><a name="indexterm-345"></a><a name="indexterm-346"></a><b>Rvalue expression</b> or <b>Lvalue expression</b>. An rvalue expression can only read a value, whereas an lvalue expression can both read and write that value to an external object.</p></li></ul>
+<p>Finally, the unified EL also provides a pluggable API for resolving expressions so
+that application developers can implement their own resolvers that can handle expressions not
+already supported by the unified EL.</p><p>This section gives an overview of the unified expression language features by explaining
+the following topics:</p>
+<ul><li><p><a href="#bnahr">Immediate and Deferred Evaluation Syntax</a></p></li>
+<li><p><a href="#bnahu">Value and Method Expressions</a></p></li>
+<li><p><a href="#bnaia">Defining a Tag Attribute Type</a></p></li>
+<li><p><a href="#bnaic">Deactivating Expression Evaluation</a></p></li>
+<li><p><a href="#bnaid">Literal Expressions</a></p></li>
+<li><p><a href="#bnaif">Resolving Expressions</a></p></li>
+<li><p><a href="#bnaij">Implicit Objects</a></p></li>
+<li><p><a href="#bnaik">Operators</a></p></li>
+<li><p><a href="#bnail">Reserved Words</a></p></li>
+<li><p><a href="#bnaim">Examples of EL Expressions</a></p></li>
+<li><p><a href="#bnaio">Functions</a></p></li></ul>
+
+
+<a name="bnahr"></a><h4>Immediate and Deferred Evaluation Syntax</h4>
+<p><a name="indexterm-347"></a><a name="indexterm-348"></a>The unified EL supports both immediate and deferred evaluation of expressions. <b>Immediate evaluation</b> means
+that the JSP engine evaluates the expression and returns the result immediately when
+the page is first rendered. <b>Deferred evaluation</b> means that the technology using the expression language
+can employ its own machinery to evaluate the expression sometime later during the
+page&rsquo;s life cycle, whenever it is appropriate to do so.</p><p>Those expressions that are evaluated immediately use the <tt>${}</tt> syntax, which was introduced
+with the JSP 2.0 expression language. Expressions whose evaluation is deferred use the
+<tt>#{}</tt> syntax, which was introduced by JavaServer Faces technology.</p><p>Because of its multiphase life cycle, JavaServer Faces technology uses deferred evaluation expressions.
+During the life cycle, component events are handled, data is validated, and other
+tasks are performed, all done in a particular order. Therefore, it must defer
+evaluation of expressions until the appropriate point in the life cycle.</p><p>Other technologies using the unified EL might have different reasons for using deferred
+expressions.</p>
+
+<a name="bnahs"></a><h5>Immediate Evaluation</h5>
+<p>All expressions using the <tt>${}</tt> syntax are evaluated immediately. These expressions can only
+be used within template text or as the value of a JSP tag
+attribute that can accept runtime expressions.</p><p>The following example shows a tag whose value attribute references an immediate evaluation
+expression that gets the total price from the session-scoped bean named cart:</p><pre>&lt;fmt:formatNumber value="${sessionScope.cart.total}"/></pre><p>The JSP engine evaluates the expression, <tt>${sessionScope.cart.total}</tt>, converts it, and passes the
+returned value to the tag handler.</p><p>Immediate evaluation expressions are always read-only value expressions. The expression shown above can
+only get the total price from the cart bean; it cannot set the
+total price.</p>
+
+<a name="bnaht"></a><h5>Deferred Evaluation</h5>
+<p>Deferred evaluation expressions take the form <tt>#{expr}</tt> and can be evaluated at other
+phases of a page life cycle as defined by whatever technology is using
+the expression. In the case of JavaServer Faces technology, its controller can evaluate
+the expression at different phases of the life cycle depending on how the
+expression is being used in the page.</p><p>The following example shows a JavaServer Faces <tt>inputText</tt> tag, which represents a text
+field component into which a user enters a value. The <tt>inputText</tt> tag&rsquo;s <tt>value</tt>
+attribute references a deferred evaluation expression that points to the <tt>name</tt> property of the
+<tt>customer</tt> bean.</p><pre>&lt;h:inputText id="name" value="#{customer.name}" /></pre><p>For an initial request of the page containing this tag, the JavaServer Faces
+implementation evaluates the <tt>#{customer.name}</tt> expression during the render response phase of the life
+cycle. During this phase, the expression merely accesses the value of <tt>name</tt> from
+the <tt>customer</tt> bean, as is done in immediate evaluation.</p><p>For a postback, the JavaServer Faces implementation evaluates the expression at different phases
+of the life cycle, during which the value is retrieved from the request,
+validated, and propagated to the <tt>customer</tt> bean.</p><p>As shown in this example, deferred evaluation expressions can be value expressions that
+can be used to both read and write data. They can also
+be method expressions. Value expressions (both immediate and deferred) and method expressions are explained
+in the next section.</p>
+
+<a name="bnahu"></a><h4>Value and Method Expressions</h4>
+<p>The unified EL defines two kinds of expressions: value expressions and method expressions.
+Value expressions can either yield a value or set a value. Method expressions
+reference methods that can be invoked and can return a value.</p>
+
+<a name="bnahv"></a><h5>Value Expressions</h5>
+<p><a name="indexterm-349"></a><a name="indexterm-350"></a><a name="indexterm-351"></a>Value expressions can be further categorized into rvalue and lvalue expressions. <b>Rvalue expressions</b> are
+those that can read data, but cannot write it. <b>Lvalue expressions</b> can both read and
+write data.</p><p>All expressions that are evaluated immediately use the <tt>${}</tt> delimiters and are always
+rvalue expressions. Expressions whose evaluation can be deferred use the <tt>#{}</tt> delimiters and
+can act as both rvalue and lvalue expressions. Consider these two value expressions:</p><pre>&lt;taglib:tag value="${customer.name}" />
+&lt;taglib:tag value="#{customer.name}" /></pre><p>The former uses immediate evaluation syntax, whereas the latter uses deferred evaluation syntax.
+The first expression accesses the <tt>name</tt> property, gets its value, and the value
+is added to the response and rendered on the page. The same thing
+can happen with the second expression. However, the tag handler can defer the
+evaluation of this expression to a later time in the page life cycle,
+if the technology using this tag allows it.</p><p>In the case of JavaServer Faces technology, the latter tag&rsquo;s expression is evaluated
+immediately during an initial request for the page. In this case, this expression
+acts as an rvalue expression. During a postback, this expression can be used
+to set the value of the <tt>name</tt> property with user input. In this
+situation, the expression acts as an lvalue expression.</p>
+
+<a name="bnahw"></a><h5>Referencing Objects Using Value Expressions</h5>
+<p>Both rvalue and lvalue expressions can refer to the following objects and their
+properties or attributes:</p>
+<ul><li><p>JavaBeans components</p></li>
+<li><p>Collections</p></li>
+<li><p>Java SE enumerated types</p></li>
+<li><p>Implicit objects</p></li></ul>
+<p>See <a href="#bnaij">Implicit Objects</a> for more detail on the implicit objects available with JSP technology.</p><p>To refer to these objects, you write an expression using a variable name
+with which you created the object. The following expression references a JavaBeans component
+called <tt>customer</tt>.</p><pre>${customer}</pre><p>The web container evaluates a variable that appears in an expression by looking
+up its value according to the behavior of <tt>PageContext.findAttribute(String)</tt>, where the <tt>String</tt>
+argument is the name of the variable. For example, when evaluating the expression
+<tt>${customer}</tt>, the container will look for <tt>customer</tt> in the page, request, session, and application
+scopes and will return its value. If <tt>customer</tt> is not found, null is
+returned. A variable that matches one of the implicit objects described in <a href="#bnaij">Implicit Objects</a>
+will return that implicit object instead of the variable&rsquo;s value.</p><p>You can alter the way variables are resolved with a custom EL
+resolver, which is a new feature of the unified EL. For instance, you
+can provide an EL resolver that intercepts objects with the name <tt>customer</tt>, so that
+<tt>${customer}</tt> returns a value in the EL resolver instead. However, you cannot override
+implicit objects in this way. See <a href="#bnaih">EL Resolvers</a> for more information on EL
+resolvers.</p><p>You can set the variable name, <tt>customer</tt>, when you declare the bean. See
+<a href="bnair.html#bnait">Creating and Using a JavaBeans Component</a> for information on how to declare a JavaBeans component for use in
+your JSP pages.</p><p>To declare beans in JavaServer Faces applications, you use the managed bean facility.
+See <a href="bnaqm.html">Backing Beans</a> for information on how to declare beans for use in JavaServer
+Faces applications.</p><p>When referencing an enum constant with an expression, you use a <tt>String</tt>
+literal. For example, consider this Enum class:</p><pre>public enum Suit {hearts, spades, diamonds, clubs}</pre><p>To refer to the <tt>Suit</tt> constant, <tt>Suit.hearts</tt> with an expression, you use the
+<tt>String</tt> literal, <tt>"hearts"</tt>. Depending on the context, the <tt>String</tt> literal is converted to the
+enum constant automatically. For example, in the following expression in which <tt>mySuit</tt> is
+an instance of <tt>Suit</tt>, <tt>"hearts"</tt> is first converted to a <tt>Suit.hearts</tt> before it
+is compared to the instance.</p><pre>${mySuit == "hearts"}</pre>
+
+<a name="bnahx"></a><h5>Referring to Object Properties Using Value Expressions</h5>
+<p>To refer to properties of a bean or an Enum instance, items
+of a collection, or attributes of an implicit object, you use the <tt>.</tt>
+or <tt>[]</tt> notation, which is similar to the notation used by ECMAScript.</p><p>So, if you wanted to reference the <tt>name</tt> property of the <tt>customer</tt> bean,
+you could use either the expression <tt>${customer.name}</tt> or the expression <tt>${customer["name"]}</tt>. The part
+inside the square brackets is a <tt>String</tt> literal that is the name of
+the property to reference.</p><p>You can use double or single quotes for the <tt>String</tt> literal. You can
+also combine the <tt>[]</tt> and <tt>.</tt> notations, as shown here:</p><pre>${customer.address["street"]}</pre><p>Properties of an enum can also be referenced in this way. However,
+as with JavaBeans component properties, the Enum class&rsquo;s properties must follow JavaBeans component conventions.
+This means that a property must at least have an accessor method called
+<tt>get&lt;Property></tt> (where <tt>&lt;Property></tt> is the name of the property) so that an
+expression can reference it.</p><p>For example, say you have an Enum class that encapsulates the names of
+the planets of our galaxy and includes a method to get the
+mass of a planet. You can use the following expression to reference the
+method <tt>getMass</tt> of the <tt>Planet</tt> Enum class:</p><pre>${myPlanet.mass}</pre><p>If you are accessing an item in an array or list, you
+must use either a literal value that can be coerced to int or
+the <tt>[]</tt> notation with an int and without quotes. The following examples could
+all resolve to the same item in a list or array, assuming that
+<tt>socks</tt> can be coerced to <tt>int</tt>:</p>
+<ul><li><p><tt>${customer.orders[1]}</tt></p></li>
+<li><p><tt>${customer.orders.socks}</tt></p></li></ul>
+<p>In contrast, an item in a <tt>Map</tt> can be accessed using a string
+literal key; no coercion is required:</p><pre>${customer.orders["socks"]}</pre><p>An rvalue expression also refers directly to values that are not objects, such
+as the result of arithmetic operations and literal values, as shown by these
+examples:</p>
+<ul><li><p><tt>${"literal"}</tt></p></li>
+<li><p><tt>${customer.age + 20}</tt></p></li>
+<li><p><tt>${true}</tt></p></li>
+<li><p><tt>${57}</tt></p></li></ul>
+<p><a name="indexterm-352"></a>The unified expression language defines the following literals:</p>
+<ul><li><p>Boolean: <tt>true</tt> and <tt>false</tt></p></li>
+<li><p>Integer: as in Java</p></li>
+<li><p>Floating point: as in Java</p></li>
+<li><p>String: with single and double quotes; <tt>"</tt> is escaped as <tt>\"</tt>, <tt>&rsquo;</tt> is escaped as <tt>\'</tt>, and <tt>\</tt> is escaped as <tt>\\</tt></p></li>
+<li><p>Null: <tt>null</tt></p></li></ul>
+<p>You can also write expressions that perform operations on an enum constant. For
+example, consider the following Enum class:</p><pre>public enum Suit {club, diamond, heart, spade }</pre><p>After declaring an enum constant called <tt>mySuit</tt>, you can write the following expression
+to test if <tt>mySuit</tt> is <tt>spade</tt>:</p><pre>${mySuit == "spade"}</pre><p>When the EL resolving mechanism resolves this expression it will invoke the <tt>valueOf</tt>
+method of the Enum class with the <tt>Suit</tt> class and the <tt>spade</tt> type,
+as shown here:</p><pre>mySuit.valueOf(Suit.class, "spade"}</pre><p>See <a href="bnair.html">JavaBeans Components</a> for more information on using expressions to reference JavaBeans components and
+their properties.</p>
+
+<a name="bnahy"></a><h5>Where Value Expressions Can Be Used</h5>
+<p>Value expressions using the <tt>${}</tt> delimiters can be used in the following places:</p>
+<ul><li><p>In static text</p></li>
+<li><p>In any standard or custom tag attribute that can accept an expression</p></li></ul>
+<p>The value of an expression in static text is computed and inserted
+into the current output. Here is an example of an expression embedded in
+static text:</p><pre>&lt;some:tag>
+    some text ${expr} some text
+&lt;/some:tag></pre><p>If the static text appears in a tag body, note that an
+expression <b>will not</b> be evaluated if the body is declared to be <tt>tagdependent</tt>
+(see <a href="bnaln.html#bnalo">Tags with Attributes</a>).</p><p>Lvalue expressions can only be used in tag attributes that can accept lvalue
+expressions.</p><p>There are three ways to set a tag attribute value using either
+an rvalue or lvalue expression:</p>
+<ul><li><p>With a single expression construct:</p><pre>&lt;some:tag value="${expr}"/></pre><pre>&lt;another:tag value="#{expr}"/></pre><p>These expressions are evaluated and the result is coerced to the attribute&rsquo;s expected type.</p></li>
+<li><p>With one or more expressions separated or surrounded by text:</p><pre>&lt;some:tag value="some${expr}${expr}text${expr}"/></pre><pre>&lt;another:tag value="some#{expr}#{expr}text#{expr}"/></pre><p>These kinds of expression are called a <b>composite expressions</b>. They are evaluated from left to right. Each expression embedded in the composite expression is coerced to a <tt>String</tt> and then concatenated with any intervening text. The resulting <tt>String</tt> is then coerced to the attribute&rsquo;s expected type.</p></li>
+<li><p>With text only:</p><pre>&lt;some:tag value="sometext"/></pre><p><a name="indexterm-353"></a>This expression is called a <b>literal expression</b>. In this case, the attribute&rsquo;s <tt>String</tt> value is coerced to the attribute&rsquo;s expected type. Literal value expressions have special syntax rules. See <a href="#bnaid">Literal Expressions</a> for more information. When a tag attribute has an enum type, the expression that the attribute uses must be a literal expression. For example, the tag attribute can use the expression <tt>"hearts"</tt> to mean <tt>Suit.hearts</tt>. The literal is coerced to <tt>Suit</tt> and the attribute gets the value <tt>Suit.hearts</tt>.</p></li></ul>
+<p><a name="indexterm-354"></a>All expressions used to set attribute values are evaluated in the context of
+an expected type. If the result of the expression evaluation does not match
+the expected type exactly, a type conversion will be performed. For example, the
+expression <tt>${1.2E4}</tt> provided as the value of an attribute of type <tt>float</tt>
+will result in the following conversion:</p><pre>Float.valueOf("1.2E4").floatValue()</pre><p>See section 1.18 of the <i>JavaServer Pages 2.1 Expression Language Specification</i> (available from <a href="http://jcp.org/aboutJava/communityprocess/final/jsr245/">http://jcp.org/aboutJava/communityprocess/final/jsr245/</a>) for the complete type
+conversion rules.</p>
+
+<a name="bnahz"></a><h5>Method Expressions</h5>
+<p><a name="indexterm-355"></a>Another feature of the unified expression language is its support of deferred method
+expressions. A method expression is used to invoke an arbitrary public method, which
+can return a result. A similar feature of the unified EL is functions.
+Method expressions differ from functions in many ways. <a href="#bnaio">Functions</a> explains more about the differences
+between functions and method expressions.</p><p>Method expressions primarily benefit JavaServer Faces technology, but they are available to any
+technology that can support the unified expression language. Let&rsquo;s take a look at
+how JavaServer Faces technology employs method expressions.</p><p>In JavaServer Faces technology, a component tag represents a UI component on a
+page. The component tag uses method expressions to invoke methods that perform some
+processing for the component. These methods are necessary for handling events that the
+components generate and validating component data, as shown in this example:</p><pre>&lt;h:form>
+    &lt;h:inputText
+         id="name"
+        value="#{customer.name}"
+        validator="#{customer.validateName}"/>
+    &lt;h:commandButton
+        id="submit"
+        action="#{customer.submit}" />
+&lt;/h:form></pre><p>The <tt>inputText</tt> tag displays a <tt>UIInput</tt> component as a text field. The <tt>validator</tt>
+attribute of this <tt>inputText</tt> tag references a method, called <tt>validateName</tt>, in the bean,
+called <tt>customer</tt>. The TLD (see <a href="bnamu.html">Tag Library Descriptors</a>) that defines the <tt>inputText</tt> tag specifies
+what signature the method referred to by the <tt>validator</tt> attribute must have.
+The same is true of the <tt>customer.submit</tt> method referenced by the <tt>action</tt> attribute
+of the <tt>commandButton</tt> tag. The TLD specifies that the <tt>submit</tt> method must return
+an <tt>Object</tt> instance that specifies which page to navigate to next after the
+button represented by the <tt>commandButton</tt> tag is clicked.</p><p>The <tt>validation</tt> method is invoked during the process validation phase of the life
+cycle, whereas the <tt>submit</tt> method is invoked during the invoke application phase of
+the life cycle. Because a method can be invoked during different phases of
+the life cycle, method expressions must always use the deferred evaluation syntax.</p><p>Similarly to lvalue expressions, method expressions can use the . and <tt>[]</tt>
+operators. For example, <tt>#{object.method}</tt> is equivalent to <tt>#{object["method"]}</tt>. The literal inside the <tt>[]</tt>
+is coerced to <tt>String</tt> and is used to find the name of the
+method that matches it. Once the method is found, it is invoked or
+information about the method is returned.</p><p>Method expressions can be used only in tag attributes and only in
+the following ways:</p>
+<ul><li><p>With a single expression construct, where <tt>bean</tt> refers to a JavaBeans component and <tt>method</tt> refers to a method of the JavaBeans component:</p><pre>&lt;some:tag value="#{bean.method}"/></pre><p>The expression is evaluated to a method expression, which is passed to the tag handler. The method represented by the method expression can then be invoked later.</p></li>
+<li><p>With text only:</p><pre>&lt;some:tag value="sometext"/></pre><p>Method expressions support literals primarily to support <tt>action</tt> attributes in JavaServer Faces technology. When the method referenced by this method expression is invoked, it returns the <tt>String</tt> literal, which is then coerced to the expected return type, as defined in the tag&rsquo;s TLD.</p></li></ul>
+
+
+<a name="bnaia"></a><h4>Defining a Tag Attribute Type</h4>
+<p>As explained in the previous section, all kinds of expressions can be used
+in tag attributes. Which kind of expression and how that expression is evaluated
+(whether immediately or deferred) is determined by the <tt>type</tt> attribute of the tag&rsquo;s
+definition in the TLD (see <a href="bnamu.html">Tag Library Descriptors</a>) file that defines the tag.</p><p>If you plan to create custom tags (see <a href="bnalj.html">Chapter&nbsp;8, Custom Tags in JSP Pages</a>), you need to
+specify for each tag in the TLD what kind of expression it accepts.
+<a href="#bnaib">Table&nbsp;5-2</a> shows the three different kinds of tag attributes that accept EL expressions,
+and gives examples of expressions they accept and the type definitions of the
+attributes that must be added to the TLD. You cannot use <tt>#{}</tt>
+syntax for a dynamic attribute, meaning an attribute that accepts dynamically-calculated values at runtime.
+Section 2.3.2 of the JavaServer Pages 2.1 specification refers to these attributes. Neither
+can you use the <tt>${}</tt> syntax for a deferred attribute.</p><a name="bnaib"></a><h6>Table&nbsp;5-2 Definitions of Tag Attributes That Accept EL Expressions</h6><table><col width="20%"><col width="24%"><col width="55%"><tr><th align="left" valign="top" scope="column"><p>Attribute Type</p></th>
+<th align="left" valign="top" scope="column"><p>Example Expression</p></th>
+<th align="left" valign="top" scope="column"><p>Type Attribute
+Definition</p></th>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>dynamic</p></td>
+<td align="left" valign="top" scope="row"><p><tt>"literal"</tt></p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;rtexprvalue>true&lt;/rtexprvalue></pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${literal}</tt></p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;rtexprvalue>true&lt;/rtexprvalue></pre></td>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>deferred value</p></td>
+<td align="left" valign="top" scope="row"><p><tt>"literal"</tt></p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;deferred-value>
+   &lt;type>java.lang.String&lt;/type>
+&lt;/deferred-value></pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>#{customer.age}</tt></p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;deferred-value>
+   &lt;type>int&lt;/type>
+&lt;/deferred-value></pre></td>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>deferred method</p></td>
+<td align="left" valign="top" scope="row"><p><tt>"literal"</tt></p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;deferred-method>
+   &lt;method-signature>
+      java.lang.String submit()
+   &lt;/method-signature>
+&lt;deferred-method></pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>#{customer.calcTotal}</tt></p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;deferred-method>
+   &lt;method-signature>
+      double calcTotal(int, double)
+   &lt;/method-signature>
+&lt;/deferred-method></pre></td>
+</tr>
+</table><p>In addition to the tag attribute types shown in <a href="#bnaib">Table&nbsp;5-2</a>, you can
+also define an attribute to accept both dynamic and deferred expressions. In this
+case, the tag attribute definition contains both an <tt>rtexprvalue</tt> definition set to
+<tt>true</tt> and either a <tt>deferred-value</tt> or <tt>deferred-method</tt> definition.</p>
+
+<a name="bnaic"></a><h4>Deactivating Expression Evaluation</h4>
+<p><a name="indexterm-356"></a>Because the patterns that identify EL expressions, <tt>${ }</tt> and <tt>#{ }</tt>, were not reserved in
+the JSP specifications before JSP 2.0, there might exist applications in which such
+patterns are intended to pass through verbatim. To prevent the patterns from being
+evaluated, you can deactivate EL evaluation using one of the following methods:</p>
+<ul><li><p>Escape the <tt>#{</tt> or <tt>${</tt> characters in the page.</p></li>
+<li><p>Configure the application with a JSP Property Group.</p></li>
+<li><p>Configure the page with the page directive.</p></li></ul>
+<p>To escape the <tt>#{</tt> or <tt>${</tt> characters in the page, you use the
+<tt>\</tt> character as follows:</p><pre>some text \#{ some more\${ text
+&lt;my:tag someAttribute="sometext\#{more\${text" /></pre><p>Another way to deactivate EL evaluation is by using a JSP property
+group to either allow the <tt>#{</tt> characters as a <tt>String</tt> literal using the <tt>deferred-syntax-allowed-as-literal</tt>
+subelement, or to treat all expressions as literals using the <tt>el-ignored</tt> subelement:</p><pre>&lt;jsp-property-group>
+    &lt;deferred-syntax-allowed-as-literal>
+        true
+    &lt;/deferred-syntax-allowed-as-literal>
+&lt;/jsp-property-group></pre><p>or</p><pre>&lt;jsp-property-group>
+    &lt;el-ignored>true&lt;/el-ignored>
+&lt;/jsp-property-group></pre><p>Finally, you can configure the page with the <tt>page</tt> directive to either accept
+the <tt>#{</tt> characters as <tt>String</tt> literals with the <tt>deferredSyntaxAllowedAsLiteral</tt> attribute, or to ignore all
+EL expressions using the <tt>isELIgnored</tt> attribute:</p><pre>&lt;%@page ... deferredSyntaxAllowedAsLiteral="true" %></pre><p>or</p><pre>&lt;%@ page isELIgnored ="true" %></pre><p>The valid values of these attributes are <tt>true</tt> and <tt>false</tt>. If <tt>isELIgnored</tt>
+is <tt>true</tt>, EL expressions are ignored when they appear in static text or
+tag attributes. If it is <tt>false</tt>, EL expressions are evaluated by the container only
+if the attribute has <tt>rtexprvalue</tt> set to <tt>true</tt> or the expression is a
+deferred expression.</p><p>The default value of <tt>isELIgnored</tt> varies depending on the version of the web
+application deployment descriptor. The default mode for JSP pages delivered with a Servlet
+2.4 descriptor is to evaluate EL expressions; this automatically provides the default that
+most applications want. The default mode for JSP pages delivered using a descriptor
+from Servlet 2.3 or before is to ignore EL expressions; this provides backward
+compatibility.</p>
+
+<a name="bnaid"></a><h4>Literal Expressions</h4>
+<p><a name="indexterm-357"></a>A literal expression evaluates to the text of the expression, which is of
+type <tt>String</tt>. It does not use the <tt>${}</tt> or <tt>#{}</tt> delimiters.</p><p>If you have a literal expression that includes the reserved <tt>${}</tt> or
+<tt>#{}</tt> syntax, you need to escape these characters as follows.</p>
+<ul><li><p>By creating a composite expression as shown here:</p><pre>${&rsquo;${&rsquo;}exprA}</pre><pre>#{&rsquo;#{&rsquo;}exprB}</pre><p>The resulting values would then be the strings <tt>${exprA}</tt> and <tt>#{exprB}</tt>.</p></li>
+<li><p>The escape characters <tt>\$</tt> and <tt>\#</tt> can be used to escape what would otherwise be treated as an eval-expression:</p><pre>\${exprA}</pre><pre>\#{exprB}</pre><p>The resulting values would again be the strings <tt>${exprA}</tt> and <tt>#{exprB}</tt>.</p></li></ul>
+<p>When a literal expression is evaluated, it can be converted to another type.
+<a href="#bnaie">Table&nbsp;5-3</a> shows examples of various literal expressions and their expected types and resulting
+values.</p><a name="bnaie"></a><h6>Table&nbsp;5-3 Literal Expressions</h6><table><col width="29%"><col width="29%"><col width="41%"><tr><th align="left" valign="top" scope="column"><p>Expression</p></th>
+<th align="left" valign="top" scope="column"><p>Expected Type</p></th>
+<th align="left" valign="top" scope="column"><p>Result</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Hi</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Hi</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Boolean</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Boolean.TRUE</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>42</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>42</tt></p></td>
+</tr>
+</table><p>Literal expressions can be evaluated immediately or deferred and can be either value
+or method expressions. At what point a literal expression is evaluated depends on
+where it is being used. If the tag attribute that uses the literal
+expression is defined as accepting a deferred value expression, then the literal expression
+references a value and is evaluated at a point in the life cycle
+that is determined by where the expression is being used and to what
+it is referring.</p><p>In the case of a method expression, the method that is referenced
+is invoked and returns the specified <tt>String</tt> literal. The <tt>commandButton</tt> tag of the
+Guess Number application uses a literal method expression as a logical outcome to
+tell the JavaServer Faces navigation system which page to display next. See <a href="bnaql.html">Navigation Model</a>
+for more information on this example.</p>
+
+<a name="bnaif"></a><h4>Resolving Expressions</h4>
+<p><a name="indexterm-358"></a>The unified EL introduces a new, pluggable API for resolving expressions. The main
+pieces of this API are:</p>
+<ul><li><p>The <tt>ValueExpression</tt> class, which defines a value expression</p></li>
+<li><p>The <tt>MethodExpression</tt> class, which defines a method expression</p></li>
+<li><p>An <tt>ELResolver</tt> class that defines a mechanism for resolving expressions</p></li>
+<li><p>A set of <tt>ELResolver</tt> implementations, in which each implementation is responsible for resolving expressions that reference a particular type of object or property</p></li>
+<li><p>An <tt>ELContext</tt> object that saves state relating to EL resolution, holds references to EL resolvers, and contains context objects (such as <tt>JspContext</tt>) needed by the underlying technology to resolve expressions</p></li></ul>
+<p>Most application developers will not need to use these classes directly unless they
+plan to write their own custom EL resolvers. Those writing JavaServer Faces custom
+components will definitely need to use <tt>ValueExpression</tt> and <tt>MethodExpression</tt>. This section details
+how expressions are resolved for the benefit of these developers. It does not
+explain how to create a custom resolver. For more information on creating custom
+resolvers, see the article <i>The Unified Expression Language</i>, Ryan Lubke et al., located at <a href="http://java.sun.com/products/jsp/reference/techart/unifiedEL.html">http://java.sun.com/products/jsp/reference/techart/unifiedEL.html</a>.
+You can also refer to <a href="bncmt.html#bncmy">Request Processing</a>, which explains how the Duke&rsquo;s Bank
+application uses a custom resolver.</p>
+
+<a name="bnaig"></a><h5>Process of Expression Evaluation</h5>
+<p>When a value expression that is included in a page is parsed
+during an initial request for the page, a <tt>ValueExpression</tt> object is created to represent
+the expression. Then, the <tt>ValueExpression</tt> object&rsquo;s <tt>getValue</tt> method is invoked. This method
+will in turn invoke the <tt>getValue</tt> method of the appropriate resolver. A
+similar process occurs during a postback when <tt>setValue</tt> is called if the expression is
+an lvalue expression.</p><p>In the case of a method expression, a <tt>BeanELResolver</tt> is used to find
+the object that implements the method to be invoked or queried. Similarly to
+the process for evaluating value expressions, when a method expression is encountered, a
+<tt>MethodExpression</tt> object is created. Subsequently, either the <tt>invoke</tt> or <tt>getMethodInfo</tt> method of the <tt>MethodExpression</tt>
+object is called. This method in turn invokes the <tt>BeanELResolver</tt> object&rsquo;s <tt>getValue</tt> method.
+The <tt>getMethodInfo</tt> is mostly for use by tools.</p><p>After a resolver completes resolution of an expression, it sets the <tt>propertyResolved</tt>
+flag of the <tt>ELContext</tt> to <tt>true</tt> so that no more resolvers are
+consulted.</p>
+
+<a name="bnaih"></a><h5>EL Resolvers</h5>
+<p><a name="indexterm-359"></a>At the center of the EL machinery is the extensible <tt>ELResolver</tt> class. A
+class that implements <tt>ELResolver</tt> defines how to resolve expressions referring to a
+particular type of object or property. In terms of the following expression, a
+<tt>BeanELResolver</tt> instance is called the first time to find the <b>base</b> object,
+<tt>employee</tt>, which is a JavaBeans component. Once the resolver finds the object, it
+is called again to resolve the <b>property</b>, <tt>lName</tt> of the employee object.</p><pre>${employee.lName}</pre><p>The unified EL includes a set of standard resolver implementations. <a href="#bnaii">Table&nbsp;5-4</a> lists
+these standard resolvers and includes example expressions that they can resolve.</p><a name="bnaii"></a><h6>Table&nbsp;5-4 Standard EL Resolvers</h6><table><col width="29%"><col width="24%"><col width="45%"><tr><th align="left" valign="top" scope="column"><p>Resolver</p></th>
+<th align="left" valign="top" scope="column"><p>Example Expression</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>ArrayELResolver</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>${myArray[1]}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the
+value at index 1 in the array called <tt>myArray</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>BeanELResolver</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>${employee.lName}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the value of
+the <tt>lName</tt> property of the <tt>employee</tt> bean</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>ListELResolver</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>${myList[5]}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the value at index 5
+of <tt>myList</tt> list</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>MapELResolver</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>${myMap.someKey}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the value stored at the key, <tt>someKey</tt>, in the <tt>Map</tt>,
+<tt>myMap</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>ResourceBundleELResolver</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>${myRB.myKey}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the message at <tt>myKey</tt> in the resource bundle called <tt>myRB</tt></p></td>
+</tr>
+</table><p>Depending on the technology using the unified EL, other resolvers might be available.
+In addition, application developers can add their own implementations of <tt>ELResolver</tt> to support
+resolution of expressions not already supported by the unified EL by registering them
+with an application.</p><p>All of the standard and custom resolvers available to a particular application are
+collected in a chain in a particular order. This chain of resolvers
+is represented by a <tt>CompositeELResolver</tt> instance. When an expression is encountered, the <tt>CompositeELResolver</tt> instance iterates
+over the list of resolvers and consults each resolver until it finds one
+that can handle the expression.</p><p>If an application is using JSP technology, the chain of resolvers includes the
+<tt>ImplicitObjectELResolver</tt> and the <tt>ScopedAttributeELResolver</tt>. These are described in the following section.</p><p>See section JSP 2.9 of the JavaServer Pages 2.1 specification to find out
+the order in which resolvers are chained together in a <tt>CompositeELResolver</tt> instance.</p><p>To learn how to create a custom EL resolver, see <a href="http://java.sun.com/products/jsp/reference/techart/unifiedEL.html">The Unified Expression Language</a> .</p>
+
+<a name="bnaij"></a><h4>Implicit Objects</h4>
+<p><a name="indexterm-360"></a>The JSP expression language defines a set of implicit objects:</p>
+<ul><li><p><tt>pageContext</tt>: The context for the JSP page. Provides access to various objects including:</p>
+<ul><li><p><tt>servletContext</tt>: The context for the JSP page&rsquo;s servlet and any web components contained in the same application. See <a href="bnagl.html">Accessing the Web Context</a>.</p></li>
+<li><p><tt>session</tt>: The session object for the client. See <a href="bnagm.html">Maintaining Client State</a>.</p></li>
+<li><p><tt>request</tt>: The request triggering the execution of the JSP page. See <a href="bnafv.html#bnafw">Getting Information from Requests</a>.</p></li>
+<li><p><tt>response</tt>: The response returned by the JSP page. See <a href="bnafv.html#bnafz">Constructing Responses</a>.</p></li></ul>
+</li>
+<li><p>In addition, several implicit objects are available that allow easy access to the following objects:</p>
+<ul><li><p><tt>param</tt>: Maps a request parameter name to a single value</p></li>
+<li><p><tt>paramValues</tt>: Maps a request parameter name to an array of values</p></li>
+<li><p><tt>header</tt>: Maps a request header name to a single value</p></li>
+<li><p><tt>headerValues</tt>: Maps a request header name to an array of values</p></li>
+<li><p><tt>cookie</tt>: Maps a cookie name to a single cookie</p></li>
+<li><p><tt>initParam</tt>: Maps a context initialization parameter name to a single value</p></li></ul>
+</li>
+<li><p>Finally, there are objects that allow access to the various scoped variables described in <a href="bnafo.html#bnafp">Using Scope Objects</a>.</p>
+<ul><li><p><tt>pageScope</tt>: Maps page-scoped variable names to their values</p></li>
+<li><p><tt>requestScope</tt>: Maps request-scoped variable names to their values</p></li>
+<li><p><tt>sessionScope</tt>: Maps session-scoped variable names to their values</p></li>
+<li><p><tt>applicationScope</tt>: Maps application-scoped variable names to their values</p></li></ul>
+</li></ul>
+<p>JSP 2.1 provides two EL resolvers to handle expressions that reference these objects:
+<tt>ImplicitObjectELResolver</tt> and <tt>ScopedAttributeELResolver</tt>.</p><p>A variable that matches one of the implicit objects is evaluated by
+<tt>ImplicitObjectResolver</tt>, which returns the implicit object. This resolver only handles expressions with a
+base of <tt>null</tt>. What this means for the following expression is that the
+<tt>ImplicitObjectResolver</tt> resolves the <tt>sessionScope</tt> implicit object only. Once the implicit object is found,
+the <tt>MapELResolver</tt> instance resolves the <tt>profile</tt> attribute because the <tt>profile</tt> object represents a map.</p><pre>${sessionScope.profile}</pre><p><tt>ScopedAttributeELResolver</tt> evaluates a single object that is stored in scope. Like <tt>ImplicitObjectELResolver</tt>, it also
+only evaluates expressions with a base of <tt>null</tt>. This resolver essentially looks for
+an object in all of the scopes until it finds it, according to
+the behavior of <tt>PageContext.findAttribute(String)</tt>. For example, when evaluating the expression <tt>${product}</tt>, the resolver
+will look for <tt>product</tt> in the page, request, session, and application scopes and
+will return its value. If <tt>product</tt> is not found, <tt>null</tt> is returned.</p><p>When an expression references one of the implicit objects by name, the appropriate
+object is returned instead of the corresponding attribute. For example, <tt>${pageContext}</tt> returns the
+<tt>PageContext</tt> object, even if there is an existing <tt>pageContext</tt> attribute containing some other value.<a name="indexterm-361"></a></p>
+
+<a name="bnaik"></a><h4>Operators</h4>
+<p><a name="indexterm-362"></a>In addition to the <tt>.</tt> and <tt>[]</tt> operators discussed in <a href="#bnahu">Value and Method Expressions</a>, the JSP expression
+language provides the following operators, which can be used in rvalue expressions only:</p>
+<ul><li><p><b>Arithmetic</b>: <tt>+</tt>, <tt>-</tt> (binary), <tt>*</tt>, <tt>/</tt> and <tt>div</tt>, <tt>%</tt> and <tt>mod</tt>, <tt>-</tt> (unary)</p></li>
+<li><p><b>Logical</b>: <tt>and</tt>, <tt>&amp;&amp;</tt>, <tt>or</tt>, <tt>||</tt>, <tt>not</tt>, <tt>!</tt></p></li>
+<li><p><b>Relational</b>: <tt>==</tt>, <tt>eq</tt>, <tt>!=</tt>, <tt>ne</tt>, <tt>&lt;</tt>, <tt>lt</tt>, <tt>></tt>, <tt>gt</tt>, <tt>&lt;=</tt>, <tt>ge</tt>, <tt>>=</tt>, <tt>le</tt>. Comparisons can be made against other values, or against boolean, string, integer, or floating point literals.</p></li>
+<li><p><b>Empty</b>: The <tt>empty</tt> operator is a prefix operation that can be used to determine whether a value is <tt>null</tt> or empty.</p></li>
+<li><p><b>Conditional</b>: <tt>A ? B : C</tt>. Evaluate <tt>B</tt> or <tt>C</tt>, depending on the result of the evaluation of <tt>A</tt>.</p></li></ul>
+<p>The precedence of operators highest to lowest, left to right is as
+follows:</p>
+<ul><li><p><tt>[] .</tt></p></li>
+<li><p><tt>()</tt> (used to change the precedence of operators)</p></li>
+<li><p><tt>-</tt> (unary) <tt>not ! empty</tt></p></li>
+<li><p><tt>* / div % mod</tt></p></li>
+<li><p><tt>+ -</tt> (binary)</p></li>
+<li><p><tt>&lt; > &lt;= >= lt gt le ge</tt></p></li>
+<li><p><tt>== != eq ne</tt></p></li>
+<li><p><tt>&amp;&amp; and</tt></p></li>
+<li><p><tt>|| or</tt></p></li>
+<li><p><tt>? :</tt></p></li></ul>
+
+
+<a name="bnail"></a><h4>Reserved Words</h4>
+<p><a name="indexterm-363"></a>The following words are reserved for the JSP expression language and should not
+be used as identifiers.</p><table><col width="25%"><col width="25%"><col width="25%"><col width="25%"><tr><td align="left" valign="top" scope="row"><p><tt>and</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>or</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>not</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>eq</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>ne</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>lt</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>gt</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>le</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>ge</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>null</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>instanceof</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>empty</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>div</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>mod</tt></p></td>
+</tr>
+</table><p>Note that many of these words are not in the language now,
+but they may be in the future, so you should avoid using them.</p>
+
+<a name="bnaim"></a><h4>Examples of EL Expressions</h4>
+<p><a name="indexterm-364"></a><a href="#bnain">Table&nbsp;5-5</a> contains example EL expressions and the result of evaluating them.</p><a name="bnain"></a><h6>Table&nbsp;5-5 Example Expressions</h6><table><col width="42%"><col width="57%"><tr><th align="left" valign="top" scope="column"><p>EL Expression</p></th>
+<th align="left" valign="top" scope="column"><p>Result</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${1 > (4/2)}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${4.0 >= 3}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${100.0 == 100}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${(10*10) ne 100}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${'a' &lt; 'b'}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${'hip' gt 'hit'}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${4 > 3}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${1.2E4 + 1.4}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>12001.4</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${3 div 4}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>0.75</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${10 mod 4}</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>2</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${!empty param.Add}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>False if
+the request parameter named <tt>Add</tt> is null or an empty string.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${pageContext.request.contextPath}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The context path.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${sessionScope.cart.numberOfItems}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The
+value of the <tt>numberOfItems</tt> property of the session-scoped attribute named <tt>cart</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${param['mycom.productId']}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The value of
+the request parameter named <tt>mycom.productId</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${header["host"]}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The host.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${departments[deptName]}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The value of the entry named <tt>deptName</tt>
+in the <tt>departments</tt> map.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>${requestScope[&rsquo;javax.servlet.forward.servlet_path&rsquo;]}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The value of the request-scoped attribute named <tt>javax.servlet.forward.servlet_path</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>#{customer.lName}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Gets the
+value of the property <tt>lName</tt> from the <tt>customer</tt> bean during an initial
+request. Sets the value of <tt>lName</tt> during a postback.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>#{customer.calcTotal}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The return value of the
+method <tt>calcTotal</tt> of the <tt>customer</tt> bean.</p></td>
+</tr>
+</table>
+
+<a name="bnaio"></a><h4>Functions</h4>
+<p><a name="indexterm-365"></a>The JSP expression language allows you to define a function that can be
+invoked in an expression. Functions are defined using the same mechanisms as custom
+tags (see <a href="bnaiy.html">Using Custom Tags</a> and <a href="bnalj.html">Chapter&nbsp;8, Custom Tags in JSP Pages</a>).</p><p>At first glance, functions seem similar to method expressions, but they are different
+in the following ways:</p>
+<ul><li><p>Functions refer to static methods that return a value. Method expressions refer to non-static, arbitrary public methods on objects.</p></li>
+<li><p>Functions are identified statically at translation time, whereas methods are identified dynamically at runtime.</p></li>
+<li><p>Function parameters and invocations are specified as part of an EL expression. A method expression only identifies a particular method. The invocation of that method is not specified by the EL expression; rather, it is specified in the tag attribute definition of the attribute using the method expression, as described in <a href="#bnaia">Defining a Tag Attribute Type</a>.</p></li></ul>
+
+
+<a name="bnaip"></a><h5>Using Functions</h5>
+<p><a name="indexterm-366"></a>Functions can appear in static text and tag attribute values.</p><p>To use a function in a JSP page, you use a <tt>taglib</tt>
+directive to import the tag library containing the function. Then you preface the
+function invocation with the prefix declared in the directive.</p><p>For example, the date example page <tt>index.jsp</tt> imports the <tt>/functions</tt> library and invokes
+the function <tt>equals</tt> in an expression:</p><pre>&lt;%@ taglib prefix="f" uri="/functions"%>
+...
+        &lt;c:when
+            test="${f:equals(selectedLocaleString,
+                localeString)}" ></pre><p>In this example, the expression referencing the function is using immediate evaluation syntax.
+A page author can also use deferred evaluation syntax to reference a function
+in an expression, assuming that the attribute that is referencing the function can
+accept deferred expressions.</p><p>If an attribute references a function with a deferred expression then the function
+is not invoked immediately; rather, it is invoked whenever the underlying technology using
+the function determines it should be invoked.</p>
+
+<a name="bnaiq"></a><h5>Defining Functions</h5>
+<p><a name="indexterm-367"></a>To define a function, program it as a public static method in a
+public class. The <tt>mypkg.MyLocales</tt> class in the <tt>date</tt> example defines a function that
+tests the equality of two <tt>String</tt>s as follows:</p><pre>package mypkg;
+public class MyLocales {
+
+    ...
+    public static boolean equals( String l1, String l2 ) {
+        return l1.equals(l2);
+    }
+}</pre><p>Then map the function name as used in the EL expression to
+the defining class and function signature in a TLD (see <a href="bnalj.html">Chapter&nbsp;8, Custom Tags in JSP Pages</a>). The following
+<tt>functions.tld</tt> file in the date example maps the <tt>equals</tt> function to the class containing
+the implementation of the function <tt>equals</tt> and the signature of the function:</p><pre>&lt;function>
+    &lt;name>equals&lt;/name>
+    &lt;function-class>mypkg.MyLocales&lt;/function-class>
+    &lt;function-signature>boolean equals( java.lang.String,
+        java.lang.String )&lt;/function-signature>
+&lt;/function></pre><p>No two functions within a tag library can have the same name.<a name="indexterm-368"></a></p>
+         </div>
+         <div class="navigation">
+             <a href="bnahl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnair.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

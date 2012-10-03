@@ -1,0 +1,128 @@
+<!DOCTYPE xwork
+    PUBLIC "-//OpenSymphony Group//XWork 1.0//EN"
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+
+<xwork>
+
+    <include file="webwork-default.xml"/>
+
+    <package name="default" extends="webwork-default">
+
+        <default-interceptor-ref name="defaultStack"/>
+        
+        <action name="login" class="com.redsaga.hibernatesample.step3.action.LoginAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/banner.jsp</param>
+            </result>
+            <result name="loginfail" type="dispatcher">
+                <param name="location">/banner.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="logout" class="com.redsaga.hibernatesample.step3.action.LogoutAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/banner.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="listBoard" class="com.redsaga.hibernatesample.step3.action.ListBoardAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/BoardTree.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="listUser" class="com.redsaga.hibernatesample.step3.action.ListUserAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/UserList.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="listArticle" class="com.redsaga.hibernatesample.step3.action.ListArticleAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/ArticleTree.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="showArticle" class="com.redsaga.hibernatesample.step3.action.ShowArticleAction">
+            <result name="simpleArticle" type="dispatcher">
+                <param name="location">/ShowArticle.jsp</param>
+            </result>
+            <result name="vote" type="dispatcher">
+                <param name="location">/ShowVote.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="createBoard" class="com.redsaga.hibernatesample.step3.action.AddBoardAction">
+	        <result name="input" type="dispatcher">
+		        <param name="location">/newBoard.jsp</param>
+	        </result>
+            <result name="success" type="dispatcher">
+                <param name="location">/BoardSuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+        
+        <action name="createChildBoard" class="com.redsaga.hibernatesample.step3.action.AddChildBoardAction">
+	        <result name="input" type="dispatcher">
+		        <param name="location">/newChildBoard.jsp</param>
+	        </result>
+            <result name="success" type="dispatcher">
+                <param name="location">/BoardSuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="addUser" class="com.redsaga.hibernatesample.step3.action.SaveUserAction">
+	        <result name="input" type="dispatcher">
+		        <param name="location">/newUser.jsp</param>
+	        </result>
+            <result name="success" type="dispatcher">
+                <param name="location">/UserSuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="newArticle" class="com.redsaga.hibernatesample.step3.action.AddNewArticleAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/newArticleSuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="newVote" class="com.redsaga.hibernatesample.step3.action.AddNewVoteAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/newArticleSuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="replyArticle" class="com.redsaga.hibernatesample.step3.action.ReplyAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/replySuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="vote" class="com.redsaga.hibernatesample.step3.action.VoteAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/replySuccess.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+        <action name="voteResult" class="com.redsaga.hibernatesample.step3.action.VoteResultAction">
+            <result name="success" type="dispatcher">
+                <param name="location">/ShowVoteResult.jsp</param>
+            </result>
+	        <interceptor-ref name="defaultStack"/>
+        </action>
+
+    </package>
+
+</xwork>

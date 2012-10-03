@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Maintaining Client State - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level3"><a href="bnafe.html">What Is a Servlet?</a></p>
+<p class="toc level3"><a href="bnaff.html">The Example Servlets</a></p>
+<p class="toc level4"><a href="bnaff.html#bnafh">Troubleshooting Duke's Bookstore Database Problems</a></p>
+<p class="toc level3 tocsp"><a href="bnafi.html">Servlet Life Cycle</a></p>
+<p class="toc level4"><a href="bnafi.html#bnafj">Handling Servlet Life-Cycle Events</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafk">Defining the Listener Class</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafm">Specifying Event Listener Classes</a></p>
+<p class="toc level4 tocsp"><a href="bnafi.html#bnafn">Handling Servlet Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnafo.html">Sharing Information</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafp">Using Scope Objects</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafs">Controlling Concurrent Access to Shared Resources</a></p>
+<p class="toc level4"><a href="bnafo.html#bnaft">Accessing Databases</a></p>
+<p class="toc level3 tocsp"><a href="bnafu.html">Initializing a Servlet</a></p>
+<p class="toc level3"><a href="bnafv.html">Writing Service Methods</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafw">Getting Information from Requests</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafz">Constructing Responses</a></p>
+<p class="toc level3 tocsp"><a href="bnagb.html">Filtering Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagc">Programming Filters</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagd">Programming Customized Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagf">Specifying Filter Mappings</a></p>
+<p class="toc level3 tocsp"><a href="bnagi.html">Invoking Other Web Resources</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagj">Including Other Resources in the Response</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagk">Transferring Control to Another Web Component</a></p>
+<p class="toc level3 tocsp"><a href="bnagl.html">Accessing the Web Context</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Maintaining Client State</a></p>
+<p class="toc level4"><a href="#bnagn">Accessing a Session</a></p>
+<p class="toc level4"><a href="#bnago">Associating Objects with a Session</a></p>
+<p class="toc level5"><a href="#bnagp">Notifying Objects That Are Associated with a Session</a></p>
+<p class="toc level4 tocsp"><a href="#bnagq">Session Management</a></p>
+<p class="toc level4"><a href="#bnagr">Session Tracking</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnags.html">Finalizing a Servlet</a></p>
+<p class="toc level4"><a href="bnags.html#bnagt">Tracking Service Requests</a></p>
+<p class="toc level4"><a href="bnags.html#bnagu">Notifying Methods to Shut Down</a></p>
+<p class="toc level4"><a href="bnags.html#bnagv">Creating Polite Long-Running Methods</a></p>
+<p class="toc level3 tocsp"><a href="bnagw.html">Further Information about Java Servlet Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnagl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnags.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnagm"></a><h3>Maintaining Client State</h3>
+<p><a name="indexterm-292"></a><a name="indexterm-293"></a>Many applications require that a series of requests from a client be associated
+with one another. For example, the Duke&rsquo;s Bookstore application saves the state of
+a user&rsquo;s shopping cart across requests. Web-based applications are responsible for maintaining such
+state, called a <b>session</b>, because HTTP is stateless. To support applications that
+need to maintain state, Java Servlet technology provides an API for managing sessions and
+allows several mechanisms for implementing sessions.</p>
+
+<a name="bnagn"></a><h4>Accessing a Session</h4>
+<p><a name="indexterm-294"></a><a name="indexterm-295"></a>Sessions are represented by an <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSession.html">HttpSession</a> object. You access a session by
+calling the <tt>getSession</tt> method of a request object. This method returns the
+current session associated with this request, or, if the request does not have
+a session, it creates one.</p>
+
+<a name="bnago"></a><h4>Associating Objects with a Session</h4>
+<p><a name="indexterm-296"></a>You can associate object-valued attributes with a session by name. Such attributes are
+accessible by any web component that belongs to the same web context <b>and</b>
+is handling a request that is part of the same session.</p><p>The Duke&rsquo;s Bookstore application stores a customer&rsquo;s shopping cart as a session attribute.
+This allows the shopping cart to be saved between requests and also allows
+cooperating servlets to access the cart. <tt>CatalogServlet</tt> adds items to the cart;
+<tt>ShowCartServlet</tt> displays, deletes items from, and clears the cart; and <tt>CashierServlet</tt> retrieves the total
+cost of the books in the cart.</p><pre>public class CashierServlet extends HttpServlet {
+     public void doGet (HttpServletRequest request,
+        HttpServletResponse response)
+        throws ServletException, IOException {
+
+        // Get the user&rsquo;s session and shopping cart
+        HttpSession session = request.getSession();
+        ShoppingCart cart =
+            (ShoppingCart)session.
+                getAttribute("cart");
+         ...
+        // Determine the total price of the user&rsquo;s books
+        double total = cart.getTotal();</pre>
+
+<a name="bnagp"></a><h5>Notifying Objects That Are Associated with a Session</h5>
+<p><a name="indexterm-297"></a>Recall that your application can notify web context and session listener objects of
+servlet life-cycle events (<a href="bnafi.html#bnafj">Handling Servlet Life-Cycle Events</a>). You can also notify objects of certain events related
+to their association with a session such as the following:</p>
+<ul><li><p>When the object is added to or removed from a session. To receive this notification, your object must implement the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionBindingListener.html">javax.servlet.http.HttpSessionBindingListener</a> interface.</p></li>
+<li><p>When the session to which the object is attached will be passivated or activated. A session will be passivated or activated when it is moved between virtual machines or saved to and restored from persistent storage. To receive this notification, your object must implement the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionActivationListener.html">javax.servlet.http.HttpSessionActivationListener</a> interface.</p></li></ul>
+
+
+<a name="bnagq"></a><h4>Session Management</h4>
+<p>Because there is no way for an HTTP client to signal that
+it no longer needs a session, each session has an associated timeout so
+that its resources can be reclaimed. The timeout period can be accessed by
+using a session&rsquo;s <tt>[get|set]MaxInactiveInterval</tt> methods. </p><p>You can also set the timeout period in the deployment descriptor using
+NetBeans IDE:</p>
+<ol><li><p>Open the <tt>web.xml</tt> file in the <tt>web.xml</tt> editor.</p></li>
+<li><p>Click General at the top of the editor.</p></li>
+<li><p>Enter an integer value in the Session Timeout field. The integer value represents the number of minutes of inactivity that must pass before the session times out.</p></li></ol>
+<p>To ensure that an active session is not timed out, you should
+periodically access the session by using service methods because this resets the session&rsquo;s time-to-live
+counter.</p><p><a name="indexterm-298"></a><a name="indexterm-299"></a>When a particular client interaction is finished, you use the session&rsquo;s <tt>invalidate</tt> method
+to invalidate a session on the server side and remove any session data.
+The bookstore application&rsquo;s <tt>ReceiptServlet</tt> is the last servlet to access a client&rsquo;s
+session, so it has the responsibility to invalidate the session:</p><pre>public class ReceiptServlet extends HttpServlet {
+     public void doPost(HttpServletRequest request,
+                    HttpServletResponse response)
+                     throws ServletException, IOException {
+        // Get the user&rsquo;s session and shopping cart
+        HttpSession session = request.getSession();
+        // Payment received -- invalidate the session
+        session.invalidate();
+        ...</pre>
+
+<a name="bnagr"></a><h4>Session Tracking</h4>
+<p><a name="indexterm-300"></a>A web container can use several methods to associate a session with a
+user, all of which involve passing an identifier between the client and the
+server. The identifier can be maintained on the client as a cookie, or
+the web component can include the identifier in every URL that is
+returned to the client.</p><p>If your application uses session objects, you must ensure that session tracking is
+enabled by having the application rewrite URLs whenever the client turns off cookies.
+You do this by calling the response&rsquo;s <tt>encodeURL(URL)</tt> method on all URLs
+returned by a servlet. This method includes the session ID in the URL
+only if cookies are disabled; otherwise, it returns the URL unchanged.</p><p>The <tt>doGet</tt> method of <tt>ShowCartServlet</tt> encodes the three URLs at the bottom of
+the shopping cart display page as follows:</p><pre>out.println("&lt;p> &amp;nbsp; &lt;p>&lt;strong>&lt;a href=\"" +
+    response.encodeURL(request.getContextPath() +
+        "/bookcatalog") +
+        "\">" + messages.getString("ContinueShopping") +
+        "&lt;/a> &amp;nbsp; &amp;nbsp; &amp;nbsp;" +
+        "&lt;a href=\"" +
+    response.encodeURL(request.getContextPath() +
+        "/bookcashier") +
+        "\">" + messages.getString("Checkout") +
+        "&lt;/a> &amp;nbsp; &amp;nbsp; &amp;nbsp;" +
+        "&lt;a href=\"" +
+     response.encodeURL(request.getContextPath() +
+        "/bookshowcart?Clear=clear") +
+        "\">" + messages.getString("ClearCart") +
+        "&lt;/a>&lt;/strong>");</pre><p>If cookies are turned off, the session is encoded in the Check
+Out URL as follows:</p><pre>http://localhost:8080/bookstore1/cashier;jsessionid=c0o7fszeb1</pre><p>If cookies are turned on, the URL is simply</p><pre>http://localhost:8080/bookstore1/cashier</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnagl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnags.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

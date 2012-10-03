@@ -1,0 +1,1003 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Full Query Language Syntax - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level3"><a href="bnbth.html">Query Language Terminology</a></p>
+<p class="toc level3"><a href="bnbti.html">Simplified Query Language Syntax</a></p>
+<p class="toc level4"><a href="bnbti.html#bnbtj">Select Statements</a></p>
+<p class="toc level4"><a href="bnbti.html#bnbtk">Update and Delete Statements</a></p>
+<p class="toc level3 tocsp"><a href="bnbtl.html">Example Queries</a></p>
+<p class="toc level4"><a href="bnbtl.html#bnbtm">Simple Queries</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtn">A Basic Select Query</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbto">Eliminating Duplicate Values</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtp">Using Named Parameters</a></p>
+<p class="toc level4 tocsp"><a href="bnbtl.html#bnbtq">Queries That Navigate to Related Entities</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtr">A Simple Query with Relationships</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbts">Navigating to Single-Valued Relationship Fields</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtt">Traversing Relationships with an Input Parameter</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtu">Traversing Multiple Relationships</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtv">Navigating According to Related Fields</a></p>
+<p class="toc level4 tocsp"><a href="bnbtl.html#bnbtw">Queries with Other Conditional Expressions</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtx">The <tt>LIKE</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbty">The <tt>IS NULL</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbtz">The <tt>IS EMPTY</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbua">The <tt>BETWEEN</tt> Expression</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbub">Comparison Operators</a></p>
+<p class="toc level4 tocsp"><a href="bnbtl.html#bnbuc">Bulk Updates and Deletes</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbud">Update Queries</a></p>
+<p class="toc level5"><a href="bnbtl.html#bnbue">Delete Queries</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Full Query Language Syntax</a></p>
+<p class="toc level4"><a href="#bnbug">BNF Symbols</a></p>
+<p class="toc level4"><a href="#bnbui">BNF Grammar of the Java Persistence Query Language</a></p>
+<p class="toc level4"><a href="#bnbuj"><tt>FROM</tt> Clause</a></p>
+<p class="toc level5"><a href="#bnbuk">Identifiers</a></p>
+<p class="toc level5"><a href="#bnbum">Identification Variables</a></p>
+<p class="toc level4 tocsp"><a href="#bnbuq">Path Expressions</a></p>
+<p class="toc level5"><a href="#bnbur">Examples of Path Expressions</a></p>
+<p class="toc level5"><a href="#bnbus">Expression Types</a></p>
+<p class="toc level5"><a href="#bnbut">Navigation</a></p>
+<p class="toc level4 tocsp"><a href="#bnbuu"><tt>WHERE</tt> Clause</a></p>
+<p class="toc level5"><a href="#bnbuv">Literals</a></p>
+<p class="toc level5"><a href="#bnbva">Input Parameters</a></p>
+<p class="toc level5"><a href="#bnbvb">Conditional Expressions</a></p>
+<p class="toc level5"><a href="#bnbvc">Operators and Their Precedence</a></p>
+<p class="toc level5"><a href="#bnbve"><tt>BETWEEN</tt> Expressions</a></p>
+<p class="toc level5"><a href="#bnbvf"><tt>IN</tt> Expressions</a></p>
+<p class="toc level5"><a href="#bnbvg"><tt>LIKE</tt> Expressions</a></p>
+<p class="toc level5"><a href="#bnbvi"><tt>NULL</tt> Comparison Expressions</a></p>
+<p class="toc level5"><a href="#bnbvj">Empty Collection Comparison Expressions</a></p>
+<p class="toc level5"><a href="#bnbvk">Collection Member Expressions</a></p>
+<p class="toc level5"><a href="#bnbvl">Subqueries</a></p>
+<p class="toc level5"><a href="#bnbvo">Functional Expressions</a></p>
+<p class="toc level5"><a href="#bnbvr">NULL Values</a></p>
+<p class="toc level5"><a href="#bnbvu">Equality Semantics</a></p>
+<p class="toc level4 tocsp"><a href="#bnbvx"><tt>SELECT</tt> Clause</a></p>
+<p class="toc level5"><a href="#bnbvy">Return Types</a></p>
+<p class="toc level5"><a href="#bnbwb">The <tt>DISTINCT</tt> Keyword</a></p>
+<p class="toc level5"><a href="#bnbwc">Constructor Expressions</a></p>
+<p class="toc level4 tocsp"><a href="#bnbwd"><tt>ORDER BY</tt> Clause</a></p>
+<p class="toc level4"><a href="#bnbwe">The <tt>GROUP BY</tt> Clause</a></p>
+<p class="toc level5"><a href="#bnbwf">The <tt>HAVING</tt> Clause</a></p>
+</div>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbtl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbwi.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbuf"></a><h3>Full Query Language Syntax</h3>
+<a name="indexterm-2291"></a><a name="indexterm-2292"></a><p>This section discusses the query language syntax, as defined in the Java Persistence
+specification. Much of the following material paraphrases or directly quotes the specification.</p>
+
+<a name="bnbug"></a><h4>BNF Symbols</h4>
+<p><a href="#bnbuh">Table&nbsp;27-1</a> describes the BNF symbols used in this chapter.</p><a name="bnbuh"></a><h6>Table&nbsp;27-1 BNF Symbol Summary</h6><table><col width="16%"><col width="83%"><tr><th align="left" valign="top" scope="column"><p>Symbol</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>::=</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The element to the left
+of the symbol is defined by the constructs on the right.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>*</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The preceding construct
+may occur zero or more times.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>{...}</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The constructs within the curly braces are
+grouped together.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>[...]</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The constructs within the square brackets are optional.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>|</tt></p></td>
+<td align="left" valign="top" scope="row"><p>An exclusive <tt>OR</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>BOLDFACE</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A keyword
+(although capitalized in the BNF diagram, keywords are not case-sensitive).</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>White space</p></td>
+<td align="left" valign="top" scope="row"><p>A white space
+character can be a space, a horizontal tab, or a line feed.</p></td>
+</tr>
+</table>
+
+<a name="bnbui"></a><h4>BNF Grammar of the Java Persistence Query Language</h4>
+<p>Here is the entire BNF diagram for the query language:</p><pre>QL_statement ::= select_statement | update_statement | delete_statement
+select_statement ::= select_clause from_clause [where_clause] [groupby_clause] 
+    [having_clause] [orderby_clause]
+update_statement ::= update_clause [where_clause]
+delete_statement ::= delete_clause [where_clause]
+from_clause ::=
+    FROM identification_variable_declaration
+        {, {identification_variable_declaration |
+            collection_member_declaration}}*
+identification_variable_declaration ::=
+        range_variable_declaration { join | fetch_join }*
+range_variable_declaration ::= abstract_schema_name [AS]
+        identification_variable
+join ::= join_spec join_association_path_expression [AS]
+        identification_variable
+fetch_join ::= join_specFETCH join_association_path_expression
+association_path_expression ::=
+        collection_valued_path_expression |
+        single_valued_association_path_expression
+join_spec::= [LEFT [OUTER] |INNER] JOIN
+join_association_path_expression ::=
+        join_collection_valued_path_expression |
+        join_single_valued_association_path_expression
+join_collection_valued_path_expression::=
+    identification_variable.collection_valued_association_field
+join_single_valued_association_path_expression::=
+        identification_variable.single_valued_association_field
+collection_member_declaration ::=
+        IN (collection_valued_path_expression) [AS]
+        identification_variable
+single_valued_path_expression ::=
+        state_field_path_expression |
+        single_valued_association_path_expression
+state_field_path_expression ::=
+    {identification_variable |
+    single_valued_association_path_expression}.state_field
+single_valued_association_path_expression ::=
+    identification_variable.{single_valued_association_field.}*
+    single_valued_association_field
+collection_valued_path_expression ::=
+    identification_variable.{single_valued_association_field.}*
+    collection_valued_association_field
+state_field ::=
+    {embedded_class_state_field.}*simple_state_field
+update_clause ::=UPDATE abstract_schema_name [[AS]
+    identification_variable] SET update_item {, update_item}*
+update_item ::= [identification_variable.]{state_field |
+    single_valued_association_field} = new_value
+new_value ::=
+     simple_arithmetic_expression |
+    string_primary |
+    datetime_primary |
+    boolean_primary |
+    enum_primary simple_entity_expression |
+    NULL
+delete_clause ::= DELETE FROM abstract_schema_name [[AS]
+    identification_variable]
+select_clause ::= SELECT [DISTINCT] select_expression {,
+    select_expression}*
+select_expression ::=
+    single_valued_path_expression |
+    aggregate_expression |
+    identification_variable |
+    OBJECT(identification_variable) |
+    constructor_expression
+constructor_expression ::=
+    NEW constructor_name(constructor_item {,
+    constructor_item}*)
+constructor_item ::= single_valued_path_expression |
+    aggregate_expression
+aggregate_expression ::=
+    {AVG |MAX |MIN |SUM} ([DISTINCT]
+        state_field_path_expression) |
+    COUNT ([DISTINCT] identification_variable |
+        state_field_path_expression |
+        single_valued_association_path_expression)
+where_clause ::= WHERE conditional_expression
+groupby_clause ::= GROUP BY groupby_item {, groupby_item}*
+groupby_item ::= single_valued_path_expression
+having_clause ::= HAVING conditional_expression
+orderby_clause ::= ORDER BY orderby_item {, orderby_item}*
+orderby_item ::= state_field_path_expression [ASC |DESC]
+subquery ::= simple_select_clause subquery_from_clause
+    [where_clause] [groupby_clause] [having_clause]
+subquery_from_clause ::=
+    FROM subselect_identification_variable_declaration
+        {, subselect_identification_variable_declaration}*
+subselect_identification_variable_declaration ::=
+    identification_variable_declaration |
+    association_path_expression [AS] identification_variable |
+    collection_member_declaration
+simple_select_clause ::= SELECT [DISTINCT]
+    simple_select_expression
+simple_select_expression::=
+    single_valued_path_expression |
+    aggregate_expression |
+    identification_variable
+conditional_expression ::= conditional_term |
+    conditional_expression OR conditional_term
+conditional_term ::= conditional_factor | conditional_term AND
+    conditional_factor
+conditional_factor ::= [NOT] conditional_primary
+conditional_primary ::= simple_cond_expression |(
+    conditional_expression)
+simple_cond_expression ::=
+    comparison_expression |
+    between_expression |
+    like_expression |
+    in_expression |
+    null_comparison_expression |
+    empty_collection_comparison_expression |
+    collection_member_expression |
+    exists_expression
+between_expression ::=
+    arithmetic_expression [NOT] BETWEEN
+        arithmetic_expressionAND arithmetic_expression |
+    string_expression [NOT] BETWEEN string_expression AND
+        string_expression |
+    datetime_expression [NOT] BETWEEN
+        datetime_expression AND datetime_expression
+in_expression ::=
+    state_field_path_expression [NOT] IN (in_item {, in_item}*
+    | subquery)
+in_item ::= literal | input_parameter
+like_expression ::=
+    string_expression [NOT] LIKE pattern_value [ESCAPE
+        escape_character]
+null_comparison_expression ::=
+    {single_valued_path_expression | input_parameter} IS [NOT]
+        NULL
+empty_collection_comparison_expression ::=
+    collection_valued_path_expression IS [NOT] EMPTY
+collection_member_expression ::= entity_expression
+    [NOT] MEMBER [OF] collection_valued_path_expression
+exists_expression::= [NOT] EXISTS (subquery)
+all_or_any_expression ::= {ALL |ANY |SOME} (subquery)
+comparison_expression ::=
+    string_expression comparison_operator {string_expression |
+    all_or_any_expression} |
+    boolean_expression {= |&lt;> } {boolean_expression |
+    all_or_any_expression} |
+    enum_expression {= |&lt;> } {enum_expression |
+    all_or_any_expression} |
+    datetime_expression comparison_operator
+        {datetime_expression | all_or_any_expression} |
+    entity_expression {= |&lt;> } {entity_expression |
+    all_or_any_expression} |
+    arithmetic_expression comparison_operator
+        {arithmetic_expression | all_or_any_expression}
+comparison_operator ::= = |> |>= |&lt; |&lt;= |&lt;>
+arithmetic_expression ::= simple_arithmetic_expression |
+    (subquery)
+simple_arithmetic_expression ::=
+    arithmetic_term | simple_arithmetic_expression {+ |- }
+        arithmetic_term
+arithmetic_term ::= arithmetic_factor | arithmetic_term {* |/ }
+    arithmetic_factor
+arithmetic_factor ::= [{+ |- }] arithmetic_primary
+arithmetic_primary ::=
+    state_field_path_expression |
+    numeric_literal |
+    (simple_arithmetic_expression) |
+    input_parameter |
+    functions_returning_numerics |
+    aggregate_expression
+string_expression ::= string_primary | (subquery)
+string_primary ::=
+    state_field_path_expression |
+    string_literal |
+    input_parameter |
+    functions_returning_strings |
+    aggregate_expression
+datetime_expression ::= datetime_primary | (subquery)
+datetime_primary ::=
+    state_field_path_expression |
+    input_parameter |
+    functions_returning_datetime |
+    aggregate_expression
+boolean_expression ::= boolean_primary | (subquery)
+boolean_primary ::=
+    state_field_path_expression |
+    boolean_literal |
+    input_parameter
+ enum_expression ::= enum_primary | (subquery)
+enum_primary ::=
+    state_field_path_expression |
+    enum_literal |
+    input_parameter
+entity_expression ::=
+    single_valued_association_path_expression |
+        simple_entity_expression
+simple_entity_expression ::=
+    identification_variable |
+    input_parameter
+functions_returning_numerics::=
+    LENGTH(string_primary) |
+    LOCATE(string_primary, string_primary[,
+        simple_arithmetic_expression]) |
+    ABS(simple_arithmetic_expression) |
+    SQRT(simple_arithmetic_expression) |
+    MOD(simple_arithmetic_expression,
+        simple_arithmetic_expression) |
+    SIZE(collection_valued_path_expression)
+functions_returning_datetime ::=
+    CURRENT_DATE |
+    CURRENT_TIME |
+    CURRENT_TIMESTAMP
+functions_returning_strings ::=
+    CONCAT(string_primary, string_primary) |
+    SUBSTRING(string_primary,
+        simple_arithmetic_expression,
+        simple_arithmetic_expression)|
+    TRIM([[trim_specification] [trim_character] FROM]
+        string_primary) |
+    LOWER(string_primary) |
+    UPPER(string_primary)
+trim_specification ::= LEADING | TRAILING | BOTH</pre>
+
+<a name="bnbuj"></a><h4><tt>FROM</tt> Clause</h4>
+<a name="indexterm-2293"></a><p><a name="indexterm-2294"></a><a name="indexterm-2295"></a>The <tt>FROM</tt> clause defines the domain of the query by declaring identification variables.</p>
+
+<a name="bnbuk"></a><h5>Identifiers</h5>
+<a name="indexterm-2296"></a><p>An identifier is a sequence of one or more characters. The first
+character must be a valid first character (letter, <tt>$</tt>, <tt>_</tt>) in an identifier of
+the Java programming language (hereafter in this chapter called simply &ldquo;Java&rdquo;). Each subsequent
+character in the sequence must be a valid non-first character (letter, digit, <tt>$</tt>,
+<tt>_</tt>) in a Java identifier. (For details, see the Java SE API
+documentation of the <tt>isJavaIdentifierStart</tt> and <tt>isJavaIdentifierPart</tt> methods of the <tt>Character</tt> class.) The question mark
+(<tt>?</tt>) is a reserved character in the query language and cannot be used
+in an identifier.</p><p>A query language identifier is case-sensitive with two exceptions:</p>
+<ul><li><p>Keywords</p></li>
+<li><p>Identification variables</p></li></ul>
+<p>An identifier cannot be the same as a query language keyword. Here
+is a list of query language keywords:</p><a name="bnbul"></a><table><col width="35%"><col width="30%"><col width="34%"><tr><td align="left" valign="top" scope="row"><p><tt>ALL</tt></p><p><tt>AND</tt></p><p><tt>ANY</tt></p><p><tt>AS</tt></p><p><tt>ASC</tt></p><p><tt>AVG</tt></p><p><tt>BETWEEN</tt></p><p><tt>BY</tt></p><p><tt>COUNT</tt></p><p><tt>CURRENT_DATE</tt></p><p><tt>CURRENT_TIME</tt></p><p><tt>CURRENT_TIMESTAMP</tt></p><p><tt>DELETE</tt></p><p><tt>DESC</tt></p><p><tt>DISTINCT</tt></p><p><tt>EMPTY</tt></p><p><tt>EXISTS</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>FALSE</tt></p><p><tt>FETCH</tt></p><p><tt>FROM</tt></p><p><tt>GROUP</tt></p><p><tt>HAVING</tt></p><p><tt>IN</tt></p><p><tt>INNER</tt></p><p><tt>IS</tt></p><p><tt>JOIN</tt></p><p><tt>LEFT</tt></p><p><tt>LIKE</tt></p><p><tt>MAX</tt></p><p><tt>MEMBER</tt></p><p><tt>MIN</tt></p><p><tt>MOD</tt></p><p><tt>NEW</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>NOT</tt></p><p><tt>NULL</tt></p><p><tt>OBJECT</tt></p><p><tt>OF</tt></p><p><tt>OUTER</tt></p><p><tt>OR</tt></p><p><tt>ORDER</tt></p><p><tt>SELECT</tt></p><p><tt>SOME</tt></p><p><tt>SUM</tt></p><p><tt>TRIM</tt></p><p><tt>TRUE</tt></p><p><tt>UNKNOWN</tt></p><p><tt>UPDATE</tt></p><p><tt>UPPER</tt></p><p><tt>WHERE</tt></p></td>
+</tr>
+</table><p><a name="indexterm-2297"></a><a name="indexterm-2298"></a>It is not recommended that you use a SQL keyword as an identifier,
+because the list of keywords may expand to include other reserved SQL words
+in the future.</p>
+
+<a name="bnbum"></a><h5>Identification Variables</h5>
+<a name="indexterm-2299"></a><p>An <b>identification variable</b> is an identifier declared in the <tt>FROM</tt> clause. Although the <tt>SELECT</tt>
+and <tt>WHERE</tt> clauses can reference identification variables, they cannot declare them. All identification
+variables must be declared in the <tt>FROM</tt> clause.</p><p><a name="indexterm-2300"></a><a name="indexterm-2301"></a>Because an identification variable is an identifier, it has the same naming conventions
+and restrictions as an identifier with the exception that an identification variables is
+case-insensitive. For example, an identification variable cannot be the same as a query
+language keyword. (See the preceding section for more naming rules.) Also, within a
+given persistence unit, an identification variable name must not match the name of
+any entity or abstract schema.</p><p><a name="indexterm-2302"></a>The <tt>FROM</tt> clause can contain multiple declarations, separated by commas. A declaration can
+reference another identification variable that has been previously declared (to the left). In
+the following <tt>FROM</tt> clause, the variable <tt>t</tt> references the previously declared variable <tt>p</tt>:</p><pre>FROM Player p, IN (p.teams) AS t</pre><p><a name="indexterm-2303"></a>Even if an identification variable is not used in the <tt>WHERE</tt> clause, its
+declaration can affect the results of the query. For an example, compare the
+next two queries. The following query returns all players, whether or not they
+belong to a team:</p><pre>SELECT p
+FROM Player p</pre><p>In contrast, because the next query declares the <tt>t</tt> identification variable, it fetches
+all players that belong to a team:</p><pre>SELECT p
+FROM Player p, IN (p.teams) AS t</pre><p>The following query returns the same results as the preceding query, but the
+<tt>WHERE</tt> clause makes it easier to read:</p><pre>SELECT p
+FROM Player p
+WHERE p.teams IS NOT EMPTY</pre><p>An identification variable always designates a reference to a single value whose type
+is that of the expression used in the declaration. There are two kinds
+of declarations: range variable and collection member.</p>
+
+<a name="bnbun"></a><h5>Range Variable Declarations</h5>
+<a name="indexterm-2304"></a><p><a name="indexterm-2305"></a>To declare an identification variable as an abstract schema type, you specify a
+range variable declaration. In other words, an identification variable can range over the
+abstract schema type of an entity. In the following example, an identification variable
+named <tt>p</tt> represents the abstract schema named <tt>Player</tt>:</p><pre>FROM Player p</pre><p>A range variable declaration can include the optional <tt>AS</tt> operator:</p><pre>FROM Player AS p</pre><p><a name="indexterm-2306"></a>In most cases, to obtain objects a query uses path expressions to navigate
+through the relationships. But for those objects that cannot be obtained by navigation,
+you can use a range variable declaration to designate a starting point (or<b> root</b>).</p><p>If the query compares multiple values of the same abstract schema type, then
+the <tt>FROM</tt> clause must declare multiple identification variables for the abstract schema:</p><pre>FROM Player p1, Player p2</pre><p>For a sample of such a query, see <a href="bnbtl.html#bnbub">Comparison Operators</a>.</p>
+
+<a name="bnbuo"></a><h5>Collection Member Declarations</h5>
+<a name="indexterm-2307"></a><a name="indexterm-2308"></a><p><a name="indexterm-2309"></a>In a one-to-many relationship, the multiple side consists of a collection of entities.
+An identification variable can represent a member of this collection. To access a
+collection member, the path expression in the variable&rsquo;s declaration navigates through the relationships in
+the abstract schema. (For more information on path expressions, see the following section.)
+Because a path expression can be based on another path expression, the navigation
+can traverse several relationships. See <a href="bnbtl.html#bnbtu">Traversing Multiple Relationships</a>.</p><p>A collection member declaration must include the <tt>IN</tt> operator, but it can omit
+the optional <tt>AS</tt> operator.</p><p>In the following example, the entity represented by the abstract schema named <tt>Player</tt>
+has a relationship field called <tt>teams</tt>. The identification variable called <tt>t</tt> represents a
+single member of the <tt>teams</tt> collection.</p><pre>FROM Player p, IN (p.tea
+ms) t</pre>
+
+<a name="bnbup"></a><h5>Joins</h5>
+<a name="indexterm-2310"></a><p>The <tt>JOIN</tt> operator is used to traverse over relationships between entities, and is
+functionally similar to the <tt>IN</tt> operator.</p><p>In the following example, the query joins over the relationship between customers and
+orders:</p><pre>SELECT c
+ FROM Customer c JOIN c.orders o
+ WHERE c.status = 1 AND o.totalPrice > 10000</pre><p><a name="indexterm-2311"></a>The <tt>INNER</tt> keyword is optional:</p><pre>SELECT c
+ FROM Customer c INNER JOIN c.orders o
+ WHERE c.status = 1 AND o.totalPrice > 10000</pre><p><a name="indexterm-2312"></a>These examples are equivalent to the following query, which uses the <tt>IN</tt> operator:</p><pre>SELECT c
+ FROM Customer c, IN(c.orders) o
+ WHERE c.status = 1 AND o.totalPrice > 10000</pre><p>You can also join a single-valued relationship.</p><pre>SELECT t
+ FROM Team t JOIN t.league l
+ WHERE l.sport = :sport</pre><p><a name="indexterm-2313"></a><a name="indexterm-2314"></a>A <tt>LEFT JOIN</tt> or <tt>LEFT OUTER JOIN</tt> retrieves a set of entities where matching values in
+the join condition may be absent. The <tt>OUTER</tt> keyword is optional.</p><pre>SELECT c.name, o.totalPrice
+FROM Order o LEFT JOIN o.customer c</pre><p><a name="indexterm-2315"></a>A <tt>FETCH JOIN</tt> is a join operation that returns associated entities as a side-effect
+of running the query. In the following example, the query returns a set
+of departments, and as a side-effect, the associated employees of the departments, even
+though the employees were not explicitly retrieved by the <tt>SELECT</tt> clause.</p><pre>SELECT d
+FROM Department d LEFT JOIN FETCH d.employees
+WHERE d.deptno = 1</pre>
+
+<a name="bnbuq"></a><h4>Path Expressions</h4>
+<a name="indexterm-2316"></a><p><a name="indexterm-2317"></a><a name="indexterm-2318"></a>Path expressions are important constructs in the syntax of the query language, for
+several reasons. First, they define navigation paths through the relationships in the abstract schema.
+These path definitions affect both the scope and the results of a query.
+Second, they can appear in any of the main clauses of a query
+(<tt>SELECT</tt>, <tt>DELETE</tt>, <tt>HAVING</tt>, <tt>UPDATE</tt>, <tt>WHERE</tt>, <tt>FROM</tt>, <tt>GROUP BY</tt>, <tt>ORDER BY</tt>). Finally, although much of
+the query language is a subset of SQL, path expressions are extensions not
+found in SQL.</p>
+
+<a name="bnbur"></a><h5>Examples of Path Expressions</h5>
+<p>Here, the <tt>WHERE</tt> clause contains a <tt>single_valued_path_expression</tt>. The <tt>p</tt> is an identification
+variable, and <tt>salary</tt> is a persistent field of <tt>Player</tt>.</p><pre>SELECT DISTINCT p
+FROM Player p
+ WHERE p.salary BETWEEN :lowerSalary AND :higherSalary</pre><p>Here, the <tt>WHERE</tt> clause also contains a <tt>single_valued_path_expression</tt>. The <tt>t</tt> is an
+identification variable, <tt>league</tt> is a single-valued relationship field, and <tt>sport</tt> is a persistent
+field of <tt>league</tt>.</p><pre>SELECT DISTINCT p
+FROM Player p, IN (p.teams) t
+ WHERE t.league.sport = :sport</pre><p>Here, the <tt>WHERE</tt> clause contains a <tt>collection_valued_path_expression</tt>. The <tt>p</tt> is an identification
+variable, and <tt>teams</tt> designates a collection-valued relationship field.</p><pre>SELECT DISTINCT p
+FROM Player p
+ WHERE p.teams IS EMPTY</pre>
+
+<a name="bnbus"></a><h5>Expression Types</h5>
+<a name="indexterm-2319"></a><p>The type of a path expression is the type of the object
+represented by the ending element, which can be one of the following:</p>
+<ul><li><p>Persistent field</p></li>
+<li><p>Single-valued relationship field</p></li>
+<li><p>Collection-valued relationship field</p></li></ul>
+<p>For example, the type of the expression <tt>p.salary</tt> is <tt>double</tt> because the
+terminating persistent field (<tt>salary</tt>) is a <tt>double</tt>.</p><p>In the expression <tt>p.teams</tt>, the terminating element is a collection-valued relationship field (<tt>teams</tt>).
+This expression&rsquo;s type is a collection of the abstract schema type named <tt>Team</tt>.
+Because <tt>Team</tt> is the abstract schema name for the <tt>Team</tt> entity, this type
+maps to the entity. For more information on the type mapping of abstract
+schemas, see the section <a href="#bnbvy">Return Types</a>.</p>
+
+<a name="bnbut"></a><h5>Navigation</h5>
+<a name="indexterm-2320"></a><p>A path expression enables the query to navigate to related entities. The terminating
+elements of an expression determine whether navigation is allowed. If an expression contains
+a single-valued relationship field, the navigation can continue to an object that is
+related to the field. However, an expression cannot navigate beyond a persistent field
+or a collection-valued relationship field. For example, the expression <tt>p.teams.league.sport</tt> is illegal, because <tt>teams</tt>
+is a collection-valued relationship field. To reach the <tt>sport</tt> field, the <tt>FROM</tt> clause could
+define an identification variable named <tt>t</tt> for the <tt>teams</tt> field:</p><pre>FROM Player AS p, IN (p.teams) t
+ WHERE t.league.sport = &rsquo;soccer&rsquo;</pre>
+
+<a name="bnbuu"></a><h4><tt>WHERE</tt> Clause</h4>
+<a name="indexterm-2321"></a><p><a name="indexterm-2322"></a>The <tt>WHERE</tt> clause specifies a conditional expression that limits the values returned by
+the query. The query returns all corresponding values in the data store for
+which the conditional expression is <tt>TRUE</tt>. Although usually specified, the <tt>WHERE</tt> clause is optional.
+If the <tt>WHERE</tt> clause is omitted, then the query returns all values. The
+high-level syntax for the <tt>WHERE</tt> clause follows:</p><pre>where_clause ::= WHERE conditional_expression</pre>
+
+<a name="bnbuv"></a><h5>Literals</h5>
+<a name="indexterm-2323"></a><p>There are four kinds of literals: string, numeric, Boolean, and enum.</p>
+
+<a name="bnbuw"></a><h5>String Literals</h5>
+<a name="indexterm-2324"></a><p>A string literal is enclosed in single quotes:</p><pre>&rsquo;Duke&rsquo;</pre><p>If a string literal contains a single quote, you indicate the quote by
+using two single quotes:</p><pre>&rsquo;Duke&rsquo;&rsquo;s&rsquo;</pre><p>Like a Java <tt>String</tt>, a string literal in the query language uses the
+Unicode character encoding.</p>
+
+<a name="bnbux"></a><h5>Numeric Literals</h5>
+<a name="indexterm-2325"></a><p>There are two types of numeric literals: exact and approximate.</p><p>An exact numeric literal is a numeric value without a decimal point, such
+as 65,&ndash; 233, and +12. Using the Java integer syntax, exact numeric literals
+support numbers in the range of a Java <tt>long</tt>.</p><p>An approximate numeric literal is a numeric value in scientific notation, such as
+57.,&ndash; 85.7, and +2.1. Using the syntax of the Java floating-point literal, approximate
+numeric literals support numbers in the range of a Java <tt>double</tt>.</p>
+
+<a name="bnbuy"></a><h5>Boolean Literals</h5>
+<a name="indexterm-2326"></a><p>A Boolean literal is either <tt>TRUE</tt> or <tt>FALSE</tt>. These keywords are not case-sensitive.</p>
+
+<a name="bnbuz"></a><h5>Enum Literals</h5>
+<a name="indexterm-2327"></a><p>The Java Persistence Query Language supports the use of enum literals using the
+Java enum literal syntax. The enum class name must be specified as fully
+qualified class name.</p><pre>SELECT e
+ FROM Employee e
+ WHERE e.status = com.xyz.EmployeeStatus.FULL_TIME</pre>
+
+<a name="bnbva"></a><h5>Input Parameters</h5>
+<a name="indexterm-2328"></a><p><a name="indexterm-2329"></a><a name="indexterm-2330"></a>An input parameter can be either a named parameter or a positional parameter.</p><p>A named input parameter is designated by a colon (<tt>:</tt>) followed by a
+string. For example, <tt>:name</tt>.</p><p>A positional input parameter is designated by a question mark (<tt>?</tt>) followed by
+an integer. For example, the first input parameter is <tt>?1</tt>, the second is
+<tt>?2</tt>, and so forth.</p><p>The following rules apply to input parameters:</p>
+<ul><li><p>They can be used only in a <tt>WHERE</tt> or <tt>HAVING</tt> clause.</p></li>
+<li><p>Positional parameters must be numbered, starting with the integer 1.</p></li>
+<li><p>Named parameters and positional parameters may not be mixed in a single query.</p></li>
+<li><p>Named parameters are case-sensitive.</p></li></ul>
+
+
+<a name="bnbvb"></a><h5>Conditional Expressions</h5>
+<a name="indexterm-2331"></a><p><a name="indexterm-2332"></a>A <tt>WHERE</tt> clause consists of a conditional expression, which is evaluated from left
+to right within a precedence level. You can change the order of evaluation
+by using parentheses.</p>
+
+<a name="bnbvc"></a><h5>Operators and Their Precedence</h5>
+<a name="indexterm-2333"></a><a name="indexterm-2334"></a><p><a href="#bnbvd">Table&nbsp;27-2</a> lists the query language operators in order of decreasing precedence.</p><a name="bnbvd"></a><h6>Table&nbsp;27-2 Query Language Order Precedence</h6><table><col width="21%"><col width="78%"><tr><th align="left" valign="top" scope="column"><p>Type</p></th>
+<th align="left" valign="top" scope="column"><p>Precedence Order</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Navigation</p></td>
+<td align="left" valign="top" scope="row"><p><tt>.</tt> (a
+period)</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Arithmetic</p></td>
+<td align="left" valign="top" scope="row"><p><tt>+ &ndash;</tt>  (unary)</p><p><tt>* /</tt> (multiplication and division)</p><p><tt>+ &ndash;</tt> (addition and subtraction)</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Comparison</p></td>
+<td align="left" valign="top" scope="row"><p><tt>=</tt></p><p><tt>></tt></p><p><tt>>=</tt></p><p><tt>&lt;</tt></p><p><tt>&lt;=</tt></p><p><tt>&lt;></tt> (not equal)</p><p><tt>[NOT] BETWEEN</tt></p><p><tt>[NOT] LIKE</tt></p><p><tt>[NOT] IN</tt></p><p><tt>IS [NOT] NULL</tt></p><p><tt>IS [NOT] EMPTY</tt></p><p><tt>[NOT] MEMBER OF</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Logical</p></td>
+<td align="left" valign="top" scope="row"><p><tt>NOT</tt></p><p><tt>AND</tt></p><p><tt>OR</tt></p></td>
+</tr>
+</table>
+
+<a name="bnbve"></a><h5><tt>BETWEEN</tt> Expressions</h5>
+<a name="indexterm-2335"></a><p><a name="indexterm-2336"></a>A <tt>BETWEEN</tt> expression determines whether an arithmetic expression falls within a range of
+values.</p><p>These two expressions are equivalent:</p><pre>p.age BETWEEN 15 AND 19
+ p.age >= 15 AND p.age &lt;= 19</pre><p>The following two expressions are also equivalent:</p><pre>p.age NOT BETWEEN 15 AND 19
+ p.age &lt; 15 OR p.age > 19</pre><p>If an arithmetic expression has a <tt>NULL</tt> value, then the value of the
+<tt>BETWEEN</tt> expression is unknown.</p>
+
+<a name="bnbvf"></a><h5><tt>IN</tt> Expressions</h5>
+<a name="indexterm-2337"></a><p>An <tt>IN</tt> expression determines whether or not a string belongs to a set
+of string literals, or whether a number belongs to a set of number
+values.</p><p>The path expression must have a string or numeric value. If the
+path expression has a <tt>NULL</tt> value, then the value of the <tt>IN</tt> expression
+is unknown.</p><p>In the following example, if the country is <tt>UK</tt> the expression is <tt>TRUE</tt>.
+If the country is <tt>Peru</tt> it is <tt>FALSE</tt>.</p><pre>o.country IN (&rsquo;UK&rsquo;, &rsquo;US&rsquo;, &rsquo;France&rsquo;)</pre><p>You may also use input parameters:</p><pre>o.country IN (&rsquo;UK&rsquo;, &rsquo;US&rsquo;, &rsquo;France&rsquo;, :country)</pre>
+
+<a name="bnbvg"></a><h5><tt>LIKE</tt> Expressions</h5>
+<a name="indexterm-2338"></a><p><a name="indexterm-2339"></a>A <tt>LIKE</tt> expression determines whether a wildcard pattern matches a string.</p><p><a name="indexterm-2340"></a>The path expression must have a string or numeric value. If this value
+is <tt>NULL</tt>, then the value of the <tt>LIKE</tt> expression is unknown. The
+pattern value is a string literal that can contain wildcard characters. The underscore
+(<tt>_</tt>) wildcard character represents any single character. The percent (<tt>%</tt>) wildcard character represents zero
+or more characters. The <tt>ESCAPE</tt> clause specifies an escape character for the wildcard
+characters in the pattern value. <a href="#bnbvh">Table&nbsp;27-3</a> shows some sample <tt>LIKE</tt> expressions.</p><a name="bnbvh"></a><h6>Table&nbsp;27-3 <tt>LIKE</tt> Expression Examples</h6><table><col width="56%"><col width="21%"><col width="22%"><tr><th align="left" valign="top" scope="column"><p>Expression</p></th>
+<th align="left" valign="top" scope="column"><p>TRUE</p></th>
+<th align="left" valign="top" scope="column"><p>FALSE</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>address.phone LIKE &rsquo;12%3&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;123&rsquo;</tt></p><p><tt>&rsquo;12993&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;1234&rsquo;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>asentence.word LIKE &rsquo;l_se&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;lose&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;loose&rsquo;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>aword.underscored LIKE &rsquo;\_%&rsquo; ESCAPE &rsquo;\&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;_foo&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;bar&rsquo;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>address.phone NOT LIKE &rsquo;12%3&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;1234&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&rsquo;123&rsquo;</tt></p><p><tt>&rsquo;12993&rsquo;</tt></p></td>
+</tr>
+</table>
+
+<a name="bnbvi"></a><h5><tt>NULL</tt> Comparison Expressions</h5>
+<a name="indexterm-2341"></a><p>A <tt>NULL</tt> comparison expression tests whether a single-valued path expression or an input
+parameter has a <tt>NULL</tt> value. Usually, the <tt>NULL</tt> comparison expression is used to
+test whether or not a single-valued relationship has been set.</p><pre>SELECT t
+ FROM Team t
+ WHERE t.league IS NULL</pre><p>This query selects all teams where the league relationship is not set. Please
+note, the following query is <b>not</b> equivalent:</p><pre>SELECT t
+ FROM Team t
+ WHERE t.league = NULL</pre><p>The comparison with <tt>NULL</tt> using the equals operator (<tt>=</tt>) always returns an unknown
+value, even if the relationship is not set. The second query will always
+return an empty result.</p>
+
+<a name="bnbvj"></a><h5>Empty Collection Comparison Expressions</h5>
+<p><a name="indexterm-2342"></a>The <tt>IS [NOT] EMPTY</tt> comparison expression tests whether a collection-valued path expression has no elements.
+In other words, it tests whether or not a collection-valued relationship has been
+set.</p><p>If the collection-valued path expression is <tt>NULL</tt>, then the empty collection comparison expression
+has a <tt>NULL</tt> value.</p><p>Here is an example that finds all orders that do not have
+any line items:</p><pre>SELECT o
+FROM Order o
+WHERE o.lineItems IS EMPTY</pre>
+
+<a name="bnbvk"></a><h5>Collection Member Expressions</h5>
+<a name="indexterm-2343"></a><a name="indexterm-2344"></a><a name="indexterm-2345"></a><p>The <tt>[NOT]</tt> <tt>MEMBER [OF]</tt> collection member expression determines whether a value is a member
+of a collection. The value and the collection members must have the same
+type.</p><p>If either the collection-valued or single-valued path expression is unknown, then the collection
+member expression is unknown. If the collection-valued path expression designates an empty collection,
+then the collection member expression is <tt>FALSE</tt>.</p><p>The <tt>OF</tt> keyword is optional.</p><p>The following example tests whether a line item is part of an
+order:</p><pre>SELECT o
+ FROM Order o
+ WHERE :lineItem MEMBER OF o.lineItems</pre>
+
+<a name="bnbvl"></a><h5>Subqueries</h5>
+<a name="indexterm-2346"></a><p>Subqueries may be used in the <tt>WHERE</tt> or <tt>HAVING</tt> clause of a query.
+Subqueries must be surrounded by parentheses.</p><p>The following example find all customers who have placed more than 10 orders:</p><pre>SELECT c
+FROM Customer c
+WHERE (SELECT COUNT(o) FROM c.orders o) > 10</pre>
+
+<a name="bnbvm"></a><h5><tt>EXISTS</tt> Expressions</h5>
+<a name="indexterm-2347"></a><p>The <tt>[NOT] EXISTS</tt> expression is used with a subquery, and is true only if
+the result of the subquery consists of one or more values and is
+false otherwise.</p><p>The following example finds all employees whose spouse is also an employee:</p><pre>SELECT DISTINCT emp
+FROM Employee emp
+WHERE EXISTS (
+    SELECT spouseEmp
+    FROM Employee spouseEmp
+    WHERE spouseEmp = emp.spouse)</pre>
+
+<a name="bnbvn"></a><h5><tt>ALL</tt> and <tt>ANY</tt> Expressions</h5>
+<a name="indexterm-2348"></a><a name="indexterm-2349"></a><p>The <tt>ALL</tt> expression is used with a subquery, and is true if all
+the values returned by the subquery are true, or if the subquery is
+empty.</p><p>The <tt>ANY</tt> expression is used with a subquery, and is true if some
+of the values returned by the subquery are true. An <tt>ANY</tt> expression is
+false if the subquery result is empty, or if all the values
+returned are false. The <tt>SOME</tt> keyword is synonymous with <tt>ANY</tt>.</p><p>The <tt>ALL</tt> and <tt>ANY</tt> expressions are used with the <tt>=</tt>, <tt>&lt;</tt>, <tt>&lt;=</tt>, <tt>></tt>,
+<tt>>=</tt>, <tt>&lt;></tt> comparison operators.</p><p>The following example finds all employees whose salary is higher than the salary
+of the managers in the employee&rsquo;s department:</p><pre>SELECT emp
+FROM Employee emp
+WHERE emp.salary > ALL (
+    SELECT m.salary
+    FROM Manager m
+    WHERE m.department = emp.department)</pre>
+
+<a name="bnbvo"></a><h5>Functional Expressions</h5>
+<a name="indexterm-2350"></a><a name="indexterm-2351"></a><p>The query language includes several string and arithmetic functions which may be used
+in the <tt>WHERE</tt> or <tt>HAVING</tt> clause of a query. The functions are listed
+in the following tables. In <a href="#bnbvp">Table&nbsp;27-4</a>, the <tt>start</tt> and <tt>length</tt> arguments are
+of type <tt>int</tt>. They designate positions in the <tt>String</tt> argument. The first position
+in a string is designated by 1. In <a href="#bnbvq">Table&nbsp;27-5</a>, the <tt>number</tt> argument can be
+either an <tt>int</tt>, a <tt>float</tt>, or a <tt>double</tt>.</p><a name="bnbvp"></a><h6>Table&nbsp;27-4 String Expressions</h6><table><col width="71%"><col width="28%"><tr><th align="left" valign="top" scope="column"><p>Function Syntax</p></th>
+<th align="left" valign="top" scope="column"><p>Return Type</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2352"></a><tt>CONCAT(String, String)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2353"></a><tt>LENGTH(String)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2354"></a><tt>LOCATE(String, String [, start])</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2355"></a><tt>SUBSTRING(String, start, length)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2356"></a><tt>TRIM([[LEADING|TRAILING|BOTH] char) FROM] (String)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2357"></a><tt>LOWER(String)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2358"></a><tt>UPPER(String)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>String</tt></p></td>
+</tr>
+</table><p>The <tt>CONCAT</tt> function concatenates two strings into one string.</p><p>The <tt>LENGTH</tt> function returns the length of a string in characters as an
+integer.</p><p>The <tt>LOCATE</tt> function returns the position of a given string within a string.
+It returns the first position at which the string was found as an
+integer. The first argument is the string to be located. The second argument
+is the string to be searched. The optional third argument is an integer
+that represents the starting string position. By default, <tt>LOCATE</tt> starts at the
+beginning of the string. The starting position of a string is <tt>1</tt>. If
+the string cannot be located, <tt>LOCATE</tt> returns <tt>0</tt>.</p><p>The <tt>SUBSTRING</tt> function returns a string that is a substring of the first
+argument based on the starting position and length.</p><p>The <tt>TRIM</tt> function trims the specified character from the beginning and/or end of
+a string. If no character is specified, <tt>TRIM</tt> removes spaces or blanks
+from the string. If the optional <tt>LEADING</tt> specification is used, <tt>TRIM</tt> removes
+only the leading characters from the string. If the optional <tt>TRAILING</tt> specification is used,
+<tt>TRIM</tt> removes only the trailing characters from the string. The default is <tt>BOTH</tt>,
+which removes the leading and trailing characters from the string.</p><p>The <tt>LOWER</tt> and <tt>UPPER</tt> functions convert a string to lower or upper case,
+respectively.</p><a name="bnbvq"></a><h6>Table&nbsp;27-5 Arithmetic Expressions</h6><a name="indexterm-2359"></a><a name="indexterm-2360"></a><a name="indexterm-2361"></a><a name="indexterm-2362"></a><table><col width="62%"><col width="37%"><tr><th align="left" valign="top" scope="column"><p>Function Syntax</p></th>
+<th align="left" valign="top" scope="column"><p>Return Type</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>ABS(number)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt>, <tt>float</tt>, or <tt>double</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>MOD(int, int)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>SQRT(double)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>double</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>SIZE(Collection)</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+</tr>
+</table><p>The <tt>ABS</tt> function takes a numeric expression and returns a number of the
+same type as the argument.</p><p>The <tt>MOD</tt> function returns the remainder of the first argument divided by the
+second.</p><p>The <tt>SQRT</tt> function returns the square root of a number.</p><p>The <tt>SIZE</tt> function returns an integer of the number of elements in the
+given collection.</p>
+
+<a name="bnbvr"></a><h5>NULL Values</h5>
+<p><a name="indexterm-2363"></a><a name="indexterm-2364"></a>If the target of a reference is not in the persistent store, then
+the target is <tt>NULL</tt>. For conditional expressions containing <tt>NULL</tt>, the query language uses the
+semantics defined by SQL92. Briefly, these semantics are as follows:</p>
+<ul><li><p>If a comparison or arithmetic operation has an unknown value, it yields a <tt>NULL</tt> value.</p></li>
+<li><p>Two <tt>NULL</tt> values are not equal. Comparing two <tt>NULL</tt> values yields an unknown value.</p></li>
+<li><p>The <tt>IS NULL</tt> test converts a <tt>NULL</tt> persistent field or a single-valued relationship field to <tt>TRUE</tt>. The <tt>IS NOT NULL</tt> test converts them to <tt>FALSE</tt>.</p></li>
+<li><p><a name="indexterm-2365"></a>Boolean operators and conditional tests use the three-valued logic defined by <a href="#bnbvs">Table&nbsp;27-6</a> and <a href="#bnbvt">Table&nbsp;27-7</a>. (In these tables, T stands for <tt>TRUE</tt>, F for <tt>FALSE</tt>, and U for unknown.)</p></li></ul>
+<a name="bnbvs"></a><h6>Table&nbsp;27-6 <tt>AND</tt> Operator Logic</h6><table><col width="39%"><col width="20%"><col width="19%"><col width="20%"><tr><th align="left" valign="top" scope="column"><p>AND</p></th>
+<th align="left" valign="top" scope="column"><p>T</p></th>
+<th align="left" valign="top" scope="column"><p>F</p></th>
+<th align="left" valign="top" scope="column"><p>U</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>U</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+</tr>
+</table><a name="bnbvt"></a><h6>Table&nbsp;27-7 <tt>OR</tt> Operator Logic</h6><table><col width="39%"><col width="20%"><col width="19%"><col width="20%"><tr><th align="left" valign="top" scope="column"><p>OR</p></th>
+<th align="left" valign="top" scope="column"><p>T</p></th>
+<th align="left" valign="top" scope="column"><p>F</p></th>
+<th align="left" valign="top" scope="column"><p>U</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>U</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+</tr>
+</table>
+
+<a name="bnbvu"></a><h5>Equality Semantics</h5>
+<p><a name="indexterm-2366"></a><a name="indexterm-2367"></a><a name="indexterm-2368"></a>In the query language, only values of the same type can be compared.
+However, this rule has one exception: Exact and approximate numeric values can be
+compared. In such a comparison, the required type conversion adheres to the rules
+of Java numeric promotion.</p><p>The query language treats compared values as if they were Java types and
+not as if they represented types in the underlying data store. For
+example, if a persistent field could be either an integer or a <tt>NULL</tt>, then
+it must be designated as an <tt>Integer</tt> object and not as an <tt>int</tt>
+primitive. This designation is required because a Java object can be <tt>NULL</tt> but
+a primitive cannot.</p><p><a name="indexterm-2369"></a>Two strings are equal only if they contain the same sequence of characters.
+Trailing blanks are significant; for example, the strings <tt>&rsquo;abc&rsquo;</tt> and <tt>&rsquo;abc &rsquo;</tt> are
+not equal.</p><p><a name="indexterm-2370"></a><a name="indexterm-2371"></a><a name="indexterm-2372"></a><a name="indexterm-2373"></a><a name="indexterm-2374"></a>Two entities of the same abstract schema type are equal only if their
+primary keys have the same value. <a href="#bnbvv">Table&nbsp;27-8</a> shows the operator logic of
+a negation, and <a href="#bnbvw">Table&nbsp;27-9</a> shows the truth values of conditional tests.</p><a name="bnbvv"></a><h6>Table&nbsp;27-8 <tt>NOT</tt> Operator Logic</h6><table><col width="44%"><col width="55%"><tr><th align="left" valign="top" scope="column"><p>NOT Value</p></th>
+<th align="left" valign="top" scope="column"><p>Value</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>U</p></td>
+<td align="left" valign="top" scope="row"><p>U</p></td>
+</tr>
+</table><a name="bnbvw"></a><h6>Table&nbsp;27-9 Conditional Test</h6><table><col width="63%"><col width="12%"><col width="11%"><col width="12%"><tr><th align="left" valign="top" scope="column"><p>Conditional
+Test</p></th>
+<th align="left" valign="top" scope="column"><p>T</p></th>
+<th align="left" valign="top" scope="column"><p>F</p></th>
+<th align="left" valign="top" scope="column"><p>U</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Expression <tt>IS TRUE</tt></p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Expression <tt>IS FALSE</tt></p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Expression is unknown</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>F</p></td>
+<td align="left" valign="top" scope="row"><p>T</p></td>
+</tr>
+</table>
+
+<a name="bnbvx"></a><h4><tt>SELECT</tt> Clause</h4>
+<a name="indexterm-2375"></a><p>The <tt>SELECT</tt> clause defines the types of the objects or values returned by
+the query.</p>
+
+<a name="bnbvy"></a><h5>Return Types</h5>
+<p><a name="indexterm-2376"></a>The return type of the <tt>SELECT</tt> clause is defined by the result types
+of the select expressions contained within it. If multiple expressions are used, the
+result of the query is an <tt>Object[]</tt>, and the elements in the array
+correspond to the order of the expressions in the <tt>SELECT</tt> clause, and in
+type to the result types of each expression.</p><p>A <tt>SELECT</tt> clause cannot specify a collection-valued expression. For example, the <tt>SELECT</tt> clause
+<tt>p.teams</tt> is invalid because <tt>teams</tt> is a collection. However, the clause in the following
+query is valid because the <tt>t</tt> is a single element of the <tt>teams</tt>
+collection:</p><pre>SELECT t
+FROM Player p, IN (p.teams) t</pre><p>The following query is an example of a query with multiple expressions in
+the select clause:</p><pre>SELECT c.name, c.country.name
+ FROM customer c
+ WHERE c.lastname = &rsquo;Coss&rsquo; AND c.firstname = &rsquo;Roxane&rsquo;</pre><p>It returns a list of <tt>Object[]</tt> elements where the first array element is
+a string denoting the customer name and the second array element is a
+string denoting the name of the customer&rsquo;s country.</p>
+
+<a name="bnbvz"></a><h5>Aggregate Functions in the <tt>SELECT</tt> Clause</h5>
+<p>The result of a query may be the result of an aggregate
+function, listed in <a href="#bnbwa">Table&nbsp;27-10</a>.</p><a name="bnbwa"></a><h6>Table&nbsp;27-10 Aggregate Functions in Select Statements</h6><table><col width="20%"><col width="42%"><col width="36%"><tr><th align="left" valign="top" scope="column"><p>Name</p></th>
+<th align="left" valign="top" scope="column"><p>Return Type</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2377"></a><tt>AVG</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Double</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the mean average of the fields.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2378"></a><tt>COUNT</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Long</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Returns the total
+number of results.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2379"></a><tt>MAX</tt></p></td>
+<td align="left" valign="top" scope="row"><p>the type of the field</p></td>
+<td align="left" valign="top" scope="row"><p>Returns the highest value in the
+result set.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2380"></a><tt>MIN</tt></p></td>
+<td align="left" valign="top" scope="row"><p>the type of the field</p></td>
+<td align="left" valign="top" scope="row"><p>Returns the lowest value in the result
+set.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2381"></a><tt>SUM</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Long</tt> (for integral fields)<tt>Double</tt> (for floating point fields)<tt>BigInteger</tt> (for <tt>BigInteger</tt> fields)<tt>BigDecimal</tt> (for <tt>BigDecimal</tt>
+fields)</p></td>
+<td align="left" valign="top" scope="row"><p>Returns the sum of all the values in the result set.</p></td>
+</tr>
+</table><p>For select method queries with an aggregate function (<tt>AVG</tt>, <tt>COUNT</tt>, <tt>MAX</tt>, <tt>MIN</tt>,
+or <tt>SUM</tt>) in the <tt>SELECT</tt> clause, the following rules apply:</p>
+<ul><li><p>For the <tt>AVG</tt>, <tt>MAX</tt>, <tt>MIN</tt>, and <tt>SUM</tt> functions, the functions return <tt>null</tt> if there are no values to which the function can be applied.</p></li>
+<li><p>For the <tt>COUNT</tt> function, if there are no values to which the function can be applied, <tt>COUNT</tt> returns 0.</p></li></ul>
+<p>The following example returns the average order quantity:</p><pre>SELECT AVG(o.quantity)
+ FROM Order o</pre><p>The following example returns the total cost of the items ordered by Roxane
+Coss:</p><pre>SELECT SUM(l.price)
+FROM Order o JOIN o.lineItems l JOIN o.customer c
+WHERE c.lastname = &rsquo;Coss&rsquo; AND c.firstname = &rsquo;Roxane&rsquo;</pre><p>The following example returns the total number of orders:</p><pre>SELECT COUNT(o)
+FROM Order o</pre><p>The following example returns the total number of items in Hal Incandenza&rsquo;s order
+that have prices:</p><pre>SELECT COUNT(l.price)
+FROM Order o JOIN o.lineItems l JOIN o.customer c
+WHERE c.lastname = &rsquo;Incandenza&rsquo; AND c.firstname = &rsquo;Hal&rsquo;</pre>
+
+<a name="bnbwb"></a><h5>The <tt>DISTINCT</tt> Keyword</h5>
+<p>The <tt>DISTINCT</tt> keyword eliminates duplicate return values. If a query returns a <tt>java.util.Collection</tt>, which
+allows duplicates, then you must specify the <tt>DISTINCT</tt> keyword to eliminate duplicates.</p>
+
+<a name="bnbwc"></a><h5>Constructor Expressions</h5>
+<a name="indexterm-2382"></a><p>Constructor expressions allow you to return Java instances that store a query result
+element instead of an <tt>Object[]</tt>.</p><p>The following query creates a <tt>CustomerDetail</tt> instance per <tt>Customer</tt> matching the <tt>WHERE</tt> clause. A
+<tt>CustomerDetail</tt> stores the customer name and customer&rsquo;s country name. So the query returns
+a <tt>List</tt> of <tt>CustomerDetail</tt> instances:</p><pre>SELECT NEW com.xyz.CustomerDetail(c.name, c.country.name)
+ FROM customer c
+WHERE c.lastname = &rsquo;Coss&rsquo; AND c.firstname = &rsquo;Roxane&rsquo;</pre>
+
+<a name="bnbwd"></a><h4><tt>ORDER BY</tt> Clause</h4>
+<a name="indexterm-2383"></a><p>As its name suggests, the <tt>ORDER BY</tt> clause orders the values or objects returned
+by the query.</p><p>If the <tt>ORDER BY</tt> clause contains multiple elements, the left-to-right sequence of the elements
+determines the high-to-low precedence.</p><p><a name="indexterm-2384"></a><a name="indexterm-2385"></a>The <tt>ASC</tt> keyword specifies ascending order (the default), and the <tt>DESC</tt> keyword indicates descending
+order.</p><p>When using the <tt>ORDER BY</tt> clause, the <tt>SELECT</tt> clause must return an orderable set
+of objects or values. You cannot order the values or objects for values
+or objects not returned by the <tt>SELECT</tt> clause. For example, the following query
+is valid because the <tt>ORDER BY</tt> clause uses the objects returned by the <tt>SELECT</tt>
+clause:</p><pre>SELECT o
+FROM Customer c JOIN c.orders o JOIN c.address a
+WHERE a.state = &rsquo;CA&rsquo;
+ORDER BY o.quantity, o.totalcost</pre><p>The following example is <b>not</b> valid because the <tt>ORDER BY</tt> clause uses a
+value not returned by the <tt>SELECT</tt> clause:</p><pre>SELECT p.product_name
+FROM Order o, IN(o.lineItems) l JOIN o.customer c
+WHERE c.lastname = &rsquo;Faehmel&rsquo; AND c.firstname = &rsquo;Robert&rsquo;
+ORDER BY o.quantity</pre>
+
+<a name="bnbwe"></a><h4>The <tt>GROUP BY</tt> Clause</h4>
+<a name="indexterm-2386"></a><p>The <tt>GROUP BY</tt> clause allows you to group values according to a set of
+properties.</p><p>The following query groups the customers by their country and returns the number
+of customers per country:</p><pre>SELECT c.country, COUNT(c)
+ FROM Customer c GROUP BY c.country</pre>
+
+<a name="bnbwf"></a><h5>The <tt>HAVING</tt> Clause</h5>
+<a name="indexterm-2387"></a><p>The <tt>HAVING</tt> clause is used with the <tt>GROUP BY</tt> clause to further restrict
+the returned result of a query.</p><p>The following query groups orders by the status of their customer and returns
+the customer status plus the average <tt>totalPrice</tt> for all orders where the corresponding
+customers has the same status. In addition, it considers only customers with status
+<tt>1</tt>, <tt>2</tt>, or <tt>3</tt>, so orders of other customers are not taken into
+account:</p><pre>SELECT c.status, AVG(o.totalPrice)
+ FROM Order o JOIN o.customer c
+GROUP BY c.status HAVING c.status IN (1, 2, 3)</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbtl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbwi.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

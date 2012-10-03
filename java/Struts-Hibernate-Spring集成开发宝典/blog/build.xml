@@ -1,0 +1,113 @@
+<project name="blog" basedir="." default="all">
+
+	<property environment="env" />
+	<property name="tomcat.home" value="${env.CATALINA_HOME}" />
+
+	<!-- Local system paths -->
+	<property name="servlet-api.jar" value="${tomcat.home}/common/lib/servlet-api.jar" />
+	<property name="jsp-api.jar" value="${tomcat.home}/common/lib/jsp-api.jar" />
+	<property name="distpath.project" value="${tomcat.home}/webapps" />
+
+	<!-- Project settings -->
+	<property name="project.title" value="Hibernate Tutorial " />
+	<property name="project.distname" value="blog" />
+	<property name="project.version" value="1.1" />
+
+	<!-- path define -->
+	<property name="dir.src" value="src" />
+	<property name="dir.webinf" value="WebRoot/WEB-INF" />
+	<property name="dir.classes" value="${dir.webinf}/classes" />
+	<property name="dir.etc" value="etc" />
+	<property name="build.dir" value="dest" />
+
+	<!-- classpath for Struts 1.2 -->
+	<path id="compile.classpath">
+		<pathelement path="${dir.classes}" />
+		<pathelement path="${classpath}" />
+		<pathelement path="${servlet-api.jar}" />
+		<pathelement path="${jsp-api.jar}" />
+		<fileset dir="${dir.webinf}/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Check timestamp on files -->
+	<target name="prepare">
+		<tstamp />
+	</target>
+
+	<!-- Copy any resource or configuration files -->
+	<target name="resources">
+		<copy todir="${dir.classes}" includeEmptyDirs="no">
+			<fileset dir="${dir.src}">
+				<patternset>
+					<include name="**/*.conf" />
+					<include name="**/*.properties" />
+					<include name="**/*.xml" />
+					<exclude name="**/*_zh_CN.properties" />
+				</patternset>
+			</fileset>
+		</copy>
+
+		<copy todir="${dir.webinf}" includeEmptyDirs="no">
+			<fileset dir="${dir.etc}">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+
+		<native2ascii src="${dir.src}" dest="${dir.classes}" includes="**/*_zh_CN.properties" encoding="gb2312" />
+	</target>
+
+	<!-- Normal build of application -->
+	<target name="compile" depends="prepare,resources">
+		<javac srcdir="${dir.src}" destdir="${dir.classes}">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<!-- Remove classes directory for clean build -->
+	<target name="clean" description="Prepare for clean build">
+		<delete dir="${dir.classes}" />
+		<delete dir="${distpath.project}/${project.distname}" />
+		<delete file="${distpath.project}/${project.distname}.war" />
+		<mkdir dir="${dir.classes}" />
+	</target>
+
+	<!-- Build entire project -->
+	<target name="project" depends="clean,prepare,compile" />
+
+	<!-- Create binary distribution -->
+	<target name="dist" description="Create binary distribution">
+
+		<war basedir="WebRoot" warfile="${distpath.project}/${project.distname}.war" webxml="${dir.webinf}/web.xml">
+			<exclude name="${distpath.project}/${project.distname}.war" />
+		</war>
+	</target>
+
+
+	<!-- Build project and create distribution-->
+	<target name="all" depends="project,dist" />
+
+	<!-- =============================================================== -->
+	<!-- The "test" target is used to execute the unit test by junit.    -->
+	<!-- =============================================================== -->
+	<target name="test" description="Run junit test.">
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}/test"/>
+		<mkdir dir="${build.dir}/report"/>
+
+		<junit printsummary="true">
+			<formatter type="xml" />
+			<test name="cn.hxex.blog.test.AllTests" />
+			<classpath refid="compile.classpath" />
+		</junit>
+
+		<junitreport todir="${build.dir}/test">
+			<fileset dir=".">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="noframes" todir="${build.dir}/report" />
+		</junitreport>
+	</target>
+
+</project>

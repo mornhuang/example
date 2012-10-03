@@ -1,0 +1,361 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Coffee Break Server - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level3"><a href="gfqeu.html">Overview of the Coffee Break Application</a></p>
+<p class="toc level3"><a href="bnckp.html">Common Code</a></p>
+<p class="toc level3"><a href="bnckq.html">JAX-WS Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnckq.html#bnckr">Service Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bncks.html">SAAJ Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bncks.html#bnckt">SAAJ Client</a></p>
+<p class="toc level5"><a href="bncks.html#bncku">Sending the Request</a></p>
+<p class="toc level5"><a href="bncks.html#bnckw">Ordering Coffee</a></p>
+<p class="toc level4 tocsp"><a href="bncks.html#bnckz">SAAJ Service</a></p>
+<p class="toc level5"><a href="bncks.html#bncla">Returning the Price List</a></p>
+<p class="toc level5"><a href="bncks.html#bnclb">Returning the Order Confirmation</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Coffee Break Server</a></p>
+<p class="toc level4"><a href="#bncle">JSP Pages</a></p>
+<p class="toc level5"><a href="#bnclf">The <tt>orderForm</tt> Page</a></p>
+<p class="toc level5"><a href="#bnclg">The <tt>checkoutForm</tt> Page</a></p>
+<p class="toc level5"><a href="#bnclh">The <tt>checkoutAck</tt> Page</a></p>
+<p class="toc level4 tocsp"><a href="#bncli">JavaBeans Components</a></p>
+<p class="toc level5"><a href="#bnclj">The <tt>RetailPriceList</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="#bnclk">The <tt>ShoppingCart</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="#bncll">The <tt>OrderConfirmations</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="#bnclm">The <tt>CheckoutFormBean</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="#bncln">The <tt>CoffeeBreakBean</tt> JavaBeans Component</a></p>
+<p class="toc level4 tocsp"><a href="#bnclo">The <tt>RetailPriceListServlet</tt> Servlet</a></p>
+<p class="toc level4"><a href="#bnclp">Resource Configuration</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnclq.html">Building, Packaging, Deploying, and Running the Coffee Break Application</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclr">Setting the Port</a></p>
+<p class="toc level4"><a href="bnclq.html#bncls">Building, Packaging, and Deploying the JAX-WS Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclt">Building, Packaging, and Deploying the SAAJ Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclu">Building, Packaging, and Deploying the Coffee Break Server</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclv">Running the Coffee Break Client</a></p>
+<p class="toc level4"><a href="bnclq.html#bncly">Removing the Coffee Break Application</a></p>
+<p class="toc level2 tocsp"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncks.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnclq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnclc"></a><h3>Coffee Break Server</h3>
+<a name="indexterm-3137"></a><p>The Coffee Break server uses JavaServer Faces technology to build its user interface.
+The JSP pages use JavaServer Faces UI component tags to represent widgets, such
+as text fields and tables. All the JSP pages use preludes and codas
+to achieve a common look and feel among the HTML pages, and
+many of the JSTL custom tags discussed in <a href="bnakc.html">Chapter&nbsp;7, JavaServer Pages Standard Tag Library</a>.</p><p>The Coffee Break server implementation is organized along the Model-View-Controller design pattern. A
+<tt>FacesServlet</tt> instance (included with the JavaServer Faces API) acts as the controller. It
+examines the request URL, creates and initializes model JavaBeans components, and dispatches requests to
+view JSP pages. The JavaBeans components contain the business logic for the application;
+they call the web services and perform computations on the data returned from
+the services. The JSP pages format the data stored in the JavaBeans components.
+The mapping between JavaBeans components and pages is summarized in <a href="#bncld">Table&nbsp;36-1</a>.</p><a name="bncld"></a><h6>Table&nbsp;36-1 Model and View Components</h6><table><col width="38%"><col width="29%"><col width="31%"><tr><th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>JSP Page</p></th>
+<th align="left" valign="top" scope="column"><p>JavaBeans Component</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Update
+order data</p></td>
+<td align="left" valign="top" scope="row"><p><tt>orderForm</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>ShoppingCart</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Update delivery and billing data</p></td>
+<td align="left" valign="top" scope="row"><p><tt>checkoutForm</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CheckoutFormBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Display order confirmation</p></td>
+<td align="left" valign="top" scope="row"><p><tt>checkoutAck</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>OrderConfirmations</tt></p></td>
+</tr>
+</table>
+
+<a name="bncle"></a><h4>JSP Pages</h4>
+<a name="indexterm-3138"></a><p>The JSP pages are as follows:</p>
+<ul><li><p><a href="#bnclf">The <tt>orderForm</tt> Page</a></p></li>
+<li><p><a href="#bnclg">The <tt>checkoutForm</tt> Page</a></p></li>
+<li><p><a href="#bnclh">The <tt>checkoutAck</tt> Page</a></p></li></ul>
+
+
+<a name="bnclf"></a><h5>The <tt>orderForm</tt> Page</h5>
+<p><tt>orderForm</tt> displays the current contents of the shopping cart. The first time the
+page is requested, the quantities of all the coffees are 0 (zero). Each
+time the customer changes the coffee amounts and clicks the Update button, the
+request is posted back to <tt>orderForm</tt>.</p><p>The <tt>CoffeeBreakBean</tt> bean component updates the values in the shopping cart, which are
+then redisplayed by <tt>orderForm</tt>. When the order is complete, the customer proceeds to
+the <tt>checkoutForm</tt> page by clicking the Checkout button.</p><p>The table of coffees displayed on the <tt>orderForm</tt> is rendered using one of
+the JavaServer Faces component tags, <tt>dataTable</tt>. Here is part of the <tt>dataTable</tt> tag
+from <tt>orderForm</tt>:</p><pre>&lt;h:dataTable id="table"
+    columnClasses="list-column-center,list-column-right,
+        list-column-center, list-column-right"
+    headerClass="list-header" rowClasses="list-row"
+    footerClass="list-column-right"
+    styleClass="list-background-grid"
+    value="#{CoffeeBreakBean.cart.items}" var="sci">
+    &lt;f:facet name="header">
+        &lt;h:outputText  value="#{CBMessages.OrderForm}"/>
+    &lt;/f:facet>
+    &lt;h:column>
+        &lt;f:facet name="header">
+            &lt;h:outputText  value="Coffee"/>
+        &lt;/f:facet>
+        &lt;h:outputText id="coffeeName"
+            value="#{sci.item.coffeeName}"/>
+    &lt;/h:column>
+    ...
+&lt;/h:dataTable></pre><p>When this tag is processed, a <tt>UIData</tt> component and a <tt>Table</tt> renderer are
+created on the server side. The <tt>UIData</tt> component supports a data binding
+to a collection of data objects. The <tt>Table</tt> renderer takes care of generating
+the HTML markup. The <tt>UIData</tt> component iterates through the list of coffees, and the
+<tt>Table</tt> renderer renders each row in the table.</p><p>This example is a classic use case for a <tt>UIData</tt> component because the
+number of coffees might not be known to the application developer or the
+page author at the time the application is developed. Also, the <tt>UIData</tt>
+component can dynamically adjust the number of rows in the table to accommodate
+the underlying data.</p><p>For more information on <tt>UIData</tt>, please see <a href="bnarf.html#bnarz">Using Data-Bound Table Components</a>.</p>
+
+<a name="bnclg"></a><h5>The <tt>checkoutForm</tt> Page</h5>
+<p><tt>checkoutForm</tt> is used to collect delivery and billing information from the customer. When
+the Submit button is clicked, an <tt>ActionEvent</tt> is generated. This event is
+first handled by the <tt>submit</tt> method of the <tt>checkoutFormBean</tt>. This method acts as
+a listener for the event because the tag corresponding to the submit button
+references the <tt>submit</tt> method with its <tt>action</tt> attribute:</p><pre>&lt;h:commandButton value="#{CBMessages.Submit}"
+    action="#{checkoutFormBean.submit}"/></pre><p>The <tt>submit</tt> method submits the suborders to each supplier and stores the result
+in the request-scoped <tt>OrderConfirmations</tt> bean.</p><p>The <tt>checkoutForm</tt> page has standard validators on several components and a custom validator
+on the email component. Here is the tag corresponding to the <tt>firstName</tt> component,
+which holds the customer&rsquo;s first name:</p><pre>&lt;h:inputText id="firstName" value="#{checkoutFormBean.firstName}"
+    size="15" maxlength="20" required="true"/></pre><p>With the <tt>required</tt> attribute set to <tt>true</tt>, the JavaServer Faces implementation will check
+whether the user entered something in the First Name field.</p><p>The <tt>email</tt> component has a custom validator registered on it. Here is the
+tag corresponding to the <tt>email</tt> component:</p><pre>&lt;h:inputText id="email" value="#{checkoutFormBean.email}"
+    size="25" maxlength="125" validator="#{checkoutFormBean.validateEmail}"/></pre><p>The <tt>validator</tt> attribute refers to the <tt>validateEmail</tt> method on the <tt>CheckoutFormBean</tt> class.
+This method ensures that the value the user enters in the email field
+contains an @ character.</p><p>If the validation does not succeed, the <tt>checkoutForm</tt> is re-rendered, with error notifications
+in each invalid field. If the validation succeeds, <tt>checkoutFormBean</tt> submits suborders to each
+supplier and stores the result in the request-scoped <tt>OrderConfirmations</tt> JavaBeans component and control is
+passed to the <tt>checkoutAck</tt> page.</p>
+
+<a name="bnclh"></a><h5>The <tt>checkoutAck</tt> Page</h5>
+<p><tt>checkoutAck</tt> simply displays the contents of the <tt>OrderConfirmations</tt> JavaBeans component, which is
+a list of the suborders constituting an order and the ship dates of
+each suborder. This page also uses a <tt>UIData</tt> component. Again, the number of
+coffees the customer ordered is not known before runtime. The <tt>UIData</tt> component dynamically adds
+rows to accommodate the order.</p><p>The <tt>checkoutAck.jsp</tt> page also makes use of a custom converter that converts the
+shipping date into an <tt>XMLGregorianCalendar</tt> type:</p><pre>&lt;h:outputText id="coffeeName"
+    value="#{oc.confirmationBean.shippingDate}">
+    &lt;f:converter converterId="XMLGregorianCalendarConverter" /
+&lt;/h:outputText></pre><p>The custom converter is implemented by <tt>XMLGregorianCalendarConverter.java</tt>. </p>
+
+<a name="bncli"></a><h4>JavaBeans Components</h4>
+<a name="indexterm-3139"></a><p>The JavaBeans components are as follows:</p>
+<ul><li><p><a href="#bnclj">The <tt>RetailPriceList</tt> JavaBeans Component</a></p></li>
+<li><p><a href="#bnclk">The <tt>ShoppingCart</tt> JavaBeans Component</a></p></li>
+<li><p><a href="#bncll">The <tt>OrderConfirmations</tt> JavaBeans Component</a></p></li>
+<li><p><a href="#bnclm">The <tt>CheckoutFormBean</tt> JavaBeans Component</a></p></li>
+<li><p><a href="#bncln">The <tt>CoffeeBreakBean</tt> JavaBeans Component</a></p></li></ul>
+
+
+<a name="bnclj"></a><h5>The <tt>RetailPriceList</tt> JavaBeans Component</h5>
+<a name="indexterm-3140"></a><a name="indexterm-3141"></a><p><tt>RetailPriceList</tt> is a list of retail price items. A retail price item contains
+a coffee name, a wholesale price per pound, a retail price per pound,
+and a supplier. This data is used for two purposes: it contains the
+price list presented to the end user and is used by <tt>CheckoutFormBean</tt>
+when it constructs the suborders dispatched to coffee suppliers.</p><p><tt>RetailPriceList</tt> first calls the <tt>URLHelper.getEndpointURL</tt> method to determine the JAX-WS service endpoint.
+It then queries the JAX-WS service for a coffee price list. Finally it
+queries the SAAJ service for a price list. The two price lists are
+combined and a retail price per pound is determined by adding a markup
+of 35% to the wholesale prices.</p>
+
+<a name="bnclk"></a><h5>The <tt>ShoppingCart</tt> JavaBeans Component</h5>
+<p><tt>ShoppingCart</tt> is a list of shopping cart items. A <tt>ShoppingCartItem</tt> contains a
+retail price item, the number of pounds of that item, and the total
+price for that item.</p>
+
+<a name="bncll"></a><h5>The <tt>OrderConfirmations</tt> JavaBeans Component</h5>
+<p><tt>OrderConfirmations</tt> is a list of order confirmation objects. An <tt>OrderConfirmation</tt> contains order and
+confirmation objects, as discussed in <a href="bnckq.html#bnckr">Service Implementation</a>.</p>
+
+<a name="bnclm"></a><h5>The <tt>CheckoutFormBean</tt> JavaBeans Component</h5>
+<p><tt>CheckoutFormBean</tt> checks the completeness of information entered into <tt>checkoutForm</tt>. If the information is
+incomplete, the bean populates error messages, and redisplays <tt>checkoutForm</tt> with the error messages. If
+the information is complete, order requests are constructed from the shopping cart and
+the information supplied to <tt>checkoutForm</tt>, and these orders are sent to each supplier.
+As each confirmation is received, an order confirmation is created and added to
+<tt>OrderConfirmations</tt>.</p><p>Several of the tags on the <tt>checkoutForm</tt> page have their <tt>required</tt> attributes set
+to <tt>true.</tt> This will cause the implementation to check whether the user enters
+values in these fields. The tag corresponding to the <tt>email</tt> component registers a custom
+validator on the <tt>email</tt> component, as explained in <a href="#bnclg">The <tt>checkoutForm</tt> Page</a>. The code that performs the
+validation is the <tt>validateEmail</tt> method:</p><pre>public void validateEmail(FacesContext context,
+        UIComponent toValidate, Object value) {
+    String message = "";
+    String email = (String) value;
+    if (email.indexOf(&rsquo;@&rsquo;) == -1) {
+        ((UIInput)toValidate).setValid(false);
+        message = CoffeeBreakBean.loadErrorMessage(context,
+            CoffeeBreakBean.CB_RESOURCE_BUNDLE_NAME, "EMailError");
+        context.addMessage(toValidate.getClientId(context),
+            new FacesMessage(message));
+    }
+}</pre>
+
+<a name="bncln"></a><h5>The <tt>CoffeeBreakBean</tt> JavaBeans Component</h5>
+<p><tt>CoffeeBreakBean</tt> acts as the backing bean to the JSP pages. See <a href="bnaqm.html">Backing Beans</a> for
+more information on backing beans. <tt>CoffeeBreakBean</tt> creates the <tt>ShoppingCart</tt> object, which defines the
+model data for the components on the <tt>orderForm</tt> page that hold the
+data about each coffee. <tt>CoffeeBreakBean</tt> also loads the <tt>RetailPriceList</tt> object. In addition, it
+provides the methods that are invoked when the buttons on the <tt>orderForm</tt>
+and <tt>checkoutAck</tt> are clicked. For example, the <tt>checkout</tt> method is invoked when
+the Checkout button is clicked because the tag corresponding to the Checkout button
+refers to the <tt>checkout</tt> method by means of its <tt>action</tt> attribute:</p><pre>&lt;h:commandButton id="checkoutLink" value="#{CBMessages.Checkout}"
+    action="#{CoffeeBreakBean.checkout}" /></pre><p>The <tt>checkout</tt> method returns a <tt>String</tt>, which the JavaServer Faces page navigation system
+matches against a set of navigation rules to determine what page to access
+next. The navigation rules are defined in a separate XML file, described in
+<a href="#bnclp">Resource Configuration</a>.</p>
+
+<a name="bnclo"></a><h4>The <tt>RetailPriceListServlet</tt> Servlet</h4>
+<p><tt>RetailPriceListServlet</tt> responds to requests to reload the price list via the URL <tt>/loadPriceList</tt>.
+It simply creates a new <tt>RetailPriceList</tt> and a new <tt>ShoppingCart</tt>.</p><p>Because this servlet would be used by administrators of the Coffee Break server,
+it is a protected web resource. To load the price list, a
+user must authenticate (using basic authentication), and the authenticated user must be in the
+<tt>admin</tt> role.</p>
+
+<a name="bnclp"></a><h4>Resource Configuration</h4>
+<a name="indexterm-3142"></a><p>A JavaServer Faces application usually includes an XML file that configures resources for
+the application. These resources include JavaBeans components, navigation rules, and others.</p><p>Two of the resources configured for the JavaServer Faces version of the Coffee
+Break server are the <tt>CheckoutForm</tt> bean and navigation rules for the <tt>orderForm</tt> page:</p><pre>&lt;managed-bean>
+    &lt;managed-bean-name>checkoutFormBean&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        com.sun.cb.CheckoutFormBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope>request&lt;/managed-bean-scope>
+        &lt;managed-property>
+            &lt;property-name>firstName&lt;/property-name>
+            &lt;value>Coffee&lt;/value>
+        &lt;/managed-property>
+        &lt;managed-property>
+            &lt;property-name>lastName&lt;/property-name>
+            &lt;value>Lover&lt;/value>
+        &lt;/managed-property>
+        &lt;managed-property>
+            &lt;property-name>email&lt;/property-name>
+            &lt;value>jane@home&lt;/value>
+        &lt;/managed-property>
+        ...
+    &lt;/managed-bean>
+&lt;navigation-rule>
+    &lt;from-view-id>/orderForm.jsp&lt;/from-view-id>
+    &lt;navigation-case>
+         &lt;from-outcome>checkout&lt;/from-outcome>
+        &lt;to-view-id>/checkoutForm.jsp&lt;/to-view-id>
+    &lt;/navigation-case>
+&lt;/navigation-rule></pre><p>As shown in the <tt>managed-bean</tt> element, the <tt>checkoutForm</tt> bean properties are initialized
+with the values for the user, Coffee Lover. In this way, the hyperlink
+tag from <tt>orderForm</tt> is not required to submit these values in the request
+parameters.</p><p>As shown in the navigation-rule element, when the <tt>String</tt>, <tt>checkout</tt>, is returned
+from a method referred to by a component&rsquo;s <tt>action</tt> attribute, the <tt>checkoutForm</tt>
+page displays.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncks.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnclq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

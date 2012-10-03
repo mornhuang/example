@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Development Roles - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level3"><a href="bnaax.html">Java EE Application Model</a></p>
+<p class="toc level3"><a href="bnaay.html">Distributed Multitiered Applications</a></p>
+<p class="toc level4"><a href="bnaay.html#bnaba">Security</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabb">Java EE Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabc">Java EE Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabd">Web Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabe">Applets</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabf">Application Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabg">The JavaBeans<sup>TM</sup> Component Architecture</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabh">Java EE Server Communications</a></p>
+<p class="toc level4 tocsp"><a href="bnaay.html#bnabj">Web Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabk">Business Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabl">Enterprise Information System Tier</a></p>
+<p class="toc level3 tocsp"><a href="bnabo.html">Java EE Containers</a></p>
+<p class="toc level4"><a href="bnabo.html#bnabp">Container Services</a></p>
+<p class="toc level4"><a href="bnabo.html#bnabq">Container Types</a></p>
+<p class="toc level3 tocsp"><a href="bnabs.html">Web Services Support</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabt">XML</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabu">SOAP Transport Protocol</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabv">WSDL Standard Format</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabw">UDDI and ebXML Standard Formats</a></p>
+<p class="toc level3 tocsp"><a href="bnabx.html">Java EE Application Assembly and Deployment</a></p>
+<p class="toc level3"><a href="bnaby.html">Packaging Applications</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Development Roles</a></p>
+<p class="toc level4"><a href="#bnacb">Java EE Product Provider</a></p>
+<p class="toc level4"><a href="#bnacc">Tool Provider</a></p>
+<p class="toc level4"><a href="#bnacd">Application Component Provider</a></p>
+<p class="toc level5"><a href="#bnace">Enterprise Bean Developer</a></p>
+<p class="toc level5"><a href="#bnacf">Web Component Developer</a></p>
+<p class="toc level5"><a href="#bnacg">Application Client Developer</a></p>
+<p class="toc level4 tocsp"><a href="#bnach">Application Assembler</a></p>
+<p class="toc level4"><a href="#bnaci">Application Deployer and Administrator</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnacj.html">Java EE 5 APIs</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacl">Enterprise JavaBeans Technology</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacm">Java Servlet Technology</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacn">JavaServer Pages Technology</a></p>
+<p class="toc level4"><a href="bnacj.html#bnaco">JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacp">JavaServer Faces</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacq">Java Message Service API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacr">Java Transaction API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacs">JavaMail API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnact">JavaBeans Activation Framework</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacu">Java API for XML Processing</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacv">Java API for XML Web Services (JAX-WS)</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacw">Java Architecture for XML Binding (JAXB)</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacx">SOAP with Attachments API for Java</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacy">Java API for XML Registries</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacz">J2EE Connector Architecture</a></p>
+<p class="toc level4"><a href="bnacj.html#bnada">Java Database Connectivity API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnadb">Java Persistence API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnadc">Java Naming and Directory Interface</a></p>
+<p class="toc level4"><a href="bnacj.html#bnadd">Java Authentication and Authorization Service</a></p>
+<p class="toc level4"><a href="bnacj.html#bnade">Simplified Systems Integration</a></p>
+<p class="toc level3 tocsp"><a href="bnadf.html">Sun Java System Application Server Platform Edition 9</a></p>
+<p class="toc level4"><a href="bnadf.html#bnadg">Tools</a></p>
+<p class="toc level2 tocsp"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaby.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnacj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaca"></a><h3>Development Roles</h3>
+<a name="indexterm-57"></a><a name="indexterm-58"></a><p>Reusable modules make it possible to divide the application development and deployment process
+into distinct roles so that different people or companies can perform different parts
+of the process.</p><p><a name="indexterm-59"></a>The first two roles involve purchasing and installing the Java EE product and
+tools. After software is purchased and installed, Java EE components can be developed
+by application component providers, assembled by application assemblers, and deployed by application deployers.
+In a large organization, each of these roles might be executed by different
+individuals or teams. This division of labor works because each of the earlier
+roles outputs a portable file that is the input for a subsequent role.
+For example, in the application component development phase, an enterprise bean software developer
+delivers EJB JAR files. In the application assembly role, another developer combines these EJB
+JAR files into a Java EE application and saves it in an
+EAR file. In the application deployment role, a system administrator at the customer site
+uses the EAR file to install the Java EE application into a
+Java EE server.</p><p>The different roles are not always executed by different people. If you work
+for a small company, for example, or if you are prototyping a
+sample application, you might perform the tasks in every phase.</p>
+
+<a name="bnacb"></a><h4>Java EE Product Provider</h4>
+<p><a name="indexterm-60"></a>The Java EE product provider is the company that designs and makes available
+for purchase the Java EE platform APIs, and other features defined in the
+Java EE specification. Product providers are typically application server vendors who implement the
+Java EE platform according to the Java EE 5 Platform specification.</p>
+
+<a name="bnacc"></a><h4>Tool Provider</h4>
+<p><a name="indexterm-61"></a>The tool provider is the company or person who creates development, assembly, and
+packaging tools used by component providers, assemblers, and deployers.</p>
+
+<a name="bnacd"></a><h4>Application Component Provider</h4>
+<p>The application component provider is the company or person who creates web components,
+enterprise beans, applets, or application clients for use in Java EE applications.</p>
+
+<a name="bnace"></a><h5>Enterprise Bean Developer</h5>
+<p><a name="indexterm-62"></a>An enterprise bean developer performs the following tasks to deliver an EJB JAR
+file that contains one or more enterprise beans:</p>
+<ul><li><p>Writes and compiles the source code</p></li>
+<li><p>Specifies the deployment descriptor</p></li>
+<li><p>Packages the <tt>.class</tt> files and deployment descriptor into the EJB JAR file</p></li></ul>
+
+
+<a name="bnacf"></a><h5>Web Component Developer</h5>
+<p><a name="indexterm-63"></a>A web component developer performs the following tasks to deliver a WAR file
+containing one or more web components:</p>
+<ul><li><p>Writes and compiles servlet source code</p></li>
+<li><p>Writes JSP, JavaServer Faces, and HTML files</p></li>
+<li><p>Specifies the deployment descriptor</p></li>
+<li><p>Packages the <tt>.class</tt>, <tt>.jsp</tt>, and<tt>.html</tt> files and deployment descriptor into the WAR file</p></li></ul>
+
+
+<a name="bnacg"></a><h5>Application Client Developer</h5>
+<p><a name="indexterm-64"></a>An application client developer performs the following tasks to deliver a JAR file
+containing the application client:</p>
+<ul><li><p>Writes and compiles the source code</p></li>
+<li><p>Specifies the deployment descriptor for the client</p></li>
+<li><p>Packages the <tt>.class</tt> files and deployment descriptor into the JAR file</p></li></ul>
+
+
+<a name="bnach"></a><h4>Application Assembler</h4>
+<p><a name="indexterm-65"></a>The application assembler is the company or person who receives application modules from
+component providers and assembles them into a Java EE application EAR file. The
+assembler or deployer can edit the deployment descriptor directly or can use tools
+that correctly add XML tags according to interactive selections. </p><p>A software developer performs the following tasks to deliver an EAR file containing
+the Java EE application:</p>
+<ul><li><p>Assembles EJB JAR and WAR files created in the previous phases into a Java EE application (EAR) file</p></li>
+<li><p>Specifies the deployment descriptor for the Java EE application</p></li>
+<li><p>Verifies that the contents of the EAR file are well formed and comply with the Java EE specification</p></li></ul>
+
+
+<a name="bnaci"></a><h4>Application Deployer and Administrator</h4>
+<p><a name="indexterm-66"></a>The application deployer and administrator is the company or person who configures and
+deploys the Java EE application, administers the computing and networking infrastructure where Java EE
+applications run, and oversees the runtime environment. Duties include such things as setting
+transaction controls and security attributes and specifying connections to databases.</p><p><a name="indexterm-67"></a>During configuration, the deployer follows instructions supplied by the application component provider to resolve
+external dependencies, specify security settings, and assign transaction attributes. During installation, the deployer
+moves the application components to the server and generates the container-specific classes and
+interfaces.</p><p>A deployer or system administrator performs the following tasks to install and configure
+a Java EE application:</p>
+<ul><li><p>Adds the Java EE application (EAR) file created in the preceding phase to the Java EE server</p></li>
+<li><p>Configures the Java EE application for the operational environment by modifying the deployment descriptor of the Java EE application</p></li>
+<li><p>Verifies that the contents of the EAR file are well formed and comply with the Java EE specification</p></li>
+<li><p>Deploys (installs) the Java EE application EAR file into the Java EE server</p></li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bnaby.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnacj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

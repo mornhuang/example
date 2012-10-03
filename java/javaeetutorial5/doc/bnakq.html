@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>XML Tag Library - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level3"><a href="bnakd.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnake.html">Using JSTL</a></p>
+<p class="toc level4"><a href="bnake.html#bnakg">Tag Collaboration</a></p>
+<p class="toc level3 tocsp"><a href="bnakh.html">Core Tag Library</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakj">Variable Support Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakk">Flow Control Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakl">Conditional Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakm">Iterator Tags</a></p>
+<p class="toc level4 tocsp"><a href="bnakh.html#bnakn">URL Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnako">Miscellaneous Tags</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">XML Tag Library</a></p>
+<p class="toc level4"><a href="#bnakt">Core Tags</a></p>
+<p class="toc level4"><a href="#bnaku">Flow Control Tags</a></p>
+<p class="toc level4"><a href="#bnakv">Transformation Tags</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnakw.html">Internationalization Tag Library</a></p>
+<p class="toc level4"><a href="bnakw.html#bnaky">Setting the Locale</a></p>
+<p class="toc level4"><a href="bnakw.html#bnakz">Messaging Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnala">The <tt>setBundle</tt> and <tt>bundle</tt> Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnalb">The <tt>message</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnakw.html#bnalc">Formatting Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnald.html">SQL Tag Library</a></p>
+<p class="toc level4"><a href="bnald.html#bnalf"><tt>query</tt> Tag Result Interface</a></p>
+<p class="toc level3 tocsp"><a href="bnalg.html">JSTL Functions</a></p>
+<p class="toc level3"><a href="bnali.html">Further Information about JSTL</a></p>
+<p class="toc level2 tocsp"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnakh.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnakw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnakq"></a><h3>XML Tag Library</h3>
+<p><a name="indexterm-470"></a>The JSTL XML tag set is listed in <a href="#bnakr">Table&nbsp;7-4</a>.</p><a name="bnakr"></a><h6>Table&nbsp;7-4 XML Tags</h6><table><col width="12%"><col width="37%"><col width="33%"><col width="16%"><tr><th align="left" valign="top" scope="column"><p>Area</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>Tags</p></th>
+<th align="left" valign="top" scope="column"><p>Prefix</p></th>
+</tr>
+<tr><td rowspan="3" align="left" valign="top" scope="row"><p>XML</p></td>
+<td align="left" valign="top" scope="row"><p>Core</p></td>
+<td align="left" valign="top" scope="row"><pre>out
+parse
+set</pre></td>
+<td rowspan="3" align="left" valign="top" scope="row"><p><tt>x</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Flow control</p></td>
+<td align="left" valign="top" scope="row"><pre>choose
+    when
+    otherwise
+forEach
+if</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Transformation</p></td>
+<td align="left" valign="top" scope="row"><pre>transform
+    param</pre></td>
+</tr>
+</table><p>A key aspect of dealing with XML documents is to be able
+to easily access their content. XPath (see <a href="http://java.sun.com/webservices/jaxp/">http://java.sun.com/webservices/jaxp/</a>), a W3C recommendation since 1999,
+provides an easy notation for specifying and selecting parts of an XML document.
+In the JSTL XML tags, XPath expressions specified using the <tt>select</tt> attribute are used
+to select portions of XML data streams. Note that XPath is used
+as a <b>local</b> expression language only for the <tt>select</tt> attribute. This means that values
+specified for <tt>select</tt> attributes are evaluated using the XPath expression language but that
+values for all other attributes are evaluated using the rules associated with the
+JSP 2.0 expression language.</p><p>In addition to the standard XPath syntax, the JSTL XPath engine supports the
+following scopes to access web application data within an XPath expression:</p>
+<ul><li><p><tt>$foo</tt></p></li>
+<li><p><tt>$param:</tt></p></li>
+<li><p><tt>$header:</tt></p></li>
+<li><p><tt>$cookie:</tt></p></li>
+<li><p><tt>$initParam:</tt></p></li>
+<li><p><tt>$pageScope:</tt></p></li>
+<li><p><tt>$requestScope:</tt></p></li>
+<li><p><tt>$sessionScope:</tt></p></li>
+<li><p><tt>$applicationScope:</tt></p></li></ul>
+<p>These scopes are defined in exactly the same way as their counterparts in
+the JSP expression language discussed in <a href="bnahq.html#bnaij">Implicit Objects</a>. <a href="#bnaks">Table&nbsp;7-5</a> shows some examples of using
+the scopes.</p><a name="bnaks"></a><h6>Table&nbsp;7-5 Example XPath Expressions</h6><table><col width="41%"><col width="58%"><tr><th align="left" valign="top" scope="column"><p>XPath Expression</p></th>
+<th align="left" valign="top" scope="column"><p>Result</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>$sessionScope:profile</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The session-scoped EL variable named <tt>profile</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>$initParam:mycom.productId</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The <tt>String</tt> value of the
+<tt>mycom.productId</tt> context parameter</p></td>
+</tr>
+</table><p><a name="indexterm-471"></a>The XML tags are illustrated in another version (<tt>bookstore5</tt>) of the Duke&rsquo;s Bookstore
+application. This version replaces the database with an XML representation of the bookstore database,
+which is retrieved from another web application. The directions for building and deploying
+this version of the application are in <a href="bnajp.html">The Example JSP Document</a>.</p>
+
+<a name="bnakt"></a><h4>Core Tags</h4>
+<p><a name="indexterm-472"></a>The core XML tags provide basic functionality to easily parse and access XML
+data.</p><p><a name="indexterm-473"></a>The <tt>parse</tt> tag parses an XML document and saves the resulting object in
+the EL variable specified by attribute <tt>var</tt>. In <tt>bookstore5</tt>, the XML document is parsed
+and saved to a context attribute in <i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore5/web/books/parsebooks.jsp</tt>, which is included by all
+JSP pages that need access to the document:</p><pre>&lt;c:if test="${applicationScope:booklist == null}" >
+     &lt;c:import url="${initParam.booksURL}" var="xml" />
+    &lt;x:parse doc="${xml}" var="booklist" scope="application" />
+&lt;/c:if></pre><p><a name="indexterm-474"></a><a name="indexterm-475"></a>The <tt>set</tt> and <tt>out</tt> tags parallel the behavior described in <a href="bnakh.html#bnakj">Variable Support Tags</a> and <a href="bnakh.html#bnako">Miscellaneous Tags</a>
+for the XPath local expression language. The <tt>set</tt> tag evaluates an XPath expression
+and sets the result into a JSP EL variable specified by attribute <tt>var</tt>. The
+<tt>out</tt> tag evaluates an XPath expression on the current context node and outputs
+the result of the evaluation to the current <tt>JspWriter</tt> object.</p><p>The JSP page <i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookdetails.jsp</tt> selects a book element whose <tt>id</tt> attribute matches the
+request parameter <tt>bookId</tt> and sets the <tt>abook</tt> attribute. The <tt>out</tt> tag then selects
+the book&rsquo;s <tt>title</tt> element and outputs the result.</p><pre>&lt;x:set var="abook"
+    select="$applicationScope.booklist/
+        books/book[@id=$param:bookId]" />
+    &lt;h2>&lt;x:out select="$abook/title"/>&lt;/h2></pre><p>As you have just seen, <tt>x:set</tt> stores an internal XML representation of a
+<b>node</b> retrieved using an XPath expression; it doesn&rsquo;t convert the selected node into
+a <tt>String</tt> and store it. Thus, <tt>x:set</tt> is primarily useful for storing parts of
+documents for later retrieval.</p><p>If you want to store a <tt>String</tt>, you must use <tt>x:out</tt> within
+<tt>c:set</tt>. The <tt>x:out</tt> tag converts the node to a <tt>String</tt>, and <tt>c:set</tt> then stores
+the <tt>String</tt> as an EL variable. For example, <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookdetails.jsp</tt> stores an EL
+variable containing a book price, which is later provided as the value of
+a <tt>fmt</tt> tag, as follows:</p><pre>&lt;c:set var="price">
+    &lt;x:out select="$abook/price"/>
+&lt;/c:set>
+&lt;h4>&lt;fmt:message key="ItemPrice"/>:
+     &lt;fmt:formatNumber value="${price}" type="currency"/></pre><p>The other option, which is more direct but requires that the user
+have more knowledge of XPath, is to coerce the node to a <tt>String</tt>
+manually by using XPath&rsquo;s <tt>string</tt> function.</p><pre>&lt;x:set var="price" select="string($abook/price)"/></pre>
+
+<a name="bnaku"></a><h4>Flow Control Tags</h4>
+<p><a name="indexterm-476"></a>The XML flow control tags parallel the behavior described in <a href="bnakh.html#bnakk">Flow Control Tags</a> for XML data
+streams.</p><p><a name="indexterm-477"></a>The JSP page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt> uses the <tt>forEach</tt> tag to display all the
+books contained in <tt>booklist</tt> as follows:</p><pre>&lt;x:forEach var="book"
+     select="$applicationScope:booklist/books/*">
+    &lt;tr>
+        &lt;c:set var="bookId">
+            &lt;x:out select="$book/@id"/>
+        &lt;/c:set>=
+        &lt;td bgcolor="#ffffaa">
+             &lt;c:url var="url"
+            value="/bookdetails" >
+                &lt;c:param name="bookId" value="${bookId}" />
+                &lt;c:param name="Clear" value="0" />
+            &lt;/c:url>
+            &lt;a href="${url}">
+            &lt;strong>&lt;x:out select="$book/title"/>&amp;nbsp;
+            &lt;/strong>&lt;/a>&lt;/td>
+         &lt;td bgcolor="#ffffaa" rowspan=2>
+             &lt;c:set var="price">
+                &lt;x:out select="$book/price"/>
+            &lt;/c:set>
+            &lt;fmt:formatNumber value="${price}" type="currency"/>
+             &amp;nbsp;
+        &lt;/td>
+         &lt;td bgcolor="#ffffaa" rowspan=2>
+         &lt;c:url var="url" value="/catalog" >
+            &lt;c:param name="Add" value="${bookId}" />
+        &lt;/c:url>
+         &lt;p>&lt;strong>&lt;a href="${url}">&amp;nbsp;
+            &lt;fmt:message key="CartAdd"/>&amp;nbsp;&lt;/a>
+        &lt;/td>
+    &lt;/tr>
+     &lt;tr>
+         &lt;td bgcolor="#ffffff">
+         &amp;nbsp;&amp;nbsp;&lt;fmt:message key="By"/> &lt;em>
+            &lt;x:out select="$book/firstname"/>&amp;nbsp;
+            &lt;x:out select="$book/surname"/>&lt;/em>&lt;/td>&lt;/tr>
+&lt;/x:forEach></pre>
+
+<a name="bnakv"></a><h4>Transformation Tags</h4>
+<p><a name="indexterm-478"></a><a name="indexterm-479"></a>The <tt>transform</tt> tag applies a transformation, specified by an XSLT stylesheet set by
+the attribute <tt>xslt</tt>, to an XML document, specified by the attribute <tt>doc</tt>. If the
+<tt>doc</tt> attribute is not specified, the input XML document is read from the
+tag&rsquo;s body content.</p><p><a name="indexterm-480"></a>The <tt>param</tt> subtag can be used along with <tt>transform</tt> to set transformation parameters. The
+attributes <tt>name</tt> and <tt>value</tt> are used to specify the parameter. The <tt>value</tt> attribute
+is optional. If it is not specified, the value is retrieved from the
+tag&rsquo;s body.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnakh.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnakw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

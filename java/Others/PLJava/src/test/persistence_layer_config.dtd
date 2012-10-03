@@ -1,0 +1,147 @@
+<!--
+The map element is the roof of the Persistence Layer config file.
+-->
+<!ELEMENT map (database*, class*, association*)>
+
+<!--
+The database element contains a database declaration.
+-->
+<!ELEMENT database (database-name, database-class, parameter*, id-generator*)>
+
+<!--
+The database-name element contains the database name within the Persistence Layer.
+-->
+<!ELEMENT database-name (#PCDATA)>
+
+<!--
+The database-class element contains the fully qualified name of a class for a
+database.
+-->
+<!ELEMENT database-class (#PCDATA)>
+
+<!--
+The id-generator element contains declaration of an ID generator for a database.
+-->
+<!ELEMENT id-generator (id-generator-name, id-generator-class, single-instance?, parameter*)>
+
+<!--
+The id-generator-name element contains the name of an ID generator within the
+Persistence Layer.
+-->
+<!ELEMENT id-generator-name (#PCDATA)>
+
+<!--
+The id-generator-class element contains the fully qualified name of a class for
+a ID generator.
+-->
+<!ELEMENT id-generator-class (#PCDATA)>
+
+<!--
+The single-instance element shows whether ID generator class can has multiple
+instances or not.
+-->
+<!ELEMENT single-instance (#PCDATA)>
+
+<!--
+The class element contains declaration of a class.
+-->
+<!ELEMENT class (class-name, table-name, database-name, attribute+)>
+
+<!--
+The class-name element contains fully qualified name of a class.
+-->
+<!ELEMENT class-name (#PCDATA)>
+
+<!--
+The table-name element contains name of the table the class is mapped to.
+-->
+<!ELEMENT table-name (#PCDATA)>
+
+<!--
+The attribute element contains declaration of a class attribute.
+-->
+<!ELEMENT attribute (attribute-name, column-name?, key?, reference?, timestamp?, attribute-id-generator?)>
+
+<!--
+The attribute-name element contains name of an attribute.
+-->
+<!ELEMENT attribute-name (#PCDATA)>
+
+<!--
+The column-name element contains the name of the table column for an attribute.
+-->
+<!ELEMENT column-name (#PCDATA)>
+
+<!--
+The key element contains information whether attribute is a primary or
+a foreign key attribute.
+-->
+<!ELEMENT key (#PCDATA)>
+
+<!--
+The reference attribute contains the name of the superclass attribute this
+attribute is referenced to.
+-->
+<!ELEMENT reference (#PCDATA)>
+
+<!--
+The timestamp element shows if the attribute is used for optimistic locking
+support.
+-->
+<!ELEMENT timestamp (#PCDATA)>
+
+<!--
+The attribute-id-generator element contains name and parameters for the
+ID generator of the attribute.
+-->
+<!ELEMENT attribute-id-generator (id-generator-name, parameter*)>
+
+<!--
+The association element contains declaration of an association.
+-->
+<!ELEMENT association (from-class, to-class, cardinality?, target,
+	retrieve-automatic?, save-automatic?, delete-automatic?, inverse?,
+	entry+, order-attribute*)>
+
+<!ELEMENT from-class (#PCDATA)>
+
+<!ELEMENT to-class (#PCDATA)>
+
+<!ELEMENT cardinality (#PCDATA)>
+
+<!ELEMENT target (#PCDATA)>
+
+<!ELEMENT retrieve-automatic (#PCDATA)>
+
+<!ELEMENT save-automatic (#PCDATA)>
+
+<!ELEMENT delete-automatic (#PCDATA)>
+
+<!ELEMENT inverse (#PCDATA)>
+
+<!ELEMENT entry (from-attribute, to-attribute)>
+
+<!ELEMENT from-attribute (#PCDATA)>
+
+<!ELEMENT to-attribute (#PCDATA)>
+
+<!ELEMENT order-attribute (name, direction)>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT direction (#PCDATA)>
+
+<!--
+The parameter element contains declaratoin of a parameter.
+-->
+<!ELEMENT parameter (parameter-name, parameter-value)>
+
+<!--
+The parameter-name element contains a name of the parameter.
+-->
+<!ELEMENT parameter-name (#PCDATA)>
+
+<!--
+The parameter-name element contains a value of the parameter.
+-->
+<!ELEMENT parameter-value (#PCDATA)>

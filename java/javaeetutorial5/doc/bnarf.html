@@ -1,0 +1,948 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Adding UI Components to a Page Using the HTML Component Tags - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level3"><a href="bnara.html">The Example JavaServer Faces Application</a></p>
+<p class="toc level3"><a href="bnarb.html">Setting Up a Page</a></p>
+<p class="toc level3"><a href="bnarc.html">Using the Core Tags</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Adding UI Components to a Page Using the HTML Component Tags</a></p>
+<p class="toc level4"><a href="#bnarg">UI Component Tag Attributes</a></p>
+<p class="toc level5"><a href="#bnarh">The <tt>id</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bnari">The <tt>immediate</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bnarj">The <tt>rendered</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bnark">The <tt>style</tt> and <tt>styleClass</tt> Attributes</a></p>
+<p class="toc level5"><a href="#bnarl">The <tt>value</tt> and <tt>binding</tt> Attributes</a></p>
+<p class="toc level4 tocsp"><a href="#bnarm">Adding a Form Component</a></p>
+<p class="toc level4"><a href="#bnaro">Using Text Components</a></p>
+<p class="toc level5"><a href="#bnarr">Rendering a Text Field with the <tt>inputText</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnars">Rendering a Label with the <tt>outputLabel</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnart">Rendering a Hyperlink with the <tt>outputLink</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnaru">Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnarv">Rendering a Password Field with the <tt>inputSecret</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="#bnarw">Using Command Components for Performing Actions and Navigation</a></p>
+<p class="toc level5"><a href="#bnarx">Rendering a Button with the <tt>commandButton</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnary">Rendering a Hyperlink with the <tt>commandLink</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="#bnarz">Using Data-Bound Table Components</a></p>
+<p class="toc level4"><a href="#bnasb">Adding Graphics and Images with the <tt>graphicImage</tt> Tag</a></p>
+<p class="toc level4"><a href="#bnasc">Laying Out Components with the <tt>UIPanel</tt> Component</a></p>
+<p class="toc level4"><a href="#bnase">Rendering Components for Selecting One Value</a></p>
+<p class="toc level5"><a href="#bnasg">Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="#bnasi">Rendering Components for Selecting Multiple Values</a></p>
+<p class="toc level4"><a href="#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a></p>
+<p class="toc level5"><a href="#bnasm">Using the <tt>selectItems</tt> Tag</a></p>
+<p class="toc level5"><a href="#bnasn">Using the <tt>selectItem</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnasp.html">Using Localized Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasq">Loading a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasr">Referencing Localized Static Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnast.html">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="bnast.html#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="bnast.html#bnasx">Using <tt>NumberConverter</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnasz.html">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a></p>
+<p class="toc level3 tocsp"><a href="bnatc.html">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="bnatc.html#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="bnatc.html#bnatf">Using the <tt>LongRangeValidator</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a></p>
+<p class="toc level4"><a href="bnatg.html#bnati">Binding a Component Value to a Property</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatj">Binding a Component Value to an Implicit Object</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a></p>
+<p class="toc level3 tocsp"><a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a></p>
+<p class="toc level3"><a href="bnatn.html">Referencing a Backing Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a></p>
+<p class="toc level3 tocsp"><a href="bnatt.html">Using Custom Objects</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatu">Using a Custom Converter</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatv">Using a Custom Validator</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatw">Using a Custom Component</a></p>
+<p class="toc level2 tocsp"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnarc.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnasp.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnarf"></a><h3>Adding UI Components to a Page Using the HTML Component Tags</h3>
+<p>The tags defined by the JavaServer Faces standard HTML render kit tag library
+represent HTML form components and other basic HTML elements. These components display data
+or accept data from the user. This data is collected as part of
+a form and is submitted to the server, usually when the user
+clicks a button. This section explains how to use each of the component
+tags shown in <a href="bnaqd.html#bnaqh">Table&nbsp;10-2</a>.</p><p>The next section explains the more important tag attributes that are common to
+most component tags. Please refer to the <i>TLD documentation</i> at <a href="http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/index.html">http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/index.html</a> for a
+complete list of tags and their attributes.</p><p>For each of the components discussed in the following sections, <a href="bnaty.html">Writing Bean Properties</a> explains
+how to write a bean property bound to a particular UI component or
+its value.</p>
+
+<a name="bnarg"></a><h4>UI Component Tag Attributes</h4>
+<p><a name="indexterm-955"></a><a name="indexterm-956"></a><a name="indexterm-957"></a><a name="indexterm-958"></a><a name="indexterm-959"></a>In general, most of the component tags support these attributes:</p>
+<ul><li><p><a name="indexterm-960"></a><tt>id</tt>: Uniquely identifies the component.</p></li>
+<li><p><a name="indexterm-961"></a><tt>immediate</tt>: If set to <tt>true</tt>, indicates that any events, validation, and conversion associated with the component should happen in the apply request values phase rather than a later phase.</p></li>
+<li><p><a name="indexterm-962"></a><tt>rendered</tt>: Specifies a condition in which the component should be rendered. If the condition is not satisfied, the component is not rendered.</p></li>
+<li><p><a name="indexterm-963"></a><tt>style</tt>: Specifies a Cascading Style Sheet (CSS) style for the tag.</p></li>
+<li><p><a name="indexterm-964"></a><tt>styleClass</tt>: Specifies a CSS stylesheet class that contains definitions of the styles.</p></li>
+<li><p><a name="indexterm-965"></a><tt>value</tt>: Identifies an external data source and binds the component&rsquo;s value to it.</p></li>
+<li><p><a name="indexterm-966"></a><tt>binding</tt>: Identifies a bean property and binds the component instance to it.</p></li></ul>
+<p>All of the UI component tag attributes (except <tt>id</tt>) can accept expressions, as
+defined by the unified EL described in <a href="bnahq.html">Unified Expression Language</a>.</p>
+
+<a name="bnarh"></a><h5>The <tt>id</tt> Attribute</h5>
+<p><a name="indexterm-967"></a>The <tt>id</tt> attribute is not required for a component tag except in the
+case when another component or a server-side class must refer to the component.
+If you don&rsquo;t include an <tt>id</tt> attribute, the JavaServer Faces implementation automatically generates a
+component ID. Unlike most other JavaServer Faces tag attributes, the id attribute only
+takes expressions using the immediate evaluation syntax, which uses the <tt>${}</tt> delimiters.</p>
+
+<a name="bnari"></a><h5>The <tt>immediate</tt> Attribute</h5>
+<p><a name="indexterm-968"></a><tt>UIInput</tt> components and command components (those that implement <tt>ActionSource</tt>, such as buttons and hyperlinks)
+can set the <tt>immediate</tt> attribute to <tt>true</tt> to force events, validations, and conversions
+to be processed during the apply request values phase of the life cycle.
+Page authors need to carefully consider how the combination of an input component&rsquo;s
+<tt>immediate</tt> value and a command component&rsquo;s <tt>immediate</tt> value determines what happens when the
+command component is activated.</p><p>Assume that you have a page with a button and a field
+for entering the quantity of a book in a shopping cart. If both
+the button&rsquo;s and the field&rsquo;s <tt>immediate</tt> attributes are set to <tt>true</tt>, the new value
+of the field will be available for any processing associated with the event
+that is generated when the button is clicked. The event associated with the
+button and the event, validation, and conversion associated with the field are all
+handled during the apply request values phase.</p><p>If the button&rsquo;s <tt>immediate</tt> attribute is set to <tt>true</tt> but the field&rsquo;s <tt>immediate</tt>
+attribute is set to <tt>false</tt>, the event associated with the button is processed without
+updating the field&rsquo;s local value to the model layer. This is because any
+events, conversion, or validation associated with the field occurs during its usual phases
+of the life cycle, which come after the apply request values phase.</p><p>The <tt>bookshowcart.jsp</tt> page of the Duke&rsquo;s Bookstore application has examples of components using
+the <tt>immediate</tt> attribute to control which component&rsquo;s data is updated when certain buttons
+are clicked. The <tt>quantity</tt> field for each book has its <tt>immediate</tt> attribute set
+to <tt>false</tt>. (The <tt>quantity</tt> fields are generated by the <tt>UIData</tt> component. See <a href="#bnarz">Using Data-Bound Table Components</a>,
+for more information.) The <tt>immediate</tt> attribute of the Continue Shopping hyperlink is set to
+<tt>true</tt>. The <tt>immediate</tt> attribute of the Update Quantities hyperlink is set to <tt>false</tt>.</p><p>If you click the Continue Shopping hyperlink, none of the changes entered into
+the quantity input fields will be processed. If you click the Update Quantities
+hyperlink, the values in the quantity fields will be updated in the shopping
+cart.</p>
+
+<a name="bnarj"></a><h5>The <tt>rendered</tt> Attribute</h5>
+<p><a name="indexterm-969"></a>A component tag uses a Boolean JavaServer Faces expression language (EL) expression, along
+with the <tt>rendered</tt> attribute, to determine whether or not the component will be
+rendered. For example, the <tt>check</tt> <tt>commandLink</tt> component on the <tt>bookcatalog.jsp</tt> page is not
+rendered if the cart contains no items:</p><pre>&lt;h:commandLink id="check"
+    ...
+    rendered="#{cart.numberOfItems > 0}">
+    &lt;h:outputText
+        value="#{bundle.CartCheck}"/>
+&lt;/h:commandLink></pre><p>Unlike nearly every other JavaServer Faces tag attribute, the <tt>rendered</tt> attribute is
+restricted to using rvalue expressions. As explained in <a href="bnahq.html">Unified Expression Language</a>, rvalue expressions can only read
+data; they cannot write the data back to the data source. Therefore, expressions
+used with <tt>rendered</tt> attributes can use the arithmetic operators and literals that rvalue
+expressions can use but lvalue expressions cannot use. For example, the expression in
+the preceding example uses the <tt>></tt> operator.</p>
+
+<a name="bnark"></a><h5>The <tt>style</tt> and <tt>styleClass</tt> Attributes</h5>
+<p><a name="indexterm-970"></a><a name="indexterm-971"></a>The <tt>style</tt> and <tt>styleClass</tt> attributes allow you to specify Cascading Style Sheets (CSS)
+styles for the rendered output of your component tags. <a href="#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a> describes an example
+of using the <tt>style</tt> attribute to specify styles directly in the attribute.
+A component tag can instead refer to a CSS stylesheet class. The <tt>dataTable</tt>
+tag on the <tt>bookcatalog.jsp</tt> page of the Duke&rsquo;s Bookstore application references the style class
+<tt>list-background</tt>:</p><pre>&lt;h:dataTable id="books"
+    ...
+    styleClass="list-background"
+    value="#{bookDBAO.books}"
+    var="book"></pre><p>The stylesheet that defines this class is <tt>stylesheet.css</tt>, which is included in the
+application. For more information on defining styles, please the see <i>Cascading Style Sheets Specification</i> at <a href="http://www.w3.org/Style/CSS/">http://www.w3.org/Style/CSS/</a>.</p>
+
+<a name="bnarl"></a><h5>The <tt>value</tt> and <tt>binding</tt> Attributes</h5>
+<a name="indexterm-972"></a><a name="indexterm-973"></a><p><a name="indexterm-974"></a>A tag representing a component defined by <tt>UIOutput</tt> or a subclass of <tt>UIOutput</tt> uses
+<tt>value</tt> and <tt>binding</tt> attributes to bind its component&rsquo;s value or instance respectively to
+an external data source. <a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a> explains how to use these attributes.</p>
+
+<a name="bnarm"></a><h4>Adding a Form Component</h4>
+<p><a name="indexterm-975"></a>A <tt>UIForm</tt> component class represents an input form, which includes child components that
+contain data that is either presented to the user or submitted with the
+form.</p><p><a href="#bnarn">Figure&nbsp;11-1</a> shows a typical login form, in which a user enters a user
+name and password, and submits the form by clicking the Login button.</p><a name="bnarn"></a><h6>Figure&nbsp;11-1 A Typical Form</h6><img src="figures/jsfpage-formcomponent.gif" alt="Screen capture of form with User Name and Password text fields and a Login button." width="267" height="98"></img><p><a name="indexterm-976"></a>The <tt>form</tt> tag represents the <tt>UIForm</tt> component on the page and encloses
+all the components that display or collect data from the user, as shown
+here:</p><pre>&lt;h:form>
+... other JavaServer Faces tags and other content...
+&lt;/h:form></pre><p><a name="indexterm-977"></a>The <tt>form</tt> tag can also include HTML markup to lay out the components
+on the page. The <tt>form</tt> tag itself does not perform any layout; its
+purpose is to collect data and to declare attributes that can be used
+by other components in the form. A page can include multiple <tt>form</tt> tags,
+but only the values from the form that the user submits will be
+included in the postback.</p>
+
+<a name="bnaro"></a><h4>Using Text Components</h4>
+<p>Text components allow users to view and edit text in web applications. The
+basic kinds of text components are:</p>
+<ul><li><p>Label, which displays read-only text.</p></li>
+<li><p>Text field, which allows users to enter text, often to be submitted as part of a form.</p></li>
+<li><p>Password field, which is one kind of text field that displays a set of characters, such as asterisks, instead of the password that the user enters.</p></li>
+<li><p>Text area, which is another kind of text field that allow users to enter multiple lines of text.</p></li></ul>
+<p><a href="#bnarp">Figure&nbsp;11-2</a> shows examples of these text components.</p><a name="bnarp"></a><h6>Figure&nbsp;11-2 Example Text Components</h6><img src="figures/jsfpage-textcomponents.gif" alt="Screen capture of form. "User Name" labels a text field. "Password" labels a password field. "Comments" labels a text area." width="445" height="111"></img><p><a name="indexterm-978"></a><a name="indexterm-979"></a>An editable text component in a JavaServer Faces application is represented by a
+<tt>UIInput</tt> component. One example is a text field. A read-only text component in
+a JavaServer Faces application is represented by a <tt>UIOutput</tt> component. One example is a
+label.</p><p><a name="indexterm-980"></a><a name="indexterm-981"></a>The <tt>UIInput</tt> and <tt>UIOutput</tt> components can each be rendered in four ways to
+display more specialized text components. <a href="#bnarq">Table&nbsp;11-3</a> lists all the renderers of <tt>UIInput</tt>
+and <tt>UIOutput</tt> and the tags that represent the component and renderer combination. Recall
+from <a href="bnaqd.html#bnaqf">Component Rendering Model</a> that the name of a tag is composed of the
+name of the component and the name of the renderer. For example, the
+<tt>inputText</tt> tag refers to a <tt>UIInput</tt> component that is rendered with the <tt>Text</tt>
+renderer.</p><a name="bnarq"></a><h6>Table&nbsp;11-3 <tt>UIInput</tt> and <tt>UIOutput</tt> Tags</h6><table><col width="10%"><col width="17%"><col width="17%"><col width="54%"><tr><th align="left" valign="top" scope="column"><p>Component</p></th>
+<th align="left" valign="top" scope="column"><p>Renderer</p></th>
+<th align="left" valign="top" scope="column"><p>Tag</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+</tr>
+<tr><td rowspan="4" align="left" valign="top" scope="row"><p><a name="indexterm-982"></a><tt>UIInput</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-983"></a><tt>Hidden</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-984"></a><tt>inputHidden</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a page author to include a hidden variable in a page</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-985"></a><tt>Secret</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-986"></a><tt>inputSecret</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The
+standard password field: Accepts one line of text with no spaces and displays
+it as a set of asterisks as it is typed</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-987"></a><tt>Text</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-988"></a><tt>inputText</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The standard text
+field: Accepts a text string of one line</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-989"></a><tt>TextArea</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-990"></a><tt>inputTextarea</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The standard text area: Accepts
+multiple lines of text</p></td>
+</tr>
+<tr><td rowspan="4" align="left" valign="top" scope="row"><p><a name="indexterm-991"></a><tt>UIOutput</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-992"></a><tt>Label</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-993"></a><tt>outputLabel</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The standard read-only label: Displays a component as a
+label for a specified input field</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-994"></a><tt>Link</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-995"></a><tt>outputLink</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-996"></a>Displays an <tt>&lt;a href></tt> tag that links to another page
+without generating an action event</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-997"></a><tt>OutputMessage</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-998"></a><tt>outputFormat</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays a localized message</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-999"></a>Text</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-1000"></a><tt>outputText</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays a text string of
+one line</p></td>
+</tr>
+</table><p>The <tt>UIInput</tt> component tags support the following tag attributes in addition to those
+described at the beginning of <a href="">Adding UI Components to a Page Using the HTML Component Tags</a>. This list does not include all
+the attributes supported by the <tt>UIInput</tt> component tags, just those that page
+authors will use most often. Please refer to the <tt>html_basic.tld</tt> file for the complete
+list.</p>
+<ul><li><p><a name="indexterm-1001"></a><a name="indexterm-1002"></a><tt>converter</tt>: Identifies a converter that will be used to convert the component&rsquo;s local data. See <a href="bnast.html">Using the Standard Converters</a> for more information on how to use this attribute.</p></li>
+<li><p><tt>converterMessage</tt>: Specifies an error message to display when the converter registered on the component fails.</p></li>
+<li><p><tt>dir</tt>: Specifies the direction of the text displayed by this component. Acceptable values are <tt>LTR</tt>, meaning left-to-right, and <tt>RTL</tt>, meaning right-to-left.</p></li>
+<li><p><tt>label</tt>: Specifies a name that can be used to identify this component in error messages.</p></li>
+<li><p><tt>lang</tt>: Specifies the code for the language used in the rendered markup, such as <tt>en_US</tt>.</p></li>
+<li><p><tt>required</tt>: Takes a <tt>boolean</tt> value that indicates whether or not the user must enter a value in this component.</p></li>
+<li><p><tt>requiredMessage</tt>: Specifies an error message to display when the user does not enter a value into the component.</p></li>
+<li><p><a name="indexterm-1003"></a><a name="indexterm-1004"></a><a name="indexterm-1005"></a><a name="indexterm-1006"></a><tt>validator</tt>: Identifies a method expression pointing to a backing bean method that performs validation on the component&rsquo;s data. See <a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a> for an example of using the <tt>validator</tt> tag.</p></li>
+<li><p><tt>validatorMessage</tt>: Specifies an error message to display when the validator registered on the component fails to validate the component&rsquo;s local value.</p></li>
+<li><p><a name="indexterm-1007"></a><a name="indexterm-1008"></a><a name="indexterm-1009"></a><a name="indexterm-1010"></a><tt>valueChangeListener</tt>: Identifies a method expression that points to a backing bean method that handles the event of entering a value in this component. See <a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a> for an example of using <tt>valueChangeListener</tt>.</p></li></ul>
+<p>The <tt>UIOutput</tt> component tags support the <tt>converter</tt> tag attribute in addition to
+those listed in <a href="">Adding UI Components to a Page Using the HTML Component Tags</a>. The rest of this section explains how to use
+selected tags listed in <a href="#bnarq">Table&nbsp;11-3</a>. The other tags are written in a similar
+way.</p>
+
+<a name="bnarr"></a><h5>Rendering a Text Field with the <tt>inputText</tt> Tag</h5>
+<p><a name="indexterm-1011"></a><a name="indexterm-1012"></a><a name="indexterm-1013"></a><a name="indexterm-1014"></a>The <tt>inputText</tt> tag is used to display a text field. It represents
+the combination of a <tt>Text</tt> renderer and a <tt>UIInput</tt> component. A similar tag, the
+<tt>outputText</tt> tag, displays a read-only, single-line string. It represents the combination of a
+<tt>Text</tt> renderer and a <tt>UIOutput</tt> component. This section shows you how to use the
+<tt>inputText</tt> tag. The <tt>outputText</tt> tag is written in a similar way.</p><p>Here is an example of an <tt>inputText</tt> tag from the <tt>bookcashier.jsp</tt> page:</p><pre>&lt;h:inputText id="name" label="Customer Name" size="50"
+    value="#{cashier.name}"
+    required="true"
+     requiredMessage="#{customMessages.CustomerName}">
+     &lt;f:valueChangeListener
+         type="com.sun.bookstore6.listeners.NameChanged" />
+ &lt;/h:inputText></pre><p>The <tt>label</tt> attribute specifies a user-friendly name that will be used in the
+substitution parameters of error messages displayed for this component.</p><p>The <tt>value</tt> attribute refers to the <tt>name</tt> property of <tt>CashierBean</tt>. This property holds
+the data for the <tt>name</tt> component. After the user submits the form,
+the value of the <tt>name</tt> property in <tt>CashierBean</tt> will be set to
+the text entered in the field corresponding to this tag.</p><p>The <tt>required</tt> attribute causes the page to reload with errors displayed if the
+user does not enter a value in the <tt>name</tt> text field. The JavaServer
+Faces implementation checks whether the value of the component is null or is
+an empty String.</p><p>If your component must have a non-<tt>null</tt> value or a <tt>String</tt> value
+at least one character in length, you should add a <tt>required</tt> attribute
+to your component tag and set it to <tt>true</tt>. If your tag does
+have a <tt>required</tt> attribute that is set to <tt>true</tt> and the value is
+<tt>null</tt> or a zero-length string, no other validators registered on the tag are
+called. If your tag does not have a <tt>required</tt> attribute set to <tt>true</tt>, other
+validators registered on the tag are called, but those validators must handle the
+possibility of a <tt>null</tt> or zero-length string.</p><p>The <tt>requiredMessage</tt> attribute references an error message from a resource bundle, which is
+declared in the application configuration file. Refer to <a href="bnaxb.html">Registering Custom Error Messages</a> for details on how to
+declare and reference the resource bundle.</p>
+
+<a name="bnars"></a><h5>Rendering a Label with the <tt>outputLabel</tt> Tag</h5>
+<p><a name="indexterm-1015"></a>The <tt>outputLabel</tt> tag is used to attach a label to a specified input
+field for accessibility purposes. The <tt>bookcashier.jsp</tt> page uses an <tt>outputLabel</tt> tag to render the
+label of a check box:</p><pre>&lt;h:selectBooleanCheckbox
+     id="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOffer}" />
+&lt;h:outputLabel for="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOfferText}"  >
+    &lt;h:outputText id="fanClubLabel"
+        value="#{bundle.DukeFanClub}" />
+&lt;/h:outputLabel>
+...</pre><p><a name="indexterm-1016"></a><a name="indexterm-1017"></a><a name="indexterm-1018"></a><a name="indexterm-1019"></a>The <tt>for</tt> attribute of the <tt>outputLabel</tt> tag maps to the <tt>id</tt> of
+the input field to which the label is attached. The <tt>outputText</tt> tag nested
+inside the <tt>outputLabel</tt> tag represents the actual label component. The <tt>value</tt> attribute on the
+<tt>outputText</tt> tag indicates the text that is displayed next to the input field.</p><p>Instead of using an <tt>outputText</tt> tag for the text displayed as a label,
+you can simply use the <tt>outputLabel</tt> tag&rsquo;s <tt>value</tt> attribute. The following code
+snippet shows what the previous code snippet would look like if it used
+the <tt>value</tt> attribute of the <tt>outputLabel</tt> tag to specify the text of the
+label.</p><pre>&lt;h:selectBooleanCheckbox
+     id="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOffer}" />
+    &lt;h:outputLabel for="fanClub"
+        rendered="false"
+        binding="#{cashier.specialOfferText}"
+         value="#{bundle.DukeFanClub}" />
+    &lt;/h:outputLabel>
+...</pre>
+
+<a name="bnart"></a><h5>Rendering a Hyperlink with the <tt>outputLink</tt> Tag</h5>
+<p><a name="indexterm-1020"></a><a name="indexterm-1021"></a>The <tt>outputLink</tt> tag is used to render a hyperlink that, when clicked, loads
+another page but does not generate an action event. You should use this
+tag instead of the <tt>commandLink</tt> tag if you always want the URL (specified
+by the <tt>outputLink</tt> tag&rsquo;s <tt>value</tt> attribute) to open and do not have
+to perform any processing when the user clicks on the link. The Duke&rsquo;s
+Bookstore application does not utilize this tag, but here is an example of
+it:</p><pre>&lt;h:outputLink value="javadocs">
+    Documentation for this demo
+&lt;/h:outputLink></pre><p>The text in the body of the <tt>outputLink</tt> tag identifies the text the
+user clicks to get to the next page.</p>
+
+<a name="bnaru"></a><h5>Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</h5>
+<p><a name="indexterm-1022"></a><a name="indexterm-1023"></a><a name="indexterm-1024"></a>The <tt>outputFormat</tt> tag allows a page author to display concatenated messages as a
+<tt>MessageFormat</tt> pattern, as described in the API documentation for <tt>java.text.MessageFormat</tt> (see <a href="http://java.sun.com/javase/6/docs/api/java/text/MessageFormat.html">http://java.sun.com/javase/6/docs/api/java/text/MessageFormat.html</a>). Here
+is an example of an <tt>outputFormat</tt> tag from the <tt>bookshowcart.jsp</tt> page of the
+Duke&rsquo;s Bookstore application:</p><pre>&lt;h:outputFormat value="#{bundle.CartItemCount}">
+    &lt;f:param value="#{cart.numberOfItems}"/>
+&lt;/h:outputFormat></pre><p><a name="indexterm-1025"></a><a name="indexterm-1026"></a><a name="indexterm-1027"></a><a name="indexterm-1028"></a><a name="indexterm-1029"></a>The <tt>value</tt> attribute specifies the <tt>MessageFormat</tt> pattern. The <tt>param</tt> tag specifies the substitution parameters
+for the message.</p><p>In the example <tt>outputFormat</tt> tag, the <tt>value</tt> for the parameter maps to the
+number of items in the shopping cart. When the message is displayed on
+the page, the number of items in the cart replaces the <tt>{0}</tt>
+in the message corresponding to the <tt>CartItemCount</tt> key in the <tt>bundle</tt> resource bundle:</p><pre>Your shopping cart contains " + "{0,choice,0#no items|1#one item|1&lt; {0} items</pre><p>This message represents three possibilities:</p>
+<ul><li><p>Your shopping cart contains no items.</p></li>
+<li><p>Your shopping cart contains one item.</p></li>
+<li><p>Your shopping cart contains <tt>{0}</tt> items.</p></li></ul>
+<p>The value of the parameter replaces the <tt>{0}</tt> from the message in the
+sentence in the third bullet. This is an example of a value-expression-enabled tag
+attribute accepting a complex EL expression.</p><p>An <tt>outputFormat</tt> tag can include more than one <tt>param</tt> tag for those
+messages that have more than one parameter that must be concatenated into the
+message. If you have more than one parameter for one message, make sure
+that you put the <tt>param</tt> tags in the proper order so that the
+data is inserted in the correct place in the message.</p><p>A page author can also hard code the data to be substituted
+in the message by using a literal value with the <tt>value</tt> attribute on
+the <tt>param</tt> tag.</p>
+
+<a name="bnarv"></a><h5>Rendering a Password Field with the <tt>inputSecret</tt> Tag</h5>
+<p><a name="indexterm-1030"></a>The <tt>inputSecret</tt> tag renders an <tt>&lt;input type="password"></tt> HTML tag. When the user types a string
+into this field, a row of asterisks is displayed instead of the text
+the user types. The Duke&rsquo;s Bookstore application does not include this tag, but
+here is an example of one:</p><pre>&lt;h:inputSecret redisplay="false"
+    value="#{LoginBean.password}" /></pre><p><a name="indexterm-1031"></a>In this example, the <tt>redisplay</tt> attribute is set to <tt>false</tt>. This will prevent
+the password from being displayed in a query string or in the
+source file of the resulting HTML page.</p>
+
+<a name="bnarw"></a><h4>Using Command Components for Performing Actions and Navigation</h4>
+<p>The button and hyperlink components are used to perform and action, such as
+submitting a form, and for navigating to another page.</p><p><a name="indexterm-1032"></a>Command components in JavaServer Faces applications are represented by the <tt>UICommand</tt> component, which
+performs an action when it is activated. The <tt>UICommand</tt> component supports two
+renderers: <tt>Button</tt> and <tt>Link</tt> as <tt>UICommand</tt> component renderers.</p><p>The <tt>commandButton</tt> tag represents the combination of a <tt>UICommand</tt> component and a <tt>Button</tt>
+renderer and is rendered as a button. The <tt>commandLink</tt> tag represents the combination of
+a <tt>UICommand</tt> component and a <tt>Link</tt> renderer and is rendered as a hyperlink.</p><p>In addition to the tag attributes listed in <a href="">Adding UI Components to a Page Using the HTML Component Tags</a>, the <tt>commandButton</tt> and
+<tt>commandLink</tt> tags can use these attributes:</p>
+<ul><li><p><a name="indexterm-1033"></a><a name="indexterm-1034"></a><a name="indexterm-1035"></a><tt>action</tt>, which is either a logical outcome <tt>String</tt> or a method expression pointing to a bean method that returns a logical outcome <tt>String</tt>. In either case, the logical outcome <tt>String</tt> is used by the default <tt>NavigationHandler</tt> instance to determine what page to access when the <tt>UICommand</tt> component is activated.</p></li>
+<li><p><a name="indexterm-1036"></a><a name="indexterm-1037"></a><a name="indexterm-1038"></a><tt>actionListener</tt>, which is a method expression pointing to a bean method that processes an action event fired by the <tt>UICommand</tt> component.</p></li></ul>
+<p>See <a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a> for more information on using the <tt>action</tt> attribute.</p><p>See <a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a> for details on using the <tt>actionListener</tt> attribute.</p>
+
+<a name="bnarx"></a><h5>Rendering a Button with the <tt>commandButton</tt> Tag</h5>
+<p><a name="indexterm-1039"></a>The <tt>bookcashier.jsp</tt> page of the Duke&rsquo;s Bookstore application includes a <tt>commandButton</tt> tag. When a
+user clicks the button, the data from the current page is processed, and
+the next page is opened. Here is the <tt>commandButton</tt> tag from <tt>bookcashier.jsp</tt>:</p><pre>&lt;h:commandButton value="#{bundle.Submit}"
+     action="#{cashier.submit}"/></pre><p><a name="indexterm-1040"></a><a name="indexterm-1041"></a><a name="indexterm-1042"></a>Clicking the button will cause the <tt>submit</tt> method of <tt>CashierBean</tt> to be invoked because
+the <tt>action</tt> attribute references the <tt>submit</tt> method of the <tt>CashierBean</tt> backing bean. The
+<tt>submit</tt> method performs some processing and returns a logical outcome. This is passed
+to the default <tt>NavigationHandler</tt>, which matches the outcome against a set of navigation
+rules defined in the application configuration resource file.</p><p><a name="indexterm-1043"></a><a name="indexterm-1044"></a>The <tt>value</tt> attribute of the preceding example <tt>commandButton</tt> tag references the localized message for
+the button&rsquo;s label. The <tt>bundle</tt> part of the expression refers to the <tt>ResourceBundle</tt>
+that contains a set of localized messages. The <tt>Submit</tt> part of the expression
+is the key that corresponds to the message that is displayed on the
+button. For more information on referencing localized messages, see <a href="#bnasi">Rendering Components for Selecting Multiple Values</a>. See <a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a> for
+information on how to use the <tt>action</tt> attribute.</p>
+
+<a name="bnary"></a><h5>Rendering a Hyperlink with the <tt>commandLink</tt> Tag</h5>
+<p><a name="indexterm-1045"></a><a name="indexterm-1046"></a>The <tt>commandLink</tt> tag represents an HTML hyperlink and is rendered as an HTML
+<tt>&lt;a></tt> element. The <tt>commandLink</tt> tag is used to submit an action event
+to the application. See <a href="bnaut.html#bnauv">Implementing Action Listeners</a> for more information on action events.</p><p><a name="indexterm-1047"></a>A <tt>commandLink</tt> tag must include a nested <tt>outputText</tt> tag, which represents the text the
+user clicks to generate the event. The following tag is from the <tt>chooselocale.jsp</tt>
+page from the Duke&rsquo;s Bookstore application.</p><pre>&lt;h:commandLink id="NAmerica" action="bookstore"
+     actionListener="#{localeBean.chooseLocaleFromLink}">
+     &lt;h:outputText value="#{bundle.English}" />
+&lt;/h:commandLink></pre><p>This tag will render the following HTML:</p><pre>&lt;a id="_id3:NAmerica" href="#"
+     onclick="document.forms[&rsquo;_id3&rsquo;][&rsquo;_id3:NAmerica&rsquo;].
+    value=&rsquo;_id3:NAmerica&rsquo;;
+     document.forms[&rsquo;_id3&rsquo;].submit();
+     return false;">English&lt;/a></pre>
+<hr><p><b>Note - </b>The <tt>commandLink</tt> tag will render JavaScript. If you use this tag, make sure
+your browser is JavaScript-enabled.</p>
+<hr>
+
+
+<a name="bnarz"></a><h4>Using Data-Bound Table Components</h4>
+<p>Data-bound table components display relational data in a tabular format. <a href="#bnasa">Figure&nbsp;11-3</a> shows
+an example of this kind of table.</p><a name="bnasa"></a><h6>Figure&nbsp;11-3 Table on the <tt>bookshowcart.jsp</tt> Page</h6><img src="figures/jsfPage-bookShowCartTable.gif" alt="Screen capture of cart, showing quantities, titles, prices, and Remove Item buttons." width="651" height="254"></img><p>In a JavaServer Faces application, the <tt>UIData</tt> component supports binding to a collection
+of data objects. It does the work of iterating over each record in
+the data source. The standard <tt>Table</tt> renderer displays the data as an HTML
+table. The <tt>UIColumn</tt> component represents a column of data within the table. Here
+is a portion of the <tt>dataTable</tt> tag used by the <tt>bookshowcart.jsp</tt> page
+of the Duke&rsquo;s Bookstore example:</p><pre>&lt;h:dataTable id="items"
+     captionClass="list-caption"
+    columnClasses="list-column-center, list-column-left,
+         list-column-right, list-column-center"
+    footerClass="list-footer"
+    headerClass="list-header"
+    rowClasses="list-row-even, list-row-odd"
+    styleClass="list-background"
+    summary="#{bundle.ShoppingCart}"
+    value="#{cart.items}"
+    var="item">
+    &lt;h:column headerClass="list-header-left">
+        &lt;f:facet name="header">
+            &lt;h:outputText value="#{bundle.ItemQuantity}" />
+        &lt;/f:facet>
+        &lt;h:inputText id="quantity" size="4"
+            value="#{item.quantity}" >
+            ...
+        &lt;/h:inputText>
+        ...
+    &lt;/h:column>
+    &lt;h:column>
+        &lt;f:facet name="header">
+            &lt;h:outputText value="#{bundle.ItemTitle}"/>
+        &lt;/f:facet>
+        &lt;h:commandLink action="#{showcart.details}">
+            &lt;h:outputText value="#{item.item.title}"/>
+        &lt;/h:commandLink>
+    &lt;/h:column>
+    ...
+    &lt;f:facet name="footer"
+        &lt;h:panelGroup>
+            &lt;h:outputText value="#{bundle.Subtotal}"/>
+            &lt;h:outputText value="#{cart.total}" />
+                &lt;f:convertNumber type="currency" />
+            &lt;/h:outputText>
+        &lt;/h:panelGroup>
+    &lt;/f:facet>
+    &lt;f:facet name="caption"
+        &lt;h:outputText value="#{bundle.Caption}"/>
+&lt;/h:dataTable></pre><p><a href="#bnasa">Figure&nbsp;11-3</a> shows a data grid that this <tt>dataTable</tt> tag can display.</p><p>The example <tt>dataTable</tt> tag displays the books in the shopping cart as well
+as the quantity of each book in the shopping cart, the prices, and
+a set of buttons, which the user can click to remove books
+from the shopping cart.</p><p>The <tt>column</tt> tags represent columns of data in a <tt>UIData</tt> component. While
+the <tt>UIData</tt> component is iterating over the rows of data, it processes the
+<tt>UIColumn</tt> component associated with each <tt>column</tt> tag for each row in the table.</p><p>The <tt>UIData</tt> component shown in the preceding code example iterates through the list
+of books (<tt>cart.items</tt>) in the shopping cart and displays their titles, authors, and
+prices. Each time <tt>UIData</tt> iterates through the list of books, it renders one cell
+in each column.</p><p>The <tt>dataTable</tt> and <tt>column</tt> tags use facets to represent parts of the table
+that are not repeated or updated. These include headers, footers, and captions.</p><p>In the preceding example, <tt>column</tt> tags include <tt>facet</tt> tags for representing column
+headers or footers. The <tt>column</tt> tag allows you to control the styles of
+these headers and footers by supporting the <tt>headerClass</tt> and <tt>footerClass</tt> attributes. These attributes accept
+space-separated lists of CSS style classes, which will be applied to the header
+and footer cells of the corresponding column in the rendered table.</p><p>Facets can have only one child, and so a <tt>panelGroup</tt> tag is needed
+if you want to group more than one component within a <tt>facet</tt>. Because
+the facet tag representing the footer includes more than one tag, the <tt>panelGroup</tt>
+is needed to group those tags. Finally, this <tt>dataTable</tt> tag includes a <tt>facet</tt>
+tag with its <tt>name</tt> attribute set to <tt>caption</tt>, causing a table caption to be
+rendered below the table.</p><p>This table is a classic use case for a <tt>UIData</tt> component because the
+number of books might not be known to the application developer or the
+page author at the time the application is developed. The <tt>UIData</tt> component can
+dynamically adjust the number of rows of the table to accommodate the underlying
+data.</p><p>The <tt>value</tt> attribute of a <tt>dataTable</tt> tag references the data to be included
+in the table. This data can take the form of</p>
+<ul><li><p>A list of beans</p></li>
+<li><p>An array of beans</p></li>
+<li><p>A single bean</p></li>
+<li><p>A <tt>javax.faces.model.DataModel</tt></p></li>
+<li><p>A <tt>java.sql.ResultSet</tt></p></li>
+<li><p>A <tt>javax.servlet.jsp.jstl.sql.ResultSet</tt></p></li>
+<li><p>A <tt>javax.sql.RowSet</tt></p></li></ul>
+<p>All data sources for <tt>UIData</tt> components have a <tt>DataModel</tt> wrapper. Unless you
+explicitly construct a <tt>DataModel</tt> wrapper, the JavaServer Faces implementation will create one around
+data of any of the other acceptable types. See <a href="bnaty.html">Writing Bean Properties</a> for more information on
+how to write properties for use with a <tt>UIData</tt> component.</p><p>The <tt>var</tt> attribute specifies a name that is used by the components within
+the <tt>dataTable</tt> tag as an alias to the data referenced in the <tt>value</tt>
+attribute of <tt>dataTable</tt>.</p><p>In the <tt>dataTable</tt> tag from the <tt>bookshowcart.jsp</tt> page, the <tt>value</tt> attribute points
+to a list of books. The <tt>var</tt> attribute points to a single book
+in that list. As the <tt>UIData</tt> component iterates through the list, each reference to
+<tt>item</tt> points to the current book in the list.</p><p>The <tt>UIData</tt> component also has the ability to display only a subset of
+the underlying data. This is not shown in the preceding example. To display
+a subset of the data, you use the optional <tt>first</tt> and <tt>rows</tt>
+attributes.</p><p>The <tt>first</tt> attribute specifies the first row to be displayed. The <tt>rows</tt> attribute
+specifies the number of rows, starting with the first row, to be displayed.
+For example, if you wanted to display records 2 through 10 of the
+underlying data, you would set <tt>first</tt> to 2 and <tt>rows</tt> to 9.
+When you display a subset of the data in your pages, you might
+want to consider including a link or button that causes subsequent rows to
+display when clicked. By default, both <tt>first</tt> and <tt>rows</tt> are set to
+zero, and this causes all the rows of the underlying data to display.</p><p>The <tt>dataTable</tt> tag also has a set of optional attributes for adding styles
+to the table:</p>
+<ul><li><p><tt>captionClass</tt>: Defines styles for the table caption</p></li>
+<li><p><tt>columnClasses</tt>: Defines styles for all the columns</p></li>
+<li><p><tt>footerClass</tt>: Defines styles for the footer</p></li>
+<li><p><tt>headerClass</tt>: Defines styles for the header</p></li>
+<li><p><tt>rowClasses</tt>: Defines styles for the rows</p></li>
+<li><p><tt>styleClass</tt>: Defines styles for the entire table</p></li></ul>
+<p>Each of these attributes can specify more than one style. If <tt>columnClasses</tt>
+or <tt>rowClasses</tt> specifies more than one style, the styles are applied to the
+columns or rows in the order that the styles are listed in the
+attribute. For example, if <tt>columnClasses</tt> specifies styles <tt>list-column-center</tt> and <tt>list-column-right</tt> and if there are
+two columns in the table, the first column will have style <tt>list-column-center</tt>,
+and the second column will have style <tt>list-column-right</tt>.</p><p>If the <tt>style</tt> attribute specifies more styles than there are columns or rows,
+the remaining styles will be assigned to columns or rows starting from the
+first column or row. Similarly, if the <tt>style</tt> attribute specifies fewer styles than
+there are columns or rows, the remaining columns or rows will be assigned
+styles starting from the first style.</p>
+
+<a name="bnasb"></a><h4>Adding Graphics and Images with the <tt>graphicImage</tt> Tag</h4>
+<a name="indexterm-1048"></a><a name="indexterm-1049"></a><a name="indexterm-1050"></a><a name="indexterm-1051"></a><a name="indexterm-1052"></a><a name="indexterm-1053"></a><a name="indexterm-1054"></a><a name="indexterm-1055"></a><a name="indexterm-1056"></a><a name="indexterm-1057"></a><a name="indexterm-1058"></a><p><a name="indexterm-1059"></a>In a JavaServer Faces application, the <tt>UIGraphic</tt> component represents an image. The <tt>graphicImage</tt> tag
+is used to render a <tt>UIGraphic</tt> component on a page. The Duke&rsquo;s Bookstore application
+uses a <tt>graphicImage</tt> tag to display the map image on the <tt>chooselocale.jsp</tt> page:</p><pre>&lt;h:graphicImage id="mapImage" url="/template/world.jpg"
+     alt="#{bundle.chooseLocale}" usemap="#worldMap" /></pre><p>The <tt>url</tt> attribute specifies the path to the image. It also corresponds to
+the local value of the <tt>UIGraphic</tt> component so that the URL can be
+retrieved, possibly from a backing bean. The URL of the example tag begins
+with a <tt>/</tt>, which adds the relative context path of the web application
+to the beginning of the path to the image.</p><p><a name="indexterm-1060"></a>The <tt>title</tt> attribute specifies the alternative text displayed when the user mouses over
+the image. In this example, the <tt>title</tt> attribute refers to a localized message. See
+<a href="bnaum.html">Performing Localization</a> for details on how to localize your JavaServer Faces application.</p><p>The <tt>usemap</tt> attribute refers to the image map defined by the custom component,
+<tt>MapComponent</tt>, which is on the same page. See <a href="bnavg.html">Chapter&nbsp;13, Creating Custom UI Components</a> for more information on
+the image map.</p>
+
+<a name="bnasc"></a><h4>Laying Out Components with the <tt>UIPanel</tt> Component</h4>
+<p><a name="indexterm-1061"></a>In a JavaServer Faces application, you use the <tt>UIPanel</tt> component as a layout container
+for a set of component components. When you use the renderers from the
+HTML render kit, <tt>UIPanel</tt> is rendered as an HTML table. This component differs
+from <tt>UIData</tt> in that <tt>UIData</tt> can dynamically add or delete rows to accommodate the
+underlying data source, whereas <tt>UIPanel</tt> must have the number of rows predetermined. <a href="#bnasd">Table&nbsp;11-4</a>
+lists all the renderers and tags corresponding to the <tt>UIPanel</tt> component.</p><a name="bnasd"></a><h6>Table&nbsp;11-4 <tt>UIPanel</tt> Renderers and Tags</h6><table><col width="10%"><col width="15%"><col width="41%"><col width="32%"><tr><th align="left" valign="top" scope="column"><p>Renderer</p></th>
+<th align="left" valign="top" scope="column"><p>Tag</p></th>
+<th align="left" valign="top" scope="column"><p>Renderer Attributes</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1062"></a><tt>Grid</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-1063"></a><tt>panelGrid</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>columnClasses</tt>, <tt>columns</tt>,
+<tt>footerClass</tt>, <tt>headerClass</tt>, <tt>panelClass</tt>, <tt>rowClasses</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays a table</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1064"></a><tt>Group</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-1065"></a><tt>panelGroup</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>layout</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Groups a set of components under one
+parent</p></td>
+</tr>
+</table><p><a name="indexterm-1066"></a>The <tt>panelGrid</tt> tag is used to represent an entire table. The <tt>panelGroup</tt> tag is
+used to represent rows in a table. Other UI component tags are
+used to represent individual cells in the rows.</p><p>The <tt>panelGrid</tt> tag has a set of attributes that specify CSS stylesheet classes:
+<tt>columnClasses</tt>, <tt>footerClass</tt>, <tt>headerClass</tt>, <tt>panelClass</tt>, and <tt>rowClasses</tt>. These stylesheet attributes are optional. The <tt>panelGrid</tt>
+tag also has a <tt>columns</tt> attribute. The <tt>columns</tt> attribute is required if you want
+your table to have more than one column because the <tt>columns</tt> attribute
+tells the renderer how to group the data in the table.</p><p><a name="indexterm-1067"></a>If the <tt>headerClass</tt> attribute value is specified, the <tt>panelGrid</tt> must have a header
+as its first child. Similarly, if a <tt>footerClass</tt> attribute value is specified, the <tt>panelGrid</tt>
+must have a footer as its last child.</p><p>The Duke&rsquo;s Bookstore application includes three <tt>panelGrid</tt> tags on the <tt>bookcashier.jsp</tt> page. Here
+is a portion of one of them:</p><pre>&lt;h:panelGrid columns="3" headerClass="list-header"
+    rowClasses="list-row-even, list-row-odd"
+    styleClass="list-background"
+    title="#{bundle.Checkout}">
+    &lt;f:facet name="header">
+        &lt;h:outputText value="#{bundle.Checkout}"/>
+    &lt;/f:facet>
+    &lt;h:outputText value="#{bundle.Name}" />
+    &lt;h:inputText id="name" size="50"
+         value="#{cashier.name}"
+        required="true">
+         &lt;f:valueChangeListener
+             type="listeners.NameChanged" />
+    &lt;/h:inputText>
+    &lt;h:message styleClass="validationMessage" for="name"/>
+    &lt;h:outputText value="#{bundle.CCNumber}"/>
+    &lt;h:inputText id="ccno" size="19"
+        converter="CreditCardConverter" required="true">
+         &lt;bookstore:formatValidator
+             formatPatterns="9999999999999999|
+                9999 9999 9999 9999|9999-9999-9999-9999"/>
+    &lt;/h:inputText>
+    &lt;h:message styleClass="validationMessage"  for="ccno"/>
+    ...
+&lt;/h:panelGrid></pre><p>This <tt>panelGrid</tt> tag is rendered to a table that contains components for the
+customer of the bookstore to input personal information. This <tt>panelGrid</tt> tag uses stylesheet
+classes to format the table. The CSS classes are defined in the <tt>stylesheet.css</tt>
+file in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/web/</tt> directory. The <tt>list-header</tt> definition is</p><pre>.list-header {
+     background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+}</pre><p><a name="indexterm-1068"></a>Because the <tt>panelGrid</tt> tag specifies a <tt>headerClass</tt>, the <tt>panelGrid</tt> must contain a header. The
+example <tt>panelGrid</tt> tag uses a <tt>facet</tt> tag for the header. Facets can
+have only one child, and so a <tt>panelGroup</tt> tag is needed if
+you want to group more than one component within a <tt>facet</tt>. Because the
+example <tt>panelGrid</tt> tag has only one cell of data, a <tt>panelGroup</tt> tag is
+not needed.</p><p>The <tt>panelGroup</tt> tag has one attribute, called <tt>layout</tt>, in addition to those
+listed in <a href="#bnarg">UI Component Tag Attributes</a>. If the <tt>layout</tt> attribute has the value <tt>block</tt> then an
+HTML <tt>div</tt> element is rendered to enclose the row; otherwise, an HTML <tt>span</tt>
+element is rendered to enclose the row. If you are specifying styles for
+the <tt>panelGroup</tt> tag, you should set the <tt>layout</tt> attribute to <tt>block</tt> in
+order for the styles to be applied to the components within the <tt>panelGroup</tt>
+tag. This is because styles such as those that set width and height
+are not applied to inline elements, which is how content enclosed by the
+<tt>span</tt> element is defined.</p><p>A <tt>panelGroup</tt> tag can also be used to encapsulate a nested tree of
+components so that the tree of components appears as a single component to
+the parent component.</p><p><a name="indexterm-1069"></a>The data represented by the nested component tags is grouped into rows according
+to the value of the columns attribute of the <tt>panelGrid</tt> tag. The <tt>columns</tt>
+attribute in the example is set to <tt>3</tt>, and therefore the table will have
+three columns. In which column each component is displayed is determined by the
+order that the component is listed on the page modulo 3. So
+if a component is the fifth one in the list of components, that
+component will be in the 5 modulo 3 column, or column 2.</p>
+
+<a name="bnase"></a><h4>Rendering Components for Selecting One Value</h4>
+<p>Another common UI component is one that allows a user to select
+one value, whether it be the only value available or one of a
+set of choices. The most common examples of this kind of component are:</p>
+<ul><li><p>A check box, which represents boolean state</p></li>
+<li><p>A set of radio buttons</p></li>
+<li><p>A drop-down menu, which displays a scrollable list</p></li>
+<li><p>A list box, which displays an unscrollable list</p></li></ul>
+<p><a href="#bnasf">Figure&nbsp;11-4</a> shows examples of these components.</p><a name="bnasf"></a><h6>Figure&nbsp;11-4 Example Select One Components</h6><img src="figures/jsfpage-selectone.gif" alt="Screen capture of radio buttons, check box, drop-down menu, and list box." width="471" height="180"></img>
+
+<a name="bnasg"></a><h5>Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</h5>
+<p><a name="indexterm-1070"></a><a name="indexterm-1071"></a>The <tt>UISelectBoolean</tt> class defines components that have a <tt>boolean</tt> value. The <tt>selectBooleanCheckbox</tt> tag
+is the only tag that JavaServer Faces technology provides for representing <tt>boolean</tt> state. The
+Duke&rsquo;s Bookstore application includes a <tt>selectBooleanCheckbox</tt> tag on the <tt>bookcashier.jsp</tt> page:</p><pre>&lt;h:selectBooleanCheckbox
+     id="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOffer}" />
+&lt;h:outputLabel
+     for="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOfferText}">
+     &lt;h:outputText
+         id="fanClubLabel"
+        value="#{bundle.DukeFanClub}" />
+&lt;/h:outputLabel></pre><p>This example tag displays a check box to allow users to indicate
+whether they want to join the Duke Fan Club. The label for the
+check box is rendered by the <tt>outputLabel</tt> tag. The actual text is represented by
+the nested <tt>outputText</tt> tag. <a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a> discusses this example in more detail.</p>
+
+<a name="bnash"></a><h5>Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</h5>
+<p><a name="indexterm-1072"></a><a name="indexterm-1073"></a><a name="indexterm-1074"></a>A <tt>UISelectOne</tt> component allows the user to select one value from a set
+of values. This component can be rendered as a list box, a set
+of radio buttons, or a menu. This section explains the <tt>selectOneMenu</tt> tag.
+The <tt>selectOneRadio</tt> and <tt>selectOneListbox</tt> tags are written in a similar way. The
+<tt>selectOneListbox</tt> tag is similar to the <tt>selectOneMenu</tt> tag except that <tt>selectOneListbox</tt> defines a
+<tt>size</tt> attribute that determines how many of the items are displayed at once.</p><p><a name="indexterm-1075"></a>The <tt>selectOneMenu</tt> tag represents a component that contains a list of items, from
+which a user can choose one item. The menu is also commonly known
+as a drop-down list or a combo box. The following code snippet shows
+the <tt>selectOneMenu</tt> tag from the <tt>bookcashier.jsp</tt> page of the Duke&rsquo;s Bookstore application. This tag
+allows the user to select a shipping method:</p><pre>&lt;h:selectOneMenu   id="shippingOption"
+    required="true"
+    value="#{cashier.shippingOption}">
+    &lt;f:selectItem
+        itemValue="2"
+        itemLabel="#{bundle.QuickShip}"/>
+    &lt;f:selectItem
+        itemValue="5"
+        itemLabel="#{bundle.NormalShip}"/>
+    &lt;f:selectItem
+        itemValue="7"
+        itemLabel="#{bundle.SaverShip}"/>
+ &lt;/h:selectOneMenu></pre><p>The <tt>value</tt> attribute of the <tt>selectOneMenu</tt> tag maps to the property that holds
+the currently selected item&rsquo;s value. You are not required to provide a value
+for the currently selected item. If you don&rsquo;t provide a value, the first
+item in the list is selected by default.</p><p><a name="indexterm-1076"></a><a name="indexterm-1077"></a>Like the <tt>selectOneRadio</tt> tag, the <tt>selectOneMenu</tt> tag must contain either a <tt>selectItems</tt>
+tag or a set of <tt>selectItem</tt> tags for representing the items in the list.
+<a href="#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a> explains these tags.</p>
+
+<a name="bnasi"></a><h4>Rendering Components for Selecting Multiple Values</h4>
+<a name="indexterm-1078"></a><p>In some cases, you need to allow your users to select multiple
+values rather than just one value from a list of choices. You can
+do this using one of the following kinds of components:</p>
+<ul><li><p>A set of check boxes</p></li>
+<li><p>A drop-down menu</p></li>
+<li><p>A list box</p></li></ul>
+<p><a href="#bnasj">Figure&nbsp;11-5</a> shows examples of these components.</p><a name="bnasj"></a><h6>Figure&nbsp;11-5 Example Select Many Components</h6><img src="figures/jsfpage-selectmany.gif" alt="Screen capture of check box set, drop-down menu, and list box." width="471" height="180"></img><p><a name="indexterm-1079"></a><a name="indexterm-1080"></a><a name="indexterm-1081"></a>The <tt>UISelectMany</tt> class defines a component that allows the user to select zero
+or more values from a set of values. This component can be rendered
+as a set of check boxes, a list box, or a menu. This
+section explains the <tt>selectManyCheckbox</tt> tag. The <tt>selectManyListbox</tt> tag and <tt>selectManyMenu</tt> tag are written in
+a similar way.</p><p>A list box differs from a menu in that it displays a
+subset of items in a box, whereas a menu displays only one item
+at a time when the user is not selecting the menu. The <tt>size</tt>
+attribute of the <tt>selectManyListbox</tt> tag determines the number of items displayed at
+one time. The list box includes a scroll bar for scrolling through any
+remaining items in the list.</p><p><a name="indexterm-1082"></a>The <tt>selectManyCheckbox</tt> tag renders a set of check boxes, with each check box
+representing one value that can be selected. Duke&rsquo;s Bookstore uses a <tt>selectManyCheckbox</tt> tag on
+the <tt>bookcashier.jsp</tt> page to allow the user to subscribe to one or more
+newsletters:</p><pre>&lt;h:selectManyCheckbox
+    id="newsletters"
+    layout="pageDirection"
+    value="#{cashier.newsletters}">
+    &lt;f:selectItems
+        value="#{newsletters}"/>
+&lt;/h:selectManyCheckbox></pre><p>The <tt>value</tt> attribute of the <tt>selectManyCheckbox</tt> tag identifies the <tt>CashierBean</tt> backing bean property,
+<tt>newsletters</tt>, for the current set of newsletters. This property holds the values of
+the currently selected items from the set of check boxes. You are
+not required to provide a value for the currently selected items. If you
+don&rsquo;t provide a value, the first item in the list is selected by
+default.</p><p>The <tt>layout</tt> attribute indicates how the set of check boxes are arranged on
+the page. Because layout is set to <tt>pageDirection</tt>, the check boxes are arranged
+vertically. The default is <tt>lineDirection</tt>, which aligns the check boxes horizontally.</p><p><a name="indexterm-1083"></a><a name="indexterm-1084"></a>The <tt>selectManyCheckbox</tt> tag must also contain a tag or set of tags representing
+the set of check boxes. To represent a set of items, you use
+the <tt>selectItems</tt> tag. To represent each item individually, you use a <tt>selectItem</tt> tag
+for each item. The following subsection explains these tags in more detail.</p>
+
+<a name="bnask"></a><h4>The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</h4>
+<p><a name="indexterm-1085"></a><a name="indexterm-1086"></a><a name="indexterm-1087"></a><a name="indexterm-1088"></a><a name="indexterm-1089"></a><tt>UISelectItem</tt> and <tt>UISelectItems</tt> represent components that can be nested inside a <tt>UISelectOne</tt> or
+a <tt>UISelectMany</tt> component. <tt>UISelectItem</tt> is associated with a <tt>SelectItem</tt> instance, which contains the
+value, label, and description of a single item in the <tt>UISelectOne</tt> or
+<tt>UISelectMany</tt> component.</p><p>The <tt>UISelectItems</tt> instance represents either of the following:</p>
+<ul><li><p>A set of <tt>SelectItem</tt> instances, containing the values, labels, and descriptions of the entire list of items</p></li>
+<li><p>A set of <tt>SelectItemGroup</tt> instances, each of which represents a set of <tt>SelectItem</tt> instances</p></li></ul>
+<p><a href="#bnasl">Figure&nbsp;11-6</a> shows an example of a list box constructed with a <tt>SelectItems</tt> component representing
+two <tt>SelectItemGroup</tt> instances, each of which represents two categories of beans. Each category
+is an array of <tt>SelectItem</tt> instances.</p><a name="bnasl"></a><h6>Figure&nbsp;11-6 An Example List Box Created Using <tt>SelectItemGroup</tt> Instances</h6><img src="figures/jsfPage-selectItemGroup.gif" alt="Screen capture of list box with two groups of items." width="399" height="167"></img><p><a name="indexterm-1090"></a><a name="indexterm-1091"></a><a name="indexterm-1092"></a><a name="indexterm-1093"></a><a name="indexterm-1094"></a>The <tt>selectItem</tt> tag represents a <tt>UISelectItem</tt> component. The <tt>selectItems</tt> tag represents a <tt>UISelectItems</tt>
+component. You can use either a set of <tt>selectItem</tt> tags or a
+single <tt>selectItems</tt> tag within your <tt>selectOne</tt> or <tt>selectMany</tt> tag.</p><p>The advantages of using the <tt>selectItems</tt> tag are as follows:</p>
+<ul><li><p>You can represent the items using different data structures, including <tt>Array</tt>, <tt>Map</tt> and <tt>Collection</tt>. The data structure is composed of <tt>SelectItem</tt> instances or <tt>SelectItemGroup</tt> instances.</p></li>
+<li><p>You can concatenate different lists together into a single <tt>UISelectMany</tt> or <tt>UISelectOne</tt> component and group the lists within the component, as shown in <a href="#bnasl">Figure&nbsp;11-6</a>.</p></li>
+<li><p>You can dynamically generate values at runtime.</p></li></ul>
+<p>The advantages of using <tt>selectItem</tt> are as follows:</p>
+<ul><li><p>The page author can define the items in the list from the page.</p></li>
+<li><p>You have less code to write in the bean for the <tt>selectItem</tt> properties.</p></li></ul>
+<p>For more information on writing component properties for the <tt>UISelectItems</tt> components, see
+<a href="bnaty.html">Writing Bean Properties</a>. The rest of this section shows you how to use the <tt>selectItems</tt>
+and <tt>selectItem</tt> tags.</p>
+
+<a name="bnasm"></a><h5>Using the <tt>selectItems</tt> Tag</h5>
+<p>Here is the <tt>selectManyCheckbox</tt> tag from the section <a href="#bnasi">Rendering Components for Selecting Multiple Values</a>:</p><pre>&lt;h:selectManyCheckbox
+    id="newsletters"
+    layout="pageDirection"
+    value="#{cashier.newsletters}">
+    &lt;f:selectItems
+        value="#{newsletters}"/>
+&lt;/h:selectManyCheckbox></pre><p><a name="indexterm-1095"></a><a name="indexterm-1096"></a>The <tt>value</tt> attribute of the <tt>selectItems</tt> tag is bound to the <tt>newsletters</tt>
+managed bean, which is configured in the application configuration resource file. The <tt>newsletters</tt>
+managed bean is configured as a list:</p><pre>&lt;managed-bean>
+    &lt;managed-bean-name>newsletters&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        java.util.ArrayList&lt;/managed-bean-class>
+    &lt;managed-bean-scope>application&lt;/managed-bean-scope>
+    &lt;list-entries>
+        &lt;value-class>javax.faces.model.SelectItem&lt;/value-class>
+        &lt;value>#{newsletter0}&lt;/value>
+        &lt;value>#{newsletter1}&lt;/value>
+        &lt;value>#{newsletter2}&lt;/value>
+        &lt;value>#{newsletter3}&lt;/value>
+    &lt;/list-entries>
+&lt;/managed-bean>
+&lt;managed-bean>
+&lt;managed-bean-name>newsletter0&lt;/managed-bean-name>
+&lt;managed-bean-class>
+    javax.faces.model.SelectItem&lt;/managed-bean-class>
+&lt;managed-bean-scope>none&lt;/managed-bean-scope>
+&lt;managed-property>
+    &lt;property-name>label&lt;/property-name>
+    &lt;value>Duke&rsquo;s Quarterly&lt;/value>
+&lt;/managed-property>
+&lt;managed-property>
+    &lt;property-name>value&lt;/property-name>
+    &lt;value>200&lt;/value>
+&lt;/managed-property>
+&lt;/managed-bean>
+...</pre><p>As shown in the <tt>managed-bean</tt> element, the <tt>UISelectItems</tt> component is a collection
+of <tt>SelectItem</tt> instances. See <a href="bnawq.html#bnawx">Initializing Array and List Properties</a> for more information on configuring collections as beans.</p><p>You can also create the list corresponding to a <tt>UISelectMany</tt> or <tt>UISelectOne</tt>
+component programmatically in the backing bean. See <a href="bnaty.html">Writing Bean Properties</a> for information on how
+to write a backing bean property corresponding to a <tt>UISelectMany</tt> or <tt>UISelectOne</tt> component.</p><p>The arguments to the <tt>SelectItem</tt> constructor are:</p>
+<ul><li><p>An <tt>Object</tt> representing the value of the item</p></li>
+<li><p>A <tt>String</tt> representing the label that displays in the <tt>UISelectMany</tt> component on the page</p></li>
+<li><p>A <tt>String</tt> representing the description of the item</p></li></ul>
+<p><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a> describes in more detail how to write a backing bean property for
+a <tt>UISelectItems</tt> component.</p>
+
+<a name="bnasn"></a><h5>Using the <tt>selectItem</tt> Tag</h5>
+<p>The <tt>selectItem</tt> tag represents a single item in a list of items. Here
+is the example from <a href="#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a>:</p><pre>&lt;h:selectOneMenu
+       id="shippingOption" required="true"
+     value="#{cashier.shippingOption}">
+    &lt;f:selectItem
+        itemValue="2"
+        itemLabel="#{bundle.QuickShip}"/>
+    &lt;f:selectItem
+        itemValue="5"
+        itemLabel="#{bundle.NormalShip}"/>
+    &lt;f:selectItem
+        itemValue="7"
+        itemLabel="#{bundle.SaverShip}"/>
+ &lt;/h:selectOneMenu></pre><p><a name="indexterm-1097"></a>The <tt>itemValue</tt> attribute represents the default value of the <tt>SelectItem</tt> instance. The <tt>itemLabel</tt> attribute
+represents the <tt>String</tt> that appears in the drop-down menu component on the page.</p><p>The <tt>itemValue</tt> and <tt>itemLabel</tt> attributes are value-binding-enabled, meaning that they can use value-binding
+expressions to refer to values in external objects. They can also define literal
+values, as shown in the example <tt>selectOneMenu</tt> tag.</p>
+
+<a name="bnaso"></a><h4>Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</h4>
+<p><a name="indexterm-1098"></a><a name="indexterm-1099"></a>The <tt>message</tt> and <tt>messages</tt> tags are used to display error messages when conversion
+or validation fails. The <tt>message</tt> tag displays error messages related to a specific
+input component, whereas the <tt>messages</tt> tag displays the error messages for the
+entire page.</p><p>Here is an example <tt>message</tt> tag from the <tt>guessNumber</tt> application, discussed in
+<a href="bnapl.html#bnapm">Steps in the Development Process</a>:</p><pre>&lt;h:inputText id="userNo" value="#{UserNumberBean.userNumber}">
+    &lt;f:validateLongRange minimum="0" maximum="10" />
+ &lt;h:commandButton id="submit"
+         action="success" value="Submit" />&lt;p>
+&lt;h:message
+     style="color: red;
+     font-family: &rsquo;New Century Schoolbook&rsquo;, serif;
+     font-style: oblique;
+     text-decoration: overline" id="errors1" for="userNo"/></pre><p><a name="indexterm-1100"></a>The <tt>for</tt> attribute refers to the ID of the component that generated the
+error message. The error message is displayed at the same location that the
+<tt>message</tt> tag appears in the page. In this case, the error message will
+appear after the Submit button.</p><p><a name="indexterm-1101"></a>The <tt>style</tt> attribute allows you to specify the style of the text of
+the message. In the example in this section, the text will be red,
+New Century Schoolbook, serif font family, and oblique style, and a line will
+appear over the text. The message and messages tags support many other attributes
+for defining styles. Please refer to the TLD documentation for more information on
+these attributes.</p><p>Another attribute the <tt>messages</tt> tag supports is the <tt>layout</tt> attribute. Its default
+value is <tt>list</tt>, which indicates that the messages are displayed in a bulleted
+list using the HTML <tt>ul</tt> and <tt>li</tt> elements. If you set the attribute to
+<tt>table</tt>, the messages will be rendered in a table using the HTML <tt>table</tt>
+element.</p><p>The preceding example shows a standard validator is registered on input component. The
+message tag displays the error message associated with this validator when the validator
+cannot validate the input component&rsquo;s value. In general, when you register a converter
+or validator on a component, you are queueing the error messages associated with
+the converter or validator on the component. The <tt>message</tt> and <tt>messages</tt> tags display the
+appropriate error messages that are queued on the component when the validators or
+converters registered on that component fail to convert or validate the component&rsquo;s value.</p><p>All the standard error messages that come with the standard converters and validators
+are listed in section 2.5.4 of the JavaServer Faces specification. An application architect
+can override these standard messages and supply error messages for custom converters and
+validators by registering custom error messages with the application by means of the
+<tt>message-bundle</tt> element of the application configuration file. <a href="bnasp.html#bnass">Referencing Error Messages</a> explains more about error messages.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnarc.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnasp.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

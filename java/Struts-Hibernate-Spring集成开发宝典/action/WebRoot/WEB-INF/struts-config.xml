@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="tokenForm" type="cn.hxex.action.struts.form.TokenForm" />
+    <form-bean name="uploadForm" type="cn.hxex.action.struts.form.UploadForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="tokenForm"
+      name="tokenForm"
+      path="/saveToken"
+      scope="request"
+      type="cn.hxex.action.struts.action.SaveTokenAction">
+      <forward name="display" path="/token.jsp" />
+    </action>
+    <action
+      attribute="tokenForm"
+      input="/saveToken.do"
+      name="tokenForm"
+      path="/checkToken"
+      scope="request"
+      type="cn.hxex.action.struts.action.CheckTokenAction">
+      <forward name="failed" path="/tokenfailed.jsp" />
+      <forward name="success" path="/tokensaved.jsp" />
+    </action>
+    <action path="/outputXML" type="cn.hxex.action.struts.action.OutputXMLAction" />
+    <action
+      attribute="uploadForm"
+      input="/upload.jsp"
+      name="uploadForm"
+      path="/upload"
+      scope="request"
+      type="cn.hxex.action.struts.action.UploadAction"
+      validate="false">
+      <forward name="download" path="/download.jsp" />
+    </action>
+    <action path="/download" type="cn.hxex.action.struts.action.DownloadFileAction" />
+    <action path="/open" type="cn.hxex.action.struts.action.OpenFileAction" />
+    
+
+  </action-mappings>
+
+  <message-resources parameter="cn.hxex.action.struts.ApplicationResources" />
+</struts-config>
+

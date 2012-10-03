@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+
+<project name="rsForum" basedir="." default="usage">
+
+	<property name="name" value="rsForum"/>
+
+	<property name="rsForum.root" value="."/>
+	<property name="src.dir" value="src"/>
+    <property name="build.dir" value="web\WEB-INF\classes"/>
+    <property name="db.dir" value="db"/>
+
+    <property name="hibernate2.root" value="../hibernate-2.1"/>
+    <property name="hibernate3.root" value="../hibernate-3.0"/>
+    <property name="webwork.root" value="../webwork-2.1.7"/>
+    <property name="ext-lib.root" value="../lib"/>
+    <property name="war.lib" value="web\WEB-INF\lib"/>
+
+	<property name="testsrc.dir" value="test"/>
+	<property name="testbuild.dir" value="${rsForum.root}/build/.testclasses"/>
+	<property name="testreports.dir" value="${rsForum.root}/build/junit-reports"/>
+	<property name="testhtml.dir" value="${testreports.dir}/html"/>
+
+	<target name="set-db-properties" description="Setup db connection parameters">
+		<property name="db.driver" value="com.mysql.jdbc.Driver"/>
+		<property name="db.url" value="jdbc:mysql://localhost/forum?useUnicode=true&amp;characterEncoding=utf-8&amp;mysqlEncoding=utf8"/>
+		<property name="db.user" value="forum"/>
+		<property name="db.pw" value="forum"/>
+		<property name="db.jdbcdriver" value="mysql-connector-java-3.0.16-ga-bin.jar"/>
+	</target>
+
+	<property file="build.properties"/>
+	<path id="master-classpath">
+		<fileset dir="${hibernate3.root}">
+			<include name="hibernate3.jar"/>
+		</fileset>
+		<fileset dir="${hibernate3.root}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${webwork.root}">
+			<include name="*.jar"/>
+		</fileset>
+		<fileset dir="${webwork.root}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="console-classpath">
+		<pathelement location="${build.dir}"/>
+		<fileset dir="${rsForum.root}/../tools/consoleLoader">
+			<include name="loader.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../tools/hibernateConsole">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${hibernate3.root}">
+			<include name="hibernate3.jar"/>
+		</fileset>
+		<fileset dir="${hibernate3.root}/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+
+	<target name="usage">
+		<echo message=""/>
+		<echo message="rsForum build file"/>
+		<echo message="------------------------------------------------------"/>
+		<echo message=""/>
+		<echo message="Available targets are:"/>
+		<echo message=""/>
+		<echo message="-------  Operations ---------------------------------"/>
+		<echo message="clean       --> Clean output dirs"/>
+		<echo message="build       --> Compile main Java sources"/>
+		<echo message="createTables --> Initialize the database"/>
+		<echo message="dropTables  --> drop tables,clear any data"/>
+		<echo message="sampleData  --> create sample data"/>
+		<echo message="copyjar     --> copy hibernate and webwork jar into WEB-INF\lib"/>
+		<echo message=""/>
+		<echo message="-------   Run  -------------------------------------"/>
+		<echo message="console     --> launch hibernate console"/>
+		<echo message="tests       --> Run junit tests.Will clean database first"/>
+		<echo message="report      --> View junit test result"/>
+		<echo message="tomcat      --> Start Tomcat. Let's Go! (Please stop tomcat if it's active)"/>
+		<echo message=""/>
+		<echo message="-------  First Time --------------------------------"/>
+		<echo message="all         --> clean,createTables,createTables,sampleData,copyjar,build,tomcat"/>
+	</target>
+
+
+	<target name="clean" description="Clean output dirs (build, testbuild, testreports, weblib, dist)">
+		<delete dir="${build.dir}"/>
+		<delete dir="${testbuild.dir}"/>
+		<delete dir="${testreports.dir}"/>
+		<delete dir="${war.lib}"/>
+		<delete dir="tomcat-run/work/Catalina"/>
+		<delete dir="bin"/>
+	</target>
+
+	<target name="copyjar" description="copy jar files into WEB-INF\lib">
+		<mkdir dir="${build.dir}"/>
+
+		<copy todir="${war.lib}">
+			<fileset dir="${hibernate3.root}">
+		      <include name="*.jar"/>
+			</fileset>
+			<fileset dir="${hibernate3.root}/lib">
+		      <include name="*.jar"/>
+			</fileset>
+			<fileset dir="${webwork.root}">
+		      <include name="*.jar"/>
+			</fileset>
+			<fileset dir="${webwork.root}/lib/core">
+		      <include name="*.jar"/>
+			</fileset>
+			<fileset dir="${ext-lib.root}">
+		      <include name="**/*.jar"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="build" depends="copyjar" description="Compile main source tree java files into class files">
+		<mkdir dir="${build.dir}"/>
+		
+		<javac destdir="${build.dir}" source="1.4" target="1.4" debug="true"
+			deprecation="false" optimize="false" failonerror="true">
+			<src path="${src.dir}"/>
+			<classpath refid="master-classpath"/>
+		</javac>
+	
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+		      <exclude name="**/*.java"/>
+		      <exclude name="**/*.properties_GBK"/>
+			</fileset>
+		</copy>
+
+		<native2ascii encoding="GBK" src="${src.dir}" dest="${build.dir}" ext=".properties" includes="*.properties_GBK"/>
+	</target>
+
+
+	<target name="createTables" depends="set-db-properties" description="Initialize the selected database">
+		<ant dir="${db.dir}" target="createTables"/>
+	</target>
+
+	<target name="sampleData" depends="set-db-properties" description="create sample data">
+		<ant dir="${db.dir}" target="sampleData"/>
+	</target>
+
+	<target name="dropTables" depends="set-db-properties" description="clear any created data">
+		<ant dir="${db.dir}" target="dropTables"/>
+	</target>
+
+	<target name="tests" depends="build,dropTables,createTables" description="Run tests using initialized database">
+		<delete dir="${testbuild.dir}"/>
+		<delete dir="${testreports.dir}"/>
+		<delete dir="${testhtml.dir}"/>
+
+		<mkdir dir="${testbuild.dir}"/>
+		<mkdir dir="${testreports.dir}"/>
+		<mkdir dir="${testhtml.dir}"/>
+
+		<javac srcdir="${testsrc.dir}" destdir="${testbuild.dir}" deprecation="true">
+			<classpath path="${build.dir}"/>
+			<classpath refid="master-classpath"/>
+			<classpath path="${rsForum.root}/lib/junit.jar"/>
+		</javac>
+
+		<junit printsummary="true" fork="yes">
+			<formatter type="xml"/>
+			<test name="test.com.redsaga.hibernatesample.step4.AllTests" todir="${testreports.dir}"/>
+			<classpath path="${build.dir}"/>
+			<classpath path="${src.dir}"/>
+			<classpath path="${testbuild.dir}"/>
+			<classpath path="${testsrc.dir}"/>
+			<classpath refid="master-classpath"/>
+
+		</junit>
+
+		<junitreport todir="${testhtml.dir}">
+			<fileset dir="${testreports.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${testhtml.dir}"/>
+		</junitreport>
+
+	</target>
+
+	<target name="all" depends="clean,dropTables,createTables,sampleData,copyjar,build,tomcat" description="clean,dropTables,createTables,sampleData,copyjar,build,tomcat"/>
+	
+	<target name="report" >
+		<exec dir="${testhtml.dir}" executable="cmd.exe">
+  		<arg line="/c start index.html"/>
+  		</exec>
+  	</target>
+
+	<target name="console" description="launch hibernate console">
+		<java classname="com.redsaga.util.hibernateConsole2Loader.Loader" fork="true">
+		    <classpath>
+		        <path refid="console-classpath"/>
+		    </classpath>
+		</java>
+	</target>
+
+	<target name="tomcat" description="">
+	<exec dir="tomcat-run" executable="cmd.exe" >
+	  <arg line="/c start.bat"/>
+	</exec>
+	</target>
+
+</project>

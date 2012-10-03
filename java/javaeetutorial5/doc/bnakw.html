@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Internationalization Tag Library - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level3"><a href="bnakd.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnake.html">Using JSTL</a></p>
+<p class="toc level4"><a href="bnake.html#bnakg">Tag Collaboration</a></p>
+<p class="toc level3 tocsp"><a href="bnakh.html">Core Tag Library</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakj">Variable Support Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakk">Flow Control Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakl">Conditional Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakm">Iterator Tags</a></p>
+<p class="toc level4 tocsp"><a href="bnakh.html#bnakn">URL Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnako">Miscellaneous Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnakq.html">XML Tag Library</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakt">Core Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnaku">Flow Control Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakv">Transformation Tags</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Internationalization Tag Library</a></p>
+<p class="toc level4"><a href="#bnaky">Setting the Locale</a></p>
+<p class="toc level4"><a href="#bnakz">Messaging Tags</a></p>
+<p class="toc level5"><a href="#bnala">The <tt>setBundle</tt> and <tt>bundle</tt> Tags</a></p>
+<p class="toc level5"><a href="#bnalb">The <tt>message</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="#bnalc">Formatting Tags</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnald.html">SQL Tag Library</a></p>
+<p class="toc level4"><a href="bnald.html#bnalf"><tt>query</tt> Tag Result Interface</a></p>
+<p class="toc level3 tocsp"><a href="bnalg.html">JSTL Functions</a></p>
+<p class="toc level3"><a href="bnali.html">Further Information about JSTL</a></p>
+<p class="toc level2 tocsp"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnakq.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnald.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnakw"></a><h3>Internationalization Tag Library</h3>
+<p><a name="indexterm-481"></a><a href="bnaxu.html">Chapter&nbsp;15, Internationalizing and Localizing Web Applications</a> covers how to design web applications so that they conform to the
+language and formatting conventions of client locales. This section describes tags that support
+the internationalization of JSP pages.</p><p>JSTL defines tags for setting the locale for a page, creating locale-sensitive messages,
+and formatting and parsing data elements such as numbers, currencies, dates, and times
+in a locale-sensitive or customized manner. <a href="#bnakx">Table&nbsp;7-6</a> lists the tags.</p><a name="bnakx"></a><h6>Table&nbsp;7-6 Internationalization Tags</h6><table><col width="12%"><col width="35%"><col width="35%"><col width="15%"><tr><th align="left" valign="top" scope="column"><p>Area</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>Tags</p></th>
+<th align="left" valign="top" scope="column"><p>Prefix</p></th>
+</tr>
+<tr><td rowspan="3" align="left" valign="top" scope="row"><p>I18N</p></td>
+<td align="left" valign="top" scope="row"><p>Setting Locale</p></td>
+<td align="left" valign="top" scope="row"><pre>setLocale
+requestEncoding</pre></td>
+<td rowspan="3" align="left" valign="top" scope="row"><p><tt>fmt</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Messaging</p></td>
+<td align="left" valign="top" scope="row"><pre>bundle
+message
+    param
+setBundle</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Number and
+Date Formatting</p></td>
+<td align="left" valign="top" scope="row"><pre>formatNumber
+formatDate
+parseDate
+parseNumber
+setTimeZone
+timeZone</pre></td>
+</tr>
+</table><p><a name="indexterm-482"></a>JSTL I18N tags use a localization context to localize their data. A <b>localization context</b>
+contains a locale and a resource bundle instance. To specify the localization context at
+deployment time, you define the context parameter <tt>javax.servlet.jsp.jstl.fmt.localizationContext</tt>, whose value can be
+a <tt>javax.servlet.jsp.jstl.fmt.LocalizationContext</tt> or a <tt>String</tt>. A <tt>String</tt> context parameter is interpreted as a
+resource bundle base name. For the Duke&rsquo;s Bookstore application, the context parameter is
+the <tt>String</tt> <tt>messages.BookstoreMessages</tt>. When a request is received, JSTL automatically sets the locale
+based on the value retrieved from the request header and chooses the correct
+resource bundle using the base name specified in the context parameter.</p>
+
+<a name="bnaky"></a><h4>Setting the Locale</h4>
+<p><a name="indexterm-483"></a><a name="indexterm-484"></a>The <tt>setLocale</tt> tag is used to override the client-specified locale for a page.
+The <tt>requestEncoding</tt> tag is used to set the request&rsquo;s character encoding, in order
+to be able to correctly decode request parameter values whose encoding is different
+from <tt>ISO-8859-1</tt>.</p>
+
+<a name="bnakz"></a><h4>Messaging Tags</h4>
+<p>By default, the capability to sense the browser locale setting is enabled in
+JSTL. This means that the client determines (through its browser setting) which locale
+to use, and allows page authors to cater to the language preferences of
+their clients.</p>
+
+<a name="bnala"></a><h5>The <tt>setBundle</tt> and <tt>bundle</tt> Tags</h5>
+<p><a name="indexterm-485"></a><a name="indexterm-486"></a>You can set the resource bundle at runtime with the JSTL <tt>fmt:setBundle</tt> and
+<tt>fmt:bundle</tt> tags. <tt>fmt:setBundle</tt> is used to set the localization context in a variable
+or configuration variable for a specified scope. <tt>fmt:bundle</tt> is used to set the
+resource bundle for a given tag body.</p>
+
+<a name="bnalb"></a><h5>The <tt>message</tt> Tag</h5>
+<p><a name="indexterm-487"></a><a name="indexterm-488"></a>The <tt>message</tt> tag is used to output localized strings. The following tag
+from <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt> is used to output a string inviting customers to choose
+a book from the catalog.</p><pre>&lt;h3>&lt;fmt:message key="Choose"/>&lt;/h3></pre><p><a name="indexterm-489"></a>The <tt>param</tt> subtag provides a single argument (for parametric replacement) to the compound
+message or pattern in its parent <tt>message</tt> tag. One <tt>param</tt> tag must be specified
+for each variable in the compound message or pattern. Parametric replacement takes place
+in the order of the <tt>param</tt> tags.</p>
+
+<a name="bnalc"></a><h4>Formatting Tags</h4>
+<p><a name="indexterm-490"></a>JSTL provides a set of tags for parsing and formatting locale-sensitive numbers and
+dates.</p><p><a name="indexterm-491"></a>The <tt>formatNumber</tt> tag is used to output localized numbers. The following tag from
+<tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookshowcart.jsp</tt> is used to display a localized price for a book.</p><pre>&lt;fmt:formatNumber value="${book.price}" type="currency"/></pre><p>Note that because the price is maintained in the database in dollars, the
+localization is somewhat simplistic, because the <tt>formatNumber</tt> tag is unaware of exchange rates.
+The tag formats currencies but does not convert them.</p><p><a name="indexterm-492"></a><a name="indexterm-493"></a><a name="indexterm-494"></a>Analogous tags for formatting dates (<tt>formatDate</tt>) and for parsing numbers and dates (<tt>parseNumber</tt>, <tt>parseDate</tt>) are
+also available. The <tt>timeZone</tt> tag establishes the time zone (specified with the <tt>value</tt>
+attribute) to be used by any nested <tt>formatDate</tt> tags.</p><p>In <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookreceipt.jsp</tt>, a &ldquo;pretend&rdquo; ship date is created and then formatted with the
+<tt>formatDate</tt> tag:</p><pre>&lt;jsp:useBean id="now" class="java.util.Date" />
+&lt;jsp:setProperty name="now" property="time"
+     value="${now.time + 432000000}" />
+&lt;fmt:message key="ShipDate"/>
+ &lt;fmt:formatDate value="${now}" type="date"
+    dateStyle="full"/>.</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnakq.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnald.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.redsaga.hibernatesample.step4">
+	<class name="VoteOption" table="vote_option">
+		<id
+			column="option_id"
+			name="id"
+			type="integer"
+		>
+			<generator class="increment" />
+		</id>
+		<property
+			column="agree_number"
+			length="11"
+			name="agreeNumber"
+			not-null="false"
+			type="int"
+		 />
+		<property
+			column="option_text"
+			name="optionText"
+			not-null="false"
+			type="string"
+		 />
+		<many-to-one
+			class="Vote"
+			name="poll"
+			not-null="true"
+		>
+			<column name="poll_id" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

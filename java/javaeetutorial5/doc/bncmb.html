@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Enterprise Beans - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level3"><a href="bncma.html">Overview of the Duke's Bank Application</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Enterprise Beans</a></p>
+<p class="toc level4"><a href="#bncmc">Session Beans</a></p>
+<p class="toc level5"><a href="#bncmd">The <tt>AccountControllerBean</tt> Session Bean</a></p>
+<p class="toc level5"><a href="#bncme">The <tt>CustomerControllerBean</tt> Session Bean</a></p>
+<p class="toc level5"><a href="#bncmf">The <tt>TxControllerBean</tt> Session Bean</a></p>
+<p class="toc level4 tocsp"><a href="#bncmg">Java Persistence Entities</a></p>
+<p class="toc level4"><a href="#bncmh">Helper Classes</a></p>
+<p class="toc level4"><a href="#bncmj">Database Tables</a></p>
+<p class="toc level5"><a href="#bncmk">Tables Representing Business Entities</a></p>
+<p class="toc level4 tocsp"><a href="#bncmm">Protecting the Enterprise Beans</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncmn.html">Application Client</a></p>
+<p class="toc level4"><a href="bncmn.html#bncmp">The Classes and Their Relationships</a></p>
+<p class="toc level4"><a href="bncmn.html#bncmq"><tt>BankAdmin</tt> Class</a></p>
+<p class="toc level5"><a href="bncmn.html#bncmr">The <tt>BankAdmin</tt> Constructor</a></p>
+<p class="toc level5"><a href="bncmn.html#bncms">Class Methods</a></p>
+<p class="toc level3 tocsp"><a href="bncmt.html">Web Client</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmw">Design Strategies</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmx">Client Components</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmy">Request Processing</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmz">Protecting the Web Client Resources</a></p>
+<p class="toc level3 tocsp"><a href="bncna.html">Building, Packaging, Deploying, and Running the Duke's Bank Application</a></p>
+<p class="toc level4"><a href="bncna.html#bncnb">Setting Up the Servers</a></p>
+<p class="toc level5"><a href="bncna.html#bncnc">Starting the Application Server</a></p>
+<p class="toc level5"><a href="bncna.html#bncnd">Creating the Bank Database in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncna.html#bncne">Creating the Bank Database Using Ant</a></p>
+<p class="toc level5"><a href="bncna.html#bncnf">Adding Users and Groups to the File Realm</a></p>
+<p class="toc level4 tocsp"><a href="bncna.html#bncnh">Building, Packaging, and Deploying Duke's Bank Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bncna.html#bncni">Building, Packaging, and Deploying Duke's Bank Using Ant</a></p>
+<p class="toc level4"><a href="bncna.html#bncnj">Running the Duke's Bank Application Client Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bncna.html#bncnk">Running the Duke's Bank Application Client Using Ant</a></p>
+<p class="toc level4"><a href="bncna.html#bncnm">Running the Duke's Bank Web Client</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncma.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncmn.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncmb"></a><h3>Enterprise Beans</h3>
+<p><a name="indexterm-3150"></a><a name="indexterm-3151"></a>Let&rsquo;s take a closer look at the access paths between the clients, enterprise
+beans, and database tables. The end-user clients (web and application clients) access only
+the session beans. Within the enterprise bean tier, the session beans use Java Persistence
+entities. On the back end of the application, the entities access the database
+tables that store the entity states.</p>
+<hr><p><b>Note - </b>The source code for these enterprise beans is in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/src/com/sun/ebank/ejb/</tt> directory.</p>
+<hr>
+
+
+<a name="bncmc"></a><h4>Session Beans</h4>
+<p><a name="indexterm-3152"></a><a name="indexterm-3153"></a>The Duke&rsquo;s Bank application has three session beans: <tt>AccountControllerBean</tt>, <tt>CustomerControllerBean</tt>, and <tt>TxControllerBean</tt>. (<tt>Tx</tt>
+stands for a business transaction, such as transferring funds.) These session beans provide a
+client&rsquo;s view of the application&rsquo;s business logic. Hidden from the clients are the
+server-side routines that implement the business logic, access databases, manage relationships, and perform
+error checking.</p>
+
+<a name="bncmd"></a><h5>The <tt>AccountControllerBean</tt> Session Bean</h5>
+<p>The business methods of the <tt>AccountControllerBean</tt> session bean perform tasks that fall into
+the following categories: creating and removing entities, managing the account-customer relationship, and getting
+the account information.</p><p>The following methods create and remove entities:</p>
+<ul><li><p><tt>createAccount</tt></p></li>
+<li><p><tt>removeAccount</tt></p></li></ul>
+<p>These methods of the <tt>AccountControllerBean</tt> session bean call the <tt>create</tt> and <tt>remove</tt> methods of
+the <tt>Account</tt> entity. The <tt>createAccount</tt> and <tt>removeAccount</tt> methods throw application exceptions to
+indicate invalid method arguments. The <tt>createAccount</tt> method throws an <tt>IllegalAccountTypeException</tt> if the <tt>type</tt>
+argument is neither <tt>Checking</tt>, <tt>Savings</tt>, <tt>Credit</tt>, nor <tt>Money Market</tt>. The <tt>createAccount</tt> method also looks up
+the specified customer exists by invoking the <tt>EntityManager.find</tt> method. If the result
+of this verification is <tt>null</tt>, the <tt>createAccount</tt> method throws a <tt>CustomerNotFoundException</tt>.</p><p>The following methods manage the account-customer relationship:</p>
+<ul><li><p><tt>addCustomerToAccount</tt></p></li>
+<li><p><tt>removeCustomerFromAccount</tt></p></li></ul>
+<p>The <tt>Account</tt> and <tt>Customer</tt> entities have a many-to-many relationship. A bank account can
+be jointly held by more than one customer, and a customer can have
+multiple accounts.</p><p>In the Duke&rsquo;s Bank application, the <tt>addCustomerToAccount</tt> and <tt>removeCustomerFromAccount</tt> methods of the
+<tt>AccountControllerBean</tt> session bean manage the account-customer relationship. The <tt>addCustomerToAccount</tt> method, for example,
+starts by verifying that the customer exists. To create the relationship, the <tt>addCustomerToAccount</tt>
+method first looks up the <tt>Customer</tt> and <tt>Account</tt> entities using the <tt>EntityManager.find</tt>
+method, then it calls the <tt>Account.addCustomer</tt> method to associate the customer with the account.</p><p>The following methods get the account information:</p>
+<ul><li><p><tt>getAccountsOfCustomer</tt></p></li>
+<li><p><tt>getDetails</tt></p></li></ul>
+<p>The <tt>AccountControllerBean</tt> session bean has two <tt>get</tt> methods. The <tt>getAccountsOfCustomer</tt> method returns all
+of the accounts of a given customer by invoking the <tt>getAccounts</tt> method
+of the <tt>Account</tt> entity. Instead of implementing a <tt>get</tt> method for every instance
+variable, the <tt>AccountControllerBean</tt> has a <tt>getDetails</tt> method that returns an object (<tt>AccountDetails</tt>) that encapsulates the
+entire state of an <tt>Account</tt> entity. Because it can invoke a single method
+to retrieve the entire state, the client avoids the overhead associated with multiple
+remote calls.</p>
+
+<a name="bncme"></a><h5>The <tt>CustomerControllerBean</tt> Session Bean</h5>
+<p>A client creates a <tt>Customer</tt> entity by invoking the <tt>createCustomer</tt> method of the
+<tt>CustomerControllerBean</tt> session bean. To remove a customer, the client calls the <tt>removeCustomer</tt>
+method, which invokes the <tt>EntityManager.remove</tt> method on the <tt>Customer</tt> instance.</p><p>The <tt>CustomerControllerBean</tt> session bean has two methods that return multiple customers: <tt>getCustomersOfAccount</tt> and
+<tt>getCustomersOfLastName</tt>. <tt>getCustomersOfAccount</tt> calls the <tt>getCustomers</tt> method of the <tt>Account</tt> entity. <tt>getCustomersOfLastName</tt> uses the
+<tt>Customer.FindByLastName</tt> named query to search the database for customers with a matching last
+name, which is a named parameter to the query.</p>
+
+<a name="bncmf"></a><h5>The <tt>TxControllerBean</tt> Session Bean</h5>
+<p>The <tt>TxControllerBean</tt> session bean handles bank transactions. In addition to its <tt>get</tt> methods,
+<tt>getTxsOfAccount</tt> and <tt>getDetails</tt>, the <tt>TxControllerBean</tt> bean has several methods that change the balances
+of the bank accounts:</p>
+<ul><li><p><tt>withdraw</tt></p></li>
+<li><p><tt>deposit</tt></p></li>
+<li><p><tt>makeCharge</tt></p></li>
+<li><p><tt>makePayment</tt></p></li>
+<li><p><tt>transferFunds</tt></p></li></ul>
+<p>These methods access an <tt>Account</tt> entity to verify the account type and to
+set the new balance. The <tt>withdraw</tt> and <tt>deposit</tt> methods are for standard
+accounts, whereas the <tt>makeCharge</tt> and <tt>makePayment</tt> methods are for accounts that include a
+line of credit. If the <tt>type</tt> method argument does not match the account,
+these methods throw an <tt>IllegalAccountTypeException</tt>. If a withdrawal were to result in
+a negative balance, the <tt>withdraw</tt> method throws an <tt>InsufficientFundsException</tt>. If a credit charge
+attempts to exceed the account&rsquo;s credit line, the <tt>makeCharge</tt> method throws an
+<tt>InsufficientCreditException</tt>.</p><p><a name="indexterm-3154"></a><a name="indexterm-3155"></a>The <tt>transferFunds</tt> method also checks the account type and new balance; if necessary,
+it throws the same exceptions as the <tt>withdraw</tt> and <tt>makeCharge</tt> methods. The <tt>transferFunds</tt> method
+subtracts from the balance of one <tt>Account</tt> instance and adds the same amount
+to another instance. Both of these steps must complete to ensure data integrity.
+If either step fails, the entire operation is rolled back and the balances
+remain unchanged. The <tt>transferFunds</tt> method, like all methods in session beans that use container-managed
+transaction demarcation, has an implicit <tt>Required</tt> transaction attribute. That is, you don&rsquo;t
+need to explicitly decorate the method with a <tt>@TransactionAttribute</tt> annotation. </p>
+
+<a name="bncmg"></a><h4>Java Persistence Entities</h4>
+<p><a name="indexterm-3156"></a><a name="indexterm-3157"></a>For each business entity represented in our simple bank, the Duke&rsquo;s Bank application
+has a matching Java Persistence API entity:</p>
+<ul><li><p><tt>Account</tt></p></li>
+<li><p><tt>Customer</tt></p></li>
+<li><p><tt>Tx</tt></p></li></ul>
+<p>The purpose of these entities is to provide an object view of
+these database tables: <tt>bank_account</tt>, <tt>bank_customer</tt>, and <tt>bank_tx</tt>. For each column in a table, the
+corresponding entity has an instance variable. Because they use the Java Persistence API, the
+entities contain no SQL statements that access the tables. The enterprise bean container
+manages all data in the underlying data source, including adding, updating, and deleting
+data from the database tables.</p><p>Unlike the session beans, the entities do not validate method parameters. The session
+beans check the parameters and throw the application exceptions, such as <tt>CustomerNotInAccountException</tt> and
+<tt>IllegalAccountTypeException</tt>. Consequently, if some other application were to include these entities, its session
+beans would also have to validate the method parameters. Validation code was not
+added to the entity&rsquo;s methods, in order to keep the business logic separate
+from the entity data.</p>
+
+<a name="bncmh"></a><h4>Helper Classes</h4>
+<p><a name="indexterm-3158"></a><a name="indexterm-3159"></a>The EJB JAR files include several helper classes that are used by the
+enterprise beans. The source code for these classes is in the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/dukesbank-ejb/src/java/com/sun/tutorial/ javaee/dukesbank/util/</tt></pre><p><a href="#bncmi">Table&nbsp;37-1</a> briefly describes the helper classes.</p><a name="bncmi"></a><h6>Table&nbsp;37-1 Helper Classes for the Application&rsquo;s Enterprise Beans</h6><table><col width="24%"><col width="75%"><tr><th align="left" valign="top" scope="column"><p>Class Name</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>AccountDetails</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Encapsulates the state of an <tt>Account</tt> instance. Returned
+by the <tt>getDetails</tt> method of <tt>AccountControllerBean</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>CustomerDetails</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Encapsulates the state of a <tt>Customer</tt> instance. Returned
+by the <tt>getDetails</tt> method of <tt>CustomerControllerBean</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Debug</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Has simple methods for printing a debugging
+message from an enterprise bean. These messages appear on the standard output of
+the Application Server when it&rsquo;s run with the <tt>--verbose</tt> option and in the
+server log.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>DomainUtil</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Contains validation methods: <tt>getAccountTypes</tt>, <tt>checkAccountType</tt>, and <tt>isCreditAccount</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>TxDetails</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Encapsulates the state of a <tt>Tx</tt>
+instance. Returned by the <tt>getDetails</tt> method of <tt>TxControllerBean</tt>.</p></td>
+</tr>
+</table>
+
+<a name="bncmj"></a><h4>Database Tables</h4>
+<p><a name="indexterm-3160"></a><a name="indexterm-3161"></a>A database table of the Duke&rsquo;s Bank application can be categorized by its
+purpose: representing business entities.</p>
+
+<a name="bncmk"></a><h5>Tables Representing Business Entities</h5>
+<p><a href="#bncml">Figure&nbsp;37-2</a> shows the relationships between the database tables. The <tt>bank_customer</tt> and <tt>bank_account</tt> tables
+have a many-to-many relationship: A customer can have several bank accounts, and each
+account can be owned by more than one customer. This many-to-many relationship is
+implemented by the cross&ndash;reference table named <tt>bank_customer_account_xref</tt>. The tables named <tt>bank_account</tt> and <tt>bank_tx</tt>
+have a one-to-many relationship: A bank account can have many transactions, but each
+transaction refers to a single account.</p><a name="bncml"></a><h6>Figure&nbsp;37-2 Database Tables</h6><img src="figures/bank-database.gif" alt="A diagram showing the bank_customer, bank_account, bank_tx, and bank_customer_account_xref database tables and their relationships."></img><p><a href="#bncml">Figure&nbsp;37-2</a> uses several abbreviations. PK stands for primary key, the value that uniquely
+identifies a row in a table. FK is an abbreviation for foreign key,
+which is the primary key of the related table. Tx is short for
+transaction, such as a deposit or withdrawal.</p>
+
+<a name="bncmm"></a><h4>Protecting the Enterprise Beans</h4>
+<p><a name="indexterm-3162"></a><a name="indexterm-3163"></a><a name="indexterm-3164"></a><a name="indexterm-3165"></a>In the Java EE platform, you protect an enterprise bean by specifying the
+security roles that can access its methods. In the Duke&rsquo;s Bank application, you
+define two roles, <tt>bankCustomer</tt> and <tt>bankAdmin</tt>, because two categories of operations are defined
+by the enterprise beans.</p><p>A user in the <tt>bankAdmin</tt> role will be allowed to perform administrative functions:
+creating or removing an account, adding a customer to or removing a customer
+from an account, setting a credit line, and setting an initial balance. A
+user in the <tt>bankCustomer</tt> role will be allowed to deposit, withdraw, and transfer
+funds, make charges and payments, and list the account&rsquo;s transactions. Notice that there
+is no overlap in functions that users in either role can perform.</p><p><a name="indexterm-3166"></a><a name="indexterm-3167"></a><a name="indexterm-3168"></a><a name="indexterm-3169"></a>The system restricts access to these functions to the appropriate role by setting
+method permissions on selected methods of the <tt>CustomerControllerBean</tt>, <tt>AccountControllerBean</tt>, and <tt>TxControllerBean</tt> enterprise
+beans. For example, by allowing only users in the <tt>bankAdmin</tt> role to
+access the <tt>createAccount</tt> method in the <tt>AccountControllerBean</tt> enterprise bean, you deny users in the
+<tt>bankCustomer</tt> role (or any other role) permission to create bank accounts.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncma.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncmn.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

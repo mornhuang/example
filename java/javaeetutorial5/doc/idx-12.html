@@ -1,0 +1,709 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title> - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="idx-11.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="idx-13.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             <h4>U</h4>
+<div class="indexdiv">
+<dl>
+<dd>UDDI<dl>
+<dd><a href="bnabs.html#indexterm-45">UDDI and ebXML Standard Formats</a></dd>
+<dd><a href="bnacj.html#indexterm-96">Java API for XML Registries</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>UI component behavioral interfaces, <a href="bnaqd.html#indexterm-715">User Interface Component Classes</a><dl>
+<dd><tt>ActionSource</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-717">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1502">Creating Custom Component Classes</a></dd>
+</dl>
+<dl>
+<dd><tt>action</tt> and <tt>actionListener</tt> attributes, <a href="bnatn.html#indexterm-1228">Referencing a Backing Bean Method</a></dd>
+<dd>action events<dl>
+<dd><a href="bnaqd.html#indexterm-802">Event and Listener Model</a></dd>
+<dd><a href="bnaut.html#indexterm-1369">Implementing an Event Listener</a></dd>
+</dl>
+</dd>
+<dd><tt>MapComponent</tt> class, <a href="bnawd.html#indexterm-1550">Handling Events for Custom Components</a></dd>
+</dl>
+<tt>ActionSource2</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-718">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1503">Creating Custom Component Classes</a></dd>
+</dl>
+</dd>
+<dd><tt>ConvertibleValueHolder</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-720">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1505">Creating Custom Component Classes</a></dd>
+</dl>
+</dd>
+<dd><tt>EditableValueHolder</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-719">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1504">Creating Custom Component Classes</a></dd>
+</dl>
+</dd>
+<dd><tt>NamingContainer</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-721">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1506">Creating Custom Component Classes</a></dd>
+</dl>
+</dd>
+<dd><tt>StateHolder</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-722">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1507">Creating Custom Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1528">Saving and Restoring State</a></dd>
+</dl>
+</dd>
+<dd><tt>ValueHolder</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-723">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1508">Creating Custom Component Classes</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>UI component classes<dl>
+<dd><a href="bnaqd.html#indexterm-693">User Interface Component Classes</a></dd>
+<dd><a href="bnaqd.html#indexterm-726">Component Rendering Model</a></dd>
+<dd><a href="bnavh.html#indexterm-1461">When to Use a Custom Component</a></dd>
+</dl>
+<dl>
+<dd><tt>javax.faces.component</tt> package, <a href="bnavu.html#indexterm-1501">Creating Custom Component Classes</a></dd>
+<dd><tt>SelectItem</tt> class<dl>
+<dd><a href="bnarf.html#indexterm-1089">The UISelectItem, UISelectItems, and UISelectItemGroup Components</a></dd>
+<dd><a href="bnarf.html#indexterm-1097">Using the selectItem Tag</a></dd>
+<dd><a href="bnaty.html#indexterm-1323">UISelectItems Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>SelectItemGroup</tt> class, <a href="bnaty.html#indexterm-1324">UISelectItems Properties</a></dd>
+<dd><tt>UIColumn</tt> class, <a href="bnaqd.html#indexterm-698">User Interface Component Classes</a></dd>
+<dd><tt>UICommand</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-699">User Interface Component Classes</a></dd>
+<dd><a href="bnaqd.html#indexterm-734">Component Rendering Model</a></dd>
+</dl>
+</dd>
+<dd><tt>UIComponent</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-684">User Interface Component Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-733">Component Rendering Model</a></dd>
+</dl>
+</dd>
+<dd><tt>UIComponentBase</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-697">User Interface Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1500">Creating Custom Component Classes</a></dd>
+<dd><a href="bnavu.html#indexterm-1511">Performing Encoding</a></dd>
+</dl>
+</dd>
+<dd><tt>UIData</tt> class, <a href="bnaqd.html#indexterm-700">User Interface Component Classes</a></dd>
+<dd><tt>UIForm</tt> class, <a href="bnaqd.html#indexterm-701">User Interface Component Classes</a></dd>
+<dd><tt>UIGraphic</tt> class, <a href="bnaqd.html#indexterm-702">User Interface Component Classes</a></dd>
+<dd><tt>UIInput</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-703">User Interface Component Classes</a></dd>
+<dd><a href="bnaqd.html#indexterm-804">Event and Listener Model</a></dd>
+</dl>
+</dd>
+<dd><tt>UIMessage</tt> class, <a href="bnaqd.html#indexterm-704">User Interface Component Classes</a></dd>
+<dd><tt>UIMessages</tt> class, <a href="bnaqd.html#indexterm-705">User Interface Component Classes</a></dd>
+<dd><tt>UIOutput</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-706">User Interface Component Classes</a></dd>
+<dd><a href="bnaqd.html#indexterm-791">Conversion Model</a></dd>
+</dl>
+</dd>
+<dd><tt>UIPanel</tt> class, <a href="bnaqd.html#indexterm-707">User Interface Component Classes</a></dd>
+<dd><tt>UIParameter</tt> class, <a href="bnaqd.html#indexterm-708">User Interface Component Classes</a></dd>
+<dd><tt>UISelectBoolean</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-709">User Interface Component Classes</a></dd>
+<dd><a href="bnarf.html#indexterm-1070">Displaying a Check Box Using the selectBooleanCheckbox Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>UISelectItem</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-710">User Interface Component Classes</a></dd>
+<dd><a href="bnarf.html#indexterm-1085">The UISelectItem, UISelectItems, and UISelectItemGroup Components</a></dd>
+</dl>
+</dd>
+<dd><tt>UISelectItems</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-711">User Interface Component Classes</a></dd>
+<dd><a href="bnarf.html#indexterm-1086">The UISelectItem, UISelectItems, and UISelectItemGroup Components</a></dd>
+</dl>
+</dd>
+<dd><tt>UISelectMany</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-712">User Interface Component Classes</a></dd>
+<dd><a href="bnarf.html#indexterm-1079">Rendering Components for Selecting Multiple Values</a></dd>
+</dl>
+</dd>
+<dd><tt>UISelectOne</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-713">User Interface Component Classes</a></dd>
+<dd><a href="bnaqd.html#indexterm-731">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1072">Displaying a Menu Using the selectOneMenu Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>UIViewRoot</tt> class<dl>
+<dd><a href="bnaqd.html#indexterm-714">User Interface Component Classes</a></dd>
+<dd><a href="bnarb.html#indexterm-898">Setting Up a Page</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>UI component properties, <i>See </i>backing bean properties</dd>
+</dl>
+<dl>
+<dd>UI component renderers<dl>
+<dd><tt>Grid</tt> renderer, <a href="bnarf.html#indexterm-1062">Laying Out Components with the UIPanel Component</a></dd>
+<dd><tt>Group</tt> renderer, <a href="bnarf.html#indexterm-1064">Laying Out Components with the UIPanel Component</a></dd>
+<dd><tt>Hidden</tt> renderer, <a href="bnarf.html#indexterm-983">Using Text Components</a></dd>
+<dd><tt>Label</tt> renderer, <a href="bnarf.html#indexterm-992">Using Text Components</a></dd>
+<dd><tt>Link</tt> renderer, <a href="bnarf.html#indexterm-994">Using Text Components</a></dd>
+<dd><tt>Message</tt> renderer, <a href="bnarf.html#indexterm-997">Using Text Components</a></dd>
+<dd><tt>Secret</tt> renderer, <a href="bnarf.html#indexterm-985">Using Text Components</a></dd>
+<dd><tt>Table</tt> renderer, <a href="bnarf.html#indexterm-1049">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><tt>Text</tt> renderer<dl>
+<dd><a href="bnarf.html#indexterm-981">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-987">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-999">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-1012">Rendering a Text Field with the inputText Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>TextArea</tt> renderer, <a href="bnarf.html#indexterm-989">Using Text Components</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>UI component tag attributes, <a href="bnarf.html#indexterm-955">UI Component Tag Attributes</a><dl>
+<dd><tt>action</tt> attribute<dl>
+<dd><a href="bnavb.html#indexterm-1432">Writing a Method to Handle Navigation</a></dd>
+<dd><a href="bnavm.html#indexterm-1479">Understanding the JSP Page</a></dd>
+</dl>
+</dd>
+<dd><tt>actionListener</tt> attribute<dl>
+<dd><a href="bnatn.html#indexterm-1223">Referencing a Backing Bean Method</a></dd>
+<dd><a href="bnaut.html#indexterm-1382">Implementing Action Listeners</a></dd>
+<dd><a href="bnavb.html#indexterm-1438">Writing a Method to Handle an Action Event</a></dd>
+</dl>
+<dl>
+<dd>and backing bean methods, <a href="bnatn.html#indexterm-1233">Referencing a Backing Bean Method</a></dd>
+<dd>and JSP pages, <a href="bnavm.html#indexterm-1477">Understanding the JSP Page</a></dd>
+<dd>and <tt>UICommand</tt> component, <a href="bnarf.html#indexterm-1036">Using Command Components for Performing Actions and Navigation</a></dd>
+<dd>handling events of custom UI components, <a href="bnawd.html#indexterm-1547">Handling Events for Custom Components</a></dd>
+</dl>
+<tt>alt</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-1060">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><a href="bnavm.html#indexterm-1474">Understanding the JSP Page</a></dd>
+</dl>
+</dd>
+<dd>attributes referencing backing bean methods<dl>
+<dd><i>See </i>attributes referencing backing bean methods</dd>
+</dl>
+<tt>basename</tt> attribute<dl>
+<dd><a href="bnasp.html#indexterm-1103">Loading a Resource Bundle</a></dd>
+<dd><a href="bnaxc.html#indexterm-1590">Registering Custom Localized Static Text</a></dd>
+</dl>
+</dd>
+<dd><tt>binding</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-966">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-972">The value and binding Attributes</a></dd>
+</dl>
+<dl>
+<dd>external data sources, <a href="bnatg.html#indexterm-1194">Binding Component Values and Instances to External Data Sources</a></dd>
+<dd>to a bean property, <a href="bnatg.html#indexterm-1212">Binding a Component Instance to a Bean Property</a></dd>
+<dd>value expressions, <a href="bnaqm.html#indexterm-848">Using the Unified EL to Reference Backing Beans</a></dd>
+</dl>
+<tt>columns</tt> attribute, <a href="bnarf.html#indexterm-1069">Laying Out Components with the UIPanel Component</a></dd>
+<dd><tt>converter</tt> attribute, <a href="bnast.html#indexterm-1126">Converting a Component&rsquo;s Value</a><dl>
+<dd>custom converters, <a href="bnatt.html#indexterm-1283">Using a Custom Converter</a></dd>
+<dd>custom objects, <a href="bnatt.html#indexterm-1268">Using Custom Objects</a></dd>
+<dd>text components, <a href="bnarf.html#indexterm-1001">Using Text Components</a></dd>
+</dl>
+<tt>first</tt> attribute, <a href="bnarf.html#indexterm-1056">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><tt>for</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-1016">Rendering a Label with the outputLabel Tag</a></dd>
+<dd><a href="bnarf.html#indexterm-1100">Displaying Error Messages with the message and messages Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>id</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-960">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-967">The id Attribute</a></dd>
+</dl>
+</dd>
+<dd><tt>immediate</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-961">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-968">The immediate Attribute</a></dd>
+<dd><a href="bnavm.html#indexterm-1480">Understanding the JSP Page</a></dd>
+</dl>
+</dd>
+<dd><tt>locale</tt> attribute, <a href="bnarb.html#indexterm-900">Setting Up a Page</a></dd>
+<dd><tt>redisplay</tt> attribute, <a href="bnarf.html#indexterm-1031">Rendering a Password Field with the inputSecret Tag</a></dd>
+<dd><tt>rendered</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-962">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-969">The rendered Attribute</a></dd>
+<dd><a href="bnatg.html#indexterm-1214">Binding a Component Instance to a Bean Property</a></dd>
+</dl>
+</dd>
+<dd><tt>rows</tt> attribute, <a href="bnarf.html#indexterm-1057">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><tt>style</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-963">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-970">The style and styleClass Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-1058">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><a href="bnarf.html#indexterm-1101">Displaying Error Messages with the message and messages Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>styleClass</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-964">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-971">The style and styleClass Attributes</a></dd>
+</dl>
+</dd>
+<dd><tt>validator</tt> attribute, <a href="bnavb.html#indexterm-1444">Writing a Method to Perform Validation</a><dl>
+<dd>text components, <a href="bnarf.html#indexterm-1003">Using Text Components</a></dd>
+</dl>
+<tt>value</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-965">UI Component Tag Attributes</a></dd>
+<dd><a href="bnarf.html#indexterm-973">The value and binding Attributes</a></dd>
+</dl>
+<dl>
+<dd>backing beans, <a href="bnapl.html#indexterm-679">Developing the Beans</a></dd>
+<dd>binding to a backing-bean property<dl>
+<dd><a href="bnatg.html#indexterm-1200">Binding a Component Value to a Property</a></dd>
+<dd><a href="bnaty.html#indexterm-1295">Writing Bean Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>commandButton</tt> tag, <a href="bnarf.html#indexterm-1043">Rendering a Button with the commandButton Tag</a></dd>
+<dd>external data sources, <a href="bnatg.html#indexterm-1192">Binding Component Values and Instances to External Data Sources</a></dd>
+<dd><tt>graphicImage</tt> tag, <a href="bnarf.html#indexterm-1053">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd>model data, <a href="bnavm.html#indexterm-1482">Configuring Model Data</a></dd>
+<dd><tt>outputFormat</tt> tag, <a href="bnarf.html#indexterm-1025">Displaying a Formatted Message with the outputFormat Tag</a></dd>
+<dd><tt>outputLabel</tt> tag, <a href="bnarf.html#indexterm-1018">Rendering a Label with the outputLabel Tag</a></dd>
+<dd><tt>selectItems</tt> tag, <a href="bnarf.html#indexterm-1095">Using the selectItems Tag</a></dd>
+<dd>text fields, <a href="bnapl.html#indexterm-666">Adding a Text Field</a></dd>
+</dl>
+<tt>valueChangeListener</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-1007">Using Text Components</a></dd>
+<dd><a href="bnatn.html#indexterm-1263">Referencing a Method That Handles a Value-change Event</a></dd>
+<dd><a href="bnavb.html#indexterm-1451">Writing a Method to Handle a Value-Change Event</a></dd>
+</dl>
+</dd>
+<dd><tt>var</tt> attribute<dl>
+<dd>alias to the <tt>ResourceBundle</tt> class, <a href="bnasp.html#indexterm-1105">Loading a Resource Bundle</a></dd>
+<dd><tt>graphicImage</tt> tag, <a href="bnarf.html#indexterm-1055">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd>referencing static localized data, <a href="bnasp.html#indexterm-1106">Referencing Localized Static Data</a></dd>
+<dd>registering static localized text, <a href="bnaxc.html#indexterm-1592">Registering Custom Localized Static Text</a></dd>
+<dd>retrieving localized messages, <a href="bnaxw.html#indexterm-1654">Retrieving Localized Messages</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>UI component tags<dl>
+<dd><a href="bnaqd.html#indexterm-736">Component Rendering Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-808">Event and Listener Model</a></dd>
+<dd><a href="bnarf.html#indexterm-957">UI Component Tag Attributes</a></dd>
+<dd><a href="bnaty.html#indexterm-1294">Writing Bean Properties</a></dd>
+</dl>
+<dl>
+<dd>attributes<dl>
+<dd><i>See </i>UI component tag attributes</dd>
+</dl>
+<tt>column</tt> tag, <a href="bnaqd.html#indexterm-740">Component Rendering Model</a></dd>
+<dd><tt>commandButton</tt> tag<dl>
+<dd><a href="bnapl.html#indexterm-670">Adding a Button</a></dd>
+<dd><a href="bnaqd.html#indexterm-742">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1039">Rendering a Button with the commandButton Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>commandLink</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-744">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1045">Rendering a Hyperlink with the commandLink Tag</a></dd>
+<dd><a href="bnasz.html#indexterm-1168">Registering an Action Listener on a Component</a></dd>
+</dl>
+</dd>
+<dd><tt>dataTable</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-746">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1051">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><a href="bnaty.html#indexterm-1304">UIData Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>form</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-748">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-976">Adding a Form Component</a></dd>
+<dd><a href="bnarf.html#indexterm-977">Adding a Form Component</a></dd>
+</dl>
+</dd>
+<dd><tt>graphicImage</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-749">Component Rendering Model</a></dd>
+<dd><a href="bnavm.html#indexterm-1475">Understanding the JSP Page</a></dd>
+</dl>
+</dd>
+<dd><tt>inputHidden</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-750">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-984">Using Text Components</a></dd>
+</dl>
+</dd>
+<dd><tt>inputSecret</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-752">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-986">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-1030">Rendering a Password Field with the inputSecret Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>inputText</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-754">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-988">Using Text Components</a></dd>
+</dl>
+<dl>
+<dd>text components, <a href="bnarf.html#indexterm-980">Using Text Components</a></dd>
+<dd>text fields<dl>
+<dd><a href="bnapl.html#indexterm-665">Adding a Text Field</a></dd>
+<dd><a href="bnarf.html#indexterm-1011">Rendering a Text Field with the inputText Tag</a></dd>
+</dl>
+</dd>
+</dl>
+<tt>inputTextarea</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-756">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-990">Using Text Components</a></dd>
+</dl>
+</dd>
+<dd><tt>message</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-758">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1098">Displaying Error Messages with the message and messages Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>messages</tt> tag<dl>
+<dd><a href="bnapl.html#indexterm-673">Displaying Error Messages</a></dd>
+<dd><a href="bnaqd.html#indexterm-759">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1099">Displaying Error Messages with the message and messages Tags</a></dd>
+</dl>
+</dd>
+<dd><tt>outputFormat</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-760">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1022">Displaying a Formatted Message with the outputFormat Tag</a></dd>
+<dd><a href="bnarf.html#indexterm-1047">Rendering a Hyperlink with the commandLink Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>outputLabel</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-761">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-993">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-1015">Rendering a Label with the outputLabel Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>outputLink</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-763">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-995">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-1020">Rendering a Hyperlink with the outputLink Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>outputMessage</tt> tag, <a href="bnarf.html#indexterm-998">Using Text Components</a></dd>
+<dd><tt>outputText</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-764">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1000">Using Text Components</a></dd>
+<dd><a href="bnarf.html#indexterm-1017">Rendering a Label with the outputLabel Tag</a></dd>
+<dd><a href="bnaty.html#indexterm-1306">UIData Properties</a></dd>
+</dl>
+<dl>
+<dd>text fields, <a href="bnarf.html#indexterm-1014">Rendering a Text Field with the inputText Tag</a></dd>
+</dl>
+<tt>panelGrid</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-766">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1063">Laying Out Components with the UIPanel Component</a></dd>
+<dd><a href="bnarf.html#indexterm-1067">Laying Out Components with the UIPanel Component</a></dd>
+</dl>
+</dd>
+<dd><tt>panelGroup</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-768">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1052">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd><a href="bnarf.html#indexterm-1065">Laying Out Components with the UIPanel Component</a></dd>
+<dd><a href="bnarf.html#indexterm-1066">Laying Out Components with the UIPanel Component</a></dd>
+</dl>
+</dd>
+<dd><tt>selectBooleanCheckbox</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-769">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1071">Displaying a Check Box Using the selectBooleanCheckbox Tag</a></dd>
+<dd><a href="bnaty.html#indexterm-1310">UISelectBoolean Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>selectItems</tt> tag, <a href="bnaty.html#indexterm-1325">UISelectItems Properties</a></dd>
+<dd><tt>selectManyCheckbox</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-773">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1080">Rendering Components for Selecting Multiple Values</a></dd>
+<dd><a href="bnarf.html#indexterm-1082">Rendering Components for Selecting Multiple Values</a></dd>
+<dd><a href="bnaty.html#indexterm-1313">UISelectMany Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>selectManyListbox</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-775">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1081">Rendering Components for Selecting Multiple Values</a></dd>
+</dl>
+</dd>
+<dd><tt>selectManyMenu</tt> tag, <a href="bnaqd.html#indexterm-777">Component Rendering Model</a></dd>
+<dd><tt>selectOneListbox</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-779">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1074">Displaying a Menu Using the selectOneMenu Tag</a></dd>
+</dl>
+</dd>
+<dd><tt>selectOneMenu</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-781">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1075">Displaying a Menu Using the selectOneMenu Tag</a></dd>
+<dd><a href="bnaty.html#indexterm-1318">UISelectOne Properties</a></dd>
+<dd><a href="bnaty.html#indexterm-1320">UISelectItem Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>selectOneRadio</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-783">Component Rendering Model</a></dd>
+<dd><a href="bnarf.html#indexterm-1073">Displaying a Menu Using the selectOneMenu Tag</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>UI components<dl>
+<dd>buttons, <a href="bnaqd.html#indexterm-743">Component Rendering Model</a></dd>
+<dd>check boxes<dl>
+<dd><a href="bnaqd.html#indexterm-770">Component Rendering Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-774">Component Rendering Model</a></dd>
+</dl>
+</dd>
+<dd>combo boxes<dl>
+<dd><a href="bnaqd.html#indexterm-778">Component Rendering Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-782">Component Rendering Model</a></dd>
+</dl>
+</dd>
+<dd>custom UI components<dl>
+<dd><i>See </i>custom UI components</dd>
+</dl>
+data grids, <a href="bnaqd.html#indexterm-747">Component Rendering Model</a></dd>
+<dd>hidden fields, <a href="bnaqd.html#indexterm-751">Component Rendering Model</a></dd>
+<dd>hyperlinks, <a href="bnaqd.html#indexterm-745">Component Rendering Model</a></dd>
+<dd>labels<dl>
+<dd><a href="bnaqd.html#indexterm-762">Component Rendering Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-765">Component Rendering Model</a></dd>
+</dl>
+</dd>
+<dd>list boxes<dl>
+<dd><a href="bnaqd.html#indexterm-776">Component Rendering Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-780">Component Rendering Model</a></dd>
+</dl>
+</dd>
+<dd>password fields, <a href="bnaqd.html#indexterm-753">Component Rendering Model</a></dd>
+<dd>radio buttons, <a href="bnaqd.html#indexterm-784">Component Rendering Model</a></dd>
+<dd>table columns, <a href="bnaqd.html#indexterm-741">Component Rendering Model</a></dd>
+<dd>tables, <a href="bnaqd.html#indexterm-767">Component Rendering Model</a></dd>
+<dd>text areas, <a href="bnaqd.html#indexterm-757">Component Rendering Model</a></dd>
+<dd>text fields, <a href="bnaqd.html#indexterm-755">Component Rendering Model</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>UnavailableException</tt> class, <a href="bnafu.html#indexterm-230">Initializing a Servlet</a></dd>
+</dl>
+<dl>
+<dd><tt>unchecked</tt> element, <a href="bnbyl.html#indexterm-2634">Specifying Method Permissions</a></dd>
+</dl>
+<dl>
+<dd>unified expression language<dl>
+<dd><a href="bnahq.html#indexterm-339">Unified Expression Language</a></dd>
+<dd><a href="bnaqm.html#indexterm-841">Using the Unified EL to Reference Backing Beans</a></dd>
+</dl>
+<dl>
+<dd>deactivating expression evaluation, <a href="bnahq.html#indexterm-356">Deactivating Expression Evaluation</a></dd>
+<dd>deferred evaluation expressions<dl>
+<dd><a href="bnahq.html#indexterm-342">Unified Expression Language</a></dd>
+<dd><a href="bnahq.html#indexterm-348">Immediate and Deferred Evaluation Syntax</a></dd>
+</dl>
+</dd>
+<dd>deferred method expressions, <a href="bnama.html#indexterm-540">Declaring Tag Attributes in Tag Files</a></dd>
+<dd>deferred value expressions, <a href="bnama.html#indexterm-539">Declaring Tag Attributes in Tag Files</a></dd>
+<dd>expression examples, <a href="bnahq.html#indexterm-364">Examples of EL Expressions</a></dd>
+<dd>expression language resolvers, <a href="bnahq.html#indexterm-359">EL Resolvers</a></dd>
+<dd>functions, <a href="bnahq.html#indexterm-365">Functions</a><dl>
+<dd>defining<dl>
+<dd><a href="bnahq.html#indexterm-367">Defining Functions</a></dd>
+<dd><a href="bnahq.html#indexterm-368">Defining Functions</a></dd>
+</dl>
+</dd>
+</dl>
+immediate evaluation expressions<dl>
+<dd><a href="bnahq.html#indexterm-341">Unified Expression Language</a></dd>
+<dd><a href="bnahq.html#indexterm-347">Immediate and Deferred Evaluation Syntax</a></dd>
+</dl>
+</dd>
+<dd>implicit objects<dl>
+<dd><a href="bnahq.html#indexterm-360">Implicit Objects</a></dd>
+<dd><a href="bnahq.html#indexterm-361">Implicit Objects</a></dd>
+</dl>
+</dd>
+<dd>literal expressions<dl>
+<dd><a href="bnahq.html#indexterm-353">Value Expressions</a></dd>
+<dd><a href="bnahq.html#indexterm-357">Literal Expressions</a></dd>
+</dl>
+</dd>
+<dd>literals, <a href="bnahq.html#indexterm-352">Value Expressions</a></dd>
+<dd>lvalue expressions<dl>
+<dd><a href="bnahq.html#indexterm-346">Unified Expression Language</a></dd>
+<dd><a href="bnahq.html#indexterm-351">Value Expressions</a></dd>
+</dl>
+</dd>
+<dd>method expressions, <a href="bnahq.html#indexterm-355">Method Expressions</a></dd>
+<dd>operators, <a href="bnahq.html#indexterm-362">Operators</a></dd>
+<dd>reserved words, <a href="bnahq.html#indexterm-363">Reserved Words</a></dd>
+<dd>resolving expressions, <a href="bnahq.html#indexterm-358">Resolving Expressions</a></dd>
+<dd>rvalue expressions<dl>
+<dd><a href="bnahq.html#indexterm-345">Unified Expression Language</a></dd>
+<dd><a href="bnahq.html#indexterm-350">Value Expressions</a></dd>
+</dl>
+</dd>
+<dd>type conversion during expression evaluation, <a href="bnahq.html#indexterm-354">Value Expressions</a></dd>
+<dd>value expressions<dl>
+<dd><a href="bnahq.html#indexterm-343">Unified Expression Language</a></dd>
+<dd><a href="bnahq.html#indexterm-349">Value Expressions</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>unmarshalling XML data, <a href="bnazg.html#indexterm-1696">More about Unmarshalling</a></dd>
+</dl>
+<dl>
+<dd><tt>use-caller-identity</tt> element, <a href="bnbyl.html#indexterm-2647">Propagating Security Identity</a></dd>
+</dl>
+<dl>
+<dd>user data constraint, <a href="bnbxj.html#indexterm-2511">Setting Up Security Roles</a></dd>
+</dl>
+<dl>
+<dd><tt>user-data-constraint</tt> element, <a href="bnbxj.html#indexterm-2514">Setting Up Security Roles</a></dd>
+</dl>
+<dl>
+<dd>users<dl>
+<dd><a href="bnbxj.html#indexterm-2481">What Is a User?</a></dd>
+<dd><a href="bncav.html#indexterm-2725">Working with Security Roles</a></dd>
+</dl>
+<dl>
+<dd>adding to Application Server, <a href="bnbxj.html#indexterm-2494">Adding Users to the Application Server</a></dd>
+<dd>managing, <a href="bnbxj.html#indexterm-2491">Managing Users and Groups on the Application Server</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>UserTransaction</tt> interface<dl>
+<dd><a href="bncij.html#indexterm-3046">Methods Not Allowed in Container-Managed Transactions</a></dd>
+<dd><a href="bnciy.html#indexterm-3062">JTA Transactions</a></dd>
+<dd><a href="bnciy.html#indexterm-3068">Methods Not Allowed in Bean-Managed Transactions</a></dd>
+<dd><a href="bncjg.html#indexterm-3078">Transactions in Web Components</a></dd>
+</dl>
+<dl>
+<dd>message-driven beans, <a href="bncgl.html#indexterm-2957">Managing Distributed Transactions</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>utility classes, <a href="bnbmp.html#indexterm-2051">The Contents of an Enterprise Bean</a></dd>
+</dl>
+</div>
+         </div>
+         <div class="navigation">
+             <a href="idx-11.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="idx-13.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

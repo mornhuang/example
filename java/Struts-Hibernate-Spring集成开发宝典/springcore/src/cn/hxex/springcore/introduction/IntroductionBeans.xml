@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+	<aop:config>
+	
+		<aop:pointcut id="displayUsagePointCut" 
+			expression="execution(public * *(..))"/>
+	
+		<aop:aspect id="usageItackerAspect" ref="usageTracking">
+		
+			<!-- aop:declare-parents
+				types-matching="cn.hxex.springcore.introduction.*+"
+				implement-interface="cn.hxex.springcore.introduction.UsageTracked"
+				default-impl="cn.hxex.springcore.introduction.DefaultUsageTracked"
+				/-->
+
+			<aop:before pointcut-ref="displayUsagePointCut" method="displayUsage" arg-names="usageTracked"/>
+			
+		</aop:aspect>
+	</aop:config>
+
+	<bean id="usageTracking" class="cn.hxex.springcore.introduction.UsageTracking"/>
+	<bean id="introductionBean" class="cn.hxex.springcore.introduction.IntroductionBean"/>
+</beans>

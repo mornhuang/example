@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="com.redsaga.hibnatesample.step2">
+	<class name="Article" table="article">
+		<id
+			column="id"
+			name="id"
+			type="integer"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="last_update_time"
+			length="19"
+			name="lastUpdateTime"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="create_time"
+			length="19"
+			name="createTime"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="title"
+			length="255"
+			name="title"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="hits"
+			length="11"
+			name="hits"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="article_type"
+			length="11"
+			name="articleType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="bytes"
+			length="11"
+			name="bytes"
+			not-null="false"
+			type="integer"
+		 />
+		<property
+			column="body"
+			name="body"
+			not-null="false"
+			type="string"
+		 />
+
+		<many-to-one
+			class="User"
+			name="createBy"
+			not-null="true"
+		>
+			<column name="create_by" />
+		</many-to-one>
+		<many-to-one
+			class="Article"
+			name="parent"
+			not-null="true"
+		>
+			<column name="parent_id" />
+		</many-to-one>
+		<many-to-one
+			class="Board"
+			name="board"
+			not-null="true"
+		>
+			<column name="board_id" />
+		</many-to-one>
+		<many-to-one
+			class="User"
+			name="lastUpdateBy"
+			not-null="true"
+		>
+			<column name="last_update_by" />
+		</many-to-one>
+		<set
+			inverse="true"
+			lazy="true"
+			name="set"
+		>
+			<key column="parent_id" />
+			<one-to-many class="Article" />
+		</set>
+	</class>
+</hibernate-mapping>

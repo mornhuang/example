@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+
+<project name="rsForum" basedir="." default="usage">
+
+	<property name="name" value="rsForum"/>
+
+	<property name="rsForum.root" value="."/>
+	<property name="src.dir" value="src"/>
+    <property name="build.dir" value="${rsForum.root}/build/.classes"/>
+    <property name="docs.dir" value="${rsForum.root}/build/.docs"/>
+	<property name="dist.dir" value="dist"/>
+    <property name="db.dir" value="db"/>
+
+	<property name="testsrc.dir" value="test"/>
+	<property name="testbuild.dir" value="${rsForum.root}/build/.testclasses"/>
+	<property name="testreports.dir" value="${rsForum.root}/build/junit-reports"/>
+	<property name="testhtml.dir" value="${testreports.dir}/html"/>
+
+
+	<property file="build.properties"/>
+
+
+	<path id="master-classpath">
+		<fileset dir="${rsForum.root}/../hibernate-2.1">
+			<include name="hibernate2.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/lib">
+			<include name="commons-logging.jar"/>
+		</fileset>
+	</path>
+
+	<path id="console-classpath">
+		<pathelement location="${build.dir}"/>
+		<fileset dir="${rsForum.root}/../tools/consoleLoader">
+			<include name="loader.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../tools/hibernateConsole">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../hibernate-2.1">
+			<include name="hibernate2.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../hibernate-2.1/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${rsForum.root}/../lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="test-classpath">
+		<fileset dir="${rsForum.root}/lib">
+			<include name="aopalliance.jar"/>
+			<include name="cglib*.jar"/>
+			<include name="dom4j.jar"/>
+			<include name="ehcache*.jar"/>
+			<include name="odmg.jar"/>
+			<include name="hsqldb.jar"/>
+			<include name="jta.jar"/>
+			<include name="commons-dbcp.jar"/>
+			<include name="commons-collections.jar"/>
+			<include name="commons-lang.jar"/>
+			<include name="commons-pool.jar"/>
+		</fileset>
+
+	</path>
+
+
+	<target name="usage">
+
+		<echo message=""/>
+		<echo message="rsForum build file"/>
+		<echo message="------------------------------------------------------"/>
+		<echo message=""/>
+		<echo message="Available targets are:"/>
+		<echo message=""/>
+		<echo message="clean    --> Clean output dirs"/>
+		<echo message="build    --> Compile main Java sources and copy libraries"/>
+		<echo message="setupDB  --> Initialize the database"/>
+		<echo message="tests    --> Run tests using initialized database"/>
+		<echo message="console  --> launch hibernate console"/>
+		<echo message=""/>
+	</target>
+
+
+	<target name="clean" description="Clean output dirs (build, docs, testbuild, testreports, weblib, dist)">
+		<delete dir="${build.dir}"/>
+		<delete dir="${docs.dir}"/>
+		<delete dir="${testbuild.dir}"/>
+		<delete dir="${testreports.dir}"/>
+	</target>
+
+
+	<target name="build" description="Compile main source tree java files into class files, generate jar files">
+		<mkdir dir="${build.dir}"/>
+		<javac destdir="${build.dir}" source="1.4" target="1.4" debug="true"
+			deprecation="false" optimize="false" failonerror="true">
+			<src path="${src.dir}"/>
+			<classpath refid="master-classpath"/>
+		</javac>
+
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+		      <exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+
+
+	</target>
+
+	<target name="docs" description="Create complete Javadoc documentation">
+		<delete dir="${docs.dir}"/>
+		<mkdir dir="${docs.dir}"/>
+
+		<javadoc sourcepath="${src.dir}" destdir="${docs.dir}" windowtitle="rsForum"
+				source="1.3" author="true" version="true" use="true" packagenames="*">
+			<doctitle><![CDATA[<h1>rsForum</h1>]]></doctitle>
+			<bottom><![CDATA[<i>Example of hibernate programming, 2005.</i>]]></bottom>
+			<classpath refid="master-classpath"/>
+		</javadoc>
+
+	</target>
+
+
+<!--	<target name="warfile" depends="build,docs" description="Build the web application archive">-->
+<!--		<mkdir dir="${dist.dir}"/>-->
+<!--		<war warfile="${dist.dir}/${name}.war" basedir="${war.dir}" webxml="${war.dir}/WEB-INF/web.xml">-->
+<!--			<include name="*"/>-->
+<!--			<include name="docs/**"/>-->
+<!--			<include name="html/**"/>-->
+<!--			<include name="WEB-INF/*.*"/>-->
+<!--			<exclude name="WEB-INF/web.xml"/>-->
+<!--			<include name="WEB-INF/classes/*.*"/>-->
+<!--			<include name="WEB-INF/lib/**"/>-->
+<!--			<include name="WEB-INF/jsp/**"/>-->
+<!--			<exclude name="**/.*"/>-->
+<!--		</war>-->
+<!--	</target>-->
+
+
+
+	<target name="setupDB" description="Initialize the selected database">
+		<ant dir="${db.dir}"/>
+	</target>
+
+	<target name="tests" depends="build" description="Run tests using initialized database">
+		<delete dir="${testbuild.dir}"/>
+		<delete dir="${testreports.dir}"/>
+		<delete dir="${testhtml.dir}"/>
+
+		<mkdir dir="${testbuild.dir}"/>
+		<mkdir dir="${testreports.dir}"/>
+		<mkdir dir="${testhtml.dir}"/>
+
+		<javac srcdir="${testsrc.dir}" destdir="${testbuild.dir}" deprecation="true">
+			<classpath path="${build.dir}"/>
+			<classpath refid="master-classpath"/>
+			<classpath path="${rsForum.root}/lib/junit.jar"/>
+		</javac>
+
+		<junit printsummary="true" fork="yes">
+			<formatter type="xml"/>
+			<test name="com.redsaga.projectFarm.test.hibernate.HibernateSiteTests" todir="${testreports.dir}"/>
+			<classpath path="${build.dir}"/>
+			<classpath path="${src.dir}"/>
+			<classpath path="${testbuild.dir}"/>
+			<classpath path="${testsrc.dir}"/>
+			<classpath refid="master-classpath"/>
+			<classpath refid="test-classpath"/>
+		</junit>
+
+		<junitreport todir="${testhtml.dir}">
+			<fileset dir="${testreports.dir}">
+				<include name="TEST-*.xml"/>
+			</fileset>
+			<report format="frames" todir="${testhtml.dir}"/>
+		</junitreport>
+
+		<!-- restore the database -->
+		<ant dir="${db.dir}"/>
+
+	</target>
+
+
+	<target name="all" depends="clean,build,docs,tests" description="Clean,build,docs,warfile,tests"/>
+	
+	<target name="report" >
+		<exec dir="${testhtml.dir}" executable="cmd.exe">
+  		<arg line="/c start index.html"/>
+  		</exec>
+  	</target>
+
+
+<!--    <taskdef name="hibernatedoclet"-->
+<!--        classname="xdoclet.modules.hibernate.HibernateDocletTask"-->
+<!--        classpathref="xdoclet.path" />-->
+
+    <!-- generate hibernate files -->
+<!--    <hibernatedoclet-->
+<!--        destdir="${build.compile_beans}"-->
+<!--        mergedir="./metadata/xdoclet"-->
+<!--        excludedtags="@version,@author"-->
+<!--        addedtags="@xdoclet-generated at ${TODAY}"-->
+<!--        force="true">-->
+<!--        <fileset dir="./src"/>-->
+<!--        <hibernate validatexml="true" version="2.0"/>-->
+<!--    </hibernatedoclet>-->
+
+	<target name="console" description="launch hibernate console">
+		<java classname="com.redsaga.util.hibernateConsole2Loader.Loader" fork="true">
+		    <classpath>
+		        <path refid="console-classpath"/>
+		    </classpath>
+		</java>
+	</target>
+
+</project>

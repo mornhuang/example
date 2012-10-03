@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.itsz.sht.dao.hibernate.model.Status"
+		table="SERVICE_STATUS">
+		<id name="serviceID" type="string" column="service_id" unsaved-value="null">
+			<generator
+				class="com.taifook.mtss.web.common.util.hibernate.StringSequenceGenerator">
+				<param name="sequence">service_id_seq</param>
+			</generator>
+		</id>
+		<property name="serviceName">
+			<column name="service_name" sql-type="varchar2(30)"/>
+		</property>
+		<property name="status">
+			<column name="status" sql-type="varchar2(30)"/>
+		</property>
+		<property name="validPeriod">
+			<column name="valid_period" sql-type="varchar2(240)"/>
+		</property>
+		<property name="timezone">
+			<column name="timezone" sql-type="varchar2(30)"/>
+		</property>
+		<property name="updateSeqNum">
+			<column name="upd_seq_num" sql-type="number"/>
+		</property>
+		<property name="lastModifiedDate">
+			<column name="last_modified" sql-type="timestamp"/>
+		</property>
+		<property name="updateToken">
+			<column name="upd_token" sql-type="varchar2(50)"/>
+		</property>
+	</class>
+</hibernate-mapping>

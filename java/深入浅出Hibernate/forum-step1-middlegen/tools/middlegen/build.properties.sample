@@ -1,0 +1,34 @@
+#middlegen.skip=dummy
+build.compiler=modern
+
+#Tell Middlegen where weblogic.jar is located. Works with 6.1 and 7.0
+#weblogic.jar=D:/bea/wlserver6.1/lib/weblogic.jar
+weblogic.jar=D:/bea/weblogic700/server/lib/weblogic.jar
+
+#Tell Middlegen where JBoss is located.
+jboss.home=D:/jboss-3.0.0
+
+#Tell Middlegen where to deploy the ear file.
+deploy.dir=${jboss.home}/server/default/deploy
+#deploy.dir=D:/bea/user_projects/ApplicationDomain/applications
+
+#Tell Middlegen where MVCSoft is located.
+mvcsoft.home=D:/persistence_mvcsoft
+
+#Gui or not?
+gui=true
+
+# Middlegen is only bundled with JDBC drivers for HsqlDB, MySql and PostgreSQL.
+# If you edit build.xml to use a different database, you should point
+# out the location of the jar containing the driver here.
+
+#McKoi
+mckoi.home=D:/mckoi0.93
+mckoidb.jar=${mckoi.home}/mckoidb.jar
+mkjdbc.jar=${mckoi.home}/mkjdbc.jar
+
+#uncomment this to run the compatibility test for a specific driver/db
+#note that you might need to edit the script in order for your database
+#to accept it. (e.g. mysql needs indexes and type=innodb after each table creation)
+#this also requires that you have the middlegen sources
+#database.script.file=../src/sql/relations.sql

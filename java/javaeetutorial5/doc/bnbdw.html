@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Why StAX? - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Why StAX?</a></p>
+<p class="toc level4"><a href="#bnbdx">Streaming versus DOM</a></p>
+<p class="toc level4"><a href="#bnbdy">Pull Parsing versus Push Parsing</a></p>
+<p class="toc level4"><a href="#bnbdz">StAX Use Cases</a></p>
+<p class="toc level4"><a href="#bnbea">Comparing StAX to Other JAXP APIs</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbec.html">StAX API</a></p>
+<p class="toc level4"><a href="bnbec.html#bnbed">Cursor API</a></p>
+<p class="toc level4"><a href="bnbec.html#bnbee">Iterator API</a></p>
+<p class="toc level5"><a href="bnbec.html#bnbef">Iterator Event Types</a></p>
+<p class="toc level5"><a href="bnbec.html#bnbeh">Example of Event Mapping</a></p>
+<p class="toc level4 tocsp"><a href="bnbec.html#bnbej">Choosing between Cursor and Iterator APIs</a></p>
+<p class="toc level5"><a href="bnbec.html#bnbek">Development Goals</a></p>
+<p class="toc level5"><a href="bnbec.html#bnbel">Comparing Cursor and Iterator APIs</a></p>
+<p class="toc level3 tocsp"><a href="bnbem.html">Using StAX</a></p>
+<p class="toc level4"><a href="bnbem.html#bnben">StAX Factory Classes</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbeo"><tt>XMLInputFactory</tt> Class</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbeq"><tt>XMLOutputFactory</tt> Class</a></p>
+<p class="toc level5"><a href="bnbem.html#bnber"><tt>XMLEventFactory</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="bnbem.html#bnbes">Resources, Namespaces, and Errors</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbet">Resource Resolution</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbeu">Attributes and Namespaces</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbev">Error Reporting and Exception Handling</a></p>
+<p class="toc level4 tocsp"><a href="bnbem.html#bnbew">Reading XML Streams</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbex">Using <tt>XMLStreamReader</tt></a></p>
+<p class="toc level5"><a href="bnbem.html#bnbfb">Using <tt>XMLEventReader</tt></a></p>
+<p class="toc level4 tocsp"><a href="bnbem.html#bnbfe">Writing XML Streams</a></p>
+<p class="toc level5"><a href="bnbem.html#bnbff">Using <tt>XMLStreamWriter</tt></a></p>
+<p class="toc level5"><a href="bnbem.html#bnbfg">Using <tt>XMLEventWriter</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnbfi.html">Sun's Streaming XML Parser Implementation</a></p>
+<p class="toc level4"><a href="bnbfi.html#bnbfj">Reporting CDATA Events</a></p>
+<p class="toc level4"><a href="bnbfi.html#bnbfk">Streaming XML Parser Factories Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bnbfl.html">Example Code</a></p>
+<p class="toc level4"><a href="bnbfl.html#bnbfm">Example Code Organization</a></p>
+<p class="toc level4"><a href="bnbfl.html#bnbfn">Example XML Document</a></p>
+<p class="toc level4"><a href="bnbfl.html#bnbfo">Cursor Example</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfp">Stepping through Events</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfq">Returning String Representations</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfr">Building and Running the Cursor Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfs">Building and Running the Cursor Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbfl.html#bnbft">Cursor-to-Event Example</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfu">Instantiating an <tt>XMLEventAllocator</tt></a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfv">Creating an Event Iterator</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfw">Creating the Allocator Method</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfx">Building and Running the Cursor-to-Event Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbfy">Building and Running the Cursor-to-Event Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbfl.html#bnbfz">Event Example</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbga">Creating an Input Factory</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgb">Creating an Event Reader</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgc">Creating an Event Iterator</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgd">Getting the Event Stream</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbge">Returning the Output</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgf">Building and Running the Event Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgg">Building and Running the Event Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbfl.html#bnbgh">Filter Example</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgi">Implementing the <tt>StreamFilter</tt> Class</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgj">Creating an Input Factory</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgk">Creating the Filter</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgl">Capturing the Event Stream</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgm">Filtering the Stream</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgn">Returning the Output</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgo">Building and Running the Filter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgp">Building and Running the Filter Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbfl.html#bnbgq">Read-and-Write Example</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgr">Creating an Event Producer/Consumer</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgs">Creating an Iterator</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgt">Creating a Writer</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgu">Returning the Output</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgv">Building and Running the Read-and-Write Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgw">Building and Running the Read-and-Write Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbfl.html#bnbgx">Writer Example</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgy">Creating the Output Factory</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbgz">Creating a Stream Writer</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbha">Writing the Stream</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbhb">Returning the Output</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbhc">Building and Running the Writer Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbfl.html#bnbhd">Building and Running the Writer Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbhe.html">Further Information about StAX</a></p>
+<p class="toc level2 tocsp"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbdv.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbec.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbdw"></a><h3>Why StAX?</h3>
+<p>The StAX project was spearheaded by BEA with support from Sun Microsystems, and
+the JSR 173 specification passed the Java Community Process final approval ballot in
+March, 2004 (<a href="http://jcp.org/en/jsr/detail?id=173">http://jcp.org/en/jsr/detail?id=173</a>). The primary goal of the StAX API is to
+give &ldquo;parsing control to the programmer by exposing a simple iterator based API.
+This allows the programmer to ask for the next event (pull the event)
+and allows state to be stored in procedural fashion.&rdquo; StAX was created to
+address limitations in the two most prevalent parsing APIs, SAX and DOM.</p>
+
+<a name="bnbdx"></a><h4>Streaming versus DOM</h4>
+<a name="indexterm-1829"></a><a name="indexterm-1830"></a><p>Generally speaking, there are two programming models for working with XML infosets: <b>streaming</b>
+and the <b>document object model</b> (DOM).</p><p>The DOM model involves creating in-memory objects representing an entire document tree and
+the complete infoset state for an XML document. Once in memory, DOM trees
+can be navigated freely and parsed arbitrarily, and as such provide maximum flexibility
+for developers. However, the cost of this flexibility is a potentially large memory
+footprint and significant processor requirements, because the entire representation of the document must
+be held in memory as objects for the duration of the document processing.
+This may not be an issue when working with small documents, but memory
+and processor requirements can escalate quickly with document size.</p><p>Streaming refers to a programming model in which XML infosets are transmitted and
+parsed serially at application runtime, often in real time, and often from dynamic
+sources whose contents are not precisely known beforehand. Moreover, stream-based parsers can start
+generating output immediately, and infoset elements can be discarded and garbage collected immediately
+after they are used. While providing a smaller memory footprint, reduced processor requirements, and
+higher performance in certain situations, the primary trade-off with stream processing is that
+you can only see the infoset state at one location at a time
+in the document. You are essentially limited to the &ldquo;cardboard tube&rdquo; view of
+a document, the implication being that you need to know what processing you
+want to do before reading the XML document.</p><p>Streaming models for XML processing are particularly useful when your application has strict
+memory limitations, as with a cell phone running J2ME, or when your application
+needs to simultaneously process several requests, as with an application server. In fact,
+it can be argued that the majority of XML business logic can benefit
+from stream processing, and does not require the in-memory maintenance of entire DOM
+trees.</p>
+
+<a name="bnbdy"></a><h4>Pull Parsing versus Push Parsing</h4>
+<a name="indexterm-1831"></a><a name="indexterm-1832"></a><p>Streaming <b>pull parsing</b> refers to a programming model in which a client application calls
+methods on an XML parsing library when it needs to interact with an
+XML infoset; that is, the client only gets (pulls) XML data when it
+explicitly asks for it.</p><p>Streaming <b>push parsing</b> refers to a programming model in which an XML parser sends
+(pushes) XML data to the client as the parser encounters elements in an
+XML infoset; that is, the parser sends the data whether or not the
+client is ready to use it at that time.</p><p>Pull parsing provides several advantages over push parsing when working with XML streams:</p>
+<ul><li><p>With pull parsing, the client controls the application thread, and can call methods on the parser when needed. By contrast, with push processing, the parser controls the application thread, and the client can only accept invocations from the parser.</p></li>
+<li><p>Pull parsing libraries can be much smaller and the client code to interact with those libraries much simpler than with push libraries, even for more complex documents.</p></li>
+<li><p>Pull clients can read multiple documents at one time with a single thread.</p></li>
+<li><p>A StAX pull parser can filter XML documents such that elements unnecessary to the client can be ignored, and it can support XML views of non-XML data.</p></li></ul>
+
+
+<a name="bnbdz"></a><h4>StAX Use Cases</h4>
+<a name="indexterm-1833"></a><p>The StAX specification defines a number of use cases for the API:</p>
+<ul><li><p><a name="indexterm-1834"></a>Data binding</p>
+<ul><li><p>Unmarshalling an XML document</p></li>
+<li><p>Marshalling an XML document</p></li>
+<li><p>Parallel document processing</p></li>
+<li><p>Wireless communication</p></li></ul>
+</li>
+<li><p><a name="indexterm-1835"></a>SOAP message processing</p>
+<ul><li><p>Parsing simple predictable structures</p></li>
+<li><p>Parsing graph representations with forward references</p></li>
+<li><p>Parsing WSDL</p></li></ul>
+</li>
+<li><p>Virtual data sources</p>
+<ul><li><p>Viewing as XML data stored in databases</p></li>
+<li><p>Viewing data in Java objects created by XML data binding</p></li>
+<li><p>Navigating a DOM tree as a stream of events</p></li></ul>
+</li>
+<li><p>Parsing specific XML vocabularies</p></li>
+<li><p>Pipelined XML processing</p></li></ul>
+<p>A complete discussion of all these use cases is beyond the scope
+of this chapter. Please refer to the StAX specification for further information.</p>
+
+<a name="bnbea"></a><h4>Comparing StAX to Other JAXP APIs</h4>
+<p>As an API in the JAXP family, StAX can be compared, among
+other APIs, to SAX, TrAX, and JDOM. Of the latter two, StAX is
+not as powerful or flexible as TrAX or JDOM, but neither does it
+require as much memory or processor load to be useful, and StAX can,
+in many cases, outperform the DOM-based APIs. The same arguments outlined above, weighing
+the cost/benefits of the DOM model versus the streaming model, apply here.</p><p>With this in mind, the closest comparisons can be made between StAX and
+SAX, and it is here that StAX offers features that are beneficial
+in many cases; some of these include:</p>
+<ul><li><p>StAX-enabled clients are generally easier to code than SAX clients. While it can be argued that SAX parsers are marginally easier to write, StAX parser code can be smaller and the code necessary for the client to interact with the parser simpler.</p></li>
+<li><p>StAX is a bidirectional API, meaning that it can both read and write XML documents. SAX is read only, so another API is needed if you want to write XML documents.</p></li>
+<li><p>SAX is a push API, whereas StAX is pull. The trade-offs between push and pull APIs outlined above apply here.</p></li></ul>
+<p><a href="#bnbeb">Table&nbsp;18-1</a> summarizes the comparative features of StAX, SAX, DOM, and TrAX (table adapted
+from &ldquo;Does StAX Belong in Your XML Toolbox?&rdquo; at <a href="http://www.developer.com/xml/article.php/3397691">http://www.developer.com/xml/article.php/3397691</a> by Jeff Ryan).</p><a name="bnbeb"></a><h6>Table&nbsp;18-1 XML Parser API Feature Summary</h6><a name="indexterm-1836"></a><table><col width="26%"><col width="18%"><col width="19%"><col width="19%"><col width="15%"><tr><th align="left" valign="top" scope="column"><p>Feature</p></th>
+<th align="left" valign="top" scope="column"><p>StAX</p></th>
+<th align="left" valign="top" scope="column"><p>SAX</p></th>
+<th align="left" valign="top" scope="column"><p>DOM</p></th>
+<th align="left" valign="top" scope="column"><p>TrAX</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>API Type</p></td>
+<td align="left" valign="top" scope="row"><p>Pull,
+streaming</p></td>
+<td align="left" valign="top" scope="row"><p>Push, streaming</p></td>
+<td align="left" valign="top" scope="row"><p>In memory tree</p></td>
+<td align="left" valign="top" scope="row"><p>XSLT Rule</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Ease of Use</p></td>
+<td align="left" valign="top" scope="row"><p>High</p></td>
+<td align="left" valign="top" scope="row"><p>Medium</p></td>
+<td align="left" valign="top" scope="row"><p>High</p></td>
+<td align="left" valign="top" scope="row"><p>Medium</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>XPath Capability</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>CPU and Memory
+Efficiency</p></td>
+<td align="left" valign="top" scope="row"><p>Good</p></td>
+<td align="left" valign="top" scope="row"><p>Good</p></td>
+<td align="left" valign="top" scope="row"><p>Varies</p></td>
+<td align="left" valign="top" scope="row"><p>Varies</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Forward Only</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Read XML</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Write XML</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Create, Read, Update, Delete</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+<td align="left" valign="top" scope="row"><p>Not supported</p></td>
+<td align="left" valign="top" scope="row"><p>Supported</p></td>
+<td align="left" valign="top" scope="row"><p>Not
+supported</p></td>
+</tr>
+</table>
+         </div>
+         <div class="navigation">
+             <a href="bnbdv.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbec.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

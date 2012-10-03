@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.hxex.hibernate.mapping.model">
+
+	<class name="Child" table="CHILD">
+		<id name="id">
+			<generator class="uuid.hex"/>
+		</id>
+		<many-to-one name="parent" class="Parent" column="PARENT_ID"/>
+	</class>
+
+</hibernate-mapping>

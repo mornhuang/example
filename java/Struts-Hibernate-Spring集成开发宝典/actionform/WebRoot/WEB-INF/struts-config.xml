@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="listForm" type="cn.hxex.actionform.struts.form.ListForm" />
+    <form-bean name="mapForm" type="cn.hxex.actionform.struts.form.MapForm" />
+    <form-bean name="dynaForm" type="org.apache.struts.action.DynaActionForm">
+      <form-property name="firstName" type="java.lang.String" />
+      <form-property name="lastName" type="java.lang.String" />
+      <form-property name="friend" type="java.lang.String[]" size="3"/>
+    </form-bean>
+    <form-bean name="lazyDynaForm" type="org.apache.struts.validator.LazyValidatorForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="listForm"
+      input="/listFormInput.jsp"
+      name="listForm"
+      path="/listForm"
+      scope="request"
+      type="cn.hxex.actionform.struts.action.ListFormAction">
+      <forward name="display" path="/listForm.jsp" />
+    </action>
+    <action
+      attribute="mapForm"
+      input="/mapFormInput.jsp"
+      name="mapForm"
+      path="/mapForm"
+      scope="request"
+      type="cn.hxex.actionform.struts.action.MapFormAction">
+      <forward name="display" path="/mapForm.jsp" />
+    </action>
+    <action
+      attribute="dynaForm"
+      input="/dynaFormInput.jsp"
+      name="dynaForm"
+      path="/dynaForm"
+      scope="request"
+      type="cn.hxex.actionform.struts.action.DynaFormAction"
+      validate="false">
+      <forward name="display" path="/dynaForm.jsp" />
+    </action>
+    <action
+      attribute="lazyDynaForm"
+      input="/lazyDynaFormInput.jsp"
+      name="lazyDynaForm"
+      path="/lazyDynaForm"
+      scope="request"
+      type="cn.hxex.actionform.struts.action.LazyDynaFormAction"
+      validate="false">
+      <forward name="display" path="/lazyDynaForm.jsp" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="cn.hxex.actionform.struts.ApplicationResources" />
+</struts-config>
+

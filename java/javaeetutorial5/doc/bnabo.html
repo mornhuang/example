@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Java EE Containers - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level3"><a href="bnaax.html">Java EE Application Model</a></p>
+<p class="toc level3"><a href="bnaay.html">Distributed Multitiered Applications</a></p>
+<p class="toc level4"><a href="bnaay.html#bnaba">Security</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabb">Java EE Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabc">Java EE Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabd">Web Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabe">Applets</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabf">Application Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabg">The JavaBeans<sup>TM</sup> Component Architecture</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabh">Java EE Server Communications</a></p>
+<p class="toc level4 tocsp"><a href="bnaay.html#bnabj">Web Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabk">Business Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabl">Enterprise Information System Tier</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Java EE Containers</a></p>
+<p class="toc level4"><a href="#bnabp">Container Services</a></p>
+<p class="toc level4"><a href="#bnabq">Container Types</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnabs.html">Web Services Support</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabt">XML</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabu">SOAP Transport Protocol</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabv">WSDL Standard Format</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabw">UDDI and ebXML Standard Formats</a></p>
+<p class="toc level3 tocsp"><a href="bnabx.html">Java EE Application Assembly and Deployment</a></p>
+<p class="toc level3"><a href="bnaby.html">Packaging Applications</a></p>
+<p class="toc level3"><a href="bnaca.html">Development Roles</a></p>
+<p class="toc level4"><a href="bnaca.html#bnacb">Java EE Product Provider</a></p>
+<p class="toc level4"><a href="bnaca.html#bnacc">Tool Provider</a></p>
+<p class="toc level4"><a href="bnaca.html#bnacd">Application Component Provider</a></p>
+<p class="toc level5"><a href="bnaca.html#bnace">Enterprise Bean Developer</a></p>
+<p class="toc level5"><a href="bnaca.html#bnacf">Web Component Developer</a></p>
+<p class="toc level5"><a href="bnaca.html#bnacg">Application Client Developer</a></p>
+<p class="toc level4 tocsp"><a href="bnaca.html#bnach">Application Assembler</a></p>
+<p class="toc level4"><a href="bnaca.html#bnaci">Application Deployer and Administrator</a></p>
+<p class="toc level3 tocsp"><a href="bnacj.html">Java EE 5 APIs</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacl">Enterprise JavaBeans Technology</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacm">Java Servlet Technology</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacn">JavaServer Pages Technology</a></p>
+<p class="toc level4"><a href="bnacj.html#bnaco">JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacp">JavaServer Faces</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacq">Java Message Service API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacr">Java Transaction API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacs">JavaMail API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnact">JavaBeans Activation Framework</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacu">Java API for XML Processing</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacv">Java API for XML Web Services (JAX-WS)</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacw">Java Architecture for XML Binding (JAXB)</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacx">SOAP with Attachments API for Java</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacy">Java API for XML Registries</a></p>
+<p class="toc level4"><a href="bnacj.html#bnacz">J2EE Connector Architecture</a></p>
+<p class="toc level4"><a href="bnacj.html#bnada">Java Database Connectivity API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnadb">Java Persistence API</a></p>
+<p class="toc level4"><a href="bnacj.html#bnadc">Java Naming and Directory Interface</a></p>
+<p class="toc level4"><a href="bnacj.html#bnadd">Java Authentication and Authorization Service</a></p>
+<p class="toc level4"><a href="bnacj.html#bnade">Simplified Systems Integration</a></p>
+<p class="toc level3 tocsp"><a href="bnadf.html">Sun Java System Application Server Platform Edition 9</a></p>
+<p class="toc level4"><a href="bnadf.html#bnadg">Tools</a></p>
+<p class="toc level2 tocsp"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaay.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnabs.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnabo"></a><h3>Java EE Containers</h3>
+<a name="indexterm-26"></a><a name="indexterm-27"></a><a name="indexterm-28"></a><a name="indexterm-29"></a><a name="indexterm-30"></a><p>Normally, thin-client multitiered applications are hard to write because they involve many lines
+of intricate code to handle transaction and state management, multithreading, resource pooling, and
+other complex low-level details. The component-based and platform-independent Java EE architecture makes Java EE
+applications easy to write because business logic is organized into reusable components. In
+addition, the Java EE server provides underlying services in the form of a
+container for every component type. Because you do not have to develop these
+services yourself, you are free to concentrate on solving the business problem at
+hand.</p>
+
+<a name="bnabp"></a><h4>Container Services</h4>
+<a name="indexterm-31"></a><p><b>Containers</b> are the interface between a component and the low-level platform-specific functionality that
+supports the component. Before a web, enterprise bean, or application client component can
+be executed, it must be assembled into a Java EE module and deployed
+into its container.</p><p>The assembly process involves specifying container settings for each component in the Java
+EE application and for the Java EE application itself. Container settings customize the
+underlying support provided by the Java EE server, including services such as security,
+transaction management, Java Naming and Directory Interface<sup>TM</sup> (JNDI) lookups, and remote connectivity. Here are some of the
+highlights:</p>
+<ul><li><p><a name="indexterm-32"></a>The Java EE security model lets you configure a web component or enterprise bean so that system resources are accessed only by authorized users.</p></li>
+<li><p><a name="indexterm-33"></a>The Java EE transaction model lets you specify relationships among methods that make up a single transaction so that all methods in one transaction are treated as a single unit.</p></li>
+<li><p>JNDI lookup services provide a unified interface to multiple naming and directory services in the enterprise so that application components can access these services.</p></li>
+<li><p>The Java EE remote connectivity model manages low-level communications between clients and enterprise beans. After an enterprise bean is created, a client invokes methods on it as if it were in the same virtual machine.</p></li></ul>
+<p><a name="indexterm-34"></a>Because the Java EE architecture provides configurable services, application components within the same
+Java EE application can behave differently based on where they are deployed. For
+example, an enterprise bean can have security settings that allow it a certain
+level of access to database data in one production environment and another level
+of database access in another production environment.</p><p><a name="indexterm-35"></a>The container also manages nonconfigurable services such as enterprise bean and servlet life
+cycles, database connection resource pooling, data persistence, and access to the Java EE
+platform APIs (see <a href="bnacj.html">Java EE 5 APIs</a>).</p>
+
+<a name="bnabq"></a><h4>Container Types</h4>
+<p>The deployment process installs Java EE application components in the Java EE containers
+as illustrated in <a href="#bnabr">Figure&nbsp;1-5</a>.</p><a name="bnabr"></a><h6>Figure&nbsp;1-5 Java EE Server and Containers</h6><img src="figures/overview-serverAndContainers.gif" alt="Diagram of client-server communication showing servlets and JSP pages in the web tier and enterprise beans in the business tier."></img>
+<ul><li><p><a name="indexterm-36"></a><b>Java EE server</b>: The runtime portion of a Java EE product. A Java EE server provides EJB and web containers.</p></li>
+<li><p><a name="indexterm-37"></a><b>Enterprise JavaBeans (EJB) container</b>: Manages the execution of enterprise beans for Java EE applications. Enterprise beans and their container run on the Java EE server.</p></li>
+<li><p><a name="indexterm-38"></a><b>Web container</b>: Manages the execution of JSP page and servlet components for Java EE applications. Web components and their container run on the Java EE server.</p></li>
+<li><p><a name="indexterm-39"></a><b>Application client container</b>: Manages the execution of application client components. Application clients and their container run on the client.</p></li>
+<li><p><a name="indexterm-40"></a><b>Applet container</b>: Manages the execution of applets. Consists of a web browser and Java Plug-in running on the client together.</p></li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bnaay.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnabs.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

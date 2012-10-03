@@ -1,0 +1,3 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context displayName="rsForumDemo" docBase="../../web" path="/forum" reloadable="true" useNaming="false" workDir="work\Catalina\localhost\forum">
+</Context>

@@ -1,0 +1,320 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Example Queries - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level3"><a href="bnbth.html">Query Language Terminology</a></p>
+<p class="toc level3"><a href="bnbti.html">Simplified Query Language Syntax</a></p>
+<p class="toc level4"><a href="bnbti.html#bnbtj">Select Statements</a></p>
+<p class="toc level4"><a href="bnbti.html#bnbtk">Update and Delete Statements</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Example Queries</a></p>
+<p class="toc level4"><a href="#bnbtm">Simple Queries</a></p>
+<p class="toc level5"><a href="#bnbtn">A Basic Select Query</a></p>
+<p class="toc level5"><a href="#bnbto">Eliminating Duplicate Values</a></p>
+<p class="toc level5"><a href="#bnbtp">Using Named Parameters</a></p>
+<p class="toc level4 tocsp"><a href="#bnbtq">Queries That Navigate to Related Entities</a></p>
+<p class="toc level5"><a href="#bnbtr">A Simple Query with Relationships</a></p>
+<p class="toc level5"><a href="#bnbts">Navigating to Single-Valued Relationship Fields</a></p>
+<p class="toc level5"><a href="#bnbtt">Traversing Relationships with an Input Parameter</a></p>
+<p class="toc level5"><a href="#bnbtu">Traversing Multiple Relationships</a></p>
+<p class="toc level5"><a href="#bnbtv">Navigating According to Related Fields</a></p>
+<p class="toc level4 tocsp"><a href="#bnbtw">Queries with Other Conditional Expressions</a></p>
+<p class="toc level5"><a href="#bnbtx">The <tt>LIKE</tt> Expression</a></p>
+<p class="toc level5"><a href="#bnbty">The <tt>IS NULL</tt> Expression</a></p>
+<p class="toc level5"><a href="#bnbtz">The <tt>IS EMPTY</tt> Expression</a></p>
+<p class="toc level5"><a href="#bnbua">The <tt>BETWEEN</tt> Expression</a></p>
+<p class="toc level5"><a href="#bnbub">Comparison Operators</a></p>
+<p class="toc level4 tocsp"><a href="#bnbuc">Bulk Updates and Deletes</a></p>
+<p class="toc level5"><a href="#bnbud">Update Queries</a></p>
+<p class="toc level5"><a href="#bnbue">Delete Queries</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbuf.html">Full Query Language Syntax</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbug">BNF Symbols</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbui">BNF Grammar of the Java Persistence Query Language</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbuj"><tt>FROM</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbuk">Identifiers</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbum">Identification Variables</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbuq">Path Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbur">Examples of Path Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbus">Expression Types</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbut">Navigation</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbuu"><tt>WHERE</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbuv">Literals</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbva">Input Parameters</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvb">Conditional Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvc">Operators and Their Precedence</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbve"><tt>BETWEEN</tt> Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvf"><tt>IN</tt> Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvg"><tt>LIKE</tt> Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvi"><tt>NULL</tt> Comparison Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvj">Empty Collection Comparison Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvk">Collection Member Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvl">Subqueries</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvo">Functional Expressions</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvr">NULL Values</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvu">Equality Semantics</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbvx"><tt>SELECT</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbvy">Return Types</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbwb">The <tt>DISTINCT</tt> Keyword</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbwc">Constructor Expressions</a></p>
+<p class="toc level4 tocsp"><a href="bnbuf.html#bnbwd"><tt>ORDER BY</tt> Clause</a></p>
+<p class="toc level4"><a href="bnbuf.html#bnbwe">The <tt>GROUP BY</tt> Clause</a></p>
+<p class="toc level5"><a href="bnbuf.html#bnbwf">The <tt>HAVING</tt> Clause</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbti.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbuf.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbtl"></a><h3>Example Queries</h3>
+<a name="indexterm-2263"></a><a name="indexterm-2264"></a><p>The following queries are from the <tt>Player</tt> entity of the <tt>roster</tt> application, which
+is documented in <a href="bnbrs.html">Chapter&nbsp;26, Persistence in the EJB Tier</a>.</p>
+
+<a name="bnbtm"></a><h4>Simple Queries</h4>
+<p>If you are unfamiliar with the query language, these simple queries are a
+good place to start.</p>
+
+<a name="bnbtn"></a><h5>A Basic Select Query</h5>
+<pre>SELECT p
+FROM Player p</pre><p><b>Data retrieved</b>: All players.</p><p><b>Description</b>: The <tt>FROM</tt> clause declares an identification variable named <tt>p</tt>, omitting the optional keyword
+<tt>AS</tt>. If the <tt>AS</tt> keyword were included, the clause would be written as
+follows:</p><pre>FROM Player AS
+ p</pre><p>The <tt>Player</tt> element is the abstract schema name of the <tt>Player</tt> entity.</p><p><b>See also</b>: <a href="bnbuf.html#bnbum">Identification Variables</a></p>
+
+<a name="bnbto"></a><h5>Eliminating Duplicate Values</h5>
+<pre>SELECT DISTINCT
+ p
+FROM Player p
+WHERE p.position = ?1</pre><p><a name="indexterm-2265"></a><b>Data retrieved</b>: The players with the position specified by the query&rsquo;s parameter.</p><p><a name="indexterm-2266"></a><a name="indexterm-2267"></a><b>Description</b>: The <tt>DISTINCT</tt> keyword eliminates duplicate values.</p><p>The <tt>WHERE</tt> clause restricts the players retrieved by checking their <tt>position</tt>, a persistent
+field of the <tt>Player</tt> entity. The <tt>?1</tt> element denotes the input parameter of
+the query.</p><p><b>See also</b>: <a href="bnbuf.html#bnbva">Input Parameters</a>, <a href="bnbuf.html#bnbwb">The <tt>DISTINCT</tt> Keyword</a></p>
+
+<a name="bnbtp"></a><h5>Using Named Parameters</h5>
+<pre>SELECT DISTINCT p
+FROM Player p
+WHERE p.position = :position AND p.name = :name</pre><p><b>Data retrieved</b>: The players having the specified positions and names.</p><p><a name="indexterm-2268"></a><a name="indexterm-2269"></a><b>Description</b>: The <tt>position</tt> and <tt>name</tt> elements are persistent fields of the <tt>Player</tt> entity. The
+<tt>WHERE</tt> clause compares the values of these fields with the named parameters of
+the query, set using the <tt>Query.setNamedParameter</tt> method. The query language denotes a named input
+parameter using colon (<tt>:</tt>) followed by an identifier. The first input parameter is
+<tt>:position</tt>, the second is <tt>:name</tt>.</p>
+
+<a name="bnbtq"></a><h4>Queries That Navigate to Related Entities</h4>
+<a name="indexterm-2270"></a><p><a name="indexterm-2271"></a><a name="indexterm-2272"></a>In the query language, an expression can traverse (or navigate) to related entities.
+These expressions are the primary difference between the Java Persistence query language and SQL.
+Queries navigates to related entities, whereas SQL joins tables.</p>
+
+<a name="bnbtr"></a><h5>A Simple Query with Relationships</h5>
+<pre>SELECT DISTINCT p
+FROM Player p, IN(p.teams) t</pre><p><b>Data retrieved</b>: All players who belong to a team.</p><p><a name="indexterm-2273"></a><a name="indexterm-2274"></a><b>Description</b>: The <tt>FROM</tt> clause declares two identification variables: <tt>p</tt> and <tt>t</tt>. The <tt>p</tt> variable
+represents the <tt>Player</tt> entity, and the <tt>t</tt> variable represents the related <tt>Team</tt> entity. The
+declaration for <tt>t</tt> references the previously declared <tt>p</tt> variable. The <tt>IN</tt> keyword
+signifies that <tt>teams</tt> is a collection of related entities. The <tt>p.teams</tt> expression navigates
+from a <tt>Player</tt> to its related <tt>Team</tt>. The period in the <tt>p.teams</tt> expression
+is the navigation operator.</p><p><a name="indexterm-2275"></a>You may also use the <tt>JOIN</tt> statement to write the same query:</p><pre>SELECT DISTINCT p
+FROM Player p JOIN p.teams t</pre><p>This query could also be rewritten as:</p><pre>SELECT DISTINCT p
+FROM Player p
+WHERE p.team IS NOT EMPTY</pre>
+
+<a name="bnbts"></a><h5>Navigating to Single-Valued Relationship Fields</h5>
+<p><a name="indexterm-2276"></a>Use the <tt>JOIN</tt> clause statement to navigate to a single-valued relationship field:</p><pre>SELECT t
+ FROM Team t JOIN t.league l
+ WHERE l.sport = &rsquo;soccer&rsquo; OR l.sport =&rsquo;football&rsquo;</pre><p>In this example, the query will return all teams that are in
+either soccer or football leagues.</p>
+
+<a name="bnbtt"></a><h5>Traversing Relationships with an Input Parameter</h5>
+<pre>SELECT DISTINCT p
+FROM Player p, IN (p.teams) AS t
+WHERE t.city = :city</pre><p><b>Data retrieved</b>: The players whose teams belong to the specified city.</p><p><a name="indexterm-2277"></a><a name="indexterm-2278"></a><b>Description</b>: This query is similar to the previous example, but it adds an
+input parameter. The <tt>AS</tt> keyword in the <tt>FROM</tt> clause is optional. In the
+<tt>WHERE</tt> clause, the period preceding the persistent variable <tt>city</tt> is a delimiter, not a
+navigation operator. Strictly speaking, expressions can navigate to relationship fields (related entities), but
+not to persistent fields. To access a persistent field, an expression uses the
+period as a delimiter.</p><p>Expressions cannot navigate beyond (or further qualify) relationship fields that are collections. In
+the syntax of an expression, a collection-valued field is a terminal symbol. Because
+the <tt>teams</tt> field is a collection, the <tt>WHERE</tt> clause cannot specify <tt>p.teams.city</tt> (an
+illegal expression).</p><p><b>See also</b>: <a href="bnbuf.html#bnbuq">Path Expressions</a></p>
+
+<a name="bnbtu"></a><h5>Traversing Multiple Relationships</h5>
+<pre>SELECT DISTINCT p
+FROM Player p, IN (p.teams) t
+WHERE t.league = :league</pre><p><b>Data retrieved</b>: The players that belong to the specified league.</p><p><a name="indexterm-2279"></a><b>Description</b>: The expressions in this query navigate over two relationships. The <tt>p.teams</tt> expression navigates
+the <tt>Player</tt>-<tt>Team</tt> relationship, and the <tt>t.league</tt> expression navigates the <tt>Team</tt>-<tt>League</tt> relationship.</p><p>In the other examples, the input parameters are <tt>String</tt> objects, but in this
+example the parameter is an object whose type is a <tt>League</tt>. This type
+matches the <tt>league</tt> relationship field in the comparison expression of the <tt>WHERE</tt> clause.</p>
+
+<a name="bnbtv"></a><h5>Navigating According to Related Fields</h5>
+<pre>SELECT DISTINCT p
+FROM Player p, IN (p.teams) t
+WHERE t.league.sport = :sport</pre><p><b>Data retrieved</b>: The players who participate in the specified sport.</p><p><a name="indexterm-2280"></a><b>Description</b>: The <tt>sport</tt> persistent field belongs to the <tt>League</tt> entity. To reach the
+<tt>sport</tt> field, the query must first navigate from the <tt>Player</tt> entity to <tt>Team</tt>
+(<tt>p.teams</tt>) and then from <tt>Team</tt> to the <tt>League</tt> entity (<tt>t.league</tt>). Because the <tt>league</tt>
+relationship field is not a collection, it can be followed by the <tt>sport</tt>
+persistent field.</p>
+
+<a name="bnbtw"></a><h4>Queries with Other Conditional Expressions</h4>
+<p><a name="indexterm-2281"></a>Every <tt>WHERE</tt> clause must specify a conditional expression, of which there are several
+kinds. In the previous examples, the conditional expressions are comparison expressions that test for
+equality. The following examples demonstrate some of the other kinds of conditional expressions.
+For descriptions of all conditional expressions, see the section <a href="bnbuf.html#bnbuu"><tt>WHERE</tt> Clause</a>.</p>
+
+<a name="bnbtx"></a><h5>The <tt>LIKE</tt> Expression</h5>
+<a name="indexterm-2282"></a><pre>SELECT p
+ FROM Player p
+ WHERE p.name LIKE &rsquo;Mich%&rsquo;</pre><p><b>Data retrieved</b>: All players whose names begin with &ldquo;Mich.&rdquo;</p><p><b>Description</b>: The <tt>LIKE</tt> expression uses wildcard characters to search for strings that match
+the wildcard pattern. In this case, the query uses the <tt>LIKE</tt> expression and
+the <tt>%</tt> wildcard to find all players whose names begin with the
+string &ldquo;Mich.&rdquo; For example, &ldquo;Michael&rdquo; and &ldquo;Michelle&rdquo; both match the wildcard pattern.</p><p><b>See also</b>: <a href="bnbuf.html#bnbvg"><tt>LIKE</tt> Expressions</a></p>
+
+<a name="bnbty"></a><h5>The <tt>IS NULL</tt> Expression</h5>
+<a name="indexterm-2283"></a><pre>SELECT t
+ FROM Team t
+ WHERE t.league IS NULL</pre><p><b>Data retrieved</b>: All teams not associated with a league.</p><p><b>Description</b>: The <tt>IS NULL</tt> expression can be used to check if a relationship has
+been set between two entities. In this case, the query checks to see
+if the teams are associated with any leagues, and returns the teams that
+do not have a league.</p><p><b>See also</b>: <a href="bnbuf.html#bnbvi"><tt>NULL</tt> Comparison Expressions</a>, <a href="bnbuf.html#bnbvr">NULL Values</a></p>
+
+<a name="bnbtz"></a><h5>The <tt>IS EMPTY</tt> Expression</h5>
+<a name="indexterm-2284"></a><pre>SELECT p
+FROM Player p
+WHERE p.teams IS EMPTY</pre><p><b>Data retrieved</b>: All players who do not belong to a team.</p><p><b>Description</b>: The <tt>teams</tt> relationship field of the <tt>Player</tt> entity is a collection. If
+a player does not belong to a team, then the <tt>teams</tt> collection is empty
+and the conditional expression is <tt>TRUE</tt>.</p><p><b>See also</b>: <a href="bnbuf.html#bnbvj">Empty Collection Comparison Expressions</a></p>
+
+<a name="bnbua"></a><h5>The <tt>BETWEEN</tt> Expression</h5>
+<a name="indexterm-2285"></a><pre>SELECT DISTINCT p
+FROM Player p
+WHERE p.salary BETWEEN :lowerSalary AND :higherSalary</pre><p><b>Data retrieved</b>: The players whose salaries fall within the range of the specified salaries.</p><p><b>Description</b>: This <tt>BETWEEN</tt> expression has three arithmetic expressions: a persistent field (<tt>p.salary</tt>) and the
+two input parameters (<tt>:lowerSalary</tt> and <tt>:higherSalary</tt>). The following expression is equivalent to
+the <tt>BETWEEN</tt> expression:</p><pre>p.salary >= :lowerSalary AND p.salary &lt;= :higherSalary</pre><p><b>See also</b>: <a href="bnbuf.html#bnbve"><tt>BETWEEN</tt> Expressions</a></p>
+
+<a name="bnbub"></a><h5>Comparison Operators</h5>
+<a name="indexterm-2286"></a><pre>SELECT DISTINCT p1
+FROM Player p1, Player p2
+WHERE p1.salary > p2.salary AND p2.name = :name</pre><p><b>Data retrieved</b>: All players whose salaries are higher than the salary of the player
+with the specified name.</p><p><b>Description</b>: The <tt>FROM</tt> clause declares two identification variables (<tt>p1</tt> and <tt>p2</tt>) of the same
+type (<tt>Player</tt>). Two identification variables are needed because the <tt>WHERE</tt> clause compares the
+salary of one player (<tt>p2</tt>) with that of the other players (<tt>p1</tt>).</p><p><b>See also</b>: <a href="bnbuf.html#bnbum">Identification Variables</a></p>
+
+<a name="bnbuc"></a><h4>Bulk Updates and Deletes</h4>
+<p><a name="indexterm-2287"></a><a name="indexterm-2288"></a>The following examples show how to use the <tt>UPDATE</tt> and <tt>DELETE</tt> expressions in queries.
+<tt>UPDATE</tt> and <tt>DELETE</tt> operate on multiple entities according to the condition or conditions
+set in the <tt>WHERE</tt> clause. The <tt>WHERE</tt> clause in <tt>UPDATE</tt> and <tt>DELETE</tt>
+queries follows the same rules as <tt>SELECT</tt> queries.</p>
+
+<a name="bnbud"></a><h5>Update Queries</h5>
+<a name="indexterm-2289"></a><pre>UPDATE Player p
+SET p.status = &rsquo;inactive&rsquo;
+WHERE p.lastPlayed &lt; :inactiveThresholdDate</pre><p><b>Description</b>: This query sets the status of a set of players to <tt>inactive</tt>
+if the player&rsquo;s last game was longer than the date specified in <tt>inactiveThresholdDate</tt>.</p>
+
+<a name="bnbue"></a><h5>Delete Queries</h5>
+<a name="indexterm-2290"></a><pre>DELETE
+FROM Player p
+WHERE p.status = &rsquo;inactive&rsquo;
+AND p.teams IS EMPTY</pre><p><b>Description</b>: This query deletes all inactive players who are not on a team.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbti.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbuf.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

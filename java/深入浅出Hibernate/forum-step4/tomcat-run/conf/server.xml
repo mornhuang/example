@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Server>
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener"/>
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  <GlobalNamingResources>
+    <Environment name="simpleValue" type="java.lang.Integer" value="30"/>
+    <Resource auth="Container" description="User database that can be updated and saved" name="UserDatabase" type="org.apache.catalina.UserDatabase"/>
+    <ResourceParams name="UserDatabase">
+      <parameter>
+        <name>factory</name>
+        <value>org.apache.catalina.users.MemoryUserDatabaseFactory</value>
+      </parameter>
+      <parameter>
+        <name>pathname</name>
+        <value>conf/tomcat-users.xml</value>
+      </parameter>
+    </ResourceParams>
+  </GlobalNamingResources>
+  <Service name="Catalina">
+    <Connector acceptCount="100" connectionTimeout="20000" disableUploadTimeout="true" port="8080" redirectPort="8443">
+    </Connector>
+    <Connector port="8009" protocol="AJP/1.3" protocolHandlerClassName="org.apache.jk.server.JkCoyoteHandler" redirectPort="8443">
+    </Connector>
+    <Engine defaultHost="localhost" name="Catalina">
+      <Host appBase="webapps" name="localhost">
+<Context displayName="rsForumDemo" docBase="..\..\web" path="/forum" reloadable="true" useNaming="false" workDir="work\Catalina\localhost\forum">
+</Context>
+        <Logger className="org.apache.catalina.logger.FileLogger" prefix="localhost_log." suffix=".txt" timestamp="true"/>
+      </Host>
+      <Logger className="org.apache.catalina.logger.FileLogger" prefix="catalina_log." suffix=".txt" timestamp="true"/>
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"/>
+    </Engine>
+  </Service>
+</Server>

@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Setting Up a Page - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level3"><a href="bnara.html">The Example JavaServer Faces Application</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Setting Up a Page</a></p>
+</div>
+<p class="toc level3"><a href="bnarc.html">Using the Core Tags</a></p>
+<p class="toc level3"><a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a></p>
+<p class="toc level4"><a href="bnarf.html#bnarg">UI Component Tag Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarh">The <tt>id</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarj">The <tt>rendered</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnark">The <tt>style</tt> and <tt>styleClass</tt> Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarl">The <tt>value</tt> and <tt>binding</tt> Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarm">Adding a Form Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnaro">Using Text Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarr">Rendering a Text Field with the <tt>inputText</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnars">Rendering a Label with the <tt>outputLabel</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnart">Rendering a Hyperlink with the <tt>outputLink</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnaru">Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarv">Rendering a Password Field with the <tt>inputSecret</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarw">Using Command Components for Performing Actions and Navigation</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarx">Rendering a Button with the <tt>commandButton</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnary">Rendering a Hyperlink with the <tt>commandLink</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarz">Using Data-Bound Table Components</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasb">Adding Graphics and Images with the <tt>graphicImage</tt> Tag</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasc">Laying Out Components with the <tt>UIPanel</tt> Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnase">Rendering Components for Selecting One Value</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasg">Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a></p>
+<p class="toc level4"><a href="bnarf.html#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasm">Using the <tt>selectItems</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasn">Using the <tt>selectItem</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnasp.html">Using Localized Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasq">Loading a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasr">Referencing Localized Static Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnast.html">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="bnast.html#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="bnast.html#bnasx">Using <tt>NumberConverter</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnasz.html">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a></p>
+<p class="toc level3 tocsp"><a href="bnatc.html">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="bnatc.html#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="bnatc.html#bnatf">Using the <tt>LongRangeValidator</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a></p>
+<p class="toc level4"><a href="bnatg.html#bnati">Binding a Component Value to a Property</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatj">Binding a Component Value to an Implicit Object</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a></p>
+<p class="toc level3 tocsp"><a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a></p>
+<p class="toc level3"><a href="bnatn.html">Referencing a Backing Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a></p>
+<p class="toc level3 tocsp"><a href="bnatt.html">Using Custom Objects</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatu">Using a Custom Converter</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatv">Using a Custom Validator</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatw">Using a Custom Component</a></p>
+<p class="toc level2 tocsp"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnara.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnarc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnarb"></a><h3>Setting Up a Page</h3>
+<p>A typical JavaServer Faces page includes the following elements:</p>
+<ul><li><p>A set of tag library declarations that declare the two JavaServer Faces tag libraries</p></li>
+<li><p>A <tt>view</tt> tag</p></li>
+<li><p>A <tt>form</tt> tag</p></li></ul>
+<p>This section tells you how to add these elements to your pages
+and briefly describes the <tt>subview</tt> tag for including JavaServer Faces pages inside other pages.</p><p><a name="indexterm-891"></a><a name="indexterm-892"></a><a name="indexterm-893"></a><a name="indexterm-894"></a>To use the JavaServer Faces UI components in your JSP page, you need
+to give the page access to the two standard tag libraries: the
+JavaServer Faces HTML render kit tag library and the JavaServer Faces core tag
+library. The JavaServer Faces standard HTML render kit tag library defines tags that represent
+common HTML user interface components. The JavaServer Faces core tag library defines tags
+that perform core actions and are independent of a particular render kit.</p><p>Using these tag libraries is similar to using any other custom tag
+library. This chapter assumes that you are familiar with the basics of using
+custom tags in JSP pages (see <a href="bnaiy.html">Using Custom Tags</a>).</p><p><a name="indexterm-895"></a><a name="indexterm-896"></a>As is the case with any tag library, each JavaServer Faces tag library
+must have a TLD that describes it. The <tt>html_basic</tt> TLD describes the JavaServer
+Faces standard HTML render kit tag library. The <tt>jsf_core</tt> TLD describes the
+JavaServer Faces core tag library.</p><p>Refer to the <i>TLD documentation</i> at <a href="http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/index.html">http://java.sun.com/javaee/javaserverfaces/1.2/docs/tlddocs/index.html</a> for a complete list of the
+JavaServer Faces tags and their attributes.</p><p><a name="indexterm-897"></a>To use any of the JavaServer Faces tags, you need to include these
+taglib directives at the top of each page containing the tags defined by
+these tag libraries:</p><pre>&lt;%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
+&lt;%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %></pre><p>The <tt>uri</tt> attribute value uniquely identifies the TLD. The <tt>prefix</tt> attribute value is
+used to distinguish tags belonging to the tag library. You can use other
+prefixes rather than the <tt>h</tt> or <tt>f</tt> prefixes. However, you must use
+the prefix you have chosen when including the tag in the page. For
+example, the <tt>form</tt> tag must be referenced in the page using the
+<tt>h</tt> prefix because the preceding tag library directive uses the <tt>h</tt> prefix to distinguish
+the tags defined in <tt>html_basic.tld</tt>:</p><pre>&lt;h:form ...></pre><p><a name="indexterm-898"></a><a name="indexterm-899"></a>A page containing JavaServer Faces tags is represented by a tree of components.
+At the root of the tree is the <tt>UIViewRoot</tt> component. The <tt>view</tt> tag
+represents this component on the page. Therefore, all component tags on the page
+must be enclosed in the <tt>view</tt> tag, which is defined in the <tt>jsf_core</tt>
+TLD:</p><pre>&lt;f:view>
+    ... other JavaServer Faces tags, possibly mixed with other
+     content ...
+&lt;/f:view></pre><p>You can enclose other content, including HTML and other JSP tags, within the
+<tt>view</tt> tag, but all JavaServer Faces tags must be enclosed within the <tt>view</tt>
+tag.</p><p>The <tt>view</tt> tag has four optional attributes:</p>
+<ul><li><p><a name="indexterm-900"></a><a name="indexterm-901"></a>A <tt>locale</tt> attribute. If this attribute is present, its value overrides the <tt>Locale</tt> stored in the <tt>UIViewRoot</tt> component. This value is specified as a <tt>String</tt> and must be of this form:</p><pre>:<i>language</i>:[{-,_}:<i>country</i>:[{-,_}:<i>variant</i>]</pre><p>The <i>language</i>, <i>country</i>, and <i>variant</i> parts of the expression are as specified in <tt>java.util.Locale</tt>.</p></li>
+<li><p>A <tt>renderKitId</tt> attribute. A page author uses this attribute to refer to the ID of the render kit used to render the page, therefore allowing the use of custom render kits. If this attribute is not specified, the default HTML render kit is assumed. The process of creating custom render kits is outside the scope of this tutorial.</p></li>
+<li><p>A <tt>beforePhase</tt> attribute. This attribute references a method that takes a <tt>PhaseEvent</tt> object and returns <tt>void</tt>, causing the referenced method to be called before each phase (except restore view) of the life cycle begins.</p></li>
+<li><p>An <tt>afterPhase</tt> attribute. This attribute references a method that takes a <tt>PhaseEvent</tt> object and returns void, causing the referenced method to be called after each phase (except restore view) in the life cycle ends.</p></li></ul>
+<p>An advanced developer might implement the methods referenced by <tt>beforePhase</tt> and <tt>afterPhase</tt>
+to perform such functions as initialize or release resources on a per-page basis.
+This feature is outside of the scope of this tutorial.</p><p>The <tt>form</tt> tag is nested inside of the <tt>view</tt> tag. As its name
+suggests, the <tt>form</tt> tag represents a form, which is submitted when a button
+or hyperlink on the page is clicked. For the data of other components
+on the page to be submitted with the form, the tags representing the
+components must be nested inside the <tt>form</tt> tag. See <a href="bnarf.html#bnarm">Adding a Form Component</a> for more
+details on using the <tt>form</tt> tag.</p><p><a name="indexterm-902"></a>If you want to include a page containing JavaServer Faces tags within another
+JSP page that includes JavaServer Faces tags, you must enclose the entire nested
+page in a <tt>subview</tt> tag. You can add the <tt>subview</tt> tag on the
+parent page and nest a <tt>jsp:include</tt> inside it to include the page:</p><pre>&lt;f:subview id="myNestedPage">
+    &lt;jsp:include page="theNestedPage.jsp" />
+&lt;/f:subview></pre><p>You can also include the <tt>subview</tt> tag inside the nested page, but it
+must enclose all the JavaServer Faces tags on the nested page.</p><p>The <tt>subview</tt> tag has two optional attributes: <tt>binding</tt> and <tt>rendered</tt>. The <tt>binding</tt>
+attribute binds to a component that implements <tt>NamingContainer</tt>. One potential use case of binding
+a subview component to a bean is if you want to dynamically add
+components to the subview in the backing bean.</p><p>The <tt>rendered</tt> attribute can be set to <tt>true</tt> or <tt>false</tt>, indicating whether
+or not the components nested in the <tt>subview</tt> tag should be rendered.</p><p>In summary, a typical JSP page that uses JavaServer Faces tags will look
+somewhat like this:</p><pre>&lt;%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
+&lt;%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
+
+&lt;f:view>
+    &lt;h:form>
+        other JavaServer Faces tags and core tags,
+         including one or more button or hyperlink components for
+         submitting the form
+    &lt;/h:form>
+&lt;/f:view></pre><p>The sections <a href="bnarc.html">Using the Core Tags</a> and <a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a> describe how to use the core tags
+from the JavaServer Faces core tag library and the component tags from the
+JavaServer Faces standard HTML render kit tag library.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnara.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnarc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

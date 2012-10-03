@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+<system systemId="http://localhost:8080/jaxws-coffee-supplier/SupplierService?WSDL" uri="xml-resources/web-service-references/SupplierService/wsdl/localhost_8080/jaxws-coffee-supplier/SupplierService.wsdl"/>
+</catalog>

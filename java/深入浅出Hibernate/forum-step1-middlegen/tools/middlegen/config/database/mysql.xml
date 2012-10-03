@@ -1,0 +1,17 @@
+   <!-- =================================================================== -->
+   <!-- ant properties/targets for mysql                                    -->
+   <!-- note: this is not a proper xml file (there is no root element)      -->
+   <!--       it is intended to be imported from a *real* xml file          -->
+   <!-- =================================================================== -->
+
+   <property name="database.script.file"           value="${src.dir}/sql/${name}-mysql.sql"/>
+   <property name="database.driver.file"           value="${lib.dir}/mysql-connector-java-3.1.6-bin.jar"/>
+   <property name="database.driver.classpath"      value="${database.driver.file}"/>
+   <property name="database.driver"                value="com.mysql.jdbc.Driver"/>
+   <property name="database.url"                   value="jdbc:mysql://localhost/forum"/>
+   <property name="database.userid"                value="root"/>
+   <property name="database.password"              value="password"/>
+   <property name="database.schema"                value=""/>
+   <property name="database.catalog"               value=""/>
+
+   <property name="jboss.datasource.mapping"       value="mySQL"/>

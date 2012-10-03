@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The <tt>roster</tt> Application - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level3"><a href="bnbrt.html">The <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="bnbrt.html#bnbru">Entity Relationships in the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbrv">Self-Referential Relationships</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbrw">One-to-One Relationships</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbrx">One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbry">Unidirectional Relationships</a></p>
+<p class="toc level4 tocsp"><a href="bnbrt.html#bnbrz">Primary Keys in the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsa">Generated Primary Keys</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsb">Compound Primary Keys</a></p>
+<p class="toc level4 tocsp"><a href="bnbrt.html#bnbsc">Entity Mapped to More Than One Database Table</a></p>
+<p class="toc level4"><a href="bnbrt.html#bnbsd">Cascade Operations in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="bnbrt.html#bnbse">BLOB and CLOB Database Types in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="bnbrt.html#bnbsf">Temporal Types in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="bnbrt.html#bnbsg">Managing the <tt>order</tt> Application's Entities</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsh">Creating Entities</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsi">Finding Entities</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsj">Setting Entity Relationships</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsk">Using Queries</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsl">Removing Entities</a></p>
+<p class="toc level4 tocsp"><a href="bnbrt.html#bnbsm">Building and Running the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsn">Creating the Database Tables in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbsr">Creating the Database Tables Using Ant</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbss">Building, Packaging, Deploying, and Running <tt>order</tt> In NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbrt.html#bnbst">Building, Packaging, Deploying, and Running <tt>order</tt> Using Ant</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">The <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbsx">Relationships in the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="#bnbsy">The Many-To-Many Relationship in <tt>roster</tt></a></p>
+<p class="toc level4 tocsp"><a href="#bnbsz">Entity Inheritance in the <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbta">Automatic Table Generation in the <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbtb">Building and Running the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="#bnbtc">Building, Packaging, Deploying, and Running <tt>roster</tt> in NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnbtd">Building, Packaging, Deploying, and Running <tt>roster</tt> Using Ant</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbrt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbtg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbsw"></a><h3>The <tt>roster</tt> Application</h3>
+<p>The <tt>roster</tt> application maintains the team rosters for players in recreational sports leagues.
+The application has four components: Java Persistence API entities (<tt>Player</tt>, <tt>Team</tt>, and <tt>League</tt>), a
+stateful session bean (<tt>RequestBean</tt>), an application client (<tt>RosterClient</tt>), and three helper classes (<tt>PlayerDetails</tt>,
+<tt>TeamDetails</tt>, and <tt>LeagueDetails</tt>).</p><p>Functionally, <tt>roster</tt> is similar to the <tt>order</tt> application described earlier in this chapter
+with three new features that <tt>order</tt> does not have: many-to-many relationships, entity inheritance,
+and automatic table creation at deploytime.</p>
+
+<a name="bnbsx"></a><h4>Relationships in the <tt>roster</tt> Application</h4>
+<p>A recreational sports system has the following relationships:</p>
+<ul><li><p>A player can be on many teams.</p></li>
+<li><p>A team can have many players.</p></li>
+<li><p>A team is in exactly one league.</p></li>
+<li><p>A league has many teams.</p></li></ul>
+<p>In <tt>roster</tt> this is reflected by the following relationships between the <tt>Player</tt>, <tt>Team</tt>,
+and <tt>League</tt> entities:</p>
+<ul><li><p>There is a many-to-many relationship between <tt>Player</tt> and <tt>Team</tt>.</p></li>
+<li><p>There is a many-to-one relationship between <tt>Team</tt> and <tt>League</tt>.</p></li></ul>
+
+
+<a name="bnbsy"></a><h5>The Many-To-Many Relationship in <tt>roster</tt></h5>
+<a name="indexterm-2236"></a><p>The many-to-many relationship between <tt>Player</tt> and <tt>Team</tt> is specified by using the
+<tt>@ManyToMany</tt> annotation.</p><p>In <tt>Team.java</tt>, the <tt>@ManyToMany</tt> annotation decorates the <tt>getPlayers</tt> method:</p><pre>@ManyToMany
+@JoinTable(
+    name="EJB_ROSTER_TEAM_PLAYER",
+    joinColumns=
+        @JoinColumn(name="TEAM_ID", referencedColumnName="ID"),
+    inverseJoinColumns=
+        @JoinColumn(name="PLAYER_ID", referencedColumnName="ID")
+)
+public Collection&lt;Player> getPlayers() {
+    return players;
+}</pre><p>The <tt>@JoinTable</tt> annotation is used to specify a table in the database that
+will associate player IDs with team IDs. The entity that specifies the <tt>@JoinTable</tt>
+is the owner of the relationship, so in this case the <tt>Team</tt> entity
+is the owner of the relationship with the <tt>Player</tt> entity. Because <tt>roster</tt> uses automatic
+table creation at deploytime, the container will create a join table in the
+database named <tt>EJB_ROSTER_TEAM_PLAYER</tt>.</p><p><tt>Player</tt> is the inverse, or non-owning side of the relationship with <tt>Team</tt>. As
+one-to-one and many-to-one relationships, the non-owning side is marked by the <tt>mappedBy</tt> element in
+the relationship annotation. Because the relationship between <tt>Player</tt> and <tt>Team</tt> is bidirectional,
+the choice of which entity is the owner of the relationship is arbitrary.</p><p>In <tt>Player.java</tt>, the <tt>@ManyToMany</tt> annotation decorates the <tt>getTeams</tt> method:</p><pre>@ManyToMany(mappedBy="players")
+public Collection&lt;Team> getTeams() {
+    return teams;
+}</pre>
+
+<a name="bnbsz"></a><h4>Entity Inheritance in the <tt>roster</tt> Application</h4>
+<a name="indexterm-2237"></a><p>The <tt>roster</tt> application demonstrates how to use entity inheritance, as described in <a href="bnbqa.html#bnbqn">Entity Inheritance</a>.</p><p>The <tt>League</tt> entity in <tt>roster</tt> is an abstract entity with two concrete subclasses:
+<tt>SummerLeague</tt> and <tt>WinterLeague</tt>. Because <tt>League</tt> is an abstract class it cannot be instantiated:</p><pre>...
+@Entity
+@Table(name = "EJB_ROSTER_LEAGUE")
+public abstract class League implements java.io.Serializable {
+...
+}</pre><p>Instead, <tt>SummerLeague</tt> or <tt>WinterLeague</tt> are used by clients when creating a league. <tt>SummerLeague</tt>
+and <tt>WinterLeague</tt> inherit the persistent properties defined in <tt>League</tt>, and only add
+a constructor that verifies that the sport parameter matches the type of sport
+allowed in that seasonal league. For example, here is the <tt>SummerLeague</tt> entity:</p><pre>...
+@Entity
+public class SummerLeague extends League
+         implements java.io.Serializable {
+
+    /** Creates a new instance of SummerLeague */
+    public SummerLeague() {
+    }
+
+    public SummerLeague(String id, String name,
+             String sport) throws IncorrectSportException {
+        this.id = id;
+        this.name = name;
+        if (sport.equalsIgnoreCase("swimming") ||
+                sport.equalsIgnoreCase("soccer") ||
+                sport.equalsIgnoreCase("basketball") ||
+                sport.equalsIgnoreCase("baseball")) {
+            this.sport = sport;
+        } else {
+            throw new IncorrectSportException(
+                "Sport is not a summer sport.");
+        }
+    }
+}</pre><p>The roster application uses the default mapping strategy of <tt>InheritanceType.SINGLE_TABLE</tt>, so the
+<tt>@Inheritance</tt> annotation is not required. If you wanted to use a different mapping
+strategy, decorate <tt>League</tt> with <tt>@Inheritance</tt> and specify the mapping strategy in the
+<tt>strategy</tt> element:</p><pre>@Entity
+@Inheritance(strategy=JOINED)
+@Table(name="EJB_ROSTER_LEAGUE")
+public abstract class League implements java.io.Serializable {
+    ...
+}</pre><p><tt>roster</tt> uses the default discriminator column name, so the <tt>@DiscriminatorColumn</tt> annotation is not
+required. Because you are using automatic table generation in <tt>roster</tt> the Persistence provider will
+create a discriminator column in the <tt>EJB_ROSTER_LEAGUE</tt> table called <tt>DTYPE</tt>, which will
+store the name of the inherited entity used to create the league. If
+you want to use a different name for the discriminator column, decorate <tt>League</tt>
+with <tt>@DiscriminatorColumn</tt> and set the <tt>name</tt> element:</p><pre>@Entity
+@DiscriminatorColumn(name="DISCRIMINATOR")
+@Table(name="EJB_ROSTER_LEAGUE")
+public abstract class League implements java.io.Serializable {
+    ...
+}</pre>
+
+<a name="bnbta"></a><h4>Automatic Table Generation in the <tt>roster</tt> Application</h4>
+<p>At deploytime the Application Server will automatically drop and create the database tables
+used by <tt>roster</tt>. This is done by setting the <tt>toplink.ddl-generation</tt> property to <tt>drop-and-create-tables</tt>
+in <tt>persistence.xml</tt>.</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;persistence xmlns="http://java.sun.com/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+version="1.0">
+    &lt;persistence-unit name="em" transaction-type="JTA">
+        &lt;jta-data-source>jdbc/__default&lt;/jta-data-source>
+        &lt;properties>
+            &lt;property name="toplink.ddl-generation"
+                             value="drop-and-create-tables"/>
+        &lt;/properties>
+    &lt;/persistence-unit>
+&lt;/persistence></pre><p>This feature is specific to the Java Persistence API provider used by the
+Application Server, and is non-portable across Java EE servers. Automatic table creation is
+useful for development purposes, however, and the <tt>toplink.ddl-generation</tt> property may be removed
+from <tt>persistence.xml</tt> when preparing the application for production use, or when deploying to
+other Java EE servers.</p>
+
+<a name="bnbtb"></a><h4>Building and Running the <tt>roster</tt> Application</h4>
+<p>This section describes how to build, package, deploy, and run the <tt>roster</tt>
+application. You can do this using either NetBeans IDE or Ant.</p>
+
+<a name="bnbtc"></a><h5>Building, Packaging, Deploying, and Running <tt>roster</tt> in NetBeans IDE</h5>
+<p>Follow these instructions to build, package, deploy, and run the <tt>roster</tt> example
+to your Application Server instance using NetBeans IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/</tt>.</p></li>
+<li><p>Select the <tt>roster</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>roster</tt> project and select Run.</p></li></ol>
+<p>You will see the following partial output from the application client in the
+Output tab:</p><pre>List all players in team T2:
+P6 Ian Carlyle goalkeeper 555.0
+P7 Rebecca Struthers midfielder 777.0
+P8 Anne Anderson forward 65.0
+P9 Jan Wesley defender 100.0
+P10 Terry Smithson midfielder 100.0
+
+List all teams in league L1:
+T1 Honey Bees Visalia
+T2 Gophers Manteca
+T5 Crows Orland
+
+List all defenders:
+P2 Alice Smith defender 505.0
+P5 Barney Bold defender 100.0
+P9 Jan Wesley defender 100.0
+P22 Janice Walker defender 857.0
+P25 Frank Fletcher defender 399.0
+...</pre>
+
+<a name="bnbtd"></a><h5>Building, Packaging, Deploying, and Running <tt>roster</tt> Using Ant</h5>
+<p>To build the application components of <tt>roster</tt>, enter the following command:</p><pre><tt><b>ant</b></tt></pre><p>This runs the <tt>default</tt> task, which compiles the source files and packages the
+application into an EAR file located at <tt></tt><i>tut-install</i><tt>/examples/ejb/roster/dist/roster.ear</tt>.</p><p>To deploy the EAR, make sure the Application Server is started, then enter
+the following command:</p><pre><tt><b>ant deploy</b></tt></pre><p>The build system will check to see if the Java DB database
+server is running and start it if it is not running, then deploy
+<tt>roster.ear</tt>. The Application Server will then drop and create the database tables during deployment,
+as specified in <tt>persistence.xml</tt>.</p><p>After <tt>roster.ear</tt> is deployed, a client JAR, <tt>rosterClient.jar</tt>, is retrieved. This contains
+the application client.</p><p>To run the application client, enter the following command:</p><pre><tt><b>ant run</b></tt></pre><p>You will see the output, which begins:</p><pre>[echo] running application client container.
+[exec] List all players in team T2:
+[exec] P6 Ian Carlyle goalkeeper 555.0
+[exec] P7 Rebecca Struthers midfielder 777.0
+[exec] P8 Anne Anderson forward 65.0
+[exec] P9 Jan Wesley defender 100.0
+[exec] P10 Terry Smithson midfielder 100.0
+
+[exec] List all teams in league L1:
+[exec] T1 Honey Bees Visalia
+[exec] T2 Gophers Manteca
+[exec] T5 Crows Orland
+
+[exec] List all defenders:
+[exec] P2 Alice Smith defender 505.0
+[exec] P5 Barney Bold defender 100.0
+[exec] P9 Jan Wesley defender 100.0
+[exec] P22 Janice Walker defender 857.0
+[exec] P25 Frank Fletcher defender 399.0
+...</pre>
+
+<a name="bnbte"></a><h5>The <tt>all</tt> Task</h5>
+<p>As a convenience, the <tt>all</tt> task will build, package, deploy, and run the
+application. To do this, enter the following command:</p><pre><tt><b>ant all</b></tt></pre>
+
+<a name="bnbtf"></a><h5>Undeploying <tt>order</tt></h5>
+<p>To undeploy <tt>roster.ear</tt>, enter the following command:</p><pre><tt><b>ant undeploy</b></tt></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbrt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbtg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

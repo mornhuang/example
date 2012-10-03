@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/logon.do" location="59,212" dimension="274,84" />
+  <StrutsActivity path="/regist.do" location="363,214" dimension="280,84" />
+  <StrutsActivity path="/registInput.do" location="440,16" dimension="118,60" />
+  <StrutsActivity path="/homepage.do" location="279,455" dimension="292,84" />
+  <StrutsActivity path="/messageAdd.do" location="42,353" dimension="112,60" />
+  <StrutsActivity path="/messageSave.do" location="-85,548" dimension="310,84" />
+  <StrutsActivity path="/blog.do" location="240,919" dimension="268,84" />
+  <StrutsActivity path="/replyAdd.do" location="568,819" dimension="319,74" />
+  <StrutsActivity path="/replySave.do" location="549,1060" dimension="298,84" />
+  <StrutsActivity path="/replyDelete.do" location="660,562" dimension="310,84" />
+  <StrutsActivity path="/messageUpdate.do" location="-94,682" dimension="322,84" />
+  <StrutsActivity path="/messageSaveUpdate.do" location="626,683" dimension="346,84" />
+  <StrutsActivity path="/messageDelete.do" location="651,457" dimension="322,84" />
+  <StrutsActivity path="homepage;6" location="355,352" dimension="118,72" />
+  <StrutsActivity path="/index.jsp" location="145,25" dimension="100,48" />
+  <StrutsActivity path="/regist.jsp" location="446,118" dimension="106,48" />
+  <StrutsActivity path="/homepage.jsp" location="367,586" dimension="118,48" />
+  <StrutsActivity path="/message_add.jsp" location="30,450" dimension="136,48" />
+  <StrutsActivity path="/blog.jsp" location="243,1062" dimension="94,48" />
+  <StrutsActivity path="/reply.jsp" location="675,946" dimension="100,48" />
+  <StrutsActivity path="/message_update.jsp" location="402,711" dimension="154,48" />
+  <StrutsTransition id="/message_add.jsp,null,/messageSave.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="98,498" />
+      <AbsolutePoint location="98,548" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regist.jsp,null,/regist.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="499,166" />
+      <AbsolutePoint location="499,214" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/messageAdd.do,null,/message_add.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="98,413" />
+      <AbsolutePoint location="98,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/message_update.jsp,null,/messageSaveUpdate.do,2" routingType="1">
+    <Bendpoints>
+      <Point rDim1="166,0" rDim2="-212,20" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blog.do,null,/replyAdd.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="382,919" />
+      <AbsolutePoint location="382,856" />
+      <AbsolutePoint location="568,856" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,null,/messageDelete.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="571,497" />
+      <AbsolutePoint location="651,497" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index.jsp,null,/registInput.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="245,49" />
+      <AbsolutePoint location="440,49" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,null,/replyDelete.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="444,539" />
+      <AbsolutePoint location="444,571" />
+      <AbsolutePoint location="660,571" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="homepage;6,null,/homepage.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="384,424" />
+      <AbsolutePoint location="384,455" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/messageUpdate.do,messageupdate,/message_update.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="67,682" />
+      <AbsolutePoint location="67,661" />
+      <AbsolutePoint location="440,661" />
+      <AbsolutePoint location="440,711" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/replyAdd.do,reply,/reply.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="727,893" />
+      <AbsolutePoint location="727,946" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,null,/messageUpdate.do,2" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-115,202" rDim2="243,-25" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/registInput.do,null,/regist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="499,76" />
+      <AbsolutePoint location="499,118" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index.jsp,null,/logon.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="195,73" />
+      <AbsolutePoint location="195,212" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/replySave.do,blog,/blog.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="549,1095" />
+      <AbsolutePoint location="414,1095" />
+      <AbsolutePoint location="414,1003" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/blog.do,blog,/blog.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="322,1003" />
+      <AbsolutePoint location="322,1062" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.do,homepage,/homepage.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="395,539" />
+      <AbsolutePoint location="395,586" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reply.jsp,null,/replySave.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="725,994" />
+      <AbsolutePoint location="725,1060" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/messageSave.do,null,homepage;6,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,548" />
+      <AbsolutePoint location="196,409" />
+      <AbsolutePoint location="355,409" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/regist.do,null,homepage;6,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="428,298" />
+      <AbsolutePoint location="428,352" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logon.do,null,homepage;6,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,296" />
+      <AbsolutePoint location="196,379" />
+      <AbsolutePoint location="355,379" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/messageDelete.do,null,homepage;6,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="812,457" />
+      <AbsolutePoint location="812,409" />
+      <AbsolutePoint location="473,409" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/homepage.jsp,null,/messageAdd.do,0" routingType="1">
+    <Bendpoints>
+      <Point rDim1="-176,-6" rDim2="152,221" />
+      <Point rDim1="-176,-288" rDim2="152,-61" />
+      <Point rDim1="-328,-288" rDim2="0,-61" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/replyDelete.do,null,homepage;6,0" routingType="1">
+    <Bendpoints>
+      <Point rDim1="194,-4" rDim2="595,212" />
+      <Point rDim1="194,-218" rDim2="595,-2" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/messageSaveUpdate.do,null,homepage;6,0" routingType="1">
+    <Bendpoints>
+      <Point rDim1="233,-6" rDim2="618,331" />
+      <Point rDim1="233,-363" rDim2="618,-26" />
+      <Point rDim1="-278,-363" rDim2="107,-26" />
+    </Bendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

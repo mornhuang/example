@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.redsaga.hibernatesample.step1.middlegen.User" 
+    table="user"
+>
+    <meta attribute="class-description" inherit="false">
+       @hibernate.class
+        table="user"
+    </meta>
+
+    <id
+        name="id"
+        type="java.lang.Integer"
+        column="id"
+    >
+        <meta attribute="field-description">
+           @hibernate.id
+            generator-class="increment"
+            type="java.lang.Integer"
+            column="id"
+
+
+        </meta>
+        <meta attribute="use-in-equals">true</meta>
+        <generator class="increment" />
+    </id>
+
+    <property
+        name="name"
+        type="java.lang.String"
+        column="name"
+        not-null="true"
+        length="50"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="name"
+            length="50"
+            not-null="true"
+        </meta>    
+    </property>
+    <property
+        name="pwd"
+        type="java.lang.String"
+        column="pwd"
+        not-null="true"
+        length="50"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="pwd"
+            length="50"
+            not-null="true"
+        </meta>    
+    </property>
+
+    <!-- Associations -->
+  
+    <!-- bi-directional one-to-many association to Article -->
+    <set
+        name="articlesByLastUpdateBy"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <meta attribute="field-description">
+           @hibernate.set
+            lazy="true"
+            inverse="true"
+            cascade="none"
+
+           @hibernate.collection-key
+            column="last_update_by"
+
+           @hibernate.collection-one-to-many
+            class="com.redsaga.hibernatesample.step1.middlegen.Article"
+        </meta>
+        <key>
+            <column name="last_update_by" />
+        </key>
+        <one-to-many 
+            class="com.redsaga.hibernatesample.step1.middlegen.Article"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Article -->
+    <set
+        name="articlesByCreateBy"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <meta attribute="field-description">
+           @hibernate.set
+            lazy="true"
+            inverse="true"
+            cascade="none"
+
+           @hibernate.collection-key
+            column="create_by"
+
+           @hibernate.collection-one-to-many
+            class="com.redsaga.hibernatesample.step1.middlegen.Article"
+        </meta>
+        <key>
+            <column name="create_by" />
+        </key>
+        <one-to-many 
+            class="com.redsaga.hibernatesample.step1.middlegen.Article"
+        />
+    </set>
+    <!-- bi-directional one-to-many association to Board -->
+    <set
+        name="boards"
+        lazy="true"
+        inverse="true"
+		cascade="none"
+    >
+        <meta attribute="field-description">
+           @hibernate.set
+            lazy="true"
+            inverse="true"
+            cascade="none"
+
+           @hibernate.collection-key
+            column="create_by"
+
+           @hibernate.collection-one-to-many
+            class="com.redsaga.hibernatesample.step1.middlegen.Board"
+        </meta>
+        <key>
+            <column name="create_by" />
+        </key>
+        <one-to-many 
+            class="com.redsaga.hibernatesample.step1.middlegen.Board"
+        />
+    </set>
+
+</class>
+</hibernate-mapping>

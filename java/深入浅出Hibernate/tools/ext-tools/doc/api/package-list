@@ -1,0 +1,3 @@
+net.sf.hibernate.tool.class2hbm
+net.sf.hibernate.tool.ddl2hbm
+net.sf.hibernate.tool.hbm2java

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	 version="2.5">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <servlet>
+        <display-name>PriceListServlet</display-name>
+        <servlet-name>PriceListServlet</servlet-name>
+        <servlet-class>com.sun.cb.saaj.PriceListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <display-name>ConfirmationServlet</display-name>
+        <servlet-name>ConfirmationServlet</servlet-name>
+        <servlet-class>com.sun.cb.saaj.ConfirmationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PriceListServlet</servlet-name>
+        <url-pattern>/getPriceList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmationServlet</servlet-name>
+        <url-pattern>/orderCoffee</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,41 @@
+2005-05-25 00:00:20 StandardContext[/forum]StandardWrapper.Throwable
+java.lang.OutOfMemoryError
+
+2005-05-25 00:00:21 StandardContext[/forum]Servlet /forum threw load() exception
+javax.servlet.ServletException: Servlet.init() for servlet velocity threw exception
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1061)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:862)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:3991)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4335)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3021)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:4629)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1619)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1628)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1628)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1608)
+	at java.lang.Thread.run(Thread.java:534)
+----- Root Cause -----
+java.lang.OutOfMemoryError
+
+2005-05-25 00:00:39 StandardContext[/forum]StandardWrapper.Throwable
+java.lang.OutOfMemoryError
+
+2005-05-25 00:00:39 StandardContext[/forum]Servlet /forum threw load() exception
+javax.servlet.ServletException: Servlet.init() for servlet hibernateDAOInitializer threw exception
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1061)
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:862)
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:3991)
+	at org.apache.catalina.core.StandardContext.start(StandardContext.java:4335)
+	at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3021)
+	at org.apache.catalina.core.StandardContext.backgroundProcess(StandardContext.java:4629)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1619)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1628)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1628)
+	at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1608)
+	at java.lang.Thread.run(Thread.java:534)
+----- Root Cause -----
+java.lang.OutOfMemoryError
+
+2005-05-25 00:01:11 StandardWrapperValve[webwork]: Servlet.service() for servlet webwork threw exception
+java.lang.OutOfMemoryError
+

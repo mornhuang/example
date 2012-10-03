@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Finalizing a Servlet - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level3"><a href="bnafe.html">What Is a Servlet?</a></p>
+<p class="toc level3"><a href="bnaff.html">The Example Servlets</a></p>
+<p class="toc level4"><a href="bnaff.html#bnafh">Troubleshooting Duke's Bookstore Database Problems</a></p>
+<p class="toc level3 tocsp"><a href="bnafi.html">Servlet Life Cycle</a></p>
+<p class="toc level4"><a href="bnafi.html#bnafj">Handling Servlet Life-Cycle Events</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafk">Defining the Listener Class</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafm">Specifying Event Listener Classes</a></p>
+<p class="toc level4 tocsp"><a href="bnafi.html#bnafn">Handling Servlet Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnafo.html">Sharing Information</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafp">Using Scope Objects</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafs">Controlling Concurrent Access to Shared Resources</a></p>
+<p class="toc level4"><a href="bnafo.html#bnaft">Accessing Databases</a></p>
+<p class="toc level3 tocsp"><a href="bnafu.html">Initializing a Servlet</a></p>
+<p class="toc level3"><a href="bnafv.html">Writing Service Methods</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafw">Getting Information from Requests</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafz">Constructing Responses</a></p>
+<p class="toc level3 tocsp"><a href="bnagb.html">Filtering Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagc">Programming Filters</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagd">Programming Customized Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagf">Specifying Filter Mappings</a></p>
+<p class="toc level3 tocsp"><a href="bnagi.html">Invoking Other Web Resources</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagj">Including Other Resources in the Response</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagk">Transferring Control to Another Web Component</a></p>
+<p class="toc level3 tocsp"><a href="bnagl.html">Accessing the Web Context</a></p>
+<p class="toc level3"><a href="bnagm.html">Maintaining Client State</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagn">Accessing a Session</a></p>
+<p class="toc level4"><a href="bnagm.html#bnago">Associating Objects with a Session</a></p>
+<p class="toc level5"><a href="bnagm.html#bnagp">Notifying Objects That Are Associated with a Session</a></p>
+<p class="toc level4 tocsp"><a href="bnagm.html#bnagq">Session Management</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagr">Session Tracking</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Finalizing a Servlet</a></p>
+<p class="toc level4"><a href="#bnagt">Tracking Service Requests</a></p>
+<p class="toc level4"><a href="#bnagu">Notifying Methods to Shut Down</a></p>
+<p class="toc level4"><a href="#bnagv">Creating Polite Long-Running Methods</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnagw.html">Further Information about Java Servlet Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnagm.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnagw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnags"></a><h3>Finalizing a Servlet</h3>
+<p><a name="indexterm-301"></a><a name="indexterm-302"></a>When a servlet container determines that a servlet should be removed from service
+(for example, when a container wants to reclaim memory resources or when it
+is being shut down), the container calls the <tt>destroy</tt> method of the <tt>Servlet</tt>
+interface. In this method, you release any resources the servlet is using and
+save any persistent state. The following <tt>destroy</tt> method releases the database object
+created in the <tt>init</tt> method described in <a href="bnafu.html">Initializing a Servlet</a>:</p><pre>public void destroy() {
+    bookDB = null;
+}</pre><p>All of a servlet&rsquo;s service methods should be complete when a servlet is
+removed. The server tries to ensure this by calling the <tt>destroy</tt> method only
+after all service requests have returned or after a server-specific grace period, whichever
+comes first. If your servlet has operations that take a long time to
+run (that is, operations that may run longer than the server&rsquo;s grace period),
+the operations could still be running when <tt>destroy</tt> is called. You must make
+sure that any threads still handling client requests complete; the remainder of this
+section describes how to do the following:</p>
+<ul><li><p>Keep track of how many threads are currently running the <tt>service</tt> method.</p></li>
+<li><p>Provide a clean shutdown by having the <tt>destroy</tt> method notify long-running threads of the shutdown and wait for them to complete.</p></li>
+<li><p>Have the long-running methods poll periodically to check for shutdown and, if necessary, stop working, clean up, and return.</p></li></ul>
+
+
+<a name="bnagt"></a><h4>Tracking Service Requests</h4>
+<p><a name="indexterm-303"></a>To track service requests, include in your servlet class a field that counts
+the number of service methods that are running. The field should have synchronized
+access methods to increment, decrement, and return its value.</p><pre>public class ShutdownExample extends HttpServlet {
+    private int serviceCounter = 0;
+    ...
+    // Access methods for serviceCounter
+    protected synchronized void enteringServiceMethod() {
+        serviceCounter++;
+    }
+    protected synchronized void leavingServiceMethod() {
+        serviceCounter--;
+    }
+    protected synchronized int numServices() {
+        return serviceCounter;
+    }
+}</pre><p>The <tt>service</tt> method should increment the service counter each time the method is
+entered and should decrement the counter each time the method returns. This is
+one of the few times that your <tt>HttpServlet</tt> subclass should override the <tt>service</tt>
+method. The new method should call <tt>super.service</tt> to preserve the functionality of the original
+<tt>service</tt> method:</p><pre>protected void service(HttpServletRequest req,
+                    HttpServletResponse resp)
+                    throws ServletException,IOException {
+    enteringServiceMethod();
+    try {
+        super.service(req, resp);
+    } finally {
+        leavingServiceMethod();
+    }
+}</pre>
+
+<a name="bnagu"></a><h4>Notifying Methods to Shut Down</h4>
+<p><a name="indexterm-304"></a>To ensure a clean shutdown, your <tt>destroy</tt> method should not release any
+shared resources until all the service requests have completed. One part of doing
+this is to check the service counter. Another part is to notify the
+long-running methods that it is time to shut down. For this notification, another
+field is required. The field should have the usual access methods:</p><pre>public class ShutdownExample extends HttpServlet {
+    private boolean shuttingDown;
+    ...
+    //Access methods for shuttingDown
+    protected synchronized void setShuttingDown(boolean flag) {
+        shuttingDown = flag;
+    }
+    protected synchronized boolean isShuttingDown() {
+        return shuttingDown;
+    }
+}</pre><p>Here is an example of the <tt>destroy</tt> method using these fields to provide
+a clean shutdown:</p><pre>public void destroy() {
+    /* Check to see whether there are still service methods /*
+    /* running, and if there are, tell them to stop. */
+    if (numServices() > 0) {
+        setShuttingDown(true);
+    }
+
+    /* Wait for the service methods to stop. */
+    while(numServices() > 0) {
+        try {
+            Thread.sleep(interval);
+        } catch (InterruptedException e) {
+        }
+    }
+}</pre>
+
+<a name="bnagv"></a><h4>Creating Polite Long-Running Methods</h4>
+<p><a name="indexterm-305"></a>The final step in providing a clean shutdown is to make any long-running
+methods behave politely. Methods that might run for a long time should check
+the value of the field that notifies them of shutdowns and should interrupt
+their work, if necessary.</p><pre>public void doPost(...) {
+    ...
+    for(i = 0; ((i &lt; lotsOfStuffToDo) &amp;&amp;
+         !isShuttingDown()); i++) {
+        try {
+            partOfLongRunningOperation(i);
+        } catch (InterruptedException e) {
+            ...
+        }
+    }
+}</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnagm.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnagw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

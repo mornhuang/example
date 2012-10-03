@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The Example JSP Pages - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level3"><a href="bnalk.html">What Is a Custom Tag?</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">The Example JSP Pages</a></p>
+</div>
+<p class="toc level3"><a href="bnaln.html">Types of Tags</a></p>
+<p class="toc level4"><a href="bnaln.html#bnalo">Tags with Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalp">Simple Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalq">Fragment Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalr">Dynamic Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnals">Deferred Value</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalt">Deferred Method</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalu">Dynamic Attribute or Deferred Expression</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalv"><tt>jsp:attribute</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnaln.html#bnalw">Tags with Bodies</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalx"><tt>jsp:body</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnaln.html#bnaly">Tags That Define Variables</a></p>
+<p class="toc level4"><a href="bnaln.html#bnalz">Communication between Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnama.html">Encapsulating Reusable Content Using Tag Files</a></p>
+<p class="toc level4"><a href="bnama.html#bnamb">Tag File Location</a></p>
+<p class="toc level4"><a href="bnama.html#bnamc">Tag File Directives</a></p>
+<p class="toc level5"><a href="bnama.html#bname">Declaring Tags</a></p>
+<p class="toc level5"><a href="bnama.html#bnamg">body-content Attribute</a></p>
+<p class="toc level5"><a href="bnama.html#bnamh">Declaring Tag Attributes in Tag Files</a></p>
+<p class="toc level5"><a href="bnama.html#bnamj">Declaring Tag Variables in Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnama.html#bnamo">Evaluating Fragments Passed to Tag Files</a></p>
+<p class="toc level4"><a href="bnama.html#bnamp">Custom Tag Examples</a></p>
+<p class="toc level5"><a href="bnama.html#bnamq">Simple Attribute Example</a></p>
+<p class="toc level5"><a href="bnama.html#bnamr">Simple and Fragment Attribute and Variable Example</a></p>
+<p class="toc level5"><a href="bnama.html#bnams">Dynamic Attribute Example</a></p>
+<p class="toc level3 tocsp"><a href="bnamu.html">Tag Library Descriptors</a></p>
+<p class="toc level4"><a href="bnamu.html#bnamw">Top-Level Tag Library Descriptor Elements</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamx"><tt>validator</tt> Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamz"><tt>listener</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnana">Declaring Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanb"><tt>tag-file</tt> TLD Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnand">Unpackaged Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnane">Packaged Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnanf">Declaring Tag Handlers</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanh"><tt>body-content</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnani">Declaring Tag Attributes for Tag Handlers</a></p>
+<p class="toc level4"><a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a></p>
+<p class="toc level3 tocsp"><a href="bnann.html">Programming Simple Tag Handlers</a></p>
+<p class="toc level4"><a href="bnann.html#bnano">Including Tag Handlers in Web Applications</a></p>
+<p class="toc level4"><a href="bnann.html#bnanp">How Is a Simple Tag Handler Invoked?</a></p>
+<p class="toc level4"><a href="bnann.html#bnanq">Tag Handlers for Basic Tags</a></p>
+<p class="toc level4"><a href="bnann.html#bnanr">Tag Handlers for Tags with Attributes</a></p>
+<p class="toc level5"><a href="bnann.html#bnans">Defining Attributes in a Tag Handler</a></p>
+<p class="toc level5"><a href="bnann.html#bnant">Attribute Validation</a></p>
+<p class="toc level5"><a href="bnann.html#bnanu">Setting Dynamic Attributes</a></p>
+<p class="toc level5"><a href="bnann.html#bnanv">Setting Deferred Value Attributes and Deferred Method Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnanw">Tag Handlers for Tags with Bodies</a></p>
+<p class="toc level5"><a href="bnann.html#bnanx">Tag Handler Does Not Manipulate the Body</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnanz">Tag Handlers for Tags That Define Variables</a></p>
+<p class="toc level5"><a href="bnann.html#bnaob"><tt>TagExtraInfo</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnaoc">Cooperating Tags</a></p>
+<p class="toc level4"><a href="bnann.html#bnaod">Tag Handler Examples</a></p>
+<p class="toc level5"><a href="bnann.html#bnaoe">An Iteration Tag</a></p>
+<p class="toc level5"><a href="bnann.html#bnaoh">A Template Tag Library</a></p>
+<p class="toc level2 tocsp"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnalk.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaln.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnall"></a><h3>The Example JSP Pages</h3>
+<p><a name="indexterm-514"></a><a name="indexterm-515"></a>This chapter describes the tasks involved in defining simple tags. It illustrates the
+tasks using excerpts from the JSP version of the Duke&rsquo;s Bookstore application discussed
+in <a href="bnahb.html">The Example JSP Pages</a>, rewritten here to take advantage of several custom tags:</p>
+<ul><li><p>A <tt>catalog</tt> tag for rendering the book catalog</p></li>
+<li><p>A <tt>shipDate</tt> tag for rendering the ship date of an order</p></li>
+<li><p>A template library for ensuring a common look and feel among all screens and composing screens out of content chunks</p></li></ul>
+<p><a name="indexterm-516"></a>The <tt>tutorial-template</tt> tag library defines a set of tags for creating an application
+template. The template is a JSP page that has placeholders for the parts
+that need to change with each screen. Each of these placeholders is referred
+to as a <b>parameter</b> of the template. For example, a simple template might
+include a title parameter for the top of the generated screen and a
+body parameter to refer to a JSP page for the custom content of
+the screen. The template is created using a set of nested tags (<tt>definition</tt>,
+<tt>screen</tt>, and <tt>parameter</tt>) that are used to build a table of screen definitions for
+Duke&rsquo;s Bookstore. An <tt>insert</tt> tag to insert parameters from the table into the
+screen.</p><p><a href="#bnalm">Figure&nbsp;8-1</a> shows the flow of a request through the following Duke&rsquo;s Bookstore web
+components:</p>
+<ul><li><p><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/template/template.jsp</tt>, which determines the structure of each screen. It uses the <tt>insert</tt> tag to compose a screen from subcomponents.</p></li>
+<li><p><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/template/screendefinitions.jspf</tt>, which defines the subcomponents used by each screen. All screens have the same banner but different title and body content (specified by the JSP Pages column in <a href="bnagy.html#bnaha">Figure&nbsp;5-1</a>).</p></li>
+<li><p><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/src/java/com/sun/bookstore3/dispatcher/Dispatcher.java</tt>, a servlet, which processes requests and forwards to <tt>template.jsp</tt>.</p></li></ul>
+<a name="bnalm"></a><h6>Figure&nbsp;8-1 Request Flow through Duke&rsquo;s Bookstore Components</h6><img src="figures/web-bookstoreRequestFlow.gif" alt="Diagram shows how a request is routed through a servlet and two JSP pages to the Book DB, then a response is routed through a JSP page to the client."></img><p>The source code for the Duke&rsquo;s Bookstore application is located in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/</tt>
+directory created when you unzip the tutorial bundle (see <a href="gfiud.html">Chapter&nbsp;2, Using the Tutorial Examples</a>).</p><p>To deploy and run the application using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Perform all the operations described in <a href="bnaez.html">Accessing Databases from Web Applications</a>.</p></li>
+<li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><i>tut-install</i>/javaeetutorial5/examples/web/</pre></li>
+<li><p>Select the <tt>bookstore3</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box and the Open Required Projects check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>bookstore3</tt> project, and select Undeploy and Deploy.</p></li>
+<li><p>To run the application, open the bookstore URL <tt>http://localhost:8080/bookstore3/bookstore</tt>.</p></li></ol>
+<p>To deploy and run the application using Ant, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/</tt>.</p></li>
+<li><p>Type <tt><b>ant</b></tt>. This command will spawn any necessary compilations, copy files to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/build/</tt> directory, and create a WAR file and copy it to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/dist/</tt> directory.</p></li>
+<li><p>Start the Application Server.</p></li>
+<li><p>Perform all the operations described in <a href="bnaez.html#bnafb">Creating a Data Source in the Application Server</a>.</p></li>
+<li><p>To deploy the example, type <tt><b>ant deploy</b></tt>. The deploy target outputs a URL for running the application. Ignore this URL, and instead use the one shown in the next step.</p></li>
+<li><p>To run the application, open the bookstore URL <tt>http://localhost:8080/bookstore3/bookstore</tt>.</p></li></ol>
+<p>To learn how to configure the example, refer to the <tt>web.xml</tt> file, which
+includes the following configurations:</p>
+<ul><li><p>A <tt>display-name</tt> element that specifies the name that tools use to identify the application.</p></li>
+<li><p>A <tt>context-param</tt> element that specifies the JSTL resource bundle base name.</p></li>
+<li><p>A <tt>listener</tt> element that identifies the <tt>ContextListener</tt> class used to create and remove the database access.</p></li>
+<li><p>A <tt>servlet</tt> element that identifies the <tt>Dispatcher</tt> instance.</p></li>
+<li><p>A set of <tt>servlet-mapping</tt> elements that map <tt>Dispatcher</tt> to URL patterns for each of the JSP pages in the application.</p></li>
+<li><p>Nested inside a <tt>jsp-config</tt> element is a <tt>jsp-property-group</tt> element, which sets the properties for the group of pages included in this version of Duke&rsquo;s Bookstore. See <a href="bnajg.html">Setting Properties for Groups of JSP Pages</a> for more information.</p></li></ul>
+<p>To run the example, open the bookstore URL <tt>http://localhost:8080/bookstore3/bookstore</tt>.</p><p>See <a href="bnaff.html#bnafh">Troubleshooting Duke's Bookstore Database Problems</a> for help with diagnosing common problems.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnalk.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaln.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

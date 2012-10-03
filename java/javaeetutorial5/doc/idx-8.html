@@ -1,0 +1,640 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title> - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="idx-7.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="idx-9.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             <h4>N</h4>
+<div class="indexdiv">
+<dl>
+<dd><tt>Name</tt> interface, <a href="bnbhr.html#indexterm-1933">Adding Content to the Body</a></dd>
+</dl>
+<dl>
+<dd>names<dl>
+<dd>fully qualified, <a href="bnbhr.html#indexterm-1938">Adding Content to the Body</a></dd>
+<dd>local, <a href="bnbhr.html#indexterm-1951">Adding Content to the Body</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>namespaces, <a href="bnbhr.html#indexterm-1939">Adding Content to the Body</a></dd>
+</dl>
+<dl>
+<dd>navigation model<dl>
+<dd><a href="bnapl.html#indexterm-675">Defining Page Navigation</a></dd>
+<dd><a href="bnaql.html#indexterm-827">Navigation Model</a></dd>
+</dl>
+<dl>
+<dd><tt>action</tt> attribute<dl>
+<dd><a href="bnatn.html#indexterm-1220">Referencing a Backing Bean Method</a></dd>
+<dd><a href="bnatn.html#indexterm-1244">Referencing a Method That Performs Navigation</a></dd>
+</dl>
+<dl>
+<dd>and backing bean methods, <a href="bnatn.html#indexterm-1232">Referencing a Backing Bean Method</a></dd>
+<dd>and <tt>commandButton</tt> tag, <a href="bnapl.html#indexterm-672">Adding a Button</a></dd>
+<dd>and JSP pages, <a href="bnavm.html#indexterm-1478">Understanding the JSP Page</a></dd>
+<dd>and <tt>UICommand</tt> component, <a href="bnarf.html#indexterm-1034">Using Command Components for Performing Actions and Navigation</a></dd>
+<dd>invoke application phase, <a href="bnaqq.html#indexterm-885">Invoke Application Phase</a></dd>
+</dl>
+action methods<dl>
+<dd><a href="bnavb.html#indexterm-1428">Writing a Method to Handle Navigation</a></dd>
+<dd><a href="bnaxf.html#indexterm-1605">Configuring Navigation Rules</a></dd>
+</dl>
+</dd>
+<dd><tt>ActionEvent</tt> class, <a href="bnatn.html#indexterm-1252">Referencing a Method That Handles an Action Event</a></dd>
+<dd>configuring navigation rules, <a href="bnaxf.html#indexterm-1603">Configuring Navigation Rules</a></dd>
+<dd>logical outcome<dl>
+<dd><a href="bnavb.html#indexterm-1429">Writing a Method to Handle Navigation</a></dd>
+<dd><a href="bnaxf.html#indexterm-1606">Configuring Navigation Rules</a></dd>
+</dl>
+<dl>
+<dd><tt>commandButton</tt> tag, <a href="bnarf.html#indexterm-1040">Rendering a Button with the commandButton Tag</a></dd>
+<dd>referencing backing bean methods, <a href="bnatn.html#indexterm-1245">Referencing a Method That Performs Navigation</a></dd>
+</dl>
+navigation rules<dl>
+<dd><a href="bnapl.html#indexterm-677">Defining Page Navigation</a></dd>
+<dd><a href="bnarf.html#indexterm-1041">Rendering a Button with the commandButton Tag</a></dd>
+<dd><a href="bnatn.html#indexterm-1248">Referencing a Method That Performs Navigation</a></dd>
+<dd><a href="bnaxf.html#indexterm-1604">Configuring Navigation Rules</a></dd>
+</dl>
+</dd>
+<dd><tt>NavigationHandler</tt> class<dl>
+<dd><a href="bnaql.html#indexterm-835">Navigation Model</a></dd>
+<dd><a href="bnaqq.html#indexterm-886">Invoke Application Phase</a></dd>
+<dd><a href="bnavb.html#indexterm-1433">Writing a Method to Handle Navigation</a></dd>
+</dl>
+</dd>
+<dd>referencing methods that perform navigation<dl>
+<dd><a href="bnatn.html#indexterm-1242">Referencing a Method That Performs Navigation</a></dd>
+<dd><a href="bnavb.html#indexterm-1431">Writing a Method to Handle Navigation</a></dd>
+</dl>
+</dd>
+<dd>writing a backing bean method to perform navigation processing, <a href="bnavb.html#indexterm-1425">Writing a Method to Handle Navigation</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>NDS, <a href="bnacj.html#indexterm-106">Java Naming and Directory Interface</a></dd>
+</dl>
+<dl>
+<dd>NetBeans IDE<dl>
+<dd><a href="gexaj.html#indexterm-142">NetBeans IDE</a></dd>
+<dd><a href="bnaan.html#indexterm-151">Building the Examples Using NetBeans IDE</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>NIS, <a href="bnacj.html#indexterm-108">Java Naming and Directory Interface</a></dd>
+</dl>
+<dl>
+<dd>nodes, SAAJ and, <a href="bnbhg.html#indexterm-1898">The Structure of an XML Document</a></dd>
+</dl>
+<dl>
+<dd><tt>NON_PERSISTENT</tt> delivery mode, <a href="bncfu.html#indexterm-2917">Specifying Message Persistence</a></dd>
+</dl>
+<dl>
+<dd>non-repudiation, <a href="bnbwk.html#indexterm-2408">Characteristics of Application Security</a></dd>
+</dl>
+</div><h4>O</h4>
+<div class="indexdiv">
+<dl>
+<dd><tt>ObjectMessage</tt> interface, <a href="bnceh.html#indexterm-2867">Message Bodies</a></dd>
+</dl>
+<dl>
+<dd>objects, administered (JMS), <a href="bnceh.html#indexterm-2807">JMS Administered Objects</a></dd>
+</dl>
+<dl>
+<dd><tt>onMessage</tt> method<dl>
+<dd>introduction, <a href="bnceh.html#indexterm-2835">JMS Message Listeners</a></dd>
+<dd>message-driven beans<dl>
+<dd><a href="bnbmd.html#indexterm-2031">What Makes Message-Driven Beans Different from Session Beans?</a></dd>
+<dd><a href="bnbpo.html#indexterm-2147">The onMessage Method</a></dd>
+<dd><a href="bncgl.html#indexterm-2953">Using Message-Driven Beans to Receive Messages Asynchronously</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div><h4>P</h4>
+<div class="indexdiv">
+<dl>
+<dd><tt>package-appclient</tt> tool, <a href="bnadf.html#indexterm-126">Tools</a></dd>
+</dl>
+<dl>
+<dd><tt>page</tt> directive, <a href="bnaop.html#indexterm-616">Using Scripting</a></dd>
+</dl>
+<dl>
+<dd>page navigation, <i>See </i>navigation model</dd>
+</dl>
+<dl>
+<dd><tt>PageContext</tt> interface, <a href="bnaow.html#indexterm-644">Tag Handlers</a></dd>
+</dl>
+<dl>
+<dd>permissions, policy, <a href="bnbxi.html#indexterm-2464">Securing the Application Server</a></dd>
+</dl>
+<dl>
+<dd>persistence<dl>
+<dd>BLOBs, <a href="bnbrt.html#indexterm-2228">BLOB and CLOB Database Types in the order Application</a></dd>
+<dd>cascade operations, <a href="bnbrt.html#indexterm-2225">Cascade Operations in the order Application</a></dd>
+<dd>CLOBs, <a href="bnbrt.html#indexterm-2229">BLOB and CLOB Database Types in the order Application</a></dd>
+<dd>configuration, <a href="bnbqw.html#indexterm-2205">The persistence.xml File</a></dd>
+<dd>context, <a href="bnbqw.html#indexterm-2190">The Persistence Context</a></dd>
+<dd>enterprise beans, <a href="bnbrs.html#indexterm-2214">Persistence in the EJB Tier</a></dd>
+<dd>JMS messages, <a href="bncfu.html#indexterm-2912">Specifying Message Persistence</a></dd>
+<dd>many-to-many, <a href="bnbsw.html#indexterm-2236">The Many-To-Many Relationship in roster</a></dd>
+<dd>one-to-many, <a href="bnbrt.html#indexterm-2219">One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</a></dd>
+<dd>one-to-one, <a href="bnbrt.html#indexterm-2218">One-to-One Relationships</a></dd>
+<dd>persistence units<dl>
+<dd><a href="bnbqw.html#indexterm-2203">Persistence Units</a></dd>
+<dd><a href="bnbrm.html#indexterm-2208">Defining the Persistence Unit</a></dd>
+</dl>
+</dd>
+<dd>primary keys, <a href="bnbqa.html#indexterm-2160">Primary Keys in Entities</a><dl>
+<dd>compound, <a href="bnbrt.html#indexterm-2223">Compound Primary Keys</a></dd>
+</dl>
+queries<dl>
+<dd><a href="bnbqw.html#indexterm-2199">Creating Queries</a></dd>
+<dd><a href="bnbrt.html#indexterm-2233">Using Queries</a></dd>
+</dl>
+<dl>
+<dd><i>See also </i>query language<dd>parameters<dl>
+<dd><a href="bnbqw.html#indexterm-2201">Creating Queries</a></dd>
+<dd><a href="bnbqw.html#indexterm-2202">Creating Queries</a></dd>
+</dl>
+</dd>
+</dl>
+query language, <a href="bnbqa.html#indexterm-2185">Queries and Relationship Direction</a></dd>
+<dd>relationships, <a href="bnbrt.html#indexterm-2216">Entity Relationships in the order Application</a></dd>
+<dd>scope, <a href="bnbqw.html#indexterm-2204">Persistence Units</a></dd>
+<dd>self-referential relationships, <a href="bnbrt.html#indexterm-2217">Self-Referential Relationships</a></dd>
+<dd>session beans, <a href="bnbly.html#indexterm-2016">What Is a Session Bean?</a></dd>
+<dd>temporal types, <a href="bnbrt.html#indexterm-2230">Temporal Types in the order Application</a></dd>
+<dd>web tier, <a href="bnbrl.html#indexterm-2206">Persistence in the Web Tier</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>persistence units<dl>
+<dd>query language<dl>
+<dd><a href="bnbtg.html#indexterm-2242">The Java Persistence Query Language</a></dd>
+<dd><a href="bnbuf.html#indexterm-2301">Identification Variables</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>PERSISTENT</tt> delivery mode, <a href="bncfu.html#indexterm-2916">Specifying Message Persistence</a></dd>
+</dl>
+<dl>
+<dd>persistent entities, JMS example, <a href="bnchf.html#indexterm-2980">A Java EE Application That Uses the JMS API with an Entity</a></dd>
+</dl>
+<dl>
+<dd>pluggable audit modules, <a href="bnbxi.html#indexterm-2462">Securing the Application Server</a></dd>
+</dl>
+<dl>
+<dd>pluggable authorization providers, <a href="bnbxi.html#indexterm-2461">Securing the Application Server</a></dd>
+</dl>
+<dl>
+<dd>point-to-point connection, SAAJ, <a href="bnbhr.html#indexterm-1953">Getting a SOAPConnection Object</a></dd>
+</dl>
+<dl>
+<dd>point-to-point messaging domain, <a href="bncdx.html#indexterm-2795">Point-to-Point Messaging Domain</a><dl>
+<dd><i>See also </i>queues</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>policy files, <a href="bnbwy.html#indexterm-2426">Java SE Security Implementation Mechanisms</a></dd>
+</dl>
+<dl>
+<dd>prerequisites, <a href="bnaac.html#indexterm-1">Before You Read This Book</a></dd>
+</dl>
+<dl>
+<dd>primary keys, <a href="bnbrt.html#indexterm-2220">One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</a><dl>
+<dd>compound, <a href="bnbrt.html#indexterm-2224">Compound Primary Keys</a></dd>
+<dd>defined, <a href="bnbqa.html#indexterm-2161">Primary Keys in Entities</a></dd>
+<dd>examples, <a href="bnbqa.html#indexterm-2167">Primary Key Classes</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>principal, <a href="bnbxj.html#indexterm-2487">Some Other Terminology</a><dl>
+<dd>default, <a href="bnbyl.html#indexterm-2671">Accepting Unauthenticated Users</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>PrintWriter</tt> class, <a href="bnafv.html#indexterm-254">Constructing Responses</a></dd>
+</dl>
+<dl>
+<dd>priority levels, for messages, <a href="bncfu.html#indexterm-2920">Setting Message Priority Levels</a><dl>
+<dd><tt>JMSPriority</tt> message header field, <a href="bnceh.html#indexterm-2847">Message Headers</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>programmatic login, <a href="bnbxi.html#indexterm-2470">Securing the Application Server</a></dd>
+</dl>
+<dl>
+<dd>programmatic security<dl>
+<dd><a href="bnbwk.html#indexterm-2396">Overview of Java EE Security</a></dd>
+<dd><a href="bnbxe.html#indexterm-2454">Using Programmatic Security</a></dd>
+<dd><a href="bnbyk.html#indexterm-2577">Securing Java EE Applications</a></dd>
+<dd><a href="bncas.html#indexterm-2714">Securing Web Applications</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>programming model, JMS, <a href="bnceh.html#indexterm-2805">The JMS API Programming Model</a></dd>
+</dl>
+<dl>
+<dd>properties., <i>See </i>message properties, JMS</dd>
+</dl>
+<dl>
+<dd>providers, JMS, <a href="bncdx.html#indexterm-2789">JMS API Architecture</a></dd>
+</dl>
+<dl>
+<dd>proxies, <a href="bnayl.html#indexterm-1675">Building Web Services with JAX-WS</a></dd>
+</dl>
+<dl>
+<dd>public key certificates, <a href="bncbe.html#indexterm-2757">HTTPS Client Authentication</a></dd>
+</dl>
+<dl>
+<dd>public key cryptography, <a href="bnbxw.html#indexterm-2550">Working with Digital Certificates</a></dd>
+</dl>
+<dl>
+<dd>publish/subscribe messaging domain<dl>
+<dd><i>See also </i>topics<dd>durable subscriptions, <a href="bncfu.html#indexterm-2934">Creating Durable Subscriptions</a></dd>
+<dd>introduction, <a href="bncdx.html#indexterm-2797">Publish/Subscribe Messaging Domain</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>pull parsing, <a href="bnbdw.html#indexterm-1831">Pull Parsing versus Push Parsing</a></dd>
+</dl>
+</div><h4>Q</h4>
+<div class="indexdiv">
+<dl>
+<dd>Quality of Service (QOS), <a href="bnbwk.html#indexterm-2409">Characteristics of Application Security</a></dd>
+</dl>
+<dl>
+<dd>query language<dl>
+<dd><tt>ABS</tt> function, <a href="bnbuf.html#indexterm-2359">Functional Expressions</a></dd>
+<dd>abstract schemas<dl>
+<dd><a href="bnbth.html#indexterm-2244">Query Language Terminology</a></dd>
+<dd><a href="bnbti.html#indexterm-2255">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2305">Identification Variables</a></dd>
+</dl>
+</dd>
+<dd><tt>ALL</tt> expression, <a href="bnbuf.html#indexterm-2348">Subqueries</a></dd>
+<dd><tt>ANY</tt> expression, <a href="bnbuf.html#indexterm-2349">Subqueries</a></dd>
+<dd>arithmetic functions, <a href="bnbuf.html#indexterm-2351">Functional Expressions</a></dd>
+<dd><tt>ASC</tt> keyword, <a href="bnbuf.html#indexterm-2384">ORDER BY Clause</a></dd>
+<dd><tt>AVG</tt> function, <a href="bnbuf.html#indexterm-2377">Return Types</a></dd>
+<dd><tt>BETWEEN</tt> expression<dl>
+<dd><a href="bnbtl.html#indexterm-2285">The BETWEEN Expression</a></dd>
+<dd><a href="bnbuf.html#indexterm-2335">BETWEEN Expressions</a></dd>
+</dl>
+</dd>
+<dd>boolean literals, <a href="bnbuf.html#indexterm-2326">Literals</a></dd>
+<dd>boolean logic, <a href="bnbuf.html#indexterm-2365">NULL Values</a></dd>
+<dd>collection member expressions<dl>
+<dd><a href="bnbuf.html#indexterm-2309">Identification Variables</a></dd>
+<dd><a href="bnbuf.html#indexterm-2344">Collection Member Expressions</a></dd>
+</dl>
+</dd>
+<dd>collections<dl>
+<dd><a href="bnbuf.html#indexterm-2307">Identification Variables</a></dd>
+<dd><a href="bnbuf.html#indexterm-2342">Empty Collection Comparison Expressions</a></dd>
+<dd><a href="bnbuf.html#indexterm-2345">Collection Member Expressions</a></dd>
+</dl>
+</dd>
+<dd>compared to SQL<dl>
+<dd><a href="bnbtl.html#indexterm-2271">Queries That Navigate to Related Entities</a></dd>
+<dd><a href="bnbuf.html#indexterm-2298">Identifiers</a></dd>
+<dd><a href="bnbuf.html#indexterm-2318">Path Expressions</a></dd>
+</dl>
+</dd>
+<dd>comparison operators<dl>
+<dd><a href="bnbtl.html#indexterm-2286">Comparison Operators</a></dd>
+<dd><a href="bnbuf.html#indexterm-2336">BETWEEN Expressions</a></dd>
+</dl>
+</dd>
+<dd><tt>CONCAT</tt> function, <a href="bnbuf.html#indexterm-2352">Functional Expressions</a></dd>
+<dd>conditional expressions<dl>
+<dd><a href="bnbtl.html#indexterm-2281">Queries with Other Conditional Expressions</a></dd>
+<dd><a href="bnbuf.html#indexterm-2322">WHERE Clause</a></dd>
+<dd><a href="bnbuf.html#indexterm-2331">Conditional Expressions</a></dd>
+<dd><a href="bnbuf.html#indexterm-2372">Equality Semantics</a></dd>
+</dl>
+</dd>
+<dd>constructors, <a href="bnbuf.html#indexterm-2382">Constructor Expressions</a></dd>
+<dd><tt>COUNT</tt> function, <a href="bnbuf.html#indexterm-2378">Return Types</a></dd>
+<dd><tt>DELETE</tt> expression<dl>
+<dd><a href="bnbtl.html#indexterm-2288">Bulk Updates and Deletes</a></dd>
+<dd><a href="bnbtl.html#indexterm-2290">Delete Queries</a></dd>
+</dl>
+</dd>
+<dd><tt>DELETE</tt> statement, <a href="bnbti.html#indexterm-2262">Update and Delete Statements</a></dd>
+<dd><tt>DESC</tt> keyword, <a href="bnbuf.html#indexterm-2385">ORDER BY Clause</a></dd>
+<dd><tt>DISTINCT</tt> keyword, <a href="bnbtl.html#indexterm-2266">Eliminating Duplicate Values</a></dd>
+<dd>domain of query<dl>
+<dd><a href="bnbtg.html#indexterm-2241">The Java Persistence Query Language</a></dd>
+<dd><a href="bnbuf.html#indexterm-2294">FROM Clause</a></dd>
+<dd><a href="bnbuf.html#indexterm-2303">Identification Variables</a></dd>
+</dl>
+</dd>
+<dd>duplicate values, <a href="bnbtl.html#indexterm-2267">Eliminating Duplicate Values</a></dd>
+<dd>enum literals, <a href="bnbuf.html#indexterm-2327">Literals</a></dd>
+<dd>equality, <a href="bnbuf.html#indexterm-2368">Equality Semantics</a></dd>
+<dd><tt>ESCAPE</tt> clause, <a href="bnbuf.html#indexterm-2340">LIKE Expressions</a></dd>
+<dd>examples, <a href="bnbtl.html#indexterm-2263">Example Queries</a></dd>
+<dd><tt>EXISTS</tt> expression, <a href="bnbuf.html#indexterm-2347">Subqueries</a></dd>
+<dd><tt>FETCH JOIN</tt> operator, <a href="bnbuf.html#indexterm-2315">Identification Variables</a></dd>
+<dd><tt>FROM</tt> clause<dl>
+<dd><a href="bnbti.html#indexterm-2253">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2293">FROM Clause</a></dd>
+</dl>
+</dd>
+<dd>grammar, <a href="bnbuf.html#indexterm-2292">Full Query Language Syntax</a></dd>
+<dd><tt>GROUP BY</tt> clause<dl>
+<dd><a href="bnbti.html#indexterm-2258">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2386">The GROUP BY Clause</a></dd>
+</dl>
+</dd>
+<dd><tt>HAVING</tt> clause<dl>
+<dd><a href="bnbti.html#indexterm-2259">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2387">The HAVING Clause</a></dd>
+</dl>
+</dd>
+<dd>identification variables<dl>
+<dd><a href="bnbti.html#indexterm-2254">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2295">FROM Clause</a></dd>
+<dd><a href="bnbuf.html#indexterm-2299">Identification Variables</a></dd>
+</dl>
+</dd>
+<dd>identifiers, <a href="bnbuf.html#indexterm-2296">Identifiers</a></dd>
+<dd><tt>IN</tt> operator<dl>
+<dd><a href="bnbuf.html#indexterm-2312">Identification Variables</a></dd>
+<dd><a href="bnbuf.html#indexterm-2337">IN Expressions</a></dd>
+</dl>
+</dd>
+<dd><tt>INNER JOIN</tt> operator, <a href="bnbuf.html#indexterm-2311">Identification Variables</a></dd>
+<dd>input parameters<dl>
+<dd><a href="bnbtl.html#indexterm-2277">Traversing Relationships with an Input Parameter</a></dd>
+<dd><a href="bnbuf.html#indexterm-2328">Input Parameters</a></dd>
+</dl>
+</dd>
+<dd><tt>IS EMPTY</tt> expression, <a href="bnbtl.html#indexterm-2284">The IS EMPTY Expression</a></dd>
+<dd><tt>IS FALSE</tt> operator, <a href="bnbuf.html#indexterm-2374">Equality Semantics</a></dd>
+<dd><tt>IS NULL</tt> expression, <a href="bnbtl.html#indexterm-2283">The IS NULL Expression</a></dd>
+<dd><tt>IS TRUE</tt> operator, <a href="bnbuf.html#indexterm-2373">Equality Semantics</a></dd>
+<dd><tt>JOIN</tt> statement<dl>
+<dd><a href="bnbtl.html#indexterm-2275">A Simple Query with Relationships</a></dd>
+<dd><a href="bnbtl.html#indexterm-2276">Navigating to Single-Valued Relationship Fields</a></dd>
+<dd><a href="bnbuf.html#indexterm-2310">Identification Variables</a></dd>
+</dl>
+</dd>
+<dd><tt>LEFT JOIN</tt> operator, <a href="bnbuf.html#indexterm-2313">Identification Variables</a></dd>
+<dd><tt>LEFT OUTER JOIN</tt> operator, <a href="bnbuf.html#indexterm-2314">Identification Variables</a></dd>
+<dd><tt>LENGTH</tt> function, <a href="bnbuf.html#indexterm-2353">Functional Expressions</a></dd>
+<dd><tt>LIKE</tt> expression<dl>
+<dd><a href="bnbtl.html#indexterm-2282">The LIKE Expression</a></dd>
+<dd><a href="bnbuf.html#indexterm-2338">LIKE Expressions</a></dd>
+</dl>
+</dd>
+<dd>literals, <a href="bnbuf.html#indexterm-2323">Literals</a></dd>
+<dd><tt>LOCATE</tt> function, <a href="bnbuf.html#indexterm-2354">Functional Expressions</a></dd>
+<dd><tt>LOWER</tt> function, <a href="bnbuf.html#indexterm-2357">Functional Expressions</a></dd>
+<dd><tt>MAX</tt> function, <a href="bnbuf.html#indexterm-2379">Return Types</a></dd>
+<dd><tt>MEMBER</tt> exression, <a href="bnbuf.html#indexterm-2343">Collection Member Expressions</a></dd>
+<dd><tt>MIN</tt> function, <a href="bnbuf.html#indexterm-2380">Return Types</a></dd>
+<dd><tt>MOD</tt> function, <a href="bnbuf.html#indexterm-2360">Functional Expressions</a></dd>
+<dd>multiple declarations, <a href="bnbuf.html#indexterm-2302">Identification Variables</a></dd>
+<dd>multiple relationships, <a href="bnbtl.html#indexterm-2279">Traversing Multiple Relationships</a></dd>
+<dd>named parameters<dl>
+<dd><a href="bnbtl.html#indexterm-2268">Using Named Parameters</a></dd>
+<dd><a href="bnbuf.html#indexterm-2329">Input Parameters</a></dd>
+</dl>
+</dd>
+<dd>navigation<dl>
+<dd><a href="bnbtl.html#indexterm-2270">Queries That Navigate to Related Entities</a></dd>
+<dd><a href="bnbtl.html#indexterm-2274">A Simple Query with Relationships</a></dd>
+<dd><a href="bnbtl.html#indexterm-2280">Navigating According to Related Fields</a></dd>
+<dd><a href="bnbuf.html#indexterm-2306">Identification Variables</a></dd>
+<dd><a href="bnbuf.html#indexterm-2320">Navigation</a></dd>
+</dl>
+</dd>
+<dd>negation, <a href="bnbuf.html#indexterm-2371">Equality Semantics</a></dd>
+<dd><tt>NOT</tt> operator, <a href="bnbuf.html#indexterm-2370">Equality Semantics</a></dd>
+<dd>null values<dl>
+<dd><a href="bnbuf.html#indexterm-2341">NULL Comparison Expressions</a></dd>
+<dd><a href="bnbuf.html#indexterm-2363">NULL Values</a></dd>
+</dl>
+</dd>
+<dd>numeric comparisons, <a href="bnbuf.html#indexterm-2367">Equality Semantics</a></dd>
+<dd>numeric literals, <a href="bnbuf.html#indexterm-2325">Literals</a></dd>
+<dd>operator precedence, <a href="bnbuf.html#indexterm-2334">Operators and Their Precedence</a></dd>
+<dd>operators, <a href="bnbuf.html#indexterm-2333">Operators and Their Precedence</a></dd>
+<dd><tt>ORDER BY</tt> clause<dl>
+<dd><a href="bnbti.html#indexterm-2260">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2383">ORDER BY Clause</a></dd>
+</dl>
+</dd>
+<dd>parameters, <a href="bnbtl.html#indexterm-2265">Eliminating Duplicate Values</a></dd>
+<dd>parentheses, <a href="bnbuf.html#indexterm-2332">Conditional Expressions</a></dd>
+<dd>path expressions<dl>
+<dd><a href="bnbth.html#indexterm-2247">Query Language Terminology</a></dd>
+<dd><a href="bnbuf.html#indexterm-2316">Path Expressions</a></dd>
+</dl>
+</dd>
+<dd>positional parameters, <a href="bnbuf.html#indexterm-2330">Input Parameters</a></dd>
+<dd>range variables, <a href="bnbuf.html#indexterm-2304">Identification Variables</a></dd>
+<dd>relationship fields, <a href="bnbth.html#indexterm-2251">Query Language Terminology</a></dd>
+<dd>relationships<dl>
+<dd><a href="bnbth.html#indexterm-2246">Query Language Terminology</a></dd>
+<dd><a href="bnbtl.html#indexterm-2273">A Simple Query with Relationships</a></dd>
+<dd><a href="bnbtl.html#indexterm-2278">Traversing Relationships with an Input Parameter</a></dd>
+</dl>
+</dd>
+<dd>return types, <a href="bnbuf.html#indexterm-2376">Return Types</a></dd>
+<dd>scope, <a href="bnbtg.html#indexterm-2240">The Java Persistence Query Language</a></dd>
+<dd><tt>SELECT</tt> clause<dl>
+<dd><a href="bnbti.html#indexterm-2252">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2375">SELECT Clause</a></dd>
+</dl>
+</dd>
+<dd><tt>setNamedParameter</tt> method, <a href="bnbtl.html#indexterm-2269">Using Named Parameters</a></dd>
+<dd><tt>SIZE</tt> function, <a href="bnbuf.html#indexterm-2362">Functional Expressions</a></dd>
+<dd><tt>SQRT</tt> function, <a href="bnbuf.html#indexterm-2361">Functional Expressions</a></dd>
+<dd>state fields, <a href="bnbth.html#indexterm-2249">Query Language Terminology</a></dd>
+<dd>string comparison, <a href="bnbuf.html#indexterm-2369">Equality Semantics</a></dd>
+<dd>string functions, <a href="bnbuf.html#indexterm-2350">Functional Expressions</a></dd>
+<dd>string literals, <a href="bnbuf.html#indexterm-2324">Literals</a></dd>
+<dd>subqueries, <a href="bnbuf.html#indexterm-2346">Subqueries</a></dd>
+<dd><tt>SUBSTRING</tt> function, <a href="bnbuf.html#indexterm-2355">Functional Expressions</a></dd>
+<dd><tt>SUM</tt> function, <a href="bnbuf.html#indexterm-2381">Return Types</a></dd>
+<dd>syntax, <a href="bnbuf.html#indexterm-2291">Full Query Language Syntax</a></dd>
+<dd><tt>TRIM</tt> function, <a href="bnbuf.html#indexterm-2356">Functional Expressions</a></dd>
+<dd>types<dl>
+<dd><a href="bnbuf.html#indexterm-2319">Expression Types</a></dd>
+<dd><a href="bnbuf.html#indexterm-2366">Equality Semantics</a></dd>
+</dl>
+</dd>
+<dd><tt>UPDATE</tt> expression<dl>
+<dd><a href="bnbti.html#indexterm-2261">Update and Delete Statements</a></dd>
+<dd><a href="bnbtl.html#indexterm-2287">Bulk Updates and Deletes</a></dd>
+<dd><a href="bnbtl.html#indexterm-2289">Update Queries</a></dd>
+</dl>
+</dd>
+<dd><tt>UPPER</tt> function, <a href="bnbuf.html#indexterm-2358">Functional Expressions</a></dd>
+<dd><tt>WHERE</tt> clause<dl>
+<dd><a href="bnbti.html#indexterm-2257">Select Statements</a></dd>
+<dd><a href="bnbuf.html#indexterm-2321">WHERE Clause</a></dd>
+</dl>
+</dd>
+<dd>wildcards, <a href="bnbuf.html#indexterm-2339">LIKE Expressions</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>Queue</tt> interface, <a href="bnceh.html#indexterm-2821">JMS Destinations</a></dd>
+</dl>
+<dl>
+<dd><tt>QueueBrowser</tt> interface, <a href="bnceh.html#indexterm-2869">JMS Queue Browsers</a><dl>
+<dd>JMS client example, <a href="bncfa.html#indexterm-2891">A Simple Example of Browsing Messages in a Queue</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>queues<dl>
+<dd>browsing<dl>
+<dd><a href="bnceh.html#indexterm-2870">JMS Queue Browsers</a></dd>
+<dd><a href="bncfa.html#indexterm-2893">A Simple Example of Browsing Messages in a Queue</a></dd>
+</dl>
+</dd>
+<dd>creating<dl>
+<dd><a href="bnceh.html#indexterm-2817">JMS Destinations</a></dd>
+<dd><a href="bncfa.html#indexterm-2879">Creating JMS Administered Objects for the Synchronous Receive Example</a></dd>
+</dl>
+</dd>
+<dd>injecting resources, <a href="bnbpn.html#indexterm-2142">The simplemessage Application Client</a></dd>
+<dd>introduction, <a href="bnceh.html#indexterm-2815">JMS Destinations</a></dd>
+<dd>temporary<dl>
+<dd><a href="bncfu.html#indexterm-2926">Creating Temporary Destinations</a></dd>
+<dd><a href="bnchf.html#indexterm-2985">Coding the Application Client: HumanResourceClient.java</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+</div>
+         </div>
+         <div class="navigation">
+             <a href="idx-7.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="idx-9.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

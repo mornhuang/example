@@ -1,0 +1,579 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>JAXB Examples - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level3"><a href="bnazg.html">JAXB Architecture</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazh">Architectural Overview</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazj">The JAXB Binding Process</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazl">More about Unmarshalling</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazm">More about Marshalling</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazn">More about Validation</a></p>
+<p class="toc level3 tocsp"><a href="bnazo.html">Representing XML Content</a></p>
+<p class="toc level4"><a href="bnazo.html#bnazp">Java Representation of XML Schema</a></p>
+<p class="toc level3 tocsp"><a href="bnazq.html">Binding XML Schemas</a></p>
+<p class="toc level4"><a href="bnazq.html#bnazr">Simple Type Definitions</a></p>
+<p class="toc level4"><a href="bnazq.html#bnazs">Default Data Type Bindings</a></p>
+<p class="toc level5"><a href="bnazq.html#bnazt">Schema-to-Java Mapping</a></p>
+<p class="toc level5"><a href="bnazq.html#bnazv"><tt>JAXBElement</tt> Object</a></p>
+<p class="toc level5"><a href="bnazq.html#bnazw">Java-to-Schema Mapping</a></p>
+<p class="toc level3 tocsp"><a href="bnazy.html">Customizing Generated Classes and Java Program Elements</a></p>
+<p class="toc level4"><a href="bnazy.html#bnazz">Schema-to-Java</a></p>
+<p class="toc level4"><a href="bnazy.html#bnbaa">Java-to-Schema</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">JAXB Examples</a></p>
+<p class="toc level4"><a href="#bnbal">JAXB Compiler Options</a></p>
+<p class="toc level4"><a href="#bnban">JAXB Schema Generator Option</a></p>
+<p class="toc level4"><a href="#bnbao">About the Schema-to-Java Bindings</a></p>
+<p class="toc level4"><a href="#bnbar">Schema-Derived JAXB Classes</a></p>
+<p class="toc level5"><a href="#bnbas"><tt>Comment</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbat"><tt>Items</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbau"><tt>ObjectFactory</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbav"><tt>PurchaseOrder</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbaw"><tt>PurchaseOrderType</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbax"><tt>USAddress</tt> Class</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbay.html">Basic JAXB Examples</a></p>
+<p class="toc level4"><a href="bnbay.html#bnbaz">Modify Marshal Example</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbba">Building and Running the Modify Marshal Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbbb">Building and Running the Modify Marshal Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbay.html#bnbbc">Unmarshal Validate Example</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbbd">Building and Running the Unmarshal Validate Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbbe">Building and Running the Unmarshal Validate Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbbf.html">Customizing JAXB Bindings</a></p>
+<p class="toc level4"><a href="bnbbf.html#bnbbg">Why Customize?</a></p>
+<p class="toc level4"><a href="bnbbf.html#bnbbh">Customization Overview</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbbi">Inline and External Customizations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbbo">Scope, Inheritance, and Precedence</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbbq">Customization Syntax</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbby">Customization Namespace Prefix</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbbz">Customize Inline Example</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbca">Building and Running the Customize Inline Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcb">Building and Running the Customize Inline Example Using Ant</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcc">Customized Schema</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcd">Global Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbce">Schema Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcf">Class Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcg">Property Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbch"><tt>MyDatatypeConverter</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbci">Datatype Converter Example</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcj">Building and Running the Datatype Converter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbck">Building and Running the Datatype Converter Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbcl">Binding Declaration Files</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcm">JAXB Version, Namespace, and Schema Attributes</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcq">Global and Schema Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcr">Class Declarations</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbcs">External Customize Example</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbct">Building and Running the External Customize Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcu">Building and Running the External Customize Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbcv.html">Java-to-Schema Examples</a></p>
+<p class="toc level4"><a href="bnbcv.html#bnbcw">Create Marshal Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbcx">Building and Running the Create Marshal Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbcy">Building and Running the Create Marshal Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbcz">XmlAccessorOrder Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbda">Using the <tt>@XmlAccessorOrder</tt> Annotation to Define Schema Element Ordering</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdb">Using the <tt>@XmlType</tt> Annotation to Define Schema Element Ordering</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdc">Schema Content Ordering in the Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdd">Building and Running the XmlAccessorOrder Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbde">Building and Running the XmlAccessorOrder Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdf">XmlAdapter Field Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdg">Building and Running the XmlAdapter Field Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdh">Building and Running the XmlAdapter Field Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdi">XmlAttribute Field Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdj">Building and Running the XmlAttribute Field Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdk">Building and Running the XmlAttribute Field Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdl">XmlRootElement Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdm">Building and Running the XmlRootElement Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdn">Building and Running the XmlRootElement Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdo">XmlSchemaType Class Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdp">Building and Running the XmlSchemaType Class Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdq">Building and Running the XmlSchemaType Class Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdr">XmlType Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbds">Building and Running the XmlType Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdt">Building and Running the XmlType Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbdu.html">Further Information about JAXB</a></p>
+<p class="toc level2 tocsp"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnazy.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbay.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbah"></a><h3>JAXB Examples</h3>
+<a name="indexterm-1768"></a><a name="indexterm-1769"></a><p>The sections that follow provide instructions for using the example Java applications that
+are included in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxb/</tt> directory. These examples demonstrate and build upon
+key JAXB features and concepts. Follow these procedures in the order presented.</p><p>After reading this section, you should feel comfortable enough with JAXB that you
+can:</p>
+<ul><li><p>Generate JAXB Java classes from an XML schema</p></li>
+<li><p>Use schema-derived JAXB classes to unmarshal and marshal XML content in a Java application</p></li>
+<li><p>Create a Java content tree from scratch using schema-derived JAXB classes</p></li>
+<li><p>Validate XML content during unmarshalling and at runtime</p></li>
+<li><p>Customize JAXB schema-to-Java bindings</p></li></ul>
+<p>This chapter describes three sets of examples:</p>
+<ul><li><p>The Basic examples (Modify Marshal, Unmarshal Validate) demonstrate basic JAXB concepts like unmarshalling, marshalling, and validating XML content using default settings and bindings.</p></li>
+<li><p>The Customize examples (Customize Inline, Datatype Converter, External Customize) demonstrate various ways of customizing the default binding of XML schemas to Java objects.</p></li>
+<li><p>The Java-to-Schema examples show how to use annotations to map Java classes to XML schema.</p>
+<hr><p><b>Note - </b>The Basic and Customize examples are based on a Purchase Order scenario. Each uses an XML document, <tt>po.xml</tt>, written against an XML schema, <tt>po.xsd</tt>. These documents are derived from the <a href="http://www.w3.org/TR/xmlschema-0/">W3C XML Schema Part 0: Primer</a>, edited by David C. Fallside.</p>
+<hr>
+</li></ul>
+<p><a name="indexterm-1770"></a>The Basic and Customize example directories contain several base files:</p>
+<ul><li><p><tt>po.xsd</tt> is the XML schema you will use as input to the JAXB binding compiler, and from which schema-derived JAXB Java classes will be generated. For the Customize Inline and Datatype Converter examples, this file contains inline binding customizations.</p></li>
+<li><p><tt>po.xml</tt> is the <b>Purchase Order</b> XML file containing sample XML content, and is the file you will unmarshal into a Java content tree in each example. This file is almost exactly the same in each example, with minor content differences to highlight different JAXB concepts.</p></li>
+<li><p><tt>Main.java</tt> is the main Java class for each example.</p></li>
+<li><p><tt>build.xml</tt> is an Ant project file provided for your convenience. Use the Ant tool to generate, compile, and run the schema-derived JAXB classes automatically. The <tt>build.xml</tt> file varies across the examples.</p></li>
+<li><p><tt>MyDatatypeConverter.java</tt> in the <tt>inline-customize</tt> example is a Java class used to provide custom data type conversions.</p></li>
+<li><p><tt>binding.xjb</tt> in the External Customize example is an external binding declarations file that is passed to the JAXB binding compiler to customize the default JAXB bindings.</p></li></ul>
+<p><a href="#bnbai">Table&nbsp;17-9</a>, <a href="#bnbaj">Table&nbsp;17-10</a>, and <a href="#bnbak">Table&nbsp;17-11</a> briefly describe the Basic, Customize, and Java-to-Schema JAXB
+examples.</p><a name="bnbai"></a><h6>Table&nbsp;17-9 Basic JAXB Examples</h6><table><col width="29%"><col width="70%"><tr><th align="left" valign="top" scope="column"><p>Example Name</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbay.html#bnbaz">Modify Marshal Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Demonstrates how to modify a Java content tree.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbay.html#bnbbc">Unmarshal Validate Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Demonstrates how to enable
+validation during unmarshalling.</p></td>
+</tr>
+</table><a name="bnbaj"></a><h6>Table&nbsp;17-10 Customize JAXB Examples</h6><table><col width="29%"><col width="70%"><tr><th align="left" valign="top" scope="column"><p>Example Name</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbbf.html#bnbbz">Customize Inline Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Demonstrates how to customize the default JAXB bindings by
+using inline annotations in an XML schema.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbbf.html#bnbci">Datatype Converter Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Similar to the Customize Inline example, this
+example illustrates alternate, more terse bindings of XML <tt>simpleType</tt> definitions to Java data types.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbbf.html#bnbcs">External Customize Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates
+how to use an external binding declarations file to pass binding customizations for
+a read-only schema to the JAXB binding compiler.</p></td>
+</tr>
+</table><a name="bnbak"></a><h6>Table&nbsp;17-11 Java-to-Schema JAXB Examples</h6><table><col width="32%"><col width="67%"><tr><th align="left" valign="top" scope="column"><p>Example Name</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbcw">Create Marshal Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates how to marshal
+and unmarshal JAXB-annotated classes to XML schema. The example also shows how to
+enable JAXP 1.3 validation at unmarshal time using a schema file that was
+generated from the JAXB mapped classes.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbcz">XmlAccessorOrder Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates how to use the <tt>@XmlAccessorOrder</tt> and
+<tt>@XmlType.propOrder</tt> mapping annotations in Java classes to control the order in which XML
+content is marshalled/unmarshalled by a Java type.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbdf">XmlAdapter Field Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates how to use the interface
+<tt>XmlAdapter</tt> and the annotation <tt>@XmlJavaTypeAdapter</tt> to provide a a custom mapping of XML content
+into and out of a <tt>HashMap</tt> (field) that uses an <tt>int</tt> as the
+key and a <tt>String</tt> as the value.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbdi">XmlAttribute Field Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates how to use the annotation <tt>@XmlAttribute</tt>
+to define a property or field to be handled as an XML attribute.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbdl">XmlRootElement Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates
+how to use the annotation <tt>@XmlRootElement</tt> to define an XML element name for
+the XML schema type of the corresponding class.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbdo">XmlSchemaType Class Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates how to use the
+annotation <tt>@XmlSchemaType</tt> to customize the mapping of a property or field to an
+XML built-in type.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a href="bnbcv.html#bnbdr">XmlType Example</a></p></td>
+<td align="left" valign="top" scope="row"><p>Illustrates how to use the annotation <tt>@XmlType</tt> to map a class
+or <tt>enum</tt> type to an XML schema type.</p></td>
+</tr>
+</table>
+
+<a name="bnbal"></a><h4>JAXB Compiler Options</h4>
+<a name="indexterm-1771"></a><a name="indexterm-1772"></a><p>The JAXB XJC schema binding compiler transforms, or binds, a source XML schema
+to a set of JAXB content classes in the Java programming language. The
+compiler, <tt>xjc</tt>, is provided in two flavors in the Application Server: <tt>xjc.sh</tt> (Solaris/Linux)
+and <tt>xjc.bat</tt> (Windows). Both <tt>xjc.sh</tt> and <tt>xjc.bat</tt> take the same command-line options. You can
+display quick usage instructions by invoking the scripts without any options, or with
+the <tt>-help</tt> switch. The syntax is as follows:</p><pre>xjc [-options ...] <i>schema</i></pre><p>The <tt>xjc</tt> command line options are as follows:</p><dl><dt><tt>-nv</tt></dt>
+<dd><p>Do not perform strict validation of the input schema or schemas. By default, <tt>xjc</tt> performs strict validation of the source schema before processing. Note that this does not mean the binding compiler will not perform any validation; it simply means that it will perform less-strict validation.</p></dd>
+<dt><tt>-extension</tt></dt>
+<dd><p>By default, the XJC binding compiler strictly enforces the rules outlined in the Compatibility chapter of the JAXB Specification. In the default (strict) mode, you are also limited to using only the binding customizations defined in the specification. By using the <tt>-extension</tt> switch, you will be allowed to use the JAXB Vendor Extensions.</p></dd>
+<dt><tt>-b</tt> <i>file</i></dt>
+<dd><p>Specify one or more external binding files to process. (Each binding file must have its own <tt>-b</tt> switch.) The syntax of the external binding files is extremely flexible. You may have a single binding file that contains customizations for multiple schemas or you can break the customizations into multiple bindings files. In addition, the ordering of the schema files and binding files on the command line does not matter.</p></dd>
+<dt><tt>-d</tt> <i>dir</i></dt>
+<dd><p>By default, <tt>xjc</tt> will generate Java content classes in the current directory. Use this option to specify an alternate output directory. The directory must already exist; <tt>xjc</tt> will not create it for you.</p></dd>
+<dt><tt>-p</tt> <i>package</i></dt>
+<dd><p>Specify an alternate output directory. By default, the XJC binding compiler will generate the Java content classes in the current directory. The output directory must already exist; the XJC binding compiler will not create it for you.</p></dd>
+<dt><tt>-proxy</tt> <i>proxy</i></dt>
+<dd><p>Specify the HTTP/HTTPS proxy. The format is <tt>[<i>user</i>[:<i>password</i>]@]<i>proxyHost</i>[:<i>proxyPort</i>]</tt>. The old <tt>-host</tt> and <tt>-port</tt> options are still supported by the Reference Implementation for backwards compatibility, but they have been deprecated.</p></dd>
+<dt><tt>-classpath</tt> <i>arg</i></dt>
+<dd><p>Specify where to find client application class files used by the <tt>&lt;jxb:javaType></tt> and <tt>&lt;xjc:superClass></tt> customizations.</p></dd>
+<dt><tt>-catalog</tt> <i>file</i></dt>
+<dd><p>Specify catalog files to resolve external entity references. Supports TR9401, XCatalog, and OASIS XML Catalog format. For more information, see the XML Entity and URI Resolvers document or examine the catalog-resolver sample application.</p></dd>
+<dt><tt>-readOnly</tt></dt>
+<dd><p>Force the XJC binding compiler to mark the generated Java sources read-only. By default, the XJC binding compiler does not write-protect the Java source files it generates.</p></dd>
+<dt><tt>-npa</tt></dt>
+<dd><p>Suppress the generation of package level annotations into <tt>**/package-info.java</tt>. Using this switch causes the generated code to internalize those annotations into the other generated classes.</p></dd>
+<dt><tt>-xmlschema</tt></dt>
+<dd><p>Treat input schemas as W3C XML Schema (default). If you do not specify this switch, your input schemas will be treated as W3C XML Schema.</p></dd>
+<dt><tt>-quiet</tt></dt>
+<dd><p>Suppress compiler output, such as progress information and warnings.</p></dd>
+<dt><tt>-help</tt></dt>
+<dd><p>Display a brief summary of the compiler switches.</p></dd>
+<dt><tt>-version</tt></dt>
+<dd><p>Display the compiler version information.</p></dd>
+<dt><tt>-Xlocator</tt></dt>
+<dd><p>Enable source location support for generated code.</p></dd>
+<dt><tt>-Xsync-methods</tt></dt>
+<dd><p>Generate accessor methods with the <tt>synchronized</tt> keyword.</p></dd>
+<dt><tt>-mark-generated</tt></dt>
+<dd><p>Mark the generated code with the <tt>-@javax.annotation.Generated</tt> annotation.</p></dd>
+</dl>
+
+
+<a name="bnban"></a><h4>JAXB Schema Generator Option</h4>
+<a name="indexterm-1773"></a><a name="indexterm-1774"></a><p>The JAXB Schema Generator, <tt>schemagen</tt>, creates a schema file for each namespace referenced
+in your Java classes. The schema generator can be launched using the appropriate
+<tt>schemagen</tt> shell script in the <tt>bin</tt> directory for your platform. The schema generator processes
+Java source files only. If your Java sources reference other classes, those sources
+must be accessible from your system CLASSPATH environment variable, otherwise errors will occur
+when the schema is generated. There is no way to control the name
+of the generated schema files.</p><p>You can display quick usage instructions by invoking the scripts without any options,
+or with the <tt>-help</tt> option. The syntax is as follows:</p><pre>schemagen [-d <i>path</i>] [<i>java-source-files</i>]</pre><p>The <tt>-d</tt> <i>path</i> option specifies the location of the processor- and <tt>javac</tt>-generated class files.</p>
+
+<a name="bnbao"></a><h4>About the Schema-to-Java Bindings</h4>
+<p>When you run the JAXB binding compiler against the <tt>po.xsd</tt> XML schema used
+in the basic examples (Unmarshal Read, Modify Marshal, Unmarshal Validate), the JAXB binding
+compiler generates a Java package named <tt>primer.po</tt> containing 11 classes, making a
+total of 12 classes in each of the basic examples, as described in
+<a href="#bnbap">Table&nbsp;17-12</a>.</p><a name="bnbap"></a><h6>Table&nbsp;17-12 Schema-Derived JAXB Classes in the Basic Examples</h6><table><col width="47%"><col width="52%"><tr><th align="left" valign="top" scope="column"><p>Class</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/Comment.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Public interface extending <tt>javax.xml.bind.Element</tt>; binds to the global schema <tt>element</tt> named <tt>comment</tt>. Note that
+JAXB generates element interfaces for all global element declarations.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/Items.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Public interface that binds
+to the schema <tt>complexType</tt> named <tt>Items</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/ObjectFactory.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Public class extending <tt>com.sun.xml.bind.DefaultJAXBContextImpl</tt>; used to create instances
+of specified interfaces. For example, the <tt>ObjectFactory</tt> <tt>createComment()</tt> method instantiates a <tt>Comment</tt>
+object.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/PurchaseOrder.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Public interface extending <tt>javax.xml.bind.Element</tt>, and <tt>PurchaseOrderType</tt>; binds to the global schema <tt>element</tt> named
+<tt>PurchaseOrder</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/PurchaseOrderType.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Public interface that binds to the schema <tt>complexType</tt> named <tt>PurchaseOrderType</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/USAddress.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Public interface that
+binds to the schema <tt>complexType</tt> named <tt>USAddress</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/impl/CommentImpl.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Implementation of <tt>Comment.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/impl/ItemsImpl.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Implementation of <tt>Items.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/impl/PurchaseOrderImpl.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Implementation of
+<tt>PurchaseOrder.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/impl/PurchaseOrderTypeImpl.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Implementation of <tt>PurchaseOrderType.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>primer/po/impl/USAddressImpl.java</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Implementation of <tt>USAddress.java</tt></p></td>
+</tr>
+</table>
+<hr><p><b>Note - </b>You should never directly use the generated implementation classes (<tt>*Impl.java</tt> in the <tt></tt><i>packagename</i><tt>/impl/</tt>
+directory). These classes cannot be referenced directly because the class names in this
+directory are not standardized by the JAXB specification. The <tt>ObjectFactory</tt> method is the
+only portable means to create an instance of a schema-derived interface. There is
+also an <tt>ObjectFactory.newInstance(Class JAXBinterface)</tt> method that enables you to create instances of interfaces.</p>
+<hr>
+<p>These classes and their specific bindings to the source XML schema for the
+basic examples are described in <a href="#bnbaq">Table&nbsp;17-13</a>. .</p><a name="bnbaq"></a><h6>Table&nbsp;17-13 Schema-to-Java Bindings for the Basic Examples</h6><table><col width="72%"><col width="27%"><tr><th align="left" valign="top" scope="column"><p>XML Schema</p></th>
+<th align="left" valign="top" scope="column"><p>JAXB Binding</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"></pre></td>
+<td align="left" valign="top" scope="row"></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:element name="purchaseOrder" type="PurchaseOrderType"/></pre></td>
+<td align="left" valign="top" scope="row"><p><tt>PurchaseOrder.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:element name="comment" type="xsd:string"/></pre></td>
+<td align="left" valign="top" scope="row"><p><tt>Comment.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:complexType name="PurchaseOrderType">
+ &lt;xsd:sequence>
+ &lt;xsd:element name="shipTo" type="USAddress"/>
+ &lt;xsd:element name="billTo" type="USAddress"/>
+ &lt;xsd:element ref="comment" minOccurs="0"/>
+ &lt;xsd:element name="items" type="Items"/>
+ &lt;/xsd:sequence>
+ &lt;xsd:attribute name="orderDate" type="xsd:date"/>
+&lt;/xsd:complexType></pre></td>
+<td align="left" valign="top" scope="row"><p><tt>PurchaseOrderType.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:complexType name="USAddress">
+ &lt;xsd:sequence>
+ &lt;xsd:element name="name" type="xsd:string"/>
+ &lt;xsd:element name="street" type="xsd:string"/>
+ &lt;xsd:element name="city" type="xsd:string"/>
+ &lt;xsd:element name="state" type="xsd:string"/>
+ &lt;xsd:element name="zip" type="xsd:decimal"/>
+ &lt;/xsd:sequence>
+&lt;xsd:attribute name="country" type="xsd:NMTOKEN" fixed="US"/>
+&lt;/xsd:complexType></pre></td>
+<td align="left" valign="top" scope="row"><p><tt>USAddress.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:complexType name="Items">
+ &lt;xsd:sequence>
+ &lt;xsd:element name="item" minOccurs="1" maxOccurs="unbounded"></pre></td>
+<td align="left" valign="top" scope="row"><p><tt>Items.java</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:complexType>
+ &lt;xsd:sequence>
+ &lt;xsd:element name="productName" type="xsd:string"/>
+ &lt;xsd:element name="quantity">
+ &lt;xsd:simpleType>
+ &lt;xsd:restriction base="xsd:positiveInteger">
+ &lt;xsd:maxExclusive value="100"/>
+ &lt;/xsd:restriction>
+ &lt;/xsd:simpleType>
+ &lt;/xsd:element>
+ &lt;xsd:element name="USPrice" type="xsd:decimal"/>
+ &lt;xsd:element ref="comment" minOccurs="0"/>
+ &lt;xsd:element name="shipDate" type="xsd:date" minOccurs="0"/>
+ &lt;/xsd:sequence>
+ &lt;xsd:attribute name="partNum" type="SKU" use="required"/>
+&lt;/xsd:complexType></pre></td>
+<td align="left" valign="top" scope="row"><p><tt>Items.ItemType</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;/xsd:element>
+ &lt;/xsd:sequence>
+&lt;/xsd:complexType></pre></td>
+<td align="left" valign="top" scope="row"></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;!-- Stock Keeping Unit, a code for identifying products --></pre></td>
+<td align="left" valign="top" scope="row"></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;xsd:simpleType name="SKU">
+ &lt;xsd:restriction base="xsd:string">
+ &lt;xsd:pattern value="\d{3}-[A-Z]{2}"/>
+ &lt;/xsd:restriction>
+&lt;/xsd:simpleType></pre></td>
+<td align="left" valign="top" scope="row"></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><pre>&lt;/xsd:schema></pre></td>
+<td align="left" valign="top" scope="row"></td>
+</tr>
+</table>
+
+<a name="bnbar"></a><h4>Schema-Derived JAXB Classes</h4>
+<a name="indexterm-1775"></a><p>The sections that follow briefly explain the functions of the following individual classes
+generated by the JAXB binding compiler for the Basic examples:</p>
+<ul><li><p><a href="#bnbas"><tt>Comment</tt> Class</a></p></li>
+<li><p><a href="#bnbat"><tt>Items</tt> Class</a></p></li>
+<li><p><a href="#bnbau"><tt>ObjectFactory</tt> Class</a></p></li>
+<li><p><a href="#bnbav"><tt>PurchaseOrder</tt> Class</a></p></li>
+<li><p><a href="#bnbaw"><tt>PurchaseOrderType</tt> Class</a></p></li>
+<li><p><a href="#bnbax"><tt>USAddress</tt> Class</a></p></li></ul>
+
+
+<a name="bnbas"></a><h5><tt>Comment</tt> Class</h5>
+<p>In <tt>Comment.java</tt>:</p>
+<ul><li><p>The <tt>Comment</tt> class is part of the <tt>primer.po</tt> package.</p></li>
+<li><p><tt>Comment</tt> is a public interface that extends <tt>javax.xml.bind.Element</tt>.</p></li>
+<li><p>Content in instantiations of this class binds to the XML schema element named <tt>comment</tt>.</p></li>
+<li><p>The <tt>getValue()</tt> and <tt>setValue()</tt> methods are used to get and set strings representing XML <tt>comment</tt> elements in the Java content tree.</p></li></ul>
+
+
+<a name="bnbat"></a><h5><tt>Items</tt> Class</h5>
+<p>In <tt>Items.java</tt>:</p>
+<ul><li><p>The <tt>Items</tt> class is part of the <tt>primer.po</tt> package.</p></li>
+<li><p>The class provides public interfaces for <tt>Items</tt> and <tt>ItemType</tt>.</p></li>
+<li><p>Content in instantiations of this class binds to the XML ComplexTypes <tt>Items</tt> and its child element <tt>ItemType</tt>.</p></li>
+<li><p><tt>Item</tt> provides the <tt>getItem()</tt> method.</p></li>
+<li><p><tt>ItemType</tt> provides methods for:</p>
+<ul><li><p><tt>getPartNum();</tt></p></li>
+<li><p><tt>setPartNum(String value);</tt></p></li>
+<li><p><tt>getComment();</tt></p></li>
+<li><p><tt>setComment(java.lang.String value);</tt></p></li>
+<li><p><tt>getUSPrice();</tt></p></li>
+<li><p><tt>setUSPrice(java.math.BigDecimal value);</tt></p></li>
+<li><p><tt>getProductName();</tt></p></li>
+<li><p><tt>setProductName(String value);</tt></p></li>
+<li><p><tt>getShipDate();</tt></p></li>
+<li><p><tt>setShipDate(java.util.Calendar value);</tt></p></li>
+<li><p><tt>getQuantity();</tt></p></li>
+<li><p><tt>setQuantity(java.math.BigInteger value);</tt></p></li></ul>
+</li></ul>
+
+
+<a name="bnbau"></a><h5><tt>ObjectFactory</tt> Class</h5>
+<p>In <tt>ObjectFactory.java</tt>:</p>
+<ul><li><p>The <tt>ObjectFactory</tt> class is part of the <tt>primer.po</tt> package.</p></li>
+<li><p><tt>ObjectFactory</tt> provides factory methods for instantiating Java interfaces representing XML content in the Java content tree.</p></li>
+<li><p>Method names are generated by concatenating:</p>
+<ul><li><p>The string constant <tt>create</tt>.</p></li>
+<li><p>If the Java content interface is nested within another interface, then the concatenation of all outer Java class names.</p></li>
+<li><p>The name of the Java content interface.</p><p>For example, in this case, for the Java interface <tt>primer.po.Items.ItemType</tt>, <tt>ObjectFactory</tt> creates the method <tt>createItemsItemType()</tt>.</p></li></ul>
+</li></ul>
+
+
+<a name="bnbav"></a><h5><tt>PurchaseOrder</tt> Class</h5>
+<p>In <tt>PurchaseOrder.java</tt>:</p>
+<ul><li><p>The <tt>PurchaseOrder</tt> class is part of the <tt>primer.po</tt> package.</p></li>
+<li><p><tt>PurchaseOrder</tt> is a public interface that extends <tt>javax.xml.bind.Element</tt> and <tt>primer.po.PurchaseOrderType</tt>.</p></li>
+<li><p>Content in instantiations of this class binds to the XML schema element named <tt>purchaseOrder</tt>.</p></li></ul>
+
+
+<a name="bnbaw"></a><h5><tt>PurchaseOrderType</tt> Class</h5>
+<p>In <tt>PurchaseOrderType.java</tt>:</p>
+<ul><li><p>The <tt>PurchaseOrderType</tt> class is part of the <tt>primer.po</tt> package.</p></li>
+<li><p>Content in instantiations of this class binds to the XML schema child element named <tt>PurchaseOrderType</tt>.</p></li>
+<li><p><tt>PurchaseOrderType</tt> is a public interface that provides the following methods:</p>
+<ul><li><p><tt>getItems();</tt></p></li>
+<li><p><tt>setItems(primer.po.Items value);</tt></p></li>
+<li><p><tt>getOrderDate();</tt></p></li>
+<li><p><tt>setOrderDate(java.util.Calendar value);</tt></p></li>
+<li><p><tt>getComment();</tt></p></li>
+<li><p><tt>setComment(java.lang.String value);</tt></p></li>
+<li><p><tt>getBillTo();</tt></p></li>
+<li><p><tt>setBillTo(primer.po.USAddress value);</tt></p></li>
+<li><p><tt>getShipTo();</tt></p></li>
+<li><p><tt>setShipTo(primer.po.USAddress value);</tt></p></li></ul>
+</li></ul>
+
+
+<a name="bnbax"></a><h5><tt>USAddress</tt> Class</h5>
+<p>In <tt>USAddress.java</tt>:</p>
+<ul><li><p>The <tt>USAddress</tt> class is part of the <tt>primer.po</tt> package.</p></li>
+<li><p>Content in instantiations of this class binds to the XML schema element named <tt>USAddress</tt>.</p></li>
+<li><p><tt>USAddress</tt> is a public interface that provides the following methods:</p>
+<ul><li><p><tt>getState();</tt></p></li>
+<li><p><tt>setState(String value);</tt></p></li>
+<li><p><tt>getZip();</tt></p></li>
+<li><p><tt>setZip(java.math.BigDecimal value);</tt></p></li>
+<li><p><tt>getCountry();</tt></p></li>
+<li><p><tt>setCountry(String value);</tt></p></li>
+<li><p><tt>getCity();</tt></p></li>
+<li><p><tt>setCity(String value);</tt></p></li>
+<li><p><tt>getStreet();</tt></p></li>
+<li><p><tt>setStreet(String value);</tt></p></li>
+<li><p><tt>getName();</tt></p></li>
+<li><p><tt>setName(String value);</tt></p></li></ul>
+</li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bnazy.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbay.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

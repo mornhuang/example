@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Binding XML Schemas - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level3"><a href="bnazg.html">JAXB Architecture</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazh">Architectural Overview</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazj">The JAXB Binding Process</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazl">More about Unmarshalling</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazm">More about Marshalling</a></p>
+<p class="toc level4"><a href="bnazg.html#bnazn">More about Validation</a></p>
+<p class="toc level3 tocsp"><a href="bnazo.html">Representing XML Content</a></p>
+<p class="toc level4"><a href="bnazo.html#bnazp">Java Representation of XML Schema</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Binding XML Schemas</a></p>
+<p class="toc level4"><a href="#bnazr">Simple Type Definitions</a></p>
+<p class="toc level4"><a href="#bnazs">Default Data Type Bindings</a></p>
+<p class="toc level5"><a href="#bnazt">Schema-to-Java Mapping</a></p>
+<p class="toc level5"><a href="#bnazv"><tt>JAXBElement</tt> Object</a></p>
+<p class="toc level5"><a href="#bnazw">Java-to-Schema Mapping</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnazy.html">Customizing Generated Classes and Java Program Elements</a></p>
+<p class="toc level4"><a href="bnazy.html#bnazz">Schema-to-Java</a></p>
+<p class="toc level4"><a href="bnazy.html#bnbaa">Java-to-Schema</a></p>
+<p class="toc level3 tocsp"><a href="bnbah.html">JAXB Examples</a></p>
+<p class="toc level4"><a href="bnbah.html#bnbal">JAXB Compiler Options</a></p>
+<p class="toc level4"><a href="bnbah.html#bnban">JAXB Schema Generator Option</a></p>
+<p class="toc level4"><a href="bnbah.html#bnbao">About the Schema-to-Java Bindings</a></p>
+<p class="toc level4"><a href="bnbah.html#bnbar">Schema-Derived JAXB Classes</a></p>
+<p class="toc level5"><a href="bnbah.html#bnbas"><tt>Comment</tt> Class</a></p>
+<p class="toc level5"><a href="bnbah.html#bnbat"><tt>Items</tt> Class</a></p>
+<p class="toc level5"><a href="bnbah.html#bnbau"><tt>ObjectFactory</tt> Class</a></p>
+<p class="toc level5"><a href="bnbah.html#bnbav"><tt>PurchaseOrder</tt> Class</a></p>
+<p class="toc level5"><a href="bnbah.html#bnbaw"><tt>PurchaseOrderType</tt> Class</a></p>
+<p class="toc level5"><a href="bnbah.html#bnbax"><tt>USAddress</tt> Class</a></p>
+<p class="toc level3 tocsp"><a href="bnbay.html">Basic JAXB Examples</a></p>
+<p class="toc level4"><a href="bnbay.html#bnbaz">Modify Marshal Example</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbba">Building and Running the Modify Marshal Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbbb">Building and Running the Modify Marshal Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbay.html#bnbbc">Unmarshal Validate Example</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbbd">Building and Running the Unmarshal Validate Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbay.html#bnbbe">Building and Running the Unmarshal Validate Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbbf.html">Customizing JAXB Bindings</a></p>
+<p class="toc level4"><a href="bnbbf.html#bnbbg">Why Customize?</a></p>
+<p class="toc level4"><a href="bnbbf.html#bnbbh">Customization Overview</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbbi">Inline and External Customizations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbbo">Scope, Inheritance, and Precedence</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbbq">Customization Syntax</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbby">Customization Namespace Prefix</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbbz">Customize Inline Example</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbca">Building and Running the Customize Inline Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcb">Building and Running the Customize Inline Example Using Ant</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcc">Customized Schema</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcd">Global Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbce">Schema Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcf">Class Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcg">Property Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbch"><tt>MyDatatypeConverter</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbci">Datatype Converter Example</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcj">Building and Running the Datatype Converter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbck">Building and Running the Datatype Converter Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbcl">Binding Declaration Files</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcm">JAXB Version, Namespace, and Schema Attributes</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcq">Global and Schema Binding Declarations</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcr">Class Declarations</a></p>
+<p class="toc level4 tocsp"><a href="bnbbf.html#bnbcs">External Customize Example</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbct">Building and Running the External Customize Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbbf.html#bnbcu">Building and Running the External Customize Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbcv.html">Java-to-Schema Examples</a></p>
+<p class="toc level4"><a href="bnbcv.html#bnbcw">Create Marshal Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbcx">Building and Running the Create Marshal Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbcy">Building and Running the Create Marshal Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbcz">XmlAccessorOrder Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbda">Using the <tt>@XmlAccessorOrder</tt> Annotation to Define Schema Element Ordering</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdb">Using the <tt>@XmlType</tt> Annotation to Define Schema Element Ordering</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdc">Schema Content Ordering in the Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdd">Building and Running the XmlAccessorOrder Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbde">Building and Running the XmlAccessorOrder Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdf">XmlAdapter Field Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdg">Building and Running the XmlAdapter Field Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdh">Building and Running the XmlAdapter Field Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdi">XmlAttribute Field Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdj">Building and Running the XmlAttribute Field Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdk">Building and Running the XmlAttribute Field Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdl">XmlRootElement Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdm">Building and Running the XmlRootElement Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdn">Building and Running the XmlRootElement Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdo">XmlSchemaType Class Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdp">Building and Running the XmlSchemaType Class Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdq">Building and Running the XmlSchemaType Class Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbcv.html#bnbdr">XmlType Example</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbds">Building and Running the XmlType Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbcv.html#bnbdt">Building and Running the XmlType Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbdu.html">Further Information about JAXB</a></p>
+<p class="toc level2 tocsp"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnazo.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnazy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnazq"></a><h3>Binding XML Schemas</h3>
+<a name="indexterm-1700"></a><p>This section describes the default XML-to-Java bindings used by JAXB. All of these
+bindings can be overridden on global or case-by-case levels by means of a
+custom binding declaration. See the <a href="http://java.sun.com/xml/downloads/jaxb.html">JAXB Specification</a> for complete information about the default
+JAXB bindings.</p>
+
+<a name="bnazr"></a><h4>Simple Type Definitions</h4>
+<p>A schema component using a simple type definition typically binds to a Java
+property. Since there are different kinds of such schema components, the following Java
+property attributes (common to the schema components) include:</p>
+<ul><li><p>Base type</p></li>
+<li><p>Collection type, if any</p></li>
+<li><p>Predicate</p></li></ul>
+<p>The rest of the Java property attributes are specified in the schema component
+using the <tt>simple</tt> type definition.</p>
+
+<a name="bnazs"></a><h4>Default Data Type Bindings</h4>
+<p>The following sections explain the default schema-to-Java, <tt>JAXBElement</tt>, and Java-to-schema data type
+bindings.</p>
+
+<a name="bnazt"></a><h5>Schema-to-Java Mapping</h5>
+<a name="indexterm-1701"></a><p>The Java language provides a richer set of data type than XML
+schema. <a href="#bnazu">Table&nbsp;17-1</a> lists the mapping of XML data types to Java data types
+in JAXB.</p><a name="bnazu"></a><h6>Table&nbsp;17-1 JAXB Mapping of XML Schema Built-in Data Types</h6><table><col width="23%"><col width="76%"><tr><th align="left" valign="top" scope="column"><p>XML Schema Type</p></th>
+<th align="left" valign="top" scope="column"><p>Java Data Type</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:string</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>java.lang.String</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:integer</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>java.math.BigInteger</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:int</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd.long</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>long</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:short</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>short</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:decimal</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>java.math.BigDecimal</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:float</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>float</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:double</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>double</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:boolean</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>boolean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:byte</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>byte</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:QName</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.namespace.QName</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:dateTime</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.XMLGregorianCalendar</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:base64Binary</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>byte[]</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:hexBinary</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>byte[]</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:unsignedInt</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>long</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:unsignedShort</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>int</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:unsignedByte</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>short</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:time</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.XMLGregorianCalendar</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:date</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.XMLGregorianCalendar</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:g</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.XMLGregorianCalendar</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:anySimpleType</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>java.lang.Object</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:anySimpleType</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>java.lang.String</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:duration</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.Duration</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>xsd:NOTATION</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.xml.namespace.QName</tt></p></td>
+</tr>
+</table>
+
+<a name="bnazv"></a><h5><tt>JAXBElement</tt> Object</h5>
+<a name="indexterm-1702"></a><p>When XML element information can not be inferred by the derived Java representation
+of the XML content, a <tt>JAXBElement</tt> object is provided. This object has methods
+for getting and setting the object name and object value.</p>
+
+<a name="bnazw"></a><h5>Java-to-Schema Mapping</h5>
+<a name="indexterm-1703"></a><p><a href="#bnazx">Table&nbsp;17-2</a> shows the default mapping of Java classes to XML data types.</p><a name="bnazx"></a><h6>Table&nbsp;17-2 JAXB Mapping of XML Data Types to Java Classes</h6><table><col width="47%"><col width="52%"><tr><th align="left" valign="top" scope="column"><p>Java Class</p></th>
+<th align="left" valign="top" scope="column"><p>XML
+Data Type</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.lang.String</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:string</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.math.BigInteger</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:integer</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.math.BigDecimal</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:decimal</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.util.Calendar</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:dateTime</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.util.Date</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:dateTime</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>javax.xml.namespace.QName</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:QName</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.net.URI</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:string</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.XMLGregorianCalendar</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:anySimpleType</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>javax.xml.datatype.Duration</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:duration</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.lang.Object</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:anyType</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.awt.Image</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:base64Binary</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>javax.activation.DataHandler</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:base64Binary</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>javax.xml.transform.Source</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:base64Binary</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>java.util.UUID</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xs:string</tt></p></td>
+</tr>
+</table>
+         </div>
+         <div class="navigation">
+             <a href="bnazo.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnazy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

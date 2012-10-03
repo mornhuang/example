@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Creating a Custom Validator - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaty.html">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="bnaty.html#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+<p class="toc level3 tocsp"><a href="bnaum.html">Performing Localization</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaun">Creating a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnaum.html#bnauo">Localizing Dynamic Data</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaup">Localizing Messages</a></p>
+<p class="toc level5"><a href="bnaum.html#bnauq">Creating a Message with a Message Factory</a></p>
+<p class="toc level5"><a href="bnaum.html#bnaur">Using <tt>FacesMessage</tt> to Create a Message</a></p>
+<p class="toc level3 tocsp"><a href="bnaus.html">Creating a Custom Converter</a></p>
+<p class="toc level3"><a href="bnaut.html">Implementing an Event Listener</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauv">Implementing Action Listeners</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Creating a Custom Validator</a></p>
+<p class="toc level4"><a href="#bnaux">Implementing the Validator Interface</a></p>
+<p class="toc level4"><a href="#bnauy">Creating a Custom Tag</a></p>
+<p class="toc level5"><a href="#bnauz">Writing the Tag Handler</a></p>
+<p class="toc level5"><a href="#bnava">Writing the Tag Library Descriptor</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnavb.html">Writing Backing Bean Methods</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+<p class="toc level2 tocsp"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaut.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnavb.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnauw"></a><h3>Creating a Custom Validator</h3>
+<a name="indexterm-1383"></a><p>If the standard validators don&rsquo;t perform the validation checking you need, you can
+easily create a custom validator to validate user input. As explained in <a href="bnaqd.html#bnaqk">Validation Model</a>,
+there are two ways to implement validation code:</p>
+<ul><li><p><a name="indexterm-1384"></a>Implement a backing bean method that performs the validation.</p></li>
+<li><p><a name="indexterm-1385"></a>Provide an implementation of the <tt>Validator</tt> interface to perform the validation.</p></li></ul>
+<p><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a> explains how to implement a backing bean method to perform validation. The
+rest of this section explains how to implement the <tt>Validator</tt> interface.</p><p><a name="indexterm-1386"></a>If you choose to implement the <tt>Validator</tt> interface and you want to allow
+the page author to configure the validator&rsquo;s attributes from the page, you also must
+create a custom tag for registering the validator on a component.</p><p><a name="indexterm-1387"></a><a name="indexterm-1388"></a>If you prefer to configure the attributes in the <tt>Validator</tt> implementation, you can forgo
+creating a custom tag and instead let the page author register the
+validator on a component using the <tt>validator</tt> tag, as described in <a href="bnatt.html#bnatv">Using a Custom Validator</a>.</p><p>You can also create a backing bean property that accepts and returns the
+<tt>Validator</tt> implementation you create as described in <a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a>. The page author can
+use the <tt>validator</tt> tag&rsquo;s binding attribute to bind the <tt>Validator</tt> implementation to the backing
+bean property.</p><p>Usually, you will want to display an error message when data fails
+validation. You need to store these error messages in resource bundle, as described
+in <a href="bnaum.html#bnaun">Creating a Resource Bundle</a>.</p><p><a name="indexterm-1389"></a><a name="indexterm-1390"></a>After creating the resource bundle, you have two ways to make the messages
+available to the application. You can queue the error messages onto the <tt>FacesContext</tt>
+programmatically. Or, you can have the application architect register the error messages using the
+application configuration resource file, as explained in <a href="bnaxb.html">Registering Custom Error Messages</a>.</p><p>The Duke&rsquo;s Bookstore application uses a general-purpose custom validator (called <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/src/java/com/sun/bookstore6/validators/FormatValidator.java</tt>) that validates
+input data against a format pattern that is specified in the custom validator
+tag. This validator is used with the Credit Card Number field on the
+<tt>bookcashier.jsp</tt> page. Here is the custom validator tag:</p><pre>&lt;bookstore:formatValidator
+     formatPatterns="9999999999999999|9999 9999 9999 9999|
+        9999-9999-9999-9999"/></pre><p>According to this validator, the data entered in the field must be
+one of the following:</p>
+<ul><li><p>A 16 digit number with no spaces</p></li>
+<li><p>A 16 digit number with a space between every four digits</p></li>
+<li><p>A 16 digit number with hyphens between every four digits</p></li></ul>
+<p>The rest of this section describes how this validator is implemented and how
+to create a custom tag so that the page author can register
+the validator on a component.</p>
+
+<a name="bnaux"></a><h4>Implementing the Validator Interface</h4>
+<a name="indexterm-1391"></a><p><a name="indexterm-1392"></a><a name="indexterm-1393"></a><a name="indexterm-1394"></a>A <tt>Validator</tt> implementation must contain a constructor, a set of accessor methods for
+any attributes on the tag, and a <tt>validate</tt> method, which overrides the <tt>validate</tt>
+method of the <tt>Validator</tt> interface.</p><p>The <tt>FormatValidator</tt> class also defines accessor methods for setting the <tt>formatPatterns</tt> attribute, which
+specifies the acceptable format patterns for input into the fields. In addition, the class
+overrides the <tt>validate</tt> method of the <tt>Validator</tt> interface. This method validates the input
+and also accesses the custom error messages to be displayed when the <tt>String</tt>
+is invalid.</p><p><a name="indexterm-1395"></a>The <tt>validate</tt> method performs the actual validation of the data. It takes the
+<tt>FacesContext</tt> instance, the component whose data needs to be validated, and the value
+that needs to be validated. A validator can validate only data of a
+component that implements <tt>EditableValueHolder</tt>.</p><p>Here is the <tt>validate</tt> method from <tt>FormatValidator</tt>:</p><pre>public void validate(FacesContext context, UIComponent component, Object toValidate) {
+
+    boolean valid = false;
+    String value = null;
+    if ((context == null) || (component == null)) {
+        throw new NullPointerException();
+    }
+    if (!(component instanceof UIInput)) {
+        return;
+    }
+    if ( null == formatPatternsList || null == toValidate) {
+        return;
+    }
+    value = toValidate.toString();
+    //validate the value against the list of valid patterns.
+    Iterator patternIt = formatPatternsList.iterator();
+    while (patternIt.hasNext()) {
+        valid = isFormatValid(
+            ((String)patternIt.next()), value);
+        if (valid) {
+            break;
+        }
+    }
+    if ( !valid ) {
+        FacesMessage errMsg =
+            MessageFactory.getMessage(context,
+                FORMAT_INVALID_MESSAGE_ID,
+                     (new Object[] {formatPatterns}));
+            throw new ValidatorException(errMsg);
+    }
+}</pre><p>This method gets the local value of the component and converts it
+to a <tt>String</tt>. It then iterates over the <tt>formatPatternsList</tt> list, which is the
+list of acceptable patterns as specified in the <tt>formatPatterns</tt> attribute of the custom
+validator tag.</p><p><a name="indexterm-1396"></a>While iterating over the list, this method checks the pattern of the component&rsquo;s
+local value against the patterns in the list. If the pattern of the
+local value does not match any pattern in the list, this method generates
+an error message. It then passes the message to the constructor of <tt>ValidatorException</tt>.
+Eventually the message is queued onto the <tt>FacesContext</tt> instance so that the message is
+displayed on the page during the render response phase.</p><p><a name="indexterm-1397"></a><a name="indexterm-1398"></a><a name="indexterm-1399"></a><a name="indexterm-1400"></a>The error messages are retrieved from the <tt>Application</tt> instance by <tt>MessageFactory</tt>. An application that
+creates its own custom messages must provide a class, such as <tt>MessageFactory</tt>, that
+retrieves the messages from the <tt>Application</tt> instance. When creating your own application, you can
+simply copy the <tt>MessageFactory</tt> class from the Duke&rsquo;s Bookstore application to your application.</p><p><a name="indexterm-1401"></a><a name="indexterm-1402"></a>The <tt>getMessage(FacesContext, String, Object)</tt> method of <tt>MessageFactory</tt> takes a <tt>FacesContext</tt>, a static <tt>String</tt> that represents the
+key into the <tt>Properties</tt> file, and the format pattern as an <tt>Object</tt>. The
+key corresponds to the static message ID in the <tt>FormatValidator</tt> class:</p><pre>public static final String FORMAT_INVALID_MESSAGE_ID =
+     "FormatInvalid";
+}</pre><p>When the error message is displayed, the format pattern will be substituted for
+the <tt>{0}</tt> in the error message, which, in English, is</p><pre>Input must match one of the following patterns {0}</pre><p>JavaServer Faces applications can save the state of validators and components on either
+the client or the server. <a href="bnaxj.html#bnaxn">Specifying Where State Is Saved</a> explains how to configure your application
+to save state on either the client or the server.</p><p>If your JavaServer Faces application saves state on the client (which is the
+default), you need to make the <tt>Validator</tt> implementation implement <tt>StateHolder</tt> as well as
+<tt>Validator</tt>. In addition to implementing <tt>StateHolder</tt>, the <tt>Validator</tt> implementation needs to implement the
+<tt>saveState(FacesContext)</tt> and <tt>restoreState(FacesContext, Object)</tt> methods of <tt>StateHolder</tt>. With these methods, the <tt>Validator</tt> implementation tells the
+JavaServer Faces implementation which attributes of the <tt>Validator</tt> implementation to save and
+restore across multiple requests.</p><p>To save a set of values, you must implement the <tt>saveState(FacesContext)</tt> method.
+This method is called during the render response phase, during which the state
+of the response is saved for processing on subsequent requests. When implementing the
+<tt>saveState(FacesContext)</tt> method, you need to create an array of objects and add the
+values of the attributes you want to save to the array. Here is
+the <tt>saveState(FacesContext)</tt> method from <tt>FormatValidator</tt>:</p><pre>public Object saveState(FacesContext context) {
+    Object values[] = new Object[2];
+    values[0] = formatPatterns;
+    values[1] = formatPatternsList;
+    return (values);
+}</pre><p><a name="indexterm-1403"></a>To restore the state saved with the <tt>saveState(FacesContext)</tt> method in preparation for the next
+postback, the <tt>Validator</tt> implementation implements <tt>restoreState(FacesContext, Object)</tt>. The <tt>restoreState(FacesContext, Object)</tt> method takes the <tt>FacesContext</tt>
+instance and an <tt>Object</tt> instance, which represents the array that is holding the state
+for the <tt>Validator</tt> implementation. This method sets the <tt>Validator</tt> implementation&rsquo;s properties to the values
+saved in the <tt>Object</tt> array. Here is the <tt>restoreState(FacesContext, Object)</tt> method from <tt>FormatValidator</tt>:</p><pre>public void restoreState(FacesContext context, Object state) {
+     Object values[] = (Object[]) state;
+    formatPatterns = (String) values[0];
+    formatPatternsList = (ArrayList) values[1];
+}</pre><p>As part of implementing <tt>StateHolder</tt>, the custom <tt>Validator</tt> implementation must also override
+the <tt>isTransient</tt> and <tt>setTransient(boolean)</tt> methods of <tt>StateHolder</tt>. By default, <tt>transientValue</tt> is false, which
+means that the <tt>Validator</tt> implementation will have its state information saved and restored.
+Here are the <tt>isTransient</tt> and <tt>setTransient(boolean)</tt> methods of <tt>FormatValidator</tt>:</p><pre>private boolean transientValue = false;
+
+public boolean isTransient() {
+    return (this.transientValue);
+}
+
+public void setTransient(boolean transientValue) {
+    this.transientValue = transientValue;
+}</pre><p><a href="bnavu.html#bnavz">Saving and Restoring State</a> describes how a custom component must implement the <tt>saveState(FacesContext)</tt> and <tt>restoreState(FacesContext, Object)</tt> methods.</p>
+
+<a name="bnauy"></a><h4>Creating a Custom Tag</h4>
+<a name="indexterm-1404"></a><a name="indexterm-1405"></a><p><a name="indexterm-1406"></a>If you implemented a <tt>Validator</tt> interface rather than implementing a backing bean method
+that performs the validation, you need to do one of the following:</p>
+<ul><li><p><a name="indexterm-1407"></a><a name="indexterm-1408"></a><a name="indexterm-1409"></a><a name="indexterm-1410"></a>Allow the page author to specify the <tt>Validator</tt> implementation to use with the <tt>validator</tt> tag. In this case, the <tt>Validator</tt> implementation must define its own properties. <a href="bnatt.html#bnatv">Using a Custom Validator</a> explains how to use the <tt>validator</tt> tag.</p></li>
+<li><p>Create a custom tag that provides attributes for configuring the properties of the validator from the page. Because the <tt>Validator</tt> implementation from the preceding section does not define its attributes, the application developer must create a custom tag so that the page author can define the format patterns in the tag.</p></li></ul>
+<p>To create a custom tag, you need to do two things:</p>
+<ul><li><p>Write a tag handler to create and register the <tt>Validator</tt> implementation on the component.</p></li>
+<li><p>Write a TLD to define the tag and its attributes.</p></li></ul>
+<p><a href="bnatt.html#bnatv">Using a Custom Validator</a> explains how to use the custom validator tag on the page.</p>
+
+<a name="bnauz"></a><h5>Writing the Tag Handler</h5>
+<p><a name="indexterm-1411"></a><a name="indexterm-1412"></a><a name="indexterm-1413"></a>The tag handler associated with a custom validator tag must extend the <tt>ValidatorELTag</tt>
+class. This class is the base class for all custom tag handlers that
+create <tt>Validator</tt> instances and register them on UI components. The <tt>FormatValidatorTag</tt> class registers
+the <tt>FormatValidator</tt> instance onto the component.</p><p>The <tt>FormatValidatorTag</tt> tag handler class does the following:</p>
+<ul><li><p>Sets the ID of the validator.</p></li>
+<li><p>Provides a set of accessor methods for each attribute defined on the tag.</p></li>
+<li><p><a name="indexterm-1414"></a><a name="indexterm-1415"></a><a name="indexterm-1416"></a>Implements the <tt>createValidator</tt> method of the <tt>ValidatorELTag</tt> class. This method creates an instance of the validator and sets the range of values accepted by the validator.</p></li></ul>
+<p>The <tt>formatPatterns</tt> attribute of the <tt>formatValidator</tt> tag supports literals and value expressions.
+Therefore, the accessor method for this attribute in the <tt>FormatValidatorTag</tt> class must accept and
+return an instance of <tt>ValueExpression</tt>:</p><pre>protected ValueExpression formatPatterns = null;
+
+public void setFormatPatterns(ValueExpression fmtPatterns){
+    formatPatterns = fmtPatterns;
+}</pre><p>Finally, the <tt>createValidator</tt> method creates an instance of <tt>FormatValidator</tt>, extracts the value from
+the <tt>formatPatterns</tt> attribute&rsquo;s value expression and sets the <tt>formatPatterns</tt> property of <tt>FormatValidator</tt>
+to this value:</p><p>the <tt>formatPatterns</tt> property of <tt>FormatValidator</tt> to this value:</p><pre>protected Validator createValidator() throws JspException {
+    FacesContext facesContext =
+         FacesContext.getCurrentInstance();
+    FormatValidator result = null;
+    if(validatorID != null){
+        result = (FormatValidator) facesContext.getApplication()
+            .createValidator(validatorID);
+    }
+    String patterns = null;
+    if (formatPatterns != null) {
+        if (!formatPatterns.isLiteralText()) {
+            patterns = (String)
+             formatPatterns.getValue(facesContext.getELContext());
+        } else {
+            patterns = formatPatterns.getExpressionString();
+        }</pre>
+
+<a name="bnava"></a><h5>Writing the Tag Library Descriptor</h5>
+<a name="indexterm-1417"></a><a name="indexterm-1418"></a><p>To define a tag, you declare it in a tag library descriptor
+(TLD), which is an XML document that describes a tag library. A TLD
+contains information about a library and each tag contained in it. See <a href="bnamu.html">Tag Library Descriptors</a>
+for more information about TLDs.</p><p>The custom validator tag is defined in <tt>bookstore.tld</tt>, located in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/web/WEB-INF/</tt> directory.
+It contains a tag definition for <tt>formatValidator</tt>:</p><pre>&lt;tag>
+    &lt;name>formatValidator&lt;/name>
+    ...
+    &lt;tag-class>
+        com.sun.bookstore6.taglib.FormatValidatorTag&lt;/tag-class>
+    &lt;attribute>
+        &lt;name>formatPatterns&lt;/name>
+        &lt;required>true&lt;/required>
+        &lt;deferred-value>
+            &lt;type>String&lt;/type>
+        &lt;/deferred-value>
+    &lt;/attribute>
+&lt;/tag></pre><p>The <tt>name</tt> element defines the name of the tag as it must be
+used in the page. The <tt>tag-class</tt> element defines the tag handler class. The
+attribute elements define each of the tag&rsquo;s attributes. The <tt>formatPatterns</tt> attribute is the
+only attribute that the tag supports. The <tt>deferred-value</tt> element indicates that the <tt>formatPatterns</tt> attribute
+accepts deferred value expressions. The <tt>type</tt> element says that the expression resolves to a
+property of type <tt>String</tt>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaut.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnavb.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

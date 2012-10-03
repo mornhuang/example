@@ -1,0 +1,9 @@
+<project name="webclient" default="default" basedir=".">
+  <description>Builds, tests, and runs the project webclient.</description>
+    <property name="is.war.module" value="true"/>
+    <property name="is.webservice.client" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+    <target name="-pre-compile" unless="netbeans.home" depends="init">
+      <antcall target="wsimport-client-generate"/>
+    </target>
+</project>

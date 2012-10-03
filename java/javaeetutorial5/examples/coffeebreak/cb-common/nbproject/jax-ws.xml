@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services/>
+  <clients>
+    <client name="SupplierService">
+      <wsdl-url>http://localhost:8080/jaxws-coffee-supplier/SupplierService?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/jaxws-coffee-supplier/SupplierService.wsdl</local-wsdl-file>
+      <package-name>com.sun.cb.ws.server</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+    </client>
+  </clients>
+</jax-ws>

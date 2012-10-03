@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+
+<!--
+ Copyright 2004 Sun Microsystems, Inc. All rights reserved.
+ SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+
+<faces-config>
+
+
+  <!-- =================== Initialize Image Map Hotspot Data ============== -->
+
+  <managed-bean>
+    <managed-bean-name>CoffeeBreakBean</managed-bean-name>
+    <managed-bean-class>com.sun.cb.jsf.CoffeeBreakBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+  <managed-bean>
+    <managed-bean-name>checkoutFormBean</managed-bean-name>
+    <managed-bean-class>com.sun.cb.jsf.CheckoutFormBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>firstName</property-name>
+      <value>Coffee</value>
+    </managed-property>
+    <managed-property>
+      <property-name>lastName</property-name>
+      <value>Lover</value>
+    </managed-property>
+    <managed-property>
+      <property-name>email</property-name>
+      <value>jane@home</value>
+    </managed-property>
+    <managed-property>
+      <property-name>areaCode</property-name>
+      <value>408</value>
+    </managed-property>
+    <managed-property>
+      <property-name>phoneNumber</property-name>
+      <value>456-7890</value>
+    </managed-property>
+    <managed-property>
+      <property-name>street</property-name>
+      <value>99 ABC Dr</value>
+    </managed-property>
+    <managed-property>
+      <property-name>city</property-name>
+      <value>Somewhere</value>
+    </managed-property>
+    <managed-property>
+      <property-name>state</property-name>
+      <value>CA</value>
+    </managed-property>
+    <managed-property>
+      <property-name>zip</property-name>
+      <value>95050</value>
+    </managed-property>
+    <managed-property>
+      <property-name>CCNumber</property-name>
+      <value>1234234556788765</value>
+    </managed-property>
+  </managed-bean>
+  
+  <converter>
+      <converter-id>XMLGregorianCalendarConverter</converter-id>
+      <converter-class>com.sun.cb.jsf.XMLGregorianCalendarConverter</converter-class>
+  </converter>
+ 
+  <navigation-rule>
+    <description>
+        The decision rule used by the NavigationHandler to
+        determine which view must be displayed after the
+        current view, orderForm.jsp is processed.
+    </description>
+    <from-view-id>/orderForm.jsp</from-view-id>
+    <navigation-case>
+        <description>
+            Indicates to the NavigationHandler that the checkoutForm.jsp
+            view must be displayed if the Action referenced by a 
+            UICommand component on the orderForm.jsp view returns 
+            the outcome "checkout".
+        </description>
+        <from-outcome>checkout</from-outcome>
+      <to-view-id>/checkoutForm.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+  <navigation-rule>
+    <description>
+        The decision rule used by the NavigationHandler to
+        determine which view must be displayed after the
+        current view, checkoutForm.jsp is processed.
+    </description>
+    <from-view-id>/checkoutForm.jsp</from-view-id>
+    <navigation-case>
+        <description>
+            Indicates to the NavigationHandler that the checkoutAck.jsp
+            view must be displayed if the Action referenced by a 
+            UICommand component on the checkoutForm.jsp view returns 
+            the outcome "submit".
+        </description>
+        <from-outcome>submit</from-outcome>
+      <to-view-id>/checkoutAck.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  
+ <navigation-rule>
+    <description>
+        The decision rule used by the NavigationHandler to
+        determine which view must be displayed after the
+        current view, checkoutAck.jsp is processed.
+    </description>
+    <from-view-id>/checkoutAck.jsp</from-view-id>
+    <navigation-case>
+        <description>
+            Indicates to the NavigationHandler that the orderForm.jsp
+            view must be displayed if the Action referenced by a 
+            UICommand component on the checkoutAck.jsp view returns 
+            the outcome "continue".
+        </description>
+        <from-outcome>continue</from-outcome>
+      <to-view-id>/orderForm.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+</faces-config>

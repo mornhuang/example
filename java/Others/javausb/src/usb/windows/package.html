@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+  @(#)package.html	1.60 98/01/27
+
+  Copyright 1998 Sun Microsystems, Inc. 901 San Antonio Road, 
+  Palo Alto, California, 94303, U.S.A.  All Rights Reserved.
+
+  This software is the confidential and proprietary information of Sun
+  Microsystems, Inc. ("Confidential Information").  You shall not
+  disclose such Confidential Information and shall use it only in
+  accordance with the terms of the license agreement you entered into
+  with Sun.
+
+  CopyrightVersion 1.2
+
+-->
+</head>
+<body bgcolor="white">
+
+This package has a partial Windows implementation of a usb.core.Host object, bootstrapping support, and other classes leveraging Windows USB support.
+<br>
+<br>
+Sources and Documentation of the implementation is presented at the end of this
+site. The usb.core functionality is partly supported by the usb.windows
+package.<br><br>
+Enumeration and monitoring the USB is complete and fully functional. Every
+device on the USB will either be an instance of {@link usb.windows.JUSB} class or a {@link
+usb.windows.NonJUSB} class.
+Devices within the {@link usb.windows.JUSB} class uses the jUSB driver and allow partial using the methods
+provided in the {@link usb.core.DeviceSPI}interface. The {@link
+usb.windows.NonJUSB} devices are all other devices
+on the USB not using the jUSB driver. The superclass of JUSB and NonJUSB is
+{@link usb.windows.DeviceImpl} class. All devices, instance of DeviceImpl class have the ability to read the device
+and default configuration descriptor. Further, they are aware about the bus
+structure of the USB. They know how many children they have and to what port they are
+connected to. <br><br>
+<B>Control Transfer</B><br>
+Supported are the following standard request: GET_DESCRIPTOR, GET_STATUS<br>
+All the other request still needs to be implemented<br><br>
+<B>Interrupt Transfer</B><br>
+Only {@link usb.windows.JUSB#readIntr(int ep, int len)} is supported so far the device has a corresponding endpoint. <br>WriteIntr 
+should not be difficult to add.<br><br>
+<B>Bulk Transfer</B>
+Not supported yet.<br>
+
+
+
+<h2>Use jUSB API for Windows (Binaries)</h2>
+You have to download the <a href="sources/JavaUSB.zip">JavaUSBComplete.ZIP</a>
+and install according to  <a
+href="related-docs/chp7-enduserinstallation.pdf" target="_blank">chapter 7<a> and when using a jUSB device you will need
+the driver replacement
+instruction (<a href="related-docs/appendix-D.pdf" target="_blank">Appendix
+D</a>) for an USB device.
+
+
+
+<h2>Introduction to the implementation and the framework of jUSB API</h2>
+The core Java USB API provides a singleton host that monitors all USB busses. 
+The host is responsible for enumerating the USB devices on the Java side and 
+update its listeners as soon as a device has been attached or removed. We can 
+see a close correlation to the work of the USB hub driver (USBHUB.sys) and the 
+USB driver (USBD.sys) in the USB driver stack for Windows. In fact, they are 
+responsible for the tree structure and to enumerate the devices. <br><br>
+
+<IMG src="related-docs/figure1.jpg" width='410' height='488'>
+<br><br>
+According to the usbview example delivered with the <a
+href="http://www.microsoft.com/whdc/ddk/default.mspx" target="_blank">DDK</a>, 
+we know that it is possible to enumerate all the devices (hubs included) and even 
+the host controllers. <a href="http://www.usb-by-example.com/" target="_blank">
+John Hyde</a> shows another <a
+href="http://www.intel.com/intelpress/usb/examples/DUSBVC.PDF"
+target="_blank">example</a> how to display the USB 
+tree structure in Windows. The common thing both examples have in 
+common is that they are executed in user mode. The conclusion is that we do not
+ have to write a driver to enumerate and control the USB tree structure for the
+ Java USB API. Of course, these user mode functions are performed with the
+ DeviceIoControl WinAPI function which uses the handle to the corresponding 
+hub driver. A driver is still required but it is already supplied by the
+ Microsoft operating system. A small disadvantage is that undocumented
+ I/O Control (IOCTL) codes are used. This forces one to use the examples as
+ documenta-tion, which is far away from an optimal documentation. Anyway, 
+creating a framework using existing user mode functions simplifies the writing 
+of the Java USB driver. We use the Win API user mode function as shown in the 
+usbview example to enumerate and monitor the USB tree structure as shown in Figure
+1.<br>
+<br>
+To perform device specific operations we need to write a device driver mapping 
+the user mode function to the related kernel mode function as shown in the right
+ part of Figure 1. This involves the jUSB driver to handle different kinds of 
+IOCTL codes to maintain all the functionality supported by the Java USB API.
+The Question may arise of how to assign the jUSB driver to any kind of USB device.
+ Usually, a USB device is plugged in and the driver is loaded automatically.
+ This is still preferable but instead of loading the original driver for the USB 
+device we want the system to load the jUSB driver (
+<a href="related-docs/appendix-D.pdf" target="_blank">details about the installation
+ of a new jUSB device</a>). Of course, this will take away all the
+ functionality the origin driver supported but this functionality should now be
+ provided by the Java USB API. Using the new API we can build the functionality
+ we want from the device in Java and do no longer have to care about C, JNI and
+ driver writing on the Windows platform. <a
+href="related-docs/chp5-designjusbwindows.pdf" target="_blank">
+Chapter 5</A> is going to present the implementation of functions not using the
+ JUSB driver while <a href="related-docs/chp6-jusbdriver.pdf" target="_blank">chapter 6</A>
+describes the driver implementation for the Java USB API. A lot of useful
+information about driver writing can be found in the book <a href="http://www.microsoft.com/MSPress/books/authors/auth6262.asp"
+target="_blank">"Programming The
+Microsoft Windows Driver Model"</a> by <a href="http://www.oneysoft.com/"
+target="_blank">Walter Oney</A>.
+
+
+<h2>Sources and Documentation (Sources)</h2>
+The Java USB API for Windows was my diploma thesis. As I could not reach the
+goal to implement all the functionality from the usb.core API in 4 month time, I
+appreciate any help of developers who want to extend the jUSB API to a fully
+working and stable API. Therefore all the souces are downloadable to extend and
+modify the usb.windows package, the jUSB DLL and the jUSB driver. For
+documentation you can use my diploma thesis.<br>
+<br><b>Source Package for Developers</B><br>
+Download <a href="sources/JavaUSBComplete.zip">JavaUSBComplete.ZIP</a> and
+follow the installation instruction given at <a
+href="related-docs/chp8-developerinstallation.pdf" target="_blank">chapter
+8</a>.<br>JavaUSBComplete.ZIP file contains the usb.windows package, the jUSB DLL
+and the jUSB source code.
+<br><br>
+<b>Documentation Java USB API for Windows</B><br>
+Download <a href="related-docs/JavaUSBforWindowsWeb.pdf">Java USB for Windows
+documentation</a>(Sept. 2003). 
+<br><br>
+<!-- Put @see and @since tags down here. -->
+
+</body>
+</html>

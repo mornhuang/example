@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The Life Cycle of a JSP Page - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level3"><a href="bnagy.html">What Is a JSP Page?</a></p>
+<p class="toc level4"><a href="bnagy.html#bnagz">A Simple JSP Page Example</a></p>
+<p class="toc level3 tocsp"><a href="bnahb.html">The Example JSP Pages</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">The Life Cycle of a JSP Page</a></p>
+<p class="toc level4"><a href="#bnahf">Translation and Compilation</a></p>
+<p class="toc level4"><a href="#bnahg">Execution</a></p>
+<p class="toc level5"><a href="#bnahh">Buffering</a></p>
+<p class="toc level5"><a href="#bnahi">Handling JSP Page Errors</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnahj.html">Creating Static Content</a></p>
+<p class="toc level4"><a href="bnahj.html#bnahk">Response and Page Encoding</a></p>
+<p class="toc level3 tocsp"><a href="bnahl.html">Creating Dynamic Content</a></p>
+<p class="toc level4"><a href="bnahl.html#bnahm">Using Objects within JSP Pages</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahn">Using Implicit Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnaho">Using Application-Specific Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahp">Using Shared Objects</a></p>
+<p class="toc level3 tocsp"><a href="bnahq.html">Unified Expression Language</a></p>
+<p class="toc level4"><a href="bnahq.html#bnahr">Immediate and Deferred Evaluation Syntax</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahs">Immediate Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaht">Deferred Evaluation</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnahu">Value and Method Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahv">Value Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahz">Method Expressions</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaia">Defining a Tag Attribute Type</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaic">Deactivating Expression Evaluation</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaid">Literal Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaif">Resolving Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaig">Process of Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaih">EL Resolvers</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaij">Implicit Objects</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaik">Operators</a></p>
+<p class="toc level4"><a href="bnahq.html#bnail">Reserved Words</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaim">Examples of EL Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaio">Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaip">Using Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaiq">Defining Functions</a></p>
+<p class="toc level3 tocsp"><a href="bnair.html">JavaBeans Components</a></p>
+<p class="toc level4"><a href="bnair.html#bnais">JavaBeans Component Design Conventions</a></p>
+<p class="toc level4"><a href="bnair.html#bnait">Creating and Using a JavaBeans Component</a></p>
+<p class="toc level4"><a href="bnair.html#bnaiu">Setting JavaBeans Component Properties</a></p>
+<p class="toc level4"><a href="bnair.html#bnaix">Retrieving JavaBeans Component Properties</a></p>
+<p class="toc level3 tocsp"><a href="bnaiy.html">Using Custom Tags</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaiz">Declaring Tag Libraries</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaja">Including the Tag Library Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bnajb.html">Reusing Content in JSP Pages</a></p>
+<p class="toc level3"><a href="bnajc.html">Transferring Control to Another Web Component</a></p>
+<p class="toc level4"><a href="bnajc.html#bnajd"><tt>jsp:param</tt> Element</a></p>
+<p class="toc level3 tocsp"><a href="bnaje.html">Including an Applet</a></p>
+<p class="toc level3"><a href="bnajg.html">Setting Properties for Groups of JSP Pages</a></p>
+<p class="toc level4"><a href="bnajg.html#bnajh">Deactivating EL Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajk">Declaring Page Encodings</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajl">Defining Implicit Includes</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajm">Eliminating Extra White Space</a></p>
+<p class="toc level3 tocsp"><a href="bnajn.html">Further Information about JavaServer Pages Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnahb.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnahj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnahe"></a><h3>The Life Cycle of a JSP Page</h3>
+<p><a name="indexterm-317"></a>A JSP page services requests as a servlet. Thus, the life cycle and
+many of the capabilities of JSP pages (in particular the dynamic aspects) are
+determined by Java Servlet technology. You will notice that many sections in this
+chapter refer to classes and methods described in <a href="bnafd.html">Chapter&nbsp;4, Java Servlet Technology</a>.</p><p><a name="indexterm-318"></a><a name="indexterm-319"></a>When a request is mapped to a JSP page, the web container first
+checks whether the JSP page&rsquo;s servlet is older than the JSP page. If
+the servlet is older, the web container translates the JSP page into a
+servlet class and compiles the class. During development, one of the advantages of
+JSP pages over servlets is that the build process is performed automatically.</p>
+
+<a name="bnahf"></a><h4>Translation and Compilation</h4>
+<p><a name="indexterm-320"></a>During the translation phase each type of data in a JSP page is
+treated differently. Static data is transformed into code that will emit the data
+into the response stream. JSP elements are treated as follows:</p>
+<ul><li><p><a name="indexterm-321"></a>Directives are used to control how the web container translates and executes the JSP page.</p></li>
+<li><p>Scripting elements are inserted into the JSP page&rsquo;s servlet class. See <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a> for details.</p></li>
+<li><p>Expression language expressions are passed as parameters to calls to the JSP expression evaluator.</p></li>
+<li><p><tt>jsp:[set|get]Property</tt> elements are converted into method calls to JavaBeans components.</p></li>
+<li><p><tt>jsp:[include|forward]</tt>elements are converted into invocations of the Java Servlet API.</p></li>
+<li><p>The <tt>jsp:plugin</tt> element is converted into browser-specific markup for activating an applet.</p></li>
+<li><p>Custom tags are converted into calls to the tag handler that implements the custom tag.</p></li></ul>
+<p>In the Application Server, the source for the servlet created from a JSP
+page named <i>pageName</i> is in this file:</p><pre><i>domain-dir</i>/generated/jsp/j2ee-modules/<i>WAR-NAME</i>/<i>pageName</i>_jsp.java</pre><p>For example, the source for the index page (named <tt>index.jsp</tt>) for the <tt>date</tt>
+localization example discussed at the beginning of the chapter would be named:</p><pre><tt></tt><i>domain-dir</i><tt>/generated/jsp/j2ee-modules/date/index_jsp.java</tt></pre><p><a name="indexterm-322"></a><a name="indexterm-323"></a>Both the translation and the compilation phases can yield errors that are observed
+only when the page is requested for the first time. If an error
+is encountered during either phase, the server will return <tt>JasperException</tt> and a message
+that includes the name of the JSP page and the line where the
+error occurred.</p><p>After the page has been translated and compiled, the JSP page&rsquo;s servlet (for
+the most part) follows the servlet life cycle described in <a href="bnafi.html">Servlet Life Cycle</a>:</p>
+<ol><li><p>If an instance of the JSP page&rsquo;s servlet does not exist, the container:</p>
+<ol><li><p>Loads the JSP page&rsquo;s servlet class</p></li>
+<li><p>Instantiates an instance of the servlet class</p></li>
+<li><p>Initializes the servlet instance by calling the <tt>jspInit</tt> method</p></li></ol>
+</li>
+<li><p>The container invokes the <tt>_jspService</tt> method, passing request and response objects.</p></li></ol>
+<p>If the container needs to remove the JSP page&rsquo;s servlet, it calls the
+<tt>jspDestroy</tt> method.</p>
+
+<a name="bnahg"></a><h4>Execution</h4>
+<p><a name="indexterm-324"></a><a name="indexterm-325"></a>You can control various JSP page execution parameters by using <tt>page</tt> directives. The
+directives that pertain to buffering output and handling errors are discussed here. Other
+directives are covered in the context of specific page-authoring tasks throughout the chapter.</p>
+
+<a name="bnahh"></a><h5>Buffering</h5>
+<p><a name="indexterm-326"></a>When a JSP page is executed, output written to the response object is
+automatically buffered. You can set the size of the buffer using the
+following page directive:</p><pre>&lt;%@ page buffer="none|<i>xxx</i>kb" %></pre><p>A larger buffer allows more content to be written before anything is actually
+sent back to the client, thus providing the JSP page with more
+time to set appropriate status codes and headers or to forward to another
+web resource. A smaller buffer decreases server memory load and allows the client
+to start receiving data more quickly.</p>
+
+<a name="bnahi"></a><h5>Handling JSP Page Errors</h5>
+<p><a name="indexterm-327"></a>Any number of exceptions can arise when a JSP page is executed. To
+specify that the web container should forward control to an error page if
+an exception occurs, include the following <tt>page</tt> directive at the beginning of
+your JSP page:</p><pre>&lt;%@ page errorPage="<i>file-name</i>" %></pre><p>The Duke&rsquo;s Bookstore application page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore2/web/template/preludeErrorPage.jspf</tt> contains the directive:</p><pre>&lt;%@ page errorPage="errorpage.jsp"%></pre><p><a name="indexterm-328"></a>The following page directive at the beginning of <i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore2/web/error/errorpage.jsp</tt> indicates that it is
+serving as an error page:</p><pre>&lt;%@ page isErrorPage="true" %></pre><p>This directive makes an object of type <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/ErrorData.html">javax.servlet.jsp.ErrorData</a> available to the error
+page so that you can retrieve, interpret, and possibly display information about the cause
+of the exception in the error page. You access the error data
+object in an EL (see <a href="bnahq.html">Unified Expression Language</a>) expression by way of the page context. Thus,
+<tt>${pageContext.errorData.statusCode}</tt> retrieves the status code, and <tt>${pageContext.errorData.throwable}</tt> retrieves the exception. You can
+retrieve the cause of the exception using this expression:</p><pre>${pageContext.errorData.throwable.cause}</pre><p>For example, the error page for Duke&rsquo;s Bookstore is as follows:</p><pre>&lt;%@ page isErrorPage="true" %>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core"
+     prefix="c" %>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"
+     prefix="fmt" %>
+&lt;html>
+&lt;head>
+&lt;title>&lt;fmt:message key="ServerError"/>&lt;/title>
+&lt;/head>
+&lt;body bgcolor="white">
+&lt;h3>
+&lt;fmt:message key="ServerError"/>
+&lt;/h3>
+&lt;p>
+: ${pageContext.errorData.throwable.cause}
+&lt;/body>
+&lt;/html></pre>
+<hr><p><b>Note - </b><a name="indexterm-329"></a><a name="indexterm-330"></a>You can also define error pages for the WAR that contains a
+JSP page. If error pages are defined for both the WAR and a
+JSP page, the JSP page&rsquo;s error page takes precedence.</p>
+<hr>
+
+         </div>
+         <div class="navigation">
+             <a href="bnahb.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnahj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

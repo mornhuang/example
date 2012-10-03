@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<project name="initDb" basedir="." default="usage">
+
+  <target name="createTables">
+		<echo message="CREATE TABLES USING: ${db.driver} ${db.url}"/>
+
+    <sql driver="${db.driver}"
+         url="${db.url}"
+         userid="${db.user}"
+         password="${db.pw}"
+         encoding="UTF-8"
+>  
+
+			<classpath>
+				<fileset dir="../../lib">
+					<include name="${db.jdbcdriver}"/>
+				</fileset>
+			</classpath>
+	<transaction  src="createTables.sql"/>
+    </sql> 
+  </target>
+
+  <target name="sampleData">
+		<echo message="USING: ${db.driver} ${db.url}"/>
+
+    <sql driver="${db.driver}"
+         url="${db.url}"
+         userid="${db.user}"
+         password="${db.pw}"
+         encoding="UTF-8"
+>
+			<classpath>
+				<fileset dir="../../lib">
+					<include name="${db.jdbcdriver}"/>
+				</fileset>
+			</classpath>
+	<transaction  src="sampleData.sql"/>
+    </sql> 
+  </target>
+    
+  <target name="dropTables">
+		<echo message="USING: ${db.driver} ${db.url}"/>
+
+    <sql driver="${db.driver}"
+         url="${db.url}"
+         userid="${db.user}"
+         password="${db.pw}"
+         encoding="UTF-8"
+         onerror="continue">
+			<classpath>
+				<fileset dir="../../lib">
+					<include name="${db.jdbcdriver}"/>
+				</fileset>
+			</classpath>
+	<transaction  src="dropTables.sql"/>
+    </sql> 
+  </target>
+
+	<target name="usage">
+		<echo message=""/>
+		<echo message="rsForum db operations"/>
+		<echo message=""/>
+		<echo message=" please call this build script from ../build.xml"/>
+		<echo message=""/>
+		<echo message=" Exit."/>
+	</target>
+
+
+
+<!--  <target name="all" depends="dropDb,setupDb,sampleData"/> -->
+    
+</project>

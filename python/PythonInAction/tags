@@ -1,0 +1,747 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+AbstractModel	.\Chapter-05\abstractmodel.py	/^class AbstractModel(object):$/;"	c
+AddTreeNodes	.\Chapter-15\tree_icons.py	/^    def AddTreeNodes(self, parentItem, items):$/;"	m	class:TestFrame
+AddTreeNodes	.\Chapter-15\tree_misc.py	/^    def AddTreeNodes(self, parentItem, items):$/;"	m	class:TestFrame
+AddTreeNodes	.\Chapter-15\tree_simple.py	/^    def AddTreeNodes(self, parentItem, items):$/;"	m	class:TestFrame
+AddTreeNodes	.\Chapter-15\tree_treelist.py	/^    def AddTreeNodes(self, parentItem, items):$/;"	m	class:TestFrame
+AddTreeNodes	.\Chapter-15\tree_virtual.py	/^    def AddTreeNodes(self, parentItem):$/;"	m	class:TestFrame
+App	.\Chapter-01\bare.py	/^class App(wx.App):$/;"	c
+App	.\Chapter-01\hello.py	/^class App(wx.App):$/;"	c
+App	.\Chapter-01\spare.py	/^class App(wx.App):$/;"	c
+App	.\Chapter-02\dialog_scratch.py	/^class App(wx.App):$/;"	c
+App	.\Chapter-02\startup.py	/^class App(wx.App):$/;"	c
+App	.\Chapter-04\spare.py	/^class App(wx.App):$/;"	c
+BeginEdit	.\Chapter-14\grid_editor.py	/^    def BeginEdit(self, row, col, grid):$/;"	m	class:UpCaseCellEditor
+BitmapButtonFrame	.\Chapter-07\bitmap_button.py	/^class BitmapButtonFrame(wx.Frame):$/;"	c
+BlockWindow	.\Chapter-11\blockwindow.py	/^class BlockWindow(wx.Panel):$/;"	c
+BlueTagHandler	.\Chapter-16\html_tag.py	/^class BlueTagHandler(wx.html.HtmlWinTagHandler):$/;"	c
+ButtonFrame	.\Chapter-07\button.py	/^class ButtonFrame(wx.Frame):$/;"	c
+CalculateLayout	.\Chapter-17\printing.py	/^    def CalculateLayout(self, dc):$/;"	m	class:TextDocPrintout
+CalculateScale	.\Chapter-17\printing.py	/^    def CalculateScale(self, dc):$/;"	m	class:TextDocPrintout
+CharValidator	.\Chapter-09\validator3.py	/^class CharValidator(wx.PyValidator):$/;"	c
+CheckBoxFrame	.\Chapter-07\checkbox.py	/^class CheckBoxFrame(wx.Frame):$/;"	c
+ChoiceFrame	.\Chapter-07\choice.py	/^class ChoiceFrame(wx.Frame):$/;"	c
+ClockWindow	.\Chapter-18\timer.py	/^class ClockWindow(wx.Window):$/;"	c
+Clone	.\Chapter-09\validator1.py	/^     def Clone(self):$/;"	m	class:NotEmptyValidator
+Clone	.\Chapter-09\validator2.py	/^     def Clone(self):$/;"	m	class:DataXferValidator
+Clone	.\Chapter-09\validator3.py	/^    def Clone(self):$/;"	m	class:CharValidator
+Clone	.\Chapter-14\grid_editor.py	/^    def Clone(self):$/;"	m	class:UpCaseCellEditor
+Clone	.\Chapter-14\grid_renderer.py	/^    def Clone(self):$/;"	m	class:RandomBackgroundRenderer
+ComboBoxFrame	.\Chapter-07\combo_box.py	/^class ComboBoxFrame(wx.Frame):$/;"	c
+ControlPanel	.\Chapter-06\example7.py	/^class ControlPanel(wx.Panel):$/;"	c
+Create	.\Chapter-14\grid_editor.py	/^    def Create(self, parent, id, evtHandler):$/;"	m	class:UpCaseCellEditor
+CreateSizerAndWindows	.\Chapter-11\boxsizer.py	/^    def CreateSizerAndWindows(self):$/;"	m	class:HBoxSizerFrame
+CreateSizerAndWindows	.\Chapter-11\boxsizer.py	/^    def CreateSizerAndWindows(self):$/;"	m	class:VBoxSizerFrame
+CreateSizerAndWindows	.\Chapter-11\boxsizer.py	/^    def CreateSizerAndWindows(self):$/;"	m	class:VBoxSizerMultiProportionalFrame
+CreateSizerAndWindows	.\Chapter-11\boxsizer.py	/^    def CreateSizerAndWindows(self):$/;"	m	class:VBoxSizerStretchableFrame
+CustomEventFrame	.\Chapter-03\customEvent.py	/^class CustomEventFrame(wx.Frame):$/;"	c
+DataSource	.\Chapter-13\list_report_virtual.py	/^class DataSource:$/;"	c
+DataXferValidator	.\Chapter-09\validator2.py	/^class DataXferValidator(wx.PyValidator):$/;"	c
+DemoApp	.\Chapter-13\list_report_etc.py	/^class DemoApp(wx.App):$/;"	c
+DemoFrame	.\Chapter-13\list_icon.py	/^class DemoFrame(wx.Frame):$/;"	c
+DemoFrame	.\Chapter-13\list_list.py	/^class DemoFrame(wx.Frame):$/;"	c
+DemoFrame	.\Chapter-13\list_report.py	/^class DemoFrame(wx.Frame):$/;"	c
+DemoFrame	.\Chapter-13\list_report_colsort.py	/^class DemoFrame(wx.Frame, wx.lib.mixins.listctrl.ColumnSorterMixin):$/;"	c
+DemoFrame	.\Chapter-13\list_report_etc.py	/^class DemoFrame(wx.Frame):$/;"	c
+DemoFrame	.\Chapter-13\list_report_virtual.py	/^class DemoFrame(wx.Frame):$/;"	c
+DemoFrame	.\Chapter-13\list_smicon.py	/^class DemoFrame(wx.Frame):$/;"	c
+DoCacheItems	.\Chapter-13\list_report_virtual.py	/^    def DoCacheItems(self, evt):$/;"	m	class:VirtualListCtrl
+DoubleEventFrame	.\Chapter-03\double_event_one.py	/^class DoubleEventFrame(wx.Frame):$/;"	c
+DragController	.\Chapter-18\drop_source.py	/^class DragController(wx.Control):$/;"	c
+Draw	.\Chapter-14\grid_renderer.py	/^    def Draw(self, grid, attr, dc, rect, row, col, isSelected):$/;"	m	class:RandomBackgroundRenderer
+Draw	.\Chapter-18\timer.py	/^    def Draw(self, dc):$/;"	m	class:ClockWindow
+DrawGraph	.\Chapter-12\radargraph.py	/^    def DrawGraph(self, dc):$/;"	m	class:RadarGraph
+DrawLines	.\Chapter-06\example1.py	/^    def DrawLines(self, dc):$/;"	m	class:SketchWindow
+EndEdit	.\Chapter-14\grid_editor.py	/^    def EndEdit(self, row, col, grid):$/;"	m	class:UpCaseCellEditor
+Frame	.\Chapter-01\hello.py	/^class Frame(wx.Frame):$/;"	c
+Frame	.\Chapter-01\spare.py	/^class Frame(wx.Frame):$/;"	c
+Frame	.\Chapter-02\startup.py	/^class Frame(wx.Frame):$/;"	c
+Frame	.\Chapter-04\spare.py	/^class Frame(wx.Frame):$/;"	c
+GaugeFrame	.\Chapter-07\gauge.py	/^class GaugeFrame(wx.Frame):$/;"	c
+GenericButtonFrame	.\Chapter-07\generic_button.py	/^class GenericButtonFrame(wx.Frame):$/;"	c
+GenericTable	.\Chapter-05\generictable.py	/^class GenericTable(wx.grid.PyGridTableBase):$/;"	c
+GetAttr	.\Chapter-14\grid_table.py	/^    def GetAttr(self, row, col, kind):$/;"	m	class:TestTable
+GetAttr	.\Chapter-14\grid_table_header.py	/^    def GetAttr(self, row, col, kind):$/;"	m	class:TestTable
+GetBestSize	.\Chapter-14\grid_renderer.py	/^    def GetBestSize(self, grid, attr, dc, row, col):$/;"	m	class:RandomBackgroundRenderer
+GetClickCount	.\Chapter-03\customEvent.py	/^    def GetClickCount(self):$/;"	m	class:TwoButtonEvent
+GetColLabelValue	.\Chapter-05\generictable.py	/^    def GetColLabelValue(self, col):$/;"	m	class:GenericTable
+GetColLabelValue	.\Chapter-05\gridModel.py	/^    def GetColLabelValue(self, col):$/;"	m	class:LineupTable
+GetColLabelValue	.\Chapter-05\lineuptable.py	/^    def GetColLabelValue(self, col):$/;"	m	class:LineupTable
+GetColLabelValue	.\Chapter-14\grid_table_basic.py	/^    def GetColLabelValue(self, col):$/;"	m	class:TestTable
+GetColumnHeaders	.\Chapter-13\list_report_virtual.py	/^    def GetColumnHeaders(self):$/;"	m	class:DataSource
+GetCount	.\Chapter-13\list_report_virtual.py	/^    def GetCount(self):$/;"	m	class:DataSource
+GetData	.\Chapter-12\radargraph.py	/^    def GetData(self):$/;"	m	class:RadarGraph
+GetItem	.\Chapter-13\list_report_virtual.py	/^    def GetItem(self, index):$/;"	m	class:DataSource
+GetItemText	.\Chapter-15\tree_icons.py	/^    def GetItemText(self, item):$/;"	m	class:TestFrame
+GetItemText	.\Chapter-15\tree_misc.py	/^    def GetItemText(self, item):$/;"	m	class:TestFrame
+GetItemText	.\Chapter-15\tree_simple.py	/^    def GetItemText(self, item):$/;"	m	class:TestFrame
+GetItemText	.\Chapter-15\tree_treelist.py	/^    def GetItemText(self, item):$/;"	m	class:TestFrame
+GetItemText	.\Chapter-15\tree_virtual.py	/^    def GetItemText(self, item):$/;"	m	class:TestFrame
+GetLinesData	.\Chapter-06\example1.py	/^    def GetLinesData(self):$/;"	m	class:SketchWindow
+GetListCtrl	.\Chapter-13\list_report_colsort.py	/^    def GetListCtrl(self):$/;"	m	class:DemoFrame
+GetNumberCols	.\Chapter-05\generictable.py	/^    def GetNumberCols(self):$/;"	m	class:GenericTable
+GetNumberCols	.\Chapter-05\gridModel.py	/^    def GetNumberCols(self):$/;"	m	class:LineupTable
+GetNumberCols	.\Chapter-05\lineuptable.py	/^    def GetNumberCols(self):$/;"	m	class:LineupTable
+GetNumberCols	.\Chapter-14\grid_table.py	/^    def GetNumberCols(self):$/;"	m	class:TestTable
+GetNumberCols	.\Chapter-14\grid_table_basic.py	/^    def GetNumberCols(self):$/;"	m	class:TestTable
+GetNumberCols	.\Chapter-14\grid_table_header.py	/^    def GetNumberCols(self):$/;"	m	class:TestTable
+GetNumberRows	.\Chapter-05\generictable.py	/^    def GetNumberRows(self):$/;"	m	class:GenericTable
+GetNumberRows	.\Chapter-05\gridModel.py	/^    def GetNumberRows(self):$/;"	m	class:LineupTable
+GetNumberRows	.\Chapter-05\lineuptable.py	/^    def GetNumberRows(self):$/;"	m	class:LineupTable
+GetNumberRows	.\Chapter-14\grid_table.py	/^    def GetNumberRows(self):$/;"	m	class:TestTable
+GetNumberRows	.\Chapter-14\grid_table_basic.py	/^    def GetNumberRows(self):$/;"	m	class:TestTable
+GetNumberRows	.\Chapter-14\grid_table_header.py	/^    def GetNumberRows(self):$/;"	m	class:TestTable
+GetPageInfo	.\Chapter-17\printing.py	/^    def GetPageInfo(self):$/;"	m	class:TextDocPrintout
+GetRowLabelValue	.\Chapter-05\generictable.py	/^    def GetRowLabelValue(self, row):$/;"	m	class:GenericTable
+GetRowLabelValue	.\Chapter-05\gridModel.py	/^    def GetRowLabelValue(self, row):$/;"	m	class:LineupTable
+GetRowLabelValue	.\Chapter-05\lineuptable.py	/^    def GetRowLabelValue(self, col):$/;"	m	class:LineupTable
+GetRowLabelValue	.\Chapter-14\grid_table_basic.py	/^    def GetRowLabelValue(self, row):$/;"	m	class:TestTable
+GetSortImages	.\Chapter-13\list_report_colsort.py	/^    def GetSortImages(self):$/;"	m	class:DemoFrame
+GetSupportedTags	.\Chapter-16\html_tag.py	/^    def GetSupportedTags(self):$/;"	m	class:BlueTagHandler
+GetValue	.\Chapter-05\generictable.py	/^    def GetValue(self, row, col):$/;"	m	class:GenericTable
+GetValue	.\Chapter-05\gridModel.py	/^    def GetValue(self, row, col):$/;"	m	class:LineupTable
+GetValue	.\Chapter-05\lineuptable.py	/^    def GetValue(self, row, col):$/;"	m	class:LineupTable
+GetValue	.\Chapter-14\grid_table.py	/^    def GetValue(self, row, col):$/;"	m	class:TestTable
+GetValue	.\Chapter-14\grid_table_basic.py	/^    def GetValue(self, row, col):$/;"	m	class:TestTable
+GetValue	.\Chapter-14\grid_table_header.py	/^    def GetValue(self, row, col):$/;"	m	class:TestTable
+GridSizerFrame	.\Chapter-11\basicgridsizer.py	/^class GridSizerFrame(wx.Frame):$/;"	c
+GridSizerFrame	.\Chapter-11\prependgridsizer.py	/^class GridSizerFrame(wx.Frame):$/;"	c
+HBoxSizerFrame	.\Chapter-11\boxsizer.py	/^class HBoxSizerFrame(TestFrame):$/;"	c
+HandleTag	.\Chapter-16\html_tag.py	/^    def HandleTag(self, tag):$/;"	m	class:BlueTagHandler
+HasPage	.\Chapter-17\printing.py	/^    def HasPage(self, page):$/;"	m	class:TextDocPrintout
+HelpFrame	.\Chapter-08\help_context.py	/^class HelpFrame(wx.Frame):$/;"	c
+InitBuffer	.\Chapter-06\example1.py	/^    def InitBuffer(self):$/;"	m	class:SketchWindow
+InitBuffer	.\Chapter-12\radargraph.py	/^    def InitBuffer(self):$/;"	m	class:RadarGraph
+InitHelp	.\Chapter-16\html_help.py	/^    def InitHelp(self):$/;"	m	class:MyHtmlFrame
+InsertFrame	.\Chapter-02\insert.py	/^class InsertFrame(wx.Frame):$/;"	c
+IsEmptyCell	.\Chapter-05\generictable.py	/^    def IsEmptyCell(self, row, col):$/;"	m	class:GenericTable
+IsEmptyCell	.\Chapter-05\gridModel.py	/^    def IsEmptyCell(self, row, col):$/;"	m	class:LineupTable
+IsEmptyCell	.\Chapter-05\lineuptable.py	/^    def IsEmptyCell(self, row, col):$/;"	m	class:LineupTable
+IsEmptyCell	.\Chapter-14\grid_table.py	/^    def IsEmptyCell(self, row, col):$/;"	m	class:TestTable
+IsEmptyCell	.\Chapter-14\grid_table_basic.py	/^    def IsEmptyCell(self, row, col):$/;"	m	class:TestTable
+IsEmptyCell	.\Chapter-14\grid_table_header.py	/^    def IsEmptyCell(self, row, col):$/;"	m	class:TestTable
+LineupEntry	.\Chapter-05\lineuptable.py	/^class LineupEntry:$/;"	c
+LineupTable	.\Chapter-05\gridModel.py	/^class LineupTable(wx.grid.PyGridTableBase):$/;"	c
+LineupTable	.\Chapter-05\lineuptable.py	/^class LineupTable(wx.grid.PyGridTableBase):$/;"	c
+ListBoxFrame	.\Chapter-07\list_box.py	/^class ListBoxFrame(wx.Frame):$/;"	c
+LogMessage	.\Chapter-18\worker_threads.py	/^    def LogMessage(self, msg):$/;"	m	class:MyFrame
+MDIFrame	.\Chapter-08\mdi.py	/^class MDIFrame(wx.MDIParentFrame):$/;"	c
+MakeBitmap	.\Chapter-06\example5.py	/^    def MakeBitmap(self, color):$/;"	m	class:SketchFrame
+MakeBitmap	.\Chapter-06\example6.py	/^    def MakeBitmap(self, color):$/;"	m	class:SketchFrame
+MakeBitmap	.\Chapter-06\example7.py	/^    def MakeBitmap(self, color):$/;"	m	class:SketchFrame
+MakeListCtrl	.\Chapter-13\list_report_etc.py	/^    def MakeListCtrl(self, otherflags=0):$/;"	m	class:DemoFrame
+MakeMenu	.\Chapter-13\list_report_etc.py	/^    def MakeMenu(self):$/;"	m	class:DemoFrame
+MakeMenuBar	.\Chapter-08\splitter.py	/^    def MakeMenuBar(self):$/;"	m	class:SplitterExampleFrame
+MakeStaticBoxSizer	.\Chapter-11\staticboxsizer.py	/^    def MakeStaticBoxSizer(self, boxlabel, itemlabels):$/;"	m	class:TestFrame
+MenuEventFrame	.\Chapter-03\menu_event.py	/^class MenuEventFrame(wx.Frame):$/;"	c
+MiniFrame	.\Chapter-08\miniframe.py	/^class MiniFrame(wx.MiniFrame):$/;"	c
+ModelExample	.\Chapter-05\modelExample.py	/^class ModelExample(wx.Frame):$/;"	c
+MouseEventFrame	.\Chapter-03\mouse_event.py	/^class MouseEventFrame(wx.Frame):$/;"	c
+MyApp	.\Chapter-01\python_compare.py	/^class MyApp(wx.App):$/;"	c
+MyDialog	.\Chapter-09\validator1.py	/^class MyDialog(wx.Dialog):$/;"	c
+MyDialog	.\Chapter-09\validator2.py	/^class MyDialog(wx.Dialog):$/;"	c
+MyDialog	.\Chapter-09\validator3.py	/^class MyDialog(wx.Dialog):$/;"	c
+MyFileDropTarget	.\Chapter-18\drop_target.py	/^class MyFileDropTarget(wx.FileDropTarget):$/;"	c
+MyFrame	.\Chapter-01\python_compare.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-01\sample.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\add_items.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\create_just_menu.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\create_simple_menu.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\disable_item.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\fancy_items.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\find_item.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\popupmenu.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\sub_menu.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\toggle_items.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\update_ui.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-10\with_accelerator.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\clipboard.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\drop_source.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\drop_target.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\sound.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\timer.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\worker_threads.py	/^class MyFrame(wx.Frame):$/;"	c
+MyFrame	.\Chapter-18\xrcsample.py	/^class MyFrame(wx.Frame):$/;"	c
+MyHtmlFrame	.\Chapter-16\html_help.py	/^class MyHtmlFrame(wx.Frame):$/;"	c
+MyHtmlFrame	.\Chapter-16\html_tag.py	/^class MyHtmlFrame(wx.Frame):$/;"	c
+MyHtmlFrame	.\Chapter-16\html_window.py	/^class MyHtmlFrame(wx.Frame):$/;"	c
+MyHtmlFrame	.\Chapter-16\html_window_loadpage.py	/^class MyHtmlFrame(wx.Frame):$/;"	c
+MyHtmlFrame	.\Chapter-16\html_window_related.py	/^class MyHtmlFrame(wx.Frame):$/;"	c
+NotEmptyValidator	.\Chapter-09\validator1.py	/^class NotEmptyValidator(wx.PyValidator):$/;"	c
+OnAbout	.\Chapter-01\python_compare.py	/^    def OnAbout(self, event):$/;"	m	class:MyFrame
+OnAbout	.\Chapter-06\example7.py	/^    def OnAbout(self, event):$/;"	m	class:SketchFrame
+OnAccelerated	.\Chapter-10\with_accelerator.py	/^    def OnAccelerated(self, event):$/;"	m	class:MyFrame
+OnActivated	.\Chapter-15\tree_misc.py	/^    def OnActivated(self, evt):$/;"	m	class:TestFrame
+OnActivated	.\Chapter-15\tree_simple.py	/^    def OnActivated(self, evt):$/;"	m	class:TestFrame
+OnActivated	.\Chapter-15\tree_treelist.py	/^    def OnActivated(self, evt):$/;"	m	class:TestFrame
+OnActivated	.\Chapter-15\tree_virtual.py	/^    def OnActivated(self, evt):$/;"	m	class:TestFrame
+OnAddItem	.\Chapter-10\add_items.py	/^    def OnAddItem(self, event):$/;"	m	class:MyFrame
+OnAddItem	.\Chapter-10\find_item.py	/^    def OnAddItem(self, event):$/;"	m	class:MyFrame
+OnBarney	.\Chapter-05\modelExample.py	/^    def OnBarney(self, event):                                 $/;"	m	class:ModelExample
+OnBeginEdit	.\Chapter-15\tree_misc.py	/^    def OnBeginEdit(self, evt):$/;"	m	class:TestFrame
+OnBetty	.\Chapter-05\modelExample.py	/^    def OnBetty(self, event):                                  $/;"	m	class:ModelExample
+OnButtonClick	.\Chapter-03\double_event_one.py	/^    def OnButtonClick(self, event):$/;"	m	class:DoubleEventFrame
+OnButtonClick	.\Chapter-03\mouse_event.py	/^    def OnButtonClick(self, event):$/;"	m	class:MouseEventFrame
+OnCancel	.\Chapter-18\xrcsample.py	/^    def OnCancel(self, evt):$/;"	m	class:MyFrame
+OnChar	.\Chapter-09\validator3.py	/^    def OnChar(self, evt):$/;"	m	class:CharValidator
+OnChar	.\Chapter-14\grid_editor.py	/^    def OnChar(self, evt):$/;"	m	class:UpCaseCellEditor
+OnCheckCanSplit	.\Chapter-08\splitter.py	/^    def OnCheckCanSplit(self, evt):$/;"	m	class:SplitterExampleFrame
+OnCheckCanUnsplit	.\Chapter-08\splitter.py	/^    def OnCheckCanUnsplit(self, evt):$/;"	m	class:SplitterExampleFrame
+OnClearSelection	.\Chapter-17\printing.py	/^    def OnClearSelection(self, evt):$/;"	m	class:PrintFrameworkSample
+OnClick	.\Chapter-03\customEvent.py	/^    def OnClick(self):$/;"	m	class:TwoButtonPanel
+OnClick	.\Chapter-07\bitmap_button.py	/^    def OnClick(self, event):$/;"	m	class:BitmapButtonFrame
+OnClick	.\Chapter-07\button.py	/^    def OnClick(self, event):$/;"	m	class:ButtonFrame
+OnClickBottom	.\Chapter-08\scroll_window.py	/^    def OnClickBottom(self, event):$/;"	m	class:ScrollbarFrame
+OnClickTop	.\Chapter-08\scroll_window.py	/^    def OnClickTop(self, event):$/;"	m	class:ScrollbarFrame
+OnCloseMe	.\Chapter-02\insert.py	/^    def OnCloseMe(self, event):$/;"	m	class:InsertFrame
+OnCloseMe	.\Chapter-02\toolbar.py	/^    def OnCloseMe(self, event):$/;"	m	class:ToolbarFrame
+OnCloseMe	.\Chapter-03\menu_event.py	/^    def OnCloseMe(self, event):$/;"	m	class:MenuEventFrame
+OnCloseMe	.\Chapter-04\pycrust-foundation.py	/^    def OnCloseMe(self, event):$/;"	m	class:ToolbarFrame
+OnCloseMe	.\Chapter-08\frame_subclass.py	/^    def OnCloseMe(self, event):$/;"	m	class:SubclassFrame
+OnCloseMe	.\Chapter-08\miniframe.py	/^    def OnCloseMe(self, event):$/;"	m	class:MiniFrame
+OnCloseWindow	.\Chapter-02\insert.py	/^    def OnCloseWindow(self, event):$/;"	m	class:InsertFrame
+OnCloseWindow	.\Chapter-02\toolbar.py	/^    def OnCloseWindow(self, event):$/;"	m	class:ToolbarFrame
+OnCloseWindow	.\Chapter-04\pycrust-foundation.py	/^    def OnCloseWindow(self, event):$/;"	m	class:ToolbarFrame
+OnCloseWindow	.\Chapter-05\badExample.py	/^    def OnCloseWindow(self, event):$/;"	m	class:RefactorExample
+OnCloseWindow	.\Chapter-05\goodExample.py	/^    def OnCloseWindow(self, event):$/;"	m	class:RefactorExample
+OnCloseWindow	.\Chapter-05\modelExample.py	/^    def OnCloseWindow(self, event):$/;"	m	class:ModelExample
+OnCloseWindow	.\Chapter-06\example4.py	/^    def OnCloseWindow(self, event):$/;"	m	class:SketchFrame
+OnCloseWindow	.\Chapter-06\example5.py	/^    def OnCloseWindow(self, event):$/;"	m	class:SketchFrame
+OnCloseWindow	.\Chapter-06\example6.py	/^    def OnCloseWindow(self, event):$/;"	m	class:SketchFrame
+OnCloseWindow	.\Chapter-06\example7.py	/^    def OnCloseWindow(self, event):$/;"	m	class:SketchFrame
+OnCloseWindow	.\Chapter-08\frame_subclass.py	/^    def OnCloseWindow(self, event):$/;"	m	class:SubclassFrame
+OnCloseWindow	.\Chapter-08\miniframe.py	/^    def OnCloseWindow(self, event):$/;"	m	class:MiniFrame
+OnCloseWindow	.\Chapter-18\worker_threads.py	/^    def OnCloseWindow(self, evt):$/;"	m	class:MyFrame
+OnColor	.\Chapter-06\example4.py	/^    def OnColor(self, event):$/;"	m	class:SketchFrame
+OnColor	.\Chapter-06\example5.py	/^    def OnColor(self, event):$/;"	m	class:SketchFrame
+OnColor	.\Chapter-06\example6.py	/^    def OnColor(self, event):$/;"	m	class:SketchFrame
+OnColor	.\Chapter-06\example7.py	/^    def OnColor(self, event):$/;"	m	class:SketchFrame
+OnCopy	.\Chapter-05\badExample.py	/^    def OnCopy(self, event): pass$/;"	m	class:RefactorExample
+OnCopy	.\Chapter-05\goodExample.py	/^    def OnCopy(self, event): pass$/;"	m	class:RefactorExample
+OnCopy	.\Chapter-18\customcomposite.py	/^    def OnCopy(self, evt):$/;"	m	class:TestFrame
+OnCut	.\Chapter-05\badExample.py	/^    def OnCut(self, event): pass$/;"	m	class:RefactorExample
+OnCut	.\Chapter-05\goodExample.py	/^    def OnCut(self, event): pass$/;"	m	class:RefactorExample
+OnDeleteChildren	.\Chapter-15\tree_misc.py	/^    def OnDeleteChildren(self, evt):$/;"	m	class:TestFrame
+OnDoCopy	.\Chapter-18\clipboard.py	/^    def OnDoCopy(self, evt):$/;"	m	class:MyFrame
+OnDoPaste	.\Chapter-18\clipboard.py	/^    def OnDoPaste(self, evt):$/;"	m	class:MyFrame
+OnDoubleClick	.\Chapter-08\shaped_frame.py	/^    def OnDoubleClick(self, evt):$/;"	m	class:ShapedFrame
+OnDoubleClick	.\Chapter-08\shaped_frame_mobile.py	/^    def OnDoubleClick(self, evt):$/;"	m	class:ShapedFrame
+OnDropFiles	.\Chapter-18\drop_target.py	/^    def OnDropFiles(self, x, y, filenames):$/;"	m	class:MyFileDropTarget
+OnEditItem	.\Chapter-13\list_report_etc.py	/^    def OnEditItem(self, evt):$/;"	m	class:DemoFrame
+OnEditItem	.\Chapter-15\tree_misc.py	/^    def OnEditItem(self, evt):$/;"	m	class:TestFrame
+OnEnableEditing	.\Chapter-13\list_report_etc.py	/^    def OnEnableEditing(self, evt):$/;"	m	class:DemoFrame
+OnEnterWindow	.\Chapter-03\mouse_event.py	/^    def OnEnterWindow(self, event):$/;"	m	class:MouseEventFrame
+OnExit	.\Chapter-02\startup.py	/^    def OnExit(self):$/;"	m	class:App
+OnExit	.\Chapter-08\mdi.py	/^    def OnExit(self, evt):$/;"	m	class:MDIFrame
+OnExit	.\Chapter-08\shaped_frame.py	/^    def OnExit(self, evt):$/;"	m	class:ShapedFrame
+OnExit	.\Chapter-08\shaped_frame_mobile.py	/^    def OnExit(self, evt):$/;"	m	class:ShapedFrame
+OnExit	.\Chapter-08\splitter.py	/^    def OnExit(self, evt):$/;"	m	class:SplitterExampleFrame
+OnExit	.\Chapter-10\add_items.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\create_simple_menu.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\disable_item.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\fancy_items.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\find_item.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\popupmenu.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\sub_menu.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\toggle_items.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\update_ui.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-10\with_accelerator.py	/^    def OnExit(self, event):$/;"	m	class:MyFrame
+OnExit	.\Chapter-13\list_report_etc.py	/^    def OnExit(self, evt):$/;"	m	class:DemoFrame
+OnExit	.\Chapter-17\printing.py	/^    def OnExit(self, evt):$/;"	m	class:PrintFrameworkSample
+OnFilling	.\Chapter-04\pycrust-foundation.py	/^    def OnFilling(self, event):$/;"	m	class:ToolbarFrame
+OnFindChildren	.\Chapter-15\tree_misc.py	/^    def OnFindChildren(self, evt):$/;"	m	class:TestFrame
+OnFirst	.\Chapter-05\badExample.py	/^    def OnFirst(self, event): pass$/;"	m	class:RefactorExample
+OnFirst	.\Chapter-05\goodExample.py	/^    def OnFirst(self, event): pass$/;"	m	class:RefactorExample
+OnFred	.\Chapter-05\modelExample.py	/^    def OnFred(self, event):                                   $/;"	m	class:ModelExample
+OnGetItemAttr	.\Chapter-13\list_report_virtual.py	/^    def OnGetItemAttr(self, item):  return None$/;"	m	class:VirtualListCtrl
+OnGetItemImage	.\Chapter-13\list_report_virtual.py	/^    def OnGetItemImage(self, item): return -1$/;"	m	class:VirtualListCtrl
+OnGetItemText	.\Chapter-13\list_report_virtual.py	/^    def OnGetItemText(self, item, col):$/;"	m	class:VirtualListCtrl
+OnIdle	.\Chapter-06\example1.py	/^    def OnIdle(self, event):$/;"	m	class:SketchWindow
+OnIdle	.\Chapter-07\gauge.py	/^    def OnIdle(self, event):$/;"	m	class:GaugeFrame
+OnInit	.\Chapter-01\bare.py	/^    def OnInit(self):$/;"	m	class:App
+OnInit	.\Chapter-01\hello.py	/^    def OnInit(self):$/;"	m	class:App
+OnInit	.\Chapter-01\python_compare.py	/^    def OnInit(self):$/;"	m	class:MyApp
+OnInit	.\Chapter-01\spare.py	/^    def OnInit(self):$/;"	m	class:App
+OnInit	.\Chapter-02\dialog_scratch.py	/^    def OnInit(self):$/;"	m	class:App
+OnInit	.\Chapter-02\startup.py	/^    def OnInit(self):$/;"	m	class:App
+OnInit	.\Chapter-04\spare.py	/^    def OnInit(self):$/;"	m	class:App
+OnInit	.\Chapter-06\example7.py	/^    def OnInit(self):$/;"	m	class:SketchApp
+OnInit	.\Chapter-13\list_report_etc.py	/^    def OnInit(self):$/;"	m	class:DemoApp
+OnItemActivated	.\Chapter-13\list_report_etc.py	/^    def OnItemActivated(self, evt): $/;"	m	class:DemoFrame
+OnItemCollapsed	.\Chapter-15\tree_misc.py	/^    def OnItemCollapsed(self, evt):$/;"	m	class:TestFrame
+OnItemCollapsed	.\Chapter-15\tree_simple.py	/^    def OnItemCollapsed(self, evt):$/;"	m	class:TestFrame
+OnItemCollapsed	.\Chapter-15\tree_treelist.py	/^    def OnItemCollapsed(self, evt):$/;"	m	class:TestFrame
+OnItemCollapsed	.\Chapter-15\tree_virtual.py	/^    def OnItemCollapsed(self, evt):$/;"	m	class:TestFrame
+OnItemDeselected	.\Chapter-13\list_report_etc.py	/^    def OnItemDeselected(self, evt):$/;"	m	class:DemoFrame
+OnItemExpanded	.\Chapter-15\tree_misc.py	/^    def OnItemExpanded(self, evt):$/;"	m	class:TestFrame
+OnItemExpanded	.\Chapter-15\tree_simple.py	/^    def OnItemExpanded(self, evt):$/;"	m	class:TestFrame
+OnItemExpanded	.\Chapter-15\tree_treelist.py	/^    def OnItemExpanded(self, evt):$/;"	m	class:TestFrame
+OnItemExpanded	.\Chapter-15\tree_virtual.py	/^    def OnItemExpanded(self, evt):$/;"	m	class:TestFrame
+OnItemExpanding	.\Chapter-15\tree_virtual.py	/^    def OnItemExpanding(self, evt):$/;"	m	class:TestFrame
+OnItemSelected	.\Chapter-13\list_report_etc.py	/^    def OnItemSelected(self, evt):$/;"	m	class:DemoFrame
+OnLast	.\Chapter-05\badExample.py	/^    def OnLast(self, event): pass$/;"	m	class:RefactorExample
+OnLast	.\Chapter-05\goodExample.py	/^    def OnLast(self, event): pass$/;"	m	class:RefactorExample
+OnLeaveWindow	.\Chapter-03\mouse_event.py	/^    def OnLeaveWindow(self, event):$/;"	m	class:MouseEventFrame
+OnLeftClick	.\Chapter-03\customEvent.py	/^    def OnLeftClick(self, event):$/;"	m	class:TwoButtonPanel
+OnLeftDown	.\Chapter-06\example1.py	/^    def OnLeftDown(self, event):$/;"	m	class:SketchWindow
+OnLeftDown	.\Chapter-08\shaped_frame_mobile.py	/^    def OnLeftDown(self, evt):$/;"	m	class:ShapedFrame
+OnLeftDown	.\Chapter-18\drop_source.py	/^    def OnLeftDown(self, evt):$/;"	m	class:DragController
+OnLeftUp	.\Chapter-06\example1.py	/^    def OnLeftUp(self, event):$/;"	m	class:SketchWindow
+OnLeftUp	.\Chapter-08\shaped_frame_mobile.py	/^    def OnLeftUp(self, evt):$/;"	m	class:ShapedFrame
+OnMotion	.\Chapter-06\example1.py	/^    def OnMotion(self, event):$/;"	m	class:SketchWindow
+OnMouseDown	.\Chapter-03\double_event_one.py	/^    def OnMouseDown(self, event):$/;"	m	class:DoubleEventFrame
+OnMouseMove	.\Chapter-08\shaped_frame_mobile.py	/^    def OnMouseMove(self, evt):$/;"	m	class:ShapedFrame
+OnMove	.\Chapter-01\sample.py	/^    def OnMove(self, event):$/;"	m	class:MyFrame
+OnNew	.\Chapter-06\example4.py	/^    def OnNew(self, event): pass$/;"	m	class:SketchFrame
+OnNew	.\Chapter-06\example5.py	/^    def OnNew(self, event): pass$/;"	m	class:SketchFrame
+OnNew	.\Chapter-06\example6.py	/^    def OnNew(self, event): pass$/;"	m	class:SketchFrame
+OnNew	.\Chapter-06\example7.py	/^    def OnNew(self, event): pass$/;"	m	class:SketchFrame
+OnNewItemSelected	.\Chapter-10\add_items.py	/^    def OnNewItemSelected(self, event):$/;"	m	class:MyFrame
+OnNewItemSelected	.\Chapter-10\find_item.py	/^    def OnNewItemSelected(self, event):$/;"	m	class:MyFrame
+OnNewWindow	.\Chapter-08\mdi.py	/^    def OnNewWindow(self, evt):$/;"	m	class:MDIFrame
+OnNext	.\Chapter-05\badExample.py	/^    def OnNext(self, event): pass$/;"	m	class:RefactorExample
+OnNext	.\Chapter-05\goodExample.py	/^    def OnNext(self, event): pass$/;"	m	class:RefactorExample
+OnOk	.\Chapter-18\xrcsample.py	/^    def OnOk(self, evt):$/;"	m	class:MyFrame
+OnOpen	.\Chapter-05\badExample.py	/^    def OnOpen(self, event): pass$/;"	m	class:RefactorExample
+OnOpen	.\Chapter-05\goodExample.py	/^    def OnOpen(self, event): pass$/;"	m	class:RefactorExample
+OnOpen	.\Chapter-06\example4.py	/^    def OnOpen(self, event): pass$/;"	m	class:SketchFrame
+OnOpen	.\Chapter-06\example5.py	/^    def OnOpen(self, event): pass$/;"	m	class:SketchFrame
+OnOpen	.\Chapter-06\example6.py	/^    def OnOpen(self, event):$/;"	m	class:SketchFrame
+OnOpen	.\Chapter-06\example7.py	/^    def OnOpen(self, event):$/;"	m	class:SketchFrame
+OnOptions	.\Chapter-05\badExample.py	/^    def OnOptions(self, event): pass$/;"	m	class:RefactorExample
+OnOptions	.\Chapter-05\goodExample.py	/^    def OnOptions(self, event): pass$/;"	m	class:RefactorExample
+OnOtherColor	.\Chapter-06\example6.py	/^    def OnOtherColor(self, event):$/;"	m	class:SketchFrame
+OnOtherColor	.\Chapter-06\example7.py	/^    def OnOtherColor(self, event):$/;"	m	class:SketchFrame
+OnPageSetup	.\Chapter-17\printing.py	/^    def OnPageSetup(self, evt):$/;"	m	class:PrintFrameworkSample
+OnPaint	.\Chapter-06\example1.py	/^    def OnPaint(self, event):$/;"	m	class:SketchWindow
+OnPaint	.\Chapter-08\shaped_frame.py	/^    def OnPaint(self, evt):$/;"	m	class:ShapedFrame
+OnPaint	.\Chapter-08\shaped_frame_mobile.py	/^    def OnPaint(self, evt):$/;"	m	class:ShapedFrame
+OnPaint	.\Chapter-11\blockwindow.py	/^    def OnPaint(self, evt):$/;"	m	class:BlockWindow
+OnPaint	.\Chapter-12\draw_image.py	/^    def OnPaint(self, evt):$/;"	m	class:RandomImagePlacementWindow
+OnPaint	.\Chapter-12\radargraph.py	/^    def OnPaint(self, evt):$/;"	m	class:RadarGraph
+OnPaint	.\Chapter-18\drop_source.py	/^    def OnPaint(self, evt):$/;"	m	class:DragController
+OnPaint	.\Chapter-18\timer.py	/^    def OnPaint(self, evt):$/;"	m	class:ClockWindow
+OnPaste	.\Chapter-05\badExample.py	/^    def OnPaste(self, event): pass$/;"	m	class:RefactorExample
+OnPaste	.\Chapter-05\goodExample.py	/^    def OnPaste(self, event): pass$/;"	m	class:RefactorExample
+OnPaste	.\Chapter-18\customcomposite.py	/^    def OnPaste(self, evt):$/;"	m	class:TestFrame
+OnPlaySound	.\Chapter-18\sound.py	/^    def OnPlaySound(self, evt):$/;"	m	class:MyFrame
+OnPopupItemSelected	.\Chapter-10\popupmenu.py	/^    def OnPopupItemSelected(self, event):$/;"	m	class:MyFrame
+OnPreparePrinting	.\Chapter-17\printing.py	/^    def OnPreparePrinting(self):$/;"	m	class:TextDocPrintout
+OnPrev	.\Chapter-05\badExample.py	/^    def OnPrev(self, event): pass$/;"	m	class:RefactorExample
+OnPrev	.\Chapter-05\goodExample.py	/^    def OnPrev(self, event): pass$/;"	m	class:RefactorExample
+OnPrint	.\Chapter-17\printing.py	/^    def OnPrint(self, evt):$/;"	m	class:PrintFrameworkSample
+OnPrintPage	.\Chapter-17\printing.py	/^    def OnPrintPage(self, page):$/;"	m	class:TextDocPrintout
+OnPrintPreview	.\Chapter-17\printing.py	/^    def OnPrintPreview(self, evt):$/;"	m	class:PrintFrameworkSample
+OnPrintSetup	.\Chapter-17\printing.py	/^    def OnPrintSetup(self, evt):$/;"	m	class:PrintFrameworkSample
+OnQuit	.\Chapter-01\python_compare.py	/^    def OnQuit(self, event):$/;"	m	class:MyFrame
+OnRadio	.\Chapter-07\radio.py	/^    def OnRadio(self, event):$/;"	m	class:RadioButtonFrame
+OnRightClick	.\Chapter-03\customEvent.py	/^    def OnRightClick(self, event):$/;"	m	class:TwoButtonPanel
+OnSashChanged	.\Chapter-08\splitter.py	/^    def OnSashChanged(self, evt):$/;"	m	class:SplitterExampleFrame
+OnSashChanging	.\Chapter-08\splitter.py	/^    def OnSashChanging(self, evt):$/;"	m	class:SplitterExampleFrame
+OnSave	.\Chapter-06\example4.py	/^    def OnSave(self, event): pass$/;"	m	class:SketchFrame
+OnSave	.\Chapter-06\example5.py	/^    def OnSave(self, event): pass$/;"	m	class:SketchFrame
+OnSave	.\Chapter-06\example6.py	/^    def OnSave(self, event):$/;"	m	class:SketchFrame
+OnSave	.\Chapter-06\example7.py	/^    def OnSave(self, event):$/;"	m	class:SketchFrame
+OnSaveAs	.\Chapter-06\example6.py	/^    def OnSaveAs(self, event):$/;"	m	class:SketchFrame
+OnSaveAs	.\Chapter-06\example7.py	/^    def OnSaveAs(self, event):$/;"	m	class:SketchFrame
+OnSelChanged	.\Chapter-15\tree_misc.py	/^    def OnSelChanged(self, evt):$/;"	m	class:TestFrame
+OnSelChanged	.\Chapter-15\tree_simple.py	/^    def OnSelChanged(self, evt):$/;"	m	class:TestFrame
+OnSelChanged	.\Chapter-15\tree_treelist.py	/^    def OnSelChanged(self, evt):$/;"	m	class:TestFrame
+OnSelChanged	.\Chapter-15\tree_virtual.py	/^    def OnSelChanged(self, evt):$/;"	m	class:TestFrame
+OnSelectAll	.\Chapter-13\list_report_etc.py	/^    def OnSelectAll(self, evt):$/;"	m	class:DemoFrame
+OnSelectNone	.\Chapter-13\list_report_etc.py	/^    def OnSelectNone(self, evt):$/;"	m	class:DemoFrame
+OnSetBGColour	.\Chapter-13\list_report_etc.py	/^    def OnSetBGColour(self, evt):$/;"	m	class:DemoFrame
+OnSetColour	.\Chapter-06\example7.py	/^    def OnSetColour(self, event):$/;"	m	class:ControlPanel
+OnSetMin	.\Chapter-08\splitter.py	/^    def OnSetMin(self, evt):$/;"	m	class:SplitterExampleFrame
+OnSetPos	.\Chapter-08\splitter.py	/^    def OnSetPos(self, evt):$/;"	m	class:SplitterExampleFrame
+OnSetTextColour	.\Chapter-13\list_report_etc.py	/^    def OnSetTextColour(self, evt):$/;"	m	class:DemoFrame
+OnSetThickness	.\Chapter-06\example7.py	/^    def OnSetThickness(self, event):$/;"	m	class:ControlPanel
+OnShell	.\Chapter-04\pycrust-foundation.py	/^    def OnShell(self, event):$/;"	m	class:ToolbarFrame
+OnShowHelpContents	.\Chapter-16\html_help.py	/^    def OnShowHelpContents(self, evt):$/;"	m	class:MyHtmlFrame
+OnShowHelpIndex	.\Chapter-16\html_help.py	/^    def OnShowHelpIndex(self, evt):$/;"	m	class:MyHtmlFrame
+OnShowPopup	.\Chapter-10\popupmenu.py	/^    def OnShowPopup(self, event):$/;"	m	class:MyFrame
+OnShowSelected	.\Chapter-13\list_report_etc.py	/^    def OnShowSelected(self, evt):$/;"	m	class:DemoFrame
+OnShowSpecificHelp	.\Chapter-16\html_help.py	/^    def OnShowSpecificHelp(self, evt):$/;"	m	class:MyHtmlFrame
+OnSimple	.\Chapter-10\add_items.py	/^    def OnSimple(self, event):$/;"	m	class:MyFrame
+OnSimple	.\Chapter-10\create_simple_menu.py	/^    def OnSimple(self, event):$/;"	m	class:MyFrame
+OnSimple	.\Chapter-10\disable_item.py	/^    def OnSimple(self, event):$/;"	m	class:MyFrame
+OnSimple	.\Chapter-10\find_item.py	/^    def OnSimple(self, event):$/;"	m	class:MyFrame
+OnSimple	.\Chapter-10\update_ui.py	/^    def OnSimple(self, event):$/;"	m	class:MyFrame
+OnSimple	.\Chapter-10\with_accelerator.py	/^    def OnSimple(self, event):$/;"	m	class:MyFrame
+OnSize	.\Chapter-06\example1.py	/^    def OnSize(self, event):$/;"	m	class:SketchWindow
+OnSize	.\Chapter-12\radargraph.py	/^    def OnSize(self, evt):$/;"	m	class:RadarGraph
+OnSketchMotion	.\Chapter-06\example2.py	/^    def OnSketchMotion(self, event):$/;"	m	class:SketchFrame
+OnSketchMotion	.\Chapter-06\example3.py	/^    def OnSketchMotion(self, event):$/;"	m	class:SketchFrame
+OnSketchMotion	.\Chapter-06\example4.py	/^    def OnSketchMotion(self, event):$/;"	m	class:SketchFrame
+OnSketchMotion	.\Chapter-06\example5.py	/^    def OnSketchMotion(self, event):$/;"	m	class:SketchFrame
+OnSketchMotion	.\Chapter-06\example6.py	/^    def OnSketchMotion(self, event):$/;"	m	class:SketchFrame
+OnSketchMotion	.\Chapter-06\example7.py	/^    def OnSketchMotion(self, event):$/;"	m	class:SketchFrame
+OnSortAscending	.\Chapter-13\list_report_etc.py	/^    def OnSortAscending(self, evt):$/;"	m	class:DemoFrame
+OnSortBySubmitter	.\Chapter-13\list_report_etc.py	/^    def OnSortBySubmitter(self, evt):$/;"	m	class:DemoFrame
+OnSortChildren	.\Chapter-15\tree_misc.py	/^    def OnSortChildren(self, evt):$/;"	m	class:TestFrame
+OnSortDescending	.\Chapter-13\list_report_etc.py	/^    def OnSortDescending(self, evt):$/;"	m	class:DemoFrame
+OnSplitH	.\Chapter-08\splitter.py	/^    def OnSplitH(self, evt):$/;"	m	class:SplitterExampleFrame
+OnSplitV	.\Chapter-08\splitter.py	/^    def OnSplitV(self, evt):$/;"	m	class:SplitterExampleFrame
+OnStartButton	.\Chapter-18\worker_threads.py	/^    def OnStartButton(self, evt):$/;"	m	class:MyFrame
+OnStopButton	.\Chapter-18\worker_threads.py	/^    def OnStopButton(self, evt):$/;"	m	class:MyFrame
+OnTimeout	.\Chapter-12\radargraph.py	/^    def OnTimeout(self, evt):$/;"	m	class:TestFrame
+OnTimer	.\Chapter-18\timer.py	/^    def OnTimer(self, evt):$/;"	m	class:ClockWindow
+OnToggleItem	.\Chapter-10\disable_item.py	/^    def OnToggleItem(self, event):$/;"	m	class:MyFrame
+OnToggleItem	.\Chapter-10\update_ui.py	/^    def OnToggleItem(self, event):$/;"	m	class:MyFrame
+OnTwoClick	.\Chapter-03\customEvent.py	/^    def OnTwoClick(self, event):$/;"	m	class:CustomEventFrame
+OnUnsplit	.\Chapter-08\splitter.py	/^    def OnUnsplit(self, evt):$/;"	m	class:SplitterExampleFrame
+OnUpdate	.\Chapter-05\modelExample.py	/^    def OnUpdate(self, model):$/;"	m	class:ModelExample
+OnUpdateSimple	.\Chapter-10\update_ui.py	/^    def OnUpdateSimple(self, event):$/;"	m	class:MyFrame
+OnWilma	.\Chapter-05\modelExample.py	/^    def OnWilma(self, event):                                  $/;"	m	class:ModelExample
+PolarToCartesian	.\Chapter-12\radargraph.py	/^    def PolarToCartesian(self, radius, angle, cx, cy):$/;"	m	class:RadarGraph
+PrintAllItems	.\Chapter-15\tree_misc.py	/^    def PrintAllItems(self, parent, indent=0):$/;"	m	class:TestFrame
+PrintFrameworkSample	.\Chapter-17\printing.py	/^class PrintFrameworkSample(wx.Frame):$/;"	c
+RadarGraph	.\Chapter-12\radargraph.py	/^class RadarGraph(wx.Window):$/;"	c
+RadioBoxFrame	.\Chapter-07\radio_box.py	/^class RadioBoxFrame(wx.Frame):$/;"	c
+RadioButtonFrame	.\Chapter-07\radio.py	/^class RadioButtonFrame(wx.Frame):$/;"	c
+RandomBackgroundRenderer	.\Chapter-14\grid_renderer.py	/^class RandomBackgroundRenderer(wx.grid.PyGridCellRenderer):$/;"	c
+RandomImagePlacementWindow	.\Chapter-12\draw_image.py	/^class RandomImagePlacementWindow(wx.Window):$/;"	c
+ReadFile	.\Chapter-06\example6.py	/^    def ReadFile(self):$/;"	m	class:SketchFrame
+ReadFile	.\Chapter-06\example7.py	/^    def ReadFile(self):$/;"	m	class:SketchFrame
+RefactorExample	.\Chapter-05\badExample.py	/^class RefactorExample(wx.Frame):$/;"	c
+RefactorExample	.\Chapter-05\goodExample.py	/^class RefactorExample(wx.Frame):$/;"	c
+Reset	.\Chapter-14\grid_editor.py	/^    def Reset(self):$/;"	m	class:UpCaseCellEditor
+SaveFile	.\Chapter-06\example6.py	/^    def SaveFile(self):$/;"	m	class:SketchFrame
+SaveFile	.\Chapter-06\example7.py	/^    def SaveFile(self):$/;"	m	class:SketchFrame
+ScrollbarFrame	.\Chapter-08\scroll_window.py	/^class ScrollbarFrame(wx.Frame):$/;"	c
+SetClickCount	.\Chapter-03\customEvent.py	/^    def SetClickCount(self, count):$/;"	m	class:TwoButtonEvent
+SetColor	.\Chapter-06\example1.py	/^    def SetColor(self, color):$/;"	m	class:SketchWindow
+SetData	.\Chapter-12\radargraph.py	/^    def SetData(self, newData):$/;"	m	class:RadarGraph
+SetLinesData	.\Chapter-06\example1.py	/^    def SetLinesData(self, lines):$/;"	m	class:SketchWindow
+SetSize	.\Chapter-14\grid_editor.py	/^    def SetSize(self, rect):$/;"	m	class:UpCaseCellEditor
+SetThickness	.\Chapter-06\example1.py	/^    def SetThickness(self, num):$/;"	m	class:SketchWindow
+SetValue	.\Chapter-05\generictable.py	/^    def SetValue(self, row, col, value):$/;"	m	class:GenericTable
+SetValue	.\Chapter-05\gridModel.py	/^    def SetValue(self, row, col, value):$/;"	m	class:LineupTable
+SetValue	.\Chapter-05\lineuptable.py	/^    def SetValue(self, row, col, value):$/;"	m	class:LineupTable
+SetValue	.\Chapter-14\grid_table.py	/^    def SetValue(self, row, col, value):$/;"	m	class:TestTable
+SetValue	.\Chapter-14\grid_table_basic.py	/^    def SetValue(self, row, col, value):$/;"	m	class:TestTable
+SetValue	.\Chapter-14\grid_table_header.py	/^    def SetValue(self, row, col, value):$/;"	m	class:TestTable
+SetWindowShape	.\Chapter-08\shaped_frame.py	/^    def SetWindowShape(self, evt=None):$/;"	m	class:ShapedFrame
+SetWindowShape	.\Chapter-08\shaped_frame_mobile.py	/^    def SetWindowShape(self, evt=None):$/;"	m	class:ShapedFrame
+ShapedFrame	.\Chapter-08\shaped_frame.py	/^class ShapedFrame(wx.Frame):$/;"	c
+ShapedFrame	.\Chapter-08\shaped_frame_mobile.py	/^class ShapedFrame(wx.Frame):$/;"	c
+SimpleGrid	.\Chapter-05\gridGeneric.py	/^class SimpleGrid(wx.grid.Grid):$/;"	c
+SimpleGrid	.\Chapter-05\gridModel.py	/^class SimpleGrid(wx.grid.Grid):$/;"	c
+SimpleGrid	.\Chapter-05\gridNoModel.py	/^class SimpleGrid(wx.grid.Grid):$/;"	c
+SimpleName	.\Chapter-05\modelExample.py	/^class SimpleName(abstractmodel.AbstractModel):$/;"	c
+SketchAbout	.\Chapter-06\example7.py	/^class SketchAbout(wx.Dialog):$/;"	c
+SketchApp	.\Chapter-06\example7.py	/^class SketchApp(wx.App):$/;"	c
+SketchFrame	.\Chapter-06\example1.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchFrame	.\Chapter-06\example2.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchFrame	.\Chapter-06\example3.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchFrame	.\Chapter-06\example4.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchFrame	.\Chapter-06\example5.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchFrame	.\Chapter-06\example6.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchFrame	.\Chapter-06\example7.py	/^class SketchFrame(wx.Frame):$/;"	c
+SketchWindow	.\Chapter-06\example1.py	/^class SketchWindow(wx.Window):$/;"	c
+SliderFrame	.\Chapter-07\slider.py	/^class SliderFrame(wx.Frame):$/;"	c
+SpinnerFrame	.\Chapter-07\spinner.py	/^class SpinnerFrame(wx.Frame):$/;"	c
+SplitterExampleFrame	.\Chapter-08\splitter.py	/^class SplitterExampleFrame(wx.Frame):$/;"	c
+StartingKey	.\Chapter-14\grid_editor.py	/^    def StartingKey(self, evt):$/;"	m	class:UpCaseCellEditor
+StaticTextFrame	.\Chapter-07\static_text.py	/^class StaticTextFrame(wx.Frame):$/;"	c
+StopThreads	.\Chapter-18\worker_threads.py	/^    def StopThreads(self):$/;"	m	class:MyFrame
+SubclassDialog	.\Chapter-09\modal_dialog.py	/^class SubclassDialog(wx.Dialog):$/;"	c
+SubclassFrame	.\Chapter-08\frame_subclass.py	/^class SubclassFrame(wx.Frame):$/;"	c
+TestExample	.\Chapter-05\testEventExample.py	/^class TestExample(unittest.TestCase):$/;"	c
+TestExample	.\Chapter-05\testExample.py	/^class TestExample(unittest.TestCase):$/;"	c
+TestFrame	.\Chapter-05\gridGeneric.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-05\gridModel.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-05\gridNoModel.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\basicflexgridsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\bordergridsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\boxsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\gridbagsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\mingridsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\realworld.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\resizeflexgridsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\resizegridsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-11\staticboxsizer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-12\draw_image.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-12\images.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-12\radargraph.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_attr.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_basic.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_editor.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_headers.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_renderer.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_size.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_table.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_table_basic.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-14\grid_table_header.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-15\tree_icons.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-15\tree_misc.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-15\tree_simple.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-15\tree_treelist.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-15\tree_virtual.py	/^class TestFrame(wx.Frame):$/;"	c
+TestFrame	.\Chapter-18\customcomposite.py	/^class TestFrame(wx.Frame):$/;"	c
+TestTable	.\Chapter-14\grid_table.py	/^class TestTable(wx.grid.PyGridTableBase):$/;"	c
+TestTable	.\Chapter-14\grid_table_basic.py	/^class TestTable(wx.grid.PyGridTableBase):$/;"	c
+TestTable	.\Chapter-14\grid_table_header.py	/^class TestTable(wx.grid.PyGridTableBase):$/;"	c
+TextDocPrintout	.\Chapter-17\printing.py	/^class TextDocPrintout(wx.Printout):$/;"	c
+TextFrame	.\Chapter-07\text_ctrl.py	/^class TextFrame(wx.Frame):$/;"	c
+TextFrame	.\Chapter-07\text_ctrl_multiple.py	/^class TextFrame(wx.Frame):$/;"	c
+ThreadFinished	.\Chapter-18\worker_threads.py	/^    def ThreadFinished(self, thread):$/;"	m	class:MyFrame
+TitledPage	.\Chapter-09\wizard.py	/^class TitledPage(wx.wizard.WizardPageSimple):$/;"	c
+ToolbarFrame	.\Chapter-02\toolbar.py	/^class ToolbarFrame(wx.Frame):$/;"	c
+ToolbarFrame	.\Chapter-04\pycrust-foundation.py	/^class ToolbarFrame(wx.Frame):$/;"	c
+TransferFromWindow	.\Chapter-09\validator1.py	/^     def TransferFromWindow(self):$/;"	m	class:NotEmptyValidator
+TransferFromWindow	.\Chapter-09\validator2.py	/^     def TransferFromWindow(self):$/;"	m	class:DataXferValidator
+TransferFromWindow	.\Chapter-09\validator3.py	/^    def TransferFromWindow(self):$/;"	m	class:CharValidator
+TransferToWindow	.\Chapter-09\validator1.py	/^     def TransferToWindow(self):$/;"	m	class:NotEmptyValidator
+TransferToWindow	.\Chapter-09\validator2.py	/^     def TransferToWindow(self):$/;"	m	class:DataXferValidator
+TransferToWindow	.\Chapter-09\validator3.py	/^    def TransferToWindow(self):$/;"	m	class:CharValidator
+TwoButtonEvent	.\Chapter-03\customEvent.py	/^class TwoButtonEvent(wx.PyCommandEvent):$/;"	c
+TwoButtonPanel	.\Chapter-03\customEvent.py	/^class TwoButtonPanel(wx.Panel):$/;"	c
+UpCaseCellEditor	.\Chapter-14\grid_editor.py	/^class UpCaseCellEditor(wx.grid.PyGridCellEditor):$/;"	c
+UpdateCache	.\Chapter-13\list_report_virtual.py	/^    def UpdateCache(self, start, end):$/;"	m	class:DataSource
+UpdateCount	.\Chapter-18\worker_threads.py	/^    def UpdateCount(self):$/;"	m	class:MyFrame
+VBoxSizerFrame	.\Chapter-11\boxsizer.py	/^class VBoxSizerFrame(TestFrame):$/;"	c
+VBoxSizerMultiProportionalFrame	.\Chapter-11\boxsizer.py	/^class VBoxSizerMultiProportionalFrame(TestFrame):$/;"	c
+VBoxSizerStretchableFrame	.\Chapter-11\boxsizer.py	/^class VBoxSizerStretchableFrame(TestFrame):$/;"	c
+Validate	.\Chapter-09\validator1.py	/^     def Validate(self, win):$/;"	m	class:NotEmptyValidator
+Validate	.\Chapter-09\validator2.py	/^     def Validate(self, win):$/;"	m	class:DataXferValidator
+Validate	.\Chapter-09\validator3.py	/^    def Validate(self, win):$/;"	m	class:CharValidator
+VirtualListCtrl	.\Chapter-13\list_report_virtual.py	/^class VirtualListCtrl(wx.ListCtrl):$/;"	c
+WorkerThread	.\Chapter-18\worker_threads.py	/^class WorkerThread(threading.Thread):$/;"	c
+__init__	.\Chapter-01\hello.py	/^    def __init__(self, image, parent=None, id=-1,$/;"	m	class:Frame
+__init__	.\Chapter-01\python_compare.py	/^    def __init__(self, title, pos, size):$/;"	m	class:MyFrame
+__init__	.\Chapter-01\sample.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-02\dialog_scratch.py	/^    def __init__(self, redirect=True, filename=None):$/;"	m	class:App
+__init__	.\Chapter-02\insert.py	/^    def __init__(self, parent, id):$/;"	m	class:InsertFrame
+__init__	.\Chapter-02\startup.py	/^    def __init__(self, parent, id, title):$/;"	m	class:Frame
+__init__	.\Chapter-02\startup.py	/^    def __init__(self, redirect=True, filename=None):$/;"	m	class:App
+__init__	.\Chapter-02\toolbar.py	/^    def __init__(self, parent, id):$/;"	m	class:ToolbarFrame
+__init__	.\Chapter-03\customEvent.py	/^    def __init__(self, evtType, id):$/;"	m	class:TwoButtonEvent
+__init__	.\Chapter-03\customEvent.py	/^    def __init__(self, parent, id):$/;"	m	class:CustomEventFrame
+__init__	.\Chapter-03\customEvent.py	/^    def __init__(self, parent, id=-1, leftText="Left",$/;"	m	class:TwoButtonPanel
+__init__	.\Chapter-03\double_event_one.py	/^    def __init__(self, parent, id):$/;"	m	class:DoubleEventFrame
+__init__	.\Chapter-03\menu_event.py	/^    def __init__(self, parent, id):$/;"	m	class:MenuEventFrame
+__init__	.\Chapter-03\mouse_event.py	/^    def __init__(self, parent, id):$/;"	m	class:MouseEventFrame
+__init__	.\Chapter-04\pycrust-foundation.py	/^    def __init__(self, parent, id):$/;"	m	class:ToolbarFrame
+__init__	.\Chapter-05\abstractmodel.py	/^    def __init__(self):$/;"	m	class:AbstractModel
+__init__	.\Chapter-05\badExample.py	/^    def __init__(self, parent, id):$/;"	m	class:RefactorExample
+__init__	.\Chapter-05\generictable.py	/^    def __init__(self, data, rowLabels=None, colLabels=None):$/;"	m	class:GenericTable
+__init__	.\Chapter-05\goodExample.py	/^    def __init__(self, parent, id):$/;"	m	class:RefactorExample
+__init__	.\Chapter-05\gridGeneric.py	/^    def __init__(self, parent):$/;"	m	class:SimpleGrid
+__init__	.\Chapter-05\gridGeneric.py	/^    def __init__(self, parent):$/;"	m	class:TestFrame
+__init__	.\Chapter-05\gridModel.py	/^    def __init__(self):$/;"	m	class:LineupTable
+__init__	.\Chapter-05\gridModel.py	/^    def __init__(self, parent):$/;"	m	class:SimpleGrid
+__init__	.\Chapter-05\gridModel.py	/^    def __init__(self, parent):$/;"	m	class:TestFrame
+__init__	.\Chapter-05\gridNoModel.py	/^    def __init__(self, parent):$/;"	m	class:SimpleGrid
+__init__	.\Chapter-05\gridNoModel.py	/^    def __init__(self, parent):$/;"	m	class:TestFrame
+__init__	.\Chapter-05\lineuptable.py	/^    def __init__(self, entries):$/;"	m	class:LineupTable
+__init__	.\Chapter-05\lineuptable.py	/^    def __init__(self, pos, first, last):$/;"	m	class:LineupEntry
+__init__	.\Chapter-05\modelExample.py	/^    def __init__(self, first="", last=""):$/;"	m	class:SimpleName
+__init__	.\Chapter-05\modelExample.py	/^    def __init__(self, parent, id):$/;"	m	class:ModelExample
+__init__	.\Chapter-06\example1.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example1.py	/^    def __init__(self, parent, ID):$/;"	m	class:SketchWindow
+__init__	.\Chapter-06\example2.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example3.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example4.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example5.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example6.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example7.py	/^    def __init__(self, parent):$/;"	m	class:SketchAbout
+__init__	.\Chapter-06\example7.py	/^    def __init__(self, parent):$/;"	m	class:SketchFrame
+__init__	.\Chapter-06\example7.py	/^    def __init__(self, parent, ID, sketch):$/;"	m	class:ControlPanel
+__init__	.\Chapter-07\bitmap_button.py	/^    def __init__(self):$/;"	m	class:BitmapButtonFrame
+__init__	.\Chapter-07\button.py	/^    def __init__(self):$/;"	m	class:ButtonFrame
+__init__	.\Chapter-07\checkbox.py	/^    def __init__(self):$/;"	m	class:CheckBoxFrame
+__init__	.\Chapter-07\choice.py	/^    def __init__(self):$/;"	m	class:ChoiceFrame
+__init__	.\Chapter-07\combo_box.py	/^    def __init__(self):$/;"	m	class:ComboBoxFrame
+__init__	.\Chapter-07\gauge.py	/^    def __init__(self):$/;"	m	class:GaugeFrame
+__init__	.\Chapter-07\generic_button.py	/^    def __init__(self):$/;"	m	class:GenericButtonFrame
+__init__	.\Chapter-07\list_box.py	/^    def __init__(self):$/;"	m	class:ListBoxFrame
+__init__	.\Chapter-07\radio.py	/^    def __init__(self):$/;"	m	class:RadioButtonFrame
+__init__	.\Chapter-07\radio_box.py	/^    def __init__(self):$/;"	m	class:RadioBoxFrame
+__init__	.\Chapter-07\slider.py	/^    def __init__(self):$/;"	m	class:SliderFrame
+__init__	.\Chapter-07\spinner.py	/^    def __init__(self):$/;"	m	class:SpinnerFrame
+__init__	.\Chapter-07\static_text.py	/^    def __init__(self):$/;"	m	class:StaticTextFrame
+__init__	.\Chapter-07\text_ctrl.py	/^    def __init__(self):$/;"	m	class:TextFrame
+__init__	.\Chapter-07\text_ctrl_multiple.py	/^    def __init__(self):$/;"	m	class:TextFrame
+__init__	.\Chapter-08\frame_subclass.py	/^    def __init__(self):$/;"	m	class:SubclassFrame
+__init__	.\Chapter-08\help_context.py	/^    def __init__(self):$/;"	m	class:HelpFrame
+__init__	.\Chapter-08\mdi.py	/^    def __init__(self):$/;"	m	class:MDIFrame
+__init__	.\Chapter-08\miniframe.py	/^    def __init__(self):$/;"	m	class:MiniFrame
+__init__	.\Chapter-08\scroll_window.py	/^    def __init__(self):$/;"	m	class:ScrollbarFrame
+__init__	.\Chapter-08\shaped_frame.py	/^    def __init__(self):$/;"	m	class:ShapedFrame
+__init__	.\Chapter-08\shaped_frame_mobile.py	/^    def __init__(self):$/;"	m	class:ShapedFrame
+__init__	.\Chapter-08\splitter.py	/^    def __init__(self, parent, title):$/;"	m	class:SplitterExampleFrame
+__init__	.\Chapter-09\modal_dialog.py	/^    def __init__(self):$/;"	m	class:SubclassDialog
+__init__	.\Chapter-09\validator1.py	/^     def __init__(self):$/;"	m	class:NotEmptyValidator
+__init__	.\Chapter-09\validator1.py	/^    def __init__(self):$/;"	m	class:MyDialog
+__init__	.\Chapter-09\validator2.py	/^     def __init__(self, data, key):$/;"	m	class:DataXferValidator
+__init__	.\Chapter-09\validator2.py	/^    def __init__(self, data):$/;"	m	class:MyDialog
+__init__	.\Chapter-09\validator3.py	/^    def __init__(self):$/;"	m	class:MyDialog
+__init__	.\Chapter-09\validator3.py	/^    def __init__(self, flag):$/;"	m	class:CharValidator
+__init__	.\Chapter-09\wizard.py	/^    def __init__(self, parent, title):$/;"	m	class:TitledPage
+__init__	.\Chapter-10\add_items.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\create_just_menu.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\create_simple_menu.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\disable_item.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\fancy_items.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\find_item.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\popupmenu.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\sub_menu.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\toggle_items.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\update_ui.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-10\with_accelerator.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-11\basicflexgridsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\basicgridsizer.py	/^    def __init__(self):$/;"	m	class:GridSizerFrame
+__init__	.\Chapter-11\blockwindow.py	/^    def __init__(self, parent, ID=-1, label="",$/;"	m	class:BlockWindow
+__init__	.\Chapter-11\bordergridsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\boxsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\gridbagsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\mingridsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\prependgridsizer.py	/^    def __init__(self):$/;"	m	class:GridSizerFrame
+__init__	.\Chapter-11\realworld.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\resizeflexgridsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\resizegridsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-11\staticboxsizer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-12\draw_image.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-12\draw_image.py	/^    def __init__(self, parent, image):$/;"	m	class:RandomImagePlacementWindow
+__init__	.\Chapter-12\images.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-12\radargraph.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-12\radargraph.py	/^    def __init__(self, parent, title, labels):$/;"	m	class:RadarGraph
+__init__	.\Chapter-13\list_icon.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-13\list_list.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-13\list_report.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-13\list_report_colsort.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-13\list_report_etc.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-13\list_report_virtual.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-13\list_report_virtual.py	/^    def __init__(self, parent, dataSource):$/;"	m	class:VirtualListCtrl
+__init__	.\Chapter-13\list_smicon.py	/^    def __init__(self):$/;"	m	class:DemoFrame
+__init__	.\Chapter-14\grid_attr.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_basic.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_editor.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_editor.py	/^    def __init__(self):$/;"	m	class:UpCaseCellEditor
+__init__	.\Chapter-14\grid_headers.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_renderer.py	/^    def __init__(self):$/;"	m	class:RandomBackgroundRenderer
+__init__	.\Chapter-14\grid_renderer.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_size.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_table.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_table.py	/^    def __init__(self):$/;"	m	class:TestTable
+__init__	.\Chapter-14\grid_table_basic.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_table_basic.py	/^    def __init__(self):$/;"	m	class:TestTable
+__init__	.\Chapter-14\grid_table_header.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-14\grid_table_header.py	/^    def __init__(self):$/;"	m	class:TestTable
+__init__	.\Chapter-15\tree_icons.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-15\tree_misc.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-15\tree_simple.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-15\tree_treelist.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-15\tree_virtual.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-16\html_help.py	/^    def __init__(self, parent, title):$/;"	m	class:MyHtmlFrame
+__init__	.\Chapter-16\html_tag.py	/^    def __init__(self):$/;"	m	class:BlueTagHandler
+__init__	.\Chapter-16\html_tag.py	/^    def __init__(self, parent, title):$/;"	m	class:MyHtmlFrame
+__init__	.\Chapter-16\html_window.py	/^    def __init__(self, parent, title):$/;"	m	class:MyHtmlFrame
+__init__	.\Chapter-16\html_window_loadpage.py	/^    def __init__(self, parent, title):$/;"	m	class:MyHtmlFrame
+__init__	.\Chapter-16\html_window_related.py	/^    def __init__(self, parent, title):$/;"	m	class:MyHtmlFrame
+__init__	.\Chapter-17\printing.py	/^    def __init__(self):$/;"	m	class:PrintFrameworkSample
+__init__	.\Chapter-17\printing.py	/^    def __init__(self, text, title, margins):$/;"	m	class:TextDocPrintout
+__init__	.\Chapter-18\clipboard.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-18\customcomposite.py	/^    def __init__(self):$/;"	m	class:TestFrame
+__init__	.\Chapter-18\drop_source.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-18\drop_source.py	/^    def __init__(self, parent, source, size=(25,25)):$/;"	m	class:DragController
+__init__	.\Chapter-18\drop_target.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-18\drop_target.py	/^    def __init__(self, window):$/;"	m	class:MyFileDropTarget
+__init__	.\Chapter-18\sound.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-18\timer.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-18\timer.py	/^    def __init__(self, parent):$/;"	m	class:ClockWindow
+__init__	.\Chapter-18\worker_threads.py	/^    def __init__(self):$/;"	m	class:MyFrame
+__init__	.\Chapter-18\worker_threads.py	/^    def __init__(self, threadNum, window):$/;"	m	class:WorkerThread
+__init__	.\Chapter-18\xrcsample.py	/^    def __init__(self):$/;"	m	class:MyFrame
+_addBook	.\Chapter-16\html_help.py	/^        def _addBook(filename):$/;"	f	function:MyHtmlFrame.InitHelp
+addListener	.\Chapter-05\abstractmodel.py	/^    def addListener(self, listenerFunc):$/;"	m	class:AbstractModel
+aultTest	.\Chapter-05\testEventExample.py	/^    unittest.main(defaultTest='suite')$/;"	f	function:suite
+aultTest	.\Chapter-05\testExample.py	/^    unittest.main(defaultTest='suite')$/;"	f	function:suite
+buildOneButton	.\Chapter-05\goodExample.py	/^    def buildOneButton(self, parent, label, handler, pos=(0,0)):$/;"	m	class:RefactorExample
+buildOneButton	.\Chapter-05\modelExample.py	/^    def buildOneButton(self, parent, label, handler, pos=(0,0)):$/;"	m	class:ModelExample
+buttonData	.\Chapter-05\goodExample.py	/^    def buttonData(self):$/;"	m	class:RefactorExample
+buttonData	.\Chapter-05\modelExample.py	/^    def buttonData(self):$/;"	m	class:ModelExample
+compare_func	.\Chapter-13\list_report_etc.py	/^        def compare_func(row1, row2):$/;"	f	function:DemoFrame.OnSortBySubmitter
+createButtonBar	.\Chapter-05\goodExample.py	/^    def createButtonBar(self, panel, yPos = 0):$/;"	m	class:RefactorExample
+createButtonBar	.\Chapter-05\modelExample.py	/^    def createButtonBar(self, panel, yPos = 0):$/;"	m	class:ModelExample
+createCaptionedText	.\Chapter-05\goodExample.py	/^    def createCaptionedText(self, panel, label, pos):$/;"	m	class:RefactorExample
+createCaptionedText	.\Chapter-05\modelExample.py	/^    def createCaptionedText(self, panel, label, pos):$/;"	m	class:ModelExample
+createColorGrid	.\Chapter-06\example7.py	/^    def createColorGrid(self, parent, buttonSize):$/;"	m	class:ControlPanel
+createColorTool	.\Chapter-06\example5.py	/^    def createColorTool(self, toolbar, color):$/;"	m	class:SketchFrame
+createColorTool	.\Chapter-06\example6.py	/^    def createColorTool(self, toolbar, color):$/;"	m	class:SketchFrame
+createColorTool	.\Chapter-06\example7.py	/^    def createColorTool(self, toolbar, color):$/;"	m	class:SketchFrame
+createMenu	.\Chapter-05\goodExample.py	/^    def createMenu(self, menuData):$/;"	m	class:RefactorExample
+createMenu	.\Chapter-06\example4.py	/^    def createMenu(self, menuData):$/;"	m	class:SketchFrame
+createMenu	.\Chapter-06\example5.py	/^    def createMenu(self, menuData):$/;"	m	class:SketchFrame
+createMenu	.\Chapter-06\example6.py	/^    def createMenu(self, menuData):$/;"	m	class:SketchFrame
+createMenu	.\Chapter-06\example7.py	/^    def createMenu(self, menuData):$/;"	m	class:SketchFrame
+createMenuBar	.\Chapter-05\goodExample.py	/^    def createMenuBar(self):$/;"	m	class:RefactorExample
+createMenuBar	.\Chapter-06\example4.py	/^    def createMenuBar(self):$/;"	m	class:SketchFrame
+createMenuBar	.\Chapter-06\example5.py	/^    def createMenuBar(self):$/;"	m	class:SketchFrame
+createMenuBar	.\Chapter-06\example6.py	/^    def createMenuBar(self):$/;"	m	class:SketchFrame
+createMenuBar	.\Chapter-06\example7.py	/^    def createMenuBar(self):$/;"	m	class:SketchFrame
+createMenuItem	.\Chapter-06\example4.py	/^    def createMenuItem(self, menu, label, status, handler,$/;"	m	class:SketchFrame
+createMenuItem	.\Chapter-06\example5.py	/^    def createMenuItem(self, menu, label, status, handler, kind=wx.ITEM_NORMAL):$/;"	m	class:SketchFrame
+createMenuItem	.\Chapter-06\example6.py	/^    def createMenuItem(self, menu, label, status, handler, kind=wx.ITEM_NORMAL):$/;"	m	class:SketchFrame
+createMenuItem	.\Chapter-06\example7.py	/^    def createMenuItem(self, menu, label, status, handler, kind=wx.ITEM_NORMAL):$/;"	m	class:SketchFrame
+createPanel	.\Chapter-06\example7.py	/^    def createPanel(self):$/;"	m	class:SketchFrame
+createSimpleTool	.\Chapter-06\example5.py	/^    def createSimpleTool(self, toolbar, label, filename, help, handler):$/;"	m	class:SketchFrame
+createSimpleTool	.\Chapter-06\example6.py	/^    def createSimpleTool(self, toolbar, label, filename, help, handler):$/;"	m	class:SketchFrame
+createSimpleTool	.\Chapter-06\example7.py	/^    def createSimpleTool(self, toolbar, label, filename, help, handler):$/;"	m	class:SketchFrame
+createTextFields	.\Chapter-05\goodExample.py	/^    def createTextFields(self, panel):$/;"	m	class:RefactorExample
+createTextFields	.\Chapter-05\modelExample.py	/^    def createTextFields(self, panel):$/;"	m	class:ModelExample
+createThicknessGrid	.\Chapter-06\example7.py	/^    def createThicknessGrid(self, buttonSize):$/;"	m	class:ControlPanel
+createToolBar	.\Chapter-06\example5.py	/^    def createToolBar(self):$/;"	m	class:SketchFrame
+createToolBar	.\Chapter-06\example6.py	/^    def createToolBar(self):$/;"	m	class:SketchFrame
+createToolBar	.\Chapter-06\example7.py	/^    def createToolBar(self):$/;"	m	class:SketchFrame
+drawMotion	.\Chapter-06\example1.py	/^    def drawMotion(self, dc, event):$/;"	m	class:SketchWindow
+getNewBitmap	.\Chapter-02\images.py	/^def getNewBitmap():$/;"	f
+getNewBitmap	.\Chapter-04\images.py	/^def getNewBitmap():$/;"	f
+getNewData	.\Chapter-02\images.py	/^def getNewData():$/;"	f
+getNewData	.\Chapter-04\images.py	/^def getNewData():$/;"	f
+getNewImage	.\Chapter-02\images.py	/^def getNewImage():$/;"	f
+getNewImage	.\Chapter-04\images.py	/^def getNewImage():$/;"	f
+getVippiBitmap	.\Chapter-08\images.py	/^def getVippiBitmap():$/;"	f
+getVippiData	.\Chapter-08\images.py	/^def getVippiData():$/;"	f
+getVippiImage	.\Chapter-08\images.py	/^def getVippiImage():$/;"	f
+initStatusBar	.\Chapter-06\example4.py	/^    def initStatusBar(self):$/;"	m	class:SketchFrame
+initStatusBar	.\Chapter-06\example5.py	/^    def initStatusBar(self):$/;"	m	class:SketchFrame
+initStatusBar	.\Chapter-06\example6.py	/^    def initStatusBar(self):$/;"	m	class:SketchFrame
+initStatusBar	.\Chapter-06\example7.py	/^    def initStatusBar(self):$/;"	m	class:SketchFrame
+layout	.\Chapter-06\example7.py	/^    def layout(self, colorGrid, thicknessGrid):$/;"	m	class:ControlPanel
+main	.\Chapter-01\hello.py	/^def main():$/;"	f
+main	.\Chapter-04\PyWrap.py	/^def main(modulename=None):$/;"	f
+menuData	.\Chapter-05\goodExample.py	/^    def menuData(self):$/;"	m	class:RefactorExample
+menuData	.\Chapter-06\example4.py	/^    def menuData(self):$/;"	m	class:SketchFrame
+menuData	.\Chapter-06\example5.py	/^    def menuData(self):$/;"	m	class:SketchFrame
+menuData	.\Chapter-06\example6.py	/^    def menuData(self):$/;"	m	class:SketchFrame
+menuData	.\Chapter-06\example7.py	/^    def menuData(self):$/;"	m	class:SketchFrame
+removeListener	.\Chapter-05\abstractmodel.py	/^    def removeListener(self, listenerFunc):$/;"	m	class:AbstractModel
+run	.\Chapter-18\worker_threads.py	/^    def run(self):$/;"	m	class:WorkerThread
+set	.\Chapter-05\modelExample.py	/^    def set(self, first, last):$/;"	m	class:SimpleName
+setUp	.\Chapter-05\testEventExample.py	/^    def setUp(self):$/;"	m	class:TestExample
+setUp	.\Chapter-05\testExample.py	/^    def setUp(self):$/;"	m	class:TestExample
+stop	.\Chapter-18\worker_threads.py	/^    def stop(self):$/;"	m	class:WorkerThread
+suite	.\Chapter-05\testEventExample.py	/^def suite():$/;"	f
+suite	.\Chapter-05\testExample.py	/^def suite():$/;"	f
+tearDown	.\Chapter-05\testEventExample.py	/^    def tearDown(self):$/;"	m	class:TestExample
+tearDown	.\Chapter-05\testExample.py	/^    def tearDown(self):$/;"	m	class:TestExample
+testEvent	.\Chapter-05\testEventExample.py	/^    def testEvent(self):$/;"	m	class:TestExample
+testModel	.\Chapter-05\testEventExample.py	/^    def testModel(self):$/;"	m	class:TestExample
+testModel	.\Chapter-05\testExample.py	/^    def testModel(self):$/;"	m	class:TestExample
+textFieldData	.\Chapter-05\goodExample.py	/^    def textFieldData(self):$/;"	m	class:RefactorExample
+textFieldData	.\Chapter-05\modelExample.py	/^    def textFieldData(self):$/;"	m	class:ModelExample
+toolbarColorData	.\Chapter-06\example5.py	/^    def toolbarColorData(self):$/;"	m	class:SketchFrame
+toolbarColorData	.\Chapter-06\example6.py	/^    def toolbarColorData(self):$/;"	m	class:SketchFrame
+toolbarColorData	.\Chapter-06\example7.py	/^    def toolbarColorData(self):$/;"	m	class:SketchFrame
+toolbarData	.\Chapter-06\example5.py	/^    def toolbarData(self):$/;"	m	class:SketchFrame
+toolbarData	.\Chapter-06\example6.py	/^    def toolbarData(self):$/;"	m	class:SketchFrame
+toolbarData	.\Chapter-06\example7.py	/^    def toolbarData(self):$/;"	m	class:SketchFrame
+update	.\Chapter-05\abstractmodel.py	/^    def update(self):$/;"	m	class:AbstractModel
+wrap	.\Chapter-04\PyWrap.py	/^def wrap(app):$/;"	f

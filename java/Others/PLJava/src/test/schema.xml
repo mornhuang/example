@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<!-- <!DOCTYPE map SYSTEM "persistence_layer_config.dtd"> -->
+
+<map>
+	<class>
+		<class-name>pl.test.Person</class-name>
+		<table-name>person</table-name>
+		<database-name>Database</database-name>
+
+		<attribute>
+			<attribute-name>id</attribute-name>
+			<column-name>id</column-name>
+			<key>primary</key>
+			<attribute-id-generator>
+				<id-generator-name>idGenerator</id-generator-name>
+			</attribute-id-generator>
+			<xml-type>attribute</xml-type>
+			<xml-converter>
+				<class-name>pl.test.DecimalConverter</class-name>
+				<parameter>
+					<parameter-name>format</parameter-name>
+					<parameter-value>0.00</parameter-value>
+				</parameter>
+			</xml-converter>
+		</attribute>
+		<attribute>
+			<attribute-name>name</attribute-name>
+			<column-name>name</column-name>
+		</attribute>
+		<attribute>
+			<attribute-name>timestamp</attribute-name>
+			<column-name>last_update_time</column-name>
+			<timestamp>true</timestamp>
+		</attribute>
+	</class>
+
+	<class>
+		<class-name>pl.test.Manager</class-name>
+		<table-name>manager</table-name>
+		<database-name>Database</database-name>
+
+		<attribute>
+			<attribute-name>id</attribute-name>
+			<column-name>id</column-name>
+			<key>foreign</key>
+			<reference>id</reference>
+		</attribute>
+		<attribute>
+			<attribute-name>department</attribute-name>
+			<column-name>department</column-name>
+		</attribute>
+	</class>
+
+	<class>
+		<class-name>pl.test.Employee</class-name>
+		<xml-name>employee</xml-name>
+		<table-name>employee</table-name>
+		<database-name>Database</database-name>
+
+		<attribute>
+			<attribute-name>id</attribute-name>
+			<column-name>id</column-name>
+			<key>foreign</key>
+			<reference>id</reference>
+		</attribute>
+		<attribute>
+			<attribute-name>positionId</attribute-name>
+			<column-name>position_id</column-name>
+		</attribute>
+		<attribute>
+			<attribute-name>position</attribute-name>
+		</attribute>
+		<attribute>
+			<attribute-name>tasks</attribute-name>
+		</attribute>
+	</class>
+
+	<class>
+		<class-name>pl.test.Task</class-name>
+		<table-name>task</table-name>
+		<database-name>Database</database-name>
+
+		<attribute>
+			<attribute-name>id</attribute-name>
+			<column-name>id</column-name>
+			<key>primary</key>
+			<attribute-id-generator>
+				<id-generator-name>idGenerator</id-generator-name>
+			</attribute-id-generator>
+		</attribute>
+		<attribute>
+			<attribute-name>employeeId</attribute-name>
+			<column-name>employee_id</column-name>
+		</attribute>
+		<attribute>
+			<attribute-name>name</attribute-name>
+			<column-name>name</column-name>
+		</attribute>
+	</class>
+
+	<class>
+		<class-name>pl.test.Position</class-name>
+		<table-name>position</table-name>
+		<database-name>Database</database-name>
+
+		<attribute>
+			<attribute-name>id</attribute-name>
+			<column-name>id</column-name>
+			<key>primary</key>
+			<attribute-id-generator>
+				<id-generator-name>idGenerator</id-generator-name>
+			</attribute-id-generator>
+		</attribute>
+		<attribute>
+			<attribute-name>name</attribute-name>
+			<column-name>name</column-name>
+			<proxy>false</proxy>
+		</attribute>
+	</class>
+
+	<association>
+		<from-class>pl.test.Employee</from-class>
+		<to-class>pl.test.Task</to-class>
+		<cardinality>oneToMany</cardinality>
+		<target>tasks</target>
+		<retrieve-automatic>true</retrieve-automatic>
+		<save-automatic>true</save-automatic>
+		<delete-automatic>true</delete-automatic>
+		<inverse>true</inverse>
+
+		<order-attribute>
+			<name>name</name>
+			<direction>ascend</direction>
+		</order-attribute>
+
+		<entry>
+			<from-attribute>employeeId</from-attribute>
+			<to-attribute>id</to-attribute>
+		</entry>
+	</association>
+
+	<association>
+		<from-class>pl.test.Employee</from-class>
+		<to-class>pl.test.Position</to-class>
+		<cardinality>oneToOne</cardinality>
+		<target>position</target>
+		<retrieve-automatic>true</retrieve-automatic>
+		<save-automatic>true</save-automatic>
+
+		<order-attribute>
+			<name>name</name>
+			<direction>ascend</direction>
+		</order-attribute>
+
+		<entry>
+			<from-attribute>positionId</from-attribute>
+			<to-attribute>id</to-attribute>
+		</entry>
+	</association>
+</map>

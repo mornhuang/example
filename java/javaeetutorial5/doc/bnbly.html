@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>What Is a Session Bean? - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level3"><a href="bnblt.html">What Is an Enterprise Bean?</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblu">Benefits of Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblv">When to Use Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblw">Types of Enterprise Beans</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">What Is a Session Bean?</a></p>
+<p class="toc level4"><a href="#bnblz">State Management Modes</a></p>
+<p class="toc level5"><a href="#bnbma">Stateful Session Beans</a></p>
+<p class="toc level5"><a href="#bnbmb">Stateless Session Beans</a></p>
+<p class="toc level4 tocsp"><a href="#bnbmc">When to Use Session Beans</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbmd.html">What Is a Message-Driven Bean?</a></p>
+<p class="toc level4"><a href="bnbmd.html#bnbme">What Makes Message-Driven Beans Different from Session Beans?</a></p>
+<p class="toc level4"><a href="bnbmd.html#bnbmf">When to Use Message-Driven Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbmg.html">Defining Client Access with Interfaces</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmh">Remote Clients</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmj">Local Clients</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmk">Deciding on Remote or Local Access</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbml">Web Service Clients</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmm">Method Parameters and Access</a></p>
+<p class="toc level5"><a href="bnbmg.html#bnbmn">Isolation</a></p>
+<p class="toc level5"><a href="bnbmg.html#bnbmo">Granularity of Accessed Data</a></p>
+<p class="toc level3 tocsp"><a href="bnbmp.html">The Contents of an Enterprise Bean</a></p>
+<p class="toc level3"><a href="bnbmr.html">Naming Conventions for Enterprise Beans</a></p>
+<p class="toc level3"><a href="bnbmt.html">The Life Cycles of Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnbmt.html#bnbmu">The Life Cycle of a Stateful Session Bean</a></p>
+<p class="toc level4"><a href="bnbmt.html#bnbmw">The Life Cycle of a Stateless Session Bean</a></p>
+<p class="toc level4"><a href="bnbmt.html#bnbmy">The Life Cycle of a Message-Driven Bean</a></p>
+<p class="toc level3 tocsp"><a href="bnbna.html">Further Information about Enterprise Beans</a></p>
+<p class="toc level2 tocsp"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnblt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbmd.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbly"></a><h3>What Is a Session Bean?</h3>
+<a name="indexterm-2013"></a><p><a name="indexterm-2014"></a><a name="indexterm-2015"></a>A <b>session bean</b> represents a single client inside the Application Server. To access an
+application that is deployed on the server, the client invokes the session bean&rsquo;s
+methods. The session bean performs work for its client, shielding the client from
+complexity by executing business tasks inside the server.</p><p><a name="indexterm-2016"></a><a name="indexterm-2017"></a><a name="indexterm-2018"></a>As its name suggests, a session bean is similar to an interactive session.
+A session bean is not shared; it can have only one client, in
+the same way that an interactive session can have only one user. Like
+an interactive session, a session bean is not persistent. (That is, its data
+is not saved to a database.) When the client terminates, its session bean
+appears to terminate and is no longer associated with the client.</p><p>For code samples, see <a href="bnboc.html">Chapter&nbsp;22, Session Bean Examples</a>.</p>
+
+<a name="bnblz"></a><h4>State Management Modes</h4>
+<p>There are two types of session beans: stateful and stateless.</p>
+
+<a name="bnbma"></a><h5>Stateful Session Beans</h5>
+<p><a name="indexterm-2019"></a>The state of an object consists of the values of its instance variables.
+In a <b>stateful</b> session bean, the instance variables represent the state of a
+unique client-bean session. Because the client interacts (&ldquo;talks&rdquo;) with its bean, this state
+is often called the<b> conversational state</b>.</p><p>The state is retained for the duration of the client-bean session. If the
+client removes the bean or terminates, the session ends and the state disappears.
+This transient nature of the state is not a problem, however, because when
+the conversation between the client and the bean ends there is no need
+to retain the state.</p>
+
+<a name="bnbmb"></a><h5>Stateless Session Beans</h5>
+<p><a name="indexterm-2020"></a>A <b>stateless</b> session bean does not maintain a conversational state with the client.
+When a client invokes the methods of a stateless bean, the bean&rsquo;s instance
+variables may contain a state specific to that client, but only for the
+duration of the invocation. When the method is finished, the client-specific state should
+not be retained. Clients may, however, change the state of instance variables in
+pooled stateless beans, and this state is held over to the next invocation
+of the pooled stateless bean. Except during method invocation, all instances of a
+stateless bean are equivalent, allowing the EJB container to assign an instance to
+any client. That is, the state of a stateless session bean should apply
+accross all clients.</p><p>Because stateless session beans can support multiple clients, they can offer better scalability
+for applications that require large numbers of clients. Typically, an application requires fewer
+stateless session beans than stateful session beans to support the same number of
+clients.</p><p>A stateless session bean can implement a web service, but other types of
+enterprise beans cannot.</p>
+
+<a name="bnbmc"></a><h4>When to Use Session Beans</h4>
+<p>In general, you should use a session bean if the following circumstances hold:</p>
+<ul><li><p>At any given time, only one client has access to the bean instance.</p></li>
+<li><p>The state of the bean is not persistent, existing only for a short period (perhaps a few hours).</p></li>
+<li><p>The bean implements a web service.</p></li></ul>
+<p><a name="indexterm-2021"></a>Stateful session beans are appropriate if any of the following conditions are true:</p>
+<ul><li><p>The bean&rsquo;s state represents the interaction between the bean and a specific client.</p></li>
+<li><p>The bean needs to hold information about the client across method invocations.</p></li>
+<li><p>The bean mediates between the client and the other components of the application, presenting a simplified view to the client.</p></li>
+<li><p><a name="indexterm-2022"></a>Behind the scenes, the bean manages the work flow of several enterprise beans. For an example, see the <tt>AccountControllerBean</tt> session bean in <a href="bnclz.html">Chapter&nbsp;37, The Duke's Bank Application</a>.</p></li></ul>
+<p><a name="indexterm-2023"></a>To improve performance, you might choose a stateless session bean if it has
+any of these traits:</p>
+<ul><li><p>The bean&rsquo;s state has no data for a specific client.</p></li>
+<li><p>In a single method invocation, the bean performs a generic task for all clients. For example, you might use a stateless session bean to send an email that confirms an online order.</p></li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bnblt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbmd.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

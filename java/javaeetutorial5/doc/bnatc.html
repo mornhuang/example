@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Using the Standard Validators - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level3"><a href="bnara.html">The Example JavaServer Faces Application</a></p>
+<p class="toc level3"><a href="bnarb.html">Setting Up a Page</a></p>
+<p class="toc level3"><a href="bnarc.html">Using the Core Tags</a></p>
+<p class="toc level3"><a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a></p>
+<p class="toc level4"><a href="bnarf.html#bnarg">UI Component Tag Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarh">The <tt>id</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarj">The <tt>rendered</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnark">The <tt>style</tt> and <tt>styleClass</tt> Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarl">The <tt>value</tt> and <tt>binding</tt> Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarm">Adding a Form Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnaro">Using Text Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarr">Rendering a Text Field with the <tt>inputText</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnars">Rendering a Label with the <tt>outputLabel</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnart">Rendering a Hyperlink with the <tt>outputLink</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnaru">Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarv">Rendering a Password Field with the <tt>inputSecret</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarw">Using Command Components for Performing Actions and Navigation</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarx">Rendering a Button with the <tt>commandButton</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnary">Rendering a Hyperlink with the <tt>commandLink</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarz">Using Data-Bound Table Components</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasb">Adding Graphics and Images with the <tt>graphicImage</tt> Tag</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasc">Laying Out Components with the <tt>UIPanel</tt> Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnase">Rendering Components for Selecting One Value</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasg">Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a></p>
+<p class="toc level4"><a href="bnarf.html#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasm">Using the <tt>selectItems</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasn">Using the <tt>selectItem</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnasp.html">Using Localized Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasq">Loading a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasr">Referencing Localized Static Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnast.html">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="bnast.html#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="bnast.html#bnasx">Using <tt>NumberConverter</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnasz.html">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="#bnatf">Using the <tt>LongRangeValidator</tt></a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a></p>
+<p class="toc level4"><a href="bnatg.html#bnati">Binding a Component Value to a Property</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatj">Binding a Component Value to an Implicit Object</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a></p>
+<p class="toc level3 tocsp"><a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a></p>
+<p class="toc level3"><a href="bnatn.html">Referencing a Backing Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a></p>
+<p class="toc level3 tocsp"><a href="bnatt.html">Using Custom Objects</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatu">Using a Custom Converter</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatv">Using a Custom Validator</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatw">Using a Custom Component</a></p>
+<p class="toc level2 tocsp"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnasz.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnatg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnatc"></a><h3>Using the Standard Validators</h3>
+<p><a name="indexterm-1172"></a>JavaServer Faces technology provides a set of standard classes and associated tags that
+page authors and application developers can use to validate a component&rsquo;s data. <a href="#bnatd">Table&nbsp;11-7</a>
+lists all the standard validator classes and the tags that allow you to
+use the validators from the page.</p><a name="bnatd"></a><h6>Table&nbsp;11-7 The Validator Classes</h6><a name="indexterm-1173"></a><table><col width="23%"><col width="24%"><col width="52%"><tr><th align="left" valign="top" scope="column"><p>Validator Class</p></th>
+<th align="left" valign="top" scope="column"><p>Tag</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1174"></a><tt>DoubleRangeValidator</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-1175"></a><a name="indexterm-1176"></a><tt>validateDoubleRange</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Checks whether the local value of
+a component is within a certain range. The value must be floating-point or
+convertible to floating-point.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1177"></a><tt>LengthValidator</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-1178"></a><a name="indexterm-1179"></a><tt>validateLength</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Checks whether the length of a component&rsquo;s local value is
+within a certain range. The value must be a <tt>java.lang.String</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-1180"></a><tt>LongRangeValidator</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-1181"></a><a name="indexterm-1182"></a><tt>validateLongRange</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Checks whether the local
+value of a component is within a certain range. The value must be
+any numeric type or <tt>String</tt> that can be converted to a <tt>long</tt>.</p></td>
+</tr>
+</table><p><a name="indexterm-1183"></a>All these validator classes implement the <tt>Validator</tt> interface. Component writers and application developers
+can also implement this interface to define their own set of constraints for
+a component&rsquo;s value.</p><p>Similarly to the standard converters, each of these validators has one or more
+standard error messages associated with it. If you have registered one of these
+validators onto a component on your page, and the validator is not able
+to validate the component&rsquo;s value, the validator&rsquo;s error message will display on the
+page. For example, the error message that displays when the component&rsquo;s value exceeds
+the maximum value allowed by <tt>LongRangeValidator</tt> is the following:</p><pre>{1}: Validation Error: Value is greater than allowable maximum of "{0}"</pre><p>In this case the <tt>{1}</tt> substitution parameter is replaced by the component&rsquo;s label
+or ID, and the <tt>{0}</tt> substitution parameter is replaced with the maximum value
+allowed by the validator.</p><p>See section 2.5.4 of the JavaServer Faces specification for the complete list of
+error messages. See <a href="bnarf.html#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a> for information on how to display validation error messages
+on the page when validation fails.</p>
+
+<a name="bnate"></a><h4>Validating a Component&rsquo;s Value</h4>
+<p>In order to validate a component&rsquo;s value using a particular validator, you need
+to register the validator on the component. You have three ways to do
+this:</p>
+<ul><li><p>Nest the validator&rsquo;s corresponding tag (shown in <a href="#bnatd">Table&nbsp;11-7</a>) inside the component&rsquo;s tag. <a href="#bnatf">Using the <tt>LongRangeValidator</tt></a> describes how to use the <tt>validateLongRange</tt> tag. You can use the other standard tags in the same way.</p></li>
+<li><p>Refer to a method that performs the validation from the component tag&rsquo;s <tt>validator</tt> attribute.</p></li>
+<li><p>Nest a <tt>validator</tt> tag inside the component tag and use either the validator tag&rsquo;s <tt>validatorId</tt> attribute or its <tt>binding</tt> attribute to refer to the validator.</p></li></ul>
+<p>See <a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a> for more information on using the <tt>validator</tt> attribute.</p><p>The <tt>validatorId</tt> attribute works similarly to the <tt>converterId</tt> attribute of the <tt>converter</tt>
+tag, as described in <a href="bnast.html#bnasu">Converting a Component's Value</a>. See <a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a> for more information on using the <tt>binding</tt>
+attribute of the <tt>validator</tt> tag.</p><p>Keep in mind that validation can be performed only on components that implement
+<tt>EditableValueHolder</tt> because these components accept values that can be validated.</p>
+
+<a name="bnatf"></a><h4>Using the <tt>LongRangeValidator</tt></h4>
+<p><a name="indexterm-1184"></a><a name="indexterm-1185"></a><a name="indexterm-1186"></a>The Duke&rsquo;s Bookstore application uses a <tt>validateLongRange</tt> tag on the <tt>quantity</tt> input field of
+the <tt>bookshowcart.jsp</tt> page:</p><pre>&lt;h:inputText id="quantity" size="4"
+     value=
+"#{item.quantity}
+" >
+    &lt;f:validateLongRange minimum="1"/>
+&lt;/h:inputText>
+&lt;h:message for="quantity"/></pre><p>This tag requires that the user enter a number that is at
+least 1. The <tt>size</tt> attribute specifies that the number can have no
+more than four digits. The <tt>validateLongRange</tt> tag also has a <tt>maximum</tt> attribute, with which
+you can set a maximum value of the input.</p><p>The attributes of all the standard validator tags accept value expressions. This means
+that the attributes can reference backing bean properties rather than specify literal values.
+For example, the <tt>validateLongRange</tt> tag in the preceding example can reference a backing
+bean property called <tt>minimum</tt> to get the minimum value acceptable to the
+validator implementation:</p><pre>&lt;f:validateLongRange minimum="#{ShowCartBean.minimum}" /></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnasz.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnatg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>hello2</display-name>
+
+  <servlet>
+
+    <display-name>GreetingServlet</display-name>
+
+    <servlet-name>GreetingServlet</servlet-name>
+
+    <servlet-class>servlets.GreetingServlet</servlet-class>
+
+  </servlet>
+
+  <servlet>
+
+    <display-name>ResponseServlet</display-name>
+
+    <servlet-name>ResponseServlet</servlet-name>
+
+    <servlet-class>servlets.ResponseServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+
+    <servlet-name>GreetingServlet</servlet-name>
+
+    <url-pattern>/greeting</url-pattern>
+
+  </servlet-mapping>
+
+  <servlet-mapping>
+
+    <servlet-name>ResponseServlet</servlet-name>
+
+    <url-pattern>/response</url-pattern>
+
+  </servlet-mapping>
+
+</web-app>

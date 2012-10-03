@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Delegating Rendering to a Renderer - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level3"><a href="bnavh.html">Determining Whether You Need a Custom Component or Renderer</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavi">When to Use a Custom Component</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavj">When to Use a Custom Renderer</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavk">Component, Renderer, and Tag Combinations</a></p>
+<p class="toc level3 tocsp"><a href="bnavm.html">Understanding the Image Map Example</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavn">Why Use JavaServer Faces Technology to Implement an Image Map?</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavo">Understanding the Rendered HTML</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavp">Understanding the JSP Page</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavq">Configuring Model Data</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavr">Summary of the Application Classes</a></p>
+<p class="toc level3 tocsp"><a href="bnavt.html">Steps for Creating a Custom Component</a></p>
+<p class="toc level3"><a href="bnavu.html">Creating Custom Component Classes</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavv">Specifying the Component Family</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavw">Performing Encoding</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavx">Performing Decoding</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavy">Enabling Component Properties to Accept Expressions</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavz">Saving and Restoring State</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Delegating Rendering to a Renderer</a></p>
+<p class="toc level4"><a href="#bnawb">Creating the Renderer Class</a></p>
+<p class="toc level4"><a href="#bnawc">Identifying the Renderer Type</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnawd.html">Handling Events for Custom Components</a></p>
+<p class="toc level3"><a href="bnawe.html">Creating the Component Tag Handler</a></p>
+<p class="toc level4"><a href="bnawe.html#bnawf">Retrieving the Component Type</a></p>
+<p class="toc level4"><a href="bnawe.html#bnawg">Setting Component Property Values</a></p>
+<p class="toc level5"><a href="bnawe.html#bnawh">Getting the Attribute Values</a></p>
+<p class="toc level5"><a href="bnawe.html#bnawi">Setting the Component Property Values</a></p>
+<p class="toc level4 tocsp"><a href="bnawe.html#bnawl">Providing the Renderer Type</a></p>
+<p class="toc level4"><a href="bnawe.html#bnawm">Releasing Resources</a></p>
+<p class="toc level3 tocsp"><a href="bnawn.html">Defining the Custom Component Tag in a Tag Library Descriptor</a></p>
+<p class="toc level2 tocsp"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnavu.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnawd.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnawa"></a><h3>Delegating Rendering to a Renderer</h3>
+<a name="indexterm-1533"></a><p>Both <tt>MapComponent</tt> and <tt>AreaComponent</tt> delegate all of their rendering to a separate renderer.
+The section <a href="bnavu.html#bnavw">Performing Encoding</a> explains how <tt>MapRenderer</tt> performs the encoding for <tt>MapComponent</tt>. This section
+explains in detail the process of delegating rendering to a renderer using <tt>AreaRenderer</tt>,
+which performs the rendering for <tt>AreaComponent</tt>.</p><p>To delegate rendering, you perform these tasks:</p>
+<ul><li><p>Create the <tt>Renderer</tt> class.</p></li>
+<li><p><a name="indexterm-1534"></a><a name="indexterm-1535"></a><a name="indexterm-1536"></a>Register the renderer with a render kit (explained in <a href="bnaxh.html">Registering a Custom Renderer with a Render Kit</a>).</p></li>
+<li><p><a name="indexterm-1537"></a>Identify the renderer type in the component&rsquo;s tag handler.</p></li></ul>
+
+
+<a name="bnawb"></a><h4>Creating the Renderer Class</h4>
+<a name="indexterm-1538"></a><p>When delegating rendering to a renderer, you can delegate all encoding and decoding
+to the renderer, or you can choose to do part of it
+in the component class. The <tt>AreaComponent</tt> class delegates encoding to the <tt>AreaRenderer</tt> class.</p><p><a name="indexterm-1539"></a>To perform the rendering for <tt>AreaComponent</tt>, <tt>AreaRenderer</tt> must implement an <tt>encodeEnd</tt> method. The <tt>encodeEnd</tt>
+method of <tt>AreaRenderer</tt> retrieves the shape, coordinates, and alternative text values stored in the
+<tt>ImageArea</tt> bean that is bound to <tt>AreaComponent</tt>. Suppose that the <tt>area</tt> tag currently being
+rendered has a <tt>value</tt> attribute value of <tt>"fraA"</tt>. The following line from
+<tt>encodeEnd</tt> gets the value of the attribute <tt>"fraA"</tt> from the <tt>FacesContext</tt> instance.</p><pre>ImageArea ia = (ImageArea)area.getValue();</pre><p>The attribute value is the <tt>ImageArea</tt> bean instance, which contains the <tt>shape</tt>, <tt>coords</tt>,
+and <tt>alt</tt> values associated with the <tt>fraA</tt> <tt>AreaComponent</tt> instance. <a href="bnavm.html#bnavq">Configuring Model Data</a> describes how the
+application stores these values.</p><p><a name="indexterm-1540"></a>After retrieving the <tt>ImageArea</tt> object, it renders the values for <tt>shape</tt>, <tt>coords</tt>, and <tt>alt</tt>
+by simply calling the associated accessor methods and passing the returned values to
+the <tt>ResponseWriter</tt> instance, as shown by these lines of code, which write out
+the shape and coordinates:</p><pre>writer.startElement("area", area);
+writer.writeAttribute("alt", iarea.getAlt(), "alt");
+writer.writeAttribute("coords", iarea.getCoords(), "coords");
+writer.writeAttribute("shape", iarea.getShape(), "shape");</pre><p>The <tt>encodeEnd</tt> method also renders the JavaScript for the <tt>onmouseout</tt>, <tt>onmouseover</tt>, and <tt>onclick</tt>
+attributes. The page author need only provide the path to the images that
+are to be loaded during an <tt>onmouseover</tt> or <tt>onmouseout</tt> action:</p><pre>&lt;bookstore:area id="France" value="#{fraA}"
+     onmouseover="/template/world_france.jpg"
+     onmouseout="/template/world.jpg" targetImage="mapImage" /></pre><p>The <tt>AreaRenderer</tt> class takes care of generating the JavaScript for these actions, as
+shown in the following code from <tt>encodeEnd</tt>. The JavaScript that <tt>AreaRenderer</tt> generates for
+the <tt>onclick</tt> action sets the value of the hidden field to the value
+of the current area&rsquo;s component ID and submits the page.</p><pre>sb = new StringBuffer("document.forms[0][&rsquo;").
+    append(targetImageId).append("&rsquo;].src=&rsquo;");
+sb.append(getURI(context,
+     (String) area.getAttributes().get("onmouseout")));
+sb.append("&rsquo;");
+writer.writeAttribute("onmouseout", sb.toString(),
+     "onmouseout");
+sb = new StringBuffer("document.forms[0][&rsquo;").
+    append(targetImageId).append("&rsquo;].src=&rsquo;");
+sb.append(getURI(context,
+     (String) area.getAttributes().get("onmouseover")));
+sb.append("&rsquo;");
+writer.writeAttribute("onmouseover", sb.toString(),
+     "onmouseover");
+sb = new StringBuffer("document.forms[0][&rsquo;");
+sb.append(getName(context, area));
+sb.append("&rsquo;].value=&rsquo;");
+sb.append(iarea.getAlt());
+sb.append("&rsquo;; document.forms[0].submit()");
+writer.writeAttribute("onclick", sb.toString(), "value");
+writer.endElement("area");</pre><p><a name="indexterm-1541"></a>By submitting the page, this code causes the JavaServer Faces life cycle to
+return back to the restore view phase. This phase saves any state information,
+including the value of the hidden field, so that a new request component
+tree is constructed. This value is retrieved by the <tt>decode</tt> method of the
+<tt>MapComponent</tt> class. This <tt>decode</tt> method is called by the JavaServer Faces implementation during
+the apply request values phase, which follows the restore view phase.</p><p>In addition to the <tt>encodeEnd</tt> method, <tt>AreaRenderer</tt> contains an empty constructor. This
+is used to create an instance of <tt>AreaRenderer</tt> so that it can be
+added to the render kit.</p>
+
+<a name="bnawc"></a><h4>Identifying the Renderer Type</h4>
+<p><a name="indexterm-1542"></a><a name="indexterm-1543"></a>During the render response phase, the JavaServer Faces implementation calls the <tt>getRendererType</tt> method
+of the component&rsquo;s tag handler to determine which renderer to invoke, if there
+is one.</p><p>The <tt>getRendererType</tt> method of <tt>AreaTag</tt> must return the type associated with <tt>AreaRenderer</tt>. You
+identify this type when you register <tt>AreaRenderer</tt> with the render kit, as described in
+<a href="bnaxh.html">Registering a Custom Renderer with a Render Kit</a>. Here is the <tt>getRendererType</tt> method from the <tt>AreaTag</tt> class:</p><pre>public String getRendererType() { return ("DemoArea");}</pre><p><a href="bnawe.html">Creating the Component Tag Handler</a> explains more about the <tt>getRendererType</tt> method.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnavu.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnawd.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

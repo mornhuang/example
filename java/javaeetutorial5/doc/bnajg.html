@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Setting Properties for Groups of JSP Pages - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level3"><a href="bnagy.html">What Is a JSP Page?</a></p>
+<p class="toc level4"><a href="bnagy.html#bnagz">A Simple JSP Page Example</a></p>
+<p class="toc level3 tocsp"><a href="bnahb.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnahe.html">The Life Cycle of a JSP Page</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahf">Translation and Compilation</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahg">Execution</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahh">Buffering</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahi">Handling JSP Page Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnahj.html">Creating Static Content</a></p>
+<p class="toc level4"><a href="bnahj.html#bnahk">Response and Page Encoding</a></p>
+<p class="toc level3 tocsp"><a href="bnahl.html">Creating Dynamic Content</a></p>
+<p class="toc level4"><a href="bnahl.html#bnahm">Using Objects within JSP Pages</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahn">Using Implicit Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnaho">Using Application-Specific Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahp">Using Shared Objects</a></p>
+<p class="toc level3 tocsp"><a href="bnahq.html">Unified Expression Language</a></p>
+<p class="toc level4"><a href="bnahq.html#bnahr">Immediate and Deferred Evaluation Syntax</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahs">Immediate Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaht">Deferred Evaluation</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnahu">Value and Method Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahv">Value Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahz">Method Expressions</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaia">Defining a Tag Attribute Type</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaic">Deactivating Expression Evaluation</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaid">Literal Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaif">Resolving Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaig">Process of Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaih">EL Resolvers</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaij">Implicit Objects</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaik">Operators</a></p>
+<p class="toc level4"><a href="bnahq.html#bnail">Reserved Words</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaim">Examples of EL Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaio">Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaip">Using Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaiq">Defining Functions</a></p>
+<p class="toc level3 tocsp"><a href="bnair.html">JavaBeans Components</a></p>
+<p class="toc level4"><a href="bnair.html#bnais">JavaBeans Component Design Conventions</a></p>
+<p class="toc level4"><a href="bnair.html#bnait">Creating and Using a JavaBeans Component</a></p>
+<p class="toc level4"><a href="bnair.html#bnaiu">Setting JavaBeans Component Properties</a></p>
+<p class="toc level4"><a href="bnair.html#bnaix">Retrieving JavaBeans Component Properties</a></p>
+<p class="toc level3 tocsp"><a href="bnaiy.html">Using Custom Tags</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaiz">Declaring Tag Libraries</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaja">Including the Tag Library Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bnajb.html">Reusing Content in JSP Pages</a></p>
+<p class="toc level3"><a href="bnajc.html">Transferring Control to Another Web Component</a></p>
+<p class="toc level4"><a href="bnajc.html#bnajd"><tt>jsp:param</tt> Element</a></p>
+<p class="toc level3 tocsp"><a href="bnaje.html">Including an Applet</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Setting Properties for Groups of JSP Pages</a></p>
+<p class="toc level4"><a href="#bnajh">Deactivating EL Expression Evaluation</a></p>
+<p class="toc level5"><a href="#bnajk">Declaring Page Encodings</a></p>
+<p class="toc level5"><a href="#bnajl">Defining Implicit Includes</a></p>
+<p class="toc level5"><a href="#bnajm">Eliminating Extra White Space</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnajn.html">Further Information about JavaServer Pages Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaje.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnajn.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnajg"></a><h3>Setting Properties for Groups of JSP Pages</h3>
+<p><a name="indexterm-412"></a>It is possible to specify certain properties for a group of JSP pages:</p>
+<ul><li><p>Expression language evaluation</p></li>
+<li><p>Treatment of scripting elements (see <a href="bnaoq.html">Disabling Scripting</a>)</p></li>
+<li><p>Page encoding</p></li>
+<li><p>Automatic prelude and coda includes</p></li></ul>
+<p><a name="indexterm-413"></a>A JSP property group is defined by naming the group and specifying one
+or more URL patterns; all the properties in the group apply to the
+resources that match any of the URL patterns. If a resource matches URL
+patterns in more than one group, the pattern that is most specific applies.
+</p><p>To define a property group in a deployment descriptor using NetBeans IDE, follow
+these steps:</p>
+<ol><li><p>In NetBeans IDE, expand your project&rsquo;s folder in the Projects pane.</p></li>
+<li><p>Expand the Web Pages node and then the WEB-INF node.</p></li>
+<li><p>Double-click <tt>web.xml</tt> to open it in the editor pane.</p></li>
+<li><p>Click Pages at the top of the editor pane.</p></li>
+<li><p>Click Add JSP Property Group.</p></li>
+<li><p>In the Add JSP Property Group dialog:</p>
+<ol><li><p>Enter a name for the JSP property group in the Display Name field.</p></li>
+<li><p>Enter a URL pattern (a regular expression, such as <tt>*.jsp</tt>) or click Browse to indicate to which page or set of pages to apply the properties specified by the JSP property group.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>Instead of performing the preceding steps, you can define a JSP property group
+by editing the XML by hand using NetBeans IDE by doing the
+following:</p>
+<ol><li><p>Perform steps 1 through 3 in the preceding set of steps.</p></li>
+<li><p>Click XML at the top of the editor pane.</p></li>
+<li><p>Include a <tt>jsp-config</tt> element if the deployment descriptor doesn&rsquo;t already have one.</p></li>
+<li><p>Add a <tt>jsp-property-group</tt> element inside the <tt>jsp-config</tt> element.</p></li>
+<li><p>Add a <tt>display-name</tt> element inside the <tt>jsp-property-group</tt> element and give it a name.</p></li>
+<li><p>Add a <tt>url-pattern</tt> element inside the <tt>jsp-property-group</tt> element and give it a URL pattern (a regular expression, such as <tt>*.jsp</tt>).</p></li></ol>
+<p>The following sections discuss the properties and explain how they are interpreted for
+various combinations of group properties, individual page directives, and web application deployment descriptor
+versions.</p>
+
+<a name="bnajh"></a><h4>Deactivating EL Expression Evaluation</h4>
+<p><a name="indexterm-414"></a>Each JSP page has a default mode for EL expression evaluation. The default
+value varies depending on the version of the web application deployment descriptor. The
+default mode for JSP pages delivered with a Servlet 2.4 descriptor is to
+evaluate EL expressions; this automatically provides the default that most applications want. The
+default mode for JSP pages delivered using a descriptor from Servlet 2.3 or
+before is to ignore EL expressions; this provides backward compatibility. For tag files (see
+<a href="bnama.html">Encapsulating Reusable Content Using Tag Files</a>), the default is to always evaluate expressions.</p><p><a name="indexterm-415"></a>You can override the default mode through the <tt>isELIgnored</tt> attribute of the
+<tt>page</tt> directive in JSP pages and through the <tt>isELIgnored</tt> attribute of the <tt>tag</tt>
+directive in tag files. You can also explicitly change the default mode by
+doing one of the following:</p>
+<ul><li><p>If you are using the Pages section of the <tt>web.xml</tt> editor pane in NetBeans IDE:</p>
+<ol><li><p>Expand the JSP Property Group node.</p></li>
+<li><p>Select the Ignore Expression Language check box.</p></li></ol>
+</li>
+<li><p>If you are editing the <tt>web.xml</tt> file by hand, add an <tt>el-ignored</tt> element to the <tt>jsp-property-group</tt> element in the deployment descriptor and set it to true.</p></li></ul>
+<p><a href="#bnaji">Table&nbsp;5-8</a> summarizes the EL evaluation settings for JSP pages.</p><a name="bnaji"></a><h6>Table&nbsp;5-8 EL Evaluation Settings for JSP Pages</h6><table><col width="28%"><col width="29%"><col width="41%"><tr><th align="left" valign="top" scope="column"><p>JSP Configuration</p></th>
+<th align="left" valign="top" scope="column"><p>Page Directive <tt>isELIgnored</tt></p></th>
+<th align="left" valign="top" scope="column"><p>EL Encountered</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Unspecified</p></td>
+<td align="left" valign="top" scope="row"><p>Unspecified</p></td>
+<td align="left" valign="top" scope="row"><p>Evaluated
+if 2.4 <tt>web.xml</tt></p><p>Ignored if &lt;= 2.3 <tt>web.xml</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Unspecified</p></td>
+<td align="left" valign="top" scope="row"><p>Evaluated</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Unspecified</p></td>
+<td align="left" valign="top" scope="row"><p>Ignored</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Overridden by page directive</p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Evaluated</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Overridden by page
+directive</p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Ignored</p></td>
+</tr>
+</table><p><a href="#bnajj">Table&nbsp;5-9</a> summarizes the EL evaluation settings for tag files.</p><a name="bnajj"></a><h6>Table&nbsp;5-9 EL Evaluation Settings for Tag Files</h6><table><col width="51%"><col width="48%"><tr><th align="left" valign="top" scope="column"><p>Tag Directive  <tt>isELIgnored</tt></p></th>
+<th align="left" valign="top" scope="column"><p>EL Encountered</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Unspecified</p></td>
+<td align="left" valign="top" scope="row"><p>Evaluated</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Evaluated</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Ignored</p></td>
+</tr>
+</table>
+
+<a name="bnajk"></a><h5>Declaring Page Encodings</h5>
+<p><a name="indexterm-416"></a>You set the page encoding of a group of JSP pages using the
+JSP property group configuration in the deployment descriptor by doing one of the
+following:</p>
+<ul><li><p>If you are using the Pages section of the <tt>web.xml</tt> editor pane in NetBeans IDE:</p>
+<ol><li><p>Expand the JSP Property Group node.</p></li>
+<li><p>Enter the page encoding in the Page Encoding field.</p></li></ol>
+</li>
+<li><p>If you are editing the <tt>web.xml</tt> file by hand, add a <tt>page-encoding</tt> element to the <tt>jsp-property-group</tt> element in the deployment descriptor and set it to one of the valid character encoding codes, which are the same as those accepted by the <tt>pageEncoding</tt> attribute of the <tt>page</tt> directive.</p></li></ul>
+<p>A translation-time error results if you define the page encoding of a JSP
+page with one value in the JSP configuration element and then give
+it a different value in a <tt>pageEncoding</tt> directive.</p>
+
+<a name="bnajl"></a><h5>Defining Implicit Includes</h5>
+<p><a name="indexterm-417"></a>You can implicitly include preludes and codas for a group of JSP pages
+by adding items to the Include Preludes and Codas lists. Their values are
+context-relative paths that must correspond to elements in the web application. When the
+elements are present, the given paths are automatically included (as in an <tt>include</tt>
+directive) at the beginning and end, respectively, of each JSP page in the
+property group. When there is more than one include or coda element in
+a group, they are included in the order they appear. When more than
+one JSP property group applies to a JSP page, the corresponding elements will
+be processed in the same order as they appear in the JSP configuration
+section.</p><p>For example, the Duke&rsquo;s Bookstore application uses the files <tt>/template/prelude.jspf</tt> and <tt>/template/coda.jspf</tt>
+to include the banner and other boilerplate in each screen. To add these
+files to the Duke&rsquo;s Bookstore property group using the deployment descriptor, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, expand your project&rsquo;s folder in the Projects pane.</p></li>
+<li><p>Expand the Web Pages node and then the WEB-INF node.</p></li>
+<li><p>Double-click <tt>web.xml</tt> to open it in the editor pane.</p></li>
+<li><p>Click Pages at the top of the editor pane.</p></li>
+<li><p>Add a new JSP property group if you haven&rsquo;t already (see <a href="">Setting Properties for Groups of JSP Pages</a>) and give it the name <tt>bookstore2</tt> and the URL pattern <tt>*.jsp</tt>.</p></li>
+<li><p>Expand the JSP Property Group node.</p></li>
+<li><p>Click the Browse button to the right of the Include Preludes field to locate the file that you want to include at the beginning of all pages matching the pattern in the URL pattern field. In this case, you want the <tt>/template/prelude.jspf</tt> file.</p></li>
+<li><p>Click the Browse button to the right of the Include Codas field to locate the file that you want to include at the end of all pages matching the URL pattern. In this case, you want the <tt>/template/coda.jspf</tt> file.</p></li></ol>
+<p>Instead of performing the preceding steps, you can add preludes and codas by
+editing the XML by hand using NetBeans IDE by doing the following:</p>
+<ol><li><p>Perform steps 1 through 3 in the preceding set of steps.</p></li>
+<li><p>Click XML at the top of the editor pane.</p></li>
+<li><p>Add a new JSP property group (see <a href="">Setting Properties for Groups of JSP Pages</a>) and give it the name <tt>bookstore2</tt> and URL pattern <tt>*.jsp</tt>.</p></li>
+<li><p>Add an <tt>include-prelude</tt> element to the <tt>jsp-property-group</tt> element and give it the name of the file to include, in this case, <tt>/template/prelude.jspf</tt>.</p></li>
+<li><p>Add an <tt>include-coda</tt> element to the <tt>jsp-property-group</tt> element and give it the name of the file to include, in this case, <tt>/template/coda.jspf</tt>.</p></li></ol>
+<p>Preludes and codas can put the included code only at the beginning
+and end of each file. For a more flexible approach to building pages
+out of content chunks, see <a href="bnann.html#bnaoh">A Template Tag Library</a>.</p>
+
+<a name="bnajm"></a><h5>Eliminating Extra White Space</h5>
+<p>White space included in the template text of JSP pages is preserved by
+default. This can have undesirable effects. For example, a carriage return added after
+a <tt>taglib</tt> directive would be added to the response output as an extra
+line.</p><p>If you want to eliminate the extra white space from the page,
+you can add a <tt>trim-directive-whitespaces</tt> element to a <tt>jsp-property-group</tt> element in the deployment
+descriptor and set it to <tt>true</tt>.</p><p>To set the <tt>trim-directive-whitespaces</tt> element to true using NetBeans 5.5, do the following:</p>
+<ol><li><p>Open the deployment descriptor file in the editor.</p></li>
+<li><p>Click the Pages button at the top of the editor.</p></li>
+<li><p>Select a JSP property group.</p></li>
+<li><p>Select the Trim Directive Whitespaces check box.</p></li>
+<li><p>Save the deployment descriptor.</p></li></ol>
+<p>Alternatively, a page author can set the value of the <tt>trimDirectiveWhitespaces</tt> attribute
+of the <tt>page</tt> directive to true or false. This will override the value
+specified in the deployment descriptor.</p><p>Custom tag authors can eliminate white space from the output generated by a
+tag file by setting the <tt>trimDirectiveWhiteSpace</tt> attribute of the <tt>tag</tt> directive to true.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaje.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnajn.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

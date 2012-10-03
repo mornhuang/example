@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class table="Orders" name="cn.hxex.order.bo.Order">
+		<id unsaved-value="0" name="id" type="int" column="Order_ID">
+			<generator class="native" />
+		</id>
+		<set inverse="true" cascade="save-update" lazy="true" 
+			name="orderLineItems">
+			<key column="ORDER_ID" />
+			<one-to-many class="cn.hxex.order.bo.OrderLineItem" />
+		</set>
+		<property name="total" column="Total" unique="false" not-null="false" 
+			type="double" />
+		<property name="userName" column="UserName" unique="false" not-null="true" 
+			type="string" />
+	</class>
+</hibernate-mapping>

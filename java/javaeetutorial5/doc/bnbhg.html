@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Overview of SAAJ - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Overview of SAAJ</a></p>
+<p class="toc level4"><a href="#bnbhh">SAAJ Messages</a></p>
+<p class="toc level5"><a href="#bnbhi">The Structure of an XML Document</a></p>
+<p class="toc level5"><a href="#bnbhj">What Is in a Message?</a></p>
+<p class="toc level5"><a href="#bnbho">SAAJ and DOM</a></p>
+<p class="toc level4 tocsp"><a href="#bnbhp">SAAJ Connections</a></p>
+<p class="toc level5"><a href="#bnbhq"><tt>SOAPConnection</tt> Objects</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbhr.html">SAAJ Tutorial</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbhs">Creating and Sending a Simple Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbht">Creating a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhu">Parts of a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhv">Accessing Elements of a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhw">Adding Content to the Body</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhx">Getting a <tt>SOAPConnection</tt> Object</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhy">Sending a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhz">Getting the Content of a Message</a></p>
+<p class="toc level4 tocsp"><a href="bnbhr.html#bnbia">Adding Content to the Header</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbib">Adding Content to the <tt>SOAPPart</tt> Object</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbic">Adding a Document to the SOAP Body</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbid">Manipulating Message Content Using SAAJ or DOM APIs</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbie">Adding Attachments</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbif">Creating an <tt>AttachmentPart</tt> Object and Adding Content</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbig">Accessing an <tt>AttachmentPart</tt> Object</a></p>
+<p class="toc level4 tocsp"><a href="bnbhr.html#bnbih">Adding Attributes</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbii">Header Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnbhr.html#bnbin">Using SOAP Faults</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbio">Overview of SOAP Faults</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbip">Creating and Populating a <tt>SOAPFault</tt> Object</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbir">Retrieving Fault Information</a></p>
+<p class="toc level3 tocsp"><a href="bnbis.html">Code Examples</a></p>
+<p class="toc level4"><a href="bnbis.html#bnbit">Request Example</a></p>
+<p class="toc level4"><a href="bnbis.html#bnbja">Header Example</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjb">Building and Running the Header Example</a></p>
+<p class="toc level4 tocsp"><a href="bnbis.html#bnbjc">DOM and DOMSource Examples</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjd">Examining the <tt>DOMExample</tt> Class</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbje">Examining the <tt>DOMSrcExample</tt> Class</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjf">Building and Running the DOM and DOMSource Examples</a></p>
+<p class="toc level4 tocsp"><a href="bnbis.html#bnbjg">Attachments Example</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjh">Building and Running the Attachments Example</a></p>
+<p class="toc level4 tocsp"><a href="bnbis.html#bnbji">SOAP Fault Example</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjj">Building and Running the SOAP Fault Example</a></p>
+<p class="toc level3 tocsp"><a href="bnbjk.html">Further Information about SAAJ</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbhf.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbhr.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbhg"></a><h3>Overview of SAAJ</h3>
+<a name="indexterm-1893"></a><p>This section presents a high-level view of how SAAJ messaging works and explains
+concepts in general terms. Its goal is to give you some terminology and
+a framework for the explanations and code examples that are presented in the
+tutorial section.</p><p>The overview looks at SAAJ from two perspectives: messages and connections.</p>
+
+<a name="bnbhh"></a><h4>SAAJ Messages</h4>
+<a name="indexterm-1894"></a><a name="indexterm-1895"></a><p>SAAJ messages follow SOAP standards, which prescribe the format for messages and also
+specify some things that are required, optional, or not allowed. With the SAAJ
+API, you can create XML messages that conform to the SOAP 1.1 or
+1.2 specification and to the WS-I Basic Profile 1.1 specification simply by making
+Java API calls.</p>
+
+<a name="bnbhi"></a><h5>The Structure of an XML Document</h5>
+<a name="indexterm-1896"></a><a name="indexterm-1897"></a><a name="indexterm-1898"></a><p>An XML document has a hierarchical structure made up of elements, subelements, subsubelements,
+and so on. You will notice that many of the SAAJ classes
+and interfaces represent XML elements in a SOAP message and have the word
+<b>element</b> or <b>SOAP</b> (or both) in their names.</p><p>An element is also referred to as a <b>node</b>. Accordingly, the SAAJ API
+has the interface <tt>Node</tt>, which is the base class for all the classes
+and interfaces that represent XML elements in a SOAP message. There are also
+methods such as <tt>SOAPElement.addTextNode</tt>, <tt>Node.detachNode</tt>, and <tt>Node.getValue</tt>, which you will see how to
+use in the tutorial section.</p>
+
+<a name="bnbhj"></a><h5>What Is in a Message?</h5>
+<p>The two main types of SOAP messages are those that have attachments and
+those that do not.</p>
+
+<a name="bnbhk"></a><h5>Messages with No Attachments</h5>
+<p>The following outline shows the very high-level structure of a SOAP message with
+no attachments. Except for the SOAP header, all the parts listed are required
+to be in every SOAP message.</p>I. SOAP message     A. SOAP part         1. SOAP envelope             a. SOAP header (optional)             b. SOAP body<p><a name="indexterm-1899"></a><a name="indexterm-1900"></a><a name="indexterm-1901"></a>The SAAJ API provides the <tt>SOAPMessage</tt> class to represent a SOAP message, the
+<tt>SOAPPart</tt> class to represent the SOAP part, the <tt>SOAPEnvelope</tt> interface to represent the SOAP
+envelope, and so on. <a href="#bnbhl">Figure&nbsp;19-1</a> illustrates the structure of a SOAP message with
+no attachments.</p><a name="bnbhl"></a><h6>Figure&nbsp;19-1 <tt>SOAPMessage</tt> Object with No Attachments</h6><img src="figures/saaj-noAttach.gif" alt="Diagram of SOAPMessage Object with SOAPPart, SOAPEnvelope, SOAPHeader, and SOAPBody"></img>
+<hr><p><b>Note - </b>Many SAAJ API interfaces extend DOM interfaces. In a SAAJ message, the <tt>SOAPPart</tt>
+class is also a DOM document. See <a href="#bnbho">SAAJ and DOM</a>    
+        for details.</p>
+<hr>
+<p><a name="indexterm-1902"></a><a name="indexterm-1903"></a>When you create a new <tt>SOAPMessage</tt> object, it will automatically have the parts
+that are required to be in a SOAP message. In other words, a
+new <tt>SOAPMessage</tt> object has a <tt>SOAPPart</tt> object that contains a <tt>SOAPEnvelope</tt> object. The
+<tt>SOAPEnvelope</tt> object in turn automatically contains an empty <tt>SOAPHeader</tt> object followed by an
+empty <tt>SOAPBody</tt> object. If you do not need the <tt>SOAPHeader</tt> object, which is
+optional, you can delete it. The rationale for having it automatically included is
+that more often than not you will need it, so it is
+more convenient to have it provided.</p><p>The <tt>SOAPHeader</tt> object can include one or more headers that contain metadata about
+the message (for example, information about the sending and receiving parties). The <tt>SOAPBody</tt>
+object, which always follows the <tt>SOAPHeader</tt> object if there is one, contains the message
+content. If there is a <tt>SOAPFault</tt> object (see <a href="bnbhr.html#bnbin">Using SOAP Faults</a>), it must be
+in the <tt>SOAPBody</tt> object.</p>
+
+<a name="bnbhm"></a><h5>Messages with Attachments</h5>
+<a name="indexterm-1904"></a><a name="indexterm-1905"></a><p>A SOAP message may include one or more attachment parts in addition to
+the SOAP part. The SOAP part must contain only XML content; as
+a result, if any of the content of a message is not in
+XML format, it must occur in an attachment part. So if, for example,
+you want your message to contain a binary file, your message must have
+an attachment part for it. Note that an attachment part can contain any
+kind of content, so it can contain data in XML format as well.
+<a href="#bnbhn">Figure&nbsp;19-2</a> shows the high-level structure of a SOAP message that has two attachments.</p><a name="bnbhn"></a><h6>Figure&nbsp;19-2 <tt>SOAPMessage</tt> Object with Two AttachmentPart Objects</h6><img src="figures/saaj-twoAttach.gif" alt="Diagram of SOAPMessage Object with SOAPPart, SOAPEnvelope, SOAPHeader, SOAPBody, and two AttachmentParts"></img><p>The SAAJ API provides the <tt>AttachmentPart</tt> class to represent an attachment part of
+a SOAP message. A <tt>SOAPMessage</tt> object automatically has a <tt>SOAPPart</tt> object and its
+required subelements, but because <tt>AttachmentPart</tt> objects are optional, you must create and add them
+yourself. The tutorial section walks you through creating and populating messages with and
+without attachment parts.</p><p>If a <tt>SOAPMessage</tt> object has one or more attachments, each <tt>AttachmentPart</tt> object must
+have a MIME header to indicate the type of data it contains. It
+may also have additional MIME headers to identify it or to give its
+location. These headers are optional but can be useful when there are multiple
+attachments. When a <tt>SOAPMessage</tt> object has one or more <tt>AttachmentPart</tt> objects, its <tt>SOAPPart</tt>
+object may or may not contain message content.</p>
+
+<a name="bnbho"></a><h5>SAAJ and DOM</h5>
+<a name="indexterm-1906"></a><a name="indexterm-1907"></a><a name="indexterm-1908"></a><a name="indexterm-1909"></a><p>The SAAJ APIs extend their counterparts in the <tt>org.w3c.dom</tt> package:</p>
+<ul><li><p>The <tt>Node</tt> interface extends the <tt>org.w3c.dom.Node</tt> interface.</p></li>
+<li><p>The <tt>SOAPElement</tt> interface extends both the <tt>Node</tt> interface and the <tt>org.w3c.dom.Element</tt> interface.</p></li>
+<li><p>The <tt>SOAPPart</tt> class implements the <tt>org.w3c.dom.Document</tt> interface.</p></li>
+<li><p>The <tt>Text</tt> interface extends the <tt>org.w3c.dom.Text</tt> interface.</p></li></ul>
+<p>Moreover, the <tt>SOAPPart</tt> of a <tt>SOAPMessage</tt> is also a DOM Level 2 <tt>Document</tt>
+and can be manipulated as such by applications, tools, and libraries that use
+DOM. For details on how to use DOM documents with the SAAJ API,
+see <a href="bnbhr.html#bnbib">Adding Content to the <tt>SOAPPart</tt> Object</a> and <a href="bnbhr.html#bnbic">Adding a Document to the SOAP Body</a>.</p>
+
+<a name="bnbhp"></a><h4>SAAJ Connections</h4>
+<a name="indexterm-1910"></a><a name="indexterm-1911"></a><a name="indexterm-1912"></a><a name="indexterm-1913"></a><p>All SOAP messages are sent and received over a connection. With the SAAJ
+API, the connection is represented by a <tt>SOAPConnection</tt> object, which goes from the
+sender directly to its destination. This kind of connection is called a <b>point-to-point</b>
+connection because it goes from one endpoint to another endpoint. Messages sent using
+the SAAJ API are called <b>request-response messages</b>. They are sent over a <tt>SOAPConnection</tt> object with
+the <tt>call</tt> method, which sends a message (a request) and then blocks until
+it receives the reply (a response).</p>
+
+<a name="bnbhq"></a><h5><tt>SOAPConnection</tt> Objects</h5>
+<a name="indexterm-1914"></a><p>The following code fragment creates the <tt>SOAPConnection</tt> object <tt>connection</tt> and then, after
+creating and populating the message, uses <tt>connection</tt> to send the message. As stated
+previously, all messages sent over a <tt>SOAPConnection</tt> object are sent with the <tt>call</tt> method,
+which both sends the message and blocks until it receives the response. Thus,
+the return value for the <tt>call</tt> method is the <tt>SOAPMessage</tt> object that
+is the response to the message that was sent. The <tt>request</tt> parameter is the
+message being sent; <tt>endpoint</tt> represents where it is being sent.</p><pre>SOAPConnectionFactory factory = SOAPConnectionFactory.newInstance();
+SOAPConnection connection = factory.createConnection();
+
+. . .// create a request message and give it content
+
+java.net.URL endpoint = new URL("http://fabulous.com/gizmo/order");
+SOAPMessage response = connection.call(request, endpoint);</pre><p><a name="indexterm-1915"></a>Note that the second argument to the <tt>call</tt> method, which identifies where the message
+is being sent, can be a <tt>String</tt> object or a <tt>URL</tt> object. Thus,
+the last two lines of code from the preceding example could also have
+been the following:</p><pre>String endpoint = "http://fabulous.com/gizmo/order";
+SOAPMessage response = connection.call(request, endpoint);</pre><p>A web service implemented for request-response messaging must return a response to any
+message it receives. The response is a <tt>SOAPMessage</tt> object, just as the request
+is a <tt>SOAPMessage</tt> object. When the request message is an update, the response
+is an acknowledgment that the update was received. Such an acknowledgment implies that
+the update was successful. Some messages may not require any response at all.
+The service that gets such a message is still required to send back
+a response because one is needed to unblock the <tt>call</tt> method. In this
+case, the response is not related to the content of the message; it
+is simply a message to unblock the <tt>call</tt> method.</p><p>Now that you have some background on SOAP messages and SOAP connections, in
+the next section you will see how to use the SAAJ API.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbhf.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbhr.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

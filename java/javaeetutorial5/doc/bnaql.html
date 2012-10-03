@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Navigation Model - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="gentextid-10866.html">JavaServer Faces Technology User Interface</a></p>
+<p class="toc level3"><a href="bnapj.html">JavaServer Faces Technology Benefits</a></p>
+<p class="toc level3"><a href="bnapk.html">What Is a JavaServer Faces Application?</a></p>
+<p class="toc level3"><a href="bnapl.html">A Simple JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapm">Steps in the Development Process</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapo">Mapping the <tt>FacesServlet</tt> Instance</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapp">Creating the Pages</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapq">Declaring the Tag Libraries</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapr">Adding the <tt>view</tt> and <tt>form</tt> Tags</a></p>
+<p class="toc level5"><a href="bnapl.html#bnaps">Adding a Label Component</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapt">Adding an Image</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapu">Adding a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapv">Registering a Validator on a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapw">Adding a Custom Message</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapx">Adding a Button</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapy">Displaying Error Messages</a></p>
+<p class="toc level4 tocsp"><a href="bnapl.html#bnapz">Defining Page Navigation</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqa">Configuring Error Messages</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqb">Developing the Beans</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqc">Adding Managed Bean Declarations</a></p>
+<p class="toc level3 tocsp"><a href="bnaqd.html">User Interface Component Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqe">User Interface Component Classes</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqf">Component Rendering Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqi">Conversion Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqj">Event and Listener Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqk">Validation Model</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Navigation Model</a></p>
+</div>
+<p class="toc level3"><a href="bnaqm.html">Backing Beans</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqn">Creating a Backing Bean Class</a></p>
+<p class="toc level5"><a href="bnaqm.html#bnaqo">Configuring a Bean</a></p>
+<p class="toc level5"><a href="bnaqm.html#bnaqp">Using the Unified EL to Reference Backing Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnaqq.html">The Life Cycle of a JavaServer Faces Page</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqs">Restore View Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqt">Apply Request Values Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqu">Process Validations Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqv">Update Model Values Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqw">Invoke Application Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqx">Render Response Phase</a></p>
+<p class="toc level3 tocsp"><a href="bnaqy.html">Further Information about JavaServer Faces Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaqd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaqm.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaql"></a><h3>Navigation Model</h3>
+<a name="indexterm-827"></a><p>The JavaServer Faces navigation model makes it easy to define page navigation and
+to handle any additional processing needed to choose the sequence in which pages
+are loaded.</p><p><a name="indexterm-828"></a>As defined by JavaServer Faces technology, <b>navigation</b> is a set of rules
+for choosing the next page to be displayed after a button or hyperlink
+is clicked. These rules are defined by the application architect in the application
+configuration resource file (see <a href="bnawp.html">Application Configuration Resource File</a>) using a small set of XML elements.</p><p>To handle navigation in the simplest application, you simply</p>
+<ul><li><p>Define the rules in the application configuration resource file.</p></li>
+<li><p>Refer to an outcome <tt>String</tt> from the button or hyperlink component&rsquo;s <tt>action</tt> attribute. This outcome <tt>String</tt> is used by the JavaServer Faces implementation to select the navigation rule.</p></li></ul>
+<p>The Guess Number example uses this kind of simple navigation. Here is an
+example navigation rule from the <tt>guessNumber</tt> application described in <a href="bnapl.html#bnapz">Defining Page Navigation</a>:</p><pre>&lt;navigation-rule>
+    &lt;from-view-id>/greeting.jsp&lt;/from-view-id>
+    &lt;navigation-case>
+        &lt;from-outcome>success&lt;/from-outcome>
+        &lt;to-view-id>/response.jsp&lt;/to-view-id>
+    &lt;/navigation-case>
+&lt;/navigation-rule></pre><p>This rule states that when the button component on <tt>greeting.jsp</tt> is activated, the
+application will navigate from the <tt>greeting.jsp</tt> page to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/guessNumber/web/response.jsp</tt> page if the
+outcome referenced by the button component&rsquo;s tag is <tt>success</tt>. Here is the <tt>commandButton</tt>
+tag from <tt>greeting.jsp</tt> that specifies a logical outcome of success:</p><pre>&lt;h:commandButton id="submit" action="success"
+         value="Submit" /></pre><p>As the example demonstrates, each <tt>navigation-rule</tt> element defines how to get from one
+page (specified in the <tt>from-view-id</tt> element) to the other pages of the application.
+The <tt>navigation-rule</tt> elements can contain any number of <tt>navigation-case</tt> elements, each of which defines
+the page to open next (defined by <tt>to-view-id</tt>) based on a logical outcome
+(defined by <tt>from-outcome</tt>).</p><p><a name="indexterm-829"></a><a name="indexterm-830"></a><a name="indexterm-831"></a><a name="indexterm-832"></a>In more complicated applications, the logical outcome can also come from the return
+value of an <b>action method</b> in a backing bean. This method performs some processing
+to determine the outcome. For example, the method can check whether the password
+the user entered on the page matches the one on file. If it
+does, the method might return <tt>success</tt>; otherwise, it might return <tt>failure</tt>. An
+outcome of <tt>failure</tt> might result in the logon page being reloaded. An outcome of
+<tt>success</tt> might cause the page displaying the user&rsquo;s credit card activity to open.
+If you want the outcome to be returned by a method on a
+bean, you must refer to the method using a method expression, using the
+<tt>action</tt> attribute, as shown by this example:</p><pre>&lt;h:commandButton id="submit"
+     action="#{userNumberBean.getOrderStatus}" value="Submit" /></pre><p><a name="indexterm-833"></a><a name="indexterm-834"></a>When the user clicks the button represented by this tag, the corresponding component
+generates an action event. This event is handled by the default <tt>ActionListener</tt> instance,
+which calls the action method referenced by the component that triggered the event. The
+action method returns a logical outcome to the action listener.</p><p><a name="indexterm-835"></a>The listener passes the logical outcome and a reference to the action method
+that produced the outcome to the default <tt>NavigationHandler</tt>. The <tt>NavigationHandler</tt> selects the page
+to display next by matching the outcome or the action method reference against
+the navigation rules in the application configuration resource file by the following process:</p>
+<ol><li><p>The <tt>NavigationHandler</tt> selects the navigation rule that matches the page currently displayed.</p></li>
+<li><p>It matches the outcome or the action method reference it received from the default <tt>ActionListener</tt> with those defined by the navigation cases.</p></li>
+<li><p>It tries to match both the method reference and the outcome against the same navigation case.</p></li>
+<li><p>If the previous step fails, the navigation handler attempts to match the outcome.</p></li>
+<li><p>Finally, the navigation handler attempts to match the action method reference if the previous two attempts failed.</p></li></ol>
+<p>When the <tt>NavigationHandler</tt> achieves a match, the render response phase begins. During this
+phase, the page selected by the <tt>NavigationHandler</tt> will be rendered.</p><p>For more information on how to define navigation rules, see <a href="bnaxf.html">Configuring Navigation Rules</a>.</p><p>For more information on how to implement action methods to handle navigation, see
+<a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a>.</p><p>For more information on how to reference outcomes or action methods from component
+tags, see <a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaqd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaqm.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

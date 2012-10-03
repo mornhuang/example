@@ -1,0 +1,497 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>User Interface Component Model - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="gentextid-10866.html">JavaServer Faces Technology User Interface</a></p>
+<p class="toc level3"><a href="bnapj.html">JavaServer Faces Technology Benefits</a></p>
+<p class="toc level3"><a href="bnapk.html">What Is a JavaServer Faces Application?</a></p>
+<p class="toc level3"><a href="bnapl.html">A Simple JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapm">Steps in the Development Process</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapo">Mapping the <tt>FacesServlet</tt> Instance</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapp">Creating the Pages</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapq">Declaring the Tag Libraries</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapr">Adding the <tt>view</tt> and <tt>form</tt> Tags</a></p>
+<p class="toc level5"><a href="bnapl.html#bnaps">Adding a Label Component</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapt">Adding an Image</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapu">Adding a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapv">Registering a Validator on a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapw">Adding a Custom Message</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapx">Adding a Button</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapy">Displaying Error Messages</a></p>
+<p class="toc level4 tocsp"><a href="bnapl.html#bnapz">Defining Page Navigation</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqa">Configuring Error Messages</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqb">Developing the Beans</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqc">Adding Managed Bean Declarations</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">User Interface Component Model</a></p>
+<p class="toc level4"><a href="#bnaqe">User Interface Component Classes</a></p>
+<p class="toc level4"><a href="#bnaqf">Component Rendering Model</a></p>
+<p class="toc level4"><a href="#bnaqi">Conversion Model</a></p>
+<p class="toc level4"><a href="#bnaqj">Event and Listener Model</a></p>
+<p class="toc level4"><a href="#bnaqk">Validation Model</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaql.html">Navigation Model</a></p>
+<p class="toc level3"><a href="bnaqm.html">Backing Beans</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqn">Creating a Backing Bean Class</a></p>
+<p class="toc level5"><a href="bnaqm.html#bnaqo">Configuring a Bean</a></p>
+<p class="toc level5"><a href="bnaqm.html#bnaqp">Using the Unified EL to Reference Backing Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnaqq.html">The Life Cycle of a JavaServer Faces Page</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqs">Restore View Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqt">Apply Request Values Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqu">Process Validations Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqv">Update Model Values Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqw">Invoke Application Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqx">Render Response Phase</a></p>
+<p class="toc level3 tocsp"><a href="bnaqy.html">Further Information about JavaServer Faces Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnapl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaql.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaqd"></a><h3>User Interface Component Model</h3>
+<p>JavaServer Faces UI components are configurable, reusable elements that compose the user interfaces
+of JavaServer Faces applications. A component can be simple, such as a button,
+or compound, such as a table, which can be composed of multiple components.</p><p>JavaServer Faces technology provides a rich, flexible component architecture that includes the following:</p>
+<ul><li><p><a name="indexterm-684"></a>A set of <tt>UIComponent</tt> classes for specifying the state and behavior of UI components</p></li>
+<li><p><a name="indexterm-685"></a>A rendering model that defines how to render the components in various ways</p></li>
+<li><p><a name="indexterm-686"></a>An event and listener model that defines how to handle component events</p></li>
+<li><p><a name="indexterm-687"></a><a name="indexterm-688"></a><a name="indexterm-689"></a>A conversion model that defines how to register data converters onto a component</p></li>
+<li><p><a name="indexterm-690"></a><a name="indexterm-691"></a><a name="indexterm-692"></a>A validation model that defines how to register validators onto a component</p></li></ul>
+<p>This section briefly describes each of these pieces of the component architecture.</p>
+
+<a name="bnaqe"></a><h4>User Interface Component Classes</h4>
+<p><a name="indexterm-693"></a><a name="indexterm-694"></a><a name="indexterm-695"></a><a name="indexterm-696"></a>JavaServer Faces technology provides a set of UI component classes and associated behavioral
+interfaces that specify all the UI component functionality, such as holding component state, maintaining
+a reference to objects, and driving event handling and rendering for a set
+of standard components.</p><p>The component classes are completely extensible, allowing component writers to create their own
+custom components. See <a href="bnavg.html">Chapter&nbsp;13, Creating Custom UI Components</a> for an example of a custom image map component.</p><p><a name="indexterm-697"></a>All JavaServer Faces UI component classes extend <tt>UIComponentBase</tt>, which defines the default state and
+behavior of a UI component. The following set of UI component classes is
+included with JavaServer Faces technology:</p>
+<ul><li><p><a name="indexterm-698"></a><tt>UIColumn</tt>: Represents a single column of data in a <tt>UIData</tt> component.</p></li>
+<li><p><a name="indexterm-699"></a><tt>UICommand</tt>: Represents a control that fires actions when activated.</p></li>
+<li><p><a name="indexterm-700"></a><tt>UIData</tt>: Represents a data binding to a collection of data represented by a <tt>DataModel</tt> instance.</p></li>
+<li><p><a name="indexterm-701"></a><tt>UIForm</tt>: Encapsulates a group of controls that submit data to the application. This component is analogous to the <tt>form</tt> tag in HTML.</p></li>
+<li><p><a name="indexterm-702"></a><tt>UIGraphic</tt>: Displays an image.</p></li>
+<li><p><a name="indexterm-703"></a><tt>UIInput</tt>: Takes data input from a user. This class is a subclass of <tt>UIOutput</tt>.</p></li>
+<li><p><a name="indexterm-704"></a><tt>UIMessage</tt>: Displays a localized message.</p></li>
+<li><p><a name="indexterm-705"></a><tt>UIMessages</tt>: Displays a set of localized messages.</p></li>
+<li><p><a name="indexterm-706"></a><tt>UIOutput</tt>: Displays data output on a page.</p></li>
+<li><p><a name="indexterm-707"></a><tt>UIPanel</tt>: Manages the layout of its child components.</p></li>
+<li><p><a name="indexterm-708"></a><tt>UIParameter</tt>: Represents substitution parameters.</p></li>
+<li><p><a name="indexterm-709"></a><tt>UISelectBoolean</tt>: Allows a user to set a <tt>boolean</tt> value on a control by selecting or deselecting it. This class is a subclass of <tt>UIInput</tt>.</p></li>
+<li><p><a name="indexterm-710"></a><tt>UISelectItem</tt>: Represents a single item in a set of items.</p></li>
+<li><p><a name="indexterm-711"></a><tt>UISelectItems</tt>: Represents an entire set of items.</p></li>
+<li><p><a name="indexterm-712"></a><tt>UISelectMany</tt>: Allows a user to select multiple items from a group of items. This class is a subclass of <tt>UIInput</tt>.</p></li>
+<li><p><a name="indexterm-713"></a><tt>UISelectOne</tt>: Allows a user to select one item from a group of items. This class is a subclass of <tt>UIInput</tt>.</p></li>
+<li><p><a name="indexterm-714"></a><tt>UIViewRoot</tt>: Represents the root of the component tree.</p></li></ul>
+<p><a name="indexterm-715"></a><a name="indexterm-716"></a>In addition to extending <tt>UIComponentBase</tt>, the component classes also implement one or
+more <b>behavioral interfaces</b>, each of which defines certain behavior for a set of components
+whose classes implement the interface.</p><p>These behavioral interfaces are as follows:</p>
+<ul><li><p><a name="indexterm-717"></a><tt>ActionSource</tt>: Indicates that the component can fire an action event. This interface is intended for use with components based on JavaServer Faces technology 1.1_01 and earlier versions.</p></li>
+<li><p><a name="indexterm-718"></a><tt>ActionSource2</tt>: Extends <tt>ActionSource</tt>, and therefore provides the same functionality. However, it allows components to use the unified EL when referencing methods that handle action events.</p></li>
+<li><p><a name="indexterm-719"></a><tt>EditableValueHolder</tt>: Extends <tt>ValueHolder</tt> and specifies additional features for editable components, such as validation and emitting value-change events.</p></li>
+<li><p><a name="indexterm-720"></a><a name="indexterm-721"></a><tt>NamingContainer</tt>: Mandates that each component rooted at this component have a unique ID.</p></li>
+<li><p><a name="indexterm-722"></a><tt>StateHolder</tt>: Denotes that a component has state that must be saved between requests.</p></li>
+<li><p><a name="indexterm-723"></a><tt>ValueHolder</tt>: Indicates that the component maintains a local value as well as the option of accessing data in the model tier.</p></li></ul>
+<p><tt>UICommand</tt> implements <tt>ActionSource2</tt> and <tt>StateHolder</tt>. <tt>UIOutput</tt> and component classes that extend <tt>UIOutput</tt> implement
+<tt>StateHolder</tt> and <tt>ValueHolder</tt>. <tt>UIInput</tt> and component classes that extend <tt>UIInput</tt> implement <tt>EditableValueHolder</tt>, <tt>StateHolder</tt>,
+and <tt>ValueHolder</tt>. <tt>UIComponentBase</tt> implements <tt>StateHolder</tt>. See the <a href="http://java.sun.com/javaee/javaserverfaces/1.2/docs/api/javax/faces/component/package-summary.html">JavaServer Faces Technology 1.2 API Specification</a> for more information on these
+interfaces.</p><p>Only component writers will need to use the component classes and behavioral interfaces
+directly. Page authors and application developers will use a standard UI component by
+including a tag that represents it on a JSP page. Most of the
+components can be rendered in different ways on a page. For example,
+a <tt>UICommand</tt> component can be rendered as a button or a hyperlink.</p><p>The next section explains how the rendering model works and how page authors
+choose how to render the components by selecting the appropriate tags.</p>
+
+<a name="bnaqf"></a><h4>Component Rendering Model</h4>
+<p><a name="indexterm-724"></a><a name="indexterm-725"></a><a name="indexterm-726"></a>The JavaServer Faces component architecture is designed such that the functionality of the
+components is defined by the component classes, whereas the component rendering can be
+defined by a separate renderer. This design has several benefits, including:</p>
+<ul><li><p>Component writers can define the behavior of a component once but create multiple renderers, each of which defines a different way to render the component to the same client or to different clients.</p></li>
+<li><p><a name="indexterm-727"></a><a name="indexterm-728"></a>Page authors and application developers can change the appearance of a component on the page by selecting the tag that represents the appropriate combination of component and renderer.</p></li></ul>
+<p><a name="indexterm-729"></a>A <b>render kit</b> defines how component classes map to component tags that are appropriate
+for a particular client. The JavaServer Faces implementation includes a standard HTML render
+kit for rendering to an HTML client.</p><p><a name="indexterm-730"></a><a name="indexterm-731"></a>The render kit defines a set of <tt>Renderer</tt> classes for each component that
+it supports. Each <tt>Renderer</tt> class defines a different way to render the particular
+component to the output defined by the render kit. For example, a <tt>UISelectOne</tt>
+component has three different renderers. One of them renders the component as a
+set of radio buttons. Another renders the component as a combo box. The
+third one renders the component as a list box.</p><p><a name="indexterm-732"></a><a name="indexterm-733"></a><a name="indexterm-734"></a>Each JSP custom tag defined in the standard HTML render kit is composed
+of the component functionality (defined in the <tt>UIComponent</tt> class) and the rendering attributes (defined
+by the <tt>Renderer</tt> class). For example, the two tags in <a href="#bnaqg">Table&nbsp;10-1</a> represent a
+<tt>UICommand</tt> component rendered in two different ways.</p><a name="bnaqg"></a><h6>Table&nbsp;10-1 <tt>UICommand</tt> Tags</h6><table><col width="29%"><col width="70%"><tr><th align="left" valign="top" scope="column"><p>Tag</p></th>
+<th align="left" valign="top" scope="column"><p>Rendered As</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>commandButton</tt></p></td>
+<td align="left" valign="top" scope="row"><p><img src="figures/jsfIntro-login.gif" alt="Login button." width="115" height="57"></img></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>commandLink</tt></p></td>
+<td align="left" valign="top" scope="row"><p><img src="figures/jsfIntro-hyperlink.gif" alt="Hyperlink." width="115" height="52"></img></p></td>
+</tr>
+</table><p><a name="indexterm-735"></a>The command part of the tags shown in <a href="#bnaqg">Table&nbsp;10-1</a> corresponds to the <tt>UICommand</tt> class,
+specifying the functionality, which is to fire an action. The button and hyperlink
+parts of the tags each correspond to a separate <tt>Renderer</tt> class, which defines
+how the component appears on the page.</p><p><a name="indexterm-736"></a><a name="indexterm-737"></a><a name="indexterm-738"></a><a name="indexterm-739"></a>The JavaServer Faces implementation provides a custom tag library for rendering components in
+HTML. It supports all the component tags listed in <a href="#bnaqh">Table&nbsp;10-2</a>. To learn how
+to use the tags in an example, see <a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a>.</p><a name="bnaqh"></a><h6>Table&nbsp;10-2 The UI Component Tags</h6><table><col width="24%"><col width="29%"><col width="25%"><col width="21%"><tr><th align="left" valign="top" scope="column"><p>Tag</p></th>
+<th align="left" valign="top" scope="column"><p>Functions</p></th>
+<th align="left" valign="top" scope="column"><p>Rendered As</p></th>
+<th align="left" valign="top" scope="column"><p>Appearance</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-740"></a>column</p></td>
+<td align="left" valign="top" scope="row"><p>Represents a column
+of data in a <tt>UIData</tt> component.</p></td>
+<td align="left" valign="top" scope="row"><p>A column of data in an HTML
+table</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-741"></a>A column in a table</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-742"></a><tt>commandButton</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Submits a form to the application.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;input type=type></tt>
+element, where the <tt>type</tt> value can be <tt>submit</tt>, <tt>reset</tt>, or <tt>image</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-743"></a>A button</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-744"></a><tt>commandLink</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Links to
+another page or location on a page.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;a href></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-745"></a>A hyperlink</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-746"></a><tt>dataTable</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Represents a
+data wrapper.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;table></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-747"></a>A table that can be updated dynamically</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-748"></a><tt>form</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Represents an
+input form. The inner tags of the form receive the data that will
+be submitted with the form.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;form></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p>No appearance</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-749"></a><tt>graphicImage</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays an image.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML
+<tt>&lt;img></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p>An image</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-750"></a><tt>inputHidden</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a page author to include a hidden variable in
+a page.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;input type=hidden></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-751"></a>No appearance</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-752"></a><tt>inputSecret</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a user to input a string
+without the actual string appearing in the field.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;input type=password></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-753"></a>A text field,
+which displays a row of characters instead of the actual string entered</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-754"></a><tt>inputText</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a
+user to input a string.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;input type=text></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-755"></a>A text field</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-756"></a><tt>inputTextarea</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a user
+to enter a multiline string.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;textarea></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-757"></a>A multi-row text field</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-758"></a><tt>message</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays a
+localized message.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;span></tt> tag if styles are used</p></td>
+<td align="left" valign="top" scope="row"><p>A text string</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-759"></a><tt>messages</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays localized
+messages.</p></td>
+<td align="left" valign="top" scope="row"><p>A set of HTML <tt>&lt;span></tt> tags if styles are used</p></td>
+<td align="left" valign="top" scope="row"><p>A text string</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-760"></a><tt>outputFormat</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays
+a localized message.</p></td>
+<td align="left" valign="top" scope="row"><p>Plain text</p></td>
+<td align="left" valign="top" scope="row"><p>Plain text</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-761"></a><tt>outputLabel</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays a nested component as a label for
+a specified input field.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;label></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-762"></a>Plain text</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-763"></a><tt>outputLink</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Links to another page or
+location on a page without generating an action event.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;a></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p>A hyperlink</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-764"></a><tt>outputText</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays
+a line of text.</p></td>
+<td align="left" valign="top" scope="row"><p>Plain text</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-765"></a>Plain text</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-766"></a><tt>panelGrid</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays a table.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;table></tt> element with
+<tt>&lt;tr></tt> and <tt>&lt;td></tt> elements</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-767"></a>A table</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-768"></a><tt>panelGroup</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Groups a set of components under one parent.</p></td>
+<td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>A
+row in a table</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-769"></a><tt>selectBooleanCheckbox</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a user to change the value of a
+Boolean choice.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;input type=checkbox></tt> element.</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-770"></a>A check box</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-771"></a><tt>selectItem</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Represents one item in a list
+of items in a <tt>UISelectOne</tt> component.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;option></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p>No appearance</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-772"></a><tt>selectItems</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Represents a list
+of items in a <tt>UISelectOne</tt> component.</p></td>
+<td align="left" valign="top" scope="row"><p>A list of HTML <tt>&lt;option></tt> elements</p></td>
+<td align="left" valign="top" scope="row"><p>No appearance</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-773"></a><tt>selectManyCheckbox</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Displays
+a set of check boxes from which the user can select multiple values.</p></td>
+<td align="left" valign="top" scope="row"><p>A
+set of HTML <tt>&lt;input></tt> elements of type <tt>checkbox</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-774"></a>A set of check boxes</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-775"></a><tt>selectManyListbox</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows
+a user to select multiple items from a set of items, all
+displayed at once.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;select></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-776"></a>A list box</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-777"></a><tt>selectManyMenu</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a user to select multiple
+items from a set of items.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;select></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-778"></a>A scrollable combo box</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-779"></a><tt>selectOneListbox</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows
+a user to select one item from a set of items, all
+displayed at once.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;select></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-780"></a>A list box</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-781"></a><tt>selectOneMenu</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows a user to select one
+item from a set of items.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML <tt>&lt;select></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-782"></a>A scrollable combo box</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-783"></a><tt>selectOneRadio</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Allows
+a user to select one item from a set of items.</p></td>
+<td align="left" valign="top" scope="row"><p>An HTML
+<tt>&lt;input type=radio></tt> element</p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-784"></a>A set of radio buttons</p></td>
+</tr>
+</table>
+
+<a name="bnaqi"></a><h4>Conversion Model</h4>
+<a name="indexterm-785"></a><p><a name="indexterm-786"></a><a name="indexterm-787"></a><a name="indexterm-788"></a>A JavaServer Faces application can optionally associate a component with server-side object data. This
+object is a JavaBeans component, such as a backing bean. An application gets
+and sets the object data for a component by calling the appropriate
+object properties for that component.</p><p><a name="indexterm-789"></a>When a component is bound to an object, the application has two views
+of the component&rsquo;s data:</p>
+<ul><li><p>The model view, in which data is represented as data types, such as <tt>int</tt> or <tt>long</tt>.</p></li>
+<li><p>The presentation view, in which data is represented in a manner that can be read or modified by the user. For example, a <tt>java.util.Date</tt> might be represented as a text string in the format <tt><i>mm</i>/<i>dd</i>/<i>yy</i></tt> or as a set of three text strings.</p></li></ul>
+<p>The JavaServer Faces implementation automatically converts component data between these two views when
+the bean property associated with the component is of one of the types
+supported by the component&rsquo;s data. For example, if a <tt>UISelectBoolean</tt> component is associated
+with a bean property of type <tt>java.lang.Boolean</tt>, the JavaServer Faces implementation will automatically convert
+the component&rsquo;s data from <tt>String</tt> to <tt>Boolean</tt>. In addition, some component data must
+be bound to properties of a particular type. For example, a <tt>UISelectBoolean</tt>
+component must be bound to a property of type <tt>boolean</tt> or <tt>java.lang.Boolean</tt>.</p><p><a name="indexterm-790"></a><a name="indexterm-791"></a>Sometimes you might want to convert a component&rsquo;s data to a type other
+than a standard type, or you might want to convert the format of
+the data. To facilitate this, JavaServer Faces technology allows you to register a
+<tt>Converter</tt> implementation on <tt>UIOutput</tt> components and components whose classes subclass <tt>UIOutput</tt>. If you register
+the <tt>Converter</tt> implementation on a component, the <tt>Converter</tt> implementation converts the component&rsquo;s
+data between the two views.</p><p><a name="indexterm-792"></a><a name="indexterm-793"></a><a name="indexterm-794"></a>You can either use the standard converters supplied with the JavaServer Faces implementation
+or create your own custom converter.</p><p>To create and use a custom converter in your application, three things must
+happen:</p>
+<ul><li><p>The application developer must implement the <tt>Converter</tt> class. See <a href="bnaus.html">Creating a Custom Converter</a>.</p></li>
+<li><p>The application architect must register the <tt>Converter</tt> with the application. See <a href="bnaxe.html">Registering a Custom Converter</a>.</p></li>
+<li><p>The page author must refer to the <tt>Converter</tt> object from the tag of the component whose data must be converted. See <a href="bnatt.html#bnatu">Using a Custom Converter</a>.<a name="indexterm-795"></a></p></li></ul>
+
+
+<a name="bnaqj"></a><h4>Event and Listener Model</h4>
+<a name="indexterm-796"></a><a name="indexterm-797"></a><p><a name="indexterm-798"></a><a name="indexterm-799"></a>The JavaServer Faces event and listener model is similar to the JavaBeans event
+model in that it has strongly typed event classes and listener interfaces that
+an application can use to handle events generated by UI components.</p><p><a name="indexterm-800"></a><a name="indexterm-801"></a>An <tt>Event</tt> object identifies the component that generated the event and stores information
+about the event. To be notified of an event, an application must provide
+an implementation of the <tt>Listener</tt> class and must register it on the
+component that generates the event. When the user activates a component, such as
+by clicking a button, an event is fired. This causes the JavaServer Faces
+implementation to invoke the listener method that processes the event.</p><p>JavaServer Faces technology supports three kinds of events: value-change events, action events, and
+data-model events.</p><p><a name="indexterm-802"></a>An <b>action event</b> occurs when the user activates a component that implements <tt>ActionSource</tt>. These components
+include buttons and hyperlinks.</p><p><a name="indexterm-803"></a><a name="indexterm-804"></a>A <b>value-change event</b> occurs when the user changes the value of a component represented
+by <tt>UIInput</tt> or one of its subclasses. An example is selecting a check
+box, an action that results in the component&rsquo;s value changing to <tt>true</tt>. The component
+types that can generate these types of events are the <tt>UIInput</tt>, <tt>UISelectOne</tt>,
+<tt>UISelectMany</tt>, and <tt>UISelectBoolean</tt> components. Value-change events are fired only if no validation errors were
+detected.</p><p><a name="indexterm-805"></a><a name="indexterm-806"></a>Depending on the value of the <tt>immediate</tt> property (see <a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a>) of the component
+emitting the event, action events can be processed during the invoke application phase
+or the apply request values phase, and value-change events can be processed during
+the process validations phase or the apply request values phase.</p><p><a name="indexterm-807"></a>A <b>data-model event</b> occurs when a new row of a <tt>UIData</tt> component is selected.
+The discussion of data-model events is an advanced topic. It is not covered
+in this tutorial but may be discussed in future versions of this tutorial.</p><p>There are two ways to cause your application to react to action
+events or value-change events emitted by a standard component:</p>
+<ul><li><p><a name="indexterm-808"></a><a name="indexterm-809"></a><a name="indexterm-810"></a>Implement an event listener class to handle the event and register the listener on the component by nesting either a <tt>valueChangeListener</tt> tag or an <tt>actionListener</tt> tag inside the component tag.</p></li>
+<li><p><a name="indexterm-811"></a><a name="indexterm-812"></a>Implement a method of a backing bean to handle the event and refer to the method with a method expression from the appropriate attribute of the component&rsquo;s tag.</p></li></ul>
+<p>See <a href="bnaut.html">Implementing an Event Listener</a> for information on how to implement an event listener. See <a href="bnasz.html">Registering Listeners on Components</a>
+for information on how to register the listener on a component.</p><p>See <a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a> and <a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a> for information on how to implement backing bean methods
+that handle these events.</p><p>See <a href="bnatn.html">Referencing a Backing Bean Method</a> for information on how to refer to the backing bean method
+from the component tag.</p><p>When emitting events from custom components, you must implement the appropriate <tt>Event</tt> class
+and manually queue the event on the component in addition to implementing an
+event listener class or a backing bean method that handles the event. <a href="bnawd.html">Handling Events for Custom Components</a>
+explains how to do this.</p>
+
+<a name="bnaqk"></a><h4>Validation Model</h4>
+<a name="indexterm-813"></a><a name="indexterm-814"></a><p><a name="indexterm-815"></a><a name="indexterm-816"></a><a name="indexterm-817"></a><a name="indexterm-818"></a>JavaServer Faces technology supports a mechanism for validating the local data of editable
+components (such as text fields). This validation occurs before the corresponding model data is
+updated to match the local value.</p><p><a name="indexterm-819"></a><a name="indexterm-820"></a><a name="indexterm-821"></a>Like the conversion model, the validation model defines a set of standard classes
+for performing common data validation checks. The JavaServer Faces core tag library also
+defines a set of tags that correspond to the standard <tt>Validator</tt> implementations. See
+<a href="bnatc.html#bnatd">Table&nbsp;11-7</a> for a list of all the standard validation classes and corresponding tags.</p><p>Most of the tags have a set of attributes for configuring the
+validator&rsquo;s properties, such as the minimum and maximum allowable values for the component&rsquo;s data.
+The page author registers the validator on a component by nesting the validator&rsquo;s
+tag within the component&rsquo;s tag.</p><p>The validation model also allows you to create your own custom validator and
+corresponding tag to perform custom validation. The validation model provides two ways to
+implement custom validation:</p>
+<ul><li><p><a name="indexterm-822"></a>Implement a <tt>Validator</tt> interface that performs the validation. See <a href="bnauw.html#bnaux">Implementing the Validator Interface</a> for more information.</p></li>
+<li><p>Implement a backing bean method that performs the validation. See <a href="bnavb.html#bnave">Writing a Method to Perform Validation</a> for more information.</p></li></ul>
+<p>If you are implementing a <tt>Validator</tt> interface, you must also:</p>
+<ul><li><p>Register the <tt>Validator</tt> implementation with the application. See <a href="bnaxd.html">Registering a Custom Validator</a> for more information.</p></li>
+<li><p><a name="indexterm-823"></a><a name="indexterm-824"></a><a name="indexterm-825"></a><a name="indexterm-826"></a>Create a custom tag or use a <tt>validator</tt> tag to register the validator on the component. See <a href="bnauw.html#bnauy">Creating a Custom Tag</a> for more information.</p></li></ul>
+<p>If you are implementing a backing bean method to perform validation, you also
+must reference the validator from the component tag&rsquo;s <tt>validator</tt> attribute. See <a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a>
+for more information.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnapl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaql.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

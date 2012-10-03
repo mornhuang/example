@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Implementing an Event Listener - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaty.html">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="bnaty.html#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+<p class="toc level3 tocsp"><a href="bnaum.html">Performing Localization</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaun">Creating a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnaum.html#bnauo">Localizing Dynamic Data</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaup">Localizing Messages</a></p>
+<p class="toc level5"><a href="bnaum.html#bnauq">Creating a Message with a Message Factory</a></p>
+<p class="toc level5"><a href="bnaum.html#bnaur">Using <tt>FacesMessage</tt> to Create a Message</a></p>
+<p class="toc level3 tocsp"><a href="bnaus.html">Creating a Custom Converter</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Implementing an Event Listener</a></p>
+<p class="toc level4"><a href="#bnauu">Implementing Value-Change Listeners</a></p>
+<p class="toc level4"><a href="#bnauv">Implementing Action Listeners</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnauw.html">Creating a Custom Validator</a></p>
+<p class="toc level4"><a href="bnauw.html#bnaux">Implementing the Validator Interface</a></p>
+<p class="toc level4"><a href="bnauw.html#bnauy">Creating a Custom Tag</a></p>
+<p class="toc level5"><a href="bnauw.html#bnauz">Writing the Tag Handler</a></p>
+<p class="toc level5"><a href="bnauw.html#bnava">Writing the Tag Library Descriptor</a></p>
+<p class="toc level3 tocsp"><a href="bnavb.html">Writing Backing Bean Methods</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+<p class="toc level2 tocsp"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaus.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnauw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaut"></a><h3>Implementing an Event Listener</h3>
+<a name="indexterm-1367"></a><a name="indexterm-1368"></a><p>As explained in <a href="bnaqd.html#bnaqj">Event and Listener Model</a>, JavaServer Faces technology supports action events and value-change events.</p><p><a name="indexterm-1369"></a><a name="indexterm-1370"></a>Action events occur when the user activates a component that implements <tt>ActionSource</tt>. These
+events are represented by the class <tt>javax.faces.event.ActionEvent</tt>.</p><p><a name="indexterm-1371"></a><a name="indexterm-1372"></a>Value-change events occur when the user changes the value of a component that
+implements <tt>EditableValueHolder</tt>. These events are represented by the class <tt>javax.faces.event.ValueChangeEvent</tt>.</p><p><a name="indexterm-1373"></a>One way to handle these events is to implement the appropriate listener classes.
+Listener classes that handle the action events in an application must implement the
+interface <tt>javax.faces.event.ActionListener</tt>. Similarly, listeners that handle the value-change events must implement the interface
+<tt>javax.faces.event.ValueChangeListener</tt>.</p><p>This section explains how to implement the two listener classes.</p><p>If you need to handle events generated by custom components, you must implement
+an event handler and manually queue the event on the component as well
+as implement an event listener. See <a href="bnawd.html">Handling Events for Custom Components</a> for more information.</p>
+<hr><p><b>Note - </b><a name="indexterm-1374"></a>You need not create an <tt>ActionListener</tt> implementation to handle an event that
+results solely in navigating to a page and does not perform any other
+application-specific processing. See <a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a> for information on how to manage page navigation.</p>
+<hr>
+
+
+<a name="bnauu"></a><h4>Implementing Value-Change Listeners</h4>
+<p><a name="indexterm-1375"></a><a name="indexterm-1376"></a><a name="indexterm-1377"></a>A <tt>ValueChangeListener</tt> implementation must include a <tt>processValueChange(ValueChangeEvent)</tt> method. This method processes the
+specified value-change event and is invoked by the JavaServer Faces implementation when the
+value-change event occurs. The <tt>ValueChangeEvent</tt> instance stores the old and the new values of
+the component that fired the event.</p><p>The <tt>NameChanged</tt> listener implementation is registered on the <tt>name</tt> <tt>UIInput</tt> component on the
+<tt>bookcashier.jsp</tt> page. This listener stores into session scope the name the user entered
+in the text field corresponding to the <tt>name</tt> component. When the <tt>bookreceipt.jsp</tt> page
+is loaded, it displays the first name inside the message:</p><pre>"Thank you, {0} for purchasing your books from us."</pre><p>Here is part of the <tt>NameChanged</tt> listener implementation:</p><pre>...
+public class NameChanged extends Object implements
+     ValueChangeListener {
+
+     public void processValueChange(ValueChangeEvent event)
+        throws AbortProcessingException {
+    
+        if (null != event.getNewValue()) {
+            FacesContext.getCurrentInstance().
+                getExternalContext().getSessionMap().
+                    put("name", event.getNewValue());
+        }
+    }
+}</pre><p>When the user enters the name in the text field, a value-change
+event is generated, and the <tt>processValueChange(ValueChangeEvent)</tt> method of the <tt>NameChanged</tt> listener implementation is invoked. This
+method first gets the ID of the component that fired the event
+from the <tt>ValueChangeEvent</tt> object. Next, it puts the value, along with an attribute
+name, into the session map of the <tt>FacesContext</tt> instance.</p><p><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a> explains how to register this listener onto a component.</p>
+
+<a name="bnauv"></a><h4>Implementing Action Listeners</h4>
+<a name="indexterm-1378"></a><p><a name="indexterm-1379"></a><a name="indexterm-1380"></a>An <tt>ActionListener</tt> implementation must include a <tt>processAction(ActionEvent)</tt> method. The <tt>processAction(ActionEvent)</tt> method processes the
+specified action event. The JavaServer Faces implementation invokes the <tt>processAction(ActionEvent)</tt> method when the
+<tt>ActionEvent</tt> occurs.</p><p><a name="indexterm-1381"></a><a name="indexterm-1382"></a>The Duke&rsquo;s Bookstore application does not use any <tt>ActionListener</tt> implementations. Instead, it uses method
+expressions from <tt>actionListener</tt> attributes to refer to backing bean methods that handle events.
+This section explains how to turn one of these methods into an <tt>ActionListener</tt>
+implementation.</p><p>The <tt>chooselocale.jsp</tt> page allows the user to select a locale for the application
+by clicking on one of a set of hyperlinks. When the user clicks
+one of the hyperlinks, an action event is generated, and the <tt>chooseLocaleFromLink(ActionEvent)</tt>
+method of <tt>LocaleBean</tt> is invoked. Instead of implementing a bean method to handle
+this event, you can create a listener implementation to handle it. To do
+this, you do the following:</p>
+<ul><li><p>Move the <tt>chooseLocaleFromLink(ActionEvent)</tt> method to a class that implements <tt>ActionListener</tt></p></li>
+<li><p>Rename the method to <tt>processAction(ActionEvent)</tt></p></li></ul>
+<p>The listener implementation would look something like this:</p><pre>...
+public class LocaleChangeListener extends Object implements
+     ActionListener {
+
+    private HashMap&lt;String, Locale> locales = null;
+    
+     public LocaleChangeListener() {
+        locales = new HashMap&lt;String, Locale>(4);
+        locales.put("NAmerica", new Locale("en", "US"));
+        locales.put("SAmerica", new Locale("es", "MX"));
+        locales.put("Germany", new Locale("de", "DE"));
+        locales.put("France", new Locale("fr", "FR"));
+    }
+
+    public void processAction(ActionEvent event)
+        throws AbortProcessingException {
+        
+        String current = event.getComponent().getId();
+        FacesContext context = FacesContext.getCurrentInstance();
+        context.getViewRoot().setLocale((Locale)
+         locales.get(current));
+     }
+}</pre><p><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a> explains how to register this listener onto a component.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaus.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnauw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

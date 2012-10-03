@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Core Tag Library - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level3"><a href="bnakd.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnake.html">Using JSTL</a></p>
+<p class="toc level4"><a href="bnake.html#bnakg">Tag Collaboration</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Core Tag Library</a></p>
+<p class="toc level4"><a href="#bnakj">Variable Support Tags</a></p>
+<p class="toc level4"><a href="#bnakk">Flow Control Tags</a></p>
+<p class="toc level5"><a href="#bnakl">Conditional Tags</a></p>
+<p class="toc level5"><a href="#bnakm">Iterator Tags</a></p>
+<p class="toc level4 tocsp"><a href="#bnakn">URL Tags</a></p>
+<p class="toc level4"><a href="#bnako">Miscellaneous Tags</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnakq.html">XML Tag Library</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakt">Core Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnaku">Flow Control Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakv">Transformation Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnakw.html">Internationalization Tag Library</a></p>
+<p class="toc level4"><a href="bnakw.html#bnaky">Setting the Locale</a></p>
+<p class="toc level4"><a href="bnakw.html#bnakz">Messaging Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnala">The <tt>setBundle</tt> and <tt>bundle</tt> Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnalb">The <tt>message</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnakw.html#bnalc">Formatting Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnald.html">SQL Tag Library</a></p>
+<p class="toc level4"><a href="bnald.html#bnalf"><tt>query</tt> Tag Result Interface</a></p>
+<p class="toc level3 tocsp"><a href="bnalg.html">JSTL Functions</a></p>
+<p class="toc level3"><a href="bnali.html">Further Information about JSTL</a></p>
+<p class="toc level2 tocsp"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnake.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnakq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnakh"></a><h3>Core Tag Library</h3>
+<p><a name="indexterm-453"></a><a href="#bnaki">Table&nbsp;7-2</a> summarizes the core tags, which include those related to variables and flow
+control, as well as a generic way to access URL-based resources whose content
+can then be included or processed within the JSP page.</p><a name="bnaki"></a><h6>Table&nbsp;7-2 Core Tags</h6><table><col width="15%"><col width="36%"><col width="32%"><col width="16%"><tr><th align="left" valign="top" scope="column"><p>Area</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>Tags</p></th>
+<th align="left" valign="top" scope="column"><p>Prefix</p></th>
+</tr>
+<tr><td rowspan="4" align="left" valign="top" scope="row"><p><b>Core</b>   
+           
+      </p></td>
+<td align="left" valign="top" scope="row"><p>Variable support</p></td>
+<td align="left" valign="top" scope="row"><pre>remove
+set</pre></td>
+<td rowspan="4" align="left" valign="top" scope="row"><p><tt>c</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Flow control</p></td>
+<td align="left" valign="top" scope="row"><pre>choose
+    when
+    otherwise
+forEach
+forTokens
+if</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>URL management</p></td>
+<td align="left" valign="top" scope="row"><pre>import
+    param
+redirect
+    param
+url
+    param</pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Miscellaneous</p></td>
+<td align="left" valign="top" scope="row"><pre>catch
+out</pre></td>
+</tr>
+</table>
+
+<a name="bnakj"></a><h4>Variable Support Tags</h4>
+<p><a name="indexterm-454"></a><a name="indexterm-455"></a>The <tt>set</tt> tag sets the value of an EL variable or the property
+of an EL variable in any of the JSP scopes (page, request, session,
+or application). If the variable does not already exist, it is created.</p><p>The JSP EL variable or property can be set either from the
+attribute <tt>value</tt>:</p><pre>&lt;c:set var="foo" scope="session" value="..."/></pre><p>or from the body of the tag:</p><pre>&lt;c:set var="foo">
+     ...
+ &lt;/c:set></pre><p>For example, the following sets an EL variable named <tt>bookID</tt> with the value
+of the request parameter named <tt>Remove</tt>:</p><pre>&lt;c:set var="bookId" value="${param.Remove}"/></pre><p><a name="indexterm-456"></a>To remove an EL variable, you use the <tt>remove</tt> tag. When the bookstore JSP
+page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookreceipt.jsp</tt> is invoked, the shopping session is finished, so the <tt>cart</tt>
+session attribute is removed as follows:</p><pre>&lt;c:remove var="cart" scope="session"/></pre><p>The <tt>value</tt> attribute of the <tt>set</tt> tag can also take a deferred value
+expression (See <a href="bnahq.html#bnahr">Immediate and Deferred Evaluation Syntax</a>) so that JavaServer Faces component tags can access the value
+at the appropriate stage of the page life cycle.</p><p>JavaServer Faces technology (see <a href="bnaph.html">Chapter&nbsp;10, JavaServer Faces Technology</a>) supports a multiphase life cycle, which includes separate
+phases for rendering components, validating data, updating model values, and performing other tasks.
+What this means is that any JavaServer Faces component tags that reference the
+value set by the <tt>set</tt> tag must have access to this value at
+different phases of the life cycle, not just during the rendering phase. Consider
+the following code:</p><pre>&lt;c:set var="bookId" scope="page" value="#{BooksBean.books}"/>
+...
+&lt;h:inputText id="bookId" value="#{bookId}"/>
+...</pre><p>The <tt>value</tt> attribute of the <tt>c:set</tt> tag uses a deferred value expression, which
+means that the <tt>bookId</tt> variable it references is available not only during the
+rendering phase of the JavaServer Faces life cycle but also during the later
+stages of the life cycle. Therefore, whatever value the user enters into the
+<tt>bookId</tt> component tag is updated to the external data object during the appropriate
+stage of the life cycle.</p><p>If the expression referenced by the <tt>value</tt> attribute used immediate evaluation syntax then
+the <tt>bookId</tt> variable would be available only when the component is rendered during
+the render response phase. This would prevent the value the user enters into
+the component from being converted, validated, or updated to the external data object
+during the later phases of the life cycle.</p>
+
+<a name="bnakk"></a><h4>Flow Control Tags</h4>
+<p><a name="indexterm-457"></a>To execute flow control logic, a page author must generally resort to using
+scriptlets. For example, the following scriptlet is used to iterate through a shopping
+cart:</p><pre>&lt;%
+     Iterator i = cart.getItems().iterator();
+    while (i.hasNext()) {
+        ShoppingCartItem item =
+            (ShoppingCartItem)i.next();
+        ...
+%>
+        &lt;tr>
+        &lt;td align="right" bgcolor="#ffffff">
+         ${item.quantity}
+        &lt;/td>
+        ...
+&lt;%
+     }
+ %></pre><p>Flow control tags eliminate the need for scriptlets. The next two sections have
+examples that demonstrate the conditional and iterator tags.</p>
+
+<a name="bnakl"></a><h5>Conditional Tags</h5>
+<p><a name="indexterm-458"></a><a name="indexterm-459"></a>The <tt>if</tt> tag allows the conditional execution of its body according to the
+value of the <tt>test</tt> attribute. The following example from <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt> tests whether the
+request parameter <tt>Add</tt> is empty. If the test evaluates to <tt>true</tt>, the page
+queries the database for the book record identified by the request parameter and
+adds the book to the shopping cart:</p><pre>&lt;c:if test="${!empty param.Add}">
+    &lt;c:set var="bid" value="${param.Add}"/>
+    &lt;jsp:useBean id="bid"  type="java.lang.String" />
+     &lt;sql:query var="books"
+         dataSource="${applicationScope.bookDS}">
+        select * from PUBLIC.books where id = ?
+        &lt;sql:param value="${bid}" />
+    &lt;/sql:query>
+    &lt;c:forEach var="bookRow" begin="0" items="${books.rows}">
+         &lt;jsp:useBean id="bookRow" type="java.util.Map" />
+        &lt;jsp:useBean id="addedBook"
+            class="database.Book" scope="page" />
+    ...
+    &lt;% cart.add(bid, addedBook); %>
+...
+&lt;/c:if></pre><p><a name="indexterm-460"></a><a name="indexterm-461"></a><a name="indexterm-462"></a>The <tt>choose</tt> tag performs conditional block execution by the embedded <tt>when</tt> subtags.
+It renders the body of the first <tt>when</tt> tag whose test condition evaluates
+to <tt>true</tt>. If none of the test conditions of nested <tt>when</tt> tags evaluates
+to <tt>true</tt>, then the body of an <tt>otherwise</tt> tag is evaluated, if present.</p><p>For example, the following sample code shows how to render text based on
+a customer&rsquo;s membership category.</p><pre>&lt;c:choose>
+     &lt;c:when test="${customer.category == &rsquo;trial&rsquo;}" >
+         ...
+     &lt;/c:when>
+     &lt;c:when test="${customer.category == &rsquo;member&rsquo;}" >
+         ...
+     &lt;/c:when>
+         &lt;c:when test="${customer.category == &rsquo;preferred&rsquo;}" >
+         ...
+     &lt;/c:when>
+     &lt;c:otherwise>
+         ...
+     &lt;/c:otherwise>
+ &lt;/c:choose></pre><p>The <tt>choose</tt>, <tt>when</tt>, and <tt>otherwise</tt> tags can be used to construct an
+<tt>if</tt>-<tt>then</tt>-<tt>else</tt> statement as follows:</p><pre>&lt;c:choose>
+     &lt;c:when test="${count == 0}" >
+         No records matched your selection.
+     &lt;/c:when>
+     &lt;c:otherwise>
+         ${count} records matched your selection.
+     &lt;/c:otherwise>
+ &lt;/c:choose></pre>
+
+<a name="bnakm"></a><h5>Iterator Tags</h5>
+<p><a name="indexterm-463"></a>The <tt>forEach</tt> tag allows you to iterate over a collection of objects.
+You specify the collection using the <tt>items</tt> attribute, and the current item is available
+through a variable named by the <tt>var</tt> attribute.</p><p>A large number of collection types are supported by <tt>forEach</tt>, including all implementations
+of <tt>java.util.Collection</tt> and <tt>java.util.Map</tt>. If the <tt>items</tt> attribute is of type <tt>java.util.Map</tt>,
+then the current item will be of type <tt>java.util.Map.Entry</tt>, which has the
+following properties:</p>
+<ul><li><p><tt>key</tt>: The key under which the item is stored in the underlying <tt>Map</tt></p></li>
+<li><p><tt>value</tt>: The value that corresponds to the key</p></li></ul>
+<p>Arrays of objects as well as arrays of primitive types (for example,
+<tt>int</tt>) are also supported. For arrays of primitive types, the current item for
+the iteration is automatically wrapped with its standard wrapper class (for example, <tt>Integer</tt>
+for <tt>int</tt>, <tt>Float</tt> for <tt>float</tt>, and so on).</p><p>Implementations of <tt>java.util.Iterator</tt> and <tt>java.util.Enumeration</tt> are supported, but they must be used
+with caution. <tt>Iterator</tt> and <tt>Enumeration</tt> objects can't be reset, so they should
+not be used within more than one iteration tag. Finally, <tt>java.lang.String</tt> objects can be
+iterated over if the string contains a list of comma-separated values (for example:
+<tt>Monday,Tuesday,Wednesday,Thursday,Friday</tt>).</p><p>Here&rsquo;s the shopping cart iteration from the preceding section, now with the <tt>forEach</tt>
+tag:</p><pre>&lt;c:forEach var="item" items="${sessionScope.cart.items}">
+    ...
+    &lt;tr>
+         &lt;td align="right" bgcolor="#ffffff">
+         ${item.quantity}
+    &lt;/td>
+    ...
+&lt;/c:forEach></pre><p>The <tt>forTokens</tt> tag is used to iterate over a collection of tokens separated
+by a delimiter.</p><p>Similarly to the value attribute of the <tt>c:set</tt> tag (see <a href="#bnakj">Variable Support Tags</a>), the <tt>items</tt>
+attribute of <tt>forEach</tt> and <tt>forTokens</tt> can also take a deferred value expression so that
+JavaServer Faces tags can be included within these tags.</p><p>As described in <a href="#bnakj">Variable Support Tags</a>, JavaServer Faces technology (see <a href="bnaph.html">Chapter&nbsp;10, JavaServer Faces Technology</a>) supports a multiphase life
+cycle. Therefore, any JavaServer Faces component tags that are included in the <tt>forEach</tt>
+tag or the <tt>forTokens</tt> tag must have access to the variable referenced by the
+<tt>items</tt> attribute at different phases of the life cycle, not just during the
+rendering phase. Consider the following code:</p><pre>&lt;c:forEach var="book" items="#{BooksBean.books}">
+    ...
+    &lt;h:inputText id="quantity" value="#{book.quantity}"/>
+    ...
+&lt;/c:forEach></pre><p>The <tt>items</tt> attribute uses a deferred value expression, which means that the <tt>book</tt>
+variable it references is available not only during the rendering phase of the
+JavaServer Faces life cycle but also during the later stages of the life
+cycle. Therefore, whatever values the user enters into the <tt>quantity</tt> component tags are
+updated to the external data object during the appropriate stage of the life
+cycle.</p><p>If the expression referenced by the <tt>items</tt> attribute used immediate evaluation syntax then
+the <tt>book</tt> variable would be available only when the component is rendered during
+the render response phase. This would prevent the values the user enters into
+the components from being converted, validated, or updated to the external data object
+during the later phases of the life cycle. The JavaServer Faces version of
+Duke&rsquo;s Bookstore includes a <tt>forEach</tt> tag on its <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt> page.</p>
+
+<a name="bnakn"></a><h4>URL Tags</h4>
+<p>The <tt>jsp:include</tt> element provides for the inclusion of static and dynamic resources in
+the same context as the current page. However, <tt>jsp:include</tt> cannot access resources
+that reside outside the web application, and it causes unnecessary buffering when the
+resource included is used by another element.</p><p>In the following example, the <tt>transform</tt> element uses the content of the included
+resource as the input of its transformation. The <tt>jsp:include</tt> element reads the
+content of the response and writes it to the body content of the
+enclosing transform element, which then rereads exactly the same content. It would be
+more efficient if the <tt>transform</tt> element could access the input source directly and
+thereby avoid the buffering involved in the body content of the transform tag.</p><pre>&lt;acme:transform>
+    &lt;jsp:include page="/exec/employeesList"/>
+&lt;acme:transform/></pre><p><a name="indexterm-464"></a>The <tt>import</tt> tag is therefore the simple, generic way to access URL-based
+resources, whose content can then be included and or processed within the JSP
+page. For example, in <a href="bnakq.html">XML Tag Library</a>, <tt>import</tt> is used to read in the XML document
+containing book information and assign the content to the scoped variable <tt>xml</tt>:</p><pre>&lt;c:import url="/books.xml" var="xml" />
+&lt;x:parse doc="${xml}" var="booklist"
+     scope="application" /></pre><p><a name="indexterm-465"></a>The <tt>param</tt> tag, analogous to the <tt>jsp:param</tt> tag (see <a href="bnajc.html#bnajd"><tt>jsp:param</tt> Element</a>), can be used
+with <tt>import</tt> to specify request parameters.</p><p><a name="indexterm-466"></a><a href="bnagm.html#bnagr">Session Tracking</a> discusses how an application must rewrite URLs to enable session tracking whenever
+the client turns off cookies. You can use the <tt>url</tt> tag to rewrite
+URLs returned from a JSP page. The tag includes the session ID in
+the URL only if cookies are disabled; otherwise, it returns the URL unchanged.
+Note that this feature requires that the URL be <b>relative</b>. The <tt>url</tt> tag
+takes <tt>param</tt> subtags to include parameters in the returned URL. For example,
+<tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt> rewrites the URL used to add a book to the shopping
+cart as follows:</p><pre>&lt;c:url var="url" value="/catalog" >
+    &lt;c:param name="Add" value="${bookId}" />
+&lt;/c:url>
+&lt;p>&lt;strong>&lt;a href="${url}"></pre><p><a name="indexterm-467"></a>The <tt>redirect</tt> tag sends an HTTP redirect to the client. The <tt>redirect</tt>
+tag takes <tt>param</tt> subtags for including parameters in the returned URL.</p>
+
+<a name="bnako"></a><h4>Miscellaneous Tags</h4>
+<p><a name="indexterm-468"></a>The <tt>catch</tt> tag provides a complement to the JSP error page mechanism. It
+allows page authors to recover gracefully from error conditions that they can control.
+Actions that are of central importance to a page should <b>not</b> be encapsulated in
+a <tt>catch</tt>; in this way their exceptions will propagate instead to an error
+page. Actions with secondary importance to the page should be wrapped in a
+<tt>catch</tt> so that they never cause the error page mechanism to be invoked.</p><p>The exception thrown is stored in the variable identified by <tt>var</tt>, which always
+has page scope. If no exception occurred, the scoped variable identified by <tt>var</tt>
+is removed if it existed. If <tt>var</tt> is missing, the exception is simply
+caught and not saved.</p><p><a name="indexterm-469"></a>The <tt>out</tt> tag evaluates an expression and outputs the result of the evaluation
+to the current <tt>JspWriter</tt> object. The syntax and attributes are as follows:</p><pre>&lt;c:out value="value" [escapeXml="{true|false}"]
+     [default="<i>defaultValue</i>"] /></pre><p>If the result of the evaluation is a <tt>java.io.Reader</tt> object, then data is
+first read from the <tt>Reader</tt> object and then written into the current <tt>JspWriter</tt>
+object. The special processing associated with <tt>Reader</tt> objects improves performance when a large amount
+of data must be read and then written to the response.</p><p>If <tt>escapeXml</tt> is true, the character conversions listed in <a href="#bnakp">Table&nbsp;7-3</a> are applied.</p><a name="bnakp"></a><h6>Table&nbsp;7-3 Character Conversions</h6><table><col width="50%"><col width="50%"><tr><th align="left" valign="top" scope="column"><p>Character</p></th>
+<th align="left" valign="top" scope="column"><p>Character Entity
+Code</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&lt;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&amp;lt;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&amp;gt;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&amp;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&amp;amp;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&rsquo;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&amp;#039;</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>"</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&amp;#034;</tt></p></td>
+</tr>
+</table>
+         </div>
+         <div class="navigation">
+             <a href="bnake.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnakq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

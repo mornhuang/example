@@ -1,0 +1,120 @@
+<html>
+    <!-- $Id: package.html,v 1.1 2008/10/15 09:28:21 huangmeng Exp $ -->
+<head><title></title></head><body>
+
+<p> This package has a Linux implementation
+of a <em>usb.core.Host</em> object,
+bootstrapping support, and
+other classes leveraging Linux USB support.
+It accesses the "usbdevfs" userspace APIs
+(a set of currently undocumented ioctl calls)
+using a small bit of native code.
+Both Free Software (GCJ/CNI) and
+commercially legislated (Sun's JNI) APIs to
+native code have current implementations.
+
+<p> Multiple CPU types are supported.
+Only x86 and compatible systems have gotten substantial testing.
+Testing hasn't yet turned up problems when using Kaffe,
+and GCJ has worked well too;
+so you can freely choose your technology partners.
+(You aren't forced to license some specific commercial JVM,
+such as Sun's or IBM's.)
+
+<p> The rest of this package overview is a summary of
+Linux-specific issues you may need to know about.
+
+
+<h3> usbdevfs permissions </h3>
+
+<p> For the moment, either work as root or set up <code>/etc/fstab</code>
+to have your <em>/proc/bus/usb</em> entry
+use the <code>devmode=0666</code> option.
+That option means anyone can claim use of any USB device that's not got
+a kernel driver.  For a true single-user machine,
+that's the model you'll expect.
+There are other usbdevfs mount options that can help you set up for
+other configurations; the Linux default is set up for use as root.
+
+
+<h3> Bulk Messaging Throughput and Latency </h3>
+
+<p> Bulk I/O is currently limited by "usbdevfs" to single page
+(4KBytes) chunks,
+so larger writes are broken up before usbdevfs sees them.
+At peak throughput, that means less than four milliseconds data time
+before needing to schedule your Java thread
+again, just to keep the request queue full.
+Sends and receives will have a minimum latency of around a millisecond;
+this implementation currently does not support asynchronously
+queued I/O requests.
+
+<h3> Kernel Drivers for Interfaces </h3>
+
+<p> At this time, interfaces with native Linux drivers
+can't be accessed using <em>usb.core</em> APIs unless that
+kernel driver is not loaded into the Linux kernel.
+The reason for this is that kernel drivers always have
+the first chance to claim bind to interfaces, and
+there is no current mechanism for unbinding them.
+You would normally use filesystem APIs to access such devices;
+they will often appear in
+<em>/dev/usb/...</em>, or as SCSI devices, or so on.
+See the experimental <a href="HID.html">HID</a> driver for an
+example of device access using such filesystem APIs.
+(There are a lot of kinds of HID devices.  The Linux model
+for accessing them involves ignoring the fact that they
+happen to be connected using USB.)
+
+<h3> Nonconformant USB Devices </h3>
+
+<p> Some devices (often early USB 1.0 ones, or "cheap"
+ones that haven't been tested effectively -- perhaps only
+against some Win98 release) will not correctly expose
+device descriptors after they are
+configured.  At this writing, you can't work with such devices.
+(A fix is now possible, since the kernel's copies of
+the descriptors are now available.)
+
+<h3><a name="control">Control Messaging Issues</a></h3>
+
+At this writing, some of the USB host controllers won't queue
+control messages.  That means that drivers can interfere with
+each other:  if one driver issues a control request, it can
+cause an unexpected errors in another driver.
+(This ought to be improved
+by the time Linux 2.4.0-final arrives.)
+
+<p> Also, the Linux kernel has no sort of mutual exclusion
+mechanism ("baton passing", etc.) to ensure that control requests are
+only made at "safe" moments.
+There are two risks here, which apply exclusively in cases where
+multiple drivers (such as a kernel one and any user program
+accessing usbdevfs) are both talking to that device:  </p><ol>
+
+    <li> The primary risk is from lower quality USB devices,
+    which aren't truly conformant to the USB specification.
+    The risk is that these devices misbehave in
+    the face of some standard USB requests,
+    for example by locking up until after manual reset.
+    <em>Just don't use such faulty devices.</em>  These likely won't
+    be the only problems you would have with them. </li>
+
+    <li>Another risk is from devices which incorporate control messaging
+    into their application protocols.
+    When multiple drivers are talking to such devices, message sequencing
+    requirements could be violated if sequencing isn't done.
+    The risk is that these devices may also misbehave.
+    (At this point it is not suspected to be a substantial risk
+    except for mass storage devices.) </li>
+
+    </ol>
+
+<p> Some common devices (such as audio devices with a HID control
+for volume) can require multiple driver support.  In some cases even
+single-interface devices may benefit from multiple-driver support.  For
+example a standard kernel driver, plus a user mode controller to manage
+device-specific features not handled by the kernel.
+
+
+</body></html>

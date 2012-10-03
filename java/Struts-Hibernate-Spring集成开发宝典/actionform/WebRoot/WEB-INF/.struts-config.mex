@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/listForm.do" location="76,95" dimension="328,84" />
+  <StrutsActivity path="/mapForm.do" location="458,94" dimension="322,84" />
+  <StrutsActivity path="/dynaForm.do" location="71,434" dimension="328,84" />
+  <StrutsActivity path="/lazyDynaForm.do" location="445,428" dimension="352,84" />
+  <StrutsActivity path="/listForm.jsp" location="182,248" dimension="118,48" />
+  <StrutsActivity path="/listFormInput.jsp" location="167,-6" dimension="148,48" />
+  <StrutsActivity path="/mapForm.jsp" location="560,237" dimension="112,48" />
+  <StrutsActivity path="/mapFormInput.jsp" location="551,0" dimension="142,48" />
+  <StrutsActivity path="/dynaForm.jsp" location="180,568" dimension="118,48" />
+  <StrutsActivity path="/dynaFormInput.jsp" location="165,327" dimension="148,48" />
+  <StrutsActivity path="/lazyDynaForm.jsp" location="559,566" dimension="142,48" />
+  <StrutsActivity path="/lazyDynaFormInput.jsp" location="528,329" dimension="172,48" />
+  <StrutsTransition id="/lazyDynaForm.do,display,/lazyDynaForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="621,512" />
+      <AbsolutePoint location="621,566" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/lazyDynaFormInput.jsp,null,/lazyDynaForm.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="614,377" />
+      <AbsolutePoint location="614,428" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listForm.do,display,/listForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="240,179" />
+      <AbsolutePoint location="240,248" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listFormInput.jsp,null,/listForm.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="241,42" />
+      <AbsolutePoint location="241,95" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mapFormInput.jsp,null,/mapForm.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="622,48" />
+      <AbsolutePoint location="622,94" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dynaForm.do,display,/dynaForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="235,518" />
+      <AbsolutePoint location="235,568" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/dynaFormInput.jsp,null,/dynaForm.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="239,375" />
+      <AbsolutePoint location="239,434" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mapForm.do,display,/mapForm.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="619,178" />
+      <AbsolutePoint location="619,237" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

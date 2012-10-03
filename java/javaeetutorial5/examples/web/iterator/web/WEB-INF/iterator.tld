@@ -1,0 +1,38 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <description>A tag library exercising SimpleTag handlers.</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>SimpleTagLibrary</short-name>
+    <uri>/SimpleTagLibrary</uri>   
+  <tag>
+    <name>iterator</name>
+        <tag-class>iterator.IteratorTag</tag-class>
+        <tei-class>iterator.IteratorTEI</tei-class>
+        <body-content>scriptless</body-content>
+        <small-icon></small-icon>
+        <large-icon></large-icon>
+        <description>
+        An iteration tag
+    </description>
+    <attribute>
+      <name>var</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+     <attribute>
+      <name>type</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.lang.String</type>
+    </attribute>
+     <attribute>
+      <name>group</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+      <type>java.util.Collection</type>
+    </attribute>
+  </tag>
+</taglib>

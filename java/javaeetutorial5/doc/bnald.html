@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>SQL Tag Library - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level3"><a href="bnakd.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnake.html">Using JSTL</a></p>
+<p class="toc level4"><a href="bnake.html#bnakg">Tag Collaboration</a></p>
+<p class="toc level3 tocsp"><a href="bnakh.html">Core Tag Library</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakj">Variable Support Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakk">Flow Control Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakl">Conditional Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakm">Iterator Tags</a></p>
+<p class="toc level4 tocsp"><a href="bnakh.html#bnakn">URL Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnako">Miscellaneous Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnakq.html">XML Tag Library</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakt">Core Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnaku">Flow Control Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakv">Transformation Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnakw.html">Internationalization Tag Library</a></p>
+<p class="toc level4"><a href="bnakw.html#bnaky">Setting the Locale</a></p>
+<p class="toc level4"><a href="bnakw.html#bnakz">Messaging Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnala">The <tt>setBundle</tt> and <tt>bundle</tt> Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnalb">The <tt>message</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnakw.html#bnalc">Formatting Tags</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">SQL Tag Library</a></p>
+<p class="toc level4"><a href="#bnalf"><tt>query</tt> Tag Result Interface</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnalg.html">JSTL Functions</a></p>
+<p class="toc level3"><a href="bnali.html">Further Information about JSTL</a></p>
+<p class="toc level2 tocsp"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnakw.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnalg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnald"></a><h3>SQL Tag Library</h3>
+<p><a name="indexterm-495"></a>The JSTL SQL tags for accessing databases listed in <a href="#bnale">Table&nbsp;7-7</a> are designed
+for quick prototyping and simple applications. For production applications, database operations are normally encapsulated
+in JavaBeans components.</p><a name="bnale"></a><h6>Table&nbsp;7-7 SQL Tags</h6><table><col width="18%"><col width="29%"><col width="34%"><col width="17%"><tr><th align="left" valign="top" scope="column"><p>Area</p></th>
+<th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>Tags</p></th>
+<th align="left" valign="top" scope="column"><p>Prefix</p></th>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>Database</p></td>
+<td align="left" valign="top" scope="row"><p>Setting the data source</p></td>
+<td align="left" valign="top" scope="row"><p><tt>setDataSource</tt></p></td>
+<td rowspan="2" align="left" valign="top" scope="row"><p><tt>sql</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>SQL</p></td>
+<td align="left" valign="top" scope="row"><pre>query
+    dateParam
+    param
+transaction
+update
+    dateParam
+    param</pre></td>
+</tr>
+</table><p><a name="indexterm-496"></a>The <tt>setDataSource</tt> tag allows you to set data source information for the database.
+You can provide a JNDI name or <tt>DriverManager</tt> parameters to set the data
+source information. All of the Duke&rsquo;s Bookstore pages that have more than one
+SQL tag use the following statement to set the data source:</p><pre>&lt;sql:setDataSource dataSource="jdbc/BookDB" /></pre><p><a name="indexterm-497"></a>The <tt>query</tt> tag performs an SQL query that returns a result set. For
+parameterized SQL queries, you use a nested <tt>param</tt> tag inside the <tt>query</tt> tag.</p><p>In <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt>, the value of the <tt>Add</tt> request parameter determines which book information
+should be retrieved from the database. This parameter is saved as the attribute
+name <tt>bid</tt> and is passed to the <tt>param</tt> tag.</p><pre>&lt;c:set var="bid" value="${param.Add}"/>
+&lt;sql:query var="books" >
+    select * from PUBLIC.books where id = ?
+    &lt;sql:param value="${bid}" />
+&lt;/sql:query></pre><p><a name="indexterm-498"></a>The <tt>update</tt> tag is used to update a database row. The <tt>transaction</tt>
+tag is used to perform a series of SQL statements atomically.</p><p>The JSP page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookreceipt.jsp</tt> uses both tags to update the database inventory
+for each purchase. Because a shopping cart can contain more than one book,
+the <tt>transaction</tt> tag is used to wrap multiple queries and updates. First, the
+page establishes that there is sufficient inventory; then the updates are performed.</p><pre>&lt;c:set var="sufficientInventory" value="true" />
+&lt;sql:transaction>
+    &lt;c:forEach var="item" items="${sessionScope.cart.items}">
+        &lt;c:set var="book" value="${item.item}" />
+        &lt;c:set var="bookId" value="${book.bookId}" />
+
+        &lt;sql:query var="books"
+             sql="select * from PUBLIC.books where id = ?" >
+            &lt;sql:param value="${bookId}" />
+        &lt;/sql:query>
+        &lt;jsp:useBean id="inventory"
+            class="database.BookInventory" />
+        &lt;c:forEach var="bookRow" begin="0"
+            items="${books.rowsByIndex}">
+            &lt;jsp:useBean id="bookRow"  type="java.lang.Object[]" />
+            &lt;jsp:setProperty name="inventory" property="quantity"
+                value="${bookRow[7]}" />
+
+            &lt;c:if test="${item.quantity > inventory.quantity}">
+                &lt;c:set var="sufficientInventory" value="false" />
+                &lt;h3>&lt;font color="red" size="+2">
+                &lt;fmt:message key="OrderError"/>
+                 There is insufficient inventory for
+                 &lt;i>${bookRow[3]}&lt;/i>.&lt;/font>&lt;/h3>
+            &lt;/c:if>
+        &lt;/c:forEach>
+    &lt;/c:forEach>
+
+    &lt;c:if test="${sufficientInventory == &rsquo;true&rsquo;}" />
+        &lt;c:forEach var="item" items="${sessionScope.cart.items}">
+          &lt;c:set var="book" value="${item.item}" />
+          &lt;c:set var="bookId" value="${book.bookId}" />
+
+            &lt;sql:query var="books"
+                 sql="select * from PUBLIC.books where id = ?" >
+                &lt;sql:param value="${bookId}" />
+            &lt;/sql:query>
+
+            &lt;c:forEach var="bookRow" begin="0"
+                items="${books.rows}">    
+                          &lt;sql:update var="books" sql="update PUBLIC.books set
+                    inventory = inventory - ? where id = ?" >
+                    &lt;sql:param value="${item.quantity}" />
+                    &lt;sql:param value="${bookId}" />
+                &lt;/sql:update>
+            &lt;/c:forEach>
+        &lt;/c:forEach>
+        &lt;h3>&lt;fmt:message key="ThankYou"/>
+            ${param.cardname}.&lt;/h3>&lt;br>
+      &lt;/c:if>
+&lt;/sql:transaction></pre>
+
+<a name="bnalf"></a><h4><tt>query</tt> Tag Result Interface</h4>
+<p><a name="indexterm-499"></a>The <tt>Result</tt> interface is used to retrieve information from objects returned from a
+<tt>query</tt> tag.</p><pre>public interface Result
+    public String[] getColumnNames();
+    public int getRowCount()
+    public Map[] getRows();
+    public Object[][] getRowsByIndex();
+    public boolean isLimitedByMaxRows();</pre><p>For complete information about this interface, see the API documentation for the <a href="http://java.sun.com/products/jsp/jstl/1.1/docs/api/index.html">JSTL</a>
+packages.</p><p>The <tt>var</tt> attribute set by a <tt>query</tt> tag is of type <tt>Result</tt>. The
+<tt>getRows</tt> method returns an array of maps that can be supplied to the
+<tt>items</tt> attribute of a <tt>forEach</tt> tag. The JSTL expression language converts the syntax <tt>${<i>result</i>.rows}</tt>
+to a call to <tt><i>result</i>.getRows</tt>. The expression <tt>${books.rows}</tt> in the following example returns an array
+of maps.</p><p>When you provide an array of maps to the <tt>forEach</tt> tag, the <tt>var</tt>
+attribute set by the tag is of type <tt>Map</tt>. To retrieve information from
+a row, use the <tt>get("<i>colname</i>")</tt> method to get a column value. The
+JSP expression language converts the syntax <tt>${<i>map</i>.<i>colname</i>}</tt> to a call to <tt><i>map</i>.get("<i>colname</i>")</tt>. For
+example, the expression <tt>${book.title}</tt> returns the value of the title entry of
+a book map.</p><p>The Duke&rsquo;s Bookstore page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookdetails.jsp</tt> retrieves the column values from the <tt>book</tt>
+map as follows.</p><pre>&lt;c:forEach var="book" begin="0" items="${books.rows}">
+    &lt;h2>${book.title}&lt;/h2>
+    &amp;nbsp;&lt;fmt:message key="By"/> &lt;em>${book.firstname}
+    ${book.surname}&lt;/em>&amp;nbsp;&amp;nbsp;
+    (${book.year})&lt;br> &amp;nbsp; &lt;br>
+    &lt;h4>&lt;fmt:message key="Critics"/>&lt;/h4>
+    &lt;blockquote>${book.description}&lt;/blockquote>
+    &lt;h4>&lt;fmt:message key="ItemPrice"/>:
+     &lt;fmt:formatNumber value="${book.price}" type="currency"/>
+     &lt;/h4>
+&lt;/c:forEach></pre><p>The following excerpt from <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookcatalog.jsp</tt> uses the <tt>Row</tt> interface to retrieve values
+from the columns of a book row using scripting language expressions. First, the book
+row that matches a request parameter (<tt>bid</tt>) is retrieved from the database. Because
+the <tt>bid</tt> and <tt>bookRow</tt> objects are later used by tags that use scripting
+language expressions to set attribute values and by a scriptlet that adds a
+book to the shopping cart, both objects are declared as scripting variables using
+the <tt>jsp:useBean</tt> tag. The page creates a bean that describes the book, and
+scripting language expressions are used to set the book properties from book row
+column values. Then the book is added to the shopping cart.</p><p>You might want to compare this version of <tt>bookcatalog.jsp</tt> to the versions in
+<a href="bnagx.html">Chapter&nbsp;5, JavaServer Pages Technology</a> and <a href="bnalj.html">Chapter&nbsp;8, Custom Tags in JSP Pages</a> that use a book database JavaBeans component.</p><pre>&lt;sql:query var="books"
+     dataSource="${applicationScope.bookDS}">
+    select * from PUBLIC.books where id = ?
+    &lt;sql:param value="${bid}" />
+&lt;/sql:query>
+&lt;c:forEach var="bookRow" begin="0"
+            items="${books.rowsByIndex}">
+     &lt;jsp:useBean id="bid"  type="java.lang.String" />
+    &lt;jsp:useBean id="bookRow" type="java.lang.Object[]" />
+    &lt;jsp:useBean id="addedBook" class="database.Book"
+        scope="page" >
+        &lt;jsp:setProperty name="addedBook" property="bookId"
+            value="${bookRow[0]}" />
+        &lt;jsp:setProperty name="addedBook" property="surname"
+            value="${bookRow[1]}" />
+        &lt;jsp:setProperty name="addedBook" property="firstName"
+            value="${bookRow[2]}" />
+        &lt;jsp:setProperty name="addedBook" property="title"
+            value="${bookRow[3]}" />
+        &lt;jsp:setProperty name="addedBook" property="price"
+            value="${bookRow[4])}" />
+        &lt;jsp:setProperty name="addedBook" property="year"
+            value="${bookRow[6]}" />
+        &lt;jsp:setProperty name="addedBook"
+             property="description"
+             value="${bookRow[7]}" />
+        &lt;jsp:setProperty name="addedBook" property="inventory"
+            value="${bookRow[8]}" />
+    &lt;/jsp:useBean>
+    &lt;% cart.add(bid, addedBook); %>
+    ...
+&lt;/c:forEach></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnakw.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnalg.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

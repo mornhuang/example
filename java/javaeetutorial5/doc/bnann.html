@@ -1,0 +1,874 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Programming Simple Tag Handlers - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level3"><a href="bnalk.html">What Is a Custom Tag?</a></p>
+<p class="toc level3"><a href="bnall.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnaln.html">Types of Tags</a></p>
+<p class="toc level4"><a href="bnaln.html#bnalo">Tags with Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalp">Simple Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalq">Fragment Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalr">Dynamic Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnals">Deferred Value</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalt">Deferred Method</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalu">Dynamic Attribute or Deferred Expression</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalv"><tt>jsp:attribute</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnaln.html#bnalw">Tags with Bodies</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalx"><tt>jsp:body</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnaln.html#bnaly">Tags That Define Variables</a></p>
+<p class="toc level4"><a href="bnaln.html#bnalz">Communication between Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnama.html">Encapsulating Reusable Content Using Tag Files</a></p>
+<p class="toc level4"><a href="bnama.html#bnamb">Tag File Location</a></p>
+<p class="toc level4"><a href="bnama.html#bnamc">Tag File Directives</a></p>
+<p class="toc level5"><a href="bnama.html#bname">Declaring Tags</a></p>
+<p class="toc level5"><a href="bnama.html#bnamg">body-content Attribute</a></p>
+<p class="toc level5"><a href="bnama.html#bnamh">Declaring Tag Attributes in Tag Files</a></p>
+<p class="toc level5"><a href="bnama.html#bnamj">Declaring Tag Variables in Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnama.html#bnamo">Evaluating Fragments Passed to Tag Files</a></p>
+<p class="toc level4"><a href="bnama.html#bnamp">Custom Tag Examples</a></p>
+<p class="toc level5"><a href="bnama.html#bnamq">Simple Attribute Example</a></p>
+<p class="toc level5"><a href="bnama.html#bnamr">Simple and Fragment Attribute and Variable Example</a></p>
+<p class="toc level5"><a href="bnama.html#bnams">Dynamic Attribute Example</a></p>
+<p class="toc level3 tocsp"><a href="bnamu.html">Tag Library Descriptors</a></p>
+<p class="toc level4"><a href="bnamu.html#bnamw">Top-Level Tag Library Descriptor Elements</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamx"><tt>validator</tt> Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamz"><tt>listener</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnana">Declaring Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanb"><tt>tag-file</tt> TLD Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnand">Unpackaged Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnane">Packaged Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnanf">Declaring Tag Handlers</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanh"><tt>body-content</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnani">Declaring Tag Attributes for Tag Handlers</a></p>
+<p class="toc level4"><a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Programming Simple Tag Handlers</a></p>
+<p class="toc level4"><a href="#bnano">Including Tag Handlers in Web Applications</a></p>
+<p class="toc level4"><a href="#bnanp">How Is a Simple Tag Handler Invoked?</a></p>
+<p class="toc level4"><a href="#bnanq">Tag Handlers for Basic Tags</a></p>
+<p class="toc level4"><a href="#bnanr">Tag Handlers for Tags with Attributes</a></p>
+<p class="toc level5"><a href="#bnans">Defining Attributes in a Tag Handler</a></p>
+<p class="toc level5"><a href="#bnant">Attribute Validation</a></p>
+<p class="toc level5"><a href="#bnanu">Setting Dynamic Attributes</a></p>
+<p class="toc level5"><a href="#bnanv">Setting Deferred Value Attributes and Deferred Method Attributes</a></p>
+<p class="toc level4 tocsp"><a href="#bnanw">Tag Handlers for Tags with Bodies</a></p>
+<p class="toc level5"><a href="#bnanx">Tag Handler Does Not Manipulate the Body</a></p>
+<p class="toc level4 tocsp"><a href="#bnanz">Tag Handlers for Tags That Define Variables</a></p>
+<p class="toc level5"><a href="#bnaob"><tt>TagExtraInfo</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="#bnaoc">Cooperating Tags</a></p>
+<p class="toc level4"><a href="#bnaod">Tag Handler Examples</a></p>
+<p class="toc level5"><a href="#bnaoe">An Iteration Tag</a></p>
+<p class="toc level5"><a href="#bnaoh">A Template Tag Library</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnamu.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaon.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnann"></a><h3>Programming Simple Tag Handlers</h3>
+<p><a name="indexterm-571"></a><a name="indexterm-572"></a><a name="indexterm-573"></a><a name="indexterm-574"></a>The classes and interfaces used to implement simple tag handlers are contained in
+the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/package-summary.html">javax.servlet.jsp.tagext</a> package. Simple tag handlers implement the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/SimpleTag.html">SimpleTag</a> interface. Interfaces can be
+used to take an existing Java object and make it a tag handler.
+For most newly created handlers, you would use the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/SimpleTagSupport.html">SimpleTagSupport</a> classes as a
+base class.</p><p>The heart of a simple tag handler is a single method, <tt>doTag</tt>, which
+is invoked when the end element of the tag is encountered. Note
+that the default implementation of the <tt>doTag</tt> method of <tt>SimpleTagSupport</tt> does nothing.</p><p><a name="indexterm-575"></a>A tag handler has access to an API that allows it to
+communicate with the JSP page. The entry point to the API is the
+JSP context object (<a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/JspContext.html">javax.servlet.jsp.JspContext</a>). The <tt>JspContext</tt> object provides access to implicit objects. <tt>PageContext</tt>
+extends <tt>JspContext</tt> with servlet-specific behavior. Through these objects, a tag handler can retrieve
+all the other implicit objects (request, session, and application) that are accessible from
+a JSP page. If the tag is nested, a tag handler also has
+access to the handler (called the <b>parent</b>) that is associated with the enclosing
+tag.</p>
+
+<a name="bnano"></a><h4>Including Tag Handlers in Web Applications</h4>
+<p><a name="indexterm-576"></a><a name="indexterm-577"></a>Tag handlers can be made available to a web application in two basic
+ways. The classes implementing the tag handlers can be stored in an unpacked
+form in the <tt>/WEB-INF/classes/</tt> subdirectory of the web application. Alternatively, if the library
+is distributed as a JAR, it is stored in the <tt>/WEB-INF/lib/</tt> directory
+of the web application.</p>
+
+<a name="bnanp"></a><h4>How Is a Simple Tag Handler Invoked?</h4>
+<p><a name="indexterm-578"></a>The <tt>SimpleTag</tt> interface defines the basic protocol between a simple tag handler and
+a JSP page&rsquo;s servlet. The JSP page&rsquo;s servlet invokes the <tt>setJspContext</tt>, <tt>setParent</tt>, and
+attribute setting methods before calling <tt>doStartTag</tt>.</p><pre>ATag t = new ATag();
+t.setJSPContext(...);
+t.setParent(...);
+t.setAttribute1(value1);
+t.setAttribute2(value2);
+...
+t.setJspBody(new JspFragment(...))
+t.doTag();</pre><p>The following sections describe the methods that you need to develop for each
+type of tag introduced in <a href="bnaln.html">Types of Tags</a>.</p>
+
+<a name="bnanq"></a><h4>Tag Handlers for Basic Tags</h4>
+<p><a name="indexterm-579"></a>The handler for a basic tag without a body must implement the <tt>doTag</tt>
+method of the <tt>SimpleTag</tt> interface. The <tt>doTag</tt> method is invoked when the end element
+of the tag is encountered.</p><p>The basic tag discussed in the first section, <tt>&lt;tt:basic /></tt>, would be implemented
+by the following tag handler:</p><pre>public HelloWorldSimpleTag extends SimpleTagSupport {
+    public void doTag() throws JspException, IOException {
+        getJspContext().getOut().write("Hello, world.");
+    }
+}</pre>
+
+<a name="bnanr"></a><h4>Tag Handlers for Tags with Attributes</h4>
+<p>This section describes how to define attributes for a tag handler and how
+to validate attribute values.</p>
+
+<a name="bnans"></a><h5>Defining Attributes in a Tag Handler</h5>
+<p><a name="indexterm-580"></a>For each tag attribute, you must define a set method in the tag
+handler that conforms to the JavaBeans architecture conventions. For example, consider the tag
+handler for the JSTL <tt>c:if</tt> tag:</p><pre>&lt;c:if test="${Clear}"></pre><p>This tag handler contains the following method:</p><pre>public void setTest(boolean test) {
+    this.test = test;
+}</pre><p>As shown by the preceding example, the name of the attribute must
+match the name of the set method.</p>
+
+<a name="bnant"></a><h5>Attribute Validation</h5>
+<p><a name="indexterm-581"></a><a name="indexterm-582"></a>The documentation for a tag library should describe valid values for tag attributes.
+When a JSP page is translated, a web container will enforce any constraints
+contained in the TLD element for each attribute.</p><p><a name="indexterm-583"></a>The attributes passed to a tag can also be validated at translation time
+using the <tt>validate</tt> method of a class derived from <tt>TagExtraInfo</tt>. This class is
+also used to provide information about variables defined by the tag (see <a href="#bnaob"><tt>TagExtraInfo</tt> Class</a>).</p><p><a name="indexterm-584"></a>The <tt>validate</tt> method is passed the attribute information in a <tt>TagData</tt> object, which
+contains attribute-value tuples for each of the tag&rsquo;s attributes. Because the validation occurs at
+translation time, the value of an attribute that is computed at request time
+will be set to <tt>TagData.REQUEST_TIME_VALUE</tt>.</p><p>The tag <tt>&lt;tt:twa attr1="value1"/></tt> has the following TLD <tt>attribute</tt> element:</p><pre>&lt;attribute>
+    &lt;name>attr1&lt;/name>
+    &lt;required>true&lt;/required>
+    &lt;rtexprvalue>true&lt;/rtexprvalue>
+&lt;/attribute></pre><p>This declaration indicates that the value of <tt>attr1</tt> can be determined at runtime.</p><p>The following <tt>validate</tt> method checks whether the value of <tt>attr1</tt> is a valid
+Boolean value. Note that because the value of <tt>attr1</tt> can be computed at
+runtime, <tt>validate</tt> must check whether the tag user has chosen to provide
+a runtime value.</p><pre>public class TwaTEI extends TagExtraInfo {
+    public ValidationMessage[] validate(TagData data) {
+        Object o = data.getAttribute("attr1");
+        if (o != null &amp;&amp; o != TagData.REQUEST_TIME_VALUE) {
+            if (((String)o).toLowerCase().equals("true") ||
+                 ((String)o).toLowerCase().equals("false") )
+                 return null;
+            else
+                return new ValidationMessage(data.getId(),
+                    "Invalid boolean value.");
+        }
+        else
+            return null;
+    }
+}</pre>
+
+<a name="bnanu"></a><h5>Setting Dynamic Attributes</h5>
+<p><a name="indexterm-585"></a><a name="indexterm-586"></a><a name="indexterm-587"></a>Simple tag handlers that support dynamic attributes must declare that they do so in
+the <tt>tag</tt> element of the TLD (see <a href="bnamu.html#bnanf">Declaring Tag Handlers</a>). In addition, your tag
+handler must implement the <tt>setDynamicAttribute</tt> method of the <tt>DynamicAttributes</tt> interface. For each attribute
+specified in the tag invocation that does not have a corresponding <tt>attribute</tt>
+element in the TLD, the web container calls <tt>setDynamicAttribute</tt>, passing in the
+namespace of the attribute (or <tt>null</tt> if in the default namespace), the name
+of the attribute, and the value of the attribute. You must implement the
+<tt>setDynamicAttribute</tt> method to remember the names and values of the dynamic attributes so
+that they can be used later when <tt>doTag</tt> is executed. If the <tt>setDynamicAttribute</tt>
+method throws an exception, the <tt>doTag</tt> method is not invoked for the tag,
+and the exception must be treated in the same manner as if it
+came from an attribute setter method.</p><p>The following implementation of <tt>setDynamicAttribute</tt> saves the attribute names and values in lists.
+Then, in the <tt>doTag</tt> method, the names and values are echoed to the
+response in an HTML list.</p><pre>private ArrayList keys = new ArrayList();
+private ArrayList values = new ArrayList();
+
+public void setDynamicAttribute(String uri,
+     String localName, Object value ) throws JspException {
+    keys.add( localName );
+    values.add( value );
+}
+
+public void doTag() throws JspException, IOException {
+    JspWriter out = getJspContext().getOut();
+    for( int i = 0; i &lt; keys.size(); i++ ) {
+        String key = (String)keys.get( i );
+        Object value = values.get( i );
+        out.println( "&lt;li>" + key + " = " + value + "&lt;/li>" );
+    }
+}</pre>
+
+<a name="bnanv"></a><h5>Setting Deferred Value Attributes and Deferred Method Attributes</h5>
+<p><a name="indexterm-588"></a>For each tag attribute that accepts a deferred value expression or a deferred
+method expression, the tag handler must have a method to access the value
+of the attribute.</p><p>The methods that access the value of a deferred value attribute method must
+accept a <tt>ValueExpression</tt> object. The methods that access the value of a deferred
+method attribute must accept a <tt>MethodExpression</tt> object. These methods take the form
+<tt>set<i>XXX</i></tt>, where <i>XXX</i> is the name of the attribute.</p><p>The following example shows a method that can be used to access
+the value of a deferred value attribute called <tt>attributeName</tt>:</p><pre>private javax.el.ValueExpression attributeName = null;
+
+public void setAttributeName(
+    javax.el.ValueExpression attributeName)
+ {
+    this.attributeName = attributeName;
+}</pre><p>Deferred value attributes and deferred method attributes are primarily used by JavaServer Faces
+technology. See <a href="bnawe.html#bnawh">Getting the Attribute Values</a> for an example of creating a tag handler that processes
+these attributes for a JavaServer Faces application.</p><p>If you have an attribute that is both dynamic and deferred (meaning that
+the tag attribute definition accepts a deferred expression and has <tt>rtexprvalue</tt> set
+to true), then the <tt>setX</tt> method that accesses this value must accept an
+<tt>Object</tt> instance and test if the <tt>Object</tt> instance is a deferred value expression, as
+shown in this pseudocode:</p><pre>public void setAttr(Object obj) {
+    if (obj instance of ValueExpression) {
+        // this is a deferred expression
+    else {
+        // this is an rtexpression
+    }
+}</pre>
+
+<a name="bnanw"></a><h4>Tag Handlers for Tags with Bodies</h4>
+<p><a name="indexterm-589"></a>A simple tag handler for a tag with a body is implemented differently
+depending on whether or not the tag handler needs to manipulate the body.
+A tag handler manipulates the body when it reads or modifies the contents
+of the body.</p>
+
+<a name="bnanx"></a><h5>Tag Handler Does Not Manipulate the Body</h5>
+<p><a name="indexterm-590"></a><a name="indexterm-591"></a>If a tag handler needs simply to evaluate the body, it gets
+the body using the <tt>getJspBody</tt> method of <tt>SimpleTag</tt> and then evaluates the body using
+the <tt>invoke</tt> method.</p><p>The following tag handler accepts a <tt>test</tt> parameter and evaluates the body of
+the tag if the test evaluates to <tt>true</tt>. The body of the tag
+is encapsulated in a JSP fragment. If the test is <tt>true</tt>, the
+handler retrieves the fragment using the <tt>getJspBody</tt> method. The <tt>invoke</tt> method directs all
+output to a supplied writer or, if the writer is <tt>null</tt>, to the
+<tt>JspWriter</tt> returned by the <tt>getOut</tt> method of the <tt>JspContext</tt> associated with the tag handler.</p><pre>public class IfSimpleTag extends SimpleTagSupport {
+    private boolean test;
+    public void setTest(boolean test) {
+        this.test = test;
+    }
+    public void doTag() throws JspException, IOException {
+        if(test){
+            getJspBody().invoke(null);
+        }
+    }
+}</pre>
+
+<a name="bnany"></a><h5>Tag Handler Manipulates the Body</h5>
+<p>If the tag handler needs to manipulate the body, the tag handler
+must capture the body in a <tt>StringWriter</tt>. The <tt>invoke</tt> method directs all output to
+a supplied writer. Then the modified body is written to the <tt>JspWriter</tt> returned
+by the <tt>getOut</tt> method of the <tt>JspContext</tt>. Thus, a tag that converts its
+body to uppercase could be written as follows:</p><pre>public class SimpleWriter extends SimpleTagSupport {
+    public void doTag() throws JspException, IOException {
+        StringWriter sw = new StringWriter();
+        jspBody.invoke(sw);
+        jspContext().
+            getOut().println(sw.toString().toUpperCase());
+    }
+}</pre>
+
+<a name="bnanz"></a><h4>Tag Handlers for Tags That Define Variables</h4>
+<p>Similar communication mechanisms exist for communication between JSP page and tag handlers as
+for JSP pages and tag files.</p><p>To emulate <tt>IN</tt> parameters, use tag attributes. A tag attribute is communicated between
+the calling page and the tag handler when the tag is invoked. No
+further communication occurs between the calling page and the tag handler.</p><p>To emulate <tt>OUT</tt> or nested parameters, use variables with availability <tt>AT_BEGIN</tt>, <tt>AT_END</tt>, or <tt>NESTED</tt>.
+The variable is not initialized by the calling page but instead is set
+by the tag handler.</p><p>For <tt>AT_BEGIN</tt> availability, the variable is available in the calling page from the
+start tag until the scope of any enclosing tag. If there&rsquo;s no enclosing
+tag, then the variable is available to the end of the page. For
+<tt>AT_END</tt> availability, the variable is available in the calling page after the end
+tag until the scope of any enclosing tag. If there&rsquo;s no enclosing tag,
+then the variable is available to the end of the page. For nested
+parameters, the variable is available in the calling page between the start tag
+and the end tag.</p><p><a name="indexterm-592"></a><a name="indexterm-593"></a><a name="indexterm-594"></a>When you develop a tag handler you are responsible for creating and setting
+the object referenced by the variable into a context that is accessible from
+the page. You do this by using the <tt>JspContext()</tt>.<tt>setAttribute(name, value)</tt> or <tt>JspContext.setAttribute(name,value,scope)</tt> method. You retrieve
+the page context using the <tt>getJspContext</tt> method of <tt>SimpleTag</tt>.</p><p>Typically, an attribute passed to the custom tag specifies the name of the
+variable and the value of the variable is dependent on another attribute. For
+example, the <tt>iterator</tt> tag introduced in <a href="bnagx.html">Chapter&nbsp;5, JavaServer Pages Technology</a> retrieves the name of the variable
+from the <tt>var</tt> attribute and determines the value of the variable from a
+computation performed on the <tt>group</tt> attribute.</p><pre>public void doTag() throws JspException, IOException {
+    if (iterator == null)
+        return;
+    while (iterator.hasNext()) {
+        getJspContext().setAttribute(var, iterator.next());
+        getJspBody().invoke(null);
+    }
+}
+public void setVar(String var) {
+    this.var = var;
+}
+public void setGroup(Collection group) {
+    this.group = group;
+    if(group.size() > 0)
+        iterator = group.iterator();
+}</pre><p>The scope that a variable can have is summarized in <a href="#bnaoa">Table&nbsp;8-13</a>. The
+scope constrains the accessibility and lifetime of the object.</p><a name="bnaoa"></a><h6>Table&nbsp;8-13 Scope of Objects</h6><table><col width="18%"><col width="40%"><col width="41%"><tr><th align="left" valign="top" scope="column"><p>Name</p></th>
+<th align="left" valign="top" scope="column"><p>Accessible From</p></th>
+<th align="left" valign="top" scope="column"><p>Lifetime</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>page</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Current page</p></td>
+<td align="left" valign="top" scope="row"><p>Until the response
+has been sent back to the user or the request is passed to
+a new page</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>request</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Current page and any included or forwarded pages</p></td>
+<td align="left" valign="top" scope="row"><p>Until the response
+has been sent back to the user</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>session</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Current request and any subsequent request
+from the same browser (subject to session lifetime)</p></td>
+<td align="left" valign="top" scope="row"><p>The life of the user&rsquo;s session</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>application</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Current
+and any future request in the same web application</p></td>
+<td align="left" valign="top" scope="row"><p>The life of the
+application</p></td>
+</tr>
+</table>
+
+<a name="bnaob"></a><h5><tt>TagExtraInfo</tt> Class</h5>
+<a name="indexterm-595"></a><p><a name="indexterm-596"></a><a name="indexterm-597"></a><a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a> discussed how to provide information about tag variables in the tag library
+descriptor. This section describes another approach: defining a tag extra info class. You define
+a tag extra info class by extending the class <tt>javax.servlet.jsp.tagext.TagExtraInfo</tt>. A <tt>TagExtraInfo</tt>
+must implement the <tt>getVariableInfo</tt> method to return an array of <tt>VariableInfo</tt> objects containing
+the following information:</p>
+<ul><li><p>Variable name</p></li>
+<li><p>Variable class</p></li>
+<li><p>Whether the variable refers to a new object</p></li>
+<li><p>The availability of the variable</p></li></ul>
+<p><a name="indexterm-598"></a>The web container passes a parameter of type <tt>javax.servlet.jsp.tagext.TagData</tt> to the <tt>getVariableInfo</tt> method,
+which contains attribute-value tuples for each of the tag&rsquo;s attributes. These attributes can be
+used to provide the <tt>VariableInfo</tt> object with an EL variable&rsquo;s name and class.</p><p>The following example demonstrates how to provide information about the variable created by
+the <tt>iterator</tt> tag in a tag extra info class. Because the name (<tt>var</tt>)
+and class (<tt>type</tt>) of the variable are passed in as tag attributes, they
+can be retrieved using the <tt>data.getAttributeString</tt> method and can be used to fill in
+the <tt>VariableInfo</tt> constructor. To allow the variable <tt>var</tt> to be used only
+within the tag body, you set the scope of the object to <tt>NESTED</tt>.</p><pre>package iterator;
+public class IteratorTEI extends TagExtraInfo {
+    public VariableInfo[] getVariableInfo(TagData data) {
+        String type = data.getAttributeString("type");
+        if (type == null)
+            type = "java.lang.Object";
+        return new VariableInfo[] {
+            new VariableInfo(data.getAttributeString("var"),
+            type,
+            true,
+            VariableInfo.NESTED)
+        };
+    }
+}</pre><p>The fully qualified name of the tag extra info class defined for
+an EL variable must be declared in the TLD in the <a name="indexterm-599"></a><tt>tei-class</tt> subelement of
+the <tt>tag</tt> element. Thus, the <tt>tei-class</tt> element for <tt>IteratorTei</tt> would be as follows:</p><pre>&lt;tei-class>
+    iterator.IteratorTEI
+&lt;/tei-class></pre>
+
+<a name="bnaoc"></a><h4>Cooperating Tags</h4>
+<a name="indexterm-600"></a><a name="indexterm-601"></a><p>Tags cooperate by sharing objects. JSP technology supports two styles of object sharing.</p><p><a name="indexterm-602"></a>The first style requires that a shared object be named and stored in
+the page context (one of the implicit objects accessible to JSP pages as
+well as tag handlers). To access objects created and named by another tag,
+a tag handler uses the <tt>pageContext.getAttribute(name,scope)</tt> method.</p><p><a name="indexterm-603"></a>In the second style of object sharing, an object created by the enclosing
+tag handler of a group of nested tags is available to all inner
+tag handlers. This form of object sharing has the advantage that it uses
+a private namespace for the objects, thus reducing the potential for naming conflicts.</p><p><a name="indexterm-604"></a><a name="indexterm-605"></a>To access an object created by an enclosing tag, a tag handler must
+first obtain its enclosing tag by using the static method <tt>SimpleTagSupport.findAncestorWithClass(from,class)</tt> or
+the <tt>SimpleTagSupport.getParent</tt> method. The former method should be used when a specific nesting
+of tag handlers cannot be guaranteed. After the ancestor has been retrieved, a
+tag handler can access any statically or dynamically created objects. Statically created objects are
+members of the parent. Private objects can also be created dynamically. Such privately
+named objects would have to be managed by the tag handler; one approach
+would be to use a <tt>Map</tt> to store name-object pairs.</p><p>The following example illustrates a tag handler that supports both the named approach
+and the private object approach to sharing objects. In the example, the handler
+for a query tag checks whether an attribute named <tt>connectionId</tt> has been
+set. If the <tt>connectionId</tt> attribute has been set, the handler retrieves the connection
+object from the page context. Otherwise, the tag handler first retrieves the tag
+handler for the enclosing tag and then retrieves the connection object from that
+handler.</p><pre>public class QueryTag extends SimpleTagSupport {
+    public int doTag() throws JspException {
+        String cid = getConnectionId();
+        Connection connection;
+        if (cid != null) {
+        // there is a connection id, use it
+            connection =(Connection)pageContext.
+                getAttribute(cid);
+        } else {
+            ConnectionTag ancestorTag =
+                (ConnectionTag)findAncestorWithClass(this,
+                    ConnectionTag.class);
+            if (ancestorTag == null) {
+                throw new JspTagException("A query without
+                    a connection attribute must be nested
+                    within a connection tag.");
+            }
+            connection = ancestorTag.getConnection();
+            ...
+        }
+    }
+}</pre><p>The query tag implemented by this tag handler can be used in
+either of the following ways:</p><pre>&lt;tt:connection cid="con01" ... >
+     ...
+ &lt;/tt:connection>
+&lt;tt:query id="balances" connectionId="con01">
+     SELECT account, balance FROM acct_table
+         where customer_number = ?
+    &lt;tt:param value="${requestScope.custNumber}" />
+&lt;/tt:query>
+
+&lt;tt:connection ... >
+    &lt;tt:query cid="balances">
+         SELECT account, balance FROM acct_table
+         where customer_number = ?
+        &lt;tt:param value="${requestScope.custNumber}" />
+    &lt;/tt:query>
+&lt;/tt:connection></pre><p>The TLD for the tag handler uses the following declaration to indicate that
+the <tt>connectionId</tt> attribute is optional:</p><pre>&lt;tag>
+    ...
+    &lt;attribute>
+        &lt;name>connectionId&lt;/name>
+        &lt;required>false&lt;/required>
+    &lt;/attribute>
+&lt;/tag></pre>
+
+<a name="bnaod"></a><h4>Tag Handler Examples</h4>
+<p>The simple tags described in this section demonstrate solutions to two recurring problems
+in developing JSP applications: minimizing the amount of Java programming in JSP pages
+and ensuring a common look and feel across applications. In doing so, they
+illustrate many of the styles of tags discussed in the first part of
+the chapter.</p>
+
+<a name="bnaoe"></a><h5>An Iteration Tag</h5>
+<p>Constructing page content that is dependent on dynamically generated data often requires the
+use of flow control scripting statements. By moving the flow control logic to
+tag handlers, flow control tags reduce the amount of scripting needed in JSP
+pages. Iteration is a very common flow control function and is easily handled
+by a custom tag.</p><p><a name="indexterm-606"></a><a name="indexterm-607"></a>The discussion on using tag libraries in <a href="bnagx.html">Chapter&nbsp;5, JavaServer Pages Technology</a> introduced a tag library
+containing an <tt>iterator</tt> tag. The tag retrieves objects from a collection stored in
+a JavaBeans component and assigns them to an EL variable. The body
+of the tag retrieves information from the variable. As long as elements remain
+in the collection, the <tt>iterator</tt> tag causes the body to be reevaluated. The tag
+in this example is simplified to make it easy to demonstrate how to
+program a custom tag. web applications requiring such functionality should use the JSTL
+<tt>forEach</tt> tag, which is discussed in <a href="bnakh.html#bnakm">Iterator Tags</a>.</p>
+
+<a name="bnaof"></a><h5>JSP Page</h5>
+<p>The <tt>index.jsp</tt> page invokes the <tt>iterator</tt> tag to iterate through a collection of
+department names. Each item in the collection is assigned to the <tt>departmentName</tt> variable.</p><pre>&lt;%@ taglib uri="/tlt" prefix="tlt" %>
+&lt;html>
+    &lt;head>
+    &lt;title>Departments&lt;/title>
+    &lt;/head>
+    &lt;body bgcolor="white">
+    &lt;jsp:useBean id="myorg" class="myorg.Organization"/>
+    &lt;table border=2 cellspacing=3 cellpadding=3>
+        &lt;tr>
+            &lt;td>&lt;b>Departments&lt;/b>&lt;/td>
+        &lt;/tr>
+    &lt;tlt:iterator var="departmentName" type="java.lang.String"
+            group="${myorg.departmentNames}">
+        &lt;tr>
+            &lt;td>&lt;a href="list.jsp?deptName=${departmentName}">
+                ${departmentName}&lt;/a>&lt;/td>
+        &lt;/tr>
+    &lt;/tlt:iterator>
+    &lt;/table>
+    &lt;/body>
+&lt;/html></pre>
+
+<a name="bnaog"></a><h5>Tag Handler</h5>
+<p>The collection is set in the tag handler by means of the
+<tt>group</tt> attribute. The tag handler retrieves an element from the group and passes
+the element back to the page in the EL variable whose name is
+determined by the <tt>var</tt> attribute. The variable is accessed in the calling page
+using the JSP expression language. After the variable is set, the tag body
+is evaluated with the <tt>invoke</tt> method.</p><pre>public void doTag() throws JspException, IOException {
+    if (iterator == null)
+        return;
+    while (iterator.hasNext()) {
+        getJspContext().setAttribute(var, iterator.next());
+        getJspBody().invoke(null);
+    }
+}
+public void setVar(String var) {
+    this.var = var;
+}
+public void setGroup(Collection group) {
+    this.group = group;
+    if(group.size() > 0)
+        iterator = group.iterator();
+}</pre>
+
+<a name="bnaoh"></a><h5>A Template Tag Library</h5>
+<p>A template provides a way to separate the common elements that are
+part of each screen from the elements that change with each screen of
+an application. Putting all the common elements together into one file makes it
+easier to maintain and enforce a consistent look and feel in all the
+screens. It also makes development of individual screens easier because the designer can
+focus on portions of a screen that are specific to that screen while
+the template takes care of the common portions.</p><p>The template is a JSP page that has placeholders for the parts
+that need to change with each screen. Each of these placeholders is referred
+to as a <b>parameter</b> of the template. For example, a simple template might include
+a title parameter for the top of the generated screen and a body
+parameter to refer to a JSP page for the custom content of
+the screen.</p><p><a name="indexterm-608"></a><a name="indexterm-609"></a>The template uses a set of nested tags (<tt>definition</tt>, <tt>screen</tt>, and <tt>parameter</tt>)
+to define a table of screen definitions and uses an <tt>insert</tt> tag to
+insert parameters from a screen definition into a specific application screen.</p>
+
+<a name="bnaoi"></a><h5>JSP Pages</h5>
+<p>The template for the Duke&rsquo;s Bookstore example, <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/template/template.jsp</tt>, is shown next. This
+page includes a JSP page that creates the screen definition and then uses
+the <tt>insert</tt> tag to insert parameters from the definition into the application screen.</p><pre>&lt;%@ taglib uri="/tutorial-template" prefix="tt" %>
+&lt;%@ page errorPage="/template/errorinclude.jsp" %>
+&lt;%@ include file="/template/screendefinitions.jsp" %>
+&lt;html>
+&lt;head>
+&lt;title>
+&lt;tt:insert definition="bookstore" parameter="title"/>
+&lt;/title>
+&lt;/head>
+&lt;body  bgcolor="#FFFFFF">
+  &lt;tt:insert definition="bookstore" parameter="banner"/>
+&lt;tt:insert definition="bookstore" parameter="body"/>
+&lt;center>&lt;em>Copyright &amp;copy; 2004 Sun Microsystems, Inc. &lt;/em>&lt;/center>
+&lt;/body>
+&lt;/html></pre><p>The <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/template/screendefinitions.jspf</tt> page creates a definition for the screen specified by the
+request attribute <tt>javax.servlet.forward.servlet_path</tt>:</p><pre>&lt;tt:definition name="bookstore"
+screen="${requestScope
+    [&rsquo;javax.servlet.forward.servlet_path&rsquo;]}">
+    &lt;tt:screen id="/bookstore">
+    &lt;tt:parameter name="title" value="Duke&rsquo;s Bookstore"
+        direct="true"/>
+    &lt;tt:parameter name="banner" value="/template/banner.jsp"
+        direct="false"/>
+    &lt;tt:parameter name="body" value="/bookstore.jsp"
+        direct="false"/>
+    &lt;/tt:screen>
+    &lt;tt:screen id="/bookcatalog">
+    &lt;tt:parameter name="title" direct="true">
+      &lt;jsp:attribute name="value" >
+        &lt;fmt:message key="TitleBookCatalog"/>
+      &lt;/jsp:attribute>
+    &lt;/tt:parameter>
+    &lt;tt:parameter name="banner" value="/template/banner.jsp"
+        direct="false"/>
+        &lt;tt:parameter name="body" value="/bookcatalog.jsp"
+        direct="false"/>
+    &lt;/tt:screen>
+    ...
+&lt;/tt:definition></pre><p>The template is instantiated by the <tt>Dispatcher</tt> servlet. <tt>Dispatcher</tt> first gets the
+requested screen. <tt>Dispatcher</tt> performs business logic and updates model objects based on the
+requested screen. For example, if the requested screen is <tt>/bookcatalog</tt>, <tt>Dispatcher</tt> determines whether
+a book is being added to the cart based on the value of
+the Add request parameter. It sets the price of the book if
+it&rsquo;s on sale, and then adds the book to the cart. Finally, the
+servlet dispatches the request to <tt>template.jsp</tt>:</p><pre>public class Dispatcher extends HttpServlet {
+    @Resource
+    UserTransaction utx;
+
+    public void doGet(HttpServletRequest request,
+        HttpServletResponse response) {
+        String bookId = null;
+        Book book = null;
+        String clear = null;
+        BookDBAO bookDBAO =
+            (BookDBAO)getServletContext().
+                getAttribute("bookDBAO");
+        HttpSession session = request.getSession();
+        String selectedScreen = request.getServletPath();
+        ShoppingCart cart = (ShoppingCart)session.
+            getAttribute("cart");
+        if (cart == null) {
+            cart = new ShoppingCart();
+            session.setAttribute("cart", cart);
+        }
+        if (selectedScreen.equals("/bookcatalog")) {
+            bookId = request.getParameter("Add");
+            if (!bookId.equals("")) {
+                try {
+                    book = bookDBAO.getBook(bookId);
+                    if ( book.getOnSale() ) {
+                        double sale = book.getPrice() * .85;
+                        Float salePrice = new Float(sale);
+                        book.setPrice(salePrice.floatValue());
+                    }
+                    cart.add(bookId, book);
+                } catch (BookNotFoundException ex) {
+                    // not possible
+                }
+            }
+        } else if (selectedScreen.equals("/bookshowcart")) {
+            bookId =request.getParameter("Remove");
+            if (bookId != null) {
+                cart.remove(bookId);
+            }
+             clear = request.getParameter("Clear");
+            if (clear != null &amp;&amp; clear.equals("clear")) {
+                cart.clear();
+            }
+        } else if (selectedScreen.equals("/bookreceipt")) {
+        // Update the inventory
+            try {
+                utx.begin();
+                bookDBAO.buyBooks(cart);
+                utx.commit();
+            } catch (Exception ex) {
+                try {
+                    utx.rollback();
+                    request.getRequestDispatcher(
+                        "/bookordererror.jsp").
+                        forward(request, response);
+                } catch(Exception e) {
+                        System.out.println(
+                            "Rollback failed: "+e.getMessage());
+                        e.printStackTrace();
+                }
+            }
+        }
+        try {
+            request.
+                getRequestDispatcher(
+                "/template/template.jsp").
+                forward(request, response);
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void doPost(HttpServletRequest request,
+        HttpServletResponse response) {
+             request.setAttribute("selectedScreen",
+            request.getServletPath());
+        try {
+            request.
+                getRequestDispatcher(
+                "/template/template.jsp").
+                forward(request, response);
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}</pre>
+
+<a name="bnaoj"></a><h5>Tag Handlers</h5>
+<p>The template tag library contains four tag handlers (<tt>DefinitionTag</tt>, <tt>ScreenTag</tt>, <tt>ParameterTag</tt>, and <tt>InsertTag</tt>)
+that demonstrate the use of cooperating tags. <tt>DefinitionTag</tt>, <tt>ScreenTag</tt>, and <tt>ParameterTag</tt> constitute a
+set of nested tag handlers that share private objects. <tt>DefinitionTag</tt> creates a public
+object named <tt>bookstore</tt> that is used by <tt>InsertTag</tt>.</p><p>In <tt>doTag</tt>, <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/src/java/com/sun/bookstore3/template/DefinitionTag.java</tt> creates a private object named <tt>screens</tt> that contains a hash
+table of screen definitions. A screen definition consists of a screen identifier and
+a set of parameters associated with the screen. These parameters are loaded when
+the body of the definition tag, which contains nested <tt>screen</tt> and <tt>parameter</tt> tags,
+is invoked. <tt>DefinitionTag</tt> creates a public object of class <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/src/java/com/sun/bookstore3/template/Definition.java</tt>, selects a screen
+definition from the <tt>screens</tt> object based on the URL passed in the request,
+and uses this screen definition to initialize a public <tt>Definition</tt> object.</p><pre>public int doTag() {
+    try {
+        screens = new HashMap();
+        getJspBody().invoke(null);
+        Definition definition = new Definition();
+        PageContext context = (PageContext)getJspContext();
+        ArrayList params = (ArrayList) screens.get(screenId);
+        Iterator ir = null;
+        if (params != null) {
+            ir = params.iterator();
+            while (ir.hasNext())
+                definition.setParam((Parameter)ir.next());
+        // put the definition in the page context
+        context.setAttribute(definitionName, definition,
+             context.APPLICATION_SCOPE);
+        }
+    }</pre><p>The table of screen definitions is filled in by <tt>ScreenTag</tt> and <tt>ParameterTag</tt>
+from text provided as attributes to these tags. <a href="#bnaok">Table&nbsp;8-14</a> shows the contents
+of the screen definitions hash table for the Duke&rsquo;s Bookstore application.</p><a name="bnaok"></a><h6>Table&nbsp;8-14 Screen Definitions</h6><table><col width="21%"><col width="27%"><col width="18%"><col width="31%"><tr><th align="left" valign="top" scope="column"><p>Screen ID</p></th>
+<th align="left" valign="top" scope="column"><p>Title</p></th>
+<th align="left" valign="top" scope="column"><p>Banner</p></th>
+<th align="left" valign="top" scope="column"><p>Body</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>/bookstore</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Duke&rsquo;s Bookstore</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookstore.jsp</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>/bookcatalog</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Book Catalog</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookcatalog.jsp</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>/bookdetails</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Book Description</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookdetails.jsp</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>/bookshowcart</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Shopping Cart</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookshowcart.jsp</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>/bookcashier</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Cashier</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookcashier.jsp</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>/bookreceipt</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Receipt</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookreceipt.jsp</tt></p></td>
+</tr>
+</table><p>If the URL passed in the request is <tt>/bookstore</tt>, the <tt>Definition</tt> object
+contains the items from the first row of <a href="#bnaok">Table&nbsp;8-14</a> (see <a href="#bnaol">Table&nbsp;8-15</a>).</p><a name="bnaol"></a><h6>Table&nbsp;8-15 Definition Object Contents for URL  <tt>/bookstore</tt></h6><table><col width="38%"><col width="30%"><col width="30%"><tr><th align="left" valign="top" scope="column"><p>Title</p></th>
+<th align="left" valign="top" scope="column"><p>Banner</p></th>
+<th align="left" valign="top" scope="column"><p>Body</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Duke&rsquo;s Bookstore</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookstore.jsp</tt></p></td>
+</tr>
+</table><p>The parameters for the URL <tt>/bookstore</tt> are shown in <a href="#bnaom">Table&nbsp;8-16</a>. The parameters
+specify that the value of the <tt>title</tt> parameter, <tt>Duke&rsquo;s Bookstore</tt>, should be inserted directly
+into the output stream, but the values of <tt>banner</tt> and <tt>body</tt> should be included
+dynamically.</p><a name="bnaom"></a><h6>Table&nbsp;8-16 Parameters for the URL <tt>/bookstore</tt></h6><table><col width="28%"><col width="39%"><col width="32%"><tr><th align="left" valign="top" scope="column"><p>Parameter Name</p></th>
+<th align="left" valign="top" scope="column"><p>Parameter Value</p></th>
+<th align="left" valign="top" scope="column"><p><tt>isDirect</tt></p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>title</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>Duke&rsquo;s Bookstore</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>true</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>banner</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/banner.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>body</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>/bookstore.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>false</tt></p></td>
+</tr>
+</table><p><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/src/java/com/sun/bookstore3/template/InsertTag.java</tt> inserts parameters of the screen definition into the response. The <tt>doTag</tt> method
+retrieves the definition object from the page context and then inserts the parameter
+value. If the parameter is direct, it is directly inserted into the response;
+otherwise, the request is sent to the parameter, and the response is dynamically
+included into the overall response.</p><pre>public void doTag() throws JspTagException {    
+    Definition definition = null;
+    Parameter parameter = null;
+    boolean directInclude = false;
+    PageContext context = (PageContext)getJspContext();
+
+        // get the definition from the page context
+    definition = (Definition)context.getAttribute(
+        definitionName, context.APPLICATION_SCOPE);
+        // get the parameter
+    if (parameterName != null &amp;&amp; definition != null)
+        parameter = (Parameter)
+            definition.getParam(parameterName);
+
+    if (parameter != null)
+        directInclude = parameter.isDirect();
+
+    try {
+        // if parameter is direct, print to out
+        if (directInclude &amp;&amp; parameter  != null)
+            context.getOut().print(parameter.getValue());
+        // if parameter is indirect,
+                 include results of dispatching to page
+         else {
+            if ((parameter != null) &amp;&amp;
+                 (parameter.getValue() !=  null))
+            context.include(parameter.getValue());
+        }
+    } catch (Exception ex) {
+          throw new JspTagException(ex.getMessage());
+    }
+}</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnamu.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaon.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="productController" class="cn.hxex.springapp.spring.controller.ProductController">
+		<property name="productManager">
+            <ref bean="prodMan"/>
+        </property>
+	</bean>
+
+	<bean id="helloController" class="cn.hxex.springapp.spring.controller.HelloController">
+	</bean>
+
+    <!--  Validator and Form Controller for the "Price Increase" page -->
+    <bean id="productAddValidator" class="cn.hxex.springapp.bus.ProductAddValidator"/>
+    <bean id="productAddForm" class="cn.hxex.springapp.spring.web.ProductAddFormController">
+        <property name="sessionForm"><value>true</value></property>
+        <property name="commandName"><value>product</value></property>
+        <property name="commandClass"><value>cn.hxex.springapp.bus.Product</value></property>
+        <property name="validator"><ref bean="productAddValidator"/></property>
+        <property name="formView"><value>productadd</value></property>
+        <property name="successView"><value>product.htm</value></property>
+        <property name="productManager">
+            <ref bean="prodMan"/>
+        </property>
+    </bean>
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName"><value>oracle.jdbc.driver.OracleDriver</value></property>
+      <property name="url">
+        <value>jdbc:oracle:thin:@192.168.10.121:1521:HiFinance</value>
+      </property>
+      <property name="username"><value>scott</value></property>
+      <property name="password"><value>tiger</value></property>
+    </bean>
+    
+    <bean id="prodManDao" class="cn.hxex.springapp.db.jdbc.ProductManagerDaoJdbc">
+        <property name="dataSource">
+            <ref bean="dataSource"/>
+        </property>
+    </bean>
+	
+	<bean id="prodMan" class="cn.hxex.springapp.bus.ProductManager">
+		<property name="productManagerDao">
+            <ref bean="prodManDao"/>
+        </property>
+        <!-- property name="products">
+            <list>
+                <ref bean="product1"/>
+                <ref bean="product2"/>
+                <ref bean="product3"/>
+            </list>
+        </property-->
+    </bean>
+
+	<!-- 
+    <bean id="product1" class="cn.hxex.springapp.bus.Product">
+        <property name="description"><value>Lamp</value></property>
+        <property name="price"><value>5.75</value></property>
+    </bean>
+        
+    <bean id="product2" class="cn.hxex.springapp.bus.Product">
+        <property name="description"><value>Table</value></property>
+        <property name="price"><value>75.25</value></property>
+    </bean>
+
+    <bean id="product3" class="cn.hxex.springapp.bus.Product">
+        <property name="description"><value>Chair</value></property>
+        <property name="price"><value>22.79</value></property>
+    </bean>
+    -->
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename"><value>messages</value></property>
+    </bean>
+	
+	<bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/hello.htm">helloController</prop>
+				<prop key="/product.htm">productController</prop>
+				<prop key="/productadd.htm">productAddForm</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"><value>org.springframework.web.servlet.view.JstlView</value></property>
+        <property name="prefix"><value>/WEB-INF/jsp/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+	
+</beans>

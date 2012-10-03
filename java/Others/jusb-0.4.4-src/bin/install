@@ -1,0 +1,106 @@
+#!/bin/bash
+# Install jUSB as an JVM extension (on Linux)
+#
+# $Id: install,v 1.1 2008/10/15 09:28:09 huangmeng Exp $
+
+PATH=/bin:/usr/bin:$PATH
+
+#
+# These are the files we install...
+#
+check_present ()
+{
+    if [ ! -f $1 ];
+    then
+	echo "** Can't find $1 ..."
+	echo "** Run this script from the directory with that file."
+	exit 1
+    fi
+}
+
+check_present jusb.jar
+check_present libjusb.so
+
+DIST_ARCH=`objdump -a libjusb.so|fgrep "file format"|awk -F- '{ print $2; }'`
+
+
+#
+# Currently works only with Sun's version; if you use
+# Kaffe, GCJ, or any other version, you likely already
+# know what to do!
+#
+if java -version 2>&1 | fgrep 1.1 > /dev/null
+then
+    echo "** How do JDK 1.1 installs?"
+    exit 1;
+elif java -version 2>&1 | fgrep 1.2 > /dev/null
+then
+    : "all's fine here ..."
+elif java -version 2>&1 | fgrep 1.3 > /dev/null
+then
+    : "all's fine here ..."
+else
+    echo "** Your 'java' command is too strange ..."
+    exit 1
+fi
+
+
+#
+# Make sure we can write there ...
+#
+JAVA_HOME=`which java | sed 's+/bin/java++'`
+ARCH=`gcc -dumpmachine | awk -F- '{ print $1; }'`
+
+echo Java distribution found at $JAVA_HOME
+echo Uses $ARCH native code.
+
+if [ $DIST_ARCH != $ARCH ];
+then
+    echo "** This distribution is for $DIST_ARCH, can't install"
+    exit 1
+fi
+
+JARDIR=$JAVA_HOME/jre/lib/ext
+JNIDIR=$JAVA_HOME/jre/lib/$ARCH
+
+if [ ! '(' -w $JARDIR -a -w $JNIDIR ')' ];
+then
+    echo "** Can't install!  Check permissions:"
+    echo "**   $JARDIR"
+    echo "**   $JNIDIR"
+fi
+
+
+#
+# ... and that we should do so ...
+#
+PS3="Really install jUSB extension into $JAVA_HOME? "
+YESNO=maybe
+select YESNO in yes no
+do
+    if [ x$YESNO = xyes ];
+    then
+	break;
+    elif [ x$YESNO = xno ];
+    then
+	exit 0
+    fi
+done
+
+#
+# Actually do the install.
+#
+if ! install -m 0644 libjusb.so $(JNIDIR)
+then
+    echo '** Can't install libjusb.so !!'
+    exit 1
+fi
+if ! install -m 0644 jusb.jar $(JARDIR)
+then
+    echo '** Can't install jusb.jar !!'
+    exit 1
+fi
+
+echo "Java USB (for Linux) is now installed as an extension!"
+
+exit 0

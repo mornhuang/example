@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="com.redsaga.hibnatesample.step2">
+	<class name="Board" table="board">
+		<id
+			column="id"
+			name="id"
+			type="integer"
+		>
+			<generator class="vm" />
+		</id>
+		<property
+			column="create_time"
+			length="19"
+			name="createTime"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="remark"
+			length="255"
+			name="remark"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="name"
+			length="50"
+			name="name"
+			not-null="true"
+			type="string"
+		 />
+
+		<many-to-one
+			class="User"
+			name="createBy"
+			not-null="true"
+		>
+			<column name="create_by" />
+		</many-to-one>
+		<many-to-one
+			class="Board"
+			name="parent"
+			not-null="true"
+		>
+			<column name="parent_id" />
+		</many-to-one>
+		<set
+			inverse="true"
+			lazy="true"
+			name="articles"
+		>
+			<key column="board_id" />
+			<one-to-many class="Article" />
+		</set>
+		<set
+			inverse="true"
+			lazy="true"
+			name="childBoards"
+		>
+			<key column="parent_id" />
+			<one-to-many class="Board" />
+		</set>
+	</class>
+</hibernate-mapping>

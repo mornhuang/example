@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The Life Cycle of a JavaServer Faces Page - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="gentextid-10866.html">JavaServer Faces Technology User Interface</a></p>
+<p class="toc level3"><a href="bnapj.html">JavaServer Faces Technology Benefits</a></p>
+<p class="toc level3"><a href="bnapk.html">What Is a JavaServer Faces Application?</a></p>
+<p class="toc level3"><a href="bnapl.html">A Simple JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapm">Steps in the Development Process</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapo">Mapping the <tt>FacesServlet</tt> Instance</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapp">Creating the Pages</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapq">Declaring the Tag Libraries</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapr">Adding the <tt>view</tt> and <tt>form</tt> Tags</a></p>
+<p class="toc level5"><a href="bnapl.html#bnaps">Adding a Label Component</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapt">Adding an Image</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapu">Adding a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapv">Registering a Validator on a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapw">Adding a Custom Message</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapx">Adding a Button</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapy">Displaying Error Messages</a></p>
+<p class="toc level4 tocsp"><a href="bnapl.html#bnapz">Defining Page Navigation</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqa">Configuring Error Messages</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqb">Developing the Beans</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqc">Adding Managed Bean Declarations</a></p>
+<p class="toc level3 tocsp"><a href="bnaqd.html">User Interface Component Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqe">User Interface Component Classes</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqf">Component Rendering Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqi">Conversion Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqj">Event and Listener Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqk">Validation Model</a></p>
+<p class="toc level3 tocsp"><a href="bnaql.html">Navigation Model</a></p>
+<p class="toc level3"><a href="bnaqm.html">Backing Beans</a></p>
+<p class="toc level4"><a href="bnaqm.html#bnaqn">Creating a Backing Bean Class</a></p>
+<p class="toc level5"><a href="bnaqm.html#bnaqo">Configuring a Bean</a></p>
+<p class="toc level5"><a href="bnaqm.html#bnaqp">Using the Unified EL to Reference Backing Beans</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">The Life Cycle of a JavaServer Faces Page</a></p>
+<p class="toc level4"><a href="#bnaqs">Restore View Phase</a></p>
+<p class="toc level5"><a href="#bnaqt">Apply Request Values Phase</a></p>
+<p class="toc level5"><a href="#bnaqu">Process Validations Phase</a></p>
+<p class="toc level5"><a href="#bnaqv">Update Model Values Phase</a></p>
+<p class="toc level5"><a href="#bnaqw">Invoke Application Phase</a></p>
+<p class="toc level5"><a href="#bnaqx">Render Response Phase</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaqy.html">Further Information about JavaServer Faces Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaqm.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaqy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaqq"></a><h3>The Life Cycle of a JavaServer Faces Page</h3>
+<a name="indexterm-851"></a><a name="indexterm-852"></a><p>The life cycle of a JavaServer Faces page is somewhat similar to
+that of a JSP page: The client makes an HTTP request for the
+page, and the server responds with the page translated to HTML. However, the
+JavaServer Faces life cycle differs from the JSP life cycle in that it
+is split up into multiple phases in order to support the sophisticated UI
+component model. This model requires that component data be converted and validated, component
+events be handled, and component data be propagated to beans in an orderly
+fashion.</p><p>A JavaServer Faces page is also different from a JSP page in
+that it is represented by a tree of UI components, called a view.
+During the life cycle, the JavaServer Faces implementation must build the view while
+considering state saved from a previous submission of the page. When the client
+submits a page, the JavaServer Faces implementation performs several tasks, such as validating the
+data input of components in the view and converting input data to types
+specified on the server side.</p><p>The JavaServer Faces implementation performs all these tasks as a series of steps
+in the JavaServer Faces request-response life cycle. <a href="#bnaqr">Figure&nbsp;10-3</a> illustrates these steps.</p><a name="bnaqr"></a><h6>Figure&nbsp;10-3 JavaServer Faces Standard Request-Response Life Cycle</h6><img src="figures/jsfIntro-lifecycle.gif" alt="Flow diagram of Faces request and Faces response, including event and validation processing, error handling, model updating, application invocation."></img><p>The life cycle handles both kinds of requests: <b>initial requests</b> and <b>postbacks</b>. When
+a user makes an initial request for a page, he or she is
+requesting the page for the first time. When a user executes a
+postback, he or she submits the form contained on a page that was
+previously loaded into the browser as a result of executing an initial request.
+When the life cycle handles an initial request, it only executes the restore
+view and render response phases because there is no user input or actions
+to process. Conversely, when the life cycle handles a postback, it executes all
+of the phases.</p><p><a name="indexterm-853"></a><a name="indexterm-854"></a>Usually, the first request for a JavaServer Faces pages comes in as a
+result of clicking a hyperlink on an HTML page that links to the
+JavaServer Faces page. To render a response that is another JavaServer Faces page,
+the application creates a new view and stores it in the <tt>FacesContext</tt>
+instance, which represents all of the contextual information associated with processing an incoming
+request and creating a response. The application then acquires object references needed by
+the view and calls <tt>FacesContext.renderResponse</tt>, which forces immediate rendering of the view
+by skipping to the <a href="#bnaqx">Render Response Phase</a> of the life cycle, as is shown by
+the arrows labelled Render Response in the diagram.</p><p><a name="indexterm-855"></a>Sometimes, an application might need to redirect to a different web application resource, such
+as a web service, or generate a response that does not contain
+JavaServer Faces components. In these situations, the developer must skip the rendering phase (<a href="#bnaqx">Render Response Phase</a>)
+by calling <tt>FacesContext.responseComplete</tt>. This situation is also shown in the diagram, this time
+with the arrows labelled Response Complete.</p><p>The most common situation is that a JavaServer Faces component submits a request
+for another JavaServer Faces page. In this case, the JavaServer Faces implementation handles
+the request and automatically goes through the phases in the life cycle to
+perform any necessary conversions, validations, and model updates, and to generate the response.</p><p><a name="indexterm-856"></a>This rest of this section explains each of the life cycle phases using
+the <tt>guessNumber</tt> example.</p><p>The details of the life cycle explained in this section are primarily intended
+for developers who need to know information such as when validations, conversions, and
+events are usually handled and what they can do to change how and
+when they are handled. Page authors don&rsquo;t necessarily need to know the details
+of the life cycle.</p>
+
+<a name="bnaqs"></a><h4>Restore View Phase</h4>
+<p><a name="indexterm-857"></a>When a request for a JavaServer Faces page is made, such as when
+a link or a button is clicked, the JavaServer Faces implementation begins the
+restore view phase.</p><p><a name="indexterm-858"></a><a name="indexterm-859"></a><a name="indexterm-860"></a><a name="indexterm-861"></a><a name="indexterm-862"></a><a name="indexterm-863"></a><a name="indexterm-864"></a>During this phase, the JavaServer Faces implementation builds the view of the page,
+wires event handlers and validators to components in the view, and saves the
+view in the <tt>FacesContext</tt> instance, which contains all the information needed to process
+a single request. All the application&rsquo;s component tags, event handlers, converters, and validators
+have access to the <tt>FacesContext</tt> instance.</p><p>If the request for the page is an initial request, the JavaServer
+Faces implementation creates an empty view during this phase and the life cycle advances
+to the render response phase, during which the empty view is populated with
+the components referenced by the tags in the page.</p><p>If the request for the page is a postback, a view corresponding
+to this page already exists. During this phase, the JavaServer Faces implementation restores the
+view by using the state information saved on the client or the server.</p><p>The view for the <tt>greeting.jsp</tt> page of the <tt>guessNumber</tt> example would have
+the <tt>UIView</tt> component at the root of the tree, with <tt>helloForm</tt> as its
+child and the rest of the JavaServer Faces UI components as children of
+<tt>helloForm</tt>.</p>
+
+<a name="bnaqt"></a><h5>Apply Request Values Phase</h5>
+<p><a name="indexterm-865"></a><a name="indexterm-866"></a><a name="indexterm-867"></a>After the component tree is restored, each component in the tree extracts its
+new value from the request parameters by using its <tt>decode</tt> method. The value is
+then stored locally on the component. If the conversion of the value
+fails, an error message associated with the component is generated and queued on
+<tt>FacesContext</tt>. This message will be displayed during the render response phase, along with
+any validation errors resulting from the process validations phase.</p><p>In the case of the <tt>userNo</tt> component on the <tt>greeting.jsp</tt> page, the
+value is whatever the user entered in the field. Because the object property
+bound to the component has an <tt>Integer</tt> type, the JavaServer Faces implementation converts
+the value from a <tt>String</tt> to an <tt>Integer</tt>.</p><p><a name="indexterm-868"></a><a name="indexterm-869"></a>If any <tt>decode</tt> methods or event listeners called <tt>renderResponse</tt> on the current <tt>FacesContext</tt>
+instance, the JavaServer Faces implementation skips to the render response phase.</p><p>If events have been queued during this phase, the JavaServer Faces implementation broadcasts
+the events to interested listeners.</p><p>If some components on the page have their <tt>immediate</tt> attributes (see <a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a>) set
+to <tt>true</tt>, then the validation, conversion, and events associated with these components will
+be processed during this phase.</p><p><a name="indexterm-870"></a>At this point, if the application needs to redirect to a different web
+application resource or generate a response that does not contain any JavaServer Faces components,
+it can call <tt>FacesContext.responseComplete</tt>.</p><p>At the end of this phase, the components are set to their
+new values, and messages and events have been queued. </p>
+
+<a name="bnaqu"></a><h5>Process Validations Phase</h5>
+<p><a name="indexterm-871"></a><a name="indexterm-872"></a>During this phase, the JavaServer Faces implementation processes all validators registered on the components
+in the tree. It examines the component attributes that specify the rules for
+the validation and compares these rules to the local value stored for the
+component.</p><p>If the local value is invalid, the JavaServer Faces implementation adds an error
+message to the <tt>FacesContext</tt> instance, and the life cycle advances directly to the
+render response phase so that the page is rendered again with the error
+messages displayed. If there were conversion errors from the apply request values phase,
+the messages for these errors are also displayed.</p><p><a name="indexterm-873"></a><a name="indexterm-874"></a>If any <tt>validate</tt> methods or event listeners called <tt>renderResponse</tt> on the current <tt>FacesContext</tt>,
+the JavaServer Faces implementation skips to the render response phase.</p><p><a name="indexterm-875"></a>At this point, if the application needs to redirect to a different web
+application resource or generate a response that does not contain any JavaServer Faces components,
+it can call <tt>FacesContext.responseComplete</tt>.</p><p>If events have been queued during this phase, the JavaServer Faces implementation broadcasts
+them to interested listeners.</p><p>In the case of the <tt>greeting.jsp</tt> page, the JavaServer Faces implementation processes the
+standard validator registered on the <tt>userNo</tt> <tt>inputText</tt> tag. It verifies that the
+data the user entered in the text field is an integer in the
+range 0 to 10. If the data is invalid or if conversion errors
+occurred during the apply request values phase, processing jumps to the render response
+phase, during which the <tt>greeting.jsp</tt> page is rendered again, with the validation and conversion
+error messages displayed in the component associated with the <tt>message</tt> tag.</p>
+
+<a name="bnaqv"></a><h5>Update Model Values Phase</h5>
+<p>After the JavaServer Faces implementation determines that the data is valid, it can
+walk the component tree and set the corresponding server-side object properties to the
+components&rsquo; local values. The JavaServer Faces implementation will update only the bean properties
+pointed at by an input component&rsquo;s value attribute. If the local data cannot
+be converted to the types specified by the bean properties, the life cycle
+advances directly to the render response phase so that the page is re-rendered
+with errors displayed. This is similar to what happens with validation errors.</p><p><a name="indexterm-876"></a><a name="indexterm-877"></a><a name="indexterm-878"></a><a name="indexterm-879"></a>If any <tt>updateModels</tt> methods or any listeners called <tt>renderResponse</tt> on the current <tt>FacesContext</tt>
+instance, the JavaServer Faces implementation skips to the render response phase.</p><p><a name="indexterm-880"></a>At this point, if the application needs to redirect to a different web
+application resource or generate a response that does not contain any JavaServer Faces components,
+it can call <tt>FacesContext.responseComplete</tt>.</p><p>If events have been queued during this phase, the JavaServer Faces implementation broadcasts
+them to interested listeners.</p><p>At this stage, the <tt>userNo</tt> property of the <tt>UserNumberBean</tt> is set to
+the local value of the <tt>userNumber</tt> component.</p>
+
+<a name="bnaqw"></a><h5>Invoke Application Phase</h5>
+<p><a name="indexterm-881"></a>During this phase, the JavaServer Faces implementation handles any application-level events, such as submitting
+a form or linking to another page.</p><p>At this point, if the application needs to redirect to a different
+web application resource or generate a response that does not contain any JavaServer Faces
+components, it can call <tt>FacesContext.responseComplete</tt>.</p><p><a name="indexterm-882"></a>If the view being processed was reconstructed from state information from a previous request
+and if a component has fired an event, these events are broadcast to
+interested listeners.</p><p><a name="indexterm-883"></a><a name="indexterm-884"></a><a name="indexterm-885"></a><a name="indexterm-886"></a>The <tt>greeting.jsp</tt> page from the <tt>guessNumber</tt> example has one application-level event associated with
+the <tt>UICommand</tt> component. When processing this event, a default <tt>ActionListener</tt> implementation retrieves the outcome,
+<tt>success</tt>, from the component&rsquo;s <tt>action</tt> attribute. The listener passes the outcome to
+the default <tt>NavigationHandler</tt>. The <tt>NavigationHandler</tt> matches the outcome to the proper navigation rule
+defined in the application&rsquo;s application configuration resource file to determine which page needs
+to be displayed next. See <a href="bnaxf.html">Configuring Navigation Rules</a> for more information on managing page navigation. The
+JavaServer Faces implementation then sets the response view to that of the new
+page. Finally, the JavaServer Faces implementation transfers control to the render response phase.</p>
+
+<a name="bnaqx"></a><h5>Render Response Phase</h5>
+<p><a name="indexterm-887"></a>During this phase, the JavaServer Faces implementation delegates authority for rendering the page to
+the JSP container if the application is using JSP pages. If this
+is an initial request, the components represented on the page will be added
+to the component tree as the JSP container executes the page. If this
+is not an initial request, the components are already added to the tree
+so they needn&rsquo;t be added again. In either case, the components will render
+themselves as the JSP container traverses the tags in the page.</p><p>If the request is a postback and errors were encountered during the apply
+request values phase, process validations phase, or update model values phase, the original
+page is rendered during this phase. If the pages contain <tt>message</tt> or
+<tt>messages</tt> tags, any queued error messages are displayed on the page.</p><p>After the content of the view is rendered, the state of the
+response is saved so that subsequent requests can access it and it is
+available to the restore view phase.</p><p>In the case of the <tt>guessNumber</tt> example, if a request for the <tt>greeting.jsp</tt>
+page is an initial request, an empty view representing this page is built
+and saved in <tt>FacesContext</tt> during the restore view phase. During this phase, the
+empty view is populated with the components referenced in the page and then
+rendered during this phase. If a request for the page is a postback
+(such as when the user enters some invalid data and clicks Submit), the
+tree is rebuilt during the restore view phase and continues through the request
+processing life cycle phases. </p>
+         </div>
+         <div class="navigation">
+             <a href="bnaqm.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaqy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

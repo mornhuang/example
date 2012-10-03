@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Java EE 5 APIs - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level3"><a href="bnaax.html">Java EE Application Model</a></p>
+<p class="toc level3"><a href="bnaay.html">Distributed Multitiered Applications</a></p>
+<p class="toc level4"><a href="bnaay.html#bnaba">Security</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabb">Java EE Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabc">Java EE Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabd">Web Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabe">Applets</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabf">Application Clients</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabg">The JavaBeans<sup>TM</sup> Component Architecture</a></p>
+<p class="toc level5"><a href="bnaay.html#bnabh">Java EE Server Communications</a></p>
+<p class="toc level4 tocsp"><a href="bnaay.html#bnabj">Web Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabk">Business Components</a></p>
+<p class="toc level4"><a href="bnaay.html#bnabl">Enterprise Information System Tier</a></p>
+<p class="toc level3 tocsp"><a href="bnabo.html">Java EE Containers</a></p>
+<p class="toc level4"><a href="bnabo.html#bnabp">Container Services</a></p>
+<p class="toc level4"><a href="bnabo.html#bnabq">Container Types</a></p>
+<p class="toc level3 tocsp"><a href="bnabs.html">Web Services Support</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabt">XML</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabu">SOAP Transport Protocol</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabv">WSDL Standard Format</a></p>
+<p class="toc level4"><a href="bnabs.html#bnabw">UDDI and ebXML Standard Formats</a></p>
+<p class="toc level3 tocsp"><a href="bnabx.html">Java EE Application Assembly and Deployment</a></p>
+<p class="toc level3"><a href="bnaby.html">Packaging Applications</a></p>
+<p class="toc level3"><a href="bnaca.html">Development Roles</a></p>
+<p class="toc level4"><a href="bnaca.html#bnacb">Java EE Product Provider</a></p>
+<p class="toc level4"><a href="bnaca.html#bnacc">Tool Provider</a></p>
+<p class="toc level4"><a href="bnaca.html#bnacd">Application Component Provider</a></p>
+<p class="toc level5"><a href="bnaca.html#bnace">Enterprise Bean Developer</a></p>
+<p class="toc level5"><a href="bnaca.html#bnacf">Web Component Developer</a></p>
+<p class="toc level5"><a href="bnaca.html#bnacg">Application Client Developer</a></p>
+<p class="toc level4 tocsp"><a href="bnaca.html#bnach">Application Assembler</a></p>
+<p class="toc level4"><a href="bnaca.html#bnaci">Application Deployer and Administrator</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Java EE 5 APIs</a></p>
+<p class="toc level4"><a href="#bnacl">Enterprise JavaBeans Technology</a></p>
+<p class="toc level4"><a href="#bnacm">Java Servlet Technology</a></p>
+<p class="toc level4"><a href="#bnacn">JavaServer Pages Technology</a></p>
+<p class="toc level4"><a href="#bnaco">JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level4"><a href="#bnacp">JavaServer Faces</a></p>
+<p class="toc level4"><a href="#bnacq">Java Message Service API</a></p>
+<p class="toc level4"><a href="#bnacr">Java Transaction API</a></p>
+<p class="toc level4"><a href="#bnacs">JavaMail API</a></p>
+<p class="toc level4"><a href="#bnact">JavaBeans Activation Framework</a></p>
+<p class="toc level4"><a href="#bnacu">Java API for XML Processing</a></p>
+<p class="toc level4"><a href="#bnacv">Java API for XML Web Services (JAX-WS)</a></p>
+<p class="toc level4"><a href="#bnacw">Java Architecture for XML Binding (JAXB)</a></p>
+<p class="toc level4"><a href="#bnacx">SOAP with Attachments API for Java</a></p>
+<p class="toc level4"><a href="#bnacy">Java API for XML Registries</a></p>
+<p class="toc level4"><a href="#bnacz">J2EE Connector Architecture</a></p>
+<p class="toc level4"><a href="#bnada">Java Database Connectivity API</a></p>
+<p class="toc level4"><a href="#bnadb">Java Persistence API</a></p>
+<p class="toc level4"><a href="#bnadc">Java Naming and Directory Interface</a></p>
+<p class="toc level4"><a href="#bnadd">Java Authentication and Authorization Service</a></p>
+<p class="toc level4"><a href="#bnade">Simplified Systems Integration</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnadf.html">Sun Java System Application Server Platform Edition 9</a></p>
+<p class="toc level4"><a href="bnadf.html#bnadg">Tools</a></p>
+<p class="toc level2 tocsp"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaca.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnadf.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnacj"></a><h3>Java EE 5 APIs</h3>
+<p><a name="indexterm-68"></a><a href="#bnack">Figure&nbsp;1-7</a> illustrates the availability of the Java EE 5 platform APIs in each
+Java EE container type. The following sections give a brief summary of the
+technologies required by the Java EE platform, and the APIs used in Java
+EE applications.</p><a name="bnack"></a><h6>Figure&nbsp;1-7 Java EE Platform APIs</h6><img src="figures/overview-j2eeArchitecture.gif" alt="Diagram of Java EE Platform APIs for the applet, web, EJB, and application client containers."></img>
+
+<a name="bnacl"></a><h4>Enterprise JavaBeans Technology</h4>
+<p><a name="indexterm-69"></a>An Enterprise JavaBeans<sup>TM</sup> (EJB) component, or <b>enterprise bean</b>, is a body of code having
+fields and methods to implement modules of business logic. You can think of
+an enterprise bean as a building block that can be used alone or
+with other enterprise beans to execute business logic on the Java EE server.</p><p><a name="indexterm-70"></a><a name="indexterm-71"></a>There are two kinds of enterprise beans: session beans and message-driven beans. A
+<b>session bean</b> represents a transient conversation with a client. When the client finishes executing,
+the session bean and its data are gone. A <b>message-driven bean</b> combines features
+of a session bean and a message listener, allowing a business component to
+receive messages asynchronously. Commonly, these are Java Message Service (JMS) messages.</p><p>In Java EE 5, entity beans have been replaced by Java persistence API
+entities. An entity represents persistent data stored in one row of a database
+table. If the client terminates, or if the server shuts down, the persistence
+manager ensures that the entity data is saved.</p>
+
+<a name="bnacm"></a><h4>Java Servlet Technology</h4>
+<p><a name="indexterm-72"></a><a name="indexterm-73"></a>Java servlet technology lets you define HTTP-specific servlet classes. A servlet class extends
+the capabilities of servers that host applications that are accessed by way of
+a request-response programming model. Although servlets can respond to any type of request,
+they are commonly used to extend the applications hosted by web servers.</p>
+
+<a name="bnacn"></a><h4>JavaServer Pages Technology</h4>
+<p><a name="indexterm-74"></a><a name="indexterm-75"></a>JavaServer Pages<sup>TM</sup> (JSP) technology lets you put snippets of servlet code directly into a
+text-based document. A JSP page is a text-based document that contains two types
+of text: static data (which can be expressed in any text-based format such
+as HTML, WML, and XML) and JSP elements, which determine how the
+page constructs dynamic content.</p>
+
+<a name="bnaco"></a><h4>JavaServer Pages Standard Tag Library</h4>
+<p><a name="indexterm-76"></a><a name="indexterm-77"></a>The JavaServer Pages Standard Tag Library (JSTL) encapsulates core functionality common to many JSP
+applications. Instead of mixing tags from numerous vendors in your JSP applications, you
+employ a single, standard set of tags. This standardization allows you to deploy
+your applications on any JSP container that supports JSTL and makes it more
+likely that the implementation of the tags is optimized.</p><p>JSTL has iterator and conditional tags for handling flow control, tags for manipulating
+XML documents, internationalization tags, tags for accessing databases using SQL, and commonly used
+functions.</p>
+
+<a name="bnacp"></a><h4>JavaServer Faces</h4>
+<p><a name="indexterm-78"></a>JavaServer Faces technology is a user interface framework for building web applications. The main
+components of JavaServer Faces technology are as follows:</p>
+<ul><li><p>A GUI component framework.</p></li>
+<li><p>A flexible model for rendering components in different kinds of HTML or different markup languages and technologies. A <tt>Renderer</tt> object generates the markup to render the component and converts the data stored in a model object to types that can be represented in a view.</p></li>
+<li><p>A standard <tt>RenderKit</tt> for generating HTML/4.01 markup.</p></li></ul>
+<p>The following features support the GUI components:</p>
+<ul><li><p>Input validation</p></li>
+<li><p>Event handling</p></li>
+<li><p>Data conversion between model objects and components</p></li>
+<li><p>Managed model object creation</p></li>
+<li><p>Page navigation configuration</p></li></ul>
+<p>All this functionality is available using standard Java APIs and XML-based configuration files.</p>
+
+<a name="bnacq"></a><h4>Java Message Service API</h4>
+<p><a name="indexterm-79"></a>The Java Message Service (JMS) API is a messaging standard that allows Java
+EE application components to create, send, receive, and read messages. It enables distributed
+communication that is loosely coupled, reliable, and asynchronous.</p>
+
+<a name="bnacr"></a><h4>Java Transaction API</h4>
+<p><a name="indexterm-80"></a><a name="indexterm-81"></a>The Java Transaction API (JTA) provides a standard interface for demarcating transactions. The
+Java EE architecture provides a default auto commit to handle transaction commits and rollbacks.
+An <b>auto commit</b> means that any other applications that are viewing data will see
+the updated data after each database read or write operation. However, if your
+application performs two separate database access operations that depend on each other, you
+will want to use the JTA API to demarcate where the entire transaction,
+including both operations, begins, rolls back, and commits.</p>
+
+<a name="bnacs"></a><h4>JavaMail API</h4>
+<p><a name="indexterm-82"></a>Java EE applications use the JavaMail<sup>TM</sup> API to send email notifications. The JavaMail API
+has two parts: an application-level interface used by the application components to send
+mail, and a service provider interface. The Java EE platform includes JavaMail with
+a service provider that allows application components to send Internet mail.</p>
+
+<a name="bnact"></a><h4>JavaBeans Activation Framework</h4>
+<p><a name="indexterm-83"></a><a name="indexterm-84"></a>The JavaBeans Activation Framework (JAF) is included because JavaMail uses it. JAF provides
+standard services to determine the type of an arbitrary piece of data, encapsulate access
+to it, discover the operations available on it, and create the appropriate JavaBeans
+component to perform those operations.</p>
+
+<a name="bnacu"></a><h4>Java API for XML Processing</h4>
+<p><a name="indexterm-85"></a><a name="indexterm-86"></a>The Java API for XML Processing (JAXP), part of the Java SE platform,
+supports the processing of XML documents using Document Object Model (DOM), Simple API
+for XML (SAX), and Extensible Stylesheet Language Transformations (XSLT). JAXP enables applications to parse
+and transform XML documents independent of a particular XML processing implementation.</p><p>JAXP also provides namespace support, which lets you work with schemas that might
+otherwise have naming conflicts. Designed to be flexible, JAXP lets you use any
+XML-compliant parser or XSL processor from within your application and supports the W3C
+schema. You can find information on the W3C schema at this URL: <a href="http://www.w3.org/XML/Schema">http://www.w3.org/XML/Schema</a>.</p>
+
+<a name="bnacv"></a><h4>Java API for XML Web Services (JAX-WS)</h4>
+<p><a name="indexterm-87"></a><a name="indexterm-88"></a>The JAX-WS specification provides support for web services that use the JAXB API
+for binding XML data to Java objects. The JAX-WS specification defines client APIs for
+accessing web services as well as techniques for implementing web service endpoints. The
+Web Services for J2EE specification describes the deployment of JAX-WS-based services and clients.
+The EJB and servlet specifications also describe aspects of such deployment. It must
+be possible to deploy JAX-WS-based applications using any of these deployment models.</p><p>The JAX-WS specification describes the support for message handlers that can process message
+requests and responses. In general, these message handlers execute in the same container
+and with the same privileges and execution context as the JAX-WS client or
+endpoint component with which they are associated. These message handlers have access to
+the same JNDI <tt>java:comp/env</tt> namespace as their associated component. Custom serializers and deserializers,
+if supported, are treated in the same way as message handlers.</p>
+
+<a name="bnacw"></a><h4>Java Architecture for XML Binding (JAXB)</h4>
+<p><a name="indexterm-89"></a><a name="indexterm-90"></a>The Java Architecture for XML Binding (JAXB) provides a convenient way to bind
+an XML schema to a representation in Java language programs. JAXB can be
+used independently or in combination with JAX-WS, where it provides a standard data
+binding for web service messages. All Java EE application client containers, web containers, and
+EJB containers support the JAXB API.</p>
+
+<a name="bnacx"></a><h4>SOAP with Attachments API for Java</h4>
+<p><a name="indexterm-91"></a><a name="indexterm-92"></a>The SOAP with Attachments API for Java (SAAJ) is a low-level API on
+which JAX-WS and JAXR depend. SAAJ enables the production and consumption of messages
+that conform to the SOAP 1.1 specification and SOAP with Attachments note. Most developers
+do not use the SAAJ API, instead using the higher-level JAX-WS API.</p>
+
+<a name="bnacy"></a><h4>Java API for XML Registries</h4>
+<p><a name="indexterm-93"></a><a name="indexterm-94"></a><a name="indexterm-95"></a><a name="indexterm-96"></a>The Java API for XML Registries (JAXR) lets you access business and general-purpose registries
+over the web. JAXR supports the ebXML Registry and Repository standards and the
+emerging UDDI specifications. By using JAXR, developers can learn a single API and
+gain access to both of these important registry technologies.</p><p>Additionally, businesses can submit material to be shared and search for material that
+others have submitted. Standards groups have developed schemas for particular kinds of XML
+documents; two businesses might, for example, agree to use the schema for their
+industry&rsquo;s standard purchase order form. Because the schema is stored in a standard
+business registry, both parties can use JAXR to access it.</p>
+
+<a name="bnacz"></a><h4>J2EE Connector Architecture</h4>
+<p><a name="indexterm-97"></a><a name="indexterm-98"></a><a name="indexterm-99"></a>The J2EE Connector architecture is used by tools vendors and system integrators to create
+resource adapters that support access to enterprise information systems that can be plugged
+in to any Java EE product. A <b>resource adapter</b> is a software component
+that allows Java EE application components to access and interact with the underlying
+resource manager of the EIS. Because a resource adapter is specific to its
+resource manager, typically there is a different resource adapter for each type of
+database or enterprise information system.</p><p>The J2EE Connector architecture also provides a performance-oriented, secure, scalable, and message-based transactional
+integration of Java EE-based web services with existing EISs that can be either
+synchronous or asynchronous. Existing applications and EISs integrated through the J2EE Connector architecture into
+the Java EE platform can be exposed as XML-based web services by
+using JAX-WS and Java EE component models. Thus JAX-WS and the J2EE Connector
+architecture are complementary technologies for enterprise application integration (EAI) and end-to-end business integration.</p>
+
+<a name="bnada"></a><h4>Java Database Connectivity API</h4>
+<p><a name="indexterm-100"></a><a name="indexterm-101"></a>The Java Database Connectivity (JDBC) API lets you invoke SQL commands from Java
+programming language methods. You use the JDBC API in an enterprise bean when
+you have a session bean access the database. You can also use the
+JDBC API from a servlet or a JSP page to access the database
+directly without going through an enterprise bean.</p><p>The JDBC API has two parts: an application-level interface used by the application
+components to access a database, and a service provider interface to attach a
+JDBC driver to the Java EE platform.</p>
+
+<a name="bnadb"></a><h4>Java Persistence API</h4>
+<p>The Java Persistence API is a Java standards-based solution for persistence. Persistence uses
+an object-relational mapping approach to bridge the gap between an object oriented model
+and a relational database. Java Persistence consists of three areas:</p>
+<ul><li><p>The Java Persistence API</p></li>
+<li><p>The query language</p></li>
+<li><p>Object/relational mapping metadata</p></li></ul>
+
+
+<a name="bnadc"></a><h4>Java Naming and Directory Interface</h4>
+<p><a name="indexterm-102"></a><a name="indexterm-103"></a><a name="indexterm-104"></a><a name="indexterm-105"></a><a name="indexterm-106"></a><a name="indexterm-107"></a><a name="indexterm-108"></a>The Java Naming and Directory Interface<sup>TM</sup> (JNDI) provides naming and directory functionality, enabling applications to access multiple
+naming and directory services, including existing naming and directory services such as LDAP,
+NDS, DNS, and NIS. It provides applications with methods for performing standard directory
+operations, such as associating attributes with objects and searching for objects using their attributes.
+Using JNDI, a Java EE application can store and retrieve any type of
+named Java object, allowing Java EE applications to coexist with many legacy applications
+and systems.</p><p><a name="indexterm-109"></a><a name="indexterm-110"></a>Java EE naming services provide application clients, enterprise beans, and web components with
+access to a JNDI naming environment. A <b>naming environment</b> allows a component to
+be customized without the need to access or change the component&rsquo;s source code.
+A container implements the component&rsquo;s environment and provides it to the component as
+a JNDI <b>naming context</b>.</p><p><a name="indexterm-111"></a><a name="indexterm-112"></a>A Java EE component can locate its environment naming context using JNDI interfaces.
+A component can create a <tt>javax.naming.InitialContext</tt> object and looks up the environment
+naming context in <tt>InitialContext</tt> under the name <tt>java:comp/env</tt>. A component&rsquo;s naming environment is
+stored directly in the environment naming context or in any of its direct
+or indirect subcontexts.</p><p><a name="indexterm-113"></a><a name="indexterm-114"></a><a name="indexterm-115"></a>A Java EE component can access named system-provided and user-defined objects. The names
+of system-provided objects, such as JTA <tt>UserTransaction</tt> objects, are stored in the environment naming
+context, <tt>java:comp/en</tt>v. The Java EE platform allows a component to name user-defined objects,
+such as enterprise beans, environment entries, JDBC <tt>DataSource</tt> objects, and message connections. An object
+should be named within a subcontext of the naming environment according to the
+type of the object. For example, enterprise beans are named within the subcontext
+<tt>java:comp/env/ejb</tt>, and JDBC <tt>DataSource</tt> references in the subcontext <tt>java:comp/env/jdbc</tt>.</p>
+
+<a name="bnadd"></a><h4>Java Authentication and Authorization Service</h4>
+<p><a name="indexterm-116"></a><a name="indexterm-117"></a>The Java Authentication and Authorization Service (JAAS) provides a way for a Java EE
+application to authenticate and authorize a specific user or group of users to
+run it.</p><p>JAAS is a Java programming language version of the standard Pluggable Authentication Module
+(PAM) framework, which extends the Java Platform security architecture to support user-based authorization.</p>
+
+<a name="bnade"></a><h4>Simplified Systems Integration</h4>
+<p>The Java EE platform is a platform-independent, full systems integration solution that creates
+an open marketplace in which every vendor can sell to every customer. Such
+a marketplace encourages vendors to compete, not by trying to lock customers into
+their technologies but instead by trying to outdo each other in providing products
+and services that benefit customers, such as better performance, better tools, or better
+customer support.</p><p>The Java EE 5 APIs enable systems and applications integration through the following:</p>
+<ul><li><p>Unified application model across tiers with enterprise beans</p></li>
+<li><p>Simplified request-and-response mechanism with JSP pages and servlets</p></li>
+<li><p>Reliable security model with JAAS</p></li>
+<li><p>XML-based data interchange integration with JAXP, SAAJ, and JAX-WS</p></li>
+<li><p>Simplified interoperability with the J2EE Connector architecture</p></li>
+<li><p>Easy database connectivity with the JDBC API</p></li>
+<li><p>Enterprise application integration with message-driven beans and JMS, JTA, and JNDI</p></li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bnaca.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnadf.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

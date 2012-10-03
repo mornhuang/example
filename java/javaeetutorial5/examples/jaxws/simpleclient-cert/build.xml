@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="simpleclient-cert" default="default" basedir=".">
+    <description>Builds, tests, and runs the project simpleclient-cert.</description>
+    <property name="is.app-client.module" value="true"/>
+    <property name="is.webservice.client" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+    
+    <target name="-pre-compile" unless="netbeans.home" depends="init,wsimport-client-generate"/>
+    
+    <target name="run-ant" unless="netbeans.home" depends="init">
+        <antcall target="bpp-run-app-client">
+            <param name="app-client.jar" value="${dist.jar}"/>
+        </antcall>
+    </target>
+    
+    <target name="run-nb" if="netbeans.home" depends="init">
+        <antcall target="run-tool"/>
+    </target>
+    
+    <target name="run" depends="init, run-deploy, tools">
+        <echo message="running application client container."/>
+        <exec executable="${appclient}">
+            <env key="VMARGS" value="-Djavax.net.ssl.keyStore=${keystore} -Djavax.net.ssl.keyStorePassword=${keystore.password} -Djavax.net.ssl.trustStore=${truststore} -Djavax.net.ssl.trustStorePassword=${truststore.password}" />
+            <arg line="-client ${dist.jar}"/>
+        </exec>
+    </target>  
+    
+    <target name="-pre-init" if="debug">
+        <echo message="---------------------------------------------------"/>
+        <echo message="Classpath info"/>
+        <echo message="---------------------------------------------------"/>
+        <property name="cp" refid="classpath"/>
+        <echo message="Classpath is ${cp}"/>
+        <echo message="---------------------------------------------------"/>
+        <echo message="Project properties"/>
+        <echo message="---------------------------------------------------"/>
+        <echoproperties/>
+    </target>
+    
+</project>

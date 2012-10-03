@@ -1,0 +1,151 @@
+This jUSB package has a Java API for access to USB, and two separate
+implementation.  It's licensed under the LGPL.  The website is:
+
+	http://jusb.sourceforge.net/ 
+
+At this writing, only Linux provides "native USB" access, and other
+platforms must use RMI (experimental).
+
+
+JAVA REQUIREMENTS
+
+The runtime assumption is only JDK 1.1, so that most of the trimmed down
+Java profiles (including Embedded Java and Personal Java) should work with
+the "usb.core" APIs.  That includes of course some J2ME profiles; several
+non-Sun implementations of Java should also be usable.
+
+Builds have recently been done with Kaffe 1.0.6 (partial build), JDKs 1.3
+and older, and the GCJ 2.96 snapshot in RedHat 7.  All of those have worked
+as runtime environments.  Your mileage may vary.
+
+
+HOST OPERATING SYSTEM ISSUES
+
+See README.linux for information about building and using this on Linux.
+There's a good selection of usable JVMs on Linux; not all support RMI.
+
+At this time, USB devices must be connected to a Linux host (and using an
+RMI-equipped JVM) for them to be accessed from any other operating system.
+The "wire protocol" (and SPI) is expected to evolve.
+
+For Win32 developers, compile using GNU make from "cygwin" (found at
+http://sources.redhat.com/cygwin). Read the makefile; you need to set
+JAVA_HOME when you build.  You'll need to update your local Win32 machine's
+registry to point to some Linux USB server.  That support is experimental;
+read the source code to figure out how to set it up.
+
+
+BUILDING
+
+Assuming you have extracted this software into your shell's current
+directory, just unpack the sources (not needed with CVS children)
+and build:
+
+    $ mkdir src
+    $ cd src
+    $ tar xfz ../src.tgz
+    $ cd ..
+    $ make
+    ...
+    $ make javadoc
+    ...
+    $
+
+If there is platform-specific code for your system, it should get
+built automatically.  (If it isn't, figure out why!)  RMI stubs
+and proxies are also built (and RMI/IIOP ones on JDK 1.3).
+
+There's also basic GCJ support in the Makefile.  At this writing
+it uses GCJ only to create header files (so jUSB may be called
+from compatible C/C++ programs) and compile to native code, not
+to create classfiles.  Don't bother with versions older than the
+GCJ 2.96 release.
+
+
+SANITY CHECKING
+
+The simplest test just gives an XML dump of what's on your bus, in
+relatively gory detail.  Most of these element types are kinds of
+device descriptor that you'll get to know if you work directly with
+a USB API; any language identifiers relate to internationalization
+support provided by the device vendors.
+
+    $ make show
+    <!-- Linux usbfs -->
+    <host busses='3'>
+      <!-- Bus #1 -->
+      <?addresses portid='usb-fca0' busaddr='5'?>
+      <hub usb='1.0'
+	  vendorId='0x0' productId='0x0' device-version='0.0'
+	  product='USB UHCI-alt Root Hub'
+	  serial='fca0'
+	  class='9' subclass='0' protocol='0'
+	  ep0-maxpacket='8' configurations='1'>
+	<language id='0x0'/>
+	<config value='1' total-length='25' attributes='40'
+	    max-power='0 mA.' interfaces='1'>
+	  <!-- interface is claimed by: hub driver -->
+	  <hub number='0' alt='0' endpoints='1'
+	      class='9' subclass='0' protocol='0'>
+	    <endpoint addr='1' direction='in' type='interrupt'
+		attributes='3' maxpacket='8' interval='255'/>
+	    </hub>
+	  </config>
+		Root Hub, 2 ports
+		overcurrent protection: global
+		power switching: ganged
+	    
+	    <!-- Port 1 -->
+	    <?addresses portid='usb-fca0-1' busaddr='9'?>
+	    <vendor-specific usb='1.01'
+		vendorId='0x525' productId='0x1080' device-version='2.0'
+		class='255' subclass='0' protocol='0'
+		ep0-maxpacket='8' configurations='1'>
+	      <config value='1' total-length='53' attributes='a0'
+		  max-power='100 mA.' interfaces='1'>
+		<!-- interface is claimed by: net1080 driver -->
+		<vendor-specific number='0' alt='0' endpoints='5'
+		    class='255' subclass='0' protocol='0'>
+		  <endpoint addr='1' direction='out' type='bulk'
+		      attributes='2' maxpacket='64' interval='0'/>
+		  <endpoint addr='1' direction='in' type='bulk'
+		      attributes='2' maxpacket='64' interval='0'/>
+		  <endpoint addr='2' direction='out' type='bulk'
+		      attributes='2' maxpacket='8' interval='0'/>
+		  <endpoint addr='2' direction='in' type='interrupt'
+		      attributes='3' maxpacket='8' interval='100'/>
+		  <endpoint addr='3' direction='in' type='interrupt'
+		      attributes='3' maxpacket='8' interval='1'/>
+		  </vendor-specific>
+		</config>
+	      </vendor-specific>
+	</hub>
+      <!-- Bus #2 -->
+      <?addresses portid='usb-cc847000' busaddr='2'?>
+
+    ... etc ...
+
+    </host>
+    $
+
+If you didn't get something like that, the diagnostics you got instead
+should be telling you what went wrong and how to fix it.  Once it works
+correctly, everything else should be fine.
+
+
+If you have Swing available, there's a simple interactive demo:
+
+    $ make viewer
+    ... Swing browser of bus and device state
+    $
+
+That does live updates of the bus structure, and can be taught
+device-specific behaviors.  It doesn't yet work for remote hosts,
+unless you manually update your local registry to point there.
+
+
+=======================================================================
+Main site:	http://jusb.sourceforge.net/
+=======================================================================
+
+$Id: README,v 1.1 2008/10/15 09:28:08 huangmeng Exp $

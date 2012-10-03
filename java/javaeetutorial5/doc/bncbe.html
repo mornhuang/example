@@ -1,0 +1,640 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Defining Security Requirements for Web Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level3"><a href="bncat.html">Overview of Web Application Security</a></p>
+<p class="toc level3"><a href="bncav.html">Working with Security Roles</a></p>
+<p class="toc level4"><a href="bncav.html#bncaw">Declaring Security Roles</a></p>
+<p class="toc level5"><a href="bncav.html#bncax">Specifying Security Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bncav.html#bncay">Specifying Security Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level4 tocsp"><a href="bncav.html#bncaz">Mapping Security Roles to Application Server Groups</a></p>
+<p class="toc level3 tocsp"><a href="bncba.html">Checking Caller Identity Programmatically</a></p>
+<p class="toc level4"><a href="bncba.html#bncbb">Declaring and Linking Role References</a></p>
+<p class="toc level5"><a href="bncba.html#bncbc">Declaring Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bncba.html#bncbd">Declaring Roles Using Deployment Descriptor Elements</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Defining Security Requirements for Web Applications</a></p>
+<p class="toc level4"><a href="#bncbf">Declaring Security Requirements Using Annotations</a></p>
+<p class="toc level5"><a href="#bncbg">Using the <tt>@DeclareRoles</tt> Annotation</a></p>
+<p class="toc level5"><a href="#bncbh">Using the <tt>@RunAs</tt> Annotation</a></p>
+<p class="toc level4 tocsp"><a href="#bncbj">Declaring Security Requirements in a Deployment Descriptor</a></p>
+<p class="toc level5"><a href="#bncbk">Specifying Security Constraints</a></p>
+<p class="toc level4 tocsp"><a href="#bncbm">Specifying a Secure Connection</a></p>
+<p class="toc level4"><a href="#bncbn">Specifying an Authentication Mechanism</a></p>
+<p class="toc level5"><a href="#bncbo">HTTP Basic Authentication</a></p>
+<p class="toc level5"><a href="#bncbq">Form-Based Authentication</a></p>
+<p class="toc level5"><a href="#bncbs">HTTPS Client Authentication</a></p>
+<p class="toc level5"><a href="#bncbw">Digest Authentication</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncbx.html">Examples: Securing Web Applications</a></p>
+<p class="toc level4"><a href="bncbx.html#bncby">Example: Using Form-Based Authentication with a JSP Page</a></p>
+<p class="toc level5"><a href="bncbx.html#bncbz">Creating a Web Client for Form-Based Authentication</a></p>
+<p class="toc level5"><a href="bncbx.html#bncca">Creating the Login Form and the Error Page</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccb">Specifying a Security Constraint</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccd">Adding Authorized Roles and Users</a></p>
+<p class="toc level5"><a href="bncbx.html#bncce">Mapping Application Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccf">Building, Packaging, and Deploying the Form-Based Authentication Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccg">Building, Packaging, and Deploying the Form-Based Authentication Example Using Ant</a></p>
+<p class="toc level5"><a href="bncbx.html#bncch">Testing the Form-Based Authentication Web Client</a></p>
+<p class="toc level4 tocsp"><a href="bncbx.html#bncck">Example: Basic Authentication with a Servlet</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccl">Declaring Security Roles</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccm">Specifying the Security Constraint</a></p>
+<p class="toc level5"><a href="bncbx.html#bncco">Adding Authorized Roles and Users</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccp">Mapping Application Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccq">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccr">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using Ant</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccs">Running the Basic Authentication Servlet</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccu">Troubleshooting the Basic Authentication Example</a></p>
+<p class="toc level4 tocsp"><a href="bncbx.html#bnccv">Example: Basic Authentication with JAX-WS</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccw">Annotating the Service</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccx">Adding Security Elements to the Deployment Descriptor</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccy">Linking Roles to Groups</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccz">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bncda">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using Ant</a></p>
+<p class="toc level5"><a href="bncbx.html#bncdb">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bncdc">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using Ant</a></p>
+<p class="toc level2 tocsp"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncba.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncbx.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncbe"></a><h3>Defining Security Requirements for Web Applications</h3>
+<p>Web applications are created by application developers who give, sell, or otherwise transfer
+the application to an application deployer for installation into a runtime environment. Application
+developers communicate how the security is to be set up for the deployed
+application <b>declaratively</b> by use of the <b>deployment descriptor</b> mechanism or <b>programmatically</b> by use of
+<b>annotations</b>. When this information is passed on to the deployer, the deployer uses
+this information to define method permissions for security roles, set up user authentication,
+and whether or not to use HTTPS for transport. If you don&rsquo;t define
+security requirements, the deployer will have to determine the security requirements independently.</p><p>If you specify a value in an annotation, and then explicitly specify the
+same value in the deployment descriptor, the value in the deployment descriptor overrides
+any values specified in annotations. If a value for a servlet has not
+been specified in the deployment descriptor, and a value has been specified for
+that servlet by means of the use of annotations, the value specified
+in annotations will apply. The granularity of overriding is on the per-servlet basis.</p><p>The web application deployment descriptor may contain an attribute of <tt>metadata-complete</tt> on
+the <tt>web-app</tt> element. The <tt>metadata-complete</tt> attribute defines whether the web application deployment descriptor
+is complete, or whether the class files of the JAR file should be
+examined for annotations that specify deployment information. When the <tt>metadata-complete</tt> attribute is not
+specified, or is set to <tt>false</tt>, the deployment descriptors examine the class files of
+applications for annotations that specify deployment information. When the <tt>metadata-complete</tt> attribute is set
+to <tt>true</tt>, the deployment descriptor ignores any servlet annotations present in the class files
+of the application. Thus, deployers can use deployment descriptors to customize or override
+the values specified in annotations.</p><p>Many elements for security in a web application deployment descriptor cannot, as yet,
+be specified as annotations, therefore, for securing web applications, deployment descriptors are a
+necessity. However, where possible, annotations are the recommended method for securing web components.</p><p>The following sections discuss the use of annotations and deployment descriptor elements to
+secure web applications:</p>
+<ul><li><p><a href="#bncbf">Declaring Security Requirements Using Annotations</a></p></li>
+<li><p><a href="#bncbj">Declaring Security Requirements in a Deployment Descriptor</a></p></li></ul>
+
+
+<a name="bncbf"></a><h4>Declaring Security Requirements Using Annotations</h4>
+<a name="indexterm-2746"></a><a name="indexterm-2747"></a><p>The <i>Java Metadata Specification</i> (JSR-175), which is part of J2SE 5.0 and greater, provides a
+means of specifying configuration data in Java code. Metadata in Java code is
+more commonly referred to in this document as <b>annotations</b>. In Java EE, annotations
+are used to declare dependencies on external resources and configuration data in Java code
+without the need to define that data in a configuration file. Several common
+annotations are specific to specifying security in any Java application. These common annotations
+are specified in JSR-175, <a href="http://www.jcp.org/en/jsr/detail?id=175"><i>A Metadata Facility for the Java Programming Language</i></a>, and JSR-250, <a href="http://www.jcp.org/en/jsr/detail?id=250"><i>Common Annotations for the Java Platform</i></a>. Annotations specific to web components are
+specified in the <a href="http://www.jcp.org/en/jsr/detail?id=154"><i>Java Servlet 2.5 Specification</i></a>.</p><p>In servlets, you can use the annotations discussed in the following sections to
+secure a web application:</p>
+<ul><li><p><a href="#bncbg">Using the <tt>@DeclareRoles</tt> Annotation</a></p></li>
+<li><p><a href="#bncbh">Using the <tt>@RunAs</tt> Annotation</a></p></li></ul>
+
+
+<a name="bncbg"></a><h5>Using the <tt>@DeclareRoles</tt> Annotation</h5>
+<p>This annotation is used to define the security roles that comprise the security
+model of the application. This annotation is specified on a class, and it
+typically would be used to define roles that could be tested (for
+example, by calling <tt>isUserInRole</tt>) from within the methods of the annotated class.</p><p>Following is an example of how this annotation would be used. In
+this example, <tt>BusinessAdmin</tt> is the only security role specified, but the value of this
+parameter can include a list of security roles specified by the application.</p><pre>@DeclareRoles("BusinessAdmin")
+public class CalculatorServlet {
+    //...
+}</pre><p>Specifying <tt>@DeclareRoles("BusinessAdmin")</tt> is equivalent to defining the following in <tt>web.xml</tt>:</p><pre>&lt;web-app>
+    &lt;security-role>
+        &lt;role-name>BusinessAdmin&lt;/role-name>
+    &lt;/security-role>
+&lt;/web-app></pre><p>The syntax for declaring more than one role is as shown in
+the following example:</p><pre>@DeclareRoles({"Administrator", "Manager", "Employee"})</pre><p>This annotation is not used to link application roles to other roles. When
+such linking is necessary, it is accomplished by defining an appropriate <tt>security-role-ref</tt>
+in the associated deployment descriptor, as described in <a href="bncba.html#bncbb">Declaring and Linking Role References</a>.</p><p>When a call is made to <tt>isUserInRole</tt> from the annotated class, the caller
+identity associated with the invocation of the class is tested for membership in
+the role with the same name as the argument to <tt>isUserInRole</tt>. If
+a <tt>security-role-ref</tt> has been defined for the argument <tt>role-name</tt>, the caller is tested for
+membership in the role mapped to the <tt>role-name</tt>.</p><p>For further details on the <tt>@DeclareRoles</tt> annotation, refer to JSR&ndash;250, <a href="http://www.jcp.org/en/jsr/detail?id=250"><i>Common Annotations for the Java Platform</i></a>, and <a href="bnbyl.html#bnbzd">Using Enterprise Bean Security Annotations</a> in this
+tutorial.</p>
+
+<a name="bncbh"></a><h5>Using the <tt>@RunAs</tt> Annotation</h5>
+<p>The <tt>@RunAs</tt> annotation defines the role of the application during execution in a
+Java EE container. It can be specified on a class, allowing developers to
+execute an application under a particular role. The role must map to the
+user/group information in the container&rsquo;s security realm. The <tt>value</tt> element in the annotation
+is the name of a security role of the application during execution in
+a Java EE container. The use of the <tt>@RunAs</tt> annotation is discussed in
+more detail in <a href="bnbyl.html#bnbyz">Propagating Security Identity</a>.</p><p>The following is an example that uses the <tt>@RunAs</tt> annotation:</p><pre>@RunAs("Admin")
+public class CalculatorServlet {
+@EJB private ShoppingCart myCart;
+    public void doGet(HttpServletRequest, req, HttpServletResponse res) {
+        //....
+        myCart.getTotal();
+        //....
+    }
+}
+//....
+}</pre><p>The <tt>@RunAs</tt> annotation is equivalent to the <tt>run-as</tt> element in the deployment
+descriptor.</p>
+
+<a name="bncbj"></a><h4>Declaring Security Requirements in a Deployment Descriptor</h4>
+<p>Web applications are created by application developers who give, sell, or otherwise transfer
+the application to an application deployer for installation into a runtime environment. Application
+developers communicate how the security is to be set up for the deployed
+application <b>declaratively</b> by use of the <b>deployment descriptor</b> mechanism. A deployment descriptor enables an application&rsquo;s
+security structure, including roles, access control, and authentication requirements, to be expressed in
+a form external to the application.</p><p>A web application is defined using a standard Java EE <tt>web.xml</tt> deployment descriptor.
+A deployment descriptor is an XML schema document that conveys elements and configuration
+information for web applications. The deployment descriptor must indicate which version of the
+web application schema (2.4 or 2.5) it is using, and the elements specified
+within the deployment descriptor must comply with the rules for processing that version
+of the deployment descriptor. Version 2.5 of the Java Servlet Specification, which can
+be downloaded at <a href="http://jcp.org/en/jsr/detail?id=154"><i>SRV.13, Deployment Descriptor</i></a>, contains more information regarding the structure of deployment descriptors.</p><p>The following code is an example of the elements in a deployment
+descriptor that apply specifically to declaring security for web applications or for resources within
+web applications. This example comes from section SRV.13.5.2, <i>An Example of Security</i>, from the Java
+Servlet Specification 2.5.</p><pre>&lt;?xml version="1.0" encoding="ISO-8859-1"?>
+&lt;web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+        http://java.sun.com/xml/ns/j2ee/web-app_2_5.xsd"
+        version="2.5">
+    &lt;display-name>A Secure Application&lt;/display-name>
+
+    &lt;!-- SERVLET -->
+    &lt;servlet>
+        &lt;servlet-name>catalog&lt;/servlet-name>
+        &lt;servlet-class>com.mycorp.CatalogServlet&lt;/servlet-class>
+        &lt;init-param>
+            &lt;param-name>catalog&lt;/param-name>
+            &lt;param-value>Spring&lt;/param-value>
+        &lt;/init-param>
+        &lt;security-role-ref>
+            &lt;role-name>MGR&lt;/role-name>
+            &lt;!-- role name used in code -->
+            &lt;role-link>manager&lt;/role-link>
+        &lt;/security-role-ref>
+    &lt;/servlet>
+
+    &lt;!-- SECURITY ROLE -->
+    &lt;security-role>
+        &lt;role-name>manager&lt;/role-name>
+    &lt;/security-role>
+
+    &lt;servlet-mapping>
+        &lt;servlet-name>catalog&lt;/servlet-name>
+        &lt;url-pattern>/catalog/*&lt;/url-pattern>
+    &lt;/servlet-mapping>
+
+    &lt;!-- SECURITY CONSTRAINT -->
+    &lt;security-constraint>
+        &lt;web-resource-collection>
+            &lt;web-resource-name>CartInfo&lt;/web-resource-name>
+            &lt;url-pattern>/catalog/cart/*&lt;/url-pattern>
+            &lt;http-method>GET&lt;/http-method>
+            &lt;http-method>POST&lt;/http-method>
+        &lt;/web-resource-collection>
+        &lt;auth-constraint>
+            &lt;role-name>manager&lt;/role-name>
+        &lt;/auth-constraint>
+        &lt;user-data-constraint>
+            &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee>
+        &lt;/user-data-constraint>
+    &lt;/security-constraint>
+
+    &lt;!-- LOGIN CONFIGURATION-->
+    &lt;login-config>
+        &lt;auth-method>BASIC&lt;/auth-method>
+    &lt;/login-config>
+&lt;/web-app></pre><p>As shown in the preceding example, the <tt>&lt;web-app></tt> element is the root element
+for web applications. The <tt>&lt;web-app></tt> element contains the following elements that are used
+for specifying security for a web application:</p>
+<ul><li><p><tt>&lt;security-role-ref></tt></p><p>The <b>security role reference</b> element contains the declaration of a security role reference in the web application&rsquo;s code. The declaration consists of an optional description, the security role name used in the code, and an optional link to a security role.</p><p>The security <b>role name</b> specified here is the security role name used in the code. The value of the <tt>role-name</tt> element must be the <tt>String</tt> used as the parameter to the <tt>HttpServletRequest.isUserInRole(String role)</tt> method. The container uses the mapping of <tt>security-role-ref</tt> to <tt>security-role</tt> when determining the return value of the call.</p><p>The security <b>role link</b> specified here contains the value of the name of the security role that the user may be mapped into. The <tt>role-link</tt> element is used to link a security role reference to a defined security role. The <tt>role-link</tt> element must contain the name of one of the security roles defined in the <tt>security-role</tt> elements.</p><p>For more information about security roles, read <a href="bncav.html">Working with Security Roles</a>.</p></li>
+<li><p><tt>&lt;security-role></tt></p><p>A <b>security role</b> is an abstract name for the permission to access a particular set of resources in an application. A security role can be compared to a key that can open a lock. Many people might have a copy of the key. The lock doesn&rsquo;t care who you are, only that you have the right key.</p><p>The <tt>security-role</tt> element is used with the <tt>security-role-ref</tt> element to map roles defined in code to roles defined for the web application. For more information about security roles, read <a href="bncav.html">Working with Security Roles</a>.</p></li>
+<li><p><tt>&lt;security-constraint></tt></p><p>A <b>security constraint</b> is used to define the access privileges to a collection of resources using their URL mapping. Read <a href="#bncbk">Specifying Security Constraints</a> for more detail on this element. The following elements can be part of a security constraint:</p>
+<ul><li><p><tt>&lt;web-resource-collection></tt> element: <b>Web resource collections</b> describe a URL pattern and HTTP method pair that identify resources that need to be protected.</p></li>
+<li><p><tt>&lt;auth-constraint></tt> element: <b>Authorization constraints</b> indicate which users in specified roles are permitted access to this resource collection. The role name specified here must either correspond to the role name of one of the <tt>&lt;security-role></tt> elements defined for this web application, or be the specially reserved role name <tt>*</tt>, which is a compact syntax for indicating all roles in the web application. Role names are case sensitive. The roles defined for the application must be mapped to users and groups defined on the server. For more information about security roles, read <a href="bncav.html">Working with Security Roles</a>.</p></li>
+<li><p><tt>&lt;user-data-constraint></tt> element: <b>User data constraints</b> specify network security requirements, in particular, this constraint specifies how data communicated between the client and the container should be protected. If a user transport guarantee of INTEGRAL or CONFIDENTIAL is declared, all user name and password information will be sent over a secure connection using HTTP over SSL (HTTPS). Network security requirements are discussed in <a href="#bncbm">Specifying a Secure Connection</a>.</p></li></ul>
+</li>
+<li><p><tt>&lt;login-config></tt></p><p>The <b>login configuration</b> element is used to specify the user authentication method to be used for access to web content, the realm in which the user will be authenticated, and, in the case of form-based login, additional attributes. When specified, the user must be authenticated before access to any resource that is constrained by a security constraint will be granted. The types of user authentication methods that are supported include basic, form-based, digest, and client certificate. Read <a href="#bncbn">Specifying an Authentication Mechanism</a> for more detail on this element.</p></li></ul>
+<p>Some of the elements of web application security must be addressed in server
+configuration files rather than in the deployment descriptor for the web application. Configuring
+security on the Application Server is discussed in the following sections and books:</p>
+<ul><li><p><a href="bnbxi.html">Securing the Application Server</a></p></li>
+<li><p><a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a></p></li>
+<li><p><a href="bnbxw.html#bnbxx">Installing and Configuring SSL Support</a></p></li>
+<li><p><a href="bnbyl.html#bnbzg">Deploying Secure Enterprise Beans</a></p></li>
+<li><p><a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a></p></li>
+<li><p><a href="http://docs.sun.com/doc/819-3672"><i>Sun Java System Application Server 9.1 Developer&rsquo;s Guide</i></a></p></li></ul>
+<p>The following sections provide more information on deployment descriptor security elements:</p>
+<ul><li><p><a href="#bncbk">Specifying Security Constraints</a></p></li>
+<li><p><a href="bncav.html">Working with Security Roles</a></p></li>
+<li><p><a href="#bncbm">Specifying a Secure Connection</a></p></li>
+<li><p><a href="#bncbn">Specifying an Authentication Mechanism</a></p></li></ul>
+
+
+<a name="bncbk"></a><h5>Specifying Security Constraints</h5>
+<a name="indexterm-2748"></a><a name="indexterm-2749"></a><p><b>Security constraints</b> are a declarative way to define the protection of web content. A
+security constraint is used to define access privileges to a collection of resources
+using their URL mapping. Security constraints are defined in a deployment descriptor. The
+following example shows a typical security constraint, including all of the elements of
+which it consists:</p><pre>&lt;security-constraint>
+    &lt;display-name>ExampleSecurityConstraint&lt;/display-name>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>
+            ExampleWRCollection
+        &lt;/web-resource-name>
+        &lt;url-pattern>/example&lt;/url-pattern>
+        &lt;http-method>POST&lt;/http-method>
+        &lt;http-method>GET&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>exampleRole&lt;/role-name>
+    &lt;/auth-constraint>
+    &lt;user-data-constraint>
+        &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee>
+    &lt;/user-data-constraint>
+&lt;/security-constraint></pre><p>As shown in the example, a security constraint (<tt>&lt;security-constraint></tt> in deployment descriptor)
+consists of the following elements:</p>
+<ul><li><p><b>Web resource collection</b> (<tt>web-resource-collection</tt>)</p><p>A web resource collection is a list of URL patterns (the part of a URL <b>after</b> the host name and port which you want to constrain) and HTTP operations (the methods within the files that match the URL pattern which you want to constrain (for example, <tt>POST</tt>, <tt>GET</tt>)) that describe a set of resources to be protected.</p></li>
+<li><p><b>Authorization constraint</b> (<tt>auth-constraint</tt>)</p><p>An authorization constraint establishes a requirement for authentication and names the roles authorized to access the URL patterns and HTTP methods declared by this security constraint. If there is no authorization constraint, the container must accept the request without requiring user authentication. If there is an authorization constraint, but no roles are specified within it, the container will not allow access to constrained requests under any circumstances. The wildcard character <tt>*</tt> can be used to specify all role names defined in the deployment descriptor. Security roles are discussed in <a href="bncav.html">Working with Security Roles</a>.</p></li>
+<li><p><b>User data constraint</b> (<tt>user-data-constraint</tt>)</p><p>A user data constraint establishes a requirement that the constrained requests be received over a protected transport layer connection. This guarantees how the data will be transported between client and server. The choices for type of transport guarantee include <tt>NONE</tt>, <tt>INTEGRAL</tt>, and <tt>CONFIDENTIAL</tt>. If no user data constraint applies to a request, the container must accept the request when received over any connection, including an unprotected one. These options are discussed in <a href="#bncbm">Specifying a Secure Connection</a>.</p></li></ul>
+<p>Security constraints work only on the original request URI and not on calls
+made throug a <tt>RequestDispatcher</tt> (which include <tt>&lt;jsp:include></tt> and <tt>&lt;jsp:forward></tt>). Inside the application, it
+is assumed that the application itself has complete access to all resources and
+would not forward a user request unless it had decided that the requesting
+user also had access.</p><p><a name="indexterm-2750"></a>Many applications feature unprotected web content, which any caller can access without authentication.
+In the web tier, you provide unrestricted access simply by not configuring a
+security constraint for that particular request URI. It is common to have some
+unprotected resources and some protected resources. In this case, you will define security
+constraints and a login method, but they will not be used to control
+access to the unprotected resources. Users won&rsquo;t be asked to log in until
+the first time they enter a protected request URI.</p><p>The Java Servlet specification defines the request URI as the part of a
+URL <b>after</b> the host name and port. For example, let&rsquo;s say you have
+an e-commerce site with a browsable catalog that you would want anyone to
+be able to access, and a shopping cart area for customers only. You
+could set up the paths for your web application so that the
+pattern <tt>/cart/*</tt> is protected but nothing else is protected. Assuming that the application
+is installed at context path <tt>/myapp</tt>, the following are true:</p>
+<ul><li><p><tt>http://localhost:8080/myapp/index.jsp</tt> is <b>not</b> protected.</p></li>
+<li><p><tt>http://localhost:8080/myapp/cart/index.jsp</tt> <b>is</b> protected.</p></li></ul>
+<p>A user will not be prompted to log in until the first
+time that user accesses a resource in the <tt>cart/</tt> subdirectory.</p>
+
+<a name="bncbl"></a><h5>Specifying Separate Security Constraints for Different Resources</h5>
+<p>You can create a separate security constraint for different resources within your application.
+For example, you could allow users with the role of <tt>PARTNER</tt> access to
+the <tt>POST</tt> method of all resources with the URL pattern <tt>/acme/wholesale/*</tt>, and allow users
+with the role of <tt>CLIENT</tt> access to the <tt>POST</tt> method of all
+resources with the URL pattern <tt>/acme/retail/*</tt>. An example of a deployment descriptor
+that would demonstrate this functionality is the following:</p><pre>// SECURITY CONSTRAINT #1
+&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>wholesale&lt;/web-resource-name>
+        &lt;url-pattern>/acme/wholesale/*&lt;/url-pattern>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>POST&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>PARTNER&lt;/role-name>
+    &lt;/auth-constraint>
+    &lt;user-data-constraint>
+        &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee>
+    &lt;/user-data-constraint>
+&lt;/security-constraint>
+
+// SECURITY CONSTRAINT #2
+&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>retail&lt;/web-resource-name>
+        &lt;url-pattern>/acme/retail/*&lt;/url-pattern>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>POST&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>CLIENT&lt;/role-name>
+    &lt;/auth-constraint>
+&lt;/security-constraint></pre><p>When the same <tt>url-pattern</tt> and <tt>http-method</tt> occur in multiple security constraints, the constraints
+on the pattern and method are defined by combining the individual constraints, which
+could result in unintentional denial of access. Section 12.7.2 of the <i>Java Servlet 2.5 Specification</i> (downloadable
+from <a href="http://jcp.org/en/jsr/detail?id=154">http://jcp.org/en/jsr/detail?id=154</a>) gives an example that illustrates the combination of constraints and how
+the declarations will be interpreted.</p>
+
+<a name="bncbm"></a><h4>Specifying a Secure Connection</h4>
+<p>A user data constraint (<tt>&lt;user-data-constraint></tt> in the deployment descriptor) requires that all constrained
+URL patterns and HTTP methods specified in the security constraint are received over
+a protected transport layer connection such as HTTPS (HTTP over SSL). A user
+data constraint specifies a transport guarantee (<tt>&lt;transport-guarantee></tt> in the deployment descriptor). The choices for
+transport guarantee include <tt>CONFIDENTIAL</tt>, <tt>INTEGRAL</tt>, or <tt>NONE</tt>. If you specify <tt>CONFIDENTIAL</tt> or <tt>INTEGRAL</tt>
+as a security constraint, that type of security constraint applies to all requests that
+match the URL patterns in the web resource collection and not just
+to the login dialog box. The following security constraint includes a transport guarantee:</p><pre>&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>wholesale&lt;/web-resource-name>
+        &lt;url-pattern>/acme/wholesale/*&lt;/url-pattern>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>POST&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>PARTNER&lt;/role-name>
+    &lt;/auth-constraint>
+    <b>&lt;user-data-constraint> &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee> &lt;/user-data-constraint></b>
+&lt;/security-constraint></pre><p>The strength of the required protection is defined by the value of
+the transport guarantee. Specify <tt>CONFIDENTIAL</tt> when the application requires that data be transmitted so
+as to prevent other entities from observing the contents of the transmission. Specify
+<tt>INTEGRAL</tt> when the application requires that the data be sent between client and
+server in such a way that it cannot be changed in transit. Specify
+<tt>NONE</tt> to indicate that the container must accept the constrained requests on any
+connection, including an unprotected one.</p><p>The user data constraint is handy to use in conjunction with basic
+and form-based user authentication. When the login authentication method is set to <tt>BASIC</tt> or
+<tt>FORM</tt>, passwords are not protected, meaning that passwords sent between a client and
+a server on an unprotected session can be viewed and intercepted by third
+parties. Using a user data constraint with the user authentication mechanism can alleviate this
+concern. Configuring a user authentication mechanism is described in <a href="#bncbn">Specifying an Authentication Mechanism</a>.</p><p>To guarantee that data is transported over a secure connection, ensure that SSL
+support is configured for your server. If your server is the Sun Java
+System Application Server, SSL support is already configured. If you are using another
+server, consult the documentation for that server for information on setting up SSL
+support. More information on configuring SSL support on the Application Server can be
+found in <a href="bnbxw.html">Establishing a Secure Connection Using SSL</a> and in the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p>
+<hr><p><b>Note - </b>Good Security Practice: If you are using sessions, after you switch to SSL
+you should never accept any further requests for that session that are non-SSL.
+For example, a shopping site might not use SSL until the checkout page,
+and then it might switch to using SSL to accept your card
+number. After switching to SSL, you should stop listening to non-SSL requests for
+this session. The reason for this practice is that the session ID itself
+was not encrypted on the earlier communications. This is not so bad when
+you&rsquo;re only doing your shopping, but after the credit card information is stored
+in the session, you don&rsquo;t want a bad guy trying to fake the
+purchase transaction against your credit card. This practice could be easily implemented using
+a filter.</p>
+<hr>
+
+
+<a name="bncbn"></a><h4>Specifying an Authentication Mechanism</h4>
+<p>To specify an authentication mechanism for your web application, declare a <tt>login-config</tt> element
+in the application deployment descriptor. The <tt>login-config</tt> element is used to configure the
+authentication method and realm name that should be used for this application, and
+the attributes that are needed by the form login mechanism when form-based login
+is selected. The sub-element <tt>auth-method</tt> configures the authentication mechanism for the web application. The
+element content must be either BASIC, DIGEST, FORM, CLIENT-CERT, or a vendor-specific authentication
+scheme. The <tt>realm-name</tt> element indicates the realm name to use for the
+authentication scheme chosen for the web application. The <tt>form-login-config</tt> element specifies the login and
+error pages that should be used when FORM based login is specified.</p><p>The authentication mechanism you choose specifies how the user is prompted to login.
+If the <tt>&lt;login-config></tt> element is present, and the <tt>&lt;auth-method></tt> element contains a value
+other than <tt>NONE</tt>, the user must be authenticated before it can access any resource
+that is constrained by the use of a <tt>security-constraint</tt> element in the
+same deployment descriptor (read <a href="#bncbk">Specifying Security Constraints</a> for more information on security constraints). If you
+do not specify an authentication mechanism, the user will not be authenticated.</p><p>When you try to access a web resource that is constrained by
+a <tt>security-constraint</tt> element, the web container activates the authentication mechanism that has been
+configured for that resource. To specify an authentication method, place the <tt>&lt;auth-method></tt> element
+between <tt>&lt;login-config></tt> elements in the deployment descriptor, like this:</p><pre>&lt;login-config>
+    &lt;auth-method>BASIC&lt;/auth-method>
+&lt;/login-config></pre><p>An example of a deployment descriptor that constrains all web resources for this
+application (in <b>italics</b> below) and requires HTTP basic authentication when you try to
+access that resource (in <b>bold</b> below) is shown here:</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;web-app version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+             http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    &lt;display-name>basicauth&lt;/display-name>
+    &lt;servlet>
+        &lt;display-name>index&lt;/display-name>
+        &lt;servlet-name>index&lt;/servlet-name>
+        &lt;jsp-file>/index.jsp&lt;/jsp-file>
+    &lt;/servlet>
+    &lt;security-role>
+        &lt;role-name>loginUser&lt;/role-name>
+    &lt;/security-role>
+    <b>&lt;security-constraint> &lt;display-name>SecurityConstraint1&lt;/display-name> &lt;web-resource-collection> &lt;web-resource-name>WRCollection&lt;/web-resource-name> &lt;url-pattern>/*&lt;/url-pattern> &lt;/web-resource-collection> &lt;auth-constraint> &lt;role-name>loginUser&lt;/role-name> &lt;/auth-constraint> &lt;/security-constraint></b>
+    <b>&lt;login-config> &lt;auth-method>BASIC&lt;/auth-method> &lt;/login-config></b>
+&lt;/web-app></pre><p>Before you can authenticate a user, you must have a database of
+user names, passwords, and roles configured on your web or application server. For information
+on setting up the user database, refer to <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a> and the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p><p>The authentication mechanisms are discussed further in the following sections:</p>
+<ul><li><p><a href="#bncbo">HTTP Basic Authentication</a></p></li>
+<li><p><a href="#bncbq">Form-Based Authentication</a></p></li>
+<li><p><a href="#bncbs">HTTPS Client Authentication</a></p></li>
+<li><p><a href="#bncbw">Digest Authentication</a></p></li></ul>
+
+
+<a name="bncbo"></a><h5>HTTP Basic Authentication</h5>
+<p><b>HTTP Basic Authentication</b> requires that the server request a user name and password from the
+web client and verify that the user name and password are valid by
+comparing them against a database of authorized users. When basic authentication is declared,
+the following actions occur:</p>
+<ol><li><p>A client requests access to a protected resource.</p></li>
+<li><p>The web server returns a dialog box that requests the user name and password.</p></li>
+<li><p>The client submits the user name and password to the server.</p></li>
+<li><p>The server authenticates the user in the specified realm and, if successful, returns the requested resource.</p></li></ol>
+<p><a name="indexterm-2751"></a><a name="indexterm-2752"></a><a href="#bncbp">Figure&nbsp;30-2</a> shows what happens when you specify HTTP basic authentication.</p><a name="bncbp"></a><h6>Figure&nbsp;30-2 HTTP Basic Authentication</h6><img src="figures/security-httpBasicAuthentication.gif" alt="Diagram of four steps in HTTP basic authentication between client and server"></img><p>The following example shows how to specify basic authentication in your deployment descriptor:</p><pre>&lt;login-config>
+    &lt;auth-method>BASIC&lt;/auth-method>
+&lt;/login-config></pre><p>HTTP basic authentication is not a secure authentication mechanism. Basic authentication sends user
+names and passwords over the Internet as text that is Base64 encoded, and
+the target server is not authenticated. This form of authentication can expose user
+names and passwords. If someone can intercept the transmission, the user name and
+password information can easily be decoded. However, when a secure transport mechanism, such
+as SSL, or security at the network level, such as the IPSEC protocol
+or VPN strategies, is used in conjunction with basic authentication, some of these
+concerns can be alleviated.</p><p><a href="bncbx.html#bnccv">Example: Basic Authentication with JAX-WS</a> is an example application that uses HTTP basic authentication in a JAX-WS
+service. <a href="bncbx.html#bncby">Example: Using Form-Based Authentication with a JSP Page</a> can be easily modified to demonstrate basic authentication. To do so,
+replace the text between the <tt>&lt;login-config></tt> elements with those shown in this section.</p>
+
+<a name="bncbq"></a><h5>Form-Based Authentication</h5>
+<p>Form-based authentication allows the developer to control the look and feel of the
+login authentication screens by customizing the login screen and error pages that an
+HTTP browser presents to the end user. When form-based authentication is declared, the
+following actions occur:</p>
+<ol><li><p>A client requests access to a protected resource.</p></li>
+<li><p>If the client is unauthenticated, the server redirects the client to a login page.</p></li>
+<li><p>The client submits the login form to the server.</p></li>
+<li><p>The server attempts to authenticate the user.</p>
+<ol><li><p>If authentication succeeds, the authenticated user&rsquo;s principal is checked to ensure it is in a role that is authorized to access the resource. If the user is authorized, the server redirects the client to the resource using the stored URL path.</p></li>
+<li><p>If authentication fails, the client is forwarded or redirected to an error page.</p></li></ol>
+</li></ol>
+<p><a name="indexterm-2753"></a><a href="#gexfa">Figure&nbsp;30-3</a> shows what happens when you specify form-based authentication.</p><a name="gexfa"></a><h6>Figure&nbsp;30-3 Form-Based Authentication</h6><img src="figures/security-formBasedLogin.gif" alt="Diagram of four steps in form-based authentication between client and server"></img><p>The following example shows how to declare form-based authentication in your deployment descriptor:</p><pre>&lt;login-config>
+    &lt;auth-method>FORM&lt;/auth-method>
+    &lt;realm-name>file&lt;/realm-name>
+    &lt;form-login-config>
+        &lt;form-login-page>/logon.jsp&lt;/form-login-page>
+        &lt;form-error-page>/logonError.jsp&lt;/form-error-page>
+    &lt;/form-login-config>
+&lt;/login-config></pre><p>The login and error page locations are specified relative to the location of
+the deployment descriptor. Examples of login and error pages are shown in <a href="bncbx.html#bncca">Creating the Login Form and the Error Page</a>.</p><p>Form-based authentication is not particularly secure. In form-based authentication, the content of the
+user dialog box is sent as plain text, and the target server is
+not authenticated. This form of authentication can expose your user names and passwords
+unless all connections are over SSL. If someone can intercept the transmission, the
+user name and password information can easily be decoded. However, when a secure
+transport mechanism, such as SSL, or security at the network level, such as
+the IPSEC protocol or VPN strategies, is used in conjunction with form-based authentication,
+some of these concerns can be alleviated.</p><p>The section <a href="bncbx.html#bncby">Example: Using Form-Based Authentication with a JSP Page</a> is an example application that uses form-based authentication.</p>
+
+<a name="bncbr"></a><h5>Using Login Forms</h5>
+<p>When creating a form-based login, be sure to maintain sessions using cookies or
+SSL session information.</p><p>As shown in <a href="#bncbq">Form-Based Authentication</a>, for authentication to proceed appropriately, the action of the
+login form must always be <tt>j_security_check</tt>. This restriction is made so that the login
+form will work no matter which resource it is for, and to avoid
+requiring the server to specify the action field of the outbound form. The
+following code snippet shows how the form should be coded into the
+HTML page:</p><pre>&lt;form method="POST" action="j_security_check">
+&lt;input type="text" name="j_username">
+&lt;input type="password" name="j_password">
+&lt;/form></pre>
+
+<a name="bncbs"></a><h5>HTTPS Client Authentication</h5>
+<a name="indexterm-2754"></a><p>HTTPS Client Authentication requires the client to possess a Public Key Certificate (PKC).
+If you specify <b>client authentication</b>, the web server will authenticate the client using the
+client&rsquo;s public key certificate.</p><p><a name="indexterm-2755"></a><a name="indexterm-2756"></a><a name="indexterm-2757"></a><a name="indexterm-2758"></a><a name="indexterm-2759"></a><a name="indexterm-2760"></a>HTTPS Client Authentication is a more secure method of authentication than either basic
+or form-based authentication. It uses HTTP over SSL (HTTPS), in which the server
+authenticates the client using the client&rsquo;s Public Key Certificate (PKC). Secure Sockets Layer (SSL)
+technology provides data encryption, server authentication, message integrity, and optional client authentication for
+a TCP/IP connection. You can think of a public key certificate as the
+digital equivalent of a passport. It is issued by a trusted organization, which
+is called a certificate authority (CA), and provides identification for the bearer.</p><p>Before using HTTP Client Authentication, you must make sure that the following actions
+have been completed:</p>
+<ul><li><p>Make sure that SSL support is configured for your server. If your server is the Sun Java System Application Server 9.1, SSL support is already configured. If you are using another server, consult the documentation for that server for information on setting up SSL support. More information on configuring SSL support on the application server can be found in <a href="bnbxw.html">Establishing a Secure Connection Using SSL</a> and the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p></li>
+<li><p>Make sure the client has a valid Public Key Certificate. For more information on creating and using public key certificates, read <a href="bnbxw.html#bnbyb">Working with Digital Certificates</a>.</p></li></ul>
+<p>The following example shows how to declare HTTPS client authentication in your deployment
+descriptor:</p><pre>&lt;login-config>
+    &lt;auth-method>CLIENT-CERT&lt;/auth-method>
+&lt;/login-config></pre>
+
+<a name="bncbt"></a><h5>Mutual Authentication</h5>
+<p>With <b>mutual authentication</b>, the server and the client authenticate one another. There are two
+types of mutual authentication:</p>
+<ul><li><p>Certificate-based mutual authentication (see <a href="#bncbu">Figure&nbsp;30-4</a>)</p></li>
+<li><p>User name- and password-based mutual authentication (see <a href="#bncbv">Figure&nbsp;30-5</a>)</p></li></ul>
+<p>When using certificate-based mutual authentication, the following actions occur:</p>
+<ol><li><p>A client requests access to a protected resource.</p></li>
+<li><p>The web server presents its certificate to the client.</p></li>
+<li><p>The client verifies the server&rsquo;s certificate.</p></li>
+<li><p>If successful, the client sends its certificate to the server.</p></li>
+<li><p>The server verifies the client&rsquo;s credentials.</p></li>
+<li><p>If successful, the server grants access to the protected resource requested by the client.</p></li></ol>
+<p><a href="#bncbu">Figure&nbsp;30-4</a> shows what occurs during certificate-based mutual authentication.</p><a name="bncbu"></a><h6>Figure&nbsp;30-4 Certificate-Based Mutual Authentication</h6><img src="figures/security-sslBMAWithCertificates.gif" alt="Diagram of six steps in mutual authentication with certificates"></img><p>In user name- and password-based mutual authentication, the following actions occur:</p>
+<ol><li><p>A client requests access to a protected resource.</p></li>
+<li><p>The web server presents its certificate to the client.</p></li>
+<li><p>The client verifies the server&rsquo;s certificate.</p></li>
+<li><p>If successful, the client sends its user name and password to the server, which verifies the client&rsquo;s credentials.</p></li>
+<li><p>If the verification is successful, the server grants access to the protected resource requested by the client.</p></li></ol>
+<p><a href="#bncbv">Figure&nbsp;30-5</a> shows what occurs during user name- and password-based mutual authentication.</p><a name="bncbv"></a><h6>Figure&nbsp;30-5 User Name- and Password-Based Mutual Authentication</h6><img src="figures/security-sslBMlAWUsernamePassword.gif" alt="Diagram of five steps in mutual authentication with user name and password"></img>
+
+<a name="bncbw"></a><h5>Digest Authentication</h5>
+<p>Like HTTP basic authentication, <b>HTTP Digest Authentication</b> authenticates a user based on a user name
+and a password. However, the authentication is performed by transmitting the password in
+an encrypted form which is much more secure than the simple Base64 encoding
+used by basic authentication. Digest authentication is not currently in widespread use, and
+is not implemented in the Application Server, therefore, there is no further discussion
+of it in this document.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncba.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncbx.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

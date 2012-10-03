@@ -1,0 +1,27 @@
+body {  font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; background-color: #E5EFE0;}
+table {  font-family: "arial, 宋体";font-size: 9pt; line-height: 13pt;}
+a {  text-decoration: underline;}
+a:hover {  color: #FF0000; text-decoration: underline;}
+.table1 {  font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; background-color: #A5C7E7;}
+.table2 {  font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; background-color: #C0C0C0;}
+.doc {  font-family: "Verdana, 宋体"; font-size: 14px; line-height: 16pt;}
+.bigfont {  font-family: "Verdana, 宋体"; font-size: 14px; line-height: 16pt;}
+.content { font-family: "arial, 宋体"; font-size: 9pt; line-height: 14pt; background-color: #fffff4;}
+.content2 {  font-family: "Arial,宋体"; font-size: 10.5pt; line-height: 16pt; background-color: #ffffFF;}
+.content3 { font-family: "arial, 宋体"; font-size: 9pt; line-height: 14pt; background-color: #FFF7E7;}
+.content4 { font-family: "arial, 宋体"; font-size: 9pt; line-height: 14pt; background-color: #E5EFE0;}
+.header { font-family: "arial, 宋体";font-size: 9pt; line-height: 13pt; color: #ffffff; font-style: normal; font-weight: bold; background-color: #028aba;}
+.header2 { font-family: "arial, 宋体";font-size: 9pt; line-height: 13pt; color: #ffffff; font-style: normal; font-weight: bold;}
+.Colheader1 { font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; color: #000000; font-style: normal; background-color: #A5C7E7; cursor: hand;}
+.Colheader2 { font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; color: #000000; font-style: normal; font-weight: bold; background-color: #E5EFE0;}
+.title { font-family: "arial, 宋体"; font-size: 10.5pt; line-height: 16pt; font-style: normal; font-weight: bold;}
+.label { font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; font-style: normal; font-weight: bold;}
+.form { font-family: "arial, 宋体"; font-size: 9pt; line-height: 13pt; color: #000000; font-style: normal;}
+.btn { height: 20px; width: 80px; font-size: 9pt; border: 1px solid; background-color: #ffffE8; cursor: hand;}
+.btn2 { height: 20px; width: 40px; font-size: 9pt; border: 1px solid; background-color: #ffffe8; cursor: hand;}
+.tx1 { height: 20px; width: 300px; font-size: 9pt; border: 1px solid; background-color: #ffffff;}
+.tx2 { height: 200px; width: 300px; font-size: 9pt; border: 1px solid;}
+.tx3 { height: 20px; width: 80px; font-size: 9pt; border: 1px solid;}
+.tx4 { height: 200px; width: 400px; font-size: 9pt; border: 1px solid;}
+.tx5 { height: 20px; width: 30px; font-size: 9pt; border: 1px solid;}
+

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.redsaga.hibernatesample.step4">
+	<class name="User" table="user" lazy="false">
+		<id
+			column="id"
+			name="id"
+			type="integer"
+		>
+			<generator class="increment" />
+		</id>
+		<property
+			column="name"
+			length="50"
+			name="name"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="pwd"
+			length="50"
+			name="pwd"
+			not-null="true"
+			type="string"
+		 />
+
+		<set
+			inverse="true"
+			lazy="true"
+			name="articles"
+		>
+			<key column="create_by" />
+			<one-to-many class="Article" />
+		</set>
+		<set
+			inverse="true"
+			lazy="true"
+			name="boards"
+		>
+			<key column="create_by" />
+			<one-to-many class="Board" />
+		</set>
+	</class>
+</hibernate-mapping>

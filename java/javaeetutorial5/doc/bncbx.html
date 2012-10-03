@@ -1,0 +1,750 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Examples: Securing Web Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level3"><a href="bncat.html">Overview of Web Application Security</a></p>
+<p class="toc level3"><a href="bncav.html">Working with Security Roles</a></p>
+<p class="toc level4"><a href="bncav.html#bncaw">Declaring Security Roles</a></p>
+<p class="toc level5"><a href="bncav.html#bncax">Specifying Security Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bncav.html#bncay">Specifying Security Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level4 tocsp"><a href="bncav.html#bncaz">Mapping Security Roles to Application Server Groups</a></p>
+<p class="toc level3 tocsp"><a href="bncba.html">Checking Caller Identity Programmatically</a></p>
+<p class="toc level4"><a href="bncba.html#bncbb">Declaring and Linking Role References</a></p>
+<p class="toc level5"><a href="bncba.html#bncbc">Declaring Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bncba.html#bncbd">Declaring Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level3 tocsp"><a href="bncbe.html">Defining Security Requirements for Web Applications</a></p>
+<p class="toc level4"><a href="bncbe.html#bncbf">Declaring Security Requirements Using Annotations</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbg">Using the <tt>@DeclareRoles</tt> Annotation</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbh">Using the <tt>@RunAs</tt> Annotation</a></p>
+<p class="toc level4 tocsp"><a href="bncbe.html#bncbj">Declaring Security Requirements in a Deployment Descriptor</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbk">Specifying Security Constraints</a></p>
+<p class="toc level4 tocsp"><a href="bncbe.html#bncbm">Specifying a Secure Connection</a></p>
+<p class="toc level4"><a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbo">HTTP Basic Authentication</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbq">Form-Based Authentication</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbs">HTTPS Client Authentication</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbw">Digest Authentication</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Examples: Securing Web Applications</a></p>
+<p class="toc level4"><a href="#bncby">Example: Using Form-Based Authentication with a JSP Page</a></p>
+<p class="toc level5"><a href="#bncbz">Creating a Web Client for Form-Based Authentication</a></p>
+<p class="toc level5"><a href="#bncca">Creating the Login Form and the Error Page</a></p>
+<p class="toc level5"><a href="#bnccb">Specifying a Security Constraint</a></p>
+<p class="toc level5"><a href="#bnccd">Adding Authorized Roles and Users</a></p>
+<p class="toc level5"><a href="#bncce">Mapping Application Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="#bnccf">Building, Packaging, and Deploying the Form-Based Authentication Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnccg">Building, Packaging, and Deploying the Form-Based Authentication Example Using Ant</a></p>
+<p class="toc level5"><a href="#bncch">Testing the Form-Based Authentication Web Client</a></p>
+<p class="toc level4 tocsp"><a href="#bncck">Example: Basic Authentication with a Servlet</a></p>
+<p class="toc level5"><a href="#bnccl">Declaring Security Roles</a></p>
+<p class="toc level5"><a href="#bnccm">Specifying the Security Constraint</a></p>
+<p class="toc level5"><a href="#bncco">Adding Authorized Roles and Users</a></p>
+<p class="toc level5"><a href="#bnccp">Mapping Application Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="#bnccq">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnccr">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using Ant</a></p>
+<p class="toc level5"><a href="#bnccs">Running the Basic Authentication Servlet</a></p>
+<p class="toc level5"><a href="#bnccu">Troubleshooting the Basic Authentication Example</a></p>
+<p class="toc level4 tocsp"><a href="#bnccv">Example: Basic Authentication with JAX-WS</a></p>
+<p class="toc level5"><a href="#bnccw">Annotating the Service</a></p>
+<p class="toc level5"><a href="#bnccx">Adding Security Elements to the Deployment Descriptor</a></p>
+<p class="toc level5"><a href="#bnccy">Linking Roles to Groups</a></p>
+<p class="toc level5"><a href="#bnccz">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bncda">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using Ant</a></p>
+<p class="toc level5"><a href="#bncdb">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bncdc">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using Ant</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncbe.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncdq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncbx"></a><h3>Examples: Securing Web Applications</h3>
+<p>There are several ways in which you can secure web applications. These include
+the following options:</p>
+<ul><li><p><a name="indexterm-2761"></a>You can define a user authentication method for an application in its deployment descriptor. Authentication verifies the identity of a user, device, or other entity in a computer system, usually as a prerequisite to allowing access to resources in a system. When a user authentication method is specified for an application, the web container activates the specified authentication mechanism when you attempt to access a protected resource.</p><p>The options for user authentication methods are discussed in <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>. All of the example security applications use a user authentication method.</p></li>
+<li><p>You can define a transport guarantee for an application in its deployment descriptor. Use this method to run over an SSL-protected session and ensure that all message content is protected for confidentiality or integrity. The options for transport guarantees are discussed in <a href="bncbe.html#bncbm">Specifying a Secure Connection</a>.</p><p>When running over an SSL-protected session, the server and client can authenticate one another and negotiate an encryption algorithm and cryptographic keys before the application protocol transmits or receives its first byte of data.</p><p>SSL technology allows web browsers and web servers to communicate over a secure connection. In this secure connection, the data is encrypted before being sent, and then is decrypted upon receipt and before processing. Both the browser and the server encrypt all traffic before sending any data. For more information, see <a href="bnbxw.html">Establishing a Secure Connection Using SSL</a>.</p><p>Digital certificates are necessary when running HTTP over SSL (HTTPS). The HTTPS service of most web servers will not run unless a digital certificate has been installed. Digital certificates have already been created for the Application Server.</p></li></ul>
+<p>The following examples use annotations, programmatic security, and/or declarative security to demonstrate adding
+security to existing web applications:</p>
+<ul><li><p><a href="#bncby">Example: Using Form-Based Authentication with a JSP Page</a></p></li>
+<li><p><a href="#bncck">Example: Basic Authentication with a Servlet</a></p></li>
+<li><p><a href="#bnccv">Example: Basic Authentication with JAX-WS</a></p></li>
+<li><p><a href="bnbzj.html#bncag">Discussion: Securing the Duke's Bank Example</a></p></li></ul>
+<p>The following examples demonstrate adding basic authentication to an EJB endpoint or enterprise
+bean:</p>
+<ul><li><p><a href="bnbzj.html#bnbzk">Example: Securing an Enterprise Bean</a></p></li>
+<li><p><a href="bnbzj.html#bncaa">Example: Using the <tt>isCallerInRole</tt> and <tt>getCallerPrincipal</tt> Methods</a></p></li>
+<li><p><a href="bnbzj.html#bncag">Discussion: Securing the Duke's Bank Example</a></p></li></ul>
+
+
+<a name="bncby"></a><h4>Example: Using Form-Based Authentication with a JSP Page</h4>
+<a name="indexterm-2762"></a><a name="indexterm-2763"></a><a name="indexterm-2764"></a><p>This example discusses how to use form-based authentication with a basic JSP page.
+With form-based authentication, you can customize the login screen and error pages that
+are presented to the web client for authentication of their user name and
+password. When a user submits their name and password, the server determines if
+the user name and password are those of an authorized user and, if
+authorized, sends the requested web resource. If the topic of authentication is new
+to you, please refer to the section <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>.</p><p>In general, the following steps are necessary for adding form-based authentication to an
+unsecured JSP page, such as the one described in <a href="bnadx.html">Web Modules</a>. In the
+example application included with this tutorial, many of these steps have been completed
+for you and are listed here simply to show what needs to be
+done should you wish to create a similar application. The completed version of
+this example application can be found in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/</tt>.</p><p>The following steps describe how to set up your system for running
+the example applications, describe the sample application, and provide the steps for compiling, packaging,
+deploying, and testing the example application.</p>
+<ol><li><p>If you have not already done so, set up your system so that the Ant tool and/or NetBeans IDE will run properly. To do this, follow the instructions in <a href="bnaan.html">Building the Examples</a>. This step is necessary to set the properties that are specific to your installation of the Application Server and Java EE 5 Tutorial.</p></li>
+<li><p>If you have not already done so, add an authorized user to the Application Server. For this example, add users to the <tt>file</tt> realm of the Application Server and assign the user to the group <tt>user</tt>. This topic is discussed more in <a href="#bnccd">Adding Authorized Roles and Users</a>.</p></li>
+<li><p>Create a web module as described in <a href="bnadx.html">Web Modules</a>. The subsequent steps discuss adding security to this basic application. The resulting application is found in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/</tt>.</p></li>
+<li><p>Create the login form and login error form pages. Files for the example application can be viewed at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/web</tt>. These pages are discussed in <a href="#bncca">Creating the Login Form and the Error Page</a>.</p></li>
+<li><p><a name="indexterm-2765"></a>Create a <tt>web.xml</tt> deployment descriptor and add the appropriate security elements (the application on which this section is based did not originally require a deployment descriptor.) The deployment descriptor for the example application can be viewed at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/hello1_formauth/web/WEB-INF.</tt> The security elements for the <tt>web.xml</tt> deployment descriptor are described in <a href="#bnccb">Specifying a Security Constraint</a>.</p></li>
+<li><p>Map the role name defined for this resource (<tt>loginUser</tt>) to a group of users defined on the Application Server. For more information on how to do this, read <a href="#bncce">Mapping Application Roles to Application Server Groups</a>.</p></li>
+<li><p>Build, package, deploy, and run the web application by following the steps in <a href="#bnccf">Building, Packaging, and Deploying the Form-Based Authentication Example Using NetBeans IDE</a> or <a href="#bnccg">Building, Packaging, and Deploying the Form-Based Authentication Example Using Ant</a>.</p></li>
+<li><p>Test the web client, following the steps in <a href="#bncch">Testing the Form-Based Authentication Web Client</a>.</p></li></ol>
+
+
+<a name="bncbz"></a><h5>Creating a Web Client for Form-Based Authentication</h5>
+<p>The web client in this example is a standard JSP page, and
+annotations are not used in JSP pages because JSP pages are compiled as
+they are presented to the browser. Therefore, none of the code that adds
+form-based authentication to the example is included in the web client. The code
+for the JSP page used in this example, <tt>hello1_formauth/web/index.jsp</tt>, is exactly the same as
+the code used for the unsecured JSP page from the example application at
+<tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1/web/index.jsp</tt>.</p><p>The information that adds form-based authentication to this example is specified in the
+deployment descriptor. This information is discussed in <a href="#bnccb">Specifying a Security Constraint</a>.</p>
+
+<a name="bncca"></a><h5>Creating the Login Form and the Error Page</h5>
+<p>When using form-based login mechanisms, you must specify a page that contains the
+form you want to use to obtain the user name and password,
+as well as which page to display if login authentication fails. This section discusses
+the login form and the error page used in this example. The
+section <a href="#bnccb">Specifying a Security Constraint</a> shows how you specify these pages in the deployment descriptor.</p><p>The login page can be an HTML page, a JSP page, or
+a servlet, and it must return an HTML page containing a form that
+conforms to specific naming conventions (see the Java Servlet 2.5 specification for more
+information on these requirements). To do this, include the elements that accept user
+name and password information between <tt>&lt;form>&lt;/form></tt> tags in your login page. The content of
+an HTML page, JSP page, or servlet for a login page should be
+coded as follows:</p><pre>&lt;form method=post action="j_security_check" >
+    &lt;input type="text"  name= "j_username" >
+    &lt;input type="password"  name= "j_password" >
+&lt;/form></pre><p>The full code for the login page used in this example can
+be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/web/logon.jsp</tt>. An example of the running login form page
+is shown later in <a href="#bncci">Figure&nbsp;30-6</a>. Here is the code for this page:</p><pre>&lt;html>
+&lt;head>
+    &lt;title>Login Page&lt;/title>
+&lt;/head>
+
+&lt;h2>Hello, please log in:&lt;/h2>
+&lt;br>&lt;br>
+<b>&lt;form action="j_security_check" method=post></b>
+    &lt;p>&lt;strong>Please Enter Your User Name: &lt;/strong>
+    <b>&lt;input type="text" name="j_username" size="25"></b>
+    &lt;p>&lt;p>&lt;strong>Please Enter Your Password: &lt;/strong>
+    <b>&lt;input type="password" size="15" name="j_password"></b>
+    &lt;p>&lt;p>
+    &lt;input type="submit" value="Submit">
+    &lt;input type="reset" value="Reset">
+&lt;/form>
+&lt;/html></pre><p>The login error page is displayed if the user enters a user
+name and password combination that is not authorized to access the protected URI.
+For this example, the login error page can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/web/logonError.jsp</tt>. For
+this example, the login error page explains the reason for receiving the error
+page and provides a link that will allow the user to try again.
+Here is the code for this page:</p><pre>&lt;html>
+&lt;head>
+    &lt;title>Login Error&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;c:url var="url" value="/index.jsp"/>
+    &lt;h2>Invalid user name or password.&lt;/h2>
+
+    &lt;p>Please enter a user name or password that is authorized to access this 
+    application. For this application, this means a user that has been created in the 
+    &lt;code>file&lt;/code> realm and has been assigned to the &lt;em>group&lt;/em> of 
+    &lt;code>user&lt;/code>.  Click here to &lt;a href="${url}">Try Again&lt;/a>&lt;/p>
+&lt;/body>
+&lt;/html></pre>
+
+<a name="bnccb"></a><h5>Specifying a Security Constraint</h5>
+<p>This example takes a very simple JSP page-based web application and adds form-based
+security to this application. The JSP page is exactly the same as the
+JSP page used in the example described in <a href="bnadx.html">Web Modules</a>. All security for
+this example is declared in the deployment descriptor for the application. A security
+constraint is defined in the deployment descriptor that tells the server to send
+a login form to collect user data, verify that the user is authorized
+to access the application, and, if so, display the JSP page to the
+user.</p><p>If this client were a web service endpoint and not a JSP
+page, you could use annotations to declare security roles and to specify which
+roles were allowed access to which methods. However, there is no resource injection
+in JSP pages, so you cannot use annotations and must use the equivalent
+deployment descriptor elements.</p><p>Deployment descriptor elements are described in <a href="bncbe.html#bncbj">Declaring Security Requirements in a Deployment Descriptor</a>.</p><p>The following sample code shows the deployment descriptor used in this example of
+form-based login authentication, which can be found in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/web/WEB-INF/web.xml</tt>.</p><pre>&lt;!-- FORM-BASED LOGIN AUTHENTICATION EXAMPLE -->
+&lt;?xml version="1.0" encoding="UTF-8"?>
+ &lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    &lt;display-name>hello1_formauth&lt;/display-name>
+       &lt;servlet>
+             &lt;display-name>index&lt;/display-name>
+            &lt;servlet-name>index&lt;/servlet-name>
+            &lt;jsp-file>/index.jsp&lt;/jsp-file>
+      &lt;/servlet>
+     &lt;security-constraint>
+             &lt;display-name>SecurityConstraint&lt;/display-name>
+            &lt;web-resource-collection>
+                  &lt;web-resource-name>WRCollection&lt;/web-resource-name>
+                 <b>&lt;url-pattern>/*&lt;/url-pattern></b>
+         &lt;/web-resource-collection>
+            &lt;auth-constraint>
+                  <b>&lt;role-name>loginUser&lt;/role-name></b>
+            &lt;/auth-constraint>
+            &lt;user-data-constraint>
+                &lt;transport-guarantee>NONE&lt;/transport-guarantee>
+            &lt;/user-data-constraint>
+       &lt;/security-constraint>
+      &lt;login-config>
+            <b>&lt;auth-method>FORM&lt;/auth-method></b>
+         &lt;form-login-config>
+                  <b>&lt;form-login-page>/logon.jsp&lt;/form-login-page></b>
+                 <b>&lt;form-error-page>/logonError.jsp&lt;/form-error-page></b>
+          &lt;/form-login-config>
+     &lt;/login-config>
+     &lt;security-role>
+        &lt;role-name>loginUser&lt;/role-name>
+    &lt;/security-role>
+&lt;/web-app></pre><p>More description of the elements that declare security in a deployment descriptor can
+be found in <a href="bncbe.html#bncbk">Specifying Security Constraints</a>.</p>
+
+<a name="bnccc"></a><h5>Protecting Passwords with SSL</h5>
+<p><a name="indexterm-2766"></a>Passwords are not protected for confidentiality with HTTP basic or form-based authentication, meaning that
+passwords sent between a client and a server on an unprotected session can
+be viewed and intercepted by third parties. To overcome this limitation, you can
+run these authentication protocols over an SSL-protected session and ensure that all message
+content is protected for confidentiality.</p><p>A <tt>&lt;transport-guarantee></tt> element indicates whether or not the protected resources should travel over
+protected transport. For simplicity, this example does not require protected transport, but in
+a real world application, you would want to set this value to <tt>CONFIDENTIAL</tt>
+to ensure that the user name and password are not observed during transmission. When
+running on protected transport, you can run the application over the secure SSL
+protocol, <tt>https</tt>, and specify the secure port where your SSL connector is created
+(the default for the Application Server is <tt>8181</tt>). If you do not specify
+the HTTPS protocol, the server will automatically redirect the application to the secure
+port.</p>
+
+<a name="bnccd"></a><h5>Adding Authorized Roles and Users</h5>
+<p>To authenticate a user and allow that user access to protected resources on
+the Application Server, you must link the roles defined in the application to
+the users defined for the Application Server.</p>
+<ul><li><p>An application may define <b>security roles</b>, which are a logical grouping of users, classified by common traits such as customer profile or job title.</p></li>
+<li><p>The Application Server has multiple <b>realms</b>, each of which generally includes a database of authorized users, their passwords, and one or more logical groups to which the each user belongs.</p></li></ul>
+<p>When an application is deployed, the application-specific security roles are mapped to security
+identities in the runtime environment, such as <b>principals</b> (identities assigned to users
+as a result of authentication) or <b>groups</b>. Based on this mapping, a
+user who has been assigned a certain security role has associated access rights
+to a web application deployed onto a server.</p><p>As shown in the deployment descriptor for this example application, the security constraint
+specifies that users assigned to the role of <tt>loginUser</tt> are authorized to
+access any of the files in the <tt>hello1_formauth</tt> application. In this example,
+when a resource that is constrained by this same security constraint is accessed,
+for example, <tt>hello1_formauth/web/index.jsp</tt>, the Application Server sends the login form, receives the
+login information, and checks to see if the user is in a group
+that has been mapped to the role of <tt>loginUser</tt>. If the user name
+and password are those of an authorized user, access to the resource is
+granted to the requester.</p><p>To set up users for this example application, follow these steps:</p>
+<ol><li><p>Using the Admin Console, create a user in the <tt>file</tt> realm of the Application Server and assign that user to the group <tt>user</tt>. Make sure to note the user name and password that you enter in this step so that you can use it for testing the application later (these fields are case-sensitive). If you need help with the steps required to accomplish this task, read <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a> for more information.</p></li>
+<li><p>Map the application security role of <tt>loginUser</tt> to the <b>group</b> of <tt>user</tt> that has been configured on the Application Server. For more information on how to do this mapping, read <a href="#bncce">Mapping Application Roles to Application Server Groups</a>.</p></li></ol>
+
+
+<a name="bncce"></a><h5>Mapping Application Roles to Application Server Groups</h5>
+<p><a name="indexterm-2767"></a>Map the role of <tt>loginUser</tt> defined in the application to the group
+of <tt>user</tt> defined on the Application Server by adding a <tt>security-role-mapping</tt> element to the
+<tt>sun-web.xml</tt> runtime deployment descriptor file. To deploy a WAR on the Application Server,
+the WAR file must contain a runtime deployment descriptor. The runtime deployment descriptor
+is an XML file that contains information such as the context root of
+the web application and the mapping of the portable names of an application&rsquo;s
+resources to the Application Server&rsquo;s resources.</p><p>The runtime deployment descriptor for this example, <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/web/WEB-INF/sun-web.xml</tt>, looks like this:</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE sun-web-app PUBLIC 
+"-//Sun Microsystems, Inc.//DTD Application Server 9.0 Servlet 2.5//EN" 
+"http://www.sun.com/software/appserver/dtds/sun-web-app_2_5-0.dtd">
+&lt;sun-web-app>
+    &lt;context-root>/hello1_formauth
+&lt;/context-root>
+    <b>&lt;security-role-mapping> &lt;role-name>loginUser&lt;/role-name> &lt;group-name>user&lt;/group-name> &lt;/security-role-mapping></b>
+&lt;/sun-web-app></pre>
+
+<a name="bnccf"></a><h5>Building, Packaging, and Deploying the Form-Based Authentication Example Using NetBeans IDE</h5>
+<p>To build, package, and deploy this application using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Follow the instructions in <a href="bnaan.html">Building the Examples</a> if you have not already done so. This step is necessary to provide the Ant targets with the location of your tutorial and Application Server installations.</p></li>
+<li><p>Add users to the <tt>file</tt> realm of the Application Server as described in <a href="#bnccd">Adding Authorized Roles and Users</a> if you have not already done so.</p></li>
+<li><p>Open the project in NetBeans IDE by selecting File&rarr;Open Project.</p></li>
+<li><p>Browse to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/</tt> directory.</p></li>
+<li><p>Make sure that Open as Main Project is selected.</p></li>
+<li><p>Select Open Project.</p></li>
+<li><p>If you are prompted to regenerate the <tt>build-impl.xml</tt> file, select the Regenerate button.</p></li>
+<li><p>Right-click <tt>hello1_formauth</tt> in the Projects pane, then select Clean and Build.</p></li>
+<li><p>Right-click <tt>hello1_formauth</tt> in the Projects pane, then select Undeploy and Deploy.</p></li>
+<li><p>Follow the steps in <a href="#bncch">Testing the Form-Based Authentication Web Client</a>.</p></li></ol>
+
+
+<a name="bnccg"></a><h5>Building, Packaging, and Deploying the Form-Based Authentication Example Using Ant</h5>
+<p>To build, package, and deploy this application using the Ant tool, follow these
+steps:</p>
+<ol><li><p>Follow the instructions in <a href="bnaan.html">Building the Examples</a> if you have not already done so. This step is necessary to provide the Ant targets with the location of your tutorial and Application Server installations.</p></li>
+<li><p>Add users to the <tt>file</tt> realm of the Application Server as described in <a href="#bnccd">Adding Authorized Roles and Users</a> if you have not already done so.</p></li>
+<li><p>From a terminal window or command prompt, change to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/</tt> directory.</p></li>
+<li><p>Enter the following command at the terminal window or command prompt:</p><pre><tt><b>ant</b></tt></pre><p>This target will spawn any necessary compilations, copy files to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1_formauth/build/</tt> directory, create the WAR file, and copy it to the <tt></tt><i>tut-install</i><tt>javaeetutorial5/examples/web/hello1_formauth/dist/</tt> directory.</p></li>
+<li><p>Deploy the WAR named <tt>hello1_formauth.war</tt> onto the Application Server using Ant by entering the following command at the terminal window or command prompt:</p><pre><tt><b>ant deploy</b></tt></pre></li>
+<li><p>Follow the steps in <a href="#bncch">Testing the Form-Based Authentication Web Client</a>.</p></li></ol>
+
+
+<a name="bncch"></a><h5>Testing the Form-Based Authentication Web Client</h5>
+<p>To run the web client, follow these steps:</p>
+<ol><li><p>Open a web browser.</p></li>
+<li><p>Enter the following URL in your web browser:</p><pre>http://localhost:8080/hello1_formauth</pre>
+<hr><p><b>Note - </b>If you set the transport guarantee to <tt>CONFIDENTIAL</tt> as discussed in <a href="#bnccc">Protecting Passwords with SSL</a>, you must load the application in a web browser using <tt>https</tt> for the protocol, the HTTPS port that you specified during installation for the port (by default this port is 8181), and the context name for the application you wish to run. For the form-based authentication example, you could run the example using the following URL: <tt>https://localhost:8181/hello1_formauth</tt>.</p>
+<hr>
+<p>The login form displays in the browser, as shown in <a href="#bncci">Figure&nbsp;30-6</a>.</p></li>
+<li><p>Enter a user name and password combination that corresponds to a user that has already been created in the <tt>file</tt> realm of the Application Server and has been assigned to the group of <tt>user</tt>, as discussed in <a href="#bnccd">Adding Authorized Roles and Users</a>.</p></li>
+<li><p>Click the Submit button. Form-based authentication is case-sensitive for both the user name and password, so enter the user name and password exactly as defined for the Application Server.</p><p>If you entered <tt>My_Name</tt> as the name and <tt>My_Pwd</tt> for the password, the server returns the requested resource if all of the following conditions are met:</p>
+<ul><li><p>There is a user defined for the Application Server with the user name of <tt>My_Name</tt>.</p></li>
+<li><p>The user with the user name of <tt>My_Name</tt> has a password of <tt>My_Pwd</tt> defined for the Application Server.</p></li>
+<li><p>The user <tt>My_Name</tt> with the password <tt>My_Pwd</tt> is assigned to the group of <tt>user</tt> on the Application Server.</p></li>
+<li><p>The role of <tt>loginUser</tt>, as defined for the application, is mapped to the group of <tt>user</tt>, as defined for the Application Server.</p><p>When these conditions are met, and the server has authenticated the user, the application will display as shown in <a href="#gexee">Figure&nbsp;30-7</a>.</p></li></ul>
+</li>
+<li><p>Enter your name and click the Submit button. Because you have already been authorized, the name you enter in this step does not have any limitations. You have unlimited access to the application now.</p><p>The application responds by saying &ldquo;Hello&rdquo; to you, as shown in <a href="#bnccj">Figure&nbsp;30-8</a>.</p></li></ol>
+<a name="bncci"></a><h6>Figure&nbsp;30-6 Form-Based Login Page</h6><img src="figures/security-formLogin.gif" alt="Screen shot of form-based login page showing text fields for user name and password" width="643" height="335"></img><a name="gexee"></a><h6>Figure&nbsp;30-7 Running Web Application</h6><img src="figures/security-formLoginDisplay.gif" alt="Screen shot of running form-based web application with text field for user to type name" width="643" height="370"></img><a name="bnccj"></a><h6>Figure&nbsp;30-8 The Running Form-Based Authentication Example</h6><img src="figures/security-formLoginResponse.gif" alt="Screen shot of running form-based web application showing response" width="643" height="370"></img>
+<hr><p><b>Note - </b>For repetitive testing of this example, you may need to close and reopen
+your browser. You should also run the  <tt>ant clean</tt> and  <tt>ant undeploy</tt> commands
+to ensure a fresh build if using the Ant tool, or select Clean
+and Build then Undeploy and Deploy if using NetBeans IDE.</p>
+<hr>
+
+
+<a name="bncck"></a><h4>Example: Basic Authentication with a Servlet</h4>
+<p>This example discusses how to use basic authentication with a servlet. With basic
+authentication of a servlet, the web browser presents a standard login dialog that
+is not customizable. When a user submits their name and password, the server
+determines if the user name and password are those of an authorized user
+and sends the requested web resource if the user is authorized to view
+it. If the topic of authentication is new to you, please refer
+to the section <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>.</p><p>In general, the following steps are necessary for adding basic authentication to an
+unsecured servlet, such as the one described in <a href="bnadx.html">Web Modules</a>. In the example
+application included with this tutorial, many of these steps have been completed for
+you and are listed here simply to show what needs to be done
+should you wish to create a similar application. The completed version of this
+example application can be found in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/</tt>.</p><p>The following steps describe how to set up your system for running
+the example applications, describe the sample application, and provide the steps for compiling, packaging,
+deploying, and testing the example application.</p>
+<ol><li><p>If you have not already done so, set up your system so that the Ant tool and/or NetBeans IDE will run properly. To do this, follow the instructions in <a href="bnaan.html">Building the Examples</a>. This step is necessary to set the properties that are specific to your installation of the Application Server and Java EE 5 Tutorial.</p></li>
+<li><p>If you have not already done so, add an authorized user to the Application Server. For this example, add users to the <tt>file</tt> realm of the Application Server and assign the user to the group <tt>user</tt>. This topic is discussed more in <a href="#bncco">Adding Authorized Roles and Users</a>.</p></li>
+<li><p>Create a web module as described in <a href="bnadx.html">Web Modules</a> for the servlet example, <tt>hello2</tt>. The subsequent steps discuss adding security to this basic application. The files for this example application are in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/</tt>.</p></li>
+<li><p>Declare the roles that will be used in this application. For this example, this is done by adding the <tt>@DeclareRoles</tt> annotation to <tt>GreetingServlet.java</tt>. This code is shown in <a href="#bnccl">Declaring Security Roles</a>.</p></li>
+<li><p><a name="indexterm-2768"></a>Add the appropriate security elements to the <tt>web.xml</tt> deployment descriptor. The deployment descriptor for the example application can be viewed at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/web/WEB-INF/web.xml</tt>. The security elements are described in <a href="#bnccm">Specifying the Security Constraint</a>.</p></li>
+<li><p>Map the role name defined for this resource (<tt>helloUser</tt>) to a group of users defined on the Application Server. For more information on how to do this, read <a href="#bnccp">Mapping Application Roles to Application Server Groups</a>.</p></li>
+<li><p>Build, package, and deploy the web application by following the steps in <a href="#bnccq">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using NetBeans IDE</a> or <a href="#bnccr">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using Ant</a>.</p></li>
+<li><p>Run the web application by following the steps described in <a href="#bnccs">Running the Basic Authentication Servlet</a>.</p></li>
+<li><p>If you have any problems running this example, refer to the troubleshooting tips in <a href="#bnccu">Troubleshooting the Basic Authentication Example</a>.</p></li></ol>
+
+
+<a name="bnccl"></a><h5>Declaring Security Roles</h5>
+<p>There are two annotations that can be used with servlets: <tt>@DeclareRoles</tt> and
+<tt>@RunAs</tt>. In this example, the <tt>@DeclareRoles</tt> annotation is used to specify which
+roles are referenced in this example.</p><p>The following section of the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/src/servlets/GreetingServlet.java</tt> file contains the code necessary to
+declare that the role of <tt>helloUser</tt> is used in this application:</p><pre>package servlets;
+
+import java.io.*;
+import java.util.*;
+import java.sql.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+<b>import javax.annotation.security.DeclareRoles;</b>
+/**
+* This is a simple example of an HTTP Servlet that can only be accessed
+* by an authenticated user.  It responds to the GET
+* method of the HTTP protocol.
+*/
+<b>@DeclareRoles("helloUser")</b>
+public class GreetingServlet extends HttpServlet {
+
+    public void doGet (HttpServletRequest request,
+        HttpServletResponse response)
+            throws ServletException, IOException</pre><p>You could also declare security roles using the <tt>&lt;security-role></tt> element in the
+deployment descriptor. If you prefer to declare security roles this way, read <a href="bncba.html#bncbd">Declaring Roles Using Deployment Descriptor Elements</a>.</p>
+
+<a name="bnccm"></a><h5>Specifying the Security Constraint</h5>
+<p>This example takes a very simple servlet-based web application and adds basic authentication
+to this application. The servlet is basically the same as the servlet used
+in the example described in <a href="bnadx.html">Web Modules</a>, with the exception of the annotations
+added and discussed in <a href="#bnccl">Declaring Security Roles</a>.</p><p>The security constraint for this example is declared in the application deployment descriptor.
+The security constraint tells the server or browser to perform the following tasks:</p>
+<ul><li><p>Send a standard login dialog to collect user name and password data</p></li>
+<li><p>Verify that the user is authorized to access the application</p></li>
+<li><p>If authorized, display the servlet to the user</p></li></ul>
+<p>Deployment descriptors elements are described in <a href="bncbe.html#bncbj">Declaring Security Requirements in a Deployment Descriptor</a>.</p><p>The following sample code shows the security elements for the deployment descriptor used
+in this example of basic authentication, which can be found in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/web/WEB-INF/web.xml</tt>.</p><pre>    &lt;security-constraint>
+        &lt;display-name>SecurityConstraint&lt;/display-name>
+        &lt;web-resource-collection>
+             &lt;web-resource-name>WRCollection&lt;/web-resource-name>
+            &lt;url-pattern>/greeting&lt;/url-pattern>
+        &lt;/web-resource-collection>
+        &lt;auth-constraint>
+            &lt;role-name>helloUser&lt;/role-name>
+        &lt;/auth-constraint>
+        &lt;user-data-constraint>
+             &lt;transport-guarantee>NONE&lt;/transport-guarantee>
+        &lt;/user-data-constraint>
+    &lt;/security-constraint>
+    &lt;login-config>
+        &lt;auth-method>BASIC&lt;/auth-method>
+        &lt;realm-name>file&lt;/realm-name>
+    &lt;/login-config></pre><p>More description of the elements that declare security in a deployment descriptor can
+be found in <a href="bncbe.html#bncbk">Specifying Security Constraints</a>.</p>
+
+<a name="bnccn"></a><h5>Protecting Passwords with SSL</h5>
+<p><a name="indexterm-2769"></a>Passwords are not protected for confidentiality with HTTP basic or form-based authentication, meaning that
+passwords sent between a client and a server on an unprotected session can
+be viewed and intercepted by third parties. To overcome this limitation, you can
+run these authentication protocols over an SSL-protected session and ensure that all message
+content is protected for confidentiality.</p><p>A <tt>&lt;transport-guarantee></tt> element indicates whether or not the protected resources should travel over
+protected transport. For simplicity, this example does not require protected transport, but in
+a real world application, you would want to set this value to <tt>CONFIDENTIAL</tt>
+to ensure that the user name and password are not observed during transmission. When
+running on protected transport, you need to use the secure SSL protocol,
+<tt>https</tt>, and specify the secure port where your SSL connector is created (the
+default for the Application Server is <tt>8181</tt>).</p>
+
+<a name="bncco"></a><h5>Adding Authorized Roles and Users</h5>
+<p>To authenticate a user and allow that user access to protected resources on
+the Application Server, you must link the roles defined in the application to
+the users defined for the Application Server.</p>
+<ul><li><p>A <b>security role</b>, which is defined at the application level, is a logical grouping of users, classified by common traits such as customer profile or job title.</p></li>
+<li><p>The Application Server has multiple <b>realms</b>, each of which generally includes a database of authorized users, their passwords, and one or more logical groups to which the each user belongs.</p></li></ul>
+<p>When an application is deployed, the application-specific security roles are mapped to security
+identities in the runtime environment, such as <b>principals</b> (identities assigned to users
+as a result of authentication) or <b>groups</b>. Based on this mapping, a
+user who has been assigned a certain security role has associated access rights
+to a web application deployed onto a server.</p><p>As shown in the deployment descriptor for this example application, the security constraint
+specifies that users assigned to the role of <tt>helloUser</tt> are authorized to
+access the URL pattern <tt>/greeting</tt>. In this example, when this resource (because it
+is constrained by a security constraint) is accessed, the Application Server sends a
+default login dialog, receives the login information, and checks to see if the
+user is in a group that has been mapped to the role of
+<tt>helloUser</tt>. If the user name and password are those of an authorized user,
+access to the resource is granted to the requester.</p><p>To set up users for this example application, follow these steps:</p>
+<ol><li><p>If you have not already done so, create a user in the <tt>file</tt> realm of the Application Server and assign that user to the group <tt>user</tt>. Make sure to note the user name and password that you enter in this step so that you can use it for testing the application later. If you need help with the steps required to accomplish this task, read <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a> for more information.</p></li>
+<li><p>Map the application security role of <tt>helloUser</tt> to the <b>group</b> of <tt>user</tt> that has been configured on the Application Server. For more information on how to do this mapping, read <a href="#bnccp">Mapping Application Roles to Application Server Groups</a>.</p></li></ol>
+
+
+<a name="bnccp"></a><h5>Mapping Application Roles to Application Server Groups</h5>
+<p>Map the role of <tt>helloUser</tt> defined in the application to the group of
+<tt>user</tt> defined on the Application Server by adding a <tt>security-role-mapping</tt> element to the
+<tt>sun-web.xml</tt> runtime deployment descriptor file. The runtime deployment descriptor is an XML file
+that contains information such as the context root of the web application and
+the mapping of the portable names of an application&rsquo;s resources to the Application
+Server&rsquo;s resources.</p><p>The runtime deployment descriptor for this example, <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/web/WEB-INF/sun-web.xml</tt>, looks like this:</p><pre>&lt;sun-web-app>
+    &lt;context-root>/hello2_basicauth&lt;/context-root>
+    &lt;security-role-mapping>
+        &lt;role-name>helloUser&lt;/role-name>
+        &lt;group-name>user&lt;/group-name>
+    &lt;/security-role-mapping>
+&lt;/sun-web-app></pre>
+
+<a name="bnccq"></a><h5>Building, Packaging, and Deploying the Servlet Basic Authentication Example Using NetBeans IDE</h5>
+<p>To build, package, and deploy the <tt>web/hello2_basicauth</tt> example application using NetBeans IDE, follow
+these steps:</p>
+<ol><li><p>If you have not already done so, follow the instructions in <a href="bnaan.html">Building the Examples</a>. This step is necessary to provide the Ant targets with the location of your tutorial and Application Server installations.</p></li>
+<li><p>If you have not already done so, add authorized users to the <tt>file</tt> realm of the Application Server as described in <a href="#bncco">Adding Authorized Roles and Users</a>.</p></li>
+<li><p>Open the project in NetBeans IDE by selecting File&rarr;Open Project.</p></li>
+<li><p>Browse to the <tt></tt><i>tut-install</i><tt>javaeetutorial5/examples/web/hello2_basicauth/</tt> directory.</p></li>
+<li><p>Make sure that Open as Main Project is selected.</p></li>
+<li><p>Select Open Project.</p></li>
+<li><p>Right-click <tt>hello2_basicauth</tt> in the Projects pane, then select Clean and Build.</p></li>
+<li><p>Right-click <tt>hello2_basicauth</tt> in the Projects pane, then select Undeploy and Deploy.</p></li>
+<li><p>To run the servlet, follow the steps in <a href="#bnccs">Running the Basic Authentication Servlet</a>.</p></li></ol>
+
+
+<a name="bnccr"></a><h5>Building, Packaging, and Deploying the Servlet Basic Authentication Example Using Ant</h5>
+<p>To build, package, and deploy the <tt>web/hello2_basicauth</tt> example using the Ant tool, follow
+these steps:</p>
+<ol><li><p>If you have not already done so, follow the instructions in <a href="bnaan.html">Building the Examples</a>. This step is necessary to provide the Ant targets with the location of your tutorial and Application Server installations.</p></li>
+<li><p>If you have not already done so, add authorized users to the <tt>file</tt> realm of the Application Server as described in <a href="#bncco">Adding Authorized Roles and Users</a>.</p></li>
+<li><p>From a terminal window or command prompt, change to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/</tt> directory.</p></li>
+<li><p>Build and package the web application by entering the following command at the terminal window or command prompt:</p><pre><tt><b>ant</b></tt></pre><p>This command uses <tt>web.xml</tt> and <tt>sun-web.xml</tt> files, located in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2_basicauth/web/WEB-INF/</tt> directory.</p></li>
+<li><p>To deploy the example using Ant, enter the following command at the terminal window or command prompt:</p><pre><tt><b>ant deploy</b></tt></pre><p>The <tt>deploy</tt> target in this case gives you an incorrect URL to run the application. To run the application, please use the URL shown in <a href="#bnccs">Running the Basic Authentication Servlet</a>.</p></li>
+<li><p>To run the web application, follow the steps in <a href="#bnccs">Running the Basic Authentication Servlet</a>.</p></li></ol>
+
+
+<a name="bnccs"></a><h5>Running the Basic Authentication Servlet</h5>
+<p>To run the web client, follow these steps:</p>
+<ol><li><p>Open a web browser.</p></li>
+<li><p>Enter the following URL in your web browser:</p><pre>http://localhost:8080/hello2_basicauth/greeting</pre><p>If you set the transport guarantee to CONFIDENTIAL as discussed in <a href="#bnccn">Protecting Passwords with SSL</a>, you must load the application in a web browser using <tt>https</tt> for the protocol, the HTTPS port that you specified during installation for the port (by default this port is 8181), and the context name for the application you wish to run. For the basic authentication example, you could run the example using the following URL: <tt>https://localhost:8181/hello2_basicauth/greeting</tt>.</p></li>
+<li><p>A default login form displays. Enter a user name and password combination that corresponds to a user that has already been created in the <tt>file</tt> realm of the Application Server and has been assigned to the group of <tt>user</tt>, as discussed in <a href="#bncco">Adding Authorized Roles and Users</a>.</p><p>Basic authentication is case-sensitive for both the user name and password, so enter the user name and password exactly as defined for the Application Server.</p><p>If you entered <tt>My_Name</tt> as the name and <tt>My_Pwd</tt> for the password, the server returns the requested resource if all of the following conditions are met:</p>
+<ul><li><p>There is a user defined for the Application Server with the user name of <tt>My_Name</tt>.</p></li>
+<li><p>The user with the user name of <tt>My_Name</tt> has a password of <tt>My_Pwd</tt> defined for the Application Server.</p></li>
+<li><p>The user <tt>My_Name</tt> with the password <tt>My_Pwd</tt> is assigned to the group of <tt>user</tt> on the Application Server.</p></li>
+<li><p>The role of <tt>helloUser</tt>, as defined for the application, is mapped to the group of <tt>user</tt>, as defined for the Application Server.</p></li></ul>
+<p>When these conditions are met, and the server has authenticated the user, the application will display as shown in <a href="#gexdw">Figure&nbsp;30-9</a>.</p></li>
+<li><p>Enter your name and click the Submit button. Because you have already been authorized, the name you enter in this step does not have any limitations. You have unlimited access to the application now.</p><p>The application responds by saying &ldquo;Hello&rdquo; to you, as shown in <a href="#bncct">Figure&nbsp;30-10</a>.</p></li></ol>
+<a name="gexdw"></a><h6>Figure&nbsp;30-9 Running the Application</h6><img src="figures/security-basicauth.gif" alt="Screen shot of running basic authentication example showing text field for user to type name" width="643" height="370"></img><a name="bncct"></a><h6>Figure&nbsp;30-10 The Running Basic Authentication Example</h6><img src="figures/security-basicauthRunning.gif" alt="Screen shot of running basic authentication example showing response" width="643" height="370"></img>
+<hr><p><b>Note - </b>For repetitive testing of this example, you may need to close and reopen
+your browser. You should also run the <tt>ant clean</tt> and <tt>ant undeploy</tt> targets or
+the NetBeans IDE Clean and Build option to get a fresh start.</p>
+<hr>
+
+
+<a name="bnccu"></a><h5>Troubleshooting the Basic Authentication Example</h5>
+<p>When doing iterative development with this web application, follow these steps if you
+are using NetBeans IDE:</p>
+<ol><li><p>Close your web browser.</p></li>
+<li><p>Clean and recompile the files from the previous build by right-clicking <tt>hello2_basicauth</tt> and selecting Clean and Build.</p></li>
+<li><p>Redeploy the application by right-clicking <tt>hello2_basicauth</tt> and selecting Undeploy and Deploy.</p></li>
+<li><p>Open your web browser and reload the following URL:</p><pre>http://localhost:8080/hello2_basicauth/greeting</pre></li></ol>
+<p>Follow these steps if you are using the Ant tool:</p>
+<ol><li><p>Close your web browser.</p></li>
+<li><p>Undeploy the web application. To undeploy the application, use the following command in the directory:</p><pre><tt><b>ant undeploy</b></tt></pre></li>
+<li><p>Clean out files from the previous build, using the following command:</p><pre><tt><b>ant clean</b></tt></pre></li>
+<li><p>Recompile, repackage, and redeploy the application, using the following commands:</p><pre><tt><b>ant ant deploy</b></tt></pre></li>
+<li><p>Open your web browser and reload the following URL:</p><pre>http://localhost:8080/hello2_basicauth/greeting</pre></li></ol>
+
+
+<a name="bnccv"></a><h4>Example: Basic Authentication with JAX-WS</h4>
+<a name="indexterm-2770"></a><a name="indexterm-2771"></a><p>This section discusses how to configure a JAX-WS-based web service for HTTP basic
+authentication. When a service that is constrained by <b>HTTP basic authentication</b> is requested, the
+server requests a user name and password from the client and verifies that
+the user name and password are valid by comparing them against a database
+of authorized users.</p><p>If the topic of authentication is new to you, refer to the
+section titled <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>. For an explanation of how basic authentication works, see <a href="bncbe.html#bncbp">Figure&nbsp;30-2</a>.</p><p>For this tutorial, you will add the security elements to the JAX-WS service
+and client; build, package, and deploy the service; and then build and run
+the client application.</p><p>This example service was developed by starting with an unsecured service, <tt>helloservice</tt>,
+which can be found in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice</tt> and is discussed in
+<a href="bnayn.html">Creating a Simple Web Service and Client with JAX-WS</a>. You build on this simple application by adding the necessary elements to
+secure the application using basic authentication. The example client used in this application
+can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/simpleclient-basicauth</tt>, which only varies from the original <tt>simpleclient</tt>
+application in that it uses the <tt>helloservice-basicauth</tt> endpoint instead of the <tt>helloservice</tt> endpoint. The
+completed version of the secured service can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth</tt>.</p><p>In general, the following steps are necessary to add basic authentication to a
+JAX-WS web service. In the example application included with this tutorial, many of
+these steps have been completed for you and are listed here simply to
+show what needs to be done should you wish to create a
+similar application.</p>
+<ol><li><p>Create an application like the one in <a href="bnayn.html">Creating a Simple Web Service and Client with JAX-WS</a>. The example in this tutorial starts with that example and demonstrates adding basic authentication of the client to this application. The completed version of this application is located in the directories <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth</tt> and <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/simpleclient-basicauth</tt>.</p></li>
+<li><p>If the port value was set to a value other than the default (8080), follow the instructions in <a href="bnaym.html">Setting the Port</a> to update the example files to reflect this change.</p></li>
+<li><p>If you have not already done so, follow the steps in <a href="bnaan.html">Building the Examples</a> for information on setting up your system to run the example.</p></li>
+<li><p>If you have not already done so, add a user to the <tt>file</tt> realm and specify <tt>user</tt> for the group of this new user. Write down the user name and password so that you can use them for testing this application in a later step. If you have not already completed this step, refer to the section <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a> for instructions.</p></li>
+<li><p>Modify the source code for the service, <tt>Hello.java</tt>, to specify which roles are authorized to access the <tt>sayHello (String name)</tt> method. This step is discussed in <a href="#bnccw">Annotating the Service</a>.</p></li>
+<li><p>Add security elements that specify that basic authentication is to be performed to the application deployment descriptor, <tt>web.xml</tt>. This step is discussed in <a href="#bnccx">Adding Security Elements to the Deployment Descriptor</a>.</p></li>
+<li><p>Modify the runtime deployment descriptor, <tt>sun-web.xml</tt>, to map the role used in this application (<tt>basicUser</tt>) to a group defined on the Application Server (<tt>user</tt>). This step is discussed in <a href="#bnccy">Linking Roles to Groups</a>.</p></li>
+<li><p>Build, package, and deploy the web service. See <a href="#bnccz">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using NetBeans IDE</a> or <a href="#bncda">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using Ant</a> for the steps to accomplish this.</p></li>
+<li><p>Build and run the client application. See <a href="#bncdb">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using NetBeans IDE</a> or <a href="#bncdc">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using Ant</a> for the steps to accomplish this.</p></li></ol>
+
+
+<a name="bnccw"></a><h5>Annotating the Service</h5>
+<p>In this example, annotations are used to specify which users are authorized to
+access which methods of this service. In this simple example, the <tt>@RolesAllowed</tt>
+annotation is used to specify that users in the application role of <tt>basicUser</tt>
+are authorized access to the <tt>sayHello(String name)</tt> method. This application role must be
+linked to a group of users on the Application Server. Linking the roles
+to groups is discussed in <a href="#bnccy">Linking Roles to Groups</a>.</p><p>The source code for the original <tt>/helloservice</tt> application was modified as shown in
+the following code snippet (modifications in <b>bold</b>). This file can be found
+in the following location:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth/src/java/helloservice/ basicauth/endpoint/Hello.java</tt></pre><p>The code snippet is as follows:</p><pre>package helloservice.basicauth.endpoint;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+<b>import javax.annotation.security.RolesAllowed;</b>
+@WebService()
+public class Hello {
+     private String message = new String("Hello, ");
+
+    @WebMethod()
+    <b>@RolesAllowed("basicUser")</b>
+    public String sayHello(String name) {
+         return message + name + ".";
+
+    }
+}</pre><p>The <tt>@RolesAllowed</tt> annotation specifies that only users in the role of <tt>basicUser</tt> will
+be allowed to access the <tt>sayHello (String name)</tt> method. An <tt>@RolesAllowed</tt> annotation implicitly declares a role
+that will be referenced in the application, therefore, no <tt>@DeclareRoles</tt> annotation is required.</p>
+
+<a name="bnccx"></a><h5>Adding Security Elements to the Deployment Descriptor</h5>
+<a name="indexterm-2772"></a><p>To enable basic authentication for the service, add security elements to the application
+deployment descriptor, <tt>web.xml</tt>. The security elements that need to be added to the
+deployment descriptor include the <tt>&lt;security-constraint></tt> and <tt>&lt;login-config></tt>elements. These security elements are discussed in more
+detail in <a href="bncbe.html#bncbj">Declaring Security Requirements in a Deployment Descriptor</a> and in the Java Servlet Specification. Code in bold is
+added to the original deployment descriptor to enable HTTP basic authentication. The resulting
+deployment descriptor is located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth/web/WEB-INF/web.xml</tt>.</p><pre><b>&lt;?xml version="1.0" encoding="UTF-8"?>&lt;web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"> &lt;display-name>HelloService&lt;/display-name> &lt;listener> &lt;listener-class> com.sun.xml.ws.transport.http.servlet.WSServletContextListener &lt;/listener-class> &lt;/listener> &lt;servlet> &lt;display-name>HelloService&lt;/display-name> &lt;servlet-name>HelloService&lt;/servlet-name> &lt;servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet&lt;/servlet-class> &lt;/servlet> &lt;servlet-mapping> &lt;servlet-name>HelloService&lt;/servlet-name> &lt;url-pattern>/hello&lt;/url-pattern> &lt;/servlet-mapping> &lt;session-config> &lt;session-timeout>30&lt;/session-timeout> &lt;/session-config> &lt;security-constraint> &lt;display-name>SecurityConstraint&lt;/display-name> &lt;web-resource-collection> &lt;web-resource-name>WRCollection&lt;/web-resource-name> &lt;url-pattern>/hello&lt;/url-pattern> &lt;/web-resource-collection> &lt;auth-constraint> &lt;role-name>basicUser&lt;/role-name> &lt;/auth-constraint> &lt;user-data-constraint> &lt;transport-guarantee>NONE&lt;/transport-guarantee> &lt;/user-data-constraint> &lt;/security-constraint> &lt;login-config> &lt;auth-constraint>BASIC&lt;/auth-constraint> &lt;realm-name>file&lt;/realm-name> &lt;/login-config> &lt;/web-app></b></pre>
+
+<a name="bnccy"></a><h5>Linking Roles to Groups</h5>
+<p>The role of <tt>basicUser</tt> has been defined for this application, but there is
+no group of <tt>basicUser</tt> defined for the Application Server. To map the role
+that is defined for the application (<tt>basicUser</tt>) to a group that is defined
+on the Application Server <tt>(user</tt>), add a <tt>&lt;security-role-mapping></tt> element to the runtime deployment descriptor,
+<tt>sun-web.xml</tt>, as shown below (modifications from the original file are in <b>bold</b>). The resulting
+runtime deployment descriptor is located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth/web/WEB-INF/sun-web.xml</tt>.</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE sun-web-app PUBLIC 
+"-//Sun Microsystems, Inc.//DTD Application Server 9.0 Servlet 2.5//EN" 
+"http://www.sun.com/software/appserver/dtds/sun-web-app_2_5-0.dtd">
+&lt;sun-web-app error-url="">
+    &lt;context-root>/helloservice&lt;/context-root>
+    &lt;class-loader delegate="true"/>
+    <b>&lt;security-role-mapping> &lt;role-name>basicUser&lt;/role-name> &lt;group-name>user&lt;/group-name> &lt;/security-role-mapping></b>
+&lt;/sun-web-app></pre>
+
+<a name="bnccz"></a><h5>Building and Deploying <tt>helloservice</tt> with Basic Authentication Using NetBeans IDE</h5>
+<p>To build, package, and deploy the <tt>jaxws/helloservice-basicauth</tt> example using NetBeans IDE, follow these
+steps, or the steps described in <a href="bnayn.html#bnayr">Building, Packaging, and Deploying the Service</a>.</p>
+<ol><li><p>If you have not already done so, set up your system for running the tutorial examples by following the instructions in <a href="bnaan.html">Building the Examples</a>.</p></li>
+<li><p>If you haven&rsquo;t already done so, set up an authorized user on the Application Server, assigned to the group <tt>user</tt>, as described in <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a>.</p></li>
+<li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/</tt>.</p></li>
+<li><p>Select the <tt>helloservice-basicauth</tt> folder.</p></li>
+<li><p>Check the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>helloservice-basicauth</tt> project and select Clean and Build.</p></li>
+<li><p>In the Projects tab, right-click the <tt>helloservice-basicauth</tt> project and select Undeploy and Deploy.</p><p>This step builds and packages the application into <tt>helloservice-basicauth.war</tt>, located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth/dist</tt>, and deploys this war file to your Application Server instance.</p></li></ol>
+
+
+<a name="bncda"></a><h5>Building and Deploying <tt>helloservice</tt> with Basic Authentication Using Ant</h5>
+<p>To build, package, and deploy the <tt>jaxws/helloservice-basicauth</tt> example using the Ant tool, follow
+these steps, or the steps described in <a href="bnayn.html#bnayr">Building, Packaging, and Deploying the Service</a>.</p>
+<ol><li><p>If you have not already done so, set up your system for running the tutorial examples by following the instructions in <a href="bnaan.html">Building the Examples</a>.</p></li>
+<li><p>If you haven&rsquo;t already done so, set up an authorized user on the Application Server, assigned to the group <tt>user</tt>, as described in <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a>.</p></li>
+<li><p>From a terminal window or command prompt, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/helloservice-basicauth/</tt> directory.</p></li>
+<li><p>Build, package, and deploy the JAX-WS service by entering the following at the terminal window or command prompt in the <tt>helloservice-basicauth/</tt> directory:</p><pre><tt><b>ant all</b></tt></pre></li></ol>
+<p>You can test the service by selecting it in the Admin Console
+and choosing Test. For more information on how to do this, read <a href="bnayn.html#bnayw">Testing the Service without a Client</a>.</p>
+
+<a name="bncdb"></a><h5>Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using NetBeans IDE</h5>
+<p>To build and run the client application, <tt>simpleclient-basicauth</tt>, using NetBeans IDE, follow these
+steps. The <tt>helloservice-basicauth</tt> service must be deployed onto the Application Server before compiling
+the client files. For information on deploying the service, read <a href="#bnccz">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using NetBeans IDE</a>.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jaxws/</tt>.</p></li>
+<li><p>Select the <tt>simpleclient-basicauth</tt> folder.</p></li>
+<li><p>Check the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>simpleclient-basicauth</tt> project and select Clean and Build.</p></li>
+<li><p>In the Projects tab, right-click the <tt>simpleclient-basicauth</tt> project and select Run.</p><p>You will be prompted for your user name and password.</p></li>
+<li><p>Enter the user name and password of a user that has been entered into the database of users for the file realm and has been assigned to the group of <tt>user</tt>.</p><p>If the username and password you enter are authorized, you will see the output of the application client in the Output pane.</p></li></ol>
+<p>The client displays the following output:</p><pre>[echo] running application client container.
+[exec] Retrieving the port from the following service: 
+helloservice.basicauth.endpoint.HelloService@c8769b
+[exec] Invoking the sayHello operation on the port.
+[exec] Hello, No Name.</pre>
+
+<a name="bncdc"></a><h5>Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using Ant</h5>
+<p>To build and run the client application, <tt>simpleclient-basicauth</tt>, using the Ant tool, follow
+these steps. The secured service must be deployed onto the Application Server before
+you can successfully compile the client application. For more information on deploying the
+service, read <a href="#bncda">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using Ant</a>.</p>
+<ol><li><p>Build the client by changing to the directory <tt></tt><i>tut-install</i><tt>/examples/jaxws/simpleclient-basicauth/</tt> and entering the following at the terminal window or command prompt:</p><pre><tt><b>ant</b></tt></pre><p>This command calls the <tt>default</tt> target, which builds and packages the application into a JAR file, <tt>simpleclient-basicauth.jar</tt>, located in the <tt>/dist</tt> directory.</p></li>
+<li><p>Run the client by entering the following at the terminal window or command prompt:</p><pre><tt><b>ant run</b></tt></pre><p>A Login for User dialog displays.</p></li>
+<li><p>Enter a user name and password that correspond to a user set up on the Application Server with a group of <tt>user</tt>. Click OK.</p></li></ol>
+<p>The client displays the following output:</p><pre>[echo] running application client container.
+[exec] Retrieving the port from the following service: 
+helloservice.basicauth.endpoint.HelloService@c8769b
+[exec] Invoking the sayHello operation on the port.
+[exec] Hello, No Name.</pre>
+         </div>
+         <div class="navigation">
+             <a href="bncbe.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncdq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

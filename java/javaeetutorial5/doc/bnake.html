@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Using JSTL - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level3"><a href="bnakd.html">The Example JSP Pages</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Using JSTL</a></p>
+<p class="toc level4"><a href="#bnakg">Tag Collaboration</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnakh.html">Core Tag Library</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakj">Variable Support Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnakk">Flow Control Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakl">Conditional Tags</a></p>
+<p class="toc level5"><a href="bnakh.html#bnakm">Iterator Tags</a></p>
+<p class="toc level4 tocsp"><a href="bnakh.html#bnakn">URL Tags</a></p>
+<p class="toc level4"><a href="bnakh.html#bnako">Miscellaneous Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnakq.html">XML Tag Library</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakt">Core Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnaku">Flow Control Tags</a></p>
+<p class="toc level4"><a href="bnakq.html#bnakv">Transformation Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnakw.html">Internationalization Tag Library</a></p>
+<p class="toc level4"><a href="bnakw.html#bnaky">Setting the Locale</a></p>
+<p class="toc level4"><a href="bnakw.html#bnakz">Messaging Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnala">The <tt>setBundle</tt> and <tt>bundle</tt> Tags</a></p>
+<p class="toc level5"><a href="bnakw.html#bnalb">The <tt>message</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnakw.html#bnalc">Formatting Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnald.html">SQL Tag Library</a></p>
+<p class="toc level4"><a href="bnald.html#bnalf"><tt>query</tt> Tag Result Interface</a></p>
+<p class="toc level3 tocsp"><a href="bnalg.html">JSTL Functions</a></p>
+<p class="toc level3"><a href="bnali.html">Further Information about JSTL</a></p>
+<p class="toc level2 tocsp"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnakd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnakh.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnake"></a><h3>Using JSTL</h3>
+<p>JSTL includes a wide variety of tags that fit into discrete functional areas.
+To reflect this, as well as to give each area its own
+namespace, JSTL is exposed as multiple tag libraries. The URIs for the libraries
+are as follows:</p>
+<ul><li><p><b>Core</b>: <a href="http://java.sun.com/jsp/jstl/core">http://java.sun.com/jsp/jstl/core</a></p></li>
+<li><p><b>XML</b>: <a href="http://java.sun.com/jsp/jstl/xml">http://java.sun.com/jsp/jstl/xml</a></p></li>
+<li><p><b>Internationalization</b>: <a href="http://java.sun.com/jsp/jstl/fmt">http://java.sun.com/jsp/jstl/fmt</a></p></li>
+<li><p><b>SQL</b>: <a href="http://java.sun.com/jsp/jstl/sql">http://java.sun.com/jsp/jstl/sql</a></p></li>
+<li><p><b>Functions</b>: <a href="http://java.sun.com/jsp/jstl/functions">http://java.sun.com/jsp/jstl/functions</a></p></li></ul>
+<p><a href="#bnakf">Table&nbsp;7-1</a> summarizes these functional areas along with the prefixes used in this tutorial.</p><a name="bnakf"></a><h6>Table&nbsp;7-1 JSTL Tags</h6><table><col width="28%"><col width="50%"><col width="20%"><tr><th align="left" valign="top" scope="column"><p>Area</p></th>
+<th align="left" valign="top" scope="column"><p>Subfunction</p></th>
+<th align="left" valign="top" scope="column"><p>Prefix</p></th>
+</tr>
+<tr><td rowspan="4" align="left" valign="top" scope="row"><p><b>Core</b></p></td>
+<td align="left" valign="top" scope="row"><p>Variable
+support</p></td>
+<td rowspan="4" align="left" valign="top" scope="row"><p><tt>c</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Flow control</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>URL management</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Miscellaneous</p></td>
+</tr>
+<tr><td rowspan="3" align="left" valign="top" scope="row"><p><b>XML</b></p></td>
+<td align="left" valign="top" scope="row"><p>Core</p></td>
+<td rowspan="3" align="left" valign="top" scope="row"><p><tt>x</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Flow control</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Transformation</p></td>
+</tr>
+<tr><td rowspan="3" align="left" valign="top" scope="row"><p><b>I18N</b></p></td>
+<td align="left" valign="top" scope="row"><p>Locale</p></td>
+<td rowspan="3" align="left" valign="top" scope="row"><p><tt>fmt</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Message formatting</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Number and date formatting</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><b>Database</b></p></td>
+<td align="left" valign="top" scope="row"><p>SQL</p></td>
+<td align="left" valign="top" scope="row"><p><tt>sql</tt></p></td>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p><b>Functions</b></p></td>
+<td align="left" valign="top" scope="row"><p>Collection length</p></td>
+<td rowspan="2" align="left" valign="top" scope="row"><p><tt>fn</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>String manipulation</p></td>
+</tr>
+</table><p>Thus, the tutorial references the JSTL core tags in JSP pages by
+using the following <tt>taglib</tt> directive:</p><pre>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %></pre><p>In addition to declaring the tag libraries, tutorial examples access the JSTL API
+and implementation. In the Application Server, the JSTL TLDs and libraries are distributed
+in the archive <tt></tt><i>as-install</i><tt>/lib/appserv-jstl.jar</tt>. This library is automatically loaded into the classpath
+of all web applications running on the Application Server, so you don&rsquo;t need to
+add it to your web application.</p>
+
+<a name="bnakg"></a><h4>Tag Collaboration</h4>
+<p>Tags usually collaborate with their environment in implicit and explicit ways. <b>Implicit</b> collaboration
+is done by means of a well-defined interface that allows nested tags to
+work seamlessly with the ancestor tag that exposes that interface. The JSTL conditional
+tags employ this mode of collaboration.</p><p><b>Explicit</b> collaboration happens when a tag exposes information to its environment. JSTL tags
+expose information as JSP EL variables; the convention followed by JSTL is to
+use the name <tt>var</tt> for any tag attribute that exports information about the
+tag. For example, the <tt>forEach</tt> tag exposes the current item of the
+shopping cart it is iterating over in the following way:</p><pre>&lt;c:forEach var="item" items="${sessionScope.cart.items}">
+    ...
+&lt;/c:forEach></pre><p>In situations where a tag exposes more than one piece of information, the
+name <tt>var</tt> is used for the primary piece of information being exported, and
+an appropriate name is selected for any other secondary piece of information exposed.
+For example, iteration status information is exported by the <tt>forEach</tt> tag through the
+attribute <tt>status</tt>.</p><p>When you want to use an EL variable exposed by a JSTL
+tag in an expression in the page&rsquo;s scripting language (see <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a>), you use
+the standard JSP element <tt>jsp:useBean</tt> to declare a scripting variable.</p><p>For example, <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore4/web/books/bookshowcart.jsp</tt> removes a book from a shopping cart using a
+scriptlet. The ID of the book to be removed is passed as a
+request parameter. The value of the request parameter is first exposed as an
+EL variable (to be used later by the JSTL <tt>sql:query</tt> tag) and then
+is declared as a scripting variable and passed to the <tt>cart.remove</tt> method:</p><pre>&lt;c:set var="bookId" value="${param.Remove}"/>
+&lt;jsp:useBean id="bookId" type="java.lang.String" />
+&lt;% cart.remove(bookId); %>
+&lt;sql:query var="books"
+     dataSource="${applicationScope.bookDS}">
+    select * from PUBLIC.books where id = ?
+    &lt;sql:param value="${bookId}" />
+&lt;/sql:query></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnakd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnakh.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

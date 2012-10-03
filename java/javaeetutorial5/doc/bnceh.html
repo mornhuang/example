@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The JMS API Programming Model - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level3"><a href="bncdr.html">Overview of the JMS API</a></p>
+<p class="toc level4"><a href="bncdr.html#bncds">What Is Messaging?</a></p>
+<p class="toc level4"><a href="bncdr.html#bncdt">What Is the JMS API?</a></p>
+<p class="toc level4"><a href="bncdr.html#bncdu">When Can You Use the JMS API?</a></p>
+<p class="toc level4"><a href="bncdr.html#bncdw">How Does the JMS API Work with the Java EE Platform?</a></p>
+<p class="toc level3 tocsp"><a href="bncdx.html">Basic JMS API Concepts</a></p>
+<p class="toc level4"><a href="bncdx.html#bncdy">JMS API Architecture</a></p>
+<p class="toc level4"><a href="bncdx.html#bncea">Messaging Domains</a></p>
+<p class="toc level5"><a href="bncdx.html#bnceb">Point-to-Point Messaging Domain</a></p>
+<p class="toc level5"><a href="bncdx.html#bnced">Publish/Subscribe Messaging Domain</a></p>
+<p class="toc level5"><a href="bncdx.html#bncef">Programming with the Common Interfaces</a></p>
+<p class="toc level4 tocsp"><a href="bncdx.html#bnceg">Message Consumption</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">The JMS API Programming Model</a></p>
+<p class="toc level4"><a href="#bncej">JMS Administered Objects</a></p>
+<p class="toc level5"><a href="#bncek">JMS Connection Factories</a></p>
+<p class="toc level5"><a href="#bncel">JMS Destinations</a></p>
+<p class="toc level4 tocsp"><a href="#bncem">JMS Connections</a></p>
+<p class="toc level4"><a href="#bncen">JMS Sessions</a></p>
+<p class="toc level4"><a href="#bnceo">JMS Message Producers</a></p>
+<p class="toc level4"><a href="#bncep">JMS Message Consumers</a></p>
+<p class="toc level5"><a href="#bnceq">JMS Message Listeners</a></p>
+<p class="toc level5"><a href="#bncer">JMS Message Selectors</a></p>
+<p class="toc level4 tocsp"><a href="#bnces">JMS Messages</a></p>
+<p class="toc level5"><a href="#bncet">Message Headers</a></p>
+<p class="toc level5"><a href="#bncev">Message Properties</a></p>
+<p class="toc level5"><a href="#bncew">Message Bodies</a></p>
+<p class="toc level4 tocsp"><a href="#bncey">JMS Queue Browsers</a></p>
+<p class="toc level4"><a href="#bncez">JMS Exception Handling</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncfa.html">Writing Simple JMS Client Applications</a></p>
+<p class="toc level4"><a href="bncfa.html#bncfb">A Simple Example of Synchronous Message Receives</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfc">Writing the Client Programs for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfd">Starting the JMS Provider</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfe">Creating JMS Administered Objects for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncff">Compiling and Packaging the Clients for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfg">Running the Clients for the Synchronous Receive Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfh">A Simple Example of Asynchronous Message Consumption</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfi">Writing the Client Programs for the Asynchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfj">Compiling and Packaging the <tt>AsynchConsumer</tt> Client</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfk">Running the Clients for the Asynchronous Receive Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfl">A Simple Example of Browsing Messages in a Queue</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfm">Writing the Client Program for the Queue Browser Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfn">Compiling and Packaging the <tt>MessageBrowser</tt> Client</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfo">Running the Clients for the Queue Browser Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfp">Running JMS Client Programs on Multiple Systems</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfq">Creating Administered Objects for Multiple Systems</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfs">Editing, Recompiling, Repackaging, and Running the Programs</a></p>
+<p class="toc level5"><a href="bncfa.html#bncft">Deleting the Connection Factory and Stopping the Server</a></p>
+<p class="toc level3 tocsp"><a href="bncfu.html">Creating Robust JMS Applications</a></p>
+<p class="toc level4"><a href="bncfu.html#bncfv">Using Basic Reliability Mechanisms</a></p>
+<p class="toc level5"><a href="bncfu.html#bncfw">Controlling Message Acknowledgment</a></p>
+<p class="toc level5"><a href="bncfu.html#bncfy">Specifying Message Persistence</a></p>
+<p class="toc level5"><a href="bncfu.html#bncfz">Setting Message Priority Levels</a></p>
+<p class="toc level5"><a href="bncfu.html#bncga">Allowing Messages to Expire</a></p>
+<p class="toc level5"><a href="bncfu.html#bncgb">Creating Temporary Destinations</a></p>
+<p class="toc level4 tocsp"><a href="bncfu.html#bncgc">Using Advanced Reliability Mechanisms</a></p>
+<p class="toc level5"><a href="bncfu.html#bncgd">Creating Durable Subscriptions</a></p>
+<p class="toc level5"><a href="bncfu.html#bncgh">Using JMS API Local Transactions</a></p>
+<p class="toc level3 tocsp"><a href="bncgl.html">Using the JMS API in a Java EE Application</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgm">Using <tt>@Resource</tt> Annotations in Java EE Components</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgn">Using Session Beans to Produce and to Synchronously Receive Messages</a></p>
+<p class="toc level5"><a href="bncgl.html#bncgo">Resource Management</a></p>
+<p class="toc level5"><a href="bncgl.html#bncgp">Transactions</a></p>
+<p class="toc level4 tocsp"><a href="bncgl.html#bncgq">Using Message-Driven Beans to Receive Messages Asynchronously</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgs">Managing Distributed Transactions</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgt">Using the JMS API with Application Clients and Web Components</a></p>
+<p class="toc level3 tocsp"><a href="bncgu.html">Further Information about JMS</a></p>
+<p class="toc level2 tocsp"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncdx.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncfa.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnceh"></a><h3>The JMS API Programming Model</h3>
+<a name="indexterm-2804"></a><a name="indexterm-2805"></a><p>The basic building blocks of a JMS application consist of</p>
+<ul><li><p>Administered objects: connection factories and destinations</p></li>
+<li><p>Connections</p></li>
+<li><p>Sessions</p></li>
+<li><p>Message producers</p></li>
+<li><p>Message consumers</p></li>
+<li><p>Messages</p></li></ul>
+<p><a href="#bncei">Figure&nbsp;31-5</a> shows how all these objects fit together in a JMS client application.</p><a name="bncei"></a><h6>Figure&nbsp;31-5 The JMS API Programming Model</h6><img src="figures/jms-programmingModel.gif" alt="Diagram of the JMS API programming model: connection factory, connection, session, message producer, message consumer, messages, and destinations"></img><p>This section describes all these objects briefly and provides sample commands and code
+snippets that show how to create and use the objects. The last subsection
+briefly describes JMS API exception handling.</p><p>Examples that show how to combine all these objects in applications appear in
+later sections. For more details, see the JMS API documentation, which is part
+of the Java EE API documentation.</p>
+
+<a name="bncej"></a><h4>JMS Administered Objects</h4>
+<a name="indexterm-2806"></a><a name="indexterm-2807"></a><a name="indexterm-2808"></a><p>Two parts of a JMS application, destinations and connection factories, are best maintained
+administratively rather than programmatically. The technology underlying these objects is likely to be
+very different from one implementation of the JMS API to another. Therefore, the
+management of these objects belongs with other administrative tasks that vary from provider
+to provider.</p><p>JMS clients access these objects through interfaces that are portable, so a client
+application can run with little or no change on more than one implementation
+of the JMS API. Ordinarily, an administrator configures administered objects in a JNDI
+namespace, and JMS clients then access them by using resource injection.</p><p>With Sun Java System Application Server Platform Edition 9, you use the
+<tt>asadmin</tt> command or the Admin Console to create JMS administered objects in the
+form of resources.</p>
+
+<a name="bncek"></a><h5>JMS Connection Factories</h5>
+<a name="indexterm-2809"></a><a name="indexterm-2810"></a><p>A <b>connection factory</b> is the object a client uses to create a connection to
+a provider. A connection factory encapsulates a set of connection configuration parameters that
+has been defined by an administrator. Each connection factory is an instance of
+the <tt>ConnectionFactory</tt>, <tt>QueueConnectionFactory</tt>, or <tt>TopicConnectionFactory</tt> interface. To learn how to create connection factories,
+see <a href="bncfa.html#bncfe">Creating JMS Administered Objects for the Synchronous Receive Example</a>.</p><p><a name="indexterm-2811"></a><a name="indexterm-2812"></a>At the beginning of a JMS client program, you usually inject a connection
+factory resource into a <tt>ConnectionFactory</tt> object. For example, the following code fragment specifies a
+resource whose JNDI name is <tt>jms/ConnectionFactory</tt> and assigns it to a <tt>ConnectionFactory</tt>
+object:</p><pre>@Resource(mappedName="jms/ConnectionFactory")
+private static ConnectionFactory connectionFactory;</pre><p>In a Java EE application, JMS administered objects are normally placed in the
+<tt>jms</tt> naming subcontext.<a name="indexterm-2813"></a></p>
+<hr><p><b>Note - </b>The <tt>mappedName</tt> element of the <tt>@Resource</tt> annotation is specific to the Application Server.</p>
+<hr>
+
+
+<a name="bncel"></a><h5>JMS Destinations</h5>
+<a name="indexterm-2814"></a><a name="indexterm-2815"></a><a name="indexterm-2816"></a><a name="indexterm-2817"></a><a name="indexterm-2818"></a><a name="indexterm-2819"></a><a name="indexterm-2820"></a><a name="indexterm-2821"></a><p>A <b>destination</b> is the object a client uses to specify the target of
+messages it produces and the source of messages it consumes. In the PTP
+messaging domain, destinations are called queues. In the pub/sub messaging domain, destinations are
+called topics. A JMS application can use multiple queues or topics (or both).
+To learn how to create destination resources, see <a href="bncfa.html#bncfe">Creating JMS Administered Objects for the Synchronous Receive Example</a>.</p><p>To create a destination using the Application Server, you create a JMS
+destination resource that specifies a JNDI name for the destination.</p><p>In the Application Server implementation of JMS, each destination resource refers to a
+physical destination. You can create a physical destination explicitly, but if you do
+not, the Application Server creates it when it is needed and deletes it
+when you delete the destination resource.</p><p><a name="indexterm-2822"></a>In addition to injecting a connection factory resource into a client program, you
+usually inject a destination resource. Unlike connection factories, destinations are specific to one
+domain or the other. To create an application that allows you to use
+the same code for both topics and queues, you assign the destination to
+a <tt>Destination</tt> object.</p><p><a name="indexterm-2823"></a>The following code specifies two resources, a queue and a topic. The resource
+names are mapped to destinations created in the JNDI namespace.</p><pre>@Resource(mappedName="jms/Queue")
+private static Queue queue;
+
+@Resource(mappedName="jms/Topic")
+private static Topic topic;</pre><p>With the common interfaces, you can mix or match connection factories and destinations.
+That is, in addition to using the <tt>ConnectionFactory</tt> interface, you can inject a
+<tt>QueueConnectionFactory</tt> resource and use it with a <tt>Topic</tt>, and you can inject a
+<tt>TopicConnectionFactory</tt> resource and use it with a <tt>Queue</tt>. The behavior of the application
+will depend on the kind of destination you use and not on the
+kind of connection factory you use.</p>
+
+<a name="bncem"></a><h4>JMS Connections</h4>
+<a name="indexterm-2824"></a><a name="indexterm-2825"></a><p>A <b>connection</b> encapsulates a virtual connection with a JMS provider. A connection could
+represent an open TCP/IP socket between a client and a provider service daemon.
+You use a connection to create one or more sessions.</p><p>Connections implement the <tt>Connection</tt> interface. When you have a <tt>ConnectionFactory</tt> object, you can
+use it to create a <tt>Connection</tt>:</p><pre>Connection connection = connectionFactory.createConnection();</pre><p>Before an application completes, you must close any connections that you have created.
+Failure to close a connection can cause resources not to be released by
+the JMS provider. Closing a connection also closes its sessions and their message
+producers and message consumers.</p><pre>connection.close();</pre><p>Before your application can consume messages, you must call the connection&rsquo;s <tt>start</tt>
+method; for details, see <a href="#bncep">JMS Message Consumers</a>. If you want to stop message delivery
+temporarily without closing the connection, you call the <tt>stop</tt> method.</p>
+
+<a name="bncen"></a><h4>JMS Sessions</h4>
+<a name="indexterm-2826"></a><a name="indexterm-2827"></a><p>A <b>session</b> is a single-threaded context for producing and consuming messages. You use
+sessions to create the following:</p>
+<ul><li><p>Message producers</p></li>
+<li><p>Message consumers</p></li>
+<li><p>Messages</p></li>
+<li><p>Queue browsers</p></li>
+<li><p>Temporary queues and topics (see <a href="bncfu.html#bncgb">Creating Temporary Destinations</a>)</p></li></ul>
+<p>Sessions serialize the execution of message listeners; for details, see <a href="#bnceq">JMS Message Listeners</a>.</p><p>A session provides a transactional context with which to group a set of
+sends and receives into an atomic unit of work. For details, see
+<a href="bncfu.html#bncgh">Using JMS API Local Transactions</a>.</p><p>Sessions implement the <tt>Session</tt> interface. After you create a <tt>Connection</tt> object, you use
+it to create a <tt>Session</tt>:</p><pre>Session session = connection.createSession(false,
+     Session.AUTO_ACKNOWLEDGE);</pre><p>The first argument means that the session is not transacted; the second means
+that the session automatically acknowledges messages when they have been received successfully. (For
+more information, see <a href="bncfu.html#bncfw">Controlling Message Acknowledgment</a>.)</p><p>To create a transacted session, use the following code:</p><pre>Session session = connection.createSession(true, 0);</pre><p>Here, the first argument means that the session is transacted; the second indicates
+that message acknowledgment is not specified for transacted sessions. For more information on
+transactions, see <a href="bncfu.html#bncgh">Using JMS API Local Transactions</a>. For information about the way JMS transactions work in Java
+EE applications, see <a href="bncgl.html">Using the JMS API in a Java EE Application</a>.</p>
+
+<a name="bnceo"></a><h4>JMS Message Producers</h4>
+<a name="indexterm-2828"></a><a name="indexterm-2829"></a><a name="indexterm-2830"></a><p>A <b>message producer</b> is an object that is created by a session and used
+for sending messages to a destination. It implements the <tt>MessageProducer</tt> interface.</p><p>You use a <tt>Session</tt> to create a <tt>MessageProducer</tt> for a destination. The following
+examples show that you can create a producer for a <tt>Destination</tt> object, a
+<tt>Queue</tt> object, or a <tt>Topic</tt> object:</p><pre>MessageProducer producer = session.createProducer(dest);
+MessageProducer producer = session.createProducer(queue);
+MessageProducer producer = session.createProducer(topic);</pre><p>You can create an unidentified producer by specifying <tt>null</tt> as the argument to
+<tt>createProducer</tt>. With an unidentified producer, you do not specify a destination until you
+send a message.</p><p>After you have created a message producer, you can use it to
+send messages by using the <tt>send</tt> method:</p><pre>producer.send(message);</pre><p>You must first create the messages; see <a href="#bnces">JMS Messages</a>.</p><p>If you created an unidentified producer, use an overloaded <tt>send</tt> method that specifies
+the destination as the first parameter. For example:</p><pre>MessageProducer anon_prod = session.createProducer(null);
+anon_prod.send(dest, message);</pre>
+
+<a name="bncep"></a><h4>JMS Message Consumers</h4>
+<a name="indexterm-2831"></a><a name="indexterm-2832"></a><p>A <b>message consumer</b> is an object that is created by a session and used
+for receiving messages sent to a destination. It implements the <tt>MessageConsumer</tt> interface.</p><p>A message consumer allows a JMS client to register interest in a
+destination with a JMS provider. The JMS provider manages the delivery of messages
+from a destination to the registered consumers of the destination.</p><p>For example, you could use a <tt>Session</tt> to create a <tt>MessageConsumer</tt> for
+a <tt>Destination</tt> object, a <tt>Queue</tt> object, or a <tt>Topic</tt> object:</p><pre>MessageConsumer consumer = session.createConsumer(dest);
+MessageConsumer consumer = session.createConsumer(queue);
+MessageConsumer consumer = session.createConsumer(topic);</pre><p>You use the <tt>Session.createDurableSubscriber</tt> method to create a durable topic subscriber. This method
+is valid only if you are using a topic. For details, see <a href="bncfu.html#bncgd">Creating Durable Subscriptions</a>.</p><p>After you have created a message consumer, it becomes active, and you can
+use it to receive messages. You can use the <tt>close</tt> method for a
+<tt>MessageConsumer</tt> to make the message consumer inactive. Message delivery does not begin until
+you start the connection you created by calling its <tt>start</tt> method. (Remember always
+to call the <tt>start</tt> method; forgetting to start the connection is one
+of the most common JMS programming errors.)</p><p>You use the <tt>receive</tt> method to consume a message synchronously. You can use
+this method at any time after you call the <tt>start</tt> method:</p><pre>connection.start();
+Message m = consumer.receive();
+connection.start();
+Message m = consumer.receive(1000); // time out after a second</pre><p>To consume a message asynchronously, you use a message listener, described in the
+next section.</p>
+
+<a name="bnceq"></a><h5>JMS Message Listeners</h5>
+<a name="indexterm-2833"></a><a name="indexterm-2834"></a><a name="indexterm-2835"></a><p>A <b>message listener</b> is an object that acts as an asynchronous event handler for
+messages. This object implements the <tt>MessageListener</tt> interface, which contains one method, <tt>onMessage</tt>. In
+the <tt>onMessage</tt> method, you define the actions to be taken when a message
+arrives.</p><p>You register the message listener with a specific <tt>MessageConsumer</tt> by using the <tt>setMessageListener</tt>
+method. For example, if you define a class named <tt>Listener</tt> that implements the
+<tt>MessageListener</tt> interface, you can register the message listener as follows:</p><pre>Listener myListener = new Listener();
+consumer.setMessageListener(myListener);</pre><p>After you register the message listener, you call the <tt>start</tt> method on the
+<tt>Connection</tt> to begin message delivery. (If you call <tt>start</tt> before you register
+the message listener, you are likely to miss messages.)</p><p>When message delivery begins, the JMS provider automatically calls the message listener&rsquo;s <tt>onMessage</tt>
+method whenever a message is delivered. The <tt>onMessage</tt> method takes one argument of type
+<tt>Message</tt>, which your implementation of the method can cast to any of the
+other message types (see <a href="#bncew">Message Bodies</a>).</p><p>A message listener is not specific to a particular destination type. The same
+listener can obtain messages from either a queue or a topic, depending on
+the type of destination for which the message consumer was created. A
+message listener does, however, usually expect a specific message type and format.</p><p>Your <tt>onMessage</tt> method should handle all exceptions. It must not throw checked exceptions,
+and throwing a <tt>RuntimeException</tt> is considered a programming error.</p><p>The session used to create the message consumer serializes the execution of all
+message listeners registered with the session. At any time, only one of the
+session&rsquo;s message listeners is running.</p><p>In the Java EE platform, a message-driven bean is a special kind
+of message listener. For details, see <a href="bncgl.html#bncgq">Using Message-Driven Beans to Receive Messages Asynchronously</a>.</p>
+
+<a name="bncer"></a><h5>JMS Message Selectors</h5>
+<a name="indexterm-2836"></a><p>If your messaging application needs to filter the messages it receives, you can
+use a JMS API message selector, which allows a message consumer to specify
+the messages it is interested in. Message selectors assign the work of filtering
+messages to the JMS provider rather than to the application. For an example
+of an application that uses a message selector, see <a href="bncgw.html">A Java EE Application That Uses the JMS API with a Session Bean</a>.</p><p>A message selector is a <tt>String</tt> that contains an expression. The syntax of
+the expression is based on a subset of the SQL92 conditional expression syntax.
+The message selector in the example selects any message that has a <tt>NewsType</tt>
+property that is set to the value <tt>'Sports'</tt> or <tt>'Opinion'</tt>:</p><pre>NewsType = &rsquo;Sports&rsquo; OR NewsType = &rsquo;Opinion&rsquo;</pre><p>The <tt>createConsumer</tt>, <tt>createDurableSubscriber</tt> methods allow you to specify a message selector as an
+argument when you create a message consumer.</p><p>The message consumer then receives only messages whose headers and properties match the
+selector.           
+  (See <a href="#bncet">Message Headers</a>, and <a href="#bncev">Message Properties</a>.) A message selector cannot select messages on the
+basis of the content of the message body.</p>
+
+<a name="bnces"></a><h4>JMS Messages</h4>
+<a name="indexterm-2837"></a><p>The ultimate purpose of a JMS application is to produce and to
+consume messages that can then be used by other software applications. JMS messages have
+a basic format that is simple but highly flexible, allowing you to
+create messages that match formats used by non-JMS applications on heterogeneous platforms.</p><p>A JMS message has three parts: a header, properties, and a body.
+Only the header is required. The following sections describe these parts:</p>
+<ul><li><p><a href="#bncet">Message Headers</a></p></li>
+<li><p><a href="#bncev">Message Properties</a></p></li>
+<li><p><a href="#bncew">Message Bodies</a></p></li></ul>
+<p>For complete documentation of message headers, properties, and bodies, see the documentation of
+the <tt>Message</tt> interface in the API documentation.</p>
+
+<a name="bncet"></a><h5>Message Headers</h5>
+<a name="indexterm-2838"></a><a name="indexterm-2839"></a><p>A JMS message header contains a number of predefined fields that contain values
+that both clients and providers use to identify and to route messages.
+<a href="#bnceu">Table&nbsp;31-1</a> lists the JMS message header fields and indicates how their values are
+set. For example, every message has a unique identifier, which is represented in
+the header field <tt>JMSMessageID</tt>. The value of another header field, <tt>JMSDestination</tt>, represents the
+queue or the topic to which the message is sent. Other fields include
+a timestamp and a priority level.</p><p>Each header field has associated setter and getter methods, which are documented in
+the description of the <tt>Message</tt> interface. Some header fields are intended to be
+set by a client, but many are set automatically by the <tt>send</tt> or
+the <tt>publish</tt> method, which overrides any client-set values.</p><a name="bnceu"></a><h6>Table&nbsp;31-1 How JMS Message Header Field Values Are Set</h6><table><col width="33%"><col width="66%"><tr><th align="left" valign="top" scope="column"><p>Header Field</p></th>
+<th align="left" valign="top" scope="column"><p>Set By</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2840"></a><a name="indexterm-2841"></a><tt>JMSDestination</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>send</tt> or <tt>publish</tt> method</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2842"></a><a name="indexterm-2843"></a><tt>JMSDeliveryMode</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>send</tt>
+or <tt>publish</tt> method</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2844"></a><a name="indexterm-2845"></a><tt>JMSExpiration</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>send</tt> or <tt>publish</tt> method</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2846"></a><a name="indexterm-2847"></a><tt>JMSPriority</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>send</tt> or <tt>publish</tt> method</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2848"></a><a name="indexterm-2849"></a><tt>JMSMessageID</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>send</tt> or <tt>publish</tt> method</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2850"></a><a name="indexterm-2851"></a><tt>JMSTimestamp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>send</tt>
+or <tt>publish</tt> method</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2852"></a><a name="indexterm-2853"></a><tt>JMSCorrelationID</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Client</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2854"></a><a name="indexterm-2855"></a><tt>JMSReplyTo</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Client</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2856"></a><tt>JMSType</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Client</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2857"></a><a name="indexterm-2858"></a><tt>JMSRedelivered</tt></p></td>
+<td align="left" valign="top" scope="row"><p>JMS provider</p></td>
+</tr>
+</table>
+
+<a name="bncev"></a><h5>Message Properties</h5>
+<a name="indexterm-2859"></a><a name="indexterm-2860"></a><p>You can create and set properties for messages if you need values
+in addition to those provided by the header fields. You can use properties
+to provide compatibility with other messaging systems, or you can use them to create
+message selectors (see <a href="#bncer">JMS Message Selectors</a>). For an example of setting a property to be
+used as a message selector, see <a href="bncgw.html">A Java EE Application That Uses the JMS API with a Session Bean</a>.</p><p>The JMS API provides some predefined property names that a provider can support.
+The use either of these predefined properties or of user-defined properties is optional.</p>
+
+<a name="bncew"></a><h5>Message Bodies</h5>
+<a name="indexterm-2861"></a><a name="indexterm-2862"></a><p>The JMS API defines five message body formats, also called message types, which
+allow you to send and to receive data in many different forms
+and provide compatibility with existing messaging formats. <a href="#bncex">Table&nbsp;31-2</a> describes these message types.</p><a name="bncex"></a><h6>Table&nbsp;31-2 JMS Message Types</h6><table><col width="25%"><col width="75%"><tr><th align="left" valign="top" scope="column"><p>Message Type</p></th>
+<th align="left" valign="top" scope="column"><p>Body
+Contains</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2863"></a><tt>TextMessage</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>java.lang.String</tt> object (for example, the contents of an XML file).</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2864"></a><tt>MapMessage</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A set of
+name-value pairs, with names as <tt>String</tt> objects and values as primitive types in
+the Java programming language. The entries can be accessed sequentially by enumerator or
+randomly by name. The order of the entries is undefined.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2865"></a><tt>BytesMessage</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A stream of uninterpreted
+bytes. This message type is for literally encoding a body to match an
+existing message format.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2866"></a><tt>StreamMessage</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A stream of primitive values in the Java programming language,
+filled and read sequentially.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2867"></a><tt>ObjectMessage</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Serializable</tt> object in the Java programming language.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><a name="indexterm-2868"></a><tt>Message</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Nothing. Composed of
+header fields and properties only. This message type is useful when a message
+body is not required.</p></td>
+</tr>
+</table><p>The JMS API provides methods for creating messages of each type and for
+filling in their contents. For example, to create and send a <tt>TextMessage</tt>,
+you might use the following statements:</p><pre>TextMessage message = session.createTextMessage();
+message.setText(msg_text);     // msg_text is a String
+producer.send(message);</pre><p>At the consuming end, a message arrives as a generic <tt>Message</tt> object and
+must be cast to the appropriate message type. You can use one
+or more getter methods to extract the message contents. The following code fragment uses
+the <tt>getText</tt> method:</p><pre>Message m = consumer.receive();
+if (m instanceof TextMessage) {
+    TextMessage message = (TextMessage) m;
+    System.out.println("Reading message: " + message.getText());
+} else {
+    // Handle error
+}</pre>
+
+<a name="bncey"></a><h4>JMS Queue Browsers</h4>
+<a name="indexterm-2869"></a><a name="indexterm-2870"></a><a name="indexterm-2871"></a><p>You can create a <tt>QueueBrowser</tt> object to inspect the messages in a queue.
+Messages sent to a queue remain in the queue until the message consumer
+for that queue consumes them. Therefore, the JMS API provides an object that
+allows you to browse the messages in the queue and display the header
+values for each message. To create a <tt>QueueBrowser</tt> object, use the <tt>Session.createBrowser</tt> method.
+For example:</p><pre>QueueBrowser browser = session.createBrowser(queue);</pre><p>See <a href="bncfa.html#bncfl">A Simple Example of Browsing Messages in a Queue</a> for an example of the use of a <tt>QueueBrowser</tt> object.</p><p>The <tt>createBrowser</tt> method allows you to specify a message selector as a second
+argument when you create a <tt>QueueBrowser</tt>. For information on message selectors, see <a href="#bncer">JMS Message Selectors</a>.</p><p>The JMS API provides no mechanism for browsing a topic. Messages usually disappear
+from a topic as soon as they appear: if there are no
+message consumers to consume them, the JMS provider removes them. Although durable subscriptions allow
+messages to remain on a topic while the message consumer is not
+active, no facility exists for examining them.</p>
+
+<a name="bncez"></a><h4>JMS Exception Handling</h4>
+<a name="indexterm-2872"></a><a name="indexterm-2873"></a><p>The root class for exceptions thrown by JMS API methods is <tt>JMSException</tt>.
+Catching <tt>JMSException</tt> provides a generic way of handling all exceptions related to the
+JMS API. </p><p>The <tt>JMSException</tt> class includes the following subclasses, which are described in the API
+documentation:</p>
+<ul><li><p><tt>IllegalStateException</tt></p></li>
+<li><p><tt>InvalidClientIDException</tt></p></li>
+<li><p><tt>InvalidDestinationException</tt></p></li>
+<li><p><tt>InvalidSelectorException</tt></p></li>
+<li><p><tt>JMSSecurityException</tt></p></li>
+<li><p><tt>MessageEOFException</tt></p></li>
+<li><p><tt>MessageFormatException</tt></p></li>
+<li><p><tt>MessageNotReadableException</tt></p></li>
+<li><p><tt>MessageNotWriteableException</tt></p></li>
+<li><p><tt>ResourceAllocationException</tt></p></li>
+<li><p><tt>TransactionInProgressException</tt></p></li>
+<li><p><tt>TransactionRolledBackException</tt></p></li></ul>
+<p>All the examples in the tutorial catch and handle <tt>JMSException</tt> when it is
+appropriate to do so.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncdx.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncfa.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

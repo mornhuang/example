@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="cb-common" default="default" basedir=".">
+    <description>Builds, tests, and runs the project cb-common.</description>
+    
+    <property name="is.jar.module" value="true"/>
+    <property name="is.webservice.client" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+    
+    <target name="-pre-compile" unless="netbeans.home" depends="init,wsimport-client-generate"/>
+    
+    <target name="-post-init" if="netbeans.home">
+        <xmlproperty file="nbproject/jax-ws.xml"/>
+        <get src="${jax-ws.clients.client.wsdl-url}"
+             dest="${basedir}/xml-resources/web-service-references/SupplierService/wsdl/localhost_8080/jaxws-coffee-supplier/SupplierService.wsdl"
+             usetimestamp="true"
+             ignoreerrors="true"/>
+    </target>
+
+</project>

@@ -1,0 +1,54 @@
+# Set the property javaee.home, using the path to your 
+# GlassFish installation.
+# C:/Program Files/glassfish-v3 is the GlassFish v3 default installation 
+# path on Windows.
+# 
+javaee.home=
+
+# Set the property javaee.tutorial.home to the location where you 
+# installed the Java EE Tutorial bundle.
+#
+javaee.tutorial.home=
+
+# machine name (or the IP address) where the applications will be deployed.
+javaee.server.name=localhost
+
+# port number where GlassFish applications are accessed by users
+javaee.server.port=8080
+
+# port number where the Admin Console of GlassFish is available
+javaee.adminserver.port=4848
+
+
+# Uncomment the property javaee.server.username, 
+# and replace the administrator username of the app-server 
+javaee.server.username=admin
+
+# Uncomment the property javaee.server.passwordfile, 
+# and replace the following line to point to a file that 
+# contains the admin password for your app-server. 
+# The file should contain the password in the following line: 
+#
+# AS_ADMIN_PASSWORD=adminadmin
+#
+# Notice that the password is adminadmin since this is 
+# the default password used by GlassFish.
+#
+javaee.server.passwordfile=${javaee.tutorial.home}/examples/common/admin-password.txt
+
+appserver.instance=server
+
+# Uncomment and set this property to the location of the browser you 
+# choose to launch when an application is deployed.
+# On Windows and Mac OS X the OS default browser is used.
+#default.browser=/Applications/Firefox.app/Contents/MacOS/firefox-bin
+
+# Database vendor property for db tasks
+# JavaDB is the default database vendor. See the settings in javadb.properties
+db.vendor=javadb
+
+# Digital certificate properties for mutual authentication
+keystore=${javaee.tutorial.home}/examples/jaxws/simpleclient-cert/support/client_keystore.jks
+truststore=${javaee.home}/domains/domain1/config/cacerts.jks
+keystore.password=changeit
+truststore.password=changeit

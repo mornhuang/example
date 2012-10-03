@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The Life Cycles of Enterprise Beans - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level3"><a href="bnblt.html">What Is an Enterprise Bean?</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblu">Benefits of Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblv">When to Use Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblw">Types of Enterprise Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbly.html">What Is a Session Bean?</a></p>
+<p class="toc level4"><a href="bnbly.html#bnblz">State Management Modes</a></p>
+<p class="toc level5"><a href="bnbly.html#bnbma">Stateful Session Beans</a></p>
+<p class="toc level5"><a href="bnbly.html#bnbmb">Stateless Session Beans</a></p>
+<p class="toc level4 tocsp"><a href="bnbly.html#bnbmc">When to Use Session Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbmd.html">What Is a Message-Driven Bean?</a></p>
+<p class="toc level4"><a href="bnbmd.html#bnbme">What Makes Message-Driven Beans Different from Session Beans?</a></p>
+<p class="toc level4"><a href="bnbmd.html#bnbmf">When to Use Message-Driven Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbmg.html">Defining Client Access with Interfaces</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmh">Remote Clients</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmj">Local Clients</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmk">Deciding on Remote or Local Access</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbml">Web Service Clients</a></p>
+<p class="toc level4"><a href="bnbmg.html#bnbmm">Method Parameters and Access</a></p>
+<p class="toc level5"><a href="bnbmg.html#bnbmn">Isolation</a></p>
+<p class="toc level5"><a href="bnbmg.html#bnbmo">Granularity of Accessed Data</a></p>
+<p class="toc level3 tocsp"><a href="bnbmp.html">The Contents of an Enterprise Bean</a></p>
+<p class="toc level3"><a href="bnbmr.html">Naming Conventions for Enterprise Beans</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">The Life Cycles of Enterprise Beans</a></p>
+<p class="toc level4"><a href="#bnbmu">The Life Cycle of a Stateful Session Bean</a></p>
+<p class="toc level4"><a href="#bnbmw">The Life Cycle of a Stateless Session Bean</a></p>
+<p class="toc level4"><a href="#bnbmy">The Life Cycle of a Message-Driven Bean</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbna.html">Further Information about Enterprise Beans</a></p>
+<p class="toc level2 tocsp"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbmr.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbna.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbmt"></a><h3>The Life Cycles of Enterprise Beans</h3>
+<a name="indexterm-2056"></a><a name="indexterm-2057"></a><a name="indexterm-2058"></a><p>An enterprise bean goes through various stages during its lifetime, or life cycle.
+Each type of enterprise bean (stateful session, stateless session, or message-driven) has a
+different life cycle.</p><p>The descriptions that follow refer to methods that are explained along with the
+code examples in the next two chapters. If you are new to
+enterprise beans, you should skip this section and run the code examples first.</p>
+
+<a name="bnbmu"></a><h4>The Life Cycle of a Stateful Session Bean</h4>
+<p><a href="#bnbmv">Figure&nbsp;20-3</a> illustrates the stages that a session bean passes through during its lifetime.
+The client initiates the life cycle by obtaining a reference to a stateful
+session bean. The container performs any dependency injection and then invokes the method
+annotated with <tt>@PostConstruct</tt>, if any. The bean is now ready to have
+its business methods invoked by the client.</p><a name="bnbmv"></a><h6>Figure&nbsp;20-3 Life Cycle of a Stateful Session Bean</h6><a name="indexterm-2059"></a><img src="figures/ejbcon-statefulSessionBeanLifeCycle.gif" alt="Diagram showing the life cycle of a stateful session bean."></img><p><a name="indexterm-2060"></a><a name="indexterm-2061"></a>While in the ready stage, the EJB container may decide to deactivate, or
+<b>passivate</b>, the bean by moving it from memory to secondary storage. (Typically, the
+EJB container uses a least-recently-used algorithm to select a bean for passivation.) The
+EJB container invokes the method annotated <tt>@PrePassivate</tt>, if any, immediately before passivating it. If
+a client invokes a business method on the bean while it is in
+the passive stage, the EJB container activates the bean, calls the method annotated
+<tt>@PostActivate</tt>, if any, and then moves it to the ready stage.</p><p>At the end of the life cycle, the client invokes a method
+annotated <tt>@Remove</tt>, and the EJB container calls the method annotated <tt>@PreDestroy</tt>, if
+any. The bean&rsquo;s instance is then ready for garbage collection.</p><p>Your code controls the invocation of only one life-cycle method: the method annotated
+<tt>@Remove</tt>. All other methods in <a href="#bnbmv">Figure&nbsp;20-3</a> are invoked by the EJB container. See
+<a href="bncjh.html">Chapter&nbsp;34, Resource Connections</a> for more information.</p>
+
+<a name="bnbmw"></a><h4>The Life Cycle of a Stateless Session Bean</h4>
+<p>Because a stateless session bean is never passivated, its life cycle has only
+two stages: nonexistent and ready for the invocation of business methods. <a href="#bnbmx">Figure&nbsp;20-4</a> illustrates
+the stages of a stateless session bean.</p><a name="bnbmx"></a><h6>Figure&nbsp;20-4 Life Cycle of a Stateless Session Bean</h6><img src="figures/ejbcon-statelessSessionBeanLifeCycle.gif" alt="Diagram showing the life cycle of a stateless session bean."></img><p>The client initiates the life cycle by obtaining a reference to a
+stateless session bean. The container performs any dependency injection and then invokes the method
+annotated <tt>@PostConstruct</tt>, if any. The bean is now ready to have its business
+methods invoked by the client.</p><p>At the end of the life cycle, the EJB container calls the
+method annotated <tt>@PreDestroy</tt>, if any. The bean&rsquo;s instance is then ready for garbage
+collection.</p>
+
+<a name="bnbmy"></a><h4>The Life Cycle of a Message-Driven Bean</h4>
+<p><a href="#bnbmz">Figure&nbsp;20-5</a> illustrates the stages in the life cycle of a message-driven bean.</p><a name="bnbmz"></a><h6>Figure&nbsp;20-5 Life Cycle of a Message-Driven Bean</h6><img src="figures/ejbcon-messageDrivenBeanLifeCycle.gif" alt="Diagram showing the life cycle of a message-driven bean."></img><p>The EJB container usually creates a pool of message-driven bean instances. For each
+instance, the EJB container performs these tasks:</p>
+<ol><li><p>If the message-driven bean uses dependency injection, the container injects these references before instantiating the instance.</p></li>
+<li><p>The container calls the method annotated <tt>@PostConstruct</tt>, if any.</p></li></ol>
+<p>Like a stateless session bean, a message-driven bean is never passivated, and it
+has only two states: nonexistent and ready to receive messages.</p><p><a name="indexterm-2062"></a><a name="indexterm-2063"></a>At the end of the life cycle, the container calls the method
+annotated <tt>@PreDestroy</tt>, if any. The bean&rsquo;s instance is then ready for garbage collection.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbmr.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbna.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

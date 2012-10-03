@@ -1,0 +1,35 @@
+Periodic Calendar is a GUI application which assists in women menstrual cycles
+tracking and fertility periods prediction. This information can be used as 
+supportive either for conception or contraception planning.
+
+At this point the fertility prediction is based only on the calendar method
+which is not very precise. It is not recommended to use this method alone
+for the contraception.
+
+In the future versions it is planned to add support for the BBT (Basal
+Body Temperature) method which in addition to the calendar method provides 
+more precise predictions. However, this method requires more efforts (daily
+temperature measurements) while the calendar method requires only to remember
+the cycle start dates and enter them somehow into the program. The effectiveness
+of the BBT method itself is about 80-90%. Combining more than one method makes 
+the predictions more effective.
+
+Other self-observations methods I know are really hard to support on a computer.
+
+THIS PROGRAM PREDICTIONS IN NO CASES CAN BE USED AS THE FINAL. THE METHODS USED
+ARE REALLY FAR FROM BEING 100% RELIABLE.
+
+Please see the application online help for more information.
+
+
+PERIODIC CALENDAR 1.x DATA MIGRATION NOTES
+
+Versions 2.x and 3.x of the Periodic Calendar use new file format which is based on XML. 
+If you would like to import the data you maintained in the previous version, 
+please use the Import/Export feature located in the File submenu of the main menu.
+
+Version 3.x of the data file is backward compatible with 2.x which means you can open 
+2.x files directly. Possibility for the application version 2.x to open newer file versions
+is not guaranteed.
+
+===================================================================================

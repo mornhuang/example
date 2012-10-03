@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Building, Packaging, Deploying, and Running the Coffee Break Application - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level3"><a href="gfqeu.html">Overview of the Coffee Break Application</a></p>
+<p class="toc level3"><a href="bnckp.html">Common Code</a></p>
+<p class="toc level3"><a href="bnckq.html">JAX-WS Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnckq.html#bnckr">Service Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bncks.html">SAAJ Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bncks.html#bnckt">SAAJ Client</a></p>
+<p class="toc level5"><a href="bncks.html#bncku">Sending the Request</a></p>
+<p class="toc level5"><a href="bncks.html#bnckw">Ordering Coffee</a></p>
+<p class="toc level4 tocsp"><a href="bncks.html#bnckz">SAAJ Service</a></p>
+<p class="toc level5"><a href="bncks.html#bncla">Returning the Price List</a></p>
+<p class="toc level5"><a href="bncks.html#bnclb">Returning the Order Confirmation</a></p>
+<p class="toc level3 tocsp"><a href="bnclc.html">Coffee Break Server</a></p>
+<p class="toc level4"><a href="bnclc.html#bncle">JSP Pages</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclf">The <tt>orderForm</tt> Page</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclg">The <tt>checkoutForm</tt> Page</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclh">The <tt>checkoutAck</tt> Page</a></p>
+<p class="toc level4 tocsp"><a href="bnclc.html#bncli">JavaBeans Components</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclj">The <tt>RetailPriceList</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclk">The <tt>ShoppingCart</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bncll">The <tt>OrderConfirmations</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclm">The <tt>CheckoutFormBean</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bncln">The <tt>CoffeeBreakBean</tt> JavaBeans Component</a></p>
+<p class="toc level4 tocsp"><a href="bnclc.html#bnclo">The <tt>RetailPriceListServlet</tt> Servlet</a></p>
+<p class="toc level4"><a href="bnclc.html#bnclp">Resource Configuration</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Building, Packaging, Deploying, and Running the Coffee Break Application</a></p>
+<p class="toc level4"><a href="#bnclr">Setting the Port</a></p>
+<p class="toc level4"><a href="#bncls">Building, Packaging, and Deploying the JAX-WS Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="#bnclt">Building, Packaging, and Deploying the SAAJ Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="#bnclu">Building, Packaging, and Deploying the Coffee Break Server</a></p>
+<p class="toc level4"><a href="#bnclv">Running the Coffee Break Client</a></p>
+<p class="toc level4"><a href="#bncly">Removing the Coffee Break Application</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnclc.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnclz.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnclq"></a><h3>Building, Packaging, Deploying, and Running the Coffee Break Application</h3>
+<a name="indexterm-3143"></a><p>The source code for the Coffee Break application is located in the
+directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/</tt>. Within the <tt>cb</tt> directory are subdirectories for each web application (<tt>cb</tt>,
+<tt>cb-saaj</tt>, and <tt>cb-jaxws</tt>) and a directory, <tt>cb-common</tt>, for classes shared by the web applications.
+Each subdirectory contains a <tt>build.xml</tt> file. The web application subdirectories in turn
+contain a <tt>src</tt> subdirectory for Java classes and configuration files, and a <tt>web</tt> subdirectory
+for web resources.</p>
+
+<a name="bnclr"></a><h4>Setting the Port</h4>
+<a name="indexterm-3144"></a><p>The JAX-WS and SAAJ services in the Coffee Break application run at the
+port that you specified when you installed the Application Server. The tutorial examples
+assume that the Application Server runs on the default port, 8080. If you
+have changed the port, you must update the port number in the following
+file before building and running the examples:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb-common/src/com/sun/cb/common/ CoffeeBreak.properties</tt></pre><p>Update the port in the following URLs:</p>
+<ul><li><p><tt>endpoint.url=http://localhost:8080/jaxws-coffee-supplier/jaxws</tt></p></li>
+<li><p><tt>saaj.url=http://localhost:8080/saaj-coffee-supplier</tt></p></li></ul>
+
+
+<a name="bncls"></a><h4>Building, Packaging, and Deploying the JAX-WS Coffee Supplier Service</h4>
+<p>To build the JAX-WS service and client library and to package and
+deploy the JAX-WS service using NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/</tt>.</p></li>
+<li><p>Select the <tt>cb-jaxws</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>cb-jaxws</tt> project and choose Build.</p></li>
+<li><p>Right-click the <tt>cb-jaxws</tt> project and choose Undeploy and Deploy.</p></li></ol>
+<p>To build the JAX-WS service and client library and to package and
+deploy the JAX-WS service using Ant, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb-jaxws/</tt>.</p></li>
+<li><p>Run <tt>ant</tt>. This task calls the <tt>default</tt> target, which compiles the source files of the JAX-WS service.</p></li>
+<li><p>Make sure the Application Server is running.</p></li>
+<li><p>Deploy the JAX-WS service:</p><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+
+
+<a name="bnclt"></a><h4>Building, Packaging, and Deploying the SAAJ Coffee Supplier Service</h4>
+<p>To build the SAAJ service and client library and to package and
+deploy the SAAJ service using NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/</tt>.</p></li>
+<li><p>Select the <tt>cb-saaj</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>cb-saaj</tt> project and choose Build.</p></li>
+<li><p>Right-click the <tt>cb-saaj</tt> project and choose Undeploy and Deploy.</p></li></ol>
+<p>To build the SAAJ service and client library and to package and
+deploy the SAAJ service using Ant, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb-saaj/</tt>.</p></li>
+<li><p>Run <tt>ant</tt>. This task calls the <tt>default</tt> target, which creates the client library and compiles the SAAJ service classes.</p></li>
+<li><p>Make sure the Application Server is started.</p></li>
+<li><p>Deploy the SAAJ service:</p><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+
+
+<a name="bnclu"></a><h4>Building, Packaging, and Deploying the Coffee Break Server</h4>
+<p>To build, package, and deploy the Coffee Break server using NetBeans IDE, follow
+these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/</tt>.</p></li>
+<li><p>Select the <tt>cb</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>cb</tt> project and choose Build.</p></li>
+<li><p>Right-click the <tt>cb</tt> project and choose Undeploy and Deploy.</p></li></ol>
+<p>To build, package, and deploy the Coffee Break server using Ant, follow these
+steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb/</tt>.</p></li>
+<li><p>Run <tt>ant</tt>. This task calls the <tt>default</tt> target, which compiles the server classes.</p></li>
+<li><p>Make sure the Application Server is started.</p></li>
+<li><p>Deploy the Coffee Break server:</p><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+
+
+<a name="bnclv"></a><h4>Running the Coffee Break Client</h4>
+<a name="indexterm-3145"></a><p>After you have installed all the web applications, check that all the applications
+are running in the Admin Console. You should see <tt>cb</tt>, <tt>cb-saaj</tt>, and
+<tt>cb-jaxws</tt> in the list of applications.</p><p>You can run the Coffee Break client by opening this URL in
+a web browser:</p><pre>http://localhost:8080/cbserver/</pre><p>A page appears with the following message:</p><pre>Redirecting to CoffeeBreak demo...click here otherwise.</pre><p>In a few seconds, you should see a page like the one
+shown in <a href="#bnclw">Figure&nbsp;36-2</a>.</p><a name="bnclw"></a><h6>Figure&nbsp;36-2 Order Form</h6><img src="figures/cb-orderForm.gif" alt="Screen shot of Order Form page" width="662" height="674"></img><p>After you have gone through the application screens, you will get an order
+confirmation that looks like the one shown in <a href="#bnclx">Figure&nbsp;36-3</a>.</p><a name="bnclx"></a><h6>Figure&nbsp;36-3 Order Confirmation</h6><img src="figures/cb-confirmation.gif" alt="Screen shot of Order Confirmation page" width="662" height="474"></img>
+
+<a name="bncly"></a><h4>Removing the Coffee Break Application</h4>
+<a name="indexterm-3146"></a><p>To remove the Coffee Break application, perform the following steps:</p>
+<ol><li><p>Undeploy the JAX-WS service, SAAJ service, and the Coffee Break server using the Admin Console or by running <tt>ant undeploy</tt> in their respective directories.</p></li>
+<li><p>Stop the Application Server.</p></li></ol>
+<p>If you want to remove the <tt>build</tt> and <tt>dist</tt> directories, run <tt>ant clean</tt> in
+each directory, including <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb-common/</tt>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnclc.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnclz.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

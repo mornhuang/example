@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Accessing Databases from Web Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Accessing Databases from Web Applications</a></p>
+<p class="toc level4"><a href="#bnbrn">Defining the Persistence Unit</a></p>
+<p class="toc level4"><a href="#bnbro">Creating an Entity Class</a></p>
+<p class="toc level4"><a href="#bnbrp">Obtaining Access to an Entity Manager</a></p>
+<p class="toc level4"><a href="#bnbrq">Accessing Data from the Database</a></p>
+<p class="toc level4"><a href="#bnbrr">Updating Data in the Database</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbrl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbrs.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbrm"></a><h3>Accessing Databases from Web Applications</h3>
+<a name="indexterm-2207"></a><p>Data that is shared between web components and is persistent between invocations of
+a web application is usually maintained in a database. Web applications use the
+Java Persistence API (see <a href="bnbpz.html">Chapter&nbsp;24, Introduction to the Java Persistence API</a>) to access relational databases.</p><p>The Java Persistence API provides a facility for managing the object/relational mapping (ORM)
+of Java objects to persistent data (stored in a database). A Java object
+that maps to a database table is called an entity class. It
+is a regular Java object (also known as a POJO, or plain, old
+Java object) with properties that map to columns in the database table. The
+Duke&rsquo;s Bookstore application has one entity class, called <tt>Book</tt> that maps to <tt>WEB_BOOKSTORE_BOOKS</tt>.</p><p>To manage the interaction of entities with the Java Persistence facility, an application
+uses the <tt>EntityManager</tt> interface. This interface provides methods that perform common database functions,
+such as querying and updating the database. The <tt>BookDBAO</tt> class of the Duke&rsquo;s Bookstore
+application uses the entity manager to query the database for the book data
+and to update the inventory of books that are sold.</p><p>The set of entities that can be managed by an entity manager
+are defined in a persistence unit. It oversees all persistence operations in the
+application. The persistence unit is configured by a descriptor file called <tt>persistence.xml</tt>. This
+file also defines the data source, what type of transactions the application uses,
+along with other information. For the Duke&rsquo;s Bookstore application, the <tt>persistence.xml</tt> file and
+the <tt>Book</tt> class are packaged into a separate JAR file and added
+to the application&rsquo;s WAR file.</p><p>As in JDBC technology, a <tt>DataSource</tt> object has a set of properties that
+identify and describe the real world data source that it represents. These properties
+include information such as the location of the database server, the name of
+the database, the network protocol to use to communicate with the server, and
+so on.</p><p>An application that uses the Java Persistence API does not need to
+explicitly create a connection to the data source, as it would when using
+JDBC technology exclusively. Still, the DataSource object must be created in the Application Server.</p><p>To maintain the catalog of books, the Duke&rsquo;s Bookstore examples described in Chapters
+<a href="bnafc.html">Further Information about Web Applications</a> through <a href="bnaxj.html#bnaxt">Including the Classes, Pages, and Other Resources</a> use the Java DB evaluation database included with the Application
+Server.</p><p>To populate the database, follow the instructions in <a href="bnaez.html#bnafa">Populating the Example Database</a>.</p><p>To create a data source, follow the instructions in <a href="bnaez.html#bnafb">Creating a Data Source in the Application Server</a>.</p><p>This section describes the following:</p>
+<ul><li><p><a href="#bnbrn">Defining the Persistence Unit</a></p></li>
+<li><p><a href="#bnbro">Creating an Entity Class</a></p></li>
+<li><p><a href="#bnbrp">Obtaining Access to an Entity Manager</a></p></li>
+<li><p><a href="#bnbrq">Accessing Data from the Database</a></p></li>
+<li><p><a href="#bnbrr">Updating Data in the Database</a></p></li></ul>
+
+
+<a name="bnbrn"></a><h4>Defining the Persistence Unit</h4>
+<a name="indexterm-2208"></a><p>As described in <a href="">Accessing Databases from Web Applications</a>, a persistence unit is defined by a <tt>persistence.xml</tt>
+file, which is packaged with the application WAR file. This file includes the
+following:</p>
+<ul><li><p>A <tt>persistence</tt> element that identifies the schema that the descriptor validates against and includes a persistence-unit element.</p></li>
+<li><p>A <tt>persistence-unit</tt> element that identifies the name of a persistence unit and the transaction type.</p></li>
+<li><p>An optional <tt>description</tt> element.</p></li>
+<li><p>A <tt>jta-data-source</tt> element that specifies the global JNDI name of the JTA data source.</p></li></ul>
+<p>The <tt>jta-data-source</tt> element indicates that the transactions in which the entity manager takes
+part are JTA transactions, meaning that transactions are managed by the container. Alternatively,
+you can use resource-local transactions, which are transactions controlled by the application itself. In
+general, web application developers will use JTA transactions so that they don&rsquo;t need
+to manually manage the life cycle of the <tt>EntityManager</tt> instance.</p><p>A resource-local entity manager cannot participate in global transactions. In addition, the web
+container will not roll back pending transactions left behind by poorly written applications.</p>
+
+<a name="bnbro"></a><h4>Creating an Entity Class</h4>
+<a name="indexterm-2209"></a><p>As explained in <a href="">Accessing Databases from Web Applications</a>, an entity class is a component that represents
+a table in the database. In the case of the Duke&rsquo;s Bookstore application,
+there is only one database table and therefore only one entity class: the
+<tt>Book</tt> class.</p><p>The <tt>Book</tt> class contains properties for accessing each piece of data for a
+particular book, such as the book&rsquo;s title and author. To make it an
+entity class that is accessible to an entity manager, you need to do
+the following:</p>
+<ul><li><p>Add the <tt>@Entity</tt> annotation to the class.</p></li>
+<li><p>Add the <tt>@Id</tt> annotation to the property that represents the primary key of the table.</p></li>
+<li><p>Add the <tt>@Table</tt> annotation to the class to identify the name of the database table if it is different from the name of the entity class.</p></li>
+<li><p>Optionally make the class <tt>Serializable</tt>.</p></li></ul>
+<p>The following code shows part of the <tt>Book</tt> class:</p><pre>import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="WEB_BOOKSTORE_BOOKS")
+
+public class Book implements Serializable {
+
+    private String bookId;
+    private String title;
+
+    public Book() { }
+
+    public Book(String bookId, String title, ...) {
+        this.bookId = bookId;
+        this.title = title;
+        ...
+    }
+
+    @Id
+    public String getBookId() {
+        return this.bookId;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+    ...
+
+    public void setBookId(String id) {
+        this.bookId=id;
+    }
+
+    public void setTitle(String title) {
+        this.title=title;
+    }
+    ...
+}</pre>
+
+<a name="bnbrp"></a><h4>Obtaining Access to an Entity Manager</h4>
+<a name="indexterm-2210"></a><p>The <tt>BookDBAO</tt> object of the Duke&rsquo;s Bookstore application includes methods for getting the
+book data from the database and updating the inventory in the database when
+books are sold. In order to perform database queries, the <tt>BookDBAO</tt> object needs
+to obtain an <tt>EntityManager</tt> instance.</p><p>The Java Persistence API allows developers to use annotations to identify a resource
+so that the container can transparently inject it into an object. You can
+give an object access to an <tt>EntityManager</tt> instance by using the <tt>@PersistenceUnit</tt> annotation
+to inject an <tt>EntityManagerFactory</tt>, from which you can obtain an <tt>EntityManager</tt> instance.</p><p>Unfortunately for the web application developer, resource injection using annotations can only be
+used with classes that are managed by a Java EE compliant container. Because
+the web container does not manage JavaBeans components, you cannot inject resources into
+them. One exception is a request-scoped JavaServer Faces managed bean. These beans are
+managed by the container and therefore support resource injection. This is only helpful
+if your application is a JavaServer Faces application.</p><p>You can still use resource injection in a web application that is
+not a JavaServer Faces application if you can do it in an object
+that is managed by the container. These objects include servlets and <tt>ServletContextListener</tt> objects.
+These objects can then give the application&rsquo;s beans access to the resources.</p><p>In the case of Duke&rsquo;s Bookstore, the <tt>ContextListener</tt> object creates the <tt>BookDBAO</tt> object
+and puts it into application scope. In the process, it passes to the
+<tt>BookDBAO</tt> object the <tt>EntityManagerFactory</tt> object that was injected into <tt>ContextListener</tt>:</p><pre>public final class ContextListener implements SerlvetContextListener {
+...
+@PersistenceUnit
+private EntityManagerFactory emf;
+
+public void contextInitialized(ServletContexEvent event) {
+    context = event.getServletContext();
+    ...
+    try {
+        BookDBAO bookDB = new BookDBAO(emf);
+        context.setAttribute("bookDB", bookDB);
+    } catch (Exception ex) {
+        System.out.println(
+            "Couldn&rsquo;t create bookstore database bean: "
+                 + ex.getMessage());
+    }
+}
+}</pre><p>The <tt>BookDBAO</tt> object can then obtain an <tt>EntityManager</tt> from the <tt>EntityManagerFactory</tt> that
+the <tt>ContextListener</tt> object passes to it:</p><pre>private EntityManager em;
+
+public BookDBAO (EntityManagerFactory emf) throws Exception {
+    em = emf.getEntityManager();
+    ...
+}</pre><p>The JavaServer Faces version of Duke&rsquo;s Bookstore gets access to the <tt>EntityManager</tt> instance
+a little differently. Because managed beans allow resource injection, you can inject the
+<tt>EntityManagerFactory</tt> instance into <tt>BookDBAO</tt>.</p><p>In fact, you can bypass injecting <tt>EntityManagerFactory</tt> and instead inject the <tt>EntityManager</tt> directly
+into <tt>BookDBAO</tt>. This is because thread safety is not an issue with
+request-scoped beans. Conversely, developers need to be concerned with thread safety when working with
+servlets and listeners. Therefore, a servlet or listener needs to inject an <tt>EntityManagerFactory</tt>
+instance, which is thread-safe, whereas a persistence context is not thread-safe. The following code
+shows part of the <tt>BookDBAO</tt> object included in the JavaServer Faces version of
+Duke&rsquo;s Bookstore:</p><pre>import javax.ejb.*;
+import javax.persistence.*;
+import javax.transaction.NotSupportedException;
+public class BookDBAO {
+
+    @PersistenceContext
+    private EntityManager em;
+...</pre><p>As shown in the preceding code, an <tt>EntityManager</tt> instance is injected into an
+object using the <tt>@PersistenceContext</tt> annotation. An <tt>EntityManager</tt> instance is associated with a persistence context,
+which is a set of entity instances that the entity manager is
+tasked with managing.</p><p>The annotation may specify the name of the persistence unit with which it
+is associated. This name must match a persistence unit defined in the
+application&rsquo;s <tt>persistence.xml</tt> file.</p><p>The next section explains how the <tt>BookDBAO</tt> object uses the entity manager instance
+to query the database.</p>
+
+<a name="bnbrq"></a><h4>Accessing Data from the Database</h4>
+<p>After the <tt>BookDBAO</tt> object obtains an <tt>EntityManager</tt> instance, it can access data
+from the database. The <tt>getBooks</tt> method of <tt>BookDBAO</tt> calls the <tt>createQuery</tt> method
+of the <tt>EntityManager</tt> instance to retrieve a list of all books by <tt>bookId</tt>:</p><pre>public List getBooks() throws BooksNotFoundException {
+    try {
+        return em.createQuery(
+            "SELECT bd FROM Book bd ORDER BY bd.bookId").
+                getResultList();
+    } catch(Exception ex){
+        throw new BooksNotFoundException("Could not get books: "
+             + ex.getMessage());
+    }
+}</pre><p>The <tt>getBook</tt> method of <tt>BookDBAO</tt> uses the find method of the <tt>EntityManager</tt> instance
+to search the database for a particular book and return the associated <tt>Book</tt>
+instance:</p><pre>public Book getBook(String bookId) throws BookNotFoundException {
+    Book requestedBook = em.find(Book.class, bookId);
+    if (requestedBook == null) {
+        throw new BookNotFoundException("Couldn&rsquo;t find book: "
+             + bookId);
+    }
+    return requestedBook;
+}</pre><p>The next section describes how Duke&rsquo;s Bookstore performs updates to the data.</p>
+
+<a name="bnbrr"></a><h4>Updating Data in the Database</h4>
+<a name="indexterm-2211"></a><p>In the Duke&rsquo;s Bookstore application, updates to the database involve decrementing the inventory
+count of a book when the user buys copies of the book. The
+<tt>BookDBAO</tt> performs this update in the <tt>buyBooks</tt> and <tt>buyBook</tt> methods:</p><pre>public void buyBooks(ShoppingCart cart) throws OrderException{
+    Collection items = cart.getItems();
+    Iterator i = items.iterator();
+    try {
+        while (i.hasNext()) {
+            ShoppingCartItem sci = (ShoppingCartItem)i.next();
+            Book bd = (Book)sci.getItem();
+            String id = bd.getBookId();
+            int quantity = sci.getQuantity();
+            buyBook(id, quantity);
+        }
+    } catch (Exception ex) {
+        throw new OrderException("Commit failed: "
+             + ex.getMessage());
+    }
+}
+public void buyBook(String bookId, int quantity)
+     throws OrderException {
+    try {
+        Book requestedBook = em.find(Book.class, bookId);
+        if (requestedBook != null) {
+            int inventory = requestedBook.getInventory();
+            if ((inventory - quantity) >= 0) {
+                int newInventory = inventory - quantity;
+                requestedBook.setInventory(newInventory);
+            } else{
+                throw new OrderException("Not enough of "
+                     + bookId + " in stock to complete order.");
+            }
+        }
+    } catch (Exception ex) {
+        throw new OrderException("Couldn&rsquo;t purchase book: "
+             + bookId + ex.getMessage());
+    }
+}</pre><p>In the <tt>buyBook</tt> method, the <tt>find</tt> method of the <tt>EntityManager</tt> instance retrieves one
+of the books that is in the shopping cart. The <tt>buyBook</tt> method then updates
+the inventory on the <tt>Book</tt> object.</p><p><a name="indexterm-2212"></a><a name="indexterm-2213"></a>To ensure that the update is processed in its entirety, the call to
+<tt>buyBooks</tt> is wrapped in a single transaction. In the JSP versions of Duke&rsquo;s
+Bookstore, the <tt>Dispatcher</tt> servlet calls <tt>buyBooks</tt> and therefore sets the transaction demarcations.</p><p>In the following code, the <tt>UserTransaction</tt> resource is injected into the <tt>Dispatcher</tt> servlet.
+<tt>UserTransaction</tt> is an interface to the underlying JTA transaction manager used to begin
+a new transaction and end a transaction. After getting the <tt>UserTransaction</tt> resource,
+the servlet calls to the <tt>begin</tt> and <tt>commit</tt> methods of <tt>UserTransaction</tt> to
+mark the boundaries of the transaction. The call to the <tt>rollback</tt> method of <tt>UserTransaction</tt>
+undoes the effects of all statements in the transaction so as to protect
+the integrity of the data.</p><pre>@Resource
+UserTransaction utx;
+...
+try {
+    utx.begin();
+    bookDBAO.buyBooks(cart);
+    utx.commit();
+} catch (Exception ex) {
+    try {
+        utx.rollback();
+    } catch (Exception exe) {
+        System.out.println("Rollback failed: "+exe.getMessage());
+}
+...</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbrl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbrs.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

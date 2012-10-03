@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="clientmdbentity-ejb" default="default" basedir="." xmlns:ejbjarproject="http://www.netbeans.org/ns/j2ee-ejbjarproject/2">
+    <description>Builds, tests, and runs the project clientmdbentity-ejb.</description>
+    <property name="is.ejb-jar.module" value="true"/>
+    <property name="is.persistence-unit.module" value="true"/>
+    <import file="../../../bp-project/main.xml"/>
+
+</project>

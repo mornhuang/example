@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!--  初始化数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName"><value>oracle.jdbc.driver.OracleDriver</value></property>
+      <property name="url">
+        <value>jdbc:oracle:thin:@192.168.10.121:1521:HiFinance</value>
+      </property>
+      <property name="username"><value>scott</value></property>
+      <property name="password"><value>tiger</value></property>
+    </bean>
+    
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<constructor-arg><ref bean="dataSource"/></constructor-arg>
+	</bean>
+</beans>

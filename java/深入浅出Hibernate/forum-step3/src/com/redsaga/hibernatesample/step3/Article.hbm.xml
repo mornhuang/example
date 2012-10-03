@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd" >
+
+<hibernate-mapping package="com.redsaga.hibernatesample.step3">
+	<class name="Article" table="article">
+		<id
+			column="id"
+			name="id"
+			type="integer"
+		>
+			<generator class="increment" />
+		</id>
+		<property
+			column="last_update_time"
+			length="19"
+			name="lastUpdateTime"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="create_time"
+			length="19"
+			name="createTime"
+			not-null="true"
+			type="timestamp"
+		 />
+		<property
+			column="title"
+			length="255"
+			name="title"
+			not-null="true"
+			type="string"
+		 />
+		<property
+			column="hits"
+			length="11"
+			name="hits"
+			not-null="true"
+			type="int"
+		 />
+		<property
+			column="article_type"
+			length="11"
+			name="articleType"
+			not-null="true"
+			type="integer"
+		 />
+		<property
+			column="bytes"
+			length="11"
+			name="bytes"
+			not-null="false"
+			type="int"
+		 />
+		<property
+			column="body"
+			name="body"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="tree_index"
+			name="treeIndex"
+			not-null="false"
+			type="string"
+		 />
+		<property
+			column="node_level"
+			length="11"
+			name="nodeLevel"
+			not-null="false"
+			type="int"
+		 />
+		<property
+			column="root_id"
+			length="11"
+			name="rootId"
+			not-null="false"
+			type="int"
+		 />
+
+		<many-to-one
+			class="User"
+			name="createBy"
+			not-null="true"
+		>
+			<column name="create_by" />
+		</many-to-one>
+		<many-to-one
+			class="Article"
+			name="parent"
+			not-null="true"
+		>
+			<column name="parent_id" />
+		</many-to-one>
+		<many-to-one
+			class="Board"
+			name="board"
+			not-null="true"
+		>
+			<column name="board_id" />
+		</many-to-one>
+		<many-to-one
+			class="User"
+			name="lastUpdateBy"
+			not-null="true"
+		>
+			<column name="last_update_by" />
+		</many-to-one>
+		<set
+			inverse="true"
+			lazy="true"
+			name="childPosts"
+			cascade="all-delete-orphan"
+			order-by="id asc"
+		>
+			<key column="parent_id" />
+			<one-to-many class="Article" />
+		</set>
+		
+		<joined-subclass name="Vote" table="vote">
+			<key column="id" />
+			<property
+				column="count"
+				length="11"
+				name="count"
+				not-null="false"
+				type="integer"
+			 />
+			<set
+				inverse="true"
+				lazy="false"
+				name="optionSet"
+                cascade="all"
+			>
+				<key column="poll_id" />
+				<one-to-many class="VoteOption" />
+			</set>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

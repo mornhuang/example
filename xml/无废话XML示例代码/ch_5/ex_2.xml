@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!-- IE5 必须配合外部 CSS -->
+<?xml-stylesheet href="ie5_needs.css" type="text/css" ?>
+<测试 xmlns="http://put-your-URL-here"
+	xmlns:html="http://www.w3.org/TR/REC-html40">
+
+<!-- 借用 HTML 标签来链结 -->
+<html:a href="http://2tigers.net">连到两只老虎</html:a>
+
+<!-- 借用 HTML 表单来做按钮 -->
+<html:form method="post" action="put-your-action-here">
+   <html:input type="submit" value="按我" name="click me" />
+</html:form>
+
+<!-- Mozilla 也支援 XLink 旧标准中的 simple link 机制（已过时） -->
+<链结 xml:link="simple"
+	href="http://2Ti.com">这样也可以连到 2T</链结>
+</测试>

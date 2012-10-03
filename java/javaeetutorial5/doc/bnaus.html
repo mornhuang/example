@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Creating a Custom Converter - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaty.html">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="bnaty.html#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+<p class="toc level3 tocsp"><a href="bnaum.html">Performing Localization</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaun">Creating a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnaum.html#bnauo">Localizing Dynamic Data</a></p>
+<p class="toc level4"><a href="bnaum.html#bnaup">Localizing Messages</a></p>
+<p class="toc level5"><a href="bnaum.html#bnauq">Creating a Message with a Message Factory</a></p>
+<p class="toc level5"><a href="bnaum.html#bnaur">Using <tt>FacesMessage</tt> to Create a Message</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Creating a Custom Converter</a></p>
+</div>
+<p class="toc level3"><a href="bnaut.html">Implementing an Event Listener</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauv">Implementing Action Listeners</a></p>
+<p class="toc level3 tocsp"><a href="bnauw.html">Creating a Custom Validator</a></p>
+<p class="toc level4"><a href="bnauw.html#bnaux">Implementing the Validator Interface</a></p>
+<p class="toc level4"><a href="bnauw.html#bnauy">Creating a Custom Tag</a></p>
+<p class="toc level5"><a href="bnauw.html#bnauz">Writing the Tag Handler</a></p>
+<p class="toc level5"><a href="bnauw.html#bnava">Writing the Tag Library Descriptor</a></p>
+<p class="toc level3 tocsp"><a href="bnavb.html">Writing Backing Bean Methods</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+<p class="toc level2 tocsp"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaum.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaut.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaus"></a><h3>Creating a Custom Converter</h3>
+<a name="indexterm-1348"></a><p>As explained in <a href="bnaqd.html#bnaqi">Conversion Model</a>, if the standard converters included with JavaServer Faces technology
+don&rsquo;t perform the data conversion that you need, you can easily create a
+custom converter to perform this specialized conversion.</p><p><a name="indexterm-1349"></a>All custom converters must implement the <tt>Converter</tt> interface. This implementation, at a minimum, must
+define how to convert data both ways between the two views of
+the data described in <a href="bnaqd.html#bnaqi">Conversion Model</a>.</p><p><a name="indexterm-1350"></a><a name="indexterm-1351"></a>This section explains how to implement the <tt>Converter</tt> interface to perform a custom
+data conversion. To make this implementation available to the application, the application architect
+registers it with the application, as explained in <a href="bnaxe.html">Registering a Custom Converter</a>. To use the implementation, the
+page author must register it on a component, as explained in <a href="bnaxe.html">Registering a Custom Converter</a>.</p><p>The Duke&rsquo;s Bookstore application uses a custom <tt>Converter</tt> implementation, called <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/src/java/com/sun/bookstore6/converters/CreditCardConverter.java</tt>, to convert
+the data entered in the Credit Card Number field on the <tt>bookcashier.jsp</tt> page.
+It strips blanks and hyphens from the text string and formats it so
+that a blank space separates every four characters.</p><p><a name="indexterm-1352"></a><a name="indexterm-1353"></a><a name="indexterm-1354"></a><a name="indexterm-1355"></a>To define how the data is converted from the presentation view to the
+model view, the <tt>Converter</tt> implementation must implement the <tt>getAsObject(FacesContext, UIComponent, String)</tt> method from the <tt>Converter</tt>
+interface. Here is the implementation of this method from <tt>CreditCardConverter</tt>:</p><pre>public Object getAsObject(FacesContext context,
+     UIComponent component, String newValue)
+         throws ConverterException {
+
+    String convertedValue = null;
+    if ( newValue == null ) {
+        return newValue;
+    }
+    // Since this is only a String to String conversion,
+     // this conversion does not throw ConverterException.
+    
+    convertedValue = newValue.trim();
+    if ( (convertedValue.contains("-")) ||
+         (convertedValue.contains(" "))) {
+        char[] input = convertedValue.toCharArray();
+        StringBuffer buffer = new StringBuffer(input.length);
+        for ( int i = 0; i &lt; input.length; ++i ) {
+            if ( input[i] == &rsquo;-&rsquo; || input[i] == &rsquo; &rsquo;  ) {
+                continue;
+            } else {
+                buffer.append(input[i]);
+            }
+        }
+        convertedValue = buffer.toString();
+    }
+        return convertedValue;
+}</pre><p><a name="indexterm-1356"></a><a name="indexterm-1357"></a><a name="indexterm-1358"></a><a name="indexterm-1359"></a>During the apply request values phase, when the components&rsquo; <tt>decode</tt> methods are
+processed, the JavaServer Faces implementation looks up the component&rsquo;s local value in the
+request and calls the <tt>getAsObject</tt> method. When calling this method, the JavaServer
+Faces implementation passes in the current <tt>FacesContext</tt> instance, the component whose data needs conversion,
+and the local value as a <tt>String</tt>. The method then writes the
+local value to a character array, trims the hyphens and blanks, adds the
+rest of the characters to a <tt>String</tt>, and returns the <tt>String</tt>.</p><p><a name="indexterm-1360"></a><a name="indexterm-1361"></a><a name="indexterm-1362"></a>To define how the data is converted from the model view to the
+presentation view, the <tt>Converter</tt> implementation must implement the <tt>getAsString(FacesContext, UIComponent, Object)</tt> method from the <tt>Converter</tt> interface.
+Here is the implementation of this method from <tt>CreditCardConverter</tt>:</p><pre>public String getAsString(FacesContext context,
+     UIComponent component, Object value)
+     throws ConverterException {
+    
+    String inputVal = null;
+    if ( value == null ) {
+        return null;
+    }
+    // value must be of the type that can be cast to a String.
+    try {
+        inputVal = (String)value;
+    } catch (ClassCastException ce) {
+        FacesMessage errMsg = MessageFactory.getMessage(
+        CONVERSION_ERROR_MESSAGE_ID,
+         (new Object[] { value, inputVal }));
+        throw new ConverterException(errMsg.getSummary());
+    }
+    // insert spaces after every four characters for better
+     // readability if it doesn&rsquo;t already exist.
+     char[] input = inputVal.toCharArray();
+     StringBuffer buffer = new StringBuffer(input.length + 3);
+    for ( int i = 0; i &lt; input.length; ++i ) {
+        if ( (i % 4) == 0 &amp;&amp; i != 0) {
+            if (input[i] != &rsquo; &rsquo; || input[i] != &rsquo;-&rsquo;){
+                 buffer.append(" ");
+                 // if there are any "-"&rsquo;s convert them to blanks.
+             } else if (input[i] == &rsquo;-&rsquo;) {
+                buffer.append(" ");
+             }
+         }
+         buffer.append(input[i]);
+    }
+     String convertedValue = buffer.toString();
+    return convertedValue;
+}</pre><p><a name="indexterm-1363"></a><a name="indexterm-1364"></a><a name="indexterm-1365"></a><a name="indexterm-1366"></a>During the render response phase, in which the components&rsquo; <tt>encode</tt> methods are
+called, the JavaServer Faces implementation calls the <tt>getAsString</tt> method in order to generate
+the appropriate output. When the JavaServer Faces implementation calls this method, it passes in
+the current <tt>FacesContext</tt>, the <tt>UIComponent</tt> whose value needs to be converted, and the
+bean value to be converted. Because this converter does a <tt>String</tt>-to-<tt>String</tt> conversion, this method
+can cast the bean value to a <tt>String</tt>.</p><p>If the value cannot be converted to a <tt>String</tt>, the method throws an
+exception, passing the error message from the <tt>ResourceBundle</tt>, which is registered with
+the application. <a href="bnaxb.html">Registering Custom Error Messages</a> explains how to register the error messages with the application.
+<a href="bnaum.html">Performing Localization</a> explains more about working with localized messages.</p><p>If the value can be converted to a <tt>String</tt>, the method reads the
+<tt>String</tt> to a character array and loops through the array, adding a space
+after every four characters.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaum.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaut.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

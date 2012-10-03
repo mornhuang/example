@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+
+<project name="Persistence Layer" basedir="." default="compile">
+    <property name="name" 		value="Persistence Layer" />
+    <property name="src" 		value="src" />
+    <property name="build" 		value="build" />
+    <property name="debug" 		value="off" />
+    <property name="packages" 	value="pl,pl.converter,pl.criteria,pl.map,pl.sql,pl.xml" />
+    <property name="version" 	value="20011105" />
+    <property name="dist" 		value="pl${version}" />
+    <property name="zipfile" 	value="pl${version}.zip" />
+
+    <path id="classpath">
+        <pathelement location="lib/jaxp.jar" />
+        <pathelement location="lib/crimson.jar" />
+        <pathelement location="lib/jta-spec1_0_1.jar" />
+    </path>
+
+    <target name="init" description="Init directory structure">
+        <mkdir dir="${build}" />
+        <mkdir dir="${build}/classes" />
+        <mkdir dir="${build}/docs" />
+        <mkdir dir="${build}/docs/api" />
+    </target>
+
+    <target name="initDist" description="Init directory structure">
+        <mkdir dir="${dist}" />
+    </target>
+
+    <target name="compile" depends="init" description="Compile">
+        <javac classpathref="classpath"
+            destdir="${build}/classes"
+            srcdir="${src}"
+            debug="${debug}">
+        </javac>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build}" />
+        <delete dir="${dist}" />
+        <delete file="${zipfile}" />
+    </target>
+
+    <target name="cleanCompile">
+        <delete dir="${build}/classes" />
+    </target>
+
+
+    <target name="build" depends="cleanCompile, compile">
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar jarfile="${build}/pl.jar"
+            basedir="${build}/classes"
+            excludes="**/test">
+        </jar>
+    </target>
+
+    <target name="doc" depends="init">
+        <javadoc destdir="${build}/docs/api"
+            packagenames="${packages}"
+            sourcepath="${src}"
+            Windowtitle="${name} API">
+        </javadoc>
+    </target>
+
+    <target name="dist" depends="initDist, jar, doc">
+        <copy toDir="${dist}/${src}">
+            <fileset dir="${src}" includes="**/*.java" />
+        </copy>
+        <copy toDir="${dist}/test">
+                <fileset dir="test" />
+        </copy>
+<!--        <copy toDir="${dist}/docs">
+                <fileset dir="docs" />
+        </copy> -->
+        <copy toDir="${dist}/docs">
+                <fileset dir="${build}/docs" />
+        </copy>
+        <copy toDir="${dist}/lib">
+                <fileset dir="lib" />
+        </copy>
+        <copy file="${build}/pl.jar" toDir="${dist}" />
+        <copy file="build.xml" toDir="${dist}" />
+        <copy file="COPYING" toDir="${dist}" />
+        <zip zipfile="${zipfile}" basedir="${dist}" />
+    </target>
+</project>

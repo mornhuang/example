@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Securing EIS Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level3"><a href="bnbyl.html">Securing Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbyn">Accessing an Enterprise Bean Caller's Security Context</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbyo">Declaring Security Role Names Referenced from Enterprise Bean Code</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyp">Declaring Security Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyq">Declaring Security Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level4 tocsp"><a href="bnbyl.html#bnbyr">Defining a Security View of Enterprise Beans</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbys">Defining Security Roles</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyu">Specifying an Authentication Mechanism</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyv">Specifying Method Permissions</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyy">Mapping Security Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyz">Propagating Security Identity</a></p>
+<p class="toc level4 tocsp"><a href="bnbyl.html#bnbzd">Using Enterprise Bean Security Annotations</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbze">Using Enterprise Bean Security Deployment Descriptor Elements</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbzf">Configuring IOR Security</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbzg">Deploying Secure Enterprise Beans</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbzh">Accepting Unauthenticated Users</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbzi">Accessing Unprotected Enterprise Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbzj.html">Enterprise Bean Example Applications</a></p>
+<p class="toc level4"><a href="bnbzj.html#bnbzk">Example: Securing an Enterprise Bean</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzl">Annotating the Bean</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzm">Setting Runtime Properties</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzn">Building, Deploying, and Running the Secure Cart Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzo">Building, Deploying, and Running the Secure Cart Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbzj.html#bncaa">Example: Using the <tt>isCallerInRole</tt> and <tt>getCallerPrincipal</tt> Methods</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncab">Modifying <tt>ConverterBean</tt></a></p>
+<p class="toc level5"><a href="bnbzj.html#bncac">Modifying Runtime Properties for the Secure Converter Example</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncad">Building, Deploying, and Running the Secure Converter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncae">Building, Deploying, and Running the Secure Converter Example Using Ant</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncaf">Troubleshooting the Secure Converter Application</a></p>
+<p class="toc level4 tocsp"><a href="bnbzj.html#bncag">Discussion: Securing the Duke's Bank Example</a></p>
+<p class="toc level3 tocsp"><a href="bncah.html">Securing Application Clients</a></p>
+<p class="toc level4"><a href="bncah.html#bncai">Using Login Modules</a></p>
+<p class="toc level4"><a href="bncah.html#bncaj">Using Programmatic Login</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Securing EIS Applications</a></p>
+<p class="toc level4"><a href="#bncam">Container-Managed Sign-On</a></p>
+<p class="toc level4"><a href="#bncan">Component-Managed Sign-On</a></p>
+<p class="toc level4"><a href="#bncao">Configuring Resource Adapter Security</a></p>
+<p class="toc level4"><a href="#bncap">Mapping an Application Principal to EIS Principals</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncah.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncas.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncal"></a><h3>Securing EIS Applications</h3>
+<a name="indexterm-2689"></a><a name="indexterm-2690"></a><p>In EIS applications, components request a connection to an EIS resource. As part
+of this connection, the EIS can require a sign-on for the requester to
+access the resource. The application component provider has two choices for the design
+of the EIS sign-on:</p>
+<ul><li><p><a name="indexterm-2691"></a><a name="indexterm-2692"></a>In the container-managed sign-on approach, the application component lets the container take the responsibility of configuring and managing the EIS sign-on. The container determines the user name and password for establishing a connection to an EIS instance. For more information, read <a href="#bncam">Container-Managed Sign-On</a>.</p></li>
+<li><p><a name="indexterm-2693"></a><a name="indexterm-2694"></a>In the component-managed sign-on approach, the application component code manages EIS sign-on by including code that performs the sign-on process to an EIS. For more information, read <a href="#bncan">Component-Managed Sign-On</a>.</p></li></ul>
+<p>You can also configure security for resource adapters. Read <a href="#bncao">Configuring Resource Adapter Security</a> for more
+information.</p>
+
+<a name="bncam"></a><h4>Container-Managed Sign-On</h4>
+<a name="indexterm-2695"></a><a name="indexterm-2696"></a><a name="indexterm-2697"></a><p>In container-managed sign-on, an application component does not have to pass any sign-on
+security information to the <tt>getConnection()</tt> method. The security information is supplied by the
+container, as shown in the following example.</p><pre>// Business method in an application component
+Context initctx = new InitialContext();
+// Perform JNDI lookup to obtain a connection factory
+javax.resource.cci.ConnectionFactory cxf =
+    (javax.resource.cci.ConnectionFactory)initctx.lookup(
+    "java:comp/env/eis/MainframeCxFactory");
+// Invoke factory to obtain a connection. The security
+// information is not passed in the getConnection method
+javax.resource.cci.Connection cx = cxf.<b>getConnection()</b>;
+...</pre>
+
+<a name="bncan"></a><h4>Component-Managed Sign-On</h4>
+<a name="indexterm-2698"></a><a name="indexterm-2699"></a><a name="indexterm-2700"></a><p>In component-managed sign-on, an application component is responsible for passing the needed sign-on
+security information to the resource to the <tt>getConnection</tt> method. For example, security
+information might be a user name and password, as shown here:</p><pre>// Method in an application component
+Context initctx = new InitialContext();
+
+// Perform JNDI lookup to obtain a connection factory
+javax.resource.cci.ConnectionFactory cxf =
+    (javax.resource.cci.ConnectionFactory)initctx.lookup(
+    "java:comp/env/eis/MainframeCxFactory");
+
+// Get a new ConnectionSpec
+com.myeis.ConnectionSpecImpl properties = //..
+
+// Invoke factory to obtain a connection
+properties.setUserName("...");
+properties.setPassword("...");
+javax.resource.cci.Connection cx =
+     cxf.<b>getConnection(properties)</b>;
+...</pre>
+
+<a name="bncao"></a><h4>Configuring Resource Adapter Security</h4>
+<a name="indexterm-2701"></a><a name="indexterm-2702"></a><p>A resource adapter is a system-level software component that typically implements network connectivity
+to an external resource manager. A resource adapter can extend the functionality of
+the Java EE platform either by implementing one of the Java EE standard
+service APIs (such as a JDBC driver), or by defining and implementing a
+resource adapter for a connector to an external application system. Resource adapters can
+also provide services that are entirely local, perhaps interacting with native resources. Resource
+adapters interface with the Java EE platform through the Java EE service provider
+interfaces (Java EE SPI). A resource adapter that uses the Java EE SPIs
+to attach to the Java EE platform will be able to work with
+all Java EE products.</p><p>To configure the security settings for a resource adapter, you need to edit
+the <tt>ra.xml</tt> file. Here is an example of the part of an <tt>ra.xml</tt>
+file that configures the following security properties for a resource adapter:</p><pre>&lt;authentication-mechanism>
+    &lt;authentication-mechanism-type>BasicPassword&lt;/authentication-mechanism-type>
+    &lt;credential-interface>
+        javax.resource.spi.security.PasswordCredential
+    &lt;/credential-interface>
+&lt;/authentication-mechanism>
+&lt;reauthentication-support>false&lt;/reauthentication-support></pre><p>You can find out more about the options for configuring resource adapter security
+by reviewing <tt></tt><i>as-install</i><tt>/lib/dtds/connector_1_0.dtd</tt>. You can configure the following elements in the resource adapter
+deployment descriptor file:</p>
+<ul><li><p>Authentication mechanisms</p><p>Use the authentication-mechanism element to specify an authentication mechanism supported by the resource adapter. This support is for the resource adapter and not for the underlying EIS instance.</p><p>There are two supported mechanism types:</p>
+<ul><li><p><tt>BasicPassword</tt>: This mechanism supports the interface <tt>javax.resource.spi.security.PasswordCredential</tt>.</p></li>
+<li><p><tt>Kerbv5</tt>: This mechanism supports the interface <tt>javax.resource.spi.security.GenericCredential</tt>. The Application Server does not currently support this mechanism type.</p></li></ul>
+</li>
+<li><p>Reauthentication support</p><p>Use the <tt>reauthentication-support</tt> element to specify whether the resource adapter implementation supports re-authentication of existing <tt>Managed-Connection</tt> instances. Options are <tt>true</tt> or <tt>false</tt>.</p></li>
+<li><p>Security permissions</p><p>Use the <tt>security-permission</tt> element to specify a security permission that is required by the resource adapter code. Support for security permissions is optional and is not supported in the current release of the Application Server. You can, however, manually update the <tt>server.policy</tt> file to add the relevant permissions for the resource adapter, as described in the <i>Developing and Deploying Applications</i> section of the <a href="http://docs.sun.com/doc/819-3672"><i>Sun Java System Application Server 9.1 Developer&rsquo;s Guide</i></a>.</p><p>The security permissions listed in the deployment descriptor are ones that are different from those required by the default permission set as specified in the connector specification.</p><p>Refer to the following URL for more information on Sun&rsquo;s implementation of the security permission specification: <a href="http://java.sun.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax">http://java.sun.com/javase/6/docs/technotes/guides/security/PolicyFiles.html#FileSyntax</a>.</p></li></ul>
+<p>In addition to specifying resource adapter security in the <tt>ra.xml</tt> file, you
+can create a security map for a connector connection pool to map an
+application principal or a user group to a back end EIS principal. The
+security map is usually used in situations where one or more EIS
+back end principals are used to execute operations (on the EIS) initiated by
+various principals or user groups in the application. You can find out more
+about security maps in the <i>Configuring Security</i> chapter section of the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p>
+
+<a name="bncap"></a><h4>Mapping an Application Principal to EIS Principals</h4>
+<p>When using the Application Server, you can use security maps to map
+the caller identity of the application (principal or user group) to a suitable
+EIS principal in container-managed transaction-based scenarios. When an application principal initiates a request to
+an EIS, the Application Server first checks for an exact principal using the
+security map defined for the connector connection pool to determine the mapped back
+end EIS principal. If there is no exact match, then the Application Server
+uses the wild card character specification, if any, to determine the mapped back-end
+EIS principal. Security maps are used when an application user needs to execute
+EIS operations that require to be executed as a specific identity in the
+EIS.</p><p>To work with security maps, use the Admin Console. From the Admin
+Console, follow these steps to get to the security maps page:</p>
+<ol><li><p>Expand the Resources node.</p></li>
+<li><p>Expand the Connectors node.</p></li>
+<li><p>Select the Connector Connection Pools node.</p></li>
+<li><p>Select a Connector Connection Pool by selecting its name from the list of current pools, or create a new connector connection pool by selecting New from the list of current pools.</p></li>
+<li><p>Select the Security Maps page.</p></li></ol>
+
+         </div>
+         <div class="navigation">
+             <a href="bncah.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncas.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

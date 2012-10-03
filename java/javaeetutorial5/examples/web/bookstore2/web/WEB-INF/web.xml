@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>bookstore2</display-name>
+
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>com.sun.bookstore.messages.BookstoreMessages</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>com.sun.bookstore2.listeners.ContextListener</listener-class>
+  </listener> 
+
+  <servlet>
+    <display-name>Dispatcher</display-name>
+    <servlet-name>Dispatcher</servlet-name>
+    <servlet-class>com.sun.bookstore2.dispatcher.Dispatcher</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/books/bookstore</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/books/bookdetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/books/bookcatalog</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/books/bookshowcart</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/books/bookcashier</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/books/bookreceipt</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Dispatcher</servlet-name>
+    <url-pattern>/error/errorpage</url-pattern>
+  </servlet-mapping>
+
+  <jsp-config>
+    <jsp-property-group>
+      <display-name>bookstore2</display-name>
+      <url-pattern>/books/*</url-pattern>
+      <el-ignored>false</el-ignored>
+      <scripting-invalid>false</scripting-invalid>
+      <is-xml>false</is-xml>
+      <include-prelude>/template/preludeTagLib.jspf</include-prelude>
+      <include-prelude>/template/preludeErrorPage.jspf</include-prelude>
+      <include-prelude>/template/prelude.jspf</include-prelude>
+      <include-coda>/template/coda.jspf</include-coda>
+    </jsp-property-group>
+    
+    <jsp-property-group>
+      <display-name>bookstore2</display-name>
+      <url-pattern>/error/*</url-pattern>
+      <el-ignored>false</el-ignored>
+      <scripting-invalid>false</scripting-invalid>
+      <is-xml>false</is-xml>
+      <include-prelude>/template/preludeTagLib.jspf</include-prelude>
+      <include-prelude>/template/prelude.jspf</include-prelude>
+      <include-coda>/template/coda.jspf</include-coda>
+    </jsp-property-group>
+  </jsp-config>
+</web-app>
+

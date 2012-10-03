@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jaxb-ant-tasks" default="default">
+    <import file="${ant.file.command-line-ant-tasks}/../common-properties.xml"/>
+    <import file="${ant.file.command-line-ant-tasks}/../app-server-ant.xml"/>
+    
+    <property name="xjc.src.dir" value="${src.generated.dir}"/>
+    
+    <target name="check-jdk6-environment">
+        <condition property="is.clean.jdk6">
+            <and>
+                <contains string="${java.version}" substring="1.6"/>
+                <not>
+                    <available classname="javax.xml.bind.annotation.XmlSeeAlso">
+                        <classpath>
+                            <fileset dir="${java.home}/lib">
+                                <include name="*.jar"/>
+                            </fileset>
+                        </classpath>
+                    </available>
+                </not>
+            </and>
+        </condition>
+        <condition property="is.jaxb.20">
+            <and>
+                <not>
+                    <available classname="javax.xml.bind.annotation.XmlSeeAlso">
+                        <classpath>
+                            <fileset dir="${javaee.home}/lib">
+                                <include name="*.jar"/>
+                            </fileset>
+                        </classpath>
+                    </available>
+                </not>
+            </and>
+        </condition>
+        <condition property="is.jaxb.21">
+            <available classname="javax.xml.bind.annotation.XmlSeeAlso">
+                <classpath>
+                    <fileset dir="${javaee.home}/lib">
+                        <include name="*.jar"/>
+                    </fileset>
+                </classpath>
+            </available>
+        </condition>
+        
+    </target>
+    
+    <target name="update-endorsed" 
+            if="is.clean.jdk6"
+            depends="check-jdk6-environment">
+        <echo message="Updating ${java.home} with JAX-WS and JAXB 2.1 API."/>
+        <mkdir dir="${java.home}/lib/endorsed"/>
+        <copy file="${javaee.home}/lib/endorsed/webservices-api.jar" 
+              todir="${java.home}/lib/endorsed"/>
+    </target>
+    
+    <target name="schemagen-init" depends="init, check-jdk6-environment">
+        <taskdef name="schemagen"
+            classname="com.sun.tools.jxc.SchemaGenTask">
+            <classpath refid="javaee.classpath"/>
+        </taskdef>
+    </target>
+    
+    <target name="schemagen-generate" depends="schemagen-init">
+        <echo message="Generating schemas..." />
+        <schemagen destdir="${schemagen.destdir}" fork="true">
+            <src path="${src.dir}" />
+            <classpath refid="javaee.classpath"/>
+        </schemagen>
+    </target>
+    
+    <target name="xjc-init" depends="init, check-jdk6-environment">
+        <taskdef name="xjc"
+            classname="com.sun.tools.xjc.XJCTask">
+            <classpath refid="javaee.classpath"/>
+        </taskdef>
+    </target>
+    
+    <target name="xjc-generate" depends="xjc-init">
+        <antcall target="xjc-generate-binding"/>
+        <antcall target="xjc-generate-nobinding"/>
+    </target>
+    
+    <target name="xjc-generate-binding" if="xjc.binding.file">
+        <echo message="Compiling the schema..." />
+        <xjc schema="${xjc.schema}"
+            package="${xjc.package.name}"
+            destdir="${xjc.src.dir}"
+            binding="${xjc.binding.file}">
+            <depends dir="." includes="*.xsd"/>
+            <produces dir="${xjc.src.dir}" includes="**/*.java"/>
+        </xjc>
+    </target>
+    
+    <target name="xjc-generate-nobinding" unless="xjc.binding.file">
+        <echo message="Compiling the schema..." />
+        <xjc schema="${xjc.schema}"
+            package="${xjc.package.name}"
+            destdir="${xjc.src.dir}">
+            <depends dir="." includes="*.xsd"/>
+            <produces dir="${xjc.src.dir}" includes="**/*.java"/>
+        </xjc>
+    </target>
+    
+    <target name="runapp" depends="compile,run-20,run-21"/>
+    
+    <target name="run-20" if="is.jaxb.20">
+        <java classname="${main.class}" fork="true">
+            <classpath refid="javaee.classpath"/>
+            <classpath path="${run.classpath}"/>
+        </java>
+    </target>
+    
+    <target name="run-21" if="is.jaxb.21">
+        <java classname="${main.class}" fork="true">
+            <classpath refid="javaee.classpath"/>
+            <classpath path="${run.classpath}"/>
+            <jvmarg line="-Djava.endorsed.dirs=${javaee.home}/lib/endorsed"/>
+        </java>
+    </target>
+    
+</project>

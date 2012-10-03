@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+ Copyright 2004 Sun Microsystems, Inc. All rights reserved.
+ SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+              version="1.2">
+
+
+    <!-- ========== Application Wide Features ================================ -->
+
+
+    <application>
+        <el-resolver>com.sun.tutorial.javaee.dukesbank.web.EnumResolver</el-resolver>
+        <message-bundle>
+            com.sun.tutorial.javaee.dukesbank.web.WebMessages
+        </message-bundle>
+        <resource-bundle>
+            <base-name>com.sun.tutorial.javaee.dukesbank.web.WebMessages
+            </base-name>
+            <var>bundle</var>
+        </resource-bundle>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>es</supported-locale>
+        </locale-config>
+    </application>
+
+
+    <!-- ========== Phase Listner =========================================== -->
+
+
+    <!-- ========== Backing Beans ============================================ -->   
+
+    <managed-bean>
+        <managed-bean-name>accountHistoryBean</managed-bean-name>
+        <managed-bean-class>
+            com.sun.tutorial.javaee.dukesbank.web.AccountHistoryBean
+        </managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>        
+        <managed-property>
+            <property-name>customer</property-name>
+            <value>#{sessionScope.customerBean}</value>
+        </managed-property>
+        <managed-property>
+            <property-name>accountId</property-name>
+            <value>#{param.accountId}</value>
+        </managed-property>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>atmBean</managed-bean-name>
+        <managed-bean-class>com.sun.tutorial.javaee.dukesbank.web.ATMBean
+        </managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>operation</property-name>
+            <value>
+                0
+            </value>
+        </managed-property>
+        <managed-property>
+            <property-name>customer</property-name>
+            <value>#{sessionScope.customerBean}</value>
+        </managed-property>
+    </managed-bean>
+
+
+    <managed-bean>
+        <managed-bean-name>customerBean</managed-bean-name>
+        <managed-bean-class>com.sun.tutorial.javaee.dukesbank.web.CustomerBean
+        </managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+
+    <managed-bean>
+        <managed-bean-name>transferFundsBean</managed-bean-name>
+        <managed-bean-class>
+            com.sun.tutorial.javaee.dukesbank.web.TransferFundsBean
+        </managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>               
+        <managed-property>
+            <property-name>customer</property-name>
+            <value>#{sessionScope.customerBean}</value>
+        </managed-property>
+    </managed-bean>
+
+
+    <!-- ========== Managed Beans ============================================ -->
+
+
+    <managed-bean>
+        <managed-bean-name>date</managed-bean-name>
+        <managed-bean-class>com.sun.tutorial.javaee.dukesbank.web.DateHelper
+        </managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>      
+    
+    <managed-bean>
+        <managed-bean-name>navigation</managed-bean-name>
+        <managed-bean-class>com.sun.tutorial.javaee.dukesbank.web.NavigationEnumBean</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+
+
+    <!-- ========== Components ========================================= -->
+
+
+    <component>
+        <component-type>bank.FormBasedLogin</component-type>
+        <component-class>
+            com.sun.tutorial.javaee.dukesbank.web.FormBasedLoginComponent
+        </component-class>
+        <component-extension>
+            <component-family>bank.FormBasedLogin</component-family>
+        </component-extension>
+    </component>
+
+    <!-- ========== Navigation Rules ========================================= -->
+
+    <navigation-rule>
+        
+        <navigation-case>
+            <description>
+                Any action on main should cause navigation to logon.jsp
+            </description>           
+            <from-outcome>main</from-outcome>            
+            <to-view-id>/main.jsp</to-view-id>
+            <redirect/>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "accountHist" should go to the
+                accountHist page.
+            </description>
+            <from-outcome>accountHist</from-outcome>
+            <to-view-id>/accountHist.jsp</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "accountList" should go to the
+                account list page.
+            </description>
+            <from-outcome>accountList</from-outcome>
+            <to-view-id>/accountList.jsp</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "atm" should go to the
+                atm page.
+            </description>
+            <from-outcome>atm</from-outcome>
+            <to-view-id>/atm.jsp</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "atmAck" should go to the
+                atmAck page.
+            </description>
+            <from-outcome>atmAck</from-outcome>
+            <to-view-id>/atmAck.jsp</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "logout" should go to the
+                logoff page and invalidate the session.
+            </description>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/logoff.jsp</to-view-id>           
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "transferFunds" should go to the
+                transferFunds page.
+            </description>
+            <from-outcome>transferFunds</from-outcome>
+            <to-view-id>/transferFunds.jsp</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "transferAck" should go to the
+                transferAck page.
+            </description>
+            <from-outcome>transferAck</from-outcome>
+            <to-view-id>/transferAck.jsp</to-view-id>
+        </navigation-case>
+
+        <navigation-case>
+            <description>
+                Any action that returns "error" should go to the
+                error page.
+            </description>
+            <from-outcome>error</from-outcome>
+            <to-view-id>/error.jsp</to-view-id>
+        </navigation-case>
+
+    </navigation-rule>
+
+
+</faces-config>

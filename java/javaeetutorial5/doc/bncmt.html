@@ -1,0 +1,410 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Web Client - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level3"><a href="bncma.html">Overview of the Duke's Bank Application</a></p>
+<p class="toc level3"><a href="bncmb.html">Enterprise Beans</a></p>
+<p class="toc level4"><a href="bncmb.html#bncmc">Session Beans</a></p>
+<p class="toc level5"><a href="bncmb.html#bncmd">The <tt>AccountControllerBean</tt> Session Bean</a></p>
+<p class="toc level5"><a href="bncmb.html#bncme">The <tt>CustomerControllerBean</tt> Session Bean</a></p>
+<p class="toc level5"><a href="bncmb.html#bncmf">The <tt>TxControllerBean</tt> Session Bean</a></p>
+<p class="toc level4 tocsp"><a href="bncmb.html#bncmg">Java Persistence Entities</a></p>
+<p class="toc level4"><a href="bncmb.html#bncmh">Helper Classes</a></p>
+<p class="toc level4"><a href="bncmb.html#bncmj">Database Tables</a></p>
+<p class="toc level5"><a href="bncmb.html#bncmk">Tables Representing Business Entities</a></p>
+<p class="toc level4 tocsp"><a href="bncmb.html#bncmm">Protecting the Enterprise Beans</a></p>
+<p class="toc level3 tocsp"><a href="bncmn.html">Application Client</a></p>
+<p class="toc level4"><a href="bncmn.html#bncmp">The Classes and Their Relationships</a></p>
+<p class="toc level4"><a href="bncmn.html#bncmq"><tt>BankAdmin</tt> Class</a></p>
+<p class="toc level5"><a href="bncmn.html#bncmr">The <tt>BankAdmin</tt> Constructor</a></p>
+<p class="toc level5"><a href="bncmn.html#bncms">Class Methods</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Web Client</a></p>
+<p class="toc level4"><a href="#bncmw">Design Strategies</a></p>
+<p class="toc level4"><a href="#bncmx">Client Components</a></p>
+<p class="toc level4"><a href="#bncmy">Request Processing</a></p>
+<p class="toc level4"><a href="#bncmz">Protecting the Web Client Resources</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncna.html">Building, Packaging, Deploying, and Running the Duke's Bank Application</a></p>
+<p class="toc level4"><a href="bncna.html#bncnb">Setting Up the Servers</a></p>
+<p class="toc level5"><a href="bncna.html#bncnc">Starting the Application Server</a></p>
+<p class="toc level5"><a href="bncna.html#bncnd">Creating the Bank Database in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncna.html#bncne">Creating the Bank Database Using Ant</a></p>
+<p class="toc level5"><a href="bncna.html#bncnf">Adding Users and Groups to the File Realm</a></p>
+<p class="toc level4 tocsp"><a href="bncna.html#bncnh">Building, Packaging, and Deploying Duke's Bank Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bncna.html#bncni">Building, Packaging, and Deploying Duke's Bank Using Ant</a></p>
+<p class="toc level4"><a href="bncna.html#bncnj">Running the Duke's Bank Application Client Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bncna.html#bncnk">Running the Duke's Bank Application Client Using Ant</a></p>
+<p class="toc level4"><a href="bncna.html#bncnm">Running the Duke's Bank Web Client</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncmn.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncna.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncmt"></a><h3>Web Client</h3>
+<p><a name="indexterm-3175"></a><a name="indexterm-3176"></a><a name="indexterm-3177"></a><a name="indexterm-3178"></a>In the Duke&rsquo;s Bank application, the web client is used by customers to
+access account information and perform operations on accounts. <a href="#bncmu">Table&nbsp;37-2</a> lists the functions the client
+supports, the JSP pages the customer uses to perform the functions, and the
+backing beans ad other JavaBeans components that implement the functions.</p>
+<hr><p><b>Note - </b>The source code for the web client is in the  <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/dukesbank-war/</tt>
+directory.</p>
+<hr>
+<a name="bncmu"></a><h6>Table&nbsp;37-2 Web Client</h6><table><col width="24%"><col width="38%"><col width="36%"><tr><th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>JSP Pages</p></th>
+<th align="left" valign="top" scope="column"><p>JavaBeans Components</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Home page</p></td>
+<td align="left" valign="top" scope="row"><p><tt>main.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CustomerBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Log on to or off of the application</p></td>
+<td align="left" valign="top" scope="row"><p><tt>logon.jsp</tt></p><p><tt>logonError.jsp</tt></p><p><tt>logoff.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CustomerBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>List accounts</p></td>
+<td align="left" valign="top" scope="row"><p><tt>accountList.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CustomerBean</tt>,
+<tt>AccountHistoryBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>List the history of an account</p></td>
+<td align="left" valign="top" scope="row"><p><tt>accountHist.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CustomerBean</tt>, <tt>AccountHistoryBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Transfer funds between accounts</p></td>
+<td align="left" valign="top" scope="row"><p><tt>transferFunds.jsp</tt></p><p><tt>transferAck.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CustomerBean</tt>, <tt>TransferBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Withdraw and
+deposit funds</p></td>
+<td align="left" valign="top" scope="row"><p><tt>atm.jsp</tt></p><p><tt>atmAck.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>CustomerBean</tt>, <tt>ATMBean</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Error handling</p></td>
+<td align="left" valign="top" scope="row"><p><tt>error.jsp</tt></p></td>
+<td align="left" valign="top" scope="row"><p>none</p></td>
+</tr>
+</table><p><a href="#bncmv">Figure&nbsp;37-4</a> shows an account history screen.</p><a name="bncmv"></a><h6>Figure&nbsp;37-4 Account History</h6><img src="figures/bank-accountHist.gif" alt="Screenshot showing a page from the web client that displays the account history." width="666" height="674"></img>
+
+<a name="bncmw"></a><h4>Design Strategies</h4>
+<p>The main job of the JSP pages in the Duke&rsquo;s Bank application
+is presentation. They use JavaServer Faces tags to represent UI components on the page,
+to bind the components to server-side data stored in backing beans, and wire
+the components to event-handling code. To maintain the separation of presentation and application
+behavior, most dynamic processing tasks are delegated to enterprise beans, custom tags, and
+JavaBeans components, including backing beans (see <a href="bnaqm.html">Backing Beans</a>).</p><p><a name="indexterm-3179"></a><a name="indexterm-3180"></a><a name="indexterm-3181"></a>In the Duke&rsquo;s Bank application, the JSP pages rely on backing beans and
+other JavaBeans components for interactions with the enterprise beans. In the Duke&rsquo;s Bookstore
+application, discussed in Chapters <a href="bnadr.html">Chapter&nbsp;3, Getting Started with Web Applications</a> to <a href="bnaxj.html#bnaxt">Including the Classes, Pages, and Other Resources</a>, the <tt>BookDB</tt> JavaBeans component acts as
+a front end to a database.</p><p>In the Duke&rsquo;s Bank application, <tt>CustomerBean</tt> acts as a facade to the enterprise
+beans. Through it, the backing beans can invoke methods on the enterprise beans.
+For example, <tt>TransferFundsBean</tt> can indirectly invoke the <tt>transferFunds</tt> method of the <tt>TxControllerBean</tt> enterprise
+bean by first calling <tt>getTxController</tt> on <tt>CustomerBean</tt> then calling <tt>transferFunds</tt> on the <tt>TxController</tt>
+interface.</p><p>The other backing beans have much richer functionality. <tt>ATMBean</tt> sets acknowledgment strings according
+to customer input, and <tt>AccountHistoryBean</tt> massages the data returned from the enterprise
+beans in order to present the view of the data required by the
+customer.</p><p><a name="indexterm-3182"></a><a name="indexterm-3183"></a><a name="indexterm-3184"></a>The web client uses a template mechanism implemented by custom tags (discussed in
+<a href="bnann.html#bnaoh">A Template Tag Library</a>) to maintain a common look across all the JSP pages. The template
+mechanism consists of three components:</p>
+<ul><li><p><tt>template.jsp</tt> determines the structure of each screen. It uses the <tt>insert</tt> tag to compose a screen from subcomponents.</p></li>
+<li><p><tt>screendefinitions.jspf</tt> defines the subcomponents used by each screen. All screens have the same banner, but different title and body content (specified in the JSP Pages column in <a href="#bncmu">Table&nbsp;37-2</a>).</p></li></ul>
+<p><a name="indexterm-3185"></a><a name="indexterm-3186"></a><a name="indexterm-3187"></a>Finally, the web client uses logic tags from the JSTL <tt>core</tt> tag library to
+perform flow control and tags from the JSTL <tt>fmt</tt> tag library to localize
+messages and format currency.</p>
+
+<a name="bncmx"></a><h4>Client Components</h4>
+<p>All the JavaBeans components used in the web client are instantiated by the
+managed bean facility (see <a href="bnaqm.html#bnaqo">Configuring a Bean</a>) when they are encountered in the page, such
+as when an EL expression references the component. The managed bean facility is
+configured in the <tt>faces-config.xml</tt> file. The following <tt>managed-bean</tt> elements from the <tt>faces-config.xml</tt> file
+specify how <tt>AccountHistoryBean</tt> and <tt>CustomerBean</tt> are to be instantiated and stored in scope:</p><pre>&lt;managed-bean>
+    &lt;managed-bean-name>accountHistoryBean&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        com.sun.tutorial.javaee.dukesbank.web.AccountHistoryBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope>request&lt;/managed-bean-scope>
+    ...
+    &lt;managed-property>
+        &lt;property-name>accountId&lt;/property-name>
+        &lt;value>#{param.accountId}&lt;/value>
+    &lt;/managed-property>
+    &lt;managed-property>
+    ...
+&lt;/managed-bean>
+&lt;managed-bean>
+    &lt;managed-bean-name>customerBean&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        com.sun.tutorial.javaee.dukesbank.web.CustomerBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope>session&lt;/managed-bean-scope>
+&lt;/managed-bean></pre><p>As shown by the preceding configurations, an <tt>AccountHistoryBean</tt> instance is saved into request
+scope under the name <tt>accountHistoryBean</tt>, and a <tt>CustomerBean</tt> instance is saved into session
+scope under the name <tt>customerBean</tt>. EL expressions use these names to reference the beans
+from a page. The managed bean configurations can also initialize bean properties with
+values. As shown in the preceding configuration, the <tt>accountId</tt> property of <tt>AccountHistoryBean</tt> is set
+to the expression <tt>#{param.accountId}</tt> when an instance of <tt>AccountHistoryBean</tt> is created. This expression
+references the <tt>accountId</tt> variable in the request parameter map. This is so that other
+pages in the application can pass the account ID to <tt>AccountHistoryBean</tt> and
+therefore make it available to the <tt>accountHist.jsp</tt> page.</p><p>Responsibility for managing the enterprise beans used by the web client rests with
+<tt>CustomerBean</tt>. It creates account and transaction controller enterprise beans and provides methods for
+retrieving the beans.</p><p>When instantiated, the <tt>CustomerBean</tt> component uses <tt>@EJB</tt> annotations to inject references to the
+enterprise beans. Because these enterprise beans apply to a particular customer or session,
+<tt>CustomerBean</tt> is stored in session.</p><pre>public class CustomerBean {
+        
+        @EJB
+        private AccountController accountController;
+
+        @EJB
+        private TxController txController;
+        ...
+}</pre><p><tt>CustomerBean</tt> also does the following:</p>
+<ul><li><p>Maintains the customer ID</p></li>
+<li><p>Retrieves the list of accounts from the database</p></li>
+<li><p>Gets detailed information about a particular account</p></li>
+<li><p>Invalidates a session to allow a customer to log out.</p></li></ul>
+<p>Because <tt>CustomerBean</tt> is in session, it is a convenient place to keep account
+information so that the backing beans and their associated pages can pass this
+information between themselves.</p><p>The page fragment <tt>template/links.jsp</tt> generates the list of bank function links at the
+top of every page. Notice that the customer is retrieved from the <tt>userPrincipal</tt>
+object, which is set when the customer logs in (see <a href="#bncmz">Protecting the Web Client Resources</a>). After the
+customer is set, the page can retrieve the collection of accounts from <tt>CustomerBean</tt>.</p><p>As shown by the following code from <tt>links.jsp</tt>, the ID of the first
+account in the collection of accounts is set into request scope. The <tt>setPropertyActionListener</tt>
+tag is nested inside the <tt>commandLink</tt> tag, which represents the hyperlink that launches the
+<tt>atm.jsp</tt> page. This <tt>setPropertyActionListener</tt> tag causes the account ID to be set
+in request scope when the hyperlink is clicked.</p><pre>...
+    &lt;c:set var="accountId" scope="request"
+             value="${customerBean.accounts[0].accountId}"/>
+    &lt;h:commandLink value="#{bundle.ATM}" action="atm">
+        &lt;f:setPropertyActionListener
+                 target="#{requestScope.accountId}"
+                 value="#{customerBean.accounts[0].accountId}"/>
+    &lt;/h:commandLink>
+...</pre>
+
+<a name="bncmy"></a><h4>Request Processing</h4>
+<p><a name="indexterm-3188"></a><a name="indexterm-3189"></a>When a user clicks on a button or a hyperlink, the application navigates
+to a new page or reloads the current page. Navigation to all
+pages listed in <a href="#bncmu">Table&nbsp;37-2</a> is configured in the <tt>web/WEB-INF/faces-config.xml</tt> file using a set of navigation
+rules.</p><p>As described in <a href="bnaxf.html">Configuring Navigation Rules</a>, the JavaServer Faces navigation mechanism matches a logical outcome
+<tt>String</tt> or an action method to one of the navigation rules to
+determine which page to open next. The button or hyperlink that the user
+clicks specifies the logical outcome <tt>String</tt> or action method with its <tt>action</tt> attribute.</p><p>Although it&rsquo;s not necessary to do so, the web client of Duke&rsquo;s Bank
+uses an Java SE <tt>Enum</tt> class to encapsulate all the possible logical outcomes
+for the application:</p><pre>public enum Navigation  {
+    main,
+     accountHist,
+     accountList,
+     atm,
+     atmAck,
+     transferFunds,
+     transferAck,
+     error,
+     logout;
+
+    public Object action() {
+        return this;
+    }
+}</pre><p>If you are not familiar with enums, see <a href="http://java.sun.com/javase/6/docs/technotes/guides/language/enums.html">http://java.sun.com/javase/6/docs/technotes/guides/language/enums.html</a>.</p><p>A managed bean is needed to expose the enum to the expression
+language so that a page can access its logical outcomes. In this case,
+the <tt>Navigation</tt> enum class is accessed through the <tt>NavigationEnumBean</tt>:</p><pre>public class NavigationEnumBean extends EnumManagedBean {
+    public NavigationEnumBean() {
+        super(Util.Navigation.class);
+    }
+}</pre><p><tt>NavigationEnumBean</tt> extends a special bean class that includes a method to return an
+enum constant, which represents a logical outcome:</p><pre>public Enum getEnum(String enumName) {
+    return Enum.valueOf(e, enumName);
+}</pre><p>The application also includes a custom EL resolver, <tt>EnumResolver</tt>, which resolves expressions
+that reference an instance of this bean class. You create a resolver if
+you want expressions to particular kinds of objects resolved in a special way
+that is not already supported by the EL mechanism. See <a href="bnahq.html#bnaif">Resolving Expressions</a> for more information
+on EL resolvers.</p><p>The resolver calls the bean&rsquo;s <tt>getEnum</tt> method from its <tt>getValue</tt> method to return
+the enum constant:</p><pre>public Object getValue(ELContext elContext, Object base, Object property) {
+    if ((base != null &amp;&amp; property != null)
+        &amp;&amp; base instanceof EnumManagedBean) {
+            elContext.setPropertyResolved(true);
+            return
+                 ((EnumManagedBean)base)
+                    .getEnum(property.toString());
+    }
+    return null;
+}</pre><p>A tag&rsquo;s <tt>action</tt> attribute references a particular constant of the enum to specify
+a logical outcome. The following <tt>commandLink</tt> tag appears on the <tt>links.jsp</tt> page:</p><pre>&lt;h:commandLink value="#{bundle.Logoff}"
+    action="#{navigation.logout.action}"/></pre><p>The <tt>action</tt> attribute has the expression <tt>#{navigation.logout.action}</tt> to invoke the <tt>action</tt> method
+of the <tt>Navigation</tt> enum. This returns the enum constant, representing the logical outcome,
+<tt>logout</tt>.</p><p>The following piece of a navigation rule configuration in the <tt>faces-config.xml</tt> file
+corresponds to the <tt>action</tt> attribute expression of the preceding <tt>commandLink</tt> tag. It causes
+the <tt>logoff.jsp</tt> page to open if the <tt>logout</tt> logical outcome is returned.</p><pre>&lt;navigation-rule>
+    ...
+    &lt;navigation-case>
+        &lt;description>
+            Any action that returns "logout" should go to the
+            logoff page and invalidate the session.
+        &lt;/description>
+        &lt;from-action>logout&lt;/from-action>
+        &lt;to-view-id>/logoff.jsp&lt;/to-view-id>
+&lt;/navigation-rule></pre><p>When a page in the application is rendered, it is constructed with
+the aid of a template mechanism. Every page includes the <tt>template.jsp</tt> page, which in
+turn includes certain subcomponents, such as <tt>banner.jsp</tt>, into the page depending on which
+page is being rendered. The <tt>screendefinitions.jspf</tt> page, included in <tt>template.jsp</tt>, determines which page
+to render based on the current view ID, which identifies the UI component
+tree that represents the page to be rendered. The <tt>screendefinitions.jspf</tt> page accesses
+the view ID with this expression from its definition tag:</p><pre>&lt;tt:definition name="bank"
+         screen="${facesContext.viewRoot.viewId}"></pre><p>Based on the view ID, the templating mechanism will include specific components into
+the page.</p>
+
+<a name="bncmz"></a><h4>Protecting the Web Client Resources</h4>
+<p>In the JavaEE platform, you protect a web resource from anonymous access by
+specifying which security roles can access the resource. The web container guarantees that
+only certain users acting in those roles can access the resource. For the
+web container to enforce the security constraint, the application must specify a means
+for users to identify themselves, and the web container must support mapping a
+role to a user.</p><p><a name="indexterm-3190"></a><a name="indexterm-3191"></a><a name="indexterm-3192"></a><a name="indexterm-3193"></a>In the Duke&rsquo;s Bank web client, you restrict all the URLs listed in
+<a href="#bncmu">Table&nbsp;37-2</a> to the security role <tt>bankCustomer</tt>. The application requires users to identify themselves
+by means of the form-based login mechanism. When a customer tries to access
+a web client URL and has not been authenticated, the web container displays
+the JSP page <tt>logon.jsp</tt>. This page contains an HTML form that requires a
+customer to enter an identifier and password. This form is rendered by a
+JavaServer Faces custom component. A custom tag represents the component on the page.
+In the following piece of <tt>logon.jsp</tt>, the <tt>&lt;db:formBasedLogin></tt> tag represents the custom component:</p><pre>&lt;f:view>
+...
+&lt;h:outputText value="#{bundle.Logon}"/>
+ &lt;h:outputText value="#{bundle.Submit}"/>.&lt;/h3>
+&lt;br>&lt;br>
+&lt;db:formBasedLogin  />
+&lt;/f:view></pre><p>Note that there is no <tt>h:form</tt> tag. This is because the custom component
+renders the form tag along with the complete HTML form that customers use
+to log in:</p><pre>&lt;form action="j_security_check" method=post>
+&lt;table>
+&lt;tr>
+    &lt;td align="center" >
+    &lt;table border="0">
+    &lt;tr>
+    &lt;td>&lt;b>&lt;fmt:message key="CustomerId"/>&lt;/b>&lt;/td>
+    &lt;td>
+        &lt;input type="text" size="15" name="j_username">
+     &lt;/td>
+    &lt;/tr>
+    &lt;tr>
+    &lt;td>&lt;b>&lt;fmt:message key="Password"/>&lt;/b>&lt;/td>
+    &lt;td>
+         &lt;input type="password" size="15" name="j_password">
+    &lt;/td>
+    ...
+&lt;/form></pre><p>Note that the action invoked by the form, <tt>j_security_check</tt>, is specified by the
+Java Servlet specification, as are the request parameters <tt>j_username</tt> and <tt>j_password</tt>. The
+web container retrieves this information, maps it to a security role, and verifies
+that the role matches that specified in the security constraint. In order for
+the web container to check the validity of the authentication information and perform the
+mapping, you must perform these two steps when you deploy the application:</p>
+<ol><li><p>Add the customer&rsquo;s group, ID, and password to the default realm of the container using the Admin Console.</p></li>
+<li><p>Map the <tt>bankCustomer</tt> role to the customer <b>or</b> the customer&rsquo;s group in the deployment descriptor.</p></li></ol>
+<p>After the customer has been authenticated, the identifier provided by the customer is
+used as a key to identify the customer&rsquo;s accounts. The identifier is retrieved
+from the <tt>FacesContext</tt> object by the <tt>CustomerBean</tt> constructor, which saves it into the <tt>customerId</tt>
+property:</p><pre>customerId = Long.parseLong(FacesContext.getCurrentInstance()
+    .getExternalContext().getUserPrincipal().getName());</pre>
+         </div>
+         <div class="navigation">
+             <a href="bncmn.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncna.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,410 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>An Application Example That Deploys a Message-Driven Bean on Two Servers - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level3"><a href="bncgw.html">A Java EE Application That Uses the JMS API with a Session Bean</a></p>
+<p class="toc level4"><a href="bncgw.html#bncgx">Writing the Application Components for the <tt>clientsessionmdb</tt> Example</a></p>
+<p class="toc level5"><a href="bncgw.html#bncgz">Coding the Application Client: <tt>MyAppClient.java</tt></a></p>
+<p class="toc level5"><a href="bncgw.html#bncha">Coding the Publisher Session Bean</a></p>
+<p class="toc level5"><a href="bncgw.html#bnchb">Coding the Message-Driven Bean: <tt>MessageBean.java</tt></a></p>
+<p class="toc level4 tocsp"><a href="bncgw.html#bnchc">Creating Resources for the <tt>clientsessionmdb</tt> Example</a></p>
+<p class="toc level4"><a href="bncgw.html#bnchd">Building, Deploying, and Running the <tt>clientsessionmdb</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bncgw.html#bnche">Building, Deploying, and Running the <tt>clientsessionmdb</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnchf.html">A Java EE Application That Uses the JMS API with an Entity</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchg">Overview of the <tt>clientmdbentity</tt> Example Application</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchi">Writing the Application Components for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level5"><a href="bnchf.html#bnchj">Coding the Application Client: <tt>HumanResourceClient.java</tt></a></p>
+<p class="toc level5"><a href="bnchf.html#bnchk">Coding the Message-Driven Beans for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level5"><a href="bnchf.html#bnchl">Coding the Entity Class for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level4 tocsp"><a href="bnchf.html#bnchm">Creating Resources for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchn">Building, Deploying, and Running the <tt>clientmdbentity</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchf.html#bncho">Building, Deploying, and Running the <tt>clientmdbentity</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnchp.html">An Application Example That Consumes Messages from a Remote Server</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchq">Overview of the <tt>consumeremote</tt> Example Modules</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchs">Writing the Module Components for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchp.html#bncht">Creating Resources for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchu">Using Two Application Servers for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchv">Building, Deploying, and Running the <tt>consumeremote</tt>Modules Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchp.html#bnchw">Building, Deploying, and Running the <tt>consumeremote</tt> Modules Using Ant</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">An Application Example That Deploys a Message-Driven Bean on Two Servers</a></p>
+<p class="toc level4"><a href="#bnchy">Overview of the <tt>sendremote</tt> Example Modules</a></p>
+<p class="toc level4"><a href="#bnchz">Writing the Module Components for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level5"><a href="#bncib">Coding the Application Client: <tt>MultiAppServerClient.java</tt></a></p>
+<p class="toc level5"><a href="#bncic">Coding the Message-Driven Bean: <tt>ReplyMsgBean.java</tt></a></p>
+<p class="toc level4 tocsp"><a href="#bncid">Creating Resources for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level4"><a href="#bncie">Using Two Application Servers for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level4"><a href="#bncif">Building, Deploying, and Running the <tt>sendremote</tt> Modules Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="#bncig">Building, Deploying, and Running the <tt>sendremote</tt> Modules Using Ant</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnchp.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncih.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnchx"></a><h3>An Application Example That Deploys a Message-Driven Bean on Two Servers</h3>
+<a name="indexterm-2993"></a><a name="indexterm-2994"></a><a name="indexterm-2995"></a><a name="indexterm-2996"></a><a name="indexterm-2997"></a><a name="indexterm-2998"></a><p>This section, like the preceding one, explains how to write, compile, package, deploy,
+and run a pair of Java EE modules that use the JMS
+API and run on two Java EE servers. The modules are slightly more
+complex than the ones in the first example.</p><p>The modules use the following components:</p>
+<ul><li><p>An application client that is deployed on the local server. It uses two connection factories, one ordinary one and one that is configured to communicate with the remote server, to create two publishers and two subscribers and to publish and to consume messages.</p></li>
+<li><p>A message-driven bean that is deployed twice: once on the local server, and once on the remote one. It processes the messages and sends replies.</p></li></ul>
+<p>In this section, the term <b>local server</b> means the server on which both the
+application client and the message-driven bean are deployed (<tt>earth</tt> in the preceding example).
+The term <b>remote server</b> means the server on which only the message-driven bean is
+deployed (<tt>jupiter</tt> in the preceding example).</p><p>The section covers the following topics:</p>
+<ul><li><p><a href="#bnchy">Overview of the <tt>sendremote</tt> Example Modules</a></p></li>
+<li><p><a href="#bnchz">Writing the Module Components for the <tt>sendremote</tt> Example</a></p></li>
+<li><p><a href="#bncid">Creating Resources for the <tt>sendremote</tt> Example</a></p></li>
+<li><p><a href="#bncie">Using Two Application Servers for the <tt>sendremote</tt> Example</a></p></li>
+<li><p><a href="#bncif">Building, Deploying, and Running the <tt>sendremote</tt> Modules Using NetBeans IDE</a></p></li>
+<li><p><a href="#bncig">Building, Deploying, and Running the <tt>sendremote</tt> Modules Using Ant</a></p></li></ul>
+<p>You will find the source files for this section in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/sendremote/</tt>. Path
+names in this section are relative to this directory.</p>
+
+<a name="bnchy"></a><h4>Overview of the <tt>sendremote</tt> Example Modules</h4>
+<p>This pair of modules is somewhat similar to the modules in <a href="bnchp.html">An Application Example That Consumes Messages from a Remote Server</a>
+in that the only components are a client and a message-driven bean. However,
+the modules here use these components in more complex ways. One module consists
+of the application client. The other module contains only the message-driven bean and
+is deployed twice, once on each server.</p><p>The basic steps of the modules are as follows.</p>
+<ol><li><p>You start two Java EE servers, one on each system.</p></li>
+<li><p>On the local server (<tt>earth</tt>), you create two connection factories: one local and one that communicates with the remote server (<tt>jupiter</tt>). On the remote server, you create a connection factory that has the same name.</p></li>
+<li><p>The application client looks up the two connection factories (the local one and the one that communicates with the remote server) to create two connections, sessions, publishers, and subscribers. The subscribers use a message listener.</p></li>
+<li><p>Each publisher publishes five messages.</p></li>
+<li><p>Each of the local and the remote message-driven beans receives five messages and sends replies.</p></li>
+<li><p>The client&rsquo;s message listener consumes the replies.</p></li></ol>
+<p><a href="#bncia">Figure&nbsp;32-4</a> illustrates the structure of this application. M1 represents the first message sent
+using the local connection factory, and RM1 represents the first reply message sent by
+the local MDB. M2 represents the first message sent using the remote
+connection factory, and RM2 represents the first reply message sent by the remote
+MDB.</p><a name="bncia"></a><h6>Figure&nbsp;32-4 A Java EE Application That Sends Messages to Two Servers</h6><img src="figures/jmsj2ee-sendRemote.gif" alt="Diagram of application showing an application client sending messages to two servers and receiving the replies"></img>
+
+<a name="bnchz"></a><h4>Writing the Module Components for the <tt>sendremote</tt> Example</h4>
+<p>Writing the components of the modules involves two tasks:</p>
+<ul><li><p><a href="#bncib">Coding the Application Client: <tt>MultiAppServerClient.java</tt></a></p></li>
+<li><p><a href="#bncic">Coding the Message-Driven Bean: <tt>ReplyMsgBean.java</tt></a></p></li></ul>
+
+
+<a name="bncib"></a><h5>Coding the Application Client: <tt>MultiAppServerClient.java</tt></h5>
+<a name="indexterm-2999"></a><a name="indexterm-3000"></a><a name="indexterm-3001"></a><a name="indexterm-3002"></a><p>The application client class, <tt>multiclient/src/java/MultiAppServerClient.java</tt>, does the following.</p>
+<ol><li><p>It injects resources for two connection factories and a topic.</p></li>
+<li><p>For each connection factory, it creates a connection, a publisher session, a publisher, a subscriber session, a subscriber, and a temporary topic for replies.</p></li>
+<li><p>Each subscriber sets its message listener, <tt>ReplyListener</tt>, and starts the connection.</p></li>
+<li><p>Each publisher publishes five messages and creates a list of the messages the listener should expect.</p></li>
+<li><p>When each reply arrives, the message listener displays its contents and removes it from the list of expected messages.</p></li>
+<li><p>When all the messages have arrived, the client exits.</p></li></ol>
+
+
+<a name="bncic"></a><h5>Coding the Message-Driven Bean: <tt>ReplyMsgBean.java</tt></h5>
+<a name="indexterm-3003"></a><p>The message-driven bean class, <tt>replybean/src/ReplyMsgBean.java</tt>, does the following:</p>
+<ol><li><p>Uses the <tt>@MessageDriven</tt> annotation:</p><pre>@MessageDriven(mappedName="jms/Topic")</pre></li>
+<li><p>Injects resources for the <tt>MessageDrivenContext</tt> and for a connection factory. It does not need a destination resource because it uses the value of the incoming message&rsquo;s <tt>JMSReplyTo</tt> header as the destination.</p></li>
+<li><p>Uses a <tt>@PostConstruct</tt> callback method to create the connection, and a <tt>@PreDestroy</tt> callback method to close the connection.</p></li></ol>
+<p>The <tt>onMessage</tt> method of the message-driven bean class does the following:</p>
+<ol><li><p>Casts the incoming message to a <tt>TextMessage</tt> and displays the text</p></li>
+<li><p>Creates a connection, a session, and a publisher for the reply message</p></li>
+<li><p>Publishes the message to the reply topic</p></li>
+<li><p>Closes the connection</p></li></ol>
+<p>On both servers, the bean will consume messages from the topic <tt>jms/Topic</tt>.</p>
+
+<a name="bncid"></a><h4>Creating Resources for the <tt>sendremote</tt> Example</h4>
+<p>This example uses the connection factory named <tt>jms/ConnectionFactory</tt> and the topic named
+<tt>jms/Topic</tt>. These objects must exist on both the local and the remote servers.</p><p>This example uses an additional connection factory, <tt>jms/JupiterConnectionFactory</tt>, which communicates with the
+remote system; you created it in <a href="bncfa.html#bncfq">Creating Administered Objects for Multiple Systems</a>. This connection factory must exist on
+the local server.</p><p>The <tt>build.xml</tt> file for the <tt>multiclient</tt> module contains targets that you can use
+to create these resources if you deleted them previously.</p>
+
+<a name="bncie"></a><h4>Using Two Application Servers for the <tt>sendremote</tt> Example</h4>
+<p>If you are using NetBeans IDE, you need to add the remote
+server in order to deploy the message-driven bean there. To do so, perform
+these steps:</p>
+<ol><li><p>In NetBeans IDE, click the Services tab.</p></li>
+<li><p>Right-click the Servers node and choose Add Server. In the Add Server Instance dialog, perform these steps:</p>
+<ol><li><p>Select Sun Java System Application Server (the default) from the Server list.</p></li>
+<li><p>In the Name field, specify a name slightly different from that of the local server, such as <tt>Sun Java System Application Server (1)</tt>.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>For the Platform Folder location, you can either browse to the location of the Application Server on the remote system or, if that location is not visible from the local system, use the default location on the local system.</p></li>
+<li><p>Select the Register Remote Domain radio button.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Type the system name of the host in the Host field.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Type the administrative username and password for the remote system in the Admin Username and Admin Password fields.</p></li>
+<li><p>Click Finish.</p><p>There may be a delay while NetBeans IDE registers the remote domain.</p></li></ol>
+</li></ol>
+
+
+<a name="bncif"></a><h4>Building, Deploying, and Running the <tt>sendremote</tt> Modules Using NetBeans IDE</h4>
+<p>To package the modules using NetBeans IDE, perform these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/sendremote/</tt>.</p></li>
+<li><p>Select the <tt>replybean</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>replybean</tt> project and choose Build.</p><p>This command creates a JAR file that contains the bean class file.</p></li>
+<li><p>Choose Open Project from the File menu.</p></li>
+<li><p>Select the <tt>multiclient</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>multiclient</tt> project and choose Build.</p><p>This command creates a JAR file that contains the client class file and a manifest file.</p></li></ol>
+<p>To deploy the <tt>multiclient</tt> module on the local server, perform these steps:</p>
+<ol><li><p>Right-click the <tt>multiclient</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>From the Server list, select Sun Java System Application Server (the local server).</p></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the <tt>multiclient</tt> project and choose Undeploy and Deploy.</p></li></ol>
+<p>To deploy the <tt>replybean</tt> module on the local and remote servers, perform these
+steps:</p>
+<ol><li><p>Right-click the <tt>replybean</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>From the Server list, select Sun Java System Application Server(the local server).</p></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the <tt>replybean</tt> project and choose Undeploy and Deploy.</p></li>
+<li><p>Right-click the <tt>replybean</tt> project again and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>From the Server list, select Sun Java System Application Server (1) (the remote server).</p></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the <tt>replybean</tt> project and choose Undeploy and Deploy.</p></li></ol>
+<p>You can use the Services tab to verify that <tt>multiclient</tt> is deployed as
+an App Client Module on the local server and that <tt>replybean</tt> is deployed
+as an EJB Module on both servers.</p><p>To run the application client, right-click the <tt>multiclient</tt> project and choose Run.</p><p>This command returns a JAR file named <tt>multiclientClient.jar</tt> and then executes it.</p><p>On the local system, the output of the <tt>appclient</tt> command looks something like
+this:</p><pre>running application client container.
+Sent message: text: id=1 to local app server
+Sent message: text: id=2 to remote app server
+ReplyListener: Received message: id=1, text=ReplyMsgBean processed message: text: id=1 to local
+ app server
+Sent message: text: id=3 to local app server
+ReplyListener: Received message: id=3, text=ReplyMsgBean processed message: text: id=3 to local
+ app server
+ReplyListener: Received message: id=2, text=ReplyMsgBean processed message: text: id=2 to remote
+ app server
+Sent message: text: id=4 to remote app server
+ReplyListener: Received message: id=4, text=ReplyMsgBean processed message: text: id=4 to remote
+ app server
+Sent message: text: id=5 to local app server
+ReplyListener: Received message: id=5, text=ReplyMsgBean processed message: text: id=5 to local
+ app server
+Sent message: text: id=6 to remote app server
+ReplyListener: Received message: id=6, text=ReplyMsgBean processed message: text: id=6 to remote
+ app server
+Sent message: text: id=7 to local app server
+ReplyListener: Received message: id=7, text=ReplyMsgBean processed message: text: id=7 to local
+ app server
+Sent message: text: id=8 to remote app server
+ReplyListener: Received message: id=8, text=ReplyMsgBean processed message: text: id=8 to remote
+ app server
+Sent message: text: id=9 to local app server
+ReplyListener: Received message: id=9, text=ReplyMsgBean processed message: text: id=9 to local
+ app server
+Sent message: text: id=10 to remote app server
+ReplyListener: Received message: id=10, text=ReplyMsgBean processed message: text: id=10 to remote
+ app server
+Waiting for 0 message(s) from local app server
+Waiting for 0 message(s) from remote app server
+Finished
+Closing connection 1
+Closing connection 2</pre><p>On the local system, where the message-driven bean receives the odd-numbered messages, the
+output in the server log looks like this (wrapped in logging information):</p><pre>ReplyMsgBean: Received message: text: id=1 to local app server
+ReplyMsgBean: Received message: text: id=3 to local app server
+ReplyMsgBean: Received message: text: id=5 to local app server
+ReplyMsgBean: Received message: text: id=7 to local app server
+ReplyMsgBean: Received message: text: id=9 to local app server</pre><p>On the remote system, where the bean receives the even-numbered messages, the output
+in the server log looks like this (wrapped in logging information):</p><pre>ReplyMsgBean: Received message: text: id=2 to remote app server
+ReplyMsgBean: Received message: text: id=4 to remote app server
+ReplyMsgBean: Received message: text: id=6 to remote app server
+ReplyMsgBean: Received message: text: id=8 to remote app server
+ReplyMsgBean: Received message: text: id=10 to remote app server</pre><p>Undeploy the modules after you finish running the client. To undeploy the modules,
+perform these steps:</p>
+<ol><li><p>Click the Services tab.</p></li>
+<li><p>Expand the Servers node.</p></li>
+<li><p>Expand the Sun Java System Application Server node (the local system).</p></li>
+<li><p>Expand the Applications node.</p></li>
+<li><p>Expand the EJB Modules node.</p></li>
+<li><p>Right-click <tt>replybean</tt> and choose Undeploy.</p></li>
+<li><p>Expand the App Client Modules node.</p></li>
+<li><p>Right-click <tt>multiclient</tt> and choose Undeploy.</p></li>
+<li><p>Expand the Sun Java System Application Server (1) node (the remote system).</p></li>
+<li><p>Expand the Applications node.</p></li>
+<li><p>Expand the EJB Modules node.</p></li>
+<li><p>Right-click <tt>replybean</tt> and choose Undeploy.</p></li></ol>
+<p>To remove the generated files, follow these steps:</p>
+<ol><li><p>Right-click the <tt>replybean</tt> project and choose Clean.</p></li>
+<li><p>Right-click the <tt>multiclient</tt> project and choose Clean.</p></li></ol>
+
+
+<a name="bncig"></a><h4>Building, Deploying, and Running the <tt>sendremote</tt> Modules Using Ant</h4>
+<p>To package the modules, perform these steps:</p>
+<ol><li><p>Go to the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/sendremote/multiclient/</tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant</b></tt></pre><p>This command creates a JAR file that contains the client class file and a manifest file.</p></li>
+<li><p>Change to the directory <tt>replybean</tt>:</p><pre><tt><b>cd ../replybean</b></tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant</b></tt></pre><p>This command creates a JAR file that contains the bean class file.</p></li></ol>
+<p>To deploy the <tt>replybean</tt> module on the local and remote servers, perform the
+following steps:</p>
+<ol><li><p>Verify that you are still in the directory <tt>replybean</tt>.</p></li>
+<li><p>Type the following command:</p><pre><tt><b>ant deploy</b></tt></pre><p>Ignore the message that states that the application is deployed at a URL.</p></li>
+<li><p>Type the following command:</p><pre><tt><b>ant deploy-remote -Dsys=</tt><i>remote-system-name</i><tt></b></tt></pre><p>Replace <i>remote-system-name</i> with the actual name of the remote system.</p></li></ol>
+<p>To deploy and run the client, perform these steps:</p>
+<ol><li><p>Change to the directory <tt>multiclient</tt>:</p><pre><tt><b>cd ../multiclient</b></tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant run</b></tt></pre></li></ol>
+<p>On the local system, the output looks something like this:</p><pre>running application client container.
+Sent message: text: id=1 to local app server
+Sent message: text: id=2 to remote app server
+ReplyListener: Received message: id=1, text=ReplyMsgBean processed message: text: id=1 to local
+ app server
+Sent message: text: id=3 to local app server
+ReplyListener: Received message: id=3, text=ReplyMsgBean processed message: text: id=3 to local
+ app server
+ReplyListener: Received message: id=2, text=ReplyMsgBean processed message: text: id=2 to remote
+ app server
+Sent message: text: id=4 to remote app server
+ReplyListener: Received message: id=4, text=ReplyMsgBean processed message: text: id=4 to remote
+ app server
+Sent message: text: id=5 to local app server
+ReplyListener: Received message: id=5, text=ReplyMsgBean processed message: text: id=5 to local
+ app server
+Sent message: text: id=6 to remote app server
+ReplyListener: Received message: id=6, text=ReplyMsgBean processed message: text: id=6 to remote
+ app server
+Sent message: text: id=7 to local app server
+ReplyListener: Received message: id=7, text=ReplyMsgBean processed message: text: id=7 to local
+ app server
+Sent message: text: id=8 to remote app server
+ReplyListener: Received message: id=8, text=ReplyMsgBean processed message: text: id=8 to remote
+ app server
+Sent message: text: id=9 to local app server
+ReplyListener: Received message: id=9, text=ReplyMsgBean processed message: text: id=9 to local
+ app server
+Sent message: text: id=10 to remote app server
+ReplyListener: Received message: id=10, text=ReplyMsgBean processed message: text: id=10 to remote
+ app server
+Waiting for 0 message(s) from local app server
+Waiting for 0 message(s) from remote app server
+Finished
+Closing connection 1
+Closing connection 2</pre><p>On the local system, where the message-driven bean receives the odd-numbered messages, the
+output in the server log looks like this (wrapped in logging information):</p><pre>ReplyMsgBean: Received message: text: id=1 to local app server
+ReplyMsgBean: Received message: text: id=3 to local app server
+ReplyMsgBean: Received message: text: id=5 to local app server
+ReplyMsgBean: Received message: text: id=7 to local app server
+ReplyMsgBean: Received message: text: id=9 to local app server</pre><p>On the remote system, where the bean receives the even-numbered messages, the output
+in the server log looks like this (wrapped in logging information):</p><pre>ReplyMsgBean: Received message: text: id=2 to remote app server
+ReplyMsgBean: Received message: text: id=4 to remote app server
+ReplyMsgBean: Received message: text: id=6 to remote app server
+ReplyMsgBean: Received message: text: id=8 to remote app server
+ReplyMsgBean: Received message: text: id=10 to remote app server</pre><p>Undeploy the modules after you finish running the client. To undeploy the <tt>multiclient</tt>
+module, perform these steps:</p>
+<ol><li><p>Verify that you are still in the directory <tt>multiclient</tt>.</p></li>
+<li><p>Type the following command:</p><pre><tt><b>ant undeploy</b></tt></pre></li></ol>
+<p>To undeploy the <tt>replybean</tt> module, perform these steps:</p>
+<ol><li><p>Change to the directory <tt>replybean</tt>:</p><pre><tt><b>cd ../replybean</b></tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant undeploy</b></tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant undeploy-remote -Dsys=</tt><i>remote-system-name</i><tt></b></tt></pre><p>Replace <i>remote-system-name</i> with the actual name of the remote system.</p></li></ol>
+<p>To remove the generated files, use the following command in both the
+<tt>replybean</tt> and <tt>multiclient</tt> directories:</p><pre><tt><b>ant clean</b></tt></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnchp.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncih.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.username">message</property>
+        <property name="hibernate.connection.password">message</property>
+        <!-- 
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.0.129:1521:surecomp</property>
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        -->
+        <property name="hibernate.connection.url">
+        	jdbc:mysql://localhost:3306/message?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;autoReconnectForPools=true
+        </property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.driver_class">
+        	com.mysql.jdbc.Driver
+        </property>
+		<property name="hibernate.cache.provider_class">
+			org.hibernate.cache.EhCacheProvider
+		</property>
+        <property name="show_sql">true</property>
+        
+        <!-- Mapping File list -->
+        <mapping resource="cn/hxex/basic/model/User.hbm.xml" />
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Creating the <tt>converter</tt> Web Client - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level3"><a href="bnbnc.html">Creating the Enterprise Bean</a></p>
+<p class="toc level4"><a href="bnbnc.html#bnbnd">Coding the Enterprise Bean</a></p>
+<p class="toc level5"><a href="bnbnc.html#bnbne">Coding the Business Interface</a></p>
+<p class="toc level5"><a href="bnbnc.html#bnbnf">Coding the Enterprise Bean Class</a></p>
+<p class="toc level4 tocsp"><a href="bnbnc.html#bnbng">Compiling and Packaging the <tt>converter</tt> Example</a></p>
+<p class="toc level5"><a href="bnbnc.html#bnbnh">Compiling and Packaging the <tt>converter</tt> Example in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbnc.html#bnbni">Compiling and Packaging the <tt>converter</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbnj.html">Creating the <tt>converter</tt> Application Client</a></p>
+<p class="toc level4"><a href="bnbnj.html#bnbnk">Coding the <tt>converter</tt> Application Client</a></p>
+<p class="toc level5"><a href="bnbnj.html#bnbnl">Creating a Reference to an Enterprise Bean Instance</a></p>
+<p class="toc level5"><a href="bnbnj.html#bnbnm">Invoking a Business Method</a></p>
+<p class="toc level5"><a href="bnbnj.html#bnbnn"><tt>ConverterClient</tt> Source Code</a></p>
+<p class="toc level4 tocsp"><a href="bnbnj.html#bnbno">Compiling the <tt>converter</tt> Application Client</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Creating the <tt>converter</tt> Web Client</a></p>
+<p class="toc level4"><a href="#bnbnq">Coding the <tt>converter</tt> Web Client</a></p>
+<p class="toc level4"><a href="#bnbnr">Compiling the <tt>converter</tt> Web Client</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbns.html">Deploying the <tt>converter</tt> Java EE Application</a></p>
+<p class="toc level4"><a href="bnbns.html#bnbnt">Deploying the <tt>converter</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnbns.html#bnbnu">Deploying the <tt>converter</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbnv.html">Running the <tt>converter</tt> Application Client</a></p>
+<p class="toc level4"><a href="bnbnv.html#bnbnw">Running the <tt>converter</tt> Application Client Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnbnv.html#bnbnx">Running the <tt>converter</tt> Application Client Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnbny.html">Running the <tt>converter</tt> Web Client</a></p>
+<p class="toc level3"><a href="bnboa.html">Modifying the Java EE Application</a></p>
+<p class="toc level4"><a href="bnboa.html#bnbob">Modifying a Class File</a></p>
+<p class="toc level2 tocsp"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbnj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbns.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbnp"></a><h3>Creating the <tt>converter</tt> Web Client</h3>
+<p><a name="indexterm-2079"></a><a name="indexterm-2080"></a><a name="indexterm-2081"></a><a name="indexterm-2082"></a>The web client is contained in the JSP page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter/converter-war/web/index.jsp</tt>. A JSP
+page is a text-based document that contains JSP elements, which construct dynamic content,
+and static template data, which can be expressed in any text-based format such
+as HTML, WML, and XML.</p>
+
+<a name="bnbnq"></a><h4>Coding the <tt>converter</tt> Web Client</h4>
+<p><a name="indexterm-2083"></a>The statements (in bold in the following code) for locating the business interface,
+creating an enterprise bean instance, and invoking a business method are nearly identical to
+those of the application client. The parameter of the <tt>lookup</tt> method is the
+only difference.</p><p><a name="indexterm-2084"></a>The classes needed by the client are declared using a JSP <tt>page</tt>
+directive (enclosed within the <tt>&lt;%@ %></tt> characters). Because locating the business interface and creating
+the enterprise bean are performed only once, this code appears in a JSP
+declaration (enclosed within the <tt>&lt;%! %></tt> characters) that contains the initialization method, <tt>jspInit</tt>, of the
+JSP page. The declaration is followed by standard HTML markup for creating a
+form that contains an input field. A scriptlet (enclosed within the <tt>&lt;% %></tt> characters)
+retrieves a parameter from the request and converts it to a <tt>BigDecimal</tt> object. Finally,
+a JSP scriptlet invokes the enterprise bean&rsquo;s business methods, and JSP expressions (enclosed
+within the <tt>&lt;%= %></tt> characters) insert the results into the stream of data returned
+to the client.</p><pre>&lt;%@ page import="converter.ejb.Converter,
+            java.math.*, javax.naming.*"%>
+
+ &lt;%!
+    private Converter converter = null;
+    public void jspInit() {
+        try {
+            <b>InitialContext ic = new InitialContext();</b>
+            <b>converter = (Converter) ic.lookup(Converter.class.getName());</b>
+        } catch (Exception ex) {
+            System.out.println("Couldn&rsquo;t create converter bean."+
+                    ex.getMessage());
+        }
+    }
+
+    public void jspDestroy() {
+        converter = null;
+    }
+%>
+&lt;html>
+    &lt;head>
+        &lt;title>Converter&lt;/title>
+    &lt;/head>
+
+    &lt;body bgcolor="white">
+        &lt;h1>Converter&lt;/h1>
+        &lt;hr>
+        &lt;p>Enter an amount to convert:&lt;/p>
+        &lt;form method="get">
+            &lt;input type="text" name="amount" size="25">
+            &lt;br>
+            &lt;p>
+            &lt;input type="submit" value="Submit">
+            &lt;input type="reset" value="Reset">
+        &lt;/form>
+
+        &lt;%
+            String amount = request.getParameter("amount");
+            if ( amount != null &amp;&amp; amount.length() > 0 ) {
+                BigDecimal d = new BigDecimal(amount);
+
+                <b>BigDecimal yenAmount = converter.dollarToYen(d);</b>
+        %>
+        &lt;p>
+        &lt;%= amount %> dollars are  &lt;%= yenAmount %>  Yen.
+        &lt;p>
+        &lt;%
+                <b>BigDecimal euroAmount = converter.yenToEuro(yenAmount);</b>
+        %>
+        &lt;%= amount %> Yen are &lt;%= euroAmount %>  Euro.
+        &lt;%
+            }
+        %>
+    &lt;/body>
+&lt;/html></pre>
+
+<a name="bnbnr"></a><h4>Compiling the <tt>converter</tt> Web Client</h4>
+<p><a name="indexterm-2085"></a>The Application Server automatically compiles web clients that are JSP pages. If the
+web client were a servlet, you would have to compile it.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbnj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbns.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+
