@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE binding [
+	<!ELEMENT binding (mapping*)>
+	<!ELEMENT mapping ((value | collection)*)>
+	<!ELEMENT value EMPTY>
+	<!ELEMENT collection EMPTY>
+	<!ATTLIST mapping name CDATA #REQUIRED>
+	<!ATTLIST mapping class CDATA #REQUIRED>
+	<!ATTLIST value name CDATA #REQUIRED>
+	<!ATTLIST value field CDATA #REQUIRED>
+	<!ATTLIST collection name CDATA #REQUIRED>
+	<!ATTLIST collection field CDATA #REQUIRED>
+	<!ATTLIST collection item-type CDATA #REQUIRED>
+]>
+<!-- The terminal's MTSS CSV message/Java Object binding configuration -->
+<binding>
+	
+	<mapping name="RPON" class="com.itsz.view.provider.stt.msg.PointsResponse">
+	<value name="POIN" field="points"/>
+	</mapping>	
+	
+    <mapping name="RSTR" class="com.itsz.view.provider.stt.msg.StreamRTQResponse">
+	<value name="SRTQ" field="streamRTQStatus"/>
+	</mapping> 
+	
+	<mapping name="RPFL" class="com.itsz.view.provider.stt.msg.QueryPortfolioResponse">
+            <value name="MSID" field="messageId"/>
+            <value name="PFLS" field="listSize"/>
+            <value name="TTPF" field="totalProfit"/>
+            <value name="TTMN" field="totalMoney"/>
+            <collection name="PFLI-L" field="portfolioInfoCol" item-type="com.itsz.view.provider.stt.msg.PortfolioInfo"/>
+	</mapping>
+	
+    <mapping name="PFLI" class="com.itsz.view.provider.stt.msg.PortfolioInfo">
+            <value name="INCD" field="instrCode"/>
+            <value name="INNA" field="instrName"/>
+            <value name="TPRI" field="tradePrice"/>
+            <value name="TQTY" field="tradeQty"/>
+            <value name="CPRI" field="currentPrice"/>
+            <value name="BFEE" field="buyFee"/>
+            <value name="SFEE" field="sellFee"/>
+            <value name="PAFF" field="profit"/>
+            <value name="ALOS" field="moneyNet"/>
+            <value name="ITID" field="itemId"/>            
+	</mapping>
+	
+	<mapping name="RQUT" class="com.itsz.sht.common.model.response.QuoteResponse">
+            <value name="INCD" field="instrCode"/>
+            <value name="INNA" field="instrName"/>
+            <value name="LOTS" field="lotSize"/>
+            <value name="SPRD" field="spread"/>
+            <value name="BEBI" field="bestBidPrice"/>
+            <value name="BEAS" field="bestAskPrice"/>
+            <value name="NOPR" field="nominalPrice"/>
+            <value name="HIPR" field="highPrice"/>
+            <value name="LOPR" field="lowPrice"/>
+            <value name="OPPR" field="openPrice"/>
+            <value name="PCPR" field="prevClosingPrice"/>
+            <value name="TTVO" field="totalTradeVolume"/>
+            <value name="TRAM" field="tradeAmount"/>
+            <value name="CHPR" field="priceChange"/>
+            <value name="CPPR" field="priceChangePerc"/>
+            <value name="TIME" field="postTime"/>        
+            <value name="STST" field="stockStatus"/>
+            <value name="PE" field="pe"/>
+            <value name="CCY" field="currency"/>
+	</mapping>
+	
+	<mapping name="RSQT" class="com.itsz.sht.common.model.response.ShortRTQResponse">
+            <collection name="SQUT-L" field="enquireShortRTQResponse" item-type="com.itsz.sht.common.model.response.EnquireShortRTQResponse"/>
+	</mapping>	
+	<mapping name="SQUT" class="com.itsz.sht.common.model.response.EnquireShortRTQResponse">
+            <value name="INCD" field="code"/>
+            <value name="INNA" field="name"/>
+            <value name="LOTS" field="lotSize"/>
+            <value name="BEBI" field="bestBid"/>
+            <value name="BEAS" field="bestAsk"/>
+            <value name="NOPR" field="price"/>
+	</mapping>
+	
+	<mapping name="RANU" class="com.itsz.sht.common.model.common.AFXNewsInfo">
+            <value name="AANU" field="afxNews"/>
+            <value name="SANU" field="afxNewsByStock"/>                  
+	</mapping>
+	
+	<mapping name="RBRC" class="com.itsz.sht.admin.broadcast.util.BroadcastInfo">
+            <collection name="BRCA-L" field="broadcastCol" item-type="com.itsz.sht.admin.broadcast.util.Broadcast"/>
+	</mapping>
+	<mapping name="BRCA" class="com.itsz.sht.admin.broadcast.util.Broadcast">
+            <value name="BCID" field="id"/>
+            <value name="STIM" field="stime"/>
+            <value name="ETIM" field="etime"/>
+            <value name="LEVL" field="level"/>
+            <value name="CTTY" field="contenttype"/>
+            <value name="CONT" field="content"/>
+            <value name="CHNS" field="channels"/>       
+	</mapping>  
+		
+        <mapping name="RPLS" class="com.itsz.view.provider.stt.msg.ProfitAndLossEnquirySPResponse">
+            <value name="MSID" field="messageId"/>
+            <value name="SPDI" field="spDisplay"/>
+   	    <collection name="PINF-L" field="portfolioInfo" item-type="com.itsz.view.provider.stt.msg.PortfolioInfoSP"/>
+	</mapping>
+	<mapping name="PINF" class="com.itsz.view.provider.stt.msg.PortfolioInfoSP">
+	    	<value name="MKCD" field="marketCode"/>
+      	    <value name="INCD" field="instrumentCode"/>
+      	    <value name="INNA" field="instrumentName"/>
+      	    <value name="MSQT" field="maxSellableQuantity"/>
+      	    <value name="AVCO" field="averageCost"/>
+      	    <value name="LOTS" field="lotSize"/>
+      	    <value name="AVAL" field="availability"/>
+      	    <value name="CCY" field="ccy"/>
+      	    <value name="NOPR" field="nominalPrice"/>
+      	    <value name="STRA" field="starsRating"/>
+	</mapping>
+				
+</binding>

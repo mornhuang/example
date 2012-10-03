@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- the proxool configuration can be embedded within your own application's. 
+	Anything outside the "proxool" tag is ignored. -->
+<something-else-entirely>
+	<proxool>
+		<alias>pool_portal</alias>
+		<driver-url>
+			jdbc:oracle:thin:@192.168.14.100:1521:sht
+		</driver-url>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+		<driver-properties>
+			<property name="user" value="web" />
+			<property name="password" value="12345678" />
+		</driver-properties>
+		<house-keeping-sleep-time>90000</house-keeping-sleep-time>
+		<simultaneous-build-throttle>20</simultaneous-build-throttle>
+		<prototype-count>1</prototype-count>
+		<maximum-connection-count>5</maximum-connection-count>
+		<minimum-connection-count>1</minimum-connection-count>
+		<house-keeping-test-sql>select  sysdate  from dual</house-keeping-test-sql>
+        <test-before-use>true</test-before-use>
+        <test-after-use>true</test-after-use>
+        <maximum-connection-lifetime>1800000</maximum-connection-lifetime>		
+	</proxool>
+</something-else-entirely>

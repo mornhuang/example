@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mcs>
+	<msg>
+    	     <server>
+		   		 	<username>username</username>
+		    		<password>password</password>
+		    		<!-- <hostname>202.22.244.207</hostname> -->
+		    		<!-- <port>80</port> -->
+		    		
+		    		<hostname>172.30.201.148</hostname>
+		    		<port>7001</port>
+		    	    <!--<hostname>10.100.192.112</hostname>-->
+		     		<!--<port>7001</port>-->
+                    <app_url>/mcs/servlet/MCS/MessageServer</app_url>
+                    <test_mode>false</test_mode>
+                    <!-- check mcs status ( web channel admin page setting )-->
+                    <serverName>MCS</serverName>
+                    <maxConnectionsPerHost>1000</maxConnectionsPerHost>
+                    <maxTotalConnections>2000</maxTotalConnections>
+                    <httpClientTimeout>30000</httpClientTimeout>
+                    <cnnTimeout>30000</cnnTimeout>
+                    <httpCnnTimeout>30000</httpCnnTimeout>
+                    <httpClientTimeout_h3g>8000</httpClientTimeout_h3g>
+                    <cnnTimeout_h3g>8000</cnnTimeout_h3g>
+                    <httpCnnTimeout_h3g>8000</httpCnnTimeout_h3g>
+                    <channelType>WEB</channelType>
+                    <mcsStatusCode>1</mcsStatusCode>
+             </server>
+        </msg>
+</mcs>

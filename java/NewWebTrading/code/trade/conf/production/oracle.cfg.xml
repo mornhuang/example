@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- properties -->
+
+	<property name="hibernate.show_sql">false</property>
+    <!-- property name="hibernate.connection.username">web</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@10.100.53.38:1521:Channels</property>        
+    <property name="hibernate.connection.password">12345678</property-->
+	<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+	<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+
+		<!-- property name="hibernate.c3p0.initial_pool_size">20</property> 
+		<property name="hibernate.c3p0.min_size">20</property>
+		<property name="hibernate.c3p0.max_size">100</property> 
+		<property name="hibernate.c3p0.timeout">30</property> 
+		<property name="hibernate.c3p0.max_statements">300</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property
+    <property name="hibernate.proxool.existing_pool">true</property> -->
+	<property name="hibernate.proxool.pool_alias">pool_portal</property> 
+	<property name="hibernate.proxool.xml">ProxoolConf.xml</property> 
+	<property name="hibernate.connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</property>
+	
+	<mapping resource="com/taifook/adminportal/model/CsParameter.hbm.xml"/>
+	<mapping resource="com/taifook/adminportal/model/CsSetParameter.hbm.xml"/>
+	<mapping resource="com/taifook/adminportal/model/CsBroadcast.hbm.xml" />
+	<mapping resource="com/taifook/adminportal/model/CsOnlineuser.hbm.xml"/>
+	<mapping resource="com/taifook/adminportal/model/CsServicemonitor.hbm.xml"/>
+	<mapping resource="com/taifook/adminportal/model/CsUseractionlog.hbm.xml"/>
+
+    </session-factory>
+
+</hibernate-configuration>
