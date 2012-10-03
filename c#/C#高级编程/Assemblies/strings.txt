@@ -1,4 +1,0 @@
-Title = Professional C#
-Chapter = Assemblies
-Author = Christian Nagel
-Publisher = WROX Press

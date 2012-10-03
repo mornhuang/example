@@ -1,2 +1,0 @@
-This window displays information about GridBagConstraints when the cursor enters an appropriate component 
-in the Constraints window.
