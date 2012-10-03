@@ -1,0 +1,534 @@
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+<!--
+
+   This file contains the default Struts Validator pluggable validator
+   definitions.  It should be placed somewhere under /WEB-INF and
+   referenced in the struts-config.xml under the plug-in element
+   for the ValidatorPlugIn.
+
+      <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,
+                                                  /WEB-INF/validation.xml"/>
+      </plug-in>
+
+   These are the default error messages associated with
+   each validator defined in this file.  They should be
+   added to your projects ApplicationResources.properties
+   file or you can associate new ones by modifying the
+   pluggable validators msg attributes in this file.
+
+   # Struts Validator Error Messages
+   errors.required={0} is required.
+   errors.minlength={0} can not be less than {1} characters.
+   errors.maxlength={0} can not be greater than {1} characters.
+   errors.invalid={0} is invalid.
+
+   errors.byte={0} must be a byte.
+   errors.short={0} must be a short.
+   errors.integer={0} must be an integer.
+   errors.long={0} must be a long.
+   errors.float={0} must be a float.
+   errors.double={0} must be a double.
+
+   errors.date={0} is not a date.
+   errors.range={0} is not in the range {1} through {2}.
+   errors.creditcard={0} is an invalid credit card number.
+   errors.email={0} is an invalid e-mail address.
+
+-->
+
+<form-validation>
+
+   <global>
+
+      <validator name="required"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateRequired"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+                  msg="errors.required">
+
+      </validator>
+
+      <validator name="requiredif"
+                 classname="org.apache.struts.validator.FieldChecks"
+                 method="validateRequiredIf"
+                 methodParams="java.lang.Object,
+                               org.apache.commons.validator.ValidatorAction,
+                               org.apache.commons.validator.Field,
+                               org.apache.struts.action.ActionMessages,
+                               org.apache.commons.validator.Validator,
+                               javax.servlet.http.HttpServletRequest"
+                 msg="errors.required">
+      </validator>
+      
+      <validator name="wmtrequiredif"
+                 classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil" method="validateWMTRequiredIf" 
+	    			methodParams="java.lang.Object,
+                  org.apache.commons.validator.ValidatorAction,
+                  org.apache.commons.validator.Field,
+                  org.apache.struts.action.ActionMessages,
+                  org.apache.commons.validator.Validator,
+                  javax.servlet.http.HttpServletRequest" 
+   		 		msg="errors.required">
+   	  </validator>
+
+      <validator name="minlength"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateMinLength"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.minlength">
+
+      </validator>
+
+
+      <validator name="maxlength"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateMaxLength"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.maxlength">
+
+      </validator>
+
+
+      <validator name="mask"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateMask"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.invalid">
+
+      </validator>
+
+
+      <validator name="byte"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateByte"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+              jsFunctionName="ByteValidations"
+                  msg="errors.byte" >
+
+      </validator>
+
+
+      <validator name="short"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateShort"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+              jsFunctionName="ShortValidations"
+                  msg="errors.short" >
+
+      </validator>
+
+
+      <validator name="integer"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateInteger"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+              jsFunctionName="IntegerValidations"
+                  msg="errors.integer" >
+
+      </validator>
+
+
+      <validator name="long"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateLong"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.long"/>
+
+
+      <validator name="float"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateFloat"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+              jsFunctionName="FloatValidations"
+                  msg="errors.float" >
+
+      </validator>
+
+
+      <validator name="double"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateDouble"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.double"/>
+
+
+      <validator name="date"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateDate"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+              jsFunctionName="DateValidations"
+                  msg="errors.date" >
+
+      </validator>
+
+<!-- range is deprecated use intRange instead -->
+      <validator name="range"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateIntRange"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends="integer"
+                  msg="errors.range">
+
+      </validator>
+
+      <validator name="intRange"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateIntRange"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends="integer"
+                  msg="errors.range">
+
+      </validator>
+
+      <validator name="floatRange"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateFloatRange"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends="float"
+                  msg="errors.range">
+
+      </validator>
+
+      <validator name="creditCard"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateCreditCard"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.creditcard">
+
+      </validator>
+
+
+      <validator name="email"
+            classname="org.apache.struts.validator.FieldChecks"
+               method="validateEmail"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.apache.struts.action.ActionMessages,
+                       org.apache.commons.validator.Validator,
+                       javax.servlet.http.HttpServletRequest"
+              depends=""
+                  msg="errors.email">
+
+      </validator>
+
+
+	<validator name="twofields" 
+    	classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil" method="validateTwoFields" 
+	    methodParams="java.lang.Object,
+                  org.apache.commons.validator.ValidatorAction,
+                  org.apache.commons.validator.Field,
+                  org.apache.struts.action.ActionMessages,
+                  org.apache.commons.validator.Validator,
+                  javax.servlet.http.HttpServletRequest" 
+   		depends="required" msg="errors.twofields">
+    <javascript><![CDATA[
+        function validateTwoFields(form) {
+            var bValid = true;
+            var focusField = null;
+            var i = 0;
+            var fields = new Array();
+            oTwoFields = new twofields();
+            for (x in oTwoFields) {
+                var field = form[oTwoFields[x][0]];
+                var secondField = form[oTwoFields[x][2]("secondProperty")];
+                var checkUnequal = oTwoFields[x][2]("checkUnequal");
+            
+                if (field.type == 'text' ||
+                    field.type == 'textarea' ||
+                    field.type == 'select-one' ||
+                    field.type == 'radio' ||
+                    field.type == 'password') {
+            
+                    var value;
+                    var secondValue;
+                    // get field's value
+                    if (field.type == "select-one") {
+                        var si = field.selectedIndex;
+                        value = field.options[si].value;
+                    } else {
+                        value = field.value;
+                    }
+                
+                    if (secondField.type == "select-one") {
+                        var si = secondField.selectedIndex;
+                        secondValue = secondField.options[si].value;
+                    } else {
+                        secondValue = secondField.value;
+                    }
+                
+                    if (checkUnequal) {
+	                    if (value == secondValue) {
+
+	                        if (i == 0) {
+	                            focusField = field;
+	                        }
+	                        fields[i++] = oTwoFields[x][1];
+	                        bValid = false;
+	                    }
+                    } else {
+	                    if (value != secondValue) {
+
+	                        if (i == 0) {
+	                            focusField = field;
+	                        }
+	                        fields[i++] = oTwoFields[x][1];
+	                        bValid = false;
+	                    }
+                    }
+                    
+                }
+            }
+            
+            if (fields.length > 0) {
+                focusField.focus();
+                alert(fields.join('\n'));
+            }
+            
+            return bValid;
+        }]]></javascript>
+	</validator>
+
+	<validator name="emailOrFax" 
+    	classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil" method="validateEmailOrFax" 
+	    methodParams="java.lang.Object,
+                  org.apache.commons.validator.ValidatorAction,
+                  org.apache.commons.validator.Field,
+                  org.apache.struts.action.ActionMessages,
+                  org.apache.commons.validator.Validator,
+                  javax.servlet.http.HttpServletRequest" 
+   		depends="required" msg="errors.invalid">
+    <javascript><![CDATA[
+        function validateEmailOrFax(form) {
+            var bValid = true;
+            var focusField = null;
+            var i = 0;
+            var fields = new Array();
+            oEmailOrFax = new emailOrFax();
+            for (x in oEmailOrFax) {
+                var field = form[oEmailOrFax[x][0]];
+                var secondField = form[oEmailOrFax[x][2]("secondProperty")];
+                var faxMask = oEmailOrFax[x][2]("faxMask");
+
+                if (field.type == 'text' ||
+                    field.type == 'textarea' ||
+                    field.type == 'select-one' ||
+                    field.type == 'radio' ||
+                    field.type == 'password') {
+            
+                    var value;
+                    var secondValue;
+                    // get field's value
+                    if (field.type == "select-one") {
+                        var si = field.selectedIndex;
+                        value = field.options[si].value;
+                    } else {
+                        value = field.value;
+                    }
+                
+                    if (secondField.type == "select-one") {
+                        var si = secondField.selectedIndex;
+                        secondValue = secondField.options[si].value;
+                    } else {
+                    	
+                    	if (secondField.length > 1) {
+                    		// Radio Buttons
+                    		for (counter = 0; counter < secondField.length; counter++) {
+								if (secondField[counter].checked) {
+									secondValue = secondField[counter].value;
+								}
+							}
+                    	}
+                    	else {
+                        	secondValue = secondField.value;
+                        }
+                    }
+                    
+                    
+                
+                    if (secondValue == "email") {
+	                    if (!checkEmail(value)) {
+	                        if (i == 0) {
+	                            focusField = field;
+	                        }
+	                        fields[i++] = oEmailOrFax[x][1];
+	                        bValid = false;
+	                    }
+                    } else {
+	                    if (!matchPattern(value, new RegExp(faxMask))) {
+	                        if (i == 0) {
+	                            focusField = field;
+	                        }
+	                        fields[i++] = oEmailOrFax[x][1];
+	                        bValid = false;
+	                    }
+                    }
+                    
+                }
+            }
+
+            if (fields.length > 0) {
+                focusField.focus();
+                alert(fields.join('\n'));
+            }
+
+            return bValid;
+        }]]></javascript>
+	</validator>
+
+     <validator name="maskif"
+               classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil"
+               method="validateMaskIf"
+               methodParams="java.lang.Object,
+                             org.apache.commons.validator.ValidatorAction,
+                             org.apache.commons.validator.Field,
+                             org.apache.struts.action.ActionMessages,
+                             org.apache.commons.validator.Validator,
+                             javax.servlet.http.HttpServletRequest"
+               msg="errors.invalid">
+      </validator>
+      
+      <validator name="minlengthif"
+               classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil"
+               method="validateMinLengthIf"
+               methodParams="java.lang.Object,
+                             org.apache.commons.validator.ValidatorAction,
+                             org.apache.commons.validator.Field,
+                             org.apache.struts.action.ActionMessages,
+                             org.apache.commons.validator.Validator,
+                             javax.servlet.http.HttpServletRequest"
+               msg="errors.minlength">
+      </validator>
+      
+      <validator name="maxlengthif"
+               classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil"
+               method="validateMaxLengthIf"
+               methodParams="java.lang.Object,
+                             org.apache.commons.validator.ValidatorAction,
+                             org.apache.commons.validator.Field,
+                             org.apache.struts.action.ActionMessages,
+                             org.apache.commons.validator.Validator,
+                             javax.servlet.http.HttpServletRequest"
+               msg="errors.maxlength">
+      </validator>
+      <validator name="price"
+               classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil"
+               method="validatePrice"
+               methodParams="java.lang.Object,
+                             org.apache.commons.validator.ValidatorAction,
+                             org.apache.commons.validator.Field,
+                             org.apache.struts.action.ActionMessages,
+                             org.apache.commons.validator.Validator,
+                             javax.servlet.http.HttpServletRequest"
+               msg="errors.price">
+      </validator>
+      <validator name="priceif"
+               classname="com.taifook.mtss.web.common.validation.StrutsValidationUtil"
+               method="validatePriceIf"
+               methodParams="java.lang.Object,
+                             org.apache.commons.validator.ValidatorAction,
+                             org.apache.commons.validator.Field,
+                             org.apache.struts.action.ActionMessages,
+                             org.apache.commons.validator.Validator,
+                             javax.servlet.http.HttpServletRequest"
+               msg="errors.price">
+      </validator>
+      
+      <validator name="includeJavaScriptUtilities"
+            classname=""
+               method=""
+               methodParams=""
+               depends=""
+                  msg=""
+           jsFunction="org.apache.commons.validator.javascript.validateUtilities"/>
+</global>
+</form-validation>

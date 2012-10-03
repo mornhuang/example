@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <distributable />
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/spring-config.xml</param-value>
+  </context-param>
+	
+  <listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+	
+  <listener>
+    <listener-class>com.itsz.sht.listener.ContextListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.itsz.sht.listener.SessionListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.itsz.sht.listener.ContextSessionListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config/stt</param-name>
+      <param-value>/WEB-INF/struts-config-stt.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+   <servlet>
+    <servlet-name>notifySynServerServlet</servlet-name>
+    <servlet-class>com.itsz.sht.admin.service.servlet.NotifySynServerServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>outputResponse</servlet-name>
+    <servlet-class>com.itsz.sht.servlet.OutputResponse</servlet-class>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>outputException</servlet-name>
+    <servlet-class>com.itsz.sht.servlet.OutputException</servlet-class>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+	<!--
+  <servlet>
+    <servlet-name>SyncDataOnStartupServlet</servlet-name>
+    <servlet-class>com.itsz.web.servlet.SyncDataOnStartupServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+	-->
+ <servlet>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>org.logicalcobwebs.proxool.admin.servlet.AdminServlet</servlet-class>
+  </servlet>
+ <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>/admin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>outputResponse</servlet-name>
+    <url-pattern>/stt/outputResponse</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>outputException</servlet-name>
+    <url-pattern>/stt/outputException</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  	<filter-name>struts</filter-name>
+  	<filter-class>com.itsz.sht.struts.action.SecurityFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts</filter-name>
+  	<url-pattern>/jsp/*</url-pattern>
+  </filter-mapping>
+	<!--
+  <servlet-mapping>
+    <servlet-name>SyncDataOnStartupServlet</servlet-name>
+    <url-pattern>/SyncDataOnStartup</url-pattern>
+  </servlet-mapping>
+	-->
+	<!-- Struts Tag Library Descriptors -->
+	<!-- add by saint 2007-03-13 -->
+	<jsp-config>
+		<taglib>
+			<taglib-uri>/WEB-INF/c.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tld/c.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tld/struts-bean.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tld/struts-html.tld</taglib-location>
+		</taglib>	
+		<taglib>
+			<taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tld/struts-logic.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/webchannels.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tld/webchannels.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>/WEB-INF/dformat-tags.tld</taglib-uri>
+			<taglib-location>/WEB-INF/tld/dformat-tags-1.0.tld</taglib-location>
+		</taglib>	
+	</jsp-config>
+	
+</web-app>
+

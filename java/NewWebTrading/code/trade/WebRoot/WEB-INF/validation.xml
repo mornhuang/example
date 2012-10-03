@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE form-validation PUBLIC  
+"-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"  
+"/WEB-INF/validation_1_0.dtd">
+<!-- "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">-->
+
+   <form-validation>
+      <formset>
+      		<form name="ITSZActionForm">
+            <field property="channelType" depends="required">
+               <arg0 key="channelType"/>            
+            </field>
+         	</form>
+         	<form name="LoginActionForm">
+            <field property="loginName" depends="required,mask,minlength,maxlength">    
+               <arg0 key="loginName" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>5</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>20</var-value>
+                     </var>              
+           	</field>
+            <field property="password" depends="required,mask,minlength,maxlength">
+            <msg name="minlength" key="errors.passwordrange" />
+            <msg name="maxlength" key="errors.passwordrange" />
+               <arg0 key="password" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>              
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>              
+            </field>            
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                      
+         </form>
+         
+         <form name="EnquireAccountDetailActionForm">
+            <field property="accountID" depends="required,mask">
+               <arg0 key="accountID"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9-]*$</var-value>
+               </var>
+            </field>
+         </form>
+     
+      
+      <form name="ChangePasswordActionForm">
+            <field property="oldPassword" depends="required,mask,minlength,maxlength">
+            
+               <arg0 key="oldPassword" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>
+               
+            </field>
+            <field property="newPassword1" depends="required,mask,minlength,maxlength">
+               <arg0 key="newPassword1" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>              
+            </field>
+            <field property="newPassword2" depends="required,mask,minlength,maxlength">
+               <arg0 key="newPassword2" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>              
+            </field>                     
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                    
+         </form>
+         
+         <form name="InputOrderActionForm">
+            <field property="instrCode" depends="required,mask">
+               <arg0 key="instrCode" />
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]{1,5}$</var-value>
+               </var>                                   
+            </field>
+            <field property="orderPrice" depends="mask">
+             <arg0 key="orderPrice"/>
+             <var>
+                       <var-name>mask</var-name>
+                       <var-value>^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</var-value>
+             </var>                                               
+            </field>
+            <field property="orderQuantity" depends="required,mask">
+             <arg0 key="orderQuantity" />   
+             <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*[1-9][0-9]*$</var-value>
+             </var>                                     
+            </field>
+            <field property="orderSide" depends="required,mask">
+             <arg0 key="orderSide" />
+             <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z]$</var-value>
+             </var>                                              
+            </field>
+            <field property="orderType" depends="mask">
+             <arg0 key="orderType"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z_]+$</var-value>
+               </var>
+                                   
+            </field>
+            <field property="password" depends="required,mask,minlength,maxlength">
+               <arg0 key="password" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>
+               
+            </field>
+            
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+          
+            
+         </form>
+         <form name="ModifyOrderActionForm">                                           
+            <field property="newOrderPrice" depends="mask">
+             <arg0 key="newOrderPrice"/>
+             <var>
+                       <var-name>mask</var-name>
+                       <var-value>^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$</var-value>
+             </var>                                                  
+            </field>
+            <field property="newOrderQty" depends="required,mask">
+             <arg0 key="newOrderQty" />   
+              <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*[1-9][0-9]*$</var-value>
+             </var>                                           
+            </field>
+            <field property="MCSOrderID" depends="required,mask">
+             <arg0 key="MCSOrderID" />
+             <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]+$</var-value>
+             </var>                                              
+            </field>
+            <!--field property="MTSSOrderID" depends="required,mask">
+             <arg0 key="MTSSOrderID"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]+$</var-value>
+               </var>
+                                   
+            </field-->
+            <field property="password" depends="required,mask,minlength,maxlength">
+               <arg0 key="password" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>
+               
+            </field>
+            
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+          
+            
+         </form>
+         
+         <form name="CancelOrderActionForm">
+            <field property="MCSOrderID" depends="required,mask">
+               <arg0 key="MCSOrderID" />
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*$</var-value>
+               </var>                                   
+            </field>
+            <field property="MTSSOrderID" depends="required,mask">
+               <arg0 key="MTSSOrderID" />
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*$</var-value>
+               </var>                                   
+            </field>                                                                
+            <field property="password" depends="required,mask,minlength,maxlength">
+               <arg0 key="password" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>
+               
+            </field>
+            
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+                      
+         </form>
+         <form name="OrderDetailActionForm">
+            <field property="MCSOrderID" depends="required,mask">
+               <arg0 key="MCSOrderID" />
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*$</var-value>
+               </var>                                   
+            </field>
+            <field property="MTSSOrderID" depends="mask">
+               <arg0 key="MTSSOrderID" />
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*$</var-value>
+               </var>                                   
+            </field>                                                                
+            <field property="accountID" depends="required,mask">
+               <arg0 key="accountID"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9-]*$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+                      
+         </form>
+         <form name="StockEnquiryActionForm">                                                    
+            <field property="accountID" depends="required,mask">
+               <arg0 key="accountID"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9-]*$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+                      
+         </form>
+         <form name="TransferFundActionForm">                                                    
+            <field property="fromAccountID" depends="required">
+               <arg0 key="fromAccountID"/>               
+            </field>
+            <field property="toAccountID" depends="required">
+               <arg0 key="toAccountID" />             
+            </field>          
+            <field property="password" depends="required,mask,minlength,maxlength">
+               <arg0 key="password" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               
+              	 	<var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>
+               
+            </field>
+            <field property="amount" depends="required,mask,floatRange">
+               <arg0 key="amount"/>     
+                <var>
+                       <var-name>mask</var-name>
+                       <var-value>^(([0-9]*\.[0-9]{0,2})|([0-9]+))$</var-value>
+             	</var>             
+			<arg1 name="floatRange" key="${var:min}" resource="false"/>							
+			<arg2 name="floatRange" key="${var:max}" resource="false"/>									
+			<var>
+			<var-name>min</var-name>
+			<var-value>1</var-value>
+			</var>
+			<var>
+			<var-name>max</var-name>
+			<var-value>10000000</var-value>
+			</var>       		
+            </field>
+             <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>          
+         </form>
+         <form name="ViewDelayRTQActionForm">                                                    
+            <field property="instrCode" depends="required,mask">
+               <arg0 key="instrCode"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]{1,5}$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+                      
+         </form>
+          <form name="ViewRTQActionForm">                                                    
+            <field property="productCode" depends="required,mask">
+               <arg0 key="productCode"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]{1,5}$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+                      
+         </form>
+         
+         <form name="ViewMarketDepthActionForm">                                                    
+            <field property="instrCode" depends="required,mask">
+               <arg0 key="instrCode"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]{1,5}$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>
+         </form>
+         
+         <form name="ViewWatchlistActionForm">                                                    
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                  
+         </form>
+         <form name="AddWatchlistActionForm">                                                    
+            <field property="itemCode" depends="required,mask">
+               <arg0 key="itemCode"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]{1,5}$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                  
+         </form>
+         
+         <form name="DelWatchlistActionForm">                                                    
+            <field property="deleteCodes" depends="required,mask">
+               <arg0 key="deleteCodes"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]{1,5}$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                       
+         </form>
+         <form name="PurchaseProductActionForm">                                                    
+            <field property="sellableID" depends="required">
+               <arg0 key="sellableID"/>             
+            </field>
+            <field property="amount" depends="required,mask">
+               <arg0 key="amount"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[0-9]*[1-9][0-9]*$</var-value>
+               </var>
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                  
+         </form>
+         <form name="ViewWarrantNewsActionForm">                                                    
+            <field property="type" depends="required">
+               <arg0 key="type"/>             
+            </field>
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                  
+         </form>
+         <!-- form name="TradeHistoryActionForm">                                                    
+            <field property="MCSOrderID" depends="required,mask">
+               <arg0 key="MCSOrderID" />
+               <var>
+                   <var-name>mask</var-name>
+                   <var-value>^[0-9]*$</var-value>
+               </var>                                   
+            </field>
+            <field property="MTSSOrderID" depends="required,mask">
+               <arg0 key="MTSSOrderID" />
+               <var>
+                   <var-name>mask</var-name>
+                   <var-value>^[0-9]*$</var-value>
+               </var>                                   
+            </field>                                                                          
+            <field property="channelType" depends="required">
+               <arg0 key="channelType" />
+            </field>                                     
+         </form-->
+		 <form name="AdminLoginActionForm">                                                    
+            <field property="username" depends="required">
+               <arg0 key="username"/>
+            </field>
+            <field property="password" depends="required">
+               <arg0 key="password"/>
+            </field>
+         </form>
+         <form name="AdminChangePasswordActionForm">                                                    
+            <field property="oldPassword" depends="required">
+               <arg0 key="oldPassword"/>
+            </field>
+            <field property="newPassword1" depends="required">
+               <arg0 key="newPassword1"/>
+            </field>
+            <field property="newPassword2" depends="required">
+               <arg0 key="newPassword2"/>
+            </field>
+         </form>
+         <form name="BroadcastActionForm">                                                    
+            <field property="selchannels" depends="required">
+               <arg0 key="selchannels"/>
+            </field>
+            <field property="stime" depends="required">
+               <arg0 key="stime"/>
+            </field>
+            <field property="etime" depends="required">
+               <arg0 key="etime"/>
+            </field>
+            <field property="content_en_US" depends="maxlength">
+            	<arg0 key="content_en_US" />
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>100</var-value>
+               </var>
+            </field>
+            <field property="content_zh_CN" depends="maxlength">
+               <arg0 key="content_zh_CN" />
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>100</var-value>
+               </var>
+            </field>
+            <field property="content_zh_TW" depends="maxlength">
+               <arg0 key="content_zh_TW" />
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>100</var-value>
+               </var>
+            </field>
+         </form>
+         <form name="ParaInfoActionForm">                                                    
+            <field property="classid" depends="required">
+               <arg0 key="paraclassid"/>
+            </field>
+            <field property="key" depends="required">
+               <arg0 key="parakey"/>   
+            </field>
+            <field property="value" depends="required">
+               <arg0 key="paravalue"/>   
+            </field>
+         </form>
+         <form name="ppsTransferForm">
+              <field property="tamount"
+                     depends="required,float">
+                  <msg
+                    name="required"
+                    key="errors.web.required"
+                   	 />
+                  <msg
+                   	name="float"
+                   	key="errors.web.float"/>
+
+                  <arg0
+                   	name="required"
+                   	key="label.ppsTransferForm.transferAmount"/>
+                  <arg0
+                   	name="float"
+                   	key="label.ppsTransferForm.transferAmount"/>
+              </field>
+      </form>
+      
+      <form name="bocTransferForm">
+              <field property="mch_payAmt"
+                     depends="required,float">
+                  <msg
+                    name="required"
+                    key="errors.web.required"/>
+                  <msg
+                    name="float"
+                    key="errors.web.float"/>
+
+                  <arg0 key="bocTransferForm.mch_payAmt"/>
+                  <arg0
+                      name="required"
+                    key="label.bocTransferForm.transferAmount"
+                  />
+                  <arg0
+                      name="float"
+                    key="label.bocTransferForm.transferAmount"
+                  />
+              </field>
+      </form>
+      
+      <form name="loginForm">
+            <field property="loginId" depends="required,mask,minlength,maxlength">    
+               <arg0 key="loginName" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>5</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>20</var-value>
+                     </var>              
+           	</field>
+            <field property="password" depends="required,mask,minlength,maxlength">
+            <msg name="minlength" key="errors.passwordrange" />
+            <msg name="maxlength" key="errors.passwordrange" />
+               <arg0 key="password" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>              
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>              
+            </field>                   
+         </form>
+         
+         <form name="changePasswordForm">
+            <field property="oldPassword" depends="required,mask,minlength,maxlength">
+            <msg name="minlength" key="errors.passwordrange" />
+            <msg name="maxlength" key="errors.passwordrange" />
+               <arg0 key="oldPassword" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>              
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>              
+            </field>
+            <field property="newPassword" depends="required,mask,minlength,maxlength">
+            <msg name="minlength" key="errors.passwordrange" />
+            <msg name="maxlength" key="errors.passwordrange" />
+               <arg0 key="newPassword1" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>              
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>              
+            </field>
+            <field property="newPassword1" depends="required,mask,minlength,maxlength,twofields">
+            <msg name="minlength" key="errors.passwordrange" />
+            <msg name="maxlength" key="errors.passwordrange" />
+            <msg name="twofields" key="errors.twofields"/>
+               <arg0 key="newPassword2" />
+               <arg1 name="minlength" key="${var:minlength}" resource="false"/>
+               <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+               <arg0 name="twofields" key="newPassword1"/>
+               <arg1 name="twofields" key="newPassword2"/>         
+              	 <var>
+                       <var-name>mask</var-name>
+                       <var-value>^[A-Za-z0-9]+$</var-value>
+                     </var>
+                     <var>
+                       <var-name>minlength</var-name>
+                       <var-value>6</var-value>
+                     </var>
+                     <var>
+                       <var-name>maxlength</var-name>
+                       <var-value>8</var-value>
+                     </var>
+                     <var>
+                    <var-name>secondProperty</var-name>
+                    <var-value>newPassword</var-value>
+                  </var>
+            </field>
+         </form>
+         
+     </formset>        
+       
+   </form-validation>

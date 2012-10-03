@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mgt>
+    <login-list>
+        <!--System Administrator--><login id="taifook">000000</login>
+        <!--Customer Service--><login id="cs">000000</login>
+        <!--Quality Assurance--><login id="qa">000000</login>
+        <!--Online--><login id="online">000000</login>
+        <!--Accounts and Settlement--><login id="acct">000000</login>
+		<!--IT Shenzhen Development Account--><login id="itsz">000000</login>
+    </login-list>
+    <user-profile>
+        <max-search-record>100</max-search-record>
+    </user-profile>
+    <!-- time out is 9 hours -->
+	<max-idle-session-timeout seconds="32400" />
+	<!-- Start:  eAlert -->
+	<stocknews-link>
+		<link lang="en-US">https://www.taifook.com/cgi-bin/afx_news/newsearch_e.asp</link>
+		<link lang="zh-TW">https://www.taifook.com/cgi-bin/afx_news/newsearch.asp</link>
+		<link lang="zh-CN">https://www.taifook.com/cgi-bin/afx_news/newsearch_gb.asp</link>
+	</stocknews-link>
+	<stockchart-link>
+		<link lang="en-US">https://www.taifook.com/TradeContent/IntradayChart/Chart_Intraday.asp</link>
+		<link lang="zh-TW">https://www.taifook.com/TradeContent/IntradayChart/Chart_Intraday.asp</link>
+		<link lang="zh-CN">https://www.taifook.com/TradeContent/IntradayChart/Chart_Intraday.asp</link>
+	</stockchart-link>
+	<ealertposting>
+		<img key="news">http://210.176.73.230/enewspaper/images_news/news.gif</img>
+		<img key="chart">http://210.176.73.230/enewspaper/images_news/chart.gif</img>
+		<mail key="transport_protocol">smtp</mail>
+	    <mail key="smtp_host">smtp.taifook.net</mail>
+		<!--smtp_auth:true or false-->
+		<mail key="smtp_auth">false</mail>
+		<mail key="smtp_port">25</mail>
+		<mail key="auth_name"></mail>
+		<mail key="auth_pass"></mail>
+		<mail key="from_addr">support@taifook.com</mail>
+		<mail key="from_name">ealert_mail_send_name</mail>
+		<mail key="cc_addr"></mail>
+		<!--<mail key="bcc_addr"></mail>-->
+	</ealertposting>
+	<!-- End:  eAlert -->
+	<!-- Start: eWatchList -->
+	<ewatchlist>
+		<!-- eWatchlist Refresh Interval (measured in seconds)  -->
+		<conf key="refresh">10</conf>
+		<!-- Maximum number of Watchlist items -->
+		<conf key="max_entries">10</conf>
+	</ewatchlist>
+	<!-- End:  eWatchList -->
+	<!-- Start: SMS Commentaries -->
+	<sms>
+		<asyncsender>
+			<sendfail-alertemail>yhliu@itsz.cn</sendfail-alertemail>
+			<alert-interval>3</alert-interval>
+		</asyncsender>
+	</sms>
+	<hksms>
+		<!-- Orange SMS gateway is assessed via Java Servlet, URL specified below. -->
+		<!--url>http://jdsdemo.orangehk.com/servlet/corpsms.jdsXMLClient2</url-->
+		<url>http://jds.three.com.hk/servlet/corpsms.jdsXMLClient2</url>
+		<account>taifook</account>
+		<loginid>admin</loginid>
+		<!--password>taifook</password-->
+		<password>tf2004</password>
+	</hksms>
+	<mainlandsms>
+		<!-- AirWap server IP address: 211.154.134.95 (Port: 58887). Web server must access AirWap using specified port number by Telnet. -->
+		<!-- AirWap server IP address is pre-configured in DllSendSMS.jar library. -->
+		<serverip>203.86.2.35</serverip>
+		<serverport>58887</serverport>
+		<!--account>dafu</account>
+		<loginid>8080030</loginid>
+		<password>80030</password-->
+		<!--Changed by Danny ,provided by Ryan on May 25,2005-->
+		<account>dafu</account>
+		<loginid>8080036</loginid>
+		<password>80036</password>
+	</mainlandsms>
+	 <!-- End: SMS Commentaries -->
+	<epoint>
+		<effectivemonths>12</effectivemonths>
+	</epoint>
+	<pricealert>
+		<!-- pricealert Refresh Interval (measured in seconds)  -->
+		<conf key="refresh">10</conf>
+		<!-- Maximum number of pricealert entries -->
+		<conf key="max_entries">10</conf>
+	</pricealert>
+	<eservicebbs>
+		<url>http://10.100.1.103/phpBB2/index.php</url>
+	</eservicebbs>
+	<realtimequote>
+		<access-url>
+			<forex>http://www.cme.com/e-quivalents</forex>
+			<ossec-jp>https://www.taifook.com/trading/asia/trading_jp_e.html</ossec-jp>
+			<reuters-snapshot>../quote/ShowRTQSnapshot.do</reuters-snapshot>
+		</access-url>
+		<!-- when allote account and find all accounts were occupied, whether to release account
+			"always", always release account.
+			"never", never release account.
+			if anything else provided, will not release accounts if the app allow reallote account
+		-->
+		<release-account>never</release-account>
+	</realtimequote>
+	<portfolio>
+		<max_entries>12</max_entries>
+	</portfolio>
+	<trade>
+		<rate>
+			<CommissionRate>0.0015</CommissionRate>
+			<MinCommission>75</MinCommission>
+			<LevyRate>0.00007</LevyRate>
+			<tradingFeeRate>0.00005</tradingFeeRate>
+			<CCASSRate>0.00002</CCASSRate>
+			<MinCCASS>2</MinCCASS>
+			<MaxCCASS>100</MaxCCASS>
+			<StampRate>0.001</StampRate>
+			<MinStamp>1</MinStamp>
+		</rate>
+	</trade>
+	<distribute>
+		<!-- Add prefix to muticast channel name to avoid disturbance between different product and environment -->
+		<!-- The recommened prefix is "product+version+environment", eg: es3-dev, es3-test, es3-sit, es3-uat -->
+		<channel_prefix>192.168.101.250.es4.uat</channel_prefix>
+		<enable>false</enable>
+	</distribute>
+	<loginctrl>
+		<!-- if "true", please use UserID login -->
+		<escapemcs>false</escapemcs> 
+	</loginctrl>
+	<rules><!--Some business rules-->
+		<rule id="key-value">
+			<!--Define wheather to check MIS account balance when purchase service or autopurchase-->
+			<prop key="check-balance-when-purchase">false</prop>
+			<prop key="check-balance-when-autopurchase">false</prop>
+			
+			<!--Define wheather to check ip when rtq access-->			
+			<prop key="check-ip-when-rtqaccess">true</prop>
+		</rule>
+	</rules>
+	<!--Audit trail for snapshot rtq-->
+	<!--added by Danny on May 10,2005 -->
+	<!--
+	    For Hong Kong stocks: 	9:30 a.m. to 1:30 p.m. and 2:30 p.m. to 5:00 p.m.
+		For I-Share stocks:		9:30 a.m. to 5:00 p.m. without break. (eg. 4362, 4363)
+	-->
+	<snapshot-audit-trail>
+		<stocks type="hkstock">			
+			<fee-liable period="am" action="start">0930</fee-liable>
+			<fee-liable period="am" action="end">1330</fee-liable>
+			<fee-liable period="pm" action="start">1430</fee-liable>
+			<fee-liable period="pm" action="end">1700</fee-liable>
+		</stocks>
+		<stocks type="isharestock">
+			<fee-liable period="all" action="start">0930</fee-liable>
+			<fee-liable period="all" action="end">1700</fee-liable>
+			<stock_code>04362</stock_code>
+			<stock_code>04363</stock_code>
+		</stocks>
+	</snapshot-audit-trail>	
+</mgt>

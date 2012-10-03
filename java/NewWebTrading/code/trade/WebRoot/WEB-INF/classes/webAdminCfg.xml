@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<admin-config>
+	<monitor-config>
+		<!--MSC test monitor interface's configure parameter //-->
+    	<mcs-config>
+    		<channeltype></channeltype>
+    		<channelid></channelid>
+    		<language></language>
+        	<accountid>02-0098039-30</accountid>
+        	<custcode></custcode>
+       		<loginid>0098039</loginid>
+        	<password>555555</password>
+        	<instrumentcode>23</instrumentcode>
+        	<lotsize>200</lotsize>
+        	<price>11</price>
+    	</mcs-config>   
+    	
+    	<!--RTQ test monitor interface's configure parameter //-->
+    	<qs-config>
+    		<channeltype></channeltype>
+    		<language></language>
+    		<custcode></custcode>
+    		<instrumentcode></instrumentcode>
+    		<delaytime></delaytime>
+   	 	</qs-config>    
+    
+    	<!--Other test monitor interface's configure parameter //-->
+    	<other-config>
+    		<errorcount>5</errorcount>
+    		<!-- unit: second//-->
+    		<normalaccesstime>4</normalaccesstime>
+    		<!-- unit: second//-->
+    		<intervaltime>120</intervaltime>
+    		<priority></priority>    	
+    		</other-config> 
+	</monitor-config>
+	
+    <threadpool-config>
+    	<miniThreadSize>5</miniThreadSize>
+    	<maxThreadSize>15</maxThreadSize>
+    	<!-- unit: second//-->
+    	<aliveTime>300</aliveTime>
+    </threadpool-config>    		
+	
+</admin-config>
