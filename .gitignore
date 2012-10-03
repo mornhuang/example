@@ -1,3 +1,4 @@
+<<<<<<< .mine
 [Dd]ebug
 [Rr]elease
 *.[Ll]og
@@ -20,4 +21,36 @@
 *.opt
 *.plg
 *.positions
+=======
+[Dd]ebug
+[Rr]elease
+*.[Ll]og
+*.out
+*.ilk
+*.pdb
+*.bsc
+*.idb
+*.obj
+*.o
+*.pch
+*.sbr
+*.dep
+*.suo
+*.ncb
+*.user
+*.cd
+*.class
+*.pyc
+*.opt
+*.plg
+*.positions
+>>>>>>> .theirs
+.classpath
 
+.settings
+.project
+<<<<<<< .mine
+
+=======
+
+>>>>>>> .theirs
