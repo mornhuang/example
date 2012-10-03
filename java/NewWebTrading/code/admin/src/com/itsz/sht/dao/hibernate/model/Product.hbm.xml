@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.itsz.sht.dao.hibernate.model.Product" table="NW_PROD">
+        <id name="prodId" type="java.lang.String">
+            <column name="PROD_ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="prodStatus" type="java.lang.String">
+            <column name="PROD_STATUS" length="10" />
+        </property>
+        <property name="quota" type="java.lang.Long">
+            <column name="QUOTA" precision="12" scale="0" />
+        </property>
+        <property name="alltQuota" type="java.lang.Long">
+            <column name="ALLT_QUOTA" precision="12" scale="0" />
+        </property>
+        <property name="svcMode" type="java.lang.String">
+            <column name="SVC_MODE" length="10" />
+        </property>
+        <property name="valtOfSvc" type="java.lang.String">
+            <column name="VALT_OF_SVC" length="15" />
+        </property>
+        <property name="acesUnit" type="java.lang.Long">
+            <column name="ACES_UNIT" precision="12" scale="0" />
+        </property>
+        <property name="billType" type="java.lang.String">
+            <column name="BILL_TYPE" precision="4" scale="0" />
+        </property>
+        <property name="discType" type="java.lang.String">
+            <column name="DISC_TYPE" precision="4" scale="0" />
+        </property>
+        <property name="priceInHkd" type="java.lang.Long">
+            <column name="PRICE_IN_HKD" precision="12" scale="0" />
+        </property>
+        <property name="effDate" type="java.util.Date">
+            <column name="EFF_DATE" length="7" />
+        </property>
+        <property name="exprDate" type="java.util.Date">
+            <column name="EXPR_DATE" length="7" />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="REMARKS" length="1000" />
+        </property>
+        <property name="initDate" type="java.util.Date">
+            <column name="INIT_DATE" length="7" />
+        </property>
+        <property name="initBy" type="java.lang.String">
+            <column name="INIT_BY" length="20" />
+        </property>
+        <property name="updDate" type="java.util.Date">
+            <column name="UPD_DATE" length="7" />
+        </property>
+        <property name="updBy" type="java.lang.String">
+            <column name="UPD_BY" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

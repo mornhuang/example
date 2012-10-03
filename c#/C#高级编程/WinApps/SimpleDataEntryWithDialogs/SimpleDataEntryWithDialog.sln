@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDataEntryWithDialog", "SimpleDataEntryWithDialog.csproj", "{A0F3F973-9758-4EA3-91B7-626A9580FA12}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A0F3F973-9758-4EA3-91B7-626A9580FA12}.Debug.ActiveCfg = Debug|.NET
+		{A0F3F973-9758-4EA3-91B7-626A9580FA12}.Debug.Build.0 = Debug|.NET
+		{A0F3F973-9758-4EA3-91B7-626A9580FA12}.Release.ActiveCfg = Release|.NET
+		{A0F3F973-9758-4EA3-91B7-626A9580FA12}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

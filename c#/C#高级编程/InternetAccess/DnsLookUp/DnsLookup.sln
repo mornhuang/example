@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnsLookUp", "DnsLookUp.csproj", "{933385B3-F207-4405-8C3D-C5CC311A0960}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{933385B3-F207-4405-8C3D-C5CC311A0960}.Debug.ActiveCfg = Debug|.NET
+		{933385B3-F207-4405-8C3D-C5CC311A0960}.Debug.Build.0 = Debug|.NET
+		{933385B3-F207-4405-8C3D-C5CC311A0960}.Release.ActiveCfg = Release|.NET
+		{933385B3-F207-4405-8C3D-C5CC311A0960}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

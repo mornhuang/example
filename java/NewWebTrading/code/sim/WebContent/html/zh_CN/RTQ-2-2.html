@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>海通国际证券集团有限公司</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/zh_CN/style.css" />
+    <script src="../../Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.layout.js" type="text/javascript"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#ckAgree").click(function () {
+                if ($(this).attr("checked"))
+                    $("#btnConfirm").removeClass("disabled").attr("disabled", "");
+                else
+                    $("#btnConfirm").addClass("disabled").attr("disabled", "disabled");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="page-title">
+        <span class="shaddow"><span>实时报价服务申请</span><b></b></span> <span class="position">账户服务
+            > 实时报价服务申请</span>
+    </h1>
+    <div class="page-content">
+        <h3>
+            用户声明</h3>
+        <div class="user-assert">
+            <p>
+                重要事项：以下申请实时报价服务申请的协议书(以下称「协议」)将以电子形式由客户确认后提交给本公司。阁下可以打印整份协议作为记录之用。请必须确认阁下已清楚明白本协议内的各项条款和条件：</p>
+            <h2 class="center">
+                AASTOCKS订户协议书</h2>
+            <p>
+                本人确认已详细阅读及理解本协议书下列条款列的条款及细则，并愿意接受其约束。
+            </p>
+            <ul>
+                <li>1. 用户不得在未得HKEx-IS事先书面同意下，以任何形式传递部份或全部资讯内容给任何人仕。 </li>
+                <li>2. 用户不得利用部份或全部资讯内容作非法用途。 </li>
+                <li>3. 用户不得在非正常情况下使用部份或全部资讯。 </li>
+                <li>4. 用户不得使用部份或全部资讯内容帮助成立、维持或提供场外交易用途。 </li>
+            </ul>
+            <h2>
+                声明、条款及细则：</h2>
+            <p>本网站包含的内容和信息乃根据公开资料分析和演释，该公开资料，乃从相信属可靠之来源搜集，这些分析和信息并未经独立核实和AASTOCKS.com Limited并不保证他们的准确性、完整性、实时性或者正确性。在本网站的行情价格、图、评论和购买或者出售评分应该谨慎作为仅参考使用，AASTOCKS.com
+                    Limited不应被视为游说任何订户或访客执行任何交易，您须为所有跟随在本网站的评论和购买或出售评分执行的交易负责。 AASTOCKS.com Limited之信息服务基于「现况」及「现有」提供，网站的信息和内容如有更改恕不另行通知。 AASTOCKS.com
+                    Limited有权但无此义务，改善或更正在本网站的任何部分之错误或疏失。用户在没有AASTOCKS.com Limited明确的书面同意情况下，不得以任何方式复制、传播、出售、出版、广播、公布、传递资讯内容或者利用在本网站的信息和内容作商业用途。投资股票和其它有价证券附带风险，AASTOCKS.com
+                    Limited鼓励您使用在本网站的风险管理和教育工具，但AASTOCKS.com Limited不能并不会保证任何在本网站现在或未来的购买或出售评论和讯息会否带来赢利。过往之表现不一定反映未来之表现，AASTOCKS.com
+                    Limited不可能作出该保证及用户不应该作出该假设。 AASTOCKS.com Limited也许连结订户或访客至其有兴趣的网站，但AASTOCKS.com Limited只提供此服务给订户或访客并不为此安排负责。
+                    AASTOCKS.com Limited对于任何包含于、经由、连结、下载或从任何与本网站有关服务所获得之资讯、内容或广告，不声明或保证其内容之正确性或可靠性。对于您透过本网站上之广告、资讯或要约而展示、购买或取得之任何产品、资讯或资料，本公司亦不负品质保证之责任。本合约的中英原文如有任何岐异，一切以英文原文为准。
+            </p>
+            <h2>
+                注意: 任何不足一个公历月的服务仍须缴交一个月的费用。 </h2>
+        </div>
+        <p>
+            <input type="checkbox" id="ckAgree" /><label for="ckAgree">我同意以上声明</label>
+        </p>
+        <br />
+        <h2>
+            确定要以HKD XXXX 购买下产品及服务，购买后即从交易账户扣除现金支付选购服务。 </h2>
+        <p class="form-notice">
+            <strong>股胜通报价系统</strong>
+        </p>
+        
+        <h2>
+            确定密码:
+        </h2>
+        <p>
+            <input type="password" class="form-input" />
+        </p>
+        <br />
+        <p>
+            <input type="button" id="btnConfirm" class="yellow-btn disabled" value="确定" disabled="disabled"
+                onclick="javascript:location.href='RTQ-3.html'" />
+            <input type="button" class="graw-short-btn" value="取消" onclick="javascript:location.href='RTQ-1.html'" />
+        </p>
+    </div>
+</body>
+</html>

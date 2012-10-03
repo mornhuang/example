@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>海通国际证券集团有限公司</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/zh_CN/style.css" />
+    <script type="text/javascript" src="../../Script/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../../Script/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../Script/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="../../Script/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="../../Script/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="../../Script/taifook.layout.js"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function () {
+           if($.browser.msie && $.browser.version == "6.0"){
+           alert("你的浏览器版本过低，请升级到7.0以上.");
+        }
+    });
+    </script>
+</head>
+<body class="body">
+    <div class="warp">
+        <div id="header">
+            <ul class="header-lang">
+                <li><a href="Login.html" class="logout disabled">登出</a></li>
+                <li><a href="../en_US/Main.html" class="en">Eng</a></li>
+                <li><a href="../zh_CN/Main.html" class="zh-cn active">简</a></li>
+                <li><a href="../zh_TW/Main.html" class="zh-hk">繁</a></li>
+                <li><a href="javascript:openCommonDialog('幫助','FAQ.html');" class="help"></a></li>
+            </ul>
+        </div>
+        <div id="container">
+            <div class="login">
+                <div class="login-active-account">
+                    <strong>新客户及现有客户<b>重设密码</b>专用</strong>
+                    <input type="button" class="login-btn-active-account" value="" />
+                    客户在收到[短讯激活码]后，<br />
+                    请在此设定登入密码。
+                </div>
+                <form action="" class="login-form">
+                <div>
+                    <label>
+                        登入名称</label>
+                    <input type="text" value="" class="name" />
+                    <a href="javascript:;" class="login-clear"></a>
+                </div>
+                <div>
+                    <label>
+                        密码</label>
+                    <input type="password" value="" class="password" />
+                    <a href="javascript:;" class="login-clear"></a>
+                </div>
+                <input type="button" class="login-btn-submit" onclick="location.href='Risk-disclosure.html'" />
+                </form>
+                <div class="login-nav">
+                    <a href="#" class="link-open" title="开设户口"></a>
+                </div>
+                <p class="login-notice">
+                    <strong>注意：</strong>为免无法使用部分功能，登入前请先暂时关闭电脑内已装置弹出型视窗拦截功能(如：WinXP SP2 IE内快显封锁程式、Yahoo工具列、Google工具列、MSN工具列等)。 </p>
+                <p class="login-law">
+                    海通国际证券有限公司，为一间核准从事证券及期货条例（香港法例第五七一章）中第一类（证券交易）及第三类（杠杆式外汇交易）受规管活动之持牌法团（中央编号：AAF806）及香港联合交易所有限公司的交易所参与者。 </p>
+            </div>
+        </div>
+        <div id="footer">
+            <span>Copyright &copy; 2010 海通国际证券集团有限公司。版权所有</span> <a href="javascript:openCommonDialog('免责声明','Disclaimers.html');">
+                免责声明</a> | <a href="javascript:openCommonDialog('个人资料私隐政策','Data-Privacy-Policy.html');">
+                    个人资料私隐政策</a>
+        </div>
+        <div id="dialog" class="hide">
+            <iframe src="" frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>

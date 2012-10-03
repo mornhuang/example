@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactionClient", "TransactionClient.csproj", "{5BDEE3C0-65BA-4766-BC5B-F05F798A5A0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5BDEE3C0-65BA-4766-BC5B-F05F798A5A0A}.Debug.ActiveCfg = Debug|.NET
+		{5BDEE3C0-65BA-4766-BC5B-F05F798A5A0A}.Debug.Build.0 = Debug|.NET
+		{5BDEE3C0-65BA-4766-BC5B-F05F798A5A0A}.Release.ActiveCfg = Release|.NET
+		{5BDEE3C0-65BA-4766-BC5B-F05F798A5A0A}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

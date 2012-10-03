@@ -1,0 +1,48 @@
+
+/* test.uil */
+module test                             /* 模块名 */
+	version = 'v1.0'                /* 版本号 */
+	names = case_sensitive          /* 名字是否大小写敏感 */
+
+procedure
+	quit();                         /* 回调函数 */
+
+value
+                                        /* 赋值 */
+	my_font16: 
+		fontset('8x16,-*-song-*-gbk-0');
+
+	my_font24: 
+		fontset('12x24,-*-song-*--24-*-gbk-0');
+
+object
+	test_main : XmRowColumn {
+		arguments {
+			XmNorientation = XmVERTICAL;    /* 方向 */
+		};
+		controls {				/* 控件 */
+			XmLabel         hello_label;
+			XmPushButton    exit_button;
+		};
+	};
+
+object
+	hello_label : XmLabel {
+		arguments {
+			XmNfontList = my_font16; 	/* 指定字体 */
+                        XmNlabelString = compound_string("你好 Motif !");
+		};
+	};
+
+object
+	exit_button : XmPushButton {
+		arguments {
+			XmNfontList = my_font24;
+			XmNlabelString = compound_string("退出");
+		};
+		callbacks {
+			XmNactivateCallback = procedure quit();
+		};
+	};
+
+end module;

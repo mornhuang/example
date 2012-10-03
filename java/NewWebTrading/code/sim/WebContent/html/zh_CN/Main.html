@@ -1,0 +1,1964 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>海通国际证券集团有限公司</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/zh-CN/style.css" />
+    <script type="text/javascript" src="../../Script/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="../../Script/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../Script/jquery-ui.custom.min.js"></script>
+    <script type="text/javascript" src="../../Script/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="../../Script/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="../../Script/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="../../Script/taifook.layout.js"></script>
+    <script type="text/javascript" src="../../Script/jselect.js"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        /*Dilog demo*/
+        $(function () {
+            //Init tooltips
+            $(".font-size").tooltip();
+            $(".title-tooltip").tooltip({ left: 0, width: 160 });
+            $(".symbol-1").tooltip({ left: -3 });
+            $(".symbol-2").tooltip({ left: -3 });
+            $(".symbol-3").tooltip({ left: -3 });
+
+            //Trading confirm button click
+            $(".btn-buy").click(function () {
+                $(".ui-north-pannel-buy").show();
+            });
+            $(".btn-sell").click(function () {
+                $(".ui-north-pannel-sell").show();
+            });
+            $(".btn-cancel").click(function () {
+                $(".ui-north-pannel-buy, .ui-north-pannel-sell").hide();
+            });
+
+            //Init pop dialogs
+            $("#confirmRequestDialog, #noticeDialog, #bypassPasswordDialog, #AllbuyinDialog, #feesAndChargesDialog").dialog({
+                autoOpen: false,
+                modal: true,
+                width: 400
+            });
+            $("#amendDialog, #cancelDialog, #statusDialog, #statusDetailDialog").dialog({
+                autoOpen: false,
+                modal: true,
+                width: 400,
+                height: 590
+            });
+
+            //Bypass password pop dialog
+            $("#lkBypassPassword").click(function () {
+                $("#bypassPasswordDialog").dialog("open");
+            });
+            $("#btnCancelBypassPassword").click(function () {
+                $("#bypassPasswordDialog").dialog("close");
+            });
+
+            $("#rdUsePassword").change(function () {
+                $(".bypass-password-pop-password").addClass("disabled").find("input").attr("disabled", "disabled").val("");
+            });
+            $("#rdBypassPassword").change(function () {
+                $(".bypass-password-pop-password").removeClass("disabled").find("input").attr("disabled", "");
+            });
+
+            //Fees & Charges pop dialog
+            $(".lk-fees-and-charges").click(function () {
+                $("#feesAndChargesDialog").dialog("open");
+            });
+
+            //Trading pop confirm dialog
+            $(".btn-confirm").click(function () {
+                $("#confirmRequestDialog").dialog("open");
+            });
+
+            //South grid pop dialog
+            $(".trading-amend-link").click(function () {
+                $("#amendDialog").dialog("open");
+            });
+            $("#btnBackAmend").click(function () {
+                $("#amendDialog").dialog("close");
+            });
+            $(".trading-cancel-link").click(function () {
+                $("#cancelDialog").dialog("open");
+            });
+            $("#btnBackCancel").click(function () {
+                $("#cancelDialog").dialog("close");
+            });
+            $(".trading-status-link").click(function () {
+                $("#statusDialog").dialog("open");
+            });
+			$(".traing-status-detail-link").click(function () {
+                $("#statusDetailDialog").dialog("open");
+            });
+            $(".amend-cancel-link").click(function () {
+                $("#noticeDialog").dialog("open");
+            });
+			//All Buy In
+            $("#lkallbuyin").click(function () {
+                $("#AllbuyinDialog").dialog("open");
+            });
+            $("#btnCancellkallbuyin").click(function () {
+                $("#AllbuyinDialog").dialog("close");
+            });
+
+            $("#rdUsePassword").change(function () {
+                $(".bypass-password-pop-password").addClass("disabled").find("input").attr("disabled", "disabled").val("");
+            });
+            $("#rdBypassPassword").change(function () {
+                $(".bypass-password-pop-password").removeClass("disabled").find("input").attr("disabled", "");
+            });
+			$(".ui-south-grid").tablesorter().bind("sortEnd",function() { 
+				$(".ui-south-grid tbody tr").removeClass("alternating");
+				$(".ui-south-grid tbody tr:odd").addClass("alternating");
+			});
+			$(".ui-south-grid").tablesorter().bind("sortEnd",function() { 
+				$(".ui-south-grid tbody tr").removeClass("alternating");
+				$(".ui-south-grid tbody tr:odd").addClass("alternating");
+			});
+        });
+    </script>
+</head>
+<body class="body">
+    <div class="warp">
+        <div id="header">
+            <ul class="header-menu">
+                <li class="header-menu-trading"><a href="javascript:;"><span>交易</span><b></b></a>
+                    <div class="header-menu-trading-div">
+                        <a href="javascript:changeCenterSrc('Trading-hk-stock.html')">证券买卖</a> <a href="javascript:changeCenterSrc('Margin.html')">
+                            孖展按仓比率</a>
+                    </div>
+                </li>
+                <li class="line"></li>
+                <li class="header-menu-ipo"><a href="javascript:changeCenterSrc('IPO-1.html')"><span>
+                    新股认购</span></a></li>
+                <li class="line"></li>
+                <li class="header-menu-account-service"><a href="javascript:;"><span>账户服务</span><b></b></a>
+                    <div class="header-menu-account-service-div ui-helper-clearfix">
+                        <div class="left">
+<<<<<<< .mine
+                            <a href="javascript:changeCenterSrc('Fund-transfer-1.html');">账户转账</a> 
+                            <a href="javascript:changeCenterSrc('Account-enquiry-1.html');">账户查询</a> 
+                            <a href="javascript:changeCenterSrc('Check-fund-deposit.html');">确认存款</a>
+                            <a href="javascript:changeCenterSrc('history.html');">交易记录</a> 
+                            <a href="javascript:openCommonDialog('检查电脑配置','http://gb.htisec.com/gb/www.htisec.com/tc/cs/checkUser.jsp');">检查电脑配置</a> 
+                            <a href="javascript:changeCenterSrc('ePayment.html');">电子转账</a> <a href="javascript:changeCenterSrc('Remittance-service.html');" >汇款服务申请</a> 
+                            <a href="javascript:changeCenterSrc('Change-password-1.html');">更改密码</a>
+                            <a href="javascript:changeCenterSrc('Email-setting-1.html');">邮件提醒设置</a> 
+                            <a href="javascript:openCommonDialog('表格下载','http://172.30.2.16:8080/htisec/jsp/zh-CN/Form-Download.jsp')">表格下载</a>
+=======
+                            <a href="javascript:changeCenterSrc('Fund-transfer-1.html');">账户转账</a> <a href="javascript:changeCenterSrc('Account-enquiry-1.html');">
+                                账户查询</a> <a href="javascript:changeCenterSrc('Check-fund-deposit.html');">确认存款</a>
+                            <a href="javascript:changeCenterSrc('history.html');">交易记录</a> <a href="javascript:openCommonDialog('检查电脑配置','http://gb.htisec.com/gb/www.htisec.com/tc/cs/checkUser.jsp');">
+                                检查电脑配置</a> <a href="javascript:changeCenterSrc('ePayment.html');">电子转账</a> <a href="javascript:changeCenterSrc('Remittance-service.html');" >
+                                    汇款服务申请</a> <a href="javascript:changeCenterSrc('Change-password-1.html');">更改密码</a>
+                            <a href="javascript:changeCenterSrc('Email-setting-1.html');">邮件提醒设置</a> <a href="javascript:openCommonDialog('表格下载','http://gb.htisec.com/gb/www.htisec.com/tc/cs/form.jsp')">
+                                表格下载</a>
+>>>>>>> .r1900
+                            <div class="clear">
+                            </div>
+                            <a href="javascript:changeCenterSrc('ePayment.html');" class="pic-link">
+                                <img src="images/menu_pic_link_1.png" alt="" /></a> <a href="javascript:changeCenterSrc('RTQ-1.html');"
+                                    class="pic-link">
+                                    <img src="images/menu_pic_link_2.png" alt="" /></a>
+                        </div>
+                        <div class="right">
+                            <a href="#" class="down">投资工具</a>
+                            <div class="second">
+                                <a href="javascript:changeCenterSrc('RTQ-1.html');">实时报价服务申请</a> <a href="javascript:changeCenterSrc('ISM-1.html');">
+                                    智慧型选股申请</a> <a href="javascript:openCommonDialog('图表分析','http://www.htisec.com/english/securities/chart.jsp');">
+                                        图表分析</a> <a href="javascript:openCommonDialog('上市公司派息通告','http://www.htisec.com/etnet/dividend_c.jsp');">
+                                            上市公司派息通告</a> <a href="javascript:openCommonDialog('即市新闻','http://www.htisec.com/tc/research/news.jsp');">
+                                                即市新闻</a> <a href="javascript:changeCenterSrc('Warrants-CBBCs.html');">认股牛熊证分析</a>
+                                <a href="javascript:openCommonDialog('ETF概览','http://chart.dbpower.com.hk/taifook/ch2/etf/etf_overview_c.cgi');">
+                                    ETF 概览</a> <a href="javascript:openCommonDialog('新股上市资料','http://content.etnet.com.hk/content/taifook/tc/ipo_timetable.php');">
+                                        新股上市资料</a> <a href="javascript:openCommonDialog('上市公司通告','http://corpsv.etnet.com.hk/webservice/jsp/SAMPLE2/CorpAn/chi/main.jsp?START_ENCODING =CHI&START_MAINTYPE=CORPAN&ENCODING=CHI&MAINTYPE=CORPAN&START_SUBTYPE=COINFO&CLIENT=TAIFOOK&SUBTYPE=CORPAN');">
+                                            上市公司通告</a> <a href="javascript:openCommonDialog('上市公司资料','http://202.64.120.205/taifookbasic/c_index.php');">
+                                                上市公司资料</a> <a href="javascript:openCommonDialog('盈利预测','http://corpsv.etnet.com.hk/webservice/jsp/TAIFOOK2/PROFIT-EST/BIG5/CoInfo_ProfitEst.jsp? ENCODING=BIG5&STOCKCODE=5&MAINTYPE=COMPANY&SUBTYPE=EDI&CLIENT=TAIFOOK2');">
+                                                    盈利预测</a> <a href="javascript:openCommonDialog('A+H 股行情速递','http://202.22.244.84/AHStocks/AHStocks.jsp');">
+                                                        A+H 股行情速递</a> <a href="javascript:openCommonDialog('海通网上电视','http://www.htisec.com/tc/research/webtv.jsp');">
+                                                            海通网上电视</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="line"></li>
+                <li class="header-menu-estatement"><a href="javascript:openCommonDialog('电子结单','https://emc.htisec.com:8443/emc/list.action?request_locale=zh_TW' );">
+                    <span>电子结单</span></a></li>
+            </ul>
+            <ul class="header-lang">
+                <li class="userid">0076440</li>
+                <li class="message">(<a href="javascript:openCommonDialog('EMC','https://emc.taifook.com:8443/emc/list.action?request_locale=zh_TW');">1 </a>)</li>
+                <li><a href="Login.html" class="logout">登出</a></li>
+                <li><a href="../en_US/Main.html" class="en active">Eng</a></li>
+                <li><a href="../zh_CN/Main.html" class="zh-cn">简</a></li>
+                <li><a href="../zh_TW/Main.html" class="zh-hk">繁</a></li>
+                <li><a href="javascript:openCommonDialog('帮助','FAQ.html');" class="help"></a></li>
+            </ul>
+        </div>
+        <div id="container">
+            <div class="ui-north">
+                <div class="ui-north-left">
+                    <a href="javascript:;" class="home-btn-buy-sell"></a>
+                </div>
+                <div class="ui-north-pannel">
+                    <form action="">
+                    <table class="form">
+                        <tr>
+                            <td>
+                                股票编号
+                            </td>
+                            <td>
+                                <input type="text" class="textbox txt-common" />
+                            </td>
+                        </tr>
+						<tr>
+                            <td>
+                                股价
+                            </td>
+                            <td>
+                                <input type="text" class="textbox txt-common" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <input type="checkbox" class="chk-buy-all" id="chkBuyAll" />
+                                <a href="javascript:;" id="lkallbuyin">
+                                    全额买入?</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                数量
+                            </td>
+                            <td>
+                                <input type="text" class="textbox txt-common" />
+                            </td>
+                        </tr>                       
+                        <tr>
+                            <td>
+                                密码
+                            </td>
+                            <td>
+                                <input type="password" class="textbox txt-common" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <a href="javascript:;" id="lkBypassPassword">忽略密码</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <input type="reset" class="btn-clear" value="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="button" class="btn-buy" value="" />
+                                <input type="button" class="btn-sell" value="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="sepace-line"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p>
+                                    交易类型<a href="javascript:openCommonDialog('交易时段及买卖盘指示功能','Offer-service-and-the-trading-indicator.html#special');">
+                                        ?</a>
+                                </p>
+                                <select class="jquery-select select-order-type">
+                                    <option value="ENHANCED_LIMIT">增强/竞价限价盘</option>
+                                    <option value="AT_AUCTION">竞价盘</option>
+                                    <option value="SPECIAL_LIMIT">特别限价盘</option>
+                                    <option value="CONDITIONAL">条件指示盘</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span class="sepace-line"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                触发价
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select class="jquery-select select-triggering-price">
+                                    <option value="&ge;">&ge;</option>
+                                    <option value="&gt;">&gt;</option>
+                                    <option value="&le;">&le;</option>
+                                    <option value="&lt;">&lt;</option>
+                                    <option value="=">=</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="textbox txt-common" />
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+                    <div class="ui-north-pannel-buy">
+                        <span class="icon-buy"></span>
+                        <table>
+                            <tr>
+                                <td>
+                                    股票编号
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="3988" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    数量
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="1000" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    股价
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="HK$4.04" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    交易类型
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="增强/竞价限价盘" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    触发价
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="sign-area" value="&ge;" />
+                                    <input type="text" readonly="readonly" class="value-area" value="4.00" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="javascript:;" class="title-tooltip" title="参考佣金是以0.15%乘交易金额计算，只做参考之用。个下交易佣金详情请参阅日结单。">
+                                        参考佣金</a>
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="javascript:;" class="lk-fees-and-charges">其他收费</a>
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    总值$
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="HK$4040" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="button" value="确认" class="btn-confirm" />
+                                    <input type="button" value="取消" class="btn-cancel" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="ui-north-pannel-sell">
+                        <span class="icon-sell"></span>
+                        <table>
+                            <tr>
+                                <td>
+                                    股票编号
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="3988" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    数量
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="1000" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    股价
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="HK$4.04" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    交易类型
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="增强/竞价限价盘" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    触发价
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="sign-area" value="&ge;" />
+                                    <input type="text" readonly="readonly" class="value-area" value="4.00" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="javascript:;" class="title-tooltip" title="参考佣金是以0.15%乘交易金额计算，只做参考之用。个下交易佣金详情请参阅日结单。">
+                                        参考佣金</a>
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="javascript:;" class="lk-fees-and-charges">其他收费</a>
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    总值$
+                                </td>
+                                <td>
+                                    <input type="text" readonly="readonly" class="normal-area" value="HK$4040" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="button" value="确认" class="btn-confirm" />
+                                    <input type="button" value="取消" class="btn-cancel" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="javascript:;" class="ui-north-pannel-close"></a>
+                </div>
+                <div class="ui-north-right">
+                    <a class="menu-prev disabled" href="javascript:;"></a>
+                    <div class="menu-container">
+                        <ul>
+                            <li><a class="chart" title="图表分析" href="javascript:openCommonDialog('图表分析','http://www.htisec.com/english/securities/chart.jsp');" >
+                            </a></li>
+                            <li><a class="ism" title="智慧型选股" href="javascript:changeCenterSrc('ISM-1.html');"></a>
+                            </li>
+                            <li><a class="warrants" title="认股/牛熊证分析" href="javascript:changeCenterSrc('Warrants-CBBCs.html');">
+                            </a></li>
+                            <li><a class="news" title="即市新闻" href="javascript:openCommonDialog('即市新闻','http://gb.htisec.com/gb/www.htisec.com/tc/research/news.jsp') ;">
+                            </a></li>
+                            <li><a class="ipo" title="新股上市资料" href="javascript:openCommonDialog('新股上市资料','http://gb.htisec.com/gb/www.htisec.com/tc/research/ipo.jsp');">
+                            </a></li>
+                            <li><a class="ah" title="A+H 股行情速递" href="javascript:openCommonDialog('A+H 股行情速递','http://202.22.244.84/AHStocks/AHStocks.jsp ');">
+                            </a></li>
+                            <li><a class="profit" title="盈利预测" href="javascript:openCommonDialog('盈利预测','http://corpsv.etnet.com.hk/webservice/jsp/TAIFOOK2/PROFIT-EST /BIG5/CoInfo_ProfitEst.jsp?ENCODING=BIG5&STOCKCODE=5&MAINTYPE=COMPANY&SUBTYPE=EDI&CLIENT=TAIFOOK2');">
+                            </a></li>
+                            <li><a class="profile" title="上市公司资料" href="javascript:openCommonDialog('上市公司资料','http://202.64.120.205/taifookbasic/c_index.php');">
+                            </a></li>
+                            <li><a class="announcement" title="上市公司通告" href="javascript:openCommonDialog('上市公司通告','http://gb.htisec.com/gb/www.htisec.com/tc/research/company_announce.jsp');">
+                            </a></li>
+                            <li><a class="divident" title="上市公司派息通告" href="javascript:openCommonDialog('上市公司派息通告','http://www.htisec.com/etnet/dividend_c.jsp ');">
+                            </a></li>
+                            <li><a class="webtv" title="海通网上电视" href="javascript:openCommonDialog('海通网上电视','http://gb.htisec.com/gb/www.htisec.com/tc/research/webtv.jsp?type=1');">
+                            </a></li>
+                            <li><a class="epayment" title="电子转账" href="javascript:changeCenterSrc('ePayment.html');">
+                            </a></li>
+                            <li><a class="estatement" title="电子结单" href="javascript:openCommonDialog('电子结单','https://emc.htisec.com:8443/emc/list.action?request_locale =zh_TW');">
+                            </a></li>
+                            <li><a class="rtq" title="实时报价服务" href="javascript:changeCenterSrc('RTQ-1.html');"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="menu-next" href="javascript:;"></a>
+                    <div class="ui-menu-style">
+                        <a href="javascript:;" class="ui-menu-style-normal ui-menu-style-normal-active">
+                        </a><a href="javascript:;" class="ui-menu-style-mini"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-center">
+                <div class="ui-center-content">
+                    <div class="font-size" title="字体大小">
+                        <a href="#" class="font-size-N active">A</a> <a href="#" class="font-size-B">A</a>
+                        <a href="#" class="font-size-L">A</a>
+                    </div>
+                    <iframe src="trading-hk-stock.html" name="centerIframe" frameborder="0" id="center-frame">
+                    </iframe>
+                </div>
+            </div>
+            <div class="ui-south">
+                <div class="ui-resizer ui-resizer-south ui-resizer-south-open">
+                    <span class="ui-toggler ui-toggler-south ui-toggler-south-open">
+                    </span>
+                </div>
+                <ul class="ui-south-tab .ui-helper-clearfix">
+                    <li class="active"><a href="javascript:showTab('ui-south-content-order-status');">交易状态</a></li>
+                    <li><a href="javascript:showTab('ui-south-content-account-enquiry');">账户结存</a></li>
+                    <li><a href="javascript:showTab('ui-south-content-stock-pos');">股票结存</a></li>
+                    <li><a href="javascript:showTab('ui-south-content-dcy-trade');">即日交易盈亏</a></li>
+                </ul>
+                <div class="ui-south-tab-operation">
+                    <a href="#" class="south-btn-export"></a>
+                    <div class="south-div-filter">
+                        <span>过滤</span>
+                        <input type="text" class="filter" />
+                        <a href="#" class="go"></a>
+                    </div>
+                    <div class="south-div-desc">
+                        <span>符号说明</span> <a href="#" class="symbol-1" title="* 曾成功更改交易/取消交易"></a><a href="#"
+                            class="symbol-2" title="# 曾失败更改/取消交易"></a><a href="#" class="symbol-3" title="@ 更改/取消指令正在进行中">
+                            </a>
+                    </div>
+                    <div class="south-div-pager">
+                        <a href="#" class="first disabled"></a><a href="#" class="prev disabled"></a><span
+                            class="pages">第1页共1页</span> <a href="#" class="next"></a><a href="#" class="last">
+                        </a>
+                    </div>
+                </div>
+                <div class="ui-south-tab-content">
+                    <div class="ui-south-content-order-status">
+                        <table class="ui-south-grid">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">
+                                        <a href="#" class="refresh"></a>
+                                    </th>
+                                    <th>
+                                        <a href="#">状态</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">买/卖</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">股票编号</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">交易价格</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">解发价格</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">交易数量</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">交易类型</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">成交数量</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">未成交数量</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">成交平均价</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">媒介</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="buy">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        买入
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                                <tr class="buy">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        买入
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                                <tr class="sell">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        沽出
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                                <tr class="sell">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        沽出
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                                <tr class="cancel">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        取消
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                                <tr class="cancel">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        取消
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                                <tr class="buy">
+                                    <td class="oper amd">
+                                        <a href="#" class="trading-amend-link">更改</a>
+                                    </td>
+                                    <td class="oper">
+                                        <a href="#" class="trading-cancel-link">取消</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="trading-status-link">部分成交</a>
+                                    </td>
+                                    <td>
+                                        买入
+                                    </td>
+                                    <td>
+                                        3988 中国银行
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        -
+                                    </td>
+                                    <td>
+                                        3,000
+                                    </td>
+                                    <td>
+                                        ALO
+                                    </td>
+                                    <td>
+                                        1,000
+                                    </td>
+                                    <td>
+                                        2,000
+                                    </td>
+                                    <td>
+                                        HK$4.04
+                                    </td>
+                                    <td>
+                                        网上交易
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="hide ui-south-content-account-enquiry">
+                        <table>
+                            <tr>
+                                <td>
+                                    户口结存：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <td>
+                                    可用结存（不包括利息）：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <th rowspan="6">
+                                    <p>
+                                        户口编号：
+                                    </p>
+                                    <select class="jquery-select">
+                                        <option>02-0076440-30</option>
+                                        <option>02-0076440-31</option>
+                                        <option>02-0076440-32</option>
+                                        <option>02-0076440-33</option>
+                                    </select>
+                                    <p>
+                                        <input type="button" value="确认" class="form-button" />
+                                    </p>
+                                </th>
+                            </tr>
+                            <tr class="alternating">
+                                <td>
+                                    冻结金额：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <td>
+                                    现金结存：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    明日交收：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <td>
+                                    证券市值：**
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                            </tr>
+                            <tr class="alternating">
+                                <td>
+                                    后日交收：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <td>
+                                    证券按仓值：**
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    支票交收1：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <td>
+                                    买入监控上限：
+                                </td>
+                                <td>
+                                    不适用
+                                </td>
+                            </tr>
+                            <tr class="alternating">
+                                <td>
+                                    支票交收2：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                                <td>
+                                    是次买入上限：
+                                </td>
+                                <td>
+                                    $0.00
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="hide ui-south-content-stock-pos">
+                        <table class="ui-south-grid">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <a href="#" class="refresh"></a>
+                                    </th>
+                                    <th>
+                                        <a href="#">股票</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">上日收市价</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">可用数量</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">总值（上日收市价）</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="alternating">
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        648 中国仁济医药
+                                    </td>
+                                    <td class="digital">
+                                        $0.06
+                                    </td>
+                                    <td class="digital">
+                                        2,000
+                                    </td>
+                                    <td class="digital">
+                                        $120
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        1122 庆铃汽车股份
+                                    </td>
+                                    <td class="digital">
+                                        $2.69
+                                    </td>
+                                    <td class="digital">
+                                        8,000
+                                    </td>
+                                    <td class="digital">
+                                        $21,520
+                                    </td>
+                                </tr>
+                                <tr class="alternating">
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        3988 中国银行
+                                    </td>
+                                    <td class="digital">
+                                        $4.28
+                                    </td>
+                                    <td class="digital">
+                                        0
+                                    </td>
+                                    <td class="digital">
+                                        $0
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        8033 爱达利网络
+                                    </td>
+                                    <td class="digital">
+                                        $0.31
+                                    </td>
+                                    <td class="digital">
+                                        6,000
+                                    </td>
+                                    <td class="digital">
+                                        $1,860
+                                    </td>
+                                </tr>
+                                <tr class="alternating">
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        8279 亚博科技控股
+                                    </td>
+                                    <td class="digital">
+                                        $0.33
+                                    </td>
+                                    <td class="digital">
+                                        655
+                                    </td>
+                                    <td class="digital">
+                                        $216.15
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        8033 爱达利网络
+                                    </td>
+                                    <td class="digital">
+                                        $0.31
+                                    </td>
+                                    <td class="digital">
+                                        6,000
+                                    </td>
+                                    <td class="digital">
+                                        $1,860
+                                    </td>
+                                </tr>
+                                <tr class="alternating">
+                                    <td class="oper">
+                                        <a href="#">沽出</a>
+                                    </td>
+                                    <td class="character">
+                                        8279 亚博科技控股
+                                    </td>
+                                    <td class="digital">
+                                        $0.33
+                                    </td>
+                                    <td class="digital">
+                                        655
+                                    </td>
+                                    <td class="digital">
+                                        $216.15
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="hide ui-south-content-dcy-trade">
+                        <table class="ui-south-grid">
+                            <thead>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td colspan="2">
+                                        今日买入
+                                    </td>
+                                    <td colspan="2">
+                                        今日沽出
+                                    </td>
+                                    <td rowspan="2">
+                                        即日平均成交盈亏（即日成交股数）
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <a href="#">股票编号</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">数量</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">平均价格</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">数量</a>
+                                    </th>
+                                    <th>
+                                        <a href="#">平均价格</a>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="alternating">
+                                    <td class="character">
+                                        3988 中国银行
+                                    </td>
+                                    <td class="digital">
+                                        3,000
+                                    </td>
+                                    <td class="digital">
+                                        HK$4.00
+                                    </td>
+                                    <td class="digital">
+                                        3,000
+                                    </td>
+                                    <td class="digital">
+                                        HK$4.20
+                                    </td>
+                                    <td>
+                                        <span>HK$600</span>(3,000 股)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="character">
+                                        8197 东北虎药业
+                                    </td>
+                                    <td class="digital">
+                                        10,000
+                                    </td>
+                                    <td class="digital">
+                                        HK$0.30
+                                    </td>
+                                    <td class="digital">
+                                        8,000
+                                    </td>
+                                    <td class="digital">
+                                        HK$0.27
+                                    </td>
+                                    <td>
+                                        <span class="fall">-HK$240</span>(8,000 股)
+                                    </td>
+                                </tr>
+                                <tr class="alternating">
+                                    <td class="character">
+                                        2823 安硕A50中国
+                                    </td>
+                                    <td class="digital">
+                                        1,000
+                                    </td>
+                                    <td class="digital">
+                                        HK$13.44
+                                    </td>
+                                    <td class="digital">
+                                        2,000
+                                    </td>
+                                    <td class="digital">
+                                        HK$13.48
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="character">
+                                        665 大福证券
+                                    </td>
+                                    <td class="digital">
+                                        400
+                                    </td>
+                                    <td class="digital">
+                                        HK$6.23
+                                    </td>
+                                    <td class="digital">
+                                        0
+                                    </td>
+                                    <td class="digital">
+                                        0
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+                                </tr>
+                                <tr class="alternating">
+                                    <td class="character">
+                                        5 汇丰控股
+                                    </td>
+                                    <td class="digital">
+                                        0
+                                    </td>
+                                    <td class="digital">
+                                        HK$0.00
+                                    </td>
+                                    <td class="digital">
+                                        400
+                                    </td>
+                                    <td class="digital">
+                                        HK$80.00
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="character">
+                                        665 大福证券
+                                    </td>
+                                    <td class="digital">
+                                        400
+                                    </td>
+                                    <td class="digital">
+                                        HK$6.23
+                                    </td>
+                                    <td class="digital">
+                                        0
+                                    </td>
+                                    <td class="digital">
+                                        0
+                                    </td>
+                                    <td>
+                                        N/A
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <span>Copyright &copy; 2010 海通国际证券集团有限公司。版权所有</span> <a href="javascript:openCommonDialog('免责声明','Disclaimers.html');">
+                免责声明</a> | <a href="javascript:openCommonDialog('个人资料私隐政策','Data-Privacy-Policy.html');">
+                    个人资料私隐政策</a>
+        </div>
+    </div>
+    <div id="dialog" class="hide">
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+    <div id="statusDialog" class="trading-status-pop ui-pop-padding" title="交易状况">
+        <table class="ui-corner-all">
+            <tr class="alternating">
+                <th>
+                    户口编号
+                </th>
+                <td>
+                    02-014654543-33
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    交易编号
+                </th>
+                <td>
+                    81525
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    状态
+                </th>
+                <td>
+                    完全成交
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    买入/卖出
+                </th>
+                <td>
+                    买入
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易类型
+                </th>
+                <td>
+                    限价盘
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    股票
+                </th>
+                <td>
+                    3988中国银行
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易价
+                </th>
+                <td>
+                    5.150
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    触发条件
+                </th>
+                <td>
+                    >=4.99
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    原交易数量
+                </th>
+                <td>
+                    1,000
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    改变/取消数量
+                </th>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    成交数量<a class="traing-status-detail-link" href="javascript:;">（详情）</a>
+                </th>
+                <td>
+                    <a href="javascript:;">1,000 <span class="tooltip desc-two-columns"><span class='tooltipPointer'>
+                        <span class='tooltipPointerInner'></span></span><span class='tooltipContent'>
+                            <label class="title">
+                                成交价格</label>
+                            <label class="title">
+                                成交数量</label>
+                            <label>
+                                $4.8</label>
+                            <label>
+                                1,000</label>
+                        </span></span></a>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    未完成数量
+                </th>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    有效期
+                </th>
+                <td>
+                    即日
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    拒绝原因
+                </th>
+                <td>
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    全额或取消
+                </th>
+                <td>
+                    否
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    媒介
+                </th>
+                <td>
+                    网上交易
+                </td>
+            </tr>
+        </table>
+        <p>
+            * 曾成功更改交易/取消交易</p>
+        <p>
+            # 曾失败更改/取消交易</p>
+        <p>
+            @ 更改/取消指令正在进行中</p>
+        <a class="notice" href="javascript:openCommonDialog('帮助','FAQ.html?#q5');">注意：未能即时成交的增强限价盘已被转为相同价格的限价盘</a>
+    </div>
+    <div id="amendDialog" class="trading-status-pop ui-pop-padding" title="更改交易指示">
+        <table class="ui-corner-all">
+            <tr class="alternating">
+                <th>
+                    户口编号
+                </th>
+                <td>
+                    02-014654543-33
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    交易编号
+                </th>
+                <td>
+                    81525
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    状态
+                </th>
+                <td>
+                    已接收
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    买入/卖出
+                </th>
+                <td>
+                    买入
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易类型
+                </th>
+                <td>
+                    限价盘
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    股票
+                </th>
+                <td>
+                    3988中国银行
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易价
+                </th>
+                <td>
+                    5.150
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    原交易数量
+                </th>
+                <td>
+                    1,000
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    改变/取消数量
+                </th>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    成交数量
+                </th>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    未完成数量
+                </th>
+                <td>
+                    1,000
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    有效期
+                </th>
+                <td>
+                    下一交易日
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    全额或取消
+                </th>
+                <td>
+                    否
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    触发条件
+                </th>
+                <td>
+                    <=
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    触发价
+                </th>
+                <td>
+                    <input type="text" class="form-input" value="4.830" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    目标交易股价
+                </th>
+                <td>
+                    <input type="text" class="form-input" value="4.830" />
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    最终交易数量
+                </th>
+                <td>
+                    <input type="text" class="form-input" value="1,000" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    输入密码
+                </th>
+                <td>
+                    <input type="password" class="form-input" />
+                </td>
+            </tr>
+        </table>
+        <p>
+            * 曾成功更改交易/取消交易</p>
+        <p>
+            # 曾失败更改/取消交易</p>
+        <p>
+            @ 更改/取消指令正在进行中</p>
+        <p>
+            <a class="notice" href="javascript:openCommonDialog('帮助','FAQ.html?#q5');">注意：未能即时成交的增强限价盘已被转为相同价格的限价盘</a>
+        </p>
+        <p>
+            <a class="notice amend-cancel-link" href="#">确认更改/取消指示前注意</a>
+        </p>
+        <p class="operation">
+            <input type="button" class="yellow-btn" value="确定更改" />
+            <input type="button" id="btnBackAmend" class="graw-short-btn" value="返回" />
+        </p>
+    </div>
+    <div id="cancelDialog" class="trading-status-pop ui-pop-padding" title="取消交易指示">
+        <table class="ui-corner-all">
+            <tr class="alternating">
+                <th>
+                    户口编号
+                </th>
+                <td>
+                    02-014654543-33
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    交易编号
+                </th>
+                <td>
+                    81525
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    状态
+                </th>
+                <td>
+                    已接收
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    买入/卖出
+                </th>
+                <td>
+                    买入
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易类型
+                </th>
+                <td>
+                    限价盘
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    股票
+                </th>
+                <td>
+                    3988中国银行
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易价
+                </th>
+                <td>
+                    5.150
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    触发条件
+                </th>
+                <td>
+                    >=4.99
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    原交易数量
+                </th>
+                <td>
+                    1,000
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    改变/取消数量
+                </th>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    成交数量
+                </th>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    未完成数量
+                </th>
+                <td>
+                    1,000
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    有效期
+                </th>
+                <td>
+                    下一交易日
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    全额或取消
+                </th>
+                <td>
+                    否
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    输入密码
+                </th>
+                <td>
+                    <input type="password" class="form-input" />
+                </td>
+            </tr>
+        </table>
+        <p>
+            * 曾成功更改交易/取消交易</p>
+        <p>
+            # 曾失败更改/取消交易</p>
+        <p>
+            @ 更改/取消指令正在进行中</p>
+        <a class="notice" href="javascript:openCommonDialog('帮助','FAQ.html?#q5');">注意：未能即时成交的增强限价盘已被转为相同价格的限价盘</a>
+        <p>
+            <a class="notice amend-cancel-link" href="#">确认更改/取消指示前注意</a>
+        </p>
+        <p class="operation">
+            <input type="button" class="yellow-btn" value="确定取消" />
+            <input type="button" id="btnBackCancel" class="graw-short-btn" value="返回" />
+        </p>
+    </div>
+    <div id="noticeDialog" class="trading-status-pop ui-pop-padding" title="确认更改/取消指示前注意">
+        <h2>
+            确认更改/取消指示前注意:
+        </h2>
+        <p>
+            若客户不需要减少交易数量，则毋须更改『最终交易数量』内的数值。最终交易数量应是未完成数量+已成交数量，即系统已自动填入的数量。更改/取消后, 请在「交易状况」按<<重新整理>>
+            以检视最新交易状况。更改/取消指令未必被市场接受, 故请阁下留意更新后的交易价及交易状态, 以确定更改是否已成功:
+        </p>
+        <ul class="form-number-ul">
+            <li><span class="number-yellow">1</span>「交易状况」中「状态」出现" * "符号, 表示曾经成功更改交易/取消交易。 </li>
+            <li><span class="number-yellow">2</span>「交易状况」中「状态」出现" # "符号, 表示最新更改/取消已被拒绝，未能修改交易股价或数量。 </li>
+            <li><span class="number-yellow">3</span>「交易状况」中「状态」出现" @ "符号, 表示最新更改/取消指令正在进行中。 </li>
+        </ul>
+    </div>
+    <div id="confirmRequestDialog" class="trading-status-pop ui-pop-padding" title="已接受的指示">
+        <table class="ui-corner-all">
+            <tr class="alternating">
+                <th>
+                    交易编号
+                </th>
+                <td>
+                    99999
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    买入/卖出
+                </th>
+                <td>
+                    买入
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    股票
+                </th>
+                <td>
+                    3988 中国银行
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    数量
+                </th>
+                <td>
+                    1,000
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    交易价格
+                </th>
+                <td>
+                    4.28
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    总金额
+                </th>
+                <td>
+                    $4,300
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="bypassPasswordDialog" class="bypass-password-pop ui-pop-padding" title="确定密码设定">
+        <h2>
+            取消「交易时要求密码确认步骤」声明
+        </h2>
+        <div class="user-policy">
+            <p>
+                本人现授权海通国际证券有限公司于本人名下之网上证券户口, 取消一切在进行发出证券交易新盘、更改及删除指示时所需重新输入「密码确认」 步骤。
+            </p>
+            <p>
+                本人清楚明白及愿意承担, 取消「交易时要求密码确认步骤」可能引起之一切额外风险, 并同意贵公司毋须就本人放弃使用上述之步骤所遭受之损失承担任何责任。
+            </p>
+            <p>
+                此外, 本人了解在完成证券交易后或在离开电脑前应先行「登出」网上证券户口并关闭有关系统, 避免他人使用本人的证券户口交易或阅览账户资料。
+            </p>
+        </div>
+        <p>
+            <input type="radio" name="usepassword" id="rdUsePassword" checked="checked" /><label
+                for="rdUsePassword">执行「交易时要求密码确认步骤」</label>
+        </p>
+        <p>
+            <input type="radio" name="usepassword" id="rdBypassPassword" /><label for="rdBypassPassword">取消「交易时要求密码确认步骤」</label>
+        </p>
+        <p class="bypass-password-pop-password disabled">
+            确认密码：<input type="password" disabled="disabled" class="form-input" />
+        </p>
+        <p class="operation">
+            <input type="button" class="yellow-btn" value="确认" />
+            <input type="button" id="btnCancelBypassPassword" class="graw-short-btn" value="返回" />
+        </p>
+    </div>
+    <div id="AllbuyinDialog" class="bypass-password-pop ui-pop-padding" title="全额买入">
+        
+            <p>「全额买入」是根据客户账户内可用结存的金额，以计算可以买入该股票的最高数量。这新增功能可省却客户输入股票数量的时间，快一步进行交易。</p>
+        </div>
+    <div id="feesAndChargesDialog" class="fees-and-charges-pop ui-pop-padding" title="其他收费">
+        <table class="ui-corner-all">
+            <tr class="alternating">
+                <th>
+                    项目
+                </th>
+                <th>
+                    收费
+                </th>
+                <th>
+                    最低收费
+                </th>
+                <th>
+                    最高收费
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    交易征费
+                </td>
+                <td>
+                    0.00%
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+            <tr class="alternating">
+                <td>
+                    联交所交易费
+                </td>
+                <td>
+                    0.01%
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    中央结算系统股份交收费
+                </td>
+                <td>
+                    每宗联交所买卖总值的0.002%
+                </td>
+                <td>
+                    HK$2
+                </td>
+                <td>
+                    HK$100
+                </td>
+            </tr>
+            <tr class="alternating">
+                <td>
+                    政府印花税
+                </td>
+                <td>
+                    0.10%
+                </td>
+                <td>
+                    HK$1
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+        </table>
+    </div>
+	<div id="statusDetailDialog" class="fees-and-charges-pop ui-pop-padding" title="详情">
+        <table class="ui-corner-all">
+            <tr class="alternating">
+                <th>
+                    成交价格
+                </th>
+                <th>
+                    成交数量
+                </th>
+                <th>
+                    交易对手
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    0.014
+                </td>
+                <td>
+                    50
+                </td>
+                <td>
+                    7230
+                </td>
+            </tr>
+			<tr class="alternating">
+                <td>
+                    0.014
+                </td>
+                <td>
+                    50
+                </td>
+                <td>
+                    7230
+                </td>
+            </tr>
+		</table>
+	</div>
+</body>
+</html>

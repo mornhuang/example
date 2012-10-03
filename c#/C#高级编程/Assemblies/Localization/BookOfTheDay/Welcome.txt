@@ -1,0 +1,4 @@
+GoodMorning=Good Morning
+GoodAfternoon=Good Afternoon
+GoodEvening=Good Evening
+Description=This is a localization sample.

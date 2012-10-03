@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Wed Jul 06 13:43:05 GMT+08:00 2005                         -->
+<hibernate-mapping>
+
+    <class name="com.taifook.adminportal.web.ipo.dto.IPOQtyAmt" table="CHL_IPO_MASTER_CRITERIA">
+	   <composite-id name="id" class="com.taifook.adminportal.web.ipo.dto.IPOQtyAmtKey">
+            <key-property name="ipoMasterId" column="IPO_MASTER_ID" type="java.lang.Long"/>
+            <key-property name="shareQty" column="SHARE_QTY" type="int"/>
+        </composite-id>
+        <property name="amount" column="AMOUNT" type="java.math.BigDecimal" />
+    </class>
+    
+</hibernate-mapping>

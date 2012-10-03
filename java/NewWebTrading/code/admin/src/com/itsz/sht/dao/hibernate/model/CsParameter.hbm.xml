@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.itsz.sht.dao.hibernate.model">
+  <class name="CsParameter" table="NW_CS_PARAMETER">
+  	<id name="keyPk" type="java.lang.String">
+        <column name="KEY_PK" length="100" />
+        <generator class="assigned" />
+    </id>
+    <property name="value" type="java.lang.String">
+        <column name="VALUE" length="3200" />
+    </property>
+    <property name="classId" type="java.lang.String">
+        <column name="CLASSID" length="10" />
+    </property>
+    <property name="dataType" type="java.lang.String">
+        <column name="DATATYPE" length="20" />
+    </property>
+    <property name="readonly" type="java.lang.Long">
+        <column name="READONLY" length="1" />
+    </property>
+    <property name="description" type="java.lang.String">
+        <column name="DESCRIPTION" length="255" />
+    </property>
+    <property name="updateTime" type="java.util.Date">
+        <column name="UPDATE_TIME" />
+    </property>
+  </class>
+</hibernate-mapping>

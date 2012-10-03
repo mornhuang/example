@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Wed Jul 06 13:40:07 GMT+08:00 2005                         -->
+<hibernate-mapping >
+    <class name="com.taifook.adminportal.web.ipo.dto.IPORecord" table="CHL_IPO_MASTER">
+         <id name="ipoMasterId" column="IPO_MASTER_ID" type="java.lang.Long">
+            <generator class="sequence">
+               <param name="sequence">IPO_MSK_ID</param>
+            </generator>
+        </id>
+        <property name="ipoCode" column="MIS_REF_CODE" type="java.lang.String" />
+        <property name="ipoName" column="INSTR_NAME" type="java.lang.String" />
+		<property name="ipoName_gb" column="INSTR_NAME_GB" type="java.lang.String" />
+		<property name="ipoName_big" column="INSTR_NAME_BIG" type="java.lang.String" />
+        <property name="stockCode" column="INSTR_CODE" type="java.lang.String" />
+        <property name="price" column="PRICE" type="java.math.BigDecimal" />
+        <property name="quantity" column="LOT_SIZE" type="int" />
+        <property name="shareAmt" column="SHARE_MULTI_AMT" type="java.math.BigDecimal" />
+        <property name="handFee" column="ORDER_HANDLING_CHARGE" type="java.math.BigDecimal" />
+        <property name="deadLine" column="APPL_DEADLINE" type="java.util.Date" />
+        <property name="depositDate" column="DEPOSIT_DATE" type="java.util.Date" />
+        <property name="refundDate" column="REFUND_DATE" type="java.util.Date" />
+        <property name="shrCollectDate" column="SHARE_COL_CHARGE" type="java.util.Date" />
+        <property name="tradeDate" column="TRADE_DATE" type="java.util.Date" />
+        <property name="loanIntRate" column="LOAN_INTEREST_RATE" type="java.math.BigDecimal" />
+        <property name="minDpstRate" column="MIN_DEPOSIT_RATE" type="java.math.BigDecimal" />
+        <property name="createDate" column="CREATE_DATE" type="java.util.Date" />
+        <property name="lastAmendDate" column="LAST_AMEND_DATE" type="java.util.Date" />
+		<property name="status" column="STATUS" type="java.lang.String" />
+		<property name="debitDate" column="DEBIT_DATE" type="java.util.Date"/>
+		<property name="prop_url_en" column="PROP_URL_EN" type="java.lang.String" />
+		<property name="prop_url_cn" column="PROP_URL_CN" type="java.lang.String" />
+		<property name="prop_url_tw" column="PROP_URL_TW" type="java.lang.String" />
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Thu Mar 30 14:48:38 GMT+08:00 2006                         -->
+<hibernate-mapping package="com.taifook.adminportal.model">
+
+    <class name="CsOnlineuser" table="NW_CS_ONLINEUSER">
+        <composite-id name="id" class="CsOnlineuserKey">
+            <key-property name="channelcode" column="CHANNELCODE_PK" type="string"/>
+            <key-property name="userid" column="USERID_PK" type="string"/>
+        </composite-id>
+ 
+        <property name="sessionid" column="SESSIONID" type="string"  not-null="false" />
+        <property name="logintime" column="LOGINTIME" type="timestamp"  not-null="false" />
+    </class>
+    
+</hibernate-mapping>

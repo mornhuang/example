@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s0="http://tempuri.org/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <s:element name="GetData">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEvent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eventName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventRoom" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventAttendees" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eventDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEventResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEventResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="int" type="s:int" />
+    </s:schema>
+  </types>
+  <message name="GetDataSoapIn">
+    <part name="parameters" element="s0:GetData" />
+  </message>
+  <message name="GetDataSoapOut">
+    <part name="parameters" element="s0:GetDataResponse" />
+  </message>
+  <message name="AddEventSoapIn">
+    <part name="parameters" element="s0:AddEvent" />
+  </message>
+  <message name="AddEventSoapOut">
+    <part name="parameters" element="s0:AddEventResponse" />
+  </message>
+  <message name="GetDataHttpGetIn" />
+  <message name="GetDataHttpGetOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="AddEventHttpGetIn">
+    <part name="eventName" type="s:string" />
+    <part name="eventRoom" type="s:string" />
+    <part name="eventAttendees" type="s:string" />
+    <part name="eventDate" type="s:string" />
+  </message>
+  <message name="AddEventHttpGetOut">
+    <part name="Body" element="s0:int" />
+  </message>
+  <message name="GetDataHttpPostIn" />
+  <message name="GetDataHttpPostOut">
+    <part name="Body" element="s0:DataSet" />
+  </message>
+  <message name="AddEventHttpPostIn">
+    <part name="eventName" type="s:string" />
+    <part name="eventRoom" type="s:string" />
+    <part name="eventAttendees" type="s:string" />
+    <part name="eventDate" type="s:string" />
+  </message>
+  <message name="AddEventHttpPostOut">
+    <part name="Body" element="s0:int" />
+  </message>
+  <portType name="Service1Soap">
+    <operation name="GetData">
+      <input message="s0:GetDataSoapIn" />
+      <output message="s0:GetDataSoapOut" />
+    </operation>
+    <operation name="AddEvent">
+      <input message="s0:AddEventSoapIn" />
+      <output message="s0:AddEventSoapOut" />
+    </operation>
+  </portType>
+  <portType name="Service1HttpGet">
+    <operation name="GetData">
+      <input message="s0:GetDataHttpGetIn" />
+      <output message="s0:GetDataHttpGetOut" />
+    </operation>
+    <operation name="AddEvent">
+      <input message="s0:AddEventHttpGetIn" />
+      <output message="s0:AddEventHttpGetOut" />
+    </operation>
+  </portType>
+  <portType name="Service1HttpPost">
+    <operation name="GetData">
+      <input message="s0:GetDataHttpPostIn" />
+      <output message="s0:GetDataHttpPostOut" />
+    </operation>
+    <operation name="AddEvent">
+      <input message="s0:AddEventHttpPostIn" />
+      <output message="s0:AddEventHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="Service1Soap" type="s0:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/GetData" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AddEvent">
+      <soap:operation soapAction="http://tempuri.org/AddEvent" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Service1HttpGet" type="s0:Service1HttpGet">
+    <http:binding verb="GET" />
+    <operation name="GetData">
+      <http:operation location="/GetData" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="AddEvent">
+      <http:operation location="/AddEvent" />
+      <input>
+        <http:urlEncoded />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="Service1HttpPost" type="s0:Service1HttpPost">
+    <http:binding verb="POST" />
+    <operation name="GetData">
+      <http:operation location="/GetData" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="AddEvent">
+      <http:operation location="/AddEvent" />
+      <input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Service1">
+    <port name="Service1Soap" binding="s0:Service1Soap">
+      <soap:address location="http://localhost/PCSWebSrv2/Service1.asmx" />
+    </port>
+    <port name="Service1HttpGet" binding="s0:Service1HttpGet">
+      <http:address location="http://localhost/PCSWebSrv2/Service1.asmx" />
+    </port>
+    <port name="Service1HttpPost" binding="s0:Service1HttpPost">
+      <http:address location="http://localhost/PCSWebSrv2/Service1.asmx" />
+    </port>
+  </service>
+</definitions>

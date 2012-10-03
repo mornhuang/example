@@ -1,0 +1,28 @@
+This theme marble3D was created by Mark J Eaton aka HeTTaR ( hettar@uq.net.au )
+
+   This is a GTK theme which should work with any application that uses
+the gtk toolkit. The theme is designed to be clean professional but
+visually pleasing. I also attempted to give it a 3d look whilst
+maintaining the flat look where things look like they are connect rather 
+than piled on top of each other.
+
+   You are free to use this theme yourself. You are free to give this
+theme to other people. You are free to include this theme on CD's or
+pretty much where ever you want to. All I ask is that this file 
+remains in place, you don't claim credit for my work and that you tell 
+me about it so that I can feel good ;o).
+ 
+   I hope you enjoy using this theme.
+
+HeTTaR
+
+    Thanks to the rasterman for implementing themes into
+the gtk toolkit.
+  raster       raster@rasterman.com
+
+Current Authors and Patch submitters for this theme are:
+
+HeTTaR (hettar@uq.net.au)
+
+Thanks to James M Cape aka Jimbob for pointing out some errors
+int the theme.

@@ -1,0 +1,490 @@
+附录A  GNU公用许可证(General Public License)
+
+                                GNU公用许可证
+
+                               第2版, 1991年6月
+    Copyright (c) 1989, 1991 Free Sofkware Foundation, Inc.
+                          675 Mass Ave, Cambridge, MA 02139, USA
+    每个人都可以拷贝和分发这个许可证文档的原封不动的拷贝, 但绝不允许更改它. 
+
+                                    绪言
+
+    绝大多数软件的许可证设计会剥夺你共享和改变这些软件的自由. 相反, GNU公用
+许可证致力于保证你共享和改变免费软件的自由——保证该软件对所有用户都是免费的
+. 这种公用许可证适用于绝大多数免费软件基金会的软件和任何其他作者允许使用的程
+序(其他的免费软件基金会的软件受GNU库公用许可证的保护)、同样你也可以将它用到
+你的程序中. 
+
+    当我们谈及免费软件时, 我们指的是自由而非价格. 我们所设计的公用许可证确保你有分发这些免费软件拷贝的自由(如果你愿意, 也可以为这种服务收费), 确保你收到源代码或能得到它(如果你想要的话), 确保你能改变它或在新免费软件中使用其中部分代码; 并且还可能确保你知道可做这些事. 
+
+    为了保护你的权利, 我们需要做出一些限制以避免任何人否认你的这些权利或要求你放弃这些权利. 
+
+    如果你分发软件拷贝或修改它的话, 这些限制对你来说意味着特定的责任. 
+
+    例如, 如果你在分发一个程序的拷贝, 不管是免费还是收费的, 你必须把你所拥有的所有权利授予接收者. 你必须确保他们同样接收或者能够得到源代码, 并且你必须向其展示这些问题以便其了解其权利. 
+
+    我们用两个步骤保护你的权利：(l)给软件赋予版权, (2)提供你这种许可证, 允许你 合法地拷贝、分发和／或修改软件. 
+
+    同样, 为了保护每个作者及用户, 我行I想确认每个人都理解这种免费软件没有保证的事实. 如果软件被其他人修改了并继续传播, 我们需要其接收者知道其拥有的并非源代码. 这样其他人造成的任何问题都不会影响源代码作者的声望. 
+
+    最后, 任何免费软件都受到专利的威胁. 我们希望避免一个免费软件的再分发者可以独自获得专利许可证的危险, 避免事实上将程序变为财富的危险. 为了防止这种危险, 我们应澄清的是任何专利必须为每个人的自由使用而注册或者根本就不注册. 
+
+    下面列出有关拷贝、分发和修改的精确条款和条件. 
+
+                                 GNU公用许可证
+                        关于拷贝、分发和修改的条款和条件
+
+    0. 这种许可证可应用在任何程序或其他包含有通告的工作作品上, 这种通告由版权拥有者放置, 并通知它可在这种公用许可证的条款下分发. 下边的“程序”指的是任何—种程序或件品, 而“基于程序的作品”指的是受版权法保护的程序或者任何派生的作品, 也就是说, 一个包含程序或部分程序的作品, 既包含有原封不动的拷贝. 又包括修改和／或翻译到另一种语言的副本. (这以后, “翻译”毫无限制地包括在“修改”这个词中). 每个许可证都以“你”作为称呼. 
+
+    除了拷贝、分发和修改之外的活动都不包括在这种许可证之中；它们都超出了范围. 运行程序的行为并不受限制, 只有在程序输出的内容组成了一个基于程序的作品时它才受许可证的限制(与运行程序无关). 它是否正确取决于程序完成的功能. 
+
+    1. 你可以像你接收程序源代码一样在任何媒体上分发它的原件备份, 只要你在每个拷贝的显著位置适当地发布版权通告和担保声明, 你可以与参考这个许可证并缺乏保证的通知保持联系；你可以随同程序给程序的其他接收者—份许可证的拷贝. 
+
+    你可以因为传送拷贝的行为收费, 并且可以任意提供授权保护做为收费的代价. 
+
+    2．因此, 合成基于程序的作品时, 你可以修改程序拷贝或其中任一部分. 并且只要你同样满足以下这些条件, 你就可在上边第1条款下拷贝和分发这种修改品或作品：
+
+    a)你必须使已修改的文件带有显著的通知, 声明你已改变文件及其日期. 
+
+    b)你必须使你分发或出版的作品, 不管其整体或部分来源于其他什么程序, 都应该整体标注为不收费以供第三方基于本许可证条款来使用. 
+
+    c)如果已修改的程序在运行时要正常地交互式阅读命令, 在以绝大多数普通方法来开始运行这种交互式使用时, 你必须使它能打印或显示包括有适当版权通告和无授权担保声明的文档信息(否则, 应指出提供了授权担保), 同时也应使它声明用户可在这些条件下再分发程序并告诉用户如何查看本许可证的拷贝(例如: 如果程序本身是交互式的但不能正常地打印这种声明, 你的基于程序的作品并不要求打印这种声明). 
+
+    这些要求做为—个整体应用到已修改的作品上. 如果该作品的可定义部分并非来自于程序, 并且有理由认为是自身独立的和单独的作品, 当你以独立作品分发它们时, 那么本许可证及其条款不再适用. 但当你以—个基于程序作品的整体或部分分发这些相同部分时, 整个作品的分发必须遵守许可证的条款, 对于其他许可证的许可将延伸到整体上, 并因此对每个部分都不必考虑是谁编写的. 
+
+    因此, 本许可让的目的不在于声明你对完全由你编写作品的权利; 相反；目的只是使用这种权利来控制基于程序的派生或收集作品的分发. 
+
+    此外, 仅仅非基于程序的另一作品的有关在一定存储或分发媒介上的程序(或基于程序的一件作品)的汇集不构成本许可证范围的另外作品. 
+
+    3. 你可以(或基于它的作品, 在第2节中), 基于第1和第2节中的条款, 以目标代码或可执行形式拷贝和分发程序, 只要你也能完成以下任一工作：
+
+    a)伴随程序是完全对应的机器可读的源代码, 它必须在一个可为软件交换任意使用的媒介上基于第1和第2的条款下被分发. 
+
+    b)伴随程序的是书面方式提供的完全机器可读的相应源代码的拷贝, 它至少应在3年内有效, 应以不超过支付源码分发代价的价格提供给第三方, 它应基于第1和第2节的条款在可为软件交换任意使用的媒介上分发. 
+
+    c)伴随程序的是你收到用以分发相应源代码的信息(这种替代方案只在非商业性销售和只在以接收到目标代码或可执行状态程序时提供, 它应与上述部分一致). 
+
+    对于作品的源代码意味着对作品可任意修改. 对于可执行的程序, 完整的源代码意味着其所有模块的全部源代码, 加上任何有关的接口定义文件, 加上用于控制编译和可执行程序安装的脚本程序. 但是, 做为特殊的例外, 分发的源代码不需要包括任何随可执行程序运行的基于操作系统的主要部件(编译器, 内核等等)一起正式分发的东西(可以是源代码或二进制形式), 除非这些部件本身有可执行程序. 
+
+    如果执行程序或目标代码的分发由提供从指定位置对拷贝的访问手段来完成, 那么提供从相同地点对源代码拷贝的相同访问手段即与源代码等效分发, 即使第三方并不一定要为目标代码来拷贝源代码. 
+
+    4．除非此许可证提供了许可, 否则你不能拷贝、修改、再注册或分发程序. 除了拷贝、修改、再注册或分发程序之外的尝试和努力都是不允许的, 否则本许可证将自动终止你的权利. 
+
+    但是, 从你这里基于本许可证已接收到拷贝或权利的团体将不会终止其许可证, 只要这些团体完全遵守规定. 
+
+    5．只要你还没有签署本许可证, 你就不必接受本许可证的规定. 但是, 没有其他的东西能赋予你修改或分发程序或作品的权限. 如果你不接受该许可证, 你的所有对程序的操作在法律上是被禁止的). 因此, 通过对程序(或任何基于程序的作品)的修改或分发, 你就表明你接受本许可证以及对程序及基于程序的作品关于拷贝、分发或修改的条款和条件. 
+
+    6．每次你再分发程序(或任何基于程序的作品), 接收者将自动从初始注册者那里获得许可证并按照这些条款和条件拷贝、分发或修改程序. 此时你不必给接收者对这些权利的使用强加任何更多的限制. 
+
+    你不必对第三方强加对本许可证的服从负责任. 
+
+    7．由于法庭判决的结果或违反专利的控诉或其他任何原因(不限于专利问题), 如果强加给你的条件(不管是法庭判决、协议或其他的)与本许可证的条件矛盾, 他们并不会因该许可证的条件而原谅你. 如果你分发程序不能同时满足许可证的条件和其他适当的条件, 那么其后果是你就根本不能分发该程序. 例如, 专利许可证就不会允许那些从你这里直接或间接地获得拷贝的人毫不负责地再分发该程序, 而唯一能让你满足它和该许可证的方法就是完全制止对程序的分发. 
+
+    如果在任何特殊环境下本节的任何部分都是无效的或没有效力的, 本书的平衡能应用, 作为整体本节段将能在其他环境下应用. 
+
+    本节的目的并非诱使你违反任何专利或其他财产权利；这—节唯一的目的在于保护免费软件分发系统的完整性, 这就是通过公共许可证实践来实现的. 许多人已经通过此系统的持续应用做出了巨大的贡献以便实现大范围的软件分发；它取决于著者／制作者决定他或她是否愿意通过其他任何系统分发软件, 而不能强迫他／她作出选择. 
+
+    本节的目的在于彻底弄清该许可证剩余部分的后果. 
+
+    8．如果程序的分发和／或使用通过专利或有版权的接口限制在特定国家内, 将程序置于该许可证之下的初始版权持有者将增加除这些国家之外的明显地理限制, 因此只允许在那些没被排除在外的国家之中分发. 在这种情况下, 这个许可证纳入这种限制就如同其编写在许可证的主体之中. 
+
+    9．免费软件基金会将随时出版修订后的和／或新版本的公用许可证. 这些新版软件与当前版本的软件在思想上很相似, 但可能在处理新问题或所关心的细节上不同. 
+
+    每个版本都被赋予了一个唯—的版本号. 如果程序指定了将应用在自身及其以后版本上该许可证的版本号, 你就会有免费软件基金会出版的关于那一版及其后继版的下列条款和条件的选项. 如果程序没有指定该许可证的版本号, 你可以选择免费软件基金会曾经出版的任何版本. 
+
+    10．如果你想把部分程序结合到另外的分发条件不同的免费软件里, 可以写信给作者征得同意. 对于由免费软件基金会拥有版权的软件, 可写信给免费软件基金会. 有时我们会为此做—些例外. 我们的决定取决于由保留所有我们免费软件的免费分发状态和促进软件共享和重用这两大目标. 
+
+                                 没有担保
+
+    l1．由于程序注册为不收费, 因此对该程序就没有担保达到实际法律允许的程度. 否则除非在文字中声明, 版本所有者和／或其他团体提供程序时没有任何种类担保, 既包括表明的或隐含的, 也包括对特殊目的的可销售性和适用性的隐含担保. 至于程序的质量和性能的整体风险均在于你自己. 如果想验证程序的错误, 你就得承担所有必要的服务、修改或纠错的费用. 
+
+    12．除非法律需要或在文字中声明, 否则任何版权所有者或其他在以前允许的修改和／或再分发程序的团体, 将对任何损失负责, 包括任何一般的, 特殊的、偶然的或由使用该程序引起的损失后果(包括不受限制的数据的丢失或不精确的数据或由你或第三方团体承担的损失或程序与其他程序的失败操作), 即使这些版权所有者或其他团体已被建议有这种损失的可能性. 
+
+                               条款和条件结束
+
+                      如何将这些条款应用到你的新程序中
+
+    如果你开发了一个新程序, 并且你想让公众最大可能地使用它, 达到这一点的最佳途径就是使它成为免费软件、这样每个人都能在这些条款下再分发和修改它. 
+
+    要这样做, 就应把下列通知联到程序上, 把它们联到每个源文件的开头以充分地表明无担保, 这种做法是最安全的. 并且每个文件都应至少有“Copyright”行和在何处可发现全部的通告的指示. 
+
+    ＜给出编程者的姓名的行和其完成工作的简要介绍＞
+    Copyright (C) 19yy ＜作者姓名＞
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+同样也应加上如何用电子邮件或信件与你联系的信息. 
+
+    如果程序是交互式的, 在它开始进入交互模式时使其输出一个类似这样的简短通告: 
+
+    Gnomovision version 69, Copyright (C) 19yy name of author
+    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
+    假设的命令'show w'和'show c'应显示公用许可证的适当部分. 当然, 你使用的命令可以叫做不同于'show w’和'show c'的其他名字, 甚至可以是鼠标单击或菜单选项——可以是适合你程序的任何东西. 
+
+    同样, 如果必要, 你应请你的雇主(如果你作为一名编程人员开展工作)或你的学校来为程序签署“copyright disclaimer”, 这里有一个例子. 请改换其名字:
+
+   Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+  `Gnomovision' (which makes passes at compilers) written by James Hacker.
+
+  <signature of Ty Coon>, 1 April 1989
+  Ty Coon, President of Vice
+
+    这个公用许可证不允许将你的程序添加到牟利的程序中. 如果你的程序是常规库程序, 你可以认为允许牟利的应用程序链接到该库程序是很有用的. 如果你想这样做, 请使用GNU库公用许可证而不是这里的公用许可证. 
+
+
+
+                    GNU GENERAL PUBLIC LICENSE
+                       Version 2, June 1991
+
+ Copyright (C) 1989, 1991 Free Software Foundation, Inc.
+                          675 Mass Ave, Cambridge, MA 02139, USA
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The licenses for most software are designed to take away your
+freedom to share and change it.  By contrast, the GNU General Public
+License is intended to guarantee your freedom to share and change free
+software--to make sure the software is free for all its users.  This
+General Public License applies to most of the Free Software
+Foundation's software and to any other program whose authors commit to
+using it.  (Some other Free Software Foundation software is covered by
+the GNU Library General Public License instead.)  You can apply it to
+your programs, too.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+this service if you wish), that you receive source code or can get it
+if you want it, that you can change the software or use pieces of it
+in new free programs; and that you know you can do these things.
+
+  To protect your rights, we need to make restrictions that forbid
+anyone to deny you these rights or to ask you to surrender the rights.
+These restrictions translate to certain responsibilities for you if you
+distribute copies of the software, or if you modify it.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must give the recipients all the rights that
+you have.  You must make sure that they, too, receive or can get the
+source code.  And you must show them these terms so they know their
+rights.
+
+  We protect your rights with two steps: (1) copyright the software, and
+(2) offer you this license which gives you legal permission to copy,
+distribute and/or modify the software.
+
+  Also, for each author's protection and ours, we want to make certain
+that everyone understands that there is no warranty for this free
+software.  If the software is modified by someone else and passed on, we
+want its recipients to know that what they have is not the original, so
+that any problems introduced by others will not reflect on the original
+authors' reputations.
+
+  Finally, any free program is threatened constantly by software
+patents.  We wish to avoid the danger that redistributors of a free
+program will individually obtain patent licenses, in effect making the
+program proprietary.  To prevent this, we have made it clear that any
+patent must be licensed for everyone's free use or not licensed at all.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                    GNU GENERAL PUBLIC LICENSE
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+
+  0. This License applies to any program or other work which contains
+a notice placed by the copyright holder saying it may be distributed
+under the terms of this General Public License.  The "Program", below,
+refers to any such program or work, and a "work based on the Program"
+means either the Program or any derivative work under copyright law:
+that is to say, a work containing the Program or a portion of it,
+either verbatim or with modifications and/or translated into another
+language.  (Hereinafter, translation is included without limitation in
+the term "modification".)  Each licensee is addressed as "you".
+
+Activities other than copying, distribution and modification are not
+covered by this License; they are outside its scope.  The act of
+running the Program is not restricted, and the output from the Program
+is covered only if its contents constitute a work based on the
+Program (independent of having been made by running the Program).
+Whether that is true depends on what the Program does.
+
+  1. You may copy and distribute verbatim copies of the Program's
+source code as you receive it, in any medium, provided that you
+conspicuously and appropriately publish on each copy an appropriate
+copyright notice and disclaimer of warranty; keep intact all the
+notices that refer to this License and to the absence of any warranty;
+and give any other recipients of the Program a copy of this License
+along with the Program.
+
+You may charge a fee for the physical act of transferring a copy, and
+you may at your option offer warranty protection in exchange for a fee.
+
+  2. You may modify your copy or copies of the Program or any portion
+of it, thus forming a work based on the Program, and copy and
+distribute such modifications or work under the terms of Section 1
+above, provided that you also meet all of these conditions:
+
+    a) You must cause the modified files to carry prominent notices
+    stating that you changed the files and the date of any change.
+
+    b) You must cause any work that you distribute or publish, that in
+    whole or in part contains or is derived from the Program or any
+    part thereof, to be licensed as a whole at no charge to all third
+    parties under the terms of this License.
+
+    c) If the modified program normally reads commands interactively
+    when run, you must cause it, when started running for such
+    interactive use in the most ordinary way, to print or display an
+    announcement including an appropriate copyright notice and a
+    notice that there is no warranty (or else, saying that you provide
+    a warranty) and that users may redistribute the program under
+    these conditions, and telling the user how to view a copy of this
+    License.  (Exception: if the Program itself is interactive but
+    does not normally print such an announcement, your work based on
+    the Program is not required to print an announcement.)
+
+These requirements apply to the modified work as a whole.  If
+identifiable sections of that work are not derived from the Program,
+and can be reasonably considered independent and separate works in
+themselves, then this License, and its terms, do not apply to those
+sections when you distribute them as separate works.  But when you
+distribute the same sections as part of a whole which is a work based
+on the Program, the distribution of the whole must be on the terms of
+this License, whose permissions for other licensees extend to the
+entire whole, and thus to each and every part regardless of who wrote it.
+
+Thus, it is not the intent of this section to claim rights or contest
+your rights to work written entirely by you; rather, the intent is to
+exercise the right to control the distribution of derivative or
+collective works based on the Program.
+
+In addition, mere aggregation of another work not based on the Program
+with the Program (or with a work based on the Program) on a volume of
+a storage or distribution medium does not bring the other work under
+the scope of this License.
+
+  3. You may copy and distribute the Program (or a work based on it,
+under Section 2) in object code or executable form under the terms of
+Sections 1 and 2 above provided that you also do one of the following:
+
+    a) Accompany it with the complete corresponding machine-readable
+    source code, which must be distributed under the terms of Sections
+    1 and 2 above on a medium customarily used for software interchange; or,
+
+    b) Accompany it with a written offer, valid for at least three
+    years, to give any third party, for a charge no more than your
+    cost of physically performing source distribution, a complete
+    machine-readable copy of the corresponding source code, to be
+    distributed under the terms of Sections 1 and 2 above on a medium
+    customarily used for software interchange; or,
+
+    c) Accompany it with the information you received as to the offer
+    to distribute corresponding source code.  (This alternative is
+    allowed only for noncommercial distribution and only if you
+    received the program in object code or executable form with such
+    an offer, in accord with Subsection b above.)
+
+The source code for a work means the preferred form of the work for
+making modifications to it.  For an executable work, complete source
+code means all the source code for all modules it contains, plus any
+associated interface definition files, plus the scripts used to
+control compilation and installation of the executable.  However, as a
+special exception, the source code distributed need not include
+anything that is normally distributed (in either source or binary
+form) with the major components (compiler, kernel, and so on) of the
+operating system on which the executable runs, unless that component
+itself accompanies the executable.
+
+If distribution of executable or object code is made by offering
+access to copy from a designated place, then offering equivalent
+access to copy the source code from the same place counts as
+distribution of the source code, even though third parties are not
+compelled to copy the source along with the object code.
+
+  4. You may not copy, modify, sublicense, or distribute the Program
+except as expressly provided under this License.  Any attempt
+otherwise to copy, modify, sublicense or distribute the Program is
+void, and will automatically terminate your rights under this License.
+However, parties who have received copies, or rights, from you under
+this License will not have their licenses terminated so long as such
+parties remain in full compliance.
+
+  5. You are not required to accept this License, since you have not
+signed it.  However, nothing else grants you permission to modify or
+distribute the Program or its derivative works.  These actions are
+prohibited by law if you do not accept this License.  Therefore, by
+modifying or distributing the Program (or any work based on the
+Program), you indicate your acceptance of this License to do so, and
+all its terms and conditions for copying, distributing or modifying
+the Program or works based on it.
+
+  6. Each time you redistribute the Program (or any work based on the
+Program), the recipient automatically receives a license from the
+original licensor to copy, distribute or modify the Program subject to
+these terms and conditions.  You may not impose any further
+restrictions on the recipients' exercise of the rights granted herein.
+You are not responsible for enforcing compliance by third parties to
+this License.
+
+  7. If, as a consequence of a court judgment or allegation of patent
+infringement or for any other reason (not limited to patent issues),
+conditions are imposed on you (whether by court order, agreement or
+otherwise) that contradict the conditions of this License, they do not
+excuse you from the conditions of this License.  If you cannot
+distribute so as to satisfy simultaneously your obligations under this
+License and any other pertinent obligations, then as a consequence you
+may not distribute the Program at all.  For example, if a patent
+license would not permit royalty-free redistribution of the Program by
+all those who receive copies directly or indirectly through you, then
+the only way you could satisfy both it and this License would be to
+refrain entirely from distribution of the Program.
+
+If any portion of this section is held invalid or unenforceable under
+any particular circumstance, the balance of the section is intended to
+apply and the section as a whole is intended to apply in other
+circumstances.
+
+It is not the purpose of this section to induce you to infringe any
+patents or other property right claims or to contest validity of any
+such claims; this section has the sole purpose of protecting the
+integrity of the free software distribution system, which is
+implemented by public license practices.  Many people have made
+generous contributions to the wide range of software distributed
+through that system in reliance on consistent application of that
+system; it is up to the author/donor to decide if he or she is willing
+to distribute software through any other system and a licensee cannot
+impose that choice.
+
+This section is intended to make thoroughly clear what is believed to
+be a consequence of the rest of this License.
+
+  8. If the distribution and/or use of the Program is restricted in
+certain countries either by patents or by copyrighted interfaces, the
+original copyright holder who places the Program under this License
+may add an explicit geographical distribution limitation excluding
+those countries, so that distribution is permitted only in or among
+countries not thus excluded.  In such case, this License incorporates
+the limitation as if written in the body of this License.
+
+  9. The Free Software Foundation may publish revised and/or new versions
+of the General Public License from time to time.  Such new versions will
+be similar in spirit to the present version, but may differ in detail to
+address new problems or concerns.
+
+Each version is given a distinguishing version number.  If the Program
+specifies a version number of this License which applies to it and "any
+later version", you have the option of following the terms and conditions
+either of that version or of any later version published by the Free
+Software Foundation.  If the Program does not specify a version number of
+this License, you may choose any version ever published by the Free Software
+Foundation.
+
+  10. If you wish to incorporate parts of the Program into other free
+programs whose distribution conditions are different, write to the author
+to ask for permission.  For software which is copyrighted by the Free
+Software Foundation, write to the Free Software Foundation; we sometimes
+make exceptions for this.  Our decision will be guided by the two goals
+of preserving the free status of all derivatives of our free software and
+of promoting the sharing and reuse of software generally.
+
+                            NO WARRANTY
+
+  11. BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
+FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN
+OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED
+OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS
+TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE
+PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING,
+REPAIR OR CORRECTION.
+
+  12. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
+REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING
+OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED
+TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY
+YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER
+PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES.
+
+                     END OF TERMS AND CONDITIONS
+
+        Appendix: How to Apply These Terms to Your New Programs
+
+  If you develop a new program, and you want it to be of the greatest
+possible use to the public, the best way to achieve this is to make it
+free software which everyone can redistribute and change under these terms.
+
+  To do so, attach the following notices to the program.  It is safest
+to attach them to the start of each source file to most effectively
+convey the exclusion of warranty; and each file should have at least
+the "copyright" line and a pointer to where the full notice is found.
+
+    <one line to give the program's name and a brief idea of what it does.>
+    Copyright (C) 19yy  <name of author>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+Also add information on how to contact you by electronic and paper mail.
+
+If the program is interactive, make it output a short notice like this
+when it starts in an interactive mode:
+
+    Gnomovision version 69, Copyright (C) 19yy name of author
+    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+
+The hypothetical commands `show w' and `show c' should show the appropriate
+parts of the General Public License.  Of course, the commands you use may
+be called something other than `show w' and `show c'; they could even be
+mouse-clicks or menu items--whatever suits your program.
+
+You should also get your employer (if you work as a programmer) or your
+school, if any, to sign a "copyright disclaimer" for the program, if
+necessary.  Here is a sample; alter the names:
+
+  Yoyodyne, Inc., hereby disclaims all copyright interest in the program
+  `Gnomovision' (which makes passes at compilers) written by James Hacker.
+
+  <signature of Ty Coon>, 1 April 1989
+  Ty Coon, President of Vice
+
+This General Public License does not permit incorporating your program into
+proprietary programs.  If your program is a subroutine library, you may
+consider it more useful to permit linking proprietary applications with the
+library.  If this is what you want to do, use the GNU Library General
+Public License instead of this License.
+

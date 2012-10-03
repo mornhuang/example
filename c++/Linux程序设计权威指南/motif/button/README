@@ -1,0 +1,6 @@
+
+runit:
+
+	> XENVIRONMENT=CheckBox.ad ./checkbox
+	> XENVIRONMENT=RadioBox.ad ./radiobox
+

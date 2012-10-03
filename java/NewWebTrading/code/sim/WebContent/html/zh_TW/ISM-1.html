@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>海通國際證券集團有限公司</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/zh_TW/style.css" />
+    <script src="../../Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.layout.js" type="text/javascript"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".ism-pannel-link a").hover(function () {
+                var src = $(this).find("img").attr("src").replace("_thumb.", "_thumb_on.");
+                $(this).find("img").attr("src", src);
+            }, function () {
+                resetActive();
+                if ($(".ism-pannel-pic img").attr("src").indexOf("1") > 0)
+                    setActive(0);
+                if ($(".ism-pannel-pic img").attr("src").indexOf("2") > 0)
+                    setActive(1);
+                if ($(".ism-pannel-pic img").attr("src").indexOf("3") > 0)
+                    setActive(2);
+            });
+            $(".ism-pannel-link a").click(function () {
+                resetActive();
+                var src = $(this).find("img").attr("src");
+                $(this).find("img").attr("src", src.replace("_thumb.", "_thumb_on."));
+                $(".ism-pannel-pic img").attr("src", src.replace("_thumb_on.", ".").replace("_thumb.", "."));
+            });
+            var resetActive = function () {
+                $(".ism-pannel-link img").each(function () {
+                    var src = $(this).attr("src").replace("_thumb_on", "_thumb");
+                    $(this).attr("src", src);
+                });
+            }
+            var setActive = function (item) {
+                var src = $(".ism-pannel-link a").eq(item).find("img").attr("src");
+                $(".ism-pannel-link a").eq(item).find("img").attr("src", src.replace("_thumb.", "_thumb_on."));
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1 class="page-title">
+        <span class="shaddow"><span>智慧型選股</span><b></b></span> <span class="position">賬戶服務 >
+            智慧型選股</span>
+    </h1>
+    <div class="page-content">
+        <div class="ism-pannel ui-corner-all ui-helper-clearfix">
+            <div class="ism-pannel-pic"><img src="images/websec_product1.gif" alt="" /></div>
+            <div class="ism-pannel-link">
+                <a href="javascript:;">
+                    <img src="images/websec_product1_thumb_on.gif" alt="" /></a>
+                <a href="javascript:;">
+                    <img src="images/websec_product2_thumb.gif" alt="" /></a>
+                <a href="javascript:;">
+                    <img src="images/websec_product3_thumb.gif" alt="" /></a>
+            </div>
+        </div>
+        <p>
+            「智慧型選股」為客戶提供一個完善的網上股票資料庫，透過先進的濾股功能，配合個人化需求，協助客戶洞悉先機，運籌帷幄。
+        </p>
+        <br />
+        <h2>
+            產品介紹</h2>
+        <p>
+            現在「智慧型選股」再新增多項功能，包括：10年盈利及派息記錄，業務回顧與展望，股份拋空及新股透視。預設的報告包括: 環球金融市場及環球股票市場、市場脈搏、異常買賣、公司備忘、交易縱覽、公司動向。</p>
+        <ul class="form-number-ul">
+            <li><span class="number">1</span><strong>10年盈利及派息記錄</strong> - 提供更詳盡的公司歷史數據(舊版只提供5年)。</li>
+            <li><span class="number">2</span><strong>業務回顧與展望</strong> - 由公司年報概括公司過往一年業務及來年展望。</li>
+            <li><span class="number">3</span><strong>股份拋空</strong> - 投資者可以此數據判斷異常買賣之情況或買賣信號啟示。</li>
+            <li><span class="number">4</span><strong>新股透視</strong> - 提供詳盡新股資料包括保薦人表現比較。另外亦記錄有關新上市公司及認股證之重要資訊。除了可以搜尋一般資料如上市時間表及上市後之股價表現，亦能獲取對新股股價敏感之重要消息如股份禁售期等。</li>
+            <li><span class="number">5</span><strong>環球金融市場及環球股票市場</strong> – 提供環球市場價格走勢，包括各主要世界股市指數、外匯市場、美國債券市場及及主要期貨市場等等。</li>
+            <li><span class="number">6</span><strong>市場脈搏</strong> – 透過多種衍生工具市場及現貨市場數據，洞悉市場走勢，包括「指數成份股表現」、「股票排行榜」、「股證排行榜」、「市場成交分析」及「衍生工具交易概覽」。再加上其他技術及基本數據，便可觀察市場的轉向。</li>
+            <li><span class="number">7</span><strong>異常買賣</strong> – 股份回購、股份拋空及大手成交數據可令投資者得悉知情人士之異常買賣紀錄，以另一個角度探究個別股份的潛在價值，例如龐大累積的股份拋空可以是一個買入的信號。</li>
+            <li><span class="number">8</span><strong>公司備忘</strong> – 提供上市公司之基本數據，投資者亦可選取一些業績由虧轉盈、虧損收窄、盈利增長的公司進行更深入的了解。</li>
+            <li><span class="number">9</span><strong>交易縱覽</strong> – 包括所有股票之買賣安排 (如平行買賣、公可停牌、更改公可名稱等等)及交易警報(如異動股價及成交、財務預警、傳媒報道澄清等等)。</li>
+            <li><span class="number">10</span><strong>公司動向</strong> – 一些非敏感性的數據如股東大會、更換董事等等。</li>
+        </ul>
+        <br />
+        <h2>
+            月費</h2>
+        <p>
+            港幣$125</p>
+        <br />
+                 <p>
+            <input type="button" class="yellow-btn" value="立即購買" onclick="location.href='ISM-2.html'" />
+        </p>
+    </div>
+</body>
+</html>

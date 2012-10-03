@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Fri Mar 24 11:07:44 GMT+08:00 2006                         -->
+<hibernate-mapping package="com.taifook.adminportal.model">
+
+    <class name="CsBroadcast" table="NW_CS_BROADCAST">
+        <id name="seqno" column="SEQNO_PK" type="long">
+            <generator class="native">
+             <param name="sequence">CS_BROADCAST_SEQNO</param>
+            </generator>
+            
+        </id>
+ 
+        <property name="starttime" column="STARTTIME" type="timestamp"  not-null="true" />
+        <property name="endtime" column="ENDTIME" type="timestamp"  not-null="true" />
+        <property name="broadcastLevel" column="BROADCAST_LEVEL" type="string"  not-null="true" />
+        <property name="contentType" column="TYPE" type="string"  not-null="true" />
+        <property name="channels" column="channels" type="string"  not-null="true" />
+        <property name="contentEnUs" column="CONTENT_EN_US" type="string" />
+        <property name="contentZhCn" column="CONTENT_ZH_CN" type="string" />
+        <property name="contentZhTw" column="CONTENT_ZH_TW" type="string" />
+        <property name="lastupdatetime" column="lastupdatetime" type="timestamp" />
+        
+    </class>
+    
+</hibernate-mapping>

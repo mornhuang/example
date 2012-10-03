@@ -1,0 +1,23 @@
+HKCR
+{
+	RCWTEST.Factorial.1 = s 'Factorial Class'
+	{
+		CLSID = s '{8D3176FD-0C97-4481-8F66-EB78457417BB}'
+	}
+	RCWTEST.Factorial = s 'Factorial Class'
+	{
+		CLSID = s '{8D3176FD-0C97-4481-8F66-EB78457417BB}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8D3176FD-0C97-4481-8F66-EB78457417BB} = s 'Factorial Class'
+		{
+			ProgID = s 'RCWTEST.Factorial.1'
+			VersionIndependentProgID = s 'RCWTEST.Factorial'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'both'
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Fri Mar 24 11:05:38 GMT+08:00 2006                         -->
+<hibernate-mapping package="com.taifook.adminportal.model">
+
+    <class name="CsParameter" table="NW_CS_PARAMETER">
+        <id name="key" column="KEY_PK" type="string">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="value" column="VALUE" type="string"  not-null="true" />
+        <property name="classid" column="CLASSID" type="string"  not-null="true" />
+        <property name="dataType" column="DATATYPE" type="string"  not-null="true" />
+        <property name="readonly" column="READONLY" type="boolean"  not-null="true" />
+        <property name="description" column="DESCRIPTION" type="string" />
+        <property name="updateTime" column="UPDATE_TIME" type="timestamp" />
+    </class>
+    
+</hibernate-mapping>

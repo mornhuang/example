@@ -1,0 +1,1216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide</TITLE>
+</HEAD>
+<BODY>
+<A HREF="guide-1.html">Next</A>
+Previous
+Contents
+<HR>
+<H1>SGML-Tools User's Guide</H1>
+
+<H2>by Matt Welsh.  Updated by Greg Hankins, rewritten by Eric S. Raymond.</H2>v0.99.20, 10 November 1997
+<P><HR>
+<EM>This document is a user's guide to the SGML-Tools formatting system,
+a SGML-based system which allows you to produce a variety of
+output formats.  You can create plain text output (ASCII and ISO-8859-1),
+DVI, PostScript, HTML, GNU info, LyX, and RTF output from a single document
+source file.  This guide describes SGML-Tools version 0.99.20.</EM>
+<HR>
+<P>
+<H2><A NAME="toc1">1.</A> <A HREF="guide-1.html">Introduction</A></H2>
+
+<P>
+<H2><A NAME="toc2">2.</A> <A HREF="guide-2.html">Installation</A></H2>
+
+<UL>
+<LI><A HREF="guide-2.html#ss2.1">2.1 What SGML-Tools Needs</A>
+<LI><A HREF="guide-2.html#ss2.2">2.2 Installing The Software</A>
+</UL>
+<P>
+<H2><A NAME="toc3">3.</A> <A HREF="guide-3.html">Writing Documents With SGML-Tools</A></H2>
+
+<UL>
+<LI><A HREF="guide-3.html#ss3.1">3.1 Basic Concepts</A>
+<LI><A HREF="guide-3.html#ss3.2">3.2 Special Characters</A>
+<LI><A HREF="guide-3.html#ss3.3">3.3 Verbatim and Code Environments</A>
+<LI><A HREF="guide-3.html#ss3.4">3.4 Overall Document Structure</A>
+<LI><A HREF="guide-3.html#ss3.5">3.5 Internal Cross-References</A>
+<LI><A HREF="guide-3.html#ss3.6">3.6 Web References</A>
+<LI><A HREF="guide-3.html#ss3.7">3.7 Fonts</A>
+<LI><A HREF="guide-3.html#ss3.8">3.8 Lists</A>
+<LI><A HREF="guide-3.html#ss3.9">3.9 Conditionalization</A>
+<LI><A HREF="guide-3.html#ss3.10">3.10 Index generation</A>
+<LI><A HREF="guide-3.html#ss3.11">3.11 Controlling justification</A>
+</UL>
+<P>
+<H2><A NAME="toc4">4.</A> <A HREF="guide-4.html">Formatting SGML Documents</A></H2>
+
+<UL>
+<LI><A HREF="guide-4.html#ss4.1">4.1 Checking SGML Syntax</A>
+<LI><A HREF="guide-4.html#ss4.2">4.2 Creating Plain Text Output</A>
+<LI><A HREF="guide-4.html#ss4.3">4.3 Creating LaTeX, DVI or PostScript Output</A>
+<LI><A HREF="guide-4.html#ss4.4">4.4 Creating HTML Output</A>
+<LI><A HREF="guide-4.html#ss4.5">4.5 Creating GNU Info Output</A>
+<LI><A HREF="guide-4.html#ss4.6">4.6 Creating LyX Output</A>
+<LI><A HREF="guide-4.html#ss4.7">4.7 Creating RTF Output</A>
+</UL>
+<P>
+<H2><A NAME="toc5">5.</A> <A HREF="guide-5.html">Internationalization Support</A></H2>
+
+<P>
+<H2><A NAME="toc6">6.</A> <A HREF="guide-6.html">How SGML-Tools Works</A></H2>
+
+<UL>
+<LI><A HREF="guide-6.html#ss6.1">6.1 Overview of SGML</A>
+<LI><A HREF="guide-6.html#ss6.2">6.2 How SGML Works</A>
+<LI><A HREF="guide-6.html#ss6.3">6.3 What Happens When SGML-Tools Processes A Document</A>
+<LI><A HREF="guide-6.html#ss6.4">6.4 Further Information</A>
+</UL>
+<HR>
+<A HREF="guide-1.html">Next</A>
+Previous
+Contents
+</BODY>
+</HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide: Introduction</TITLE>
+</HEAD>
+<BODY>
+<A HREF="guide-2.html">Next</A>
+Previous
+<A HREF="guide.html#toc1">Contents</A>
+<HR>
+<H2><A NAME="s1">1. Introduction</A></H2>
+
+<P>SGML-Tools is a suite of programs to help you write source documents
+that can be rendered as plain text, hypertext, or high-quality typeset
+markup suitable for printing books. 
+<P>This document is the user's guide to the SGML-Tools document processing system.
+It contains more or less everything you need to know to set up
+SGML-Tools and write documents using it.  See <CODE>example.sgml</CODE> for
+an example of an SGML document that you can use as a model for your
+own documents.
+<P>
+<HR>
+<A HREF="guide-2.html">Next</A>
+Previous
+<A HREF="guide.html#toc1">Contents</A>
+</BODY>
+</HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide: Installation</TITLE>
+</HEAD>
+<BODY>
+<A HREF="guide-3.html">Next</A>
+<A HREF="guide-1.html">Previous</A>
+<A HREF="guide.html#toc2">Contents</A>
+<HR>
+<H2><A NAME="s2">2. Installation</A></H2>
+
+<P>You can get <CODE>sgml-tools-0.99.20.tar.gz</CODE> from one of the following ftp sites:
+<UL>
+<LI>
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/utils/text/sgml-tools-0.99.20.tar.gz">ftp://sunsite.unc.edu/pub/Linux/utils/text/sgml-tools-0.99.20.tar.gz</A></LI>
+</UL>
+<P>You can also get up-to-date information on SGML-tools from the 
+<A HREF="http://www.xs4all.nl/~cg/sgmltools">SGML-Tools WWW Page</A>.
+<P>
+<H2><A NAME="ss2.1">2.1 What SGML-Tools Needs</A>
+</H2>
+
+<P>The file <CODE>sgml-tools-0.99.20.tar.gz</CODE> contains everything that you
+need to write SGML documents and convert them to groff, LaTeX,
+PostScript, HTML, GNU info, LyX, and RTF.  In addition to this
+package, you will need some additional tools for generating formatted
+output.
+<OL>
+<LI><CODE>groff</CODE>.  You <EM>need</EM> version 1.08 or greater.  You can get
+this from 
+<A HREF="ftp://prep.ai.mit.edu/pub/gnu">ftp://prep.ai.mit.edu/pub/gnu</A>.  There is a Linux binary
+version at 
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/utils/text">ftp://sunsite.unc.edu/pub/Linux/utils/text</A> as well.  You
+will need <CODE>groff</CODE> to produce plain text from your SGML documents.
+<CODE>nroff</CODE> will <EM>not</EM> work!
+</LI>
+<LI>TeX and LaTeX.  This is available more or less everywhere; you should
+have no problem getting it and installing it (there is a Linux binary
+distribution on <CODE>sunsite.unc.edu</CODE>).  Of course, you only need TeX/LaTeX
+if you want to format your SGML documents with LaTeX.  So, installing TeX/LaTeX
+is optional.
+</LI>
+<LI><CODE>flex</CODE>.  <CODE>lex</CODE> will probably not work.  You can get flex from
+<CODE>
+<A HREF="ftp://prep.ai.mit.edu/pub/gnu">ftp://prep.ai.mit.edu/pub/gnu</A></CODE>.
+</LI>
+<LI><CODE>gawk</CODE> and the GNU info tools, for formatting and viewing 
+info files.  These are also available on 
+<CODE>
+<A HREF="ftp://prep.ai.mit.edu/pub/gnu">ftp://prep.ai.mit.edu/pub/gnu</A></CODE>, or on 
+<CODE>
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/utils/text">ftp://sunsite.unc.edu/pub/Linux/utils/text</A></CODE> 
+(for <CODE>gawk</CODE>) and
+<CODE>
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/system/Manual-pagers">ftp://sunsite.unc.edu/pub/Linux/system/Manual-pagers</A></CODE> 
+(for GNU info tools).  <CODE>awk</CODE> will not work.
+</LI>
+<LI>LyX (a quasi-WYSIWYG interface to LaTeX, with SGML layouts), is
+available on 
+<A HREF="ftp://ftp.via.ecp.fr">ftp://ftp.via.ecp.fr</A>.</LI>
+</OL>
+<P>
+<H2><A NAME="ss2.2">2.2 Installing The Software</A>
+</H2>
+
+<P>The steps needed to install and configure the SGML-Tools are:
+<P>
+<OL>
+<LI>First, unpack the tar file <CODE>sgml-tools-0.99.20.tar.gz</CODE> somewhere.  
+This will create the directory <CODE>sgml-tools-0.99.20</CODE>.  It doesn't matter 
+where you unpack this file; just don't move things around within the 
+<CODE>sgml-tools-0.99.20</CODE> directory.
+</LI>
+<LI>Read the <CODE>INSTALL</CODE> file - it has detailed installation instructions.
+Follow them.  If all went well, you should be ready to use the system
+immediately once you have done so.</LI>
+</OL>
+<P>
+<HR>
+<A HREF="guide-3.html">Next</A>
+<A HREF="guide-1.html">Previous</A>
+<A HREF="guide.html#toc2">Contents</A>
+</BODY>
+</HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide: Writing Documents With SGML-Tools</TITLE>
+</HEAD>
+<BODY>
+<A HREF="guide-4.html">Next</A>
+<A HREF="guide-2.html">Previous</A>
+<A HREF="guide.html#toc3">Contents</A>
+<HR>
+<H2><A NAME="s3">3. Writing Documents With SGML-Tools</A></H2>
+
+<P>For the most part, writing documents using SGML-Tools is very
+simple, and rather like writing HTML.  However, there are some caveats to
+watch out for.  In this section we'll give an introduction on writing
+SGML documents.  See the file <CODE>example.sgml</CODE> for a SGML example
+document (and tutorial) which you can use as a model when writing your
+own documents.  Here we're just going to discuss the various features
+of SGML-Tools, but the source is not very readable as an example.  Instead,
+print out the source (as well as the formatted output) for
+<CODE>example.sgml</CODE> so you have a real live case to refer to.
+<P>
+<H2><A NAME="ss3.1">3.1 Basic Concepts</A>
+</H2>
+
+<P>Looking at the source of the example document, you'll notice right off
+that there are a number of ``tags'' marked within angle brackets
+(<CODE>&lt;</CODE> and <CODE>&gt;</CODE>).  A tag simply specifies the beginning or end
+of an element, where an element is something like a section, a paragraph,
+a phrase of italicized text, an item in a list, and so on.  Using a tag
+is like using an HTML tag, or a LaTeX command such as <CODE>\item</CODE> or 
+<CODE>\section{...}</CODE>.
+<P>As a simple example, to produce <B>this boldfaced text</B>, you would type
+<BLOCKQUOTE><CODE>
+<PRE>
+As a simple example, to produce &lt;bf>this boldfaced text&lt;/bf>, ...
+</PRE>
+</CODE></BLOCKQUOTE>
+
+in the source.  <CODE>&lt;bf></CODE> begins the region of bold text, and
+<CODE>&lt;/bf></CODE> ends it.  Alternately, you can use the abbreviated form
+<BLOCKQUOTE><CODE>
+<PRE>
+As a simple example, to produce &lt;bf/this boldfaced text/, ...
+</PRE>
+</CODE></BLOCKQUOTE>
+
+which encloses the bold text within slashes.  (Of course, you'll need to
+use the long form if the enclosed text contains slashes, such as the
+case with Unix filenames).  
+<P>There are other things to watch out with respect to special characters 
+(that's why you'll notice all of these bizarre-looking ampersand 
+expressions if you look at the source; I'll talk about those shortly).
+<P>In some cases, the end-tag for a particular element is optional.  For
+example, to begin a section, you use the <CODE>&lt;sect></CODE> tag, 
+however, the end-tag for the section (which could appear at the end of
+the section body itself, not just after the name of the section!) 
+is optional and implied when you start another section of the same depth.
+In general you needn't worry about these details; just follow the model
+used in the tutorial (<CODE>example.sgml</CODE>).
+<P>
+<H2><A NAME="ss3.2">3.2 Special Characters</A>
+</H2>
+
+<P>Obviously, the angle brackets are themselves special characters in the
+SGML source.  There are others to watch out for.  For example, let's say 
+that you wanted to type an expression with angle brackets around it,
+as so: <CODE>&lt;foo></CODE>.  In order to get the left angle bracket, you
+must use the <CODE>&amp;lt;</CODE> element, which is a ``macro'' that expands
+to the actual left-bracket character.  Therefore, in the source, I typed
+<BLOCKQUOTE><CODE>
+<PRE>
+angle brackets around it, as so: &lt;tt>&amp;lt;foo>&lt;/tt>.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Generally, anything beginning with an ampersand is a special
+character.  For example, there's <CODE>&amp;percnt;</CODE> to produce
+%, <CODE>&amp;verbar;</CODE> to produce |, and so on.  For every
+special character that might otherwise confuse SGML-Tools if typed by
+itself, there is an ampersand "entity" to represent it.  The most
+commonly used are:
+<UL>
+<LI>Use <CODE>&amp;amp;</CODE> for the ampersand (&amp;), </LI>
+<LI>Use <CODE>&amp;lt;</CODE> for a left bracket (&lt;),</LI>
+<LI>Use <CODE>&amp;gt;</CODE> for a right bracket (&gt;),</LI>
+<LI>Use <CODE>&amp;etago;</CODE> for a left bracket with a slash 
+(<CODE>&lt;/</CODE>)</LI>
+<LI>Use <CODE>&amp;dollar;</CODE> for a dollar sign ($),</LI>
+<LI>Use <CODE>&amp;num;</CODE> for a hash (#),</LI>
+<LI>Use <CODE>&amp;percnt;</CODE> for a percent (%),</LI>
+<LI>Use <CODE>&amp;tilde;</CODE> for a tilde (~),</LI>
+<LI>Use <CODE>``</CODE> and <CODE>''</CODE> for quotes, or use
+<CODE>&amp;dquot</CODE> for &quot;.</LI>
+<LI>Use <CODE>&amp;shy;</CODE> for a soft hyphen (that is, an indication
+that this is a good place to break a word for horizontal justification).  </LI>
+</UL>
+<P>Here is a complete list of the entities recognized by 0.99.20.  Note
+that not all back-ends will be able to make anything useful from every
+entity -- if you see parantheses with nothing between them in the
+list, it means that the back-end that generated what you're looking at
+has no replacement for the entity.  The ``common'' ones listed above
+are pretty reliable.
+<P>
+<DL>
+<DT><B>&amp;half   ( 1/2)</B><DD><P>vertical 1/2 fraction
+<DT><B>&amp;frac12 ( 1/2)</B><DD><P>typeset 1/2 fraction
+<DT><B>&amp;frac14 ( 1/4)</B><DD><P>typeset 1/4 fraction
+<DT><B>&amp;frac34 ( 3/4)</B><DD><P>typeset 3/4 fraction
+<DT><B>&amp;frac18 ( 1/8)</B><DD><P>typeset 1/8 fraction
+<DT><B>&amp;frac38 ( 3/8)</B><DD><P>typeset 3/8 fraction
+<DT><B>&amp;frac58 ( 5/8)</B><DD><P>typeset 5/8 fraction
+<DT><B>&amp;frac78 ( 7/8)</B><DD><P>typeset 7/8 fraction
+<DT><B>&amp;sup1   (^1)</B><DD><P>superscript 1
+<DT><B>&amp;sup2   (^2)</B><DD><P>superscript 2
+<DT><B>&amp;sup3   (^3)</B><DD><P>superscript 3
+<DT><B>&amp;plus   (&plus;)</B><DD><P>plus sign
+<DT><B>&amp;plusmn (&plusmn;)</B><DD><P>plus-or-minus sign
+<DT><B>&amp;lt     (&lt;)</B><DD><P>less-than sign
+<DT><B>&amp;equals (&equals;)</B><DD><P>equals sign
+<DT><B>&amp;gt     (&gt;)</B><DD><P>greater-than sign
+<DT><B>&amp;divide (&divide;)</B><DD><P>division sign
+<DT><B>&amp;times  (&times;)</B><DD><P>multiplication sign
+<DT><B>&amp;curren (&curren;)</B><DD><P>currency symbol
+<DT><B>&amp;pound  (£)</B><DD><P>symbol for ``pounds''
+<DT><B>&amp;dollar ($)</B><DD><P>dollar sign
+<DT><B>&amp;cent   (&cent;)</B><DD><P>cent sign
+<DT><B>&amp;yen    (&yen;)</B><DD><P>yen sign
+<DT><B>&amp;num    (#)</B><DD><P>number or hash sign
+<DT><B>&amp;percnt (%)</B><DD><P>percent sign
+<DT><B>&amp;amp    (&amp;)</B><DD><P>ampersand
+<DT><B>&amp;ast    (&ast;)</B><DD><P>asterisk
+<DT><B>&amp;commat (&commat;)</B><DD><P>commercial-at sign
+<DT><B>&amp;lsqb   ([)</B><DD><P>left square bracket
+<DT><B>&amp;bsol   (\)</B><DD><P>backslash
+<DT><B>&amp;rsqb   (])</B><DD><P>right square bracket
+<DT><B>&amp;lcub   ({)</B><DD><P>left curly brace
+<DT><B>&amp;horbar (&horbar;)</B><DD><P>horizontal bar
+<DT><B>&amp;verbar (|)</B><DD><P>vertical bar
+<DT><B>&amp;rcub   (})</B><DD><P>right curly brace
+<DT><B>&amp;micro  (&micro;)</B><DD><P>greek mu (micro prefix)
+<DT><B>&amp;ohm    (&ohm;)</B><DD><P>greek capital omega (Ohm sign)
+<DT><B>&amp;deg    (&deg;)</B><DD><P>small superscript circle sign (degree sign)
+<DT><B>&amp;ordm   (&ordm;)</B><DD><P>masculine ordinal
+<DT><B>&amp;ordf   (&ordf;)</B><DD><P>feminine ordinal
+<DT><B>&amp;sect   (&sect;)</B><DD><P>section sign
+<DT><B>&amp;para   (&para;)</B><DD><P>paragraph sign
+<DT><B>&amp;middot (&middot;)</B><DD><P>centered dot
+<DT><B>&amp;larr   (&larr;)</B><DD><P>left arrow
+<DT><B>&amp;rarr   (-&gt;)</B><DD><P>right arrow
+<DT><B>&amp;uarr   (&uarr;)</B><DD><P>up arrow
+<DT><B>&amp;darr   (&darr;)</B><DD><P>down arrow
+<DT><B>&amp;copy   (&copy;)</B><DD><P>copyright
+<DT><B>&amp;reg    (&reg;)</B><DD><P>r-in-circle marl
+<DT><B>&amp;trade  (&trade;)</B><DD><P>trademark sign
+<DT><B>&amp;brvbar (&brvbar;)</B><DD><P>broken vertical bar
+<DT><B>&amp;not    (&not;)</B><DD><P>logical-negation sign
+<DT><B>&amp;sung   (&sung;)</B><DD><P>sung-note sign
+<DT><B>&amp;excl   (&excl;)</B><DD><P>exclamation point
+<DT><B>&amp;iexcl  (&iexcl;)</B><DD><P>inverted exclamation point
+<DT><B>&amp;quot   (&quot;)</B><DD><P>double quote
+<DT><B>&amp;apos   (&apos;)</B><DD><P>apostrophe (single quote)
+<DT><B>&amp;lpar   (&lpar;)</B><DD><P>left parenthesis
+<DT><B>&amp;rpar   (&rpar;)</B><DD><P>right parenthesis
+<DT><B>&amp;comma  (&comma;)</B><DD><P>comma
+<DT><B>&amp;lowbar (_)</B><DD><P>under-bar
+<DT><B>&amp;hyphen (&hyphen;)</B><DD><P>hyphen
+<DT><B>&amp;period (&period;)</B><DD><P>period
+<DT><B>&amp;sol    (&sol;)</B><DD><P>solidus
+<DT><B>&amp;colon  (&colon;)</B><DD><P>colon
+<DT><B>&amp;semi   (&semi;)</B><DD><P>semicolon
+<DT><B>&amp;quest  (&quest;)</B><DD><P>question mark
+<DT><B>&amp;iquest (&iquest;)</B><DD><P>interrobang
+<DT><B>&amp;laquo  (&laquo;)</B><DD><P>left guillemot
+<DT><B>&amp;raquo  (&raquo;)</B><DD><P>right guillemot
+<DT><B>&amp;lsquo  (&lsquo;)</B><DD><P>left single quote
+<DT><B>&amp;rsquo  (&rsquo;)</B><DD><P>right single quote
+<DT><B>&amp;ldquo  (&ldquo;)</B><DD><P>left double quote
+<DT><B>&amp;rdquo  (&rdquo;)</B><DD><P>right double quote
+<DT><B>&amp;nbsp   (&nbsp;)</B><DD><P>non-breaking space
+<DT><B>&amp;shy    (&shy;)</B><DD><P>soft hyphen
+</DL>
+<P>
+<H2><A NAME="ss3.3">3.3 Verbatim and Code Environments</A>
+</H2>
+
+<P>While we're on the subject of special characters, we might as well mention
+the verbatim ``environment'' used for including literal text in the output
+(with spaces and indentation preserved, and so on).  The 
+<CODE>verb</CODE> element is used for this; it looks like the following:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;verb>
+ Some literal text to include as example output.
+&lt;/verb>
+</PRE>
+</CODE></BLOCKQUOTE>
+
+The <CODE>verb</CODE> environment doesn't allow you to use <EM>everything</EM>
+within it literally.  Specifically, you must do the following within
+<CODE>verb</CODE> environments.
+<UL>
+<LI>Use <CODE>&amp;ero;</CODE> to get an ampersand, </LI>
+<LI>Use <CODE>&amp;etago;</CODE> to get <CODE>&lt;/</CODE>,</LI>
+<LI>Don't use <CODE>\end{verbatim}</CODE> within a <CODE>verb</CODE>
+environment, as this is what LaTeX uses to end the <CODE>verbatim</CODE> 
+environment.  (In the future, it should be possible to hide the underlying
+text formatter entirely, but the parser doesn't support this feature yet.) </LI>
+</UL>
+
+The <CODE>code</CODE> environment is much just like the <CODE>verb</CODE> environment,
+except that horizontal rules are added to the surrounding text, as so:
+<HR>
+<PRE>
+Here is an example code environment.
+</PRE>
+<HR>
+<P>You should use the <CODE>tscreen</CODE> environment around any <CODE>verb</CODE> environments,
+as so:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;tscreen>&lt;verb>
+Here is some example text.  
+&lt;/verb>&lt;/tscreen>
+</PRE>
+</CODE></BLOCKQUOTE>
+
+<CODE>tscreen</CODE> is an environment that simply indents the text and sets the 
+sets the default font to <CODE>tt</CODE>.  This makes examples look much nicer, both
+in the LaTeX and plain text versions.  You can use <CODE>tscreen</CODE>
+without <CODE>verb</CODE>, however, if you use any special characters in your 
+example you'll need to use both of them.  <CODE>tscreen</CODE> does nothing to 
+special characters.  See <CODE>example.sgml</CODE> for examples.
+<P>The <CODE>quote</CODE> environment is like <CODE>tscreen</CODE>, except that it does
+not set the default font to <CODE>tt</CODE>.  So, you can use <CODE>quote</CODE> for
+non-computer-interaction quotes, as in:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;quote>
+Here is some text to be indented, as in a quote.
+&lt;/quote>
+</PRE>
+</CODE></BLOCKQUOTE>
+
+which will generate:
+<BLOCKQUOTE>
+Here is some text to be indented, as in a quote.
+</BLOCKQUOTE>
+<P>
+<H2><A NAME="ss3.4">3.4 Overall Document Structure</A>
+</H2>
+
+<P>Before we get too in-depth with details, we're going to describe the
+overall structure of an SGML-tools document.  Look at
+<CODE>example.sgml</CODE> for a good example of how a document is set up.
+<P>
+<H3>The Preamble</H3>
+
+<P>In the document ``preamble'' you set up things such as the title
+information and document style: 
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;!doctype linuxdoc system>
+
+&lt;article>
+
+&lt;title>Linux Foo HOWTO
+&lt;author>Norbert Ebersol, &lt;tt/norb@baz.com/
+&lt;date>v1.0, 9 March 1994
+&lt;abstract>
+This document describes how to use the &lt;tt/foo/ tools to frobnicate
+bar libraries, using the &lt;tt/xyzzy/ relinker.
+&lt;/abstract>
+
+&lt;toc>
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>The elements should go more or less in this order.  The first line
+tells the SGML parser to use the linuxdoc DTD.  We'll explain that in
+the later section on 
+<A HREF="guide-6.html#sgml">How SGML-Tools Works</A>; for
+now just treat it as a bit of necessary magic.  The
+<CODE>&lt;article></CODE> tag forces the document to use the ``article''
+document style.
+<P>The <CODE>title</CODE>, <CODE>author</CODE>, and <CODE>date</CODE> tags should be obvious; in the
+<CODE>date</CODE> tag include the version number and last modification time of
+the document.
+<P>The <CODE>abstract</CODE> tag sets up the text to be printed at the top of the
+document, <EM>before</EM> the table of contents.  If you're not going to
+include a table of contents (the <CODE>toc</CODE> tag), you probably don't
+need an <CODE>abstract</CODE>.
+<P>
+<H3>Sectioning And Paragraphs</H3>
+
+<P>After the preamble, you're ready to dive into the document.  The following
+sectioning commands are available:
+<UL>
+<LI><CODE>sect</CODE>: For top-level sections (i.e.  1, 2, and so on.) </LI>
+<LI><CODE>sect1</CODE>: For second-level subsections (i.e.  1.1, 1.2, and so on.)</LI>
+<LI><CODE>sect2</CODE>: For third-level subsubsections.</LI>
+<LI><CODE>sect3</CODE>: For fourth-level subsubsubsections.</LI>
+<LI><CODE>sect4</CODE>: For fifth-level subsubsubsubsections.</LI>
+</UL>
+
+These are roughly equivalent to their LaTeX counterparts <CODE>section</CODE>,
+<CODE>subsection</CODE>, and so on.
+<P>After the <CODE>sect</CODE> (or <CODE>sect1</CODE>, <CODE>sect2</CODE>, etc.) tag comes the
+name of the section.  For example, at the top of this document, after
+the preamble, comes the tag:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;sect>Introduction
+</PRE>
+</CODE></BLOCKQUOTE>
+
+And at the beginning of this section (Sectioning and paragraphs), there
+is the tag:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;sect2>Sectioning And Paragraphs
+</PRE>
+</CODE></BLOCKQUOTE>
+
+After the section tag, you begin the body of the section.  However, you
+must start the body with a <CODE>&lt;p></CODE> tag, as so:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;sect>Introduction
+&lt;p>
+This is a user's guide to the SGML-Tools document processing...
+</PRE>
+</CODE></BLOCKQUOTE>
+
+This is to tell the parser that you're done with the section title
+and are ready to begin the body.  Thereafter, new paragraphs are started
+with a blank line (just as you would do in TeX).  For example,
+<BLOCKQUOTE><CODE>
+<PRE>
+Here is the end of the first paragraph.
+
+And we start a new paragraph here.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+There is no reason to use <CODE>&lt;p></CODE> tags at the beginning of
+every paragraph; only at the beginning of the first paragraph after
+a sectioning command.
+<P>
+<H3>Ending The Document</H3>
+
+<P>At the end of the document, you must use the tag:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;/article>
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>to tell the parser that you're done with the <CODE>article</CODE> element (which
+embodies the entire document).  
+<H2><A NAME="cross-ref"></A> <A NAME="ss3.5">3.5 Internal Cross-References</A>
+</H2>
+
+<P>Now we're going to move onto other features of the system.  
+Cross-references are easy.  For example, if you want to make a
+cross-reference to a certain section, you need to label that section
+as so:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;sect1>Introduction&lt;label id="sec-intro">
+</PRE>
+</CODE></BLOCKQUOTE>
+
+You can then refer to that section somewhere in the text using the
+expression:
+<BLOCKQUOTE><CODE>
+<PRE>
+See section &lt;ref id="sec-intro" name="Introduction"> for an introduction.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+This will replace the <CODE>ref</CODE> tag with the section number labeled
+as <CODE>sec-intro</CODE>.  The <CODE>name</CODE> argument to <CODE>ref</CODE> is necessary for
+groff and HTML translations.  The groff macro set used by SGML-Tools 
+does not currently support cross-references, and it's often nice to refer 
+to a section by name instead of number.  
+<P>For example, this section is 
+<A HREF="#cross-ref">Cross-References</A>.
+<P>Some back-ends may get upset about special characters in reference labels.
+In particular, latex2e chokes on underscores (though the latex back end
+used in older versions of this package didn't).  Hyphens are safe.
+<P>
+<H2><A NAME="ss3.6">3.6 Web References</A>
+</H2>
+
+<P>There is also a <CODE>url</CODE> element for Universal Resource Locators, or
+URLs, used on the World Wide Web.  This element should be used to refer
+to other documents, files available for FTP, and so forth.  For
+example,
+<BLOCKQUOTE><CODE>
+<PRE>
+You can get the Linux HOWTO documents from 
+&lt;url url="http://sunsite.unc.edu/mdw/HOWTO/" 
+   name="The Linux HOWTO INDEX">.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+The <CODE>url</CODE> argument specifies the actual URL itself.  A link to the
+URL in question will be automatically added to the HTML document.
+The optional <CODE>name</CODE> argument specifies the text that should be anchored to
+the URL (for HTML conversion) or named as the description of the
+URL (for LaTeX and groff).  If no <CODE>name</CODE> argument is given, the
+URL itself will be used.
+<P>For example, you can get the SGML-Tools package from<BR>
+<CODE>
+<A HREF="ftp://sunsite.unc.edu/pub/Linux/utils/text/sgml-tools-0.99.20.tar.gz">ftp://sunsite.unc.edu/pub/Linux/utils/text/sgml-tools-0.99.20.tar.gz</A></CODE>.
+<P>A useful variant of this is <CODE>htmlurl</CODE>, which suppresses rendering of
+the URL part in every context except HTML.  What this is useful for
+is things like a person's email addresses; you can write
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;htmlurl url="mailto:esr@snark.thyrsus.com"
+      name="esr@snark.thyrsus.com">
+</PRE>
+</CODE></BLOCKQUOTE>
+
+and get ``esr@snark.thyrsus.com'' in text output rather than the
+duplicative ``esr@snark.thyrsus.com &lt;mailto:esr@snark.thyrsus.com&gt;''
+but still have a proper URL in HTML documents.
+<P>
+<H2><A NAME="ss3.7">3.7 Fonts</A>
+</H2>
+
+<P>Essentially, the same fonts supported by LaTeX are supported
+by SGML-Tools.  Note, however, that the conversion to 
+plain text (through <CODE>groff</CODE>) does away with the font 
+information.  So, you should use fonts 
+as for the benefit of the conversion to LaTeX,
+but don't depend on the fonts to get a point across in the plain
+text version.  
+<P>In particular, the <CODE>tt</CODE> tag described above can be used to
+get constant-width ``typewriter'' font which should be used for
+all e-mail addresses, machine names, filenames, and so on.  
+Example:
+<BLOCKQUOTE><CODE>
+<PRE>
+Here is some &lt;tt>typewriter text&lt;/tt> to be included in the document.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Equivalently:
+<BLOCKQUOTE><CODE>
+<PRE>
+Here is some &lt;tt/typewriter text/ to be included in the document.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Remember that you can only use this abbreviated form if the enclosed
+text doesn't contain slashes.
+<P>Other fonts can be achieved with <CODE>bf</CODE> for <B>boldface</B> and <CODE>em</CODE> 
+for <EM>italics</EM>.  Several other fonts are supported as well, but
+we don't suggest you use them, because we'll be converting these
+documents to other formats such as HTML which may not support them.
+Boldface, typewriter, and italics should be all that you need.
+<P>
+<H2><A NAME="ss3.8">3.8 Lists</A>
+</H2>
+
+<P>There are various kinds of supported lists.  They are:
+<UL>
+<LI><CODE>itemize</CODE> for bulleted lists such as this one.</LI>
+<LI><CODE>enum</CODE> for numbered lists.</LI>
+<LI><CODE>descrip</CODE> for ``descriptive'' lists.  </LI>
+</UL>
+
+Each item in an <CODE>itemize</CODE> or <CODE>enum</CODE> list must be marked
+with an <CODE>item</CODE> tag.  Items in a <CODE>descrip</CODE> are marked with <CODE>tag</CODE>.
+For example,
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;itemize>
+&lt;item>Here is an item.
+&lt;item>Here is a second item.
+&lt;/itemize>
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Looks like this:
+<UL>
+<LI>Here is an item.</LI>
+<LI>Here is a second item.</LI>
+</UL>
+
+Or, for an <CODE>enum</CODE>,
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;enum>
+&lt;item>Here is the first item.
+&lt;item>Here is the second item.
+&lt;/enum>
+</PRE>
+</CODE></BLOCKQUOTE>
+
+You get the idea.  Lists can be nested as well; see the example document
+for details.
+<P>A <CODE>descrip</CODE> list is slightly different, and slightly ugly, but
+you might want to use it for some situations:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;descrip>
+&lt;tag/Gnats./ Annoying little bugs that fly into your cooling fan.
+&lt;tag/Gnus./ Annoying little bugs that run on your CPU.
+&lt;/descrip>
+</PRE>
+</CODE></BLOCKQUOTE>
+
+ends up looking like:
+<DL>
+<DT><B>Gnats.</B><DD><P>Annoying little bugs that fly into your cooling fan.
+<DT><B>Gnus.</B><DD><P>Annoying little bugs that run on your CPU.
+</DL>
+<P>
+<H2><A NAME="ss3.9">3.9 Conditionalization</A>
+</H2>
+
+<P>The overall goal of SGML-tools is to be able to produce from one set
+of masters output that is semantically equivalent on all back ends.
+Nevertheless, it is sometimes useful to be able to produce a document
+in slightly different variants depending on back end and version.  
+SGML-tools supports this through the &lt;#if&gt; and &lt;#unless&gt;
+bracketing tags.
+<P>These tags allow you to selectively include and uninclude portions of
+an SGML master in your output, depending on filter options set by your
+driver.  Each tag may include a set of attribute/value pairs.  The
+most common are ``output'' and ``version'' (though you are not
+restricted to these) so a typical example might look like this:
+<BLOCKQUOTE><CODE>
+<PRE>
+Some &lt;#if output=latex version=drlinux&gt;conditional&lt;/#if&gt; text.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Everything from this &lt;#if&gt; tag to the following &lt;/#if&gt; would
+be considered conditional, and would not be included in the document
+if either the filter option ``output'' were set to something that
+doesn't match ``latex'' or the filter option ``version'' were set to
+something that doesn't match ``drlinux''.  The double negative is
+deliberate; if no ``output'' or ``version'' filter options are set,
+the conditional text will be included.
+<P>Filter options are set in one of two ways.  Your format driver sets
+the ``output'' option to the name of the back end it uses; thus, in
+particular, sgml2latex sets ``output=latex2e'',  Or you may set an
+attribute-value pair with the -D option of your format driver.  Thus,
+if the above tag were part of a file a file named ``foo.sgml'', then
+formatting with either 
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2latex -Dversion-drlinux foo.sgml
+</PRE>
+</CODE></BLOCKQUOTE>
+
+or
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2latex foo.sgml
+</PRE>
+</CODE></BLOCKQUOTE>
+
+would include the ``conditional'' part, but neither
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2html -Dversion-drlinux foo.sgml
+</PRE>
+</CODE></BLOCKQUOTE>
+
+nor
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2latex -Dprivate-book foo.sgml
+</PRE>
+</CODE></BLOCKQUOTE>
+
+would do so.
+<P>So that you can have conditionals depending on one or more of several
+values matching, values support a simple alternation syntax using
+``|''.  Thus you could write:
+<BLOCKQUOTE><CODE>
+<PRE>
+Some &lt;#if output="latex|html" version=drlinux&gt;conditional&lt;/#if&gt; text.
+</PRE>
+</CODE></BLOCKQUOTE>
+
+and formatting with either sgml2latex or sgml2html will include the
+``conditional'' text (but formatting with, say, sgml2txt will not).
+<P>The &lt;#unless&gt; tag is the exact inverse of &lt;#if&gt;; it
+includes when &lt;#if&gt;; would exclude, and vice-versa.
+<P>Note that these tags are implemented by a preprocessor which runs
+before the SGML parser ever sees the document.  Thus they are
+completely independent of the document structure, are not in the DTD,
+and usage errors won't be caught by the parser.  You can seriously
+confuse yourself by conditionalizing sections that contain unbalanced
+bracketing tags.  
+<P>The preprocessor implementation also means that standalone SGML
+parsers will choke on SGML-tools documents that contain conditionals.
+However, you can validity-check them with the <CODE>sgmlcheck</CODE> tool.
+<P>Also note that in order not to mess up the source line numbers in
+parser error messages, the preprocessor doesn't actually throw
+away everything when it omits a conditionalized section.  It still
+passes through any newlines.  This leads to behavior that may 
+suprise you if you use &lt;if&gt; or &lt;unless&gt; within a
+&lt;verb&gt; environment, or any other kind of bracket that changes
+SGML's normal processing of whitespace.
+<P>These tags are called ``#if'' and ``#unless'' (rather than ``if'' and
+``unless'') to remind you that they are implemented by a preprocessor
+and you need to be a bit careful about how you use them.
+<P>
+<H2><A NAME="ss3.10">3.10 Index generation</A>
+</H2>
+
+<P>To support automated generation of indexes for book publication of
+SGML masters, SGML-tools supports the &lt;idx&gt; and &lt;cdx&gt;
+tags.  These are bracketing tags which cause the text between them to
+be saved as an index entry, pointing to the page number on which it
+occurs in the formatted document.  They are ignored by all backends
+except LaTeX, which uses them to build a .ind file suitable for
+processing by the TeX utility makeindex.
+<P>The two tags behave identically, except that &lt;idx&gt; sets the
+entry in a normal font and &lt;cdx&gt; in a constant-width one.
+<P>
+<H2><A NAME="ss3.11">3.11 Controlling justification</A>
+</H2>
+
+<P>In order to get proper justification and filling of paragraphs in
+typeset output, SGML-tools includes the &amp;shy; entity.  This
+becomes an optional or `soft' hyphen in back ends like latex2e
+for which this is neaningful.
+<P>The bracketing tag &lt;file&gt; can be used to surround filenames in
+running text.  It effectively inserts soft hyphens after each slash in
+the filename.
+<P>One of the advantages of using the &lt;url&gt; and &lt;htmlurl&gt;
+tags is that they do likewise for long URLs.
+<P>
+<HR>
+<A HREF="guide-4.html">Next</A>
+<A HREF="guide-2.html">Previous</A>
+<A HREF="guide.html#toc3">Contents</A>
+</BODY>
+</HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide: Formatting SGML Documents</TITLE>
+</HEAD>
+<BODY>
+<A HREF="guide-5.html">Next</A>
+<A HREF="guide-3.html">Previous</A>
+<A HREF="guide.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="s4">4. Formatting SGML Documents</A></H2>
+
+<P>Let's say you have the SGML document <CODE>foo.sgml</CODE>, which you want to format.
+Here is a general overview of formatting the document for different output.
+For a complete list of options, consult the man pages.
+<P>
+<H2><A NAME="ss4.1">4.1 Checking SGML Syntax</A>
+</H2>
+
+<P>If you just want to capture your errors from the SGML conversion,
+use the <CODE>sgmlcheck</CODE> script.  For example.
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgmlcheck foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>If you see no output from an sgmlcheck run other than the
+``Processing...'' message, that's good.  It means there were no errors.
+<P>
+<H2><A NAME="ss4.2">4.2 Creating Plain Text Output</A>
+</H2>
+
+<P>If you want to produce plain text, use the command:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2txt foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>You can also create groff source for man pages, which can be formatted with
+<CODE>groff -man</CODE>.  To do this, do the following:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2txt --man foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H2><A NAME="ss4.3">4.3 Creating LaTeX, DVI or PostScript Output</A>
+</H2>
+
+<P>To create a LaTeX documents from the SGML source file, simply run:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2latex foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>If you want to produce PostScript output (via <CODE>dvips</CODE>), use the 
+<CODE>-p</CODE> option:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2latex --output=ps foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>Or you can produce a DVI file:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2latex --output=dvi foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H2><A NAME="ss4.4">4.4 Creating HTML Output</A>
+</H2>
+
+<P>If you want to produce HTML output, do this:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2html --imagebuttons foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>This will produce <CODE>foo.html</CODE>, as well as <CODE>foo-1.html</CODE>,
+<CODE>foo-2.html</CODE>, and so on -- one file for each section of the
+document.  Run your WWW browser on <CODE>foo.html</CODE>, which is the top
+level file.  You must make sure that all of the HTML files generated
+from your document are all installed in the directory, as they
+reference each other with local URLs.
+<P>The --imagebuttons option tells sgml2html to use graphic arrows as 
+navigation buttons.  The names of these icons are "next.gif",
+"prev.gif", and "toc.gif", and the SGML-tools system supplies 
+appropriate GIFs in its library directory.
+<P>If you use <CODE>sgml2html</CODE> without the <CODE>-img</CODE> flag, HTML documents
+will by default have the English labels ``Previous'', ``Next'', and
+``Table of Contents'' for navigation.  If you specify one of the
+accepted language codes in a --language option, however, the labels
+will be given in that language.
+<P>
+<H2><A NAME="ss4.5">4.5 Creating GNU Info Output</A>
+</H2>
+
+<P>If you want to format your file for the GNU info browser, just run the
+following command:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2info foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H2><A NAME="ss4.6">4.6 Creating LyX Output</A>
+</H2>
+
+<P>For LyX output, use the the command:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2lyx foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<H2><A NAME="ss4.7">4.7 Creating RTF Output</A>
+</H2>
+
+<P>If you want to produce RTF output, run the command:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2rtf foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>This will produce <CODE>foo.rtf</CODE>, as well as <CODE>foo-1.rtf</CODE>,
+<CODE>foo-2.rtf</CODE>, and so on---one file for each section of the document.
+<P>
+<HR>
+<A HREF="guide-5.html">Next</A>
+<A HREF="guide-3.html">Previous</A>
+<A HREF="guide.html#toc4">Contents</A>
+</BODY>
+</HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide: Internationalization Support</TITLE>
+</HEAD>
+<BODY>
+<A HREF="guide-6.html">Next</A>
+<A HREF="guide-4.html">Previous</A>
+<A HREF="guide.html#toc5">Contents</A>
+<HR>
+<H2><A NAME="s5">5. Internationalization Support</A></H2>
+
+<P>The ISO 8859-1 (latin1) character set may be used for international characters 
+in plain text, LaTeX, HTML, LyX, and RTF output (GNU info support for 
+ISO 8859-1 may be possible in the future).  To use this feature, give the
+formatting scripts the <CODE>--charset=latin</CODE> flag, for example:
+<BLOCKQUOTE><CODE>
+<PRE>
+% sgml2txt --charset=latin foo.sgml 
+</PRE>
+</CODE></BLOCKQUOTE>
+
+You also can use ISO 8859-1 characters in the SGML source, they will 
+automatically be translated to the proper escape codes for the corresponding 
+output format.
+<P>
+<HR>
+<A HREF="guide-6.html">Next</A>
+<A HREF="guide-4.html">Previous</A>
+<A HREF="guide.html#toc5">Contents</A>
+</BODY>
+</HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>SGML-Tools User's Guide: How SGML-Tools Works</TITLE>
+</HEAD>
+<BODY>
+Next
+<A HREF="guide-5.html">Previous</A>
+<A HREF="guide.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="sgml"></A> <A NAME="s6">6. How SGML-Tools Works</A></H2>
+
+<P>Technically, the tags and conventions we've explored in previous
+sections of this use's guide are what is called a <EM>markup
+language</EM> -- a way to embed formatting information in a document
+so that programs can do useful things with it.  HTML, Tex, and Unix
+manual-page macros are well-known examples of markup languages.
+<P>
+<H2><A NAME="ss6.1">6.1 Overview of SGML</A>
+</H2>
+
+<P>SGML-tools is so called because it uses a way of describing markup
+languages called SGML (Standard Generalized Markup Language).  SGML
+itself doesn't describe a markup language; rather, it's a language for
+writing specifications for markup languages.  The reason SGML is
+useful is that an SGML markup specification for a language can be used
+to generate programs that "know" that language with much less effort
+(and a much lower bugginess rate!) than if they had to be coded by hand.
+<P>In SGML jargon, a markup language specification is called a ``DTD''
+(Document Type Definition).  A DTD allows you to specify the
+<EM>structure</EM> of a kind of document---that is, what parts, in what
+order, make up a document of that kind.  Given a DTD, an SGML parser
+can check a document for correctness.  An SGML-parser/DTD combination
+can also make it easy to write programs that translate that structure
+into another markup language -- and this is exactly how SGML-tools
+actually works.
+<P>SGML-Tools provides a SGML DTD called ``linuxdoc'' and a set of
+``replacement files'' which convert the linuxdoc documents to groff,
+LaTeX, HTML, GNU info, LyX, and RTF source.  This is why the example document
+has a magic cookie at thtop of it that says "linuxdoc system"; that is
+how one tells an SGML parser what DTD to use.
+<P>Actually, SGML-tools provides a couple of closely related DTDs.  But
+the ones other than linuxdoc are still experimental, and you probably
+do not want to try working with them unless you are an SGML-tools guru.
+<P>If you are an SGML guru, you may find it interesting to know that the 
+SGML-Tools DTDs are based heavily on the QWERTZ DTD by Tom Gordon,
+<CODE>thomas.gordon@gmd.de</CODE>.
+<P>If you are not an SGML guru, you may not know that HTML (the markup
+language used on the World Wide Web) is itself sefined by a DTD.
+<P>
+<H2><A NAME="ss6.2">6.2 How SGML Works</A>
+</H2>
+
+<P>An SGML DTD like linuxdoc specifies the names of ``elements'' within a
+document type.  An element is just a bit of structure---like a
+section, a subsection, a paragraph, or even something smaller like
+<EM>emphasized text</EM>.
+<P>Unlike in LaTeX, however, these elements are not in any way intrinsic to
+SGML itself.  The linuxdoc DTD happens to define elements that look a
+lot like their LaTeX counterparts---you have sections, subsections,
+verbatim ``environments'', and so forth.  However, using SGML you can
+define any kind of structure for the document that you like.  In a
+way, SGML is like low-level TeX, while the linuxdoc DTD is like LaTeX.
+<P>Don't be confused by this analogy.  SGML is <EM>not</EM> a text-formatting system.
+There is no ``SGML formatter'' per se.  SGML source is <EM>only</EM> converted
+to other formats for processing.  Furthermore, SGML itself is used only to 
+specify the document structure.  There are no text-formatting facilities or
+``macros'' intrinsic to SGML itself.  All of those things are defined within
+the DTD.  You can't use SGML without a DTD, a DTD defines what SGML does.
+<P>
+<H2><A NAME="ss6.3">6.3 What Happens When SGML-Tools Processes A Document</A>
+</H2>
+
+<P>Here's how processing a document with SGML-Tools works.  First, you
+need a DTD, which sets up the structure of the document.  A small
+portion of the normal (linuxdoc) DTD looks like this:
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;!element article - -
+    (titlepag, header?, 
+     toc?, lof?, lot?, p*, sect*, 
+     (appendix, sect+)?, biblio?) +(footnote)>
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>This part sets up the overall structure for an ``article'', which is like
+a ``documentstyle'' within LaTeX.  The article consists of a titlepage
+(<CODE>titlepag</CODE>), an optional header (<CODE>header</CODE>), an optional table of 
+contents (<CODE>toc</CODE>), optional lists of figures (<CODE>lof</CODE>) and tables
+(<CODE>lot</CODE>), any number of paragraphs (<CODE>p</CODE>), any number of top-level
+sections (<CODE>sect</CODE>), optional appendices (<CODE>appendix</CODE>), an optional
+bibliography (<CODE>biblio</CODE>) and footnotes (<CODE>footnote</CODE>).  
+<P>As you can see, the DTD doesn't say anything about how the document should
+be formatted or what it should look like.  It just defines what parts make
+up the document.  Elsewhere in the DTD the structure of the 
+<CODE>titlepag</CODE>, <CODE>header</CODE>, <CODE>sect</CODE>, and other elements are defined.  
+<P>You don't need to know anything about the syntax of the DTD in order
+to write documents.  We're just presenting it here so you know what it
+looks like and what it does.  You <EM>do</EM> need to be familiar with the
+document <EM>structure</EM> that the DTD defines.  If not, you might
+violate the structure when attempting to write a document, and be very
+confused about the resulting error messages.
+<P>The next step is to write a document using the structure defined by
+the DTD.  Again, the linuxdoc DTD makes documents look a lot like
+LaTeX or HTML -- it's very easy to follow.  In SGML jargon a single
+document written using a particular DTD is known as an ``instance'' of
+that DTD.
+<P>In order to translate the SGML source into another format (such as LaTeX
+or groff) for processing, the SGML source (the document that you wrote)
+is <EM>parsed</EM> along with the DTD by the SGML <EM>parser</EM>.
+SGML-Tools uses the <CODE>nsgmls</CODE> parser by James Clark, <CODE>jjc@jclark.com</CODE>, who
+also happens to be the author of <CODE>groff</CODE>.  We're in good hands.
+The parser (<CODE>sgmls</CODE>) simply picks through your document and 
+verifies that it follows the structure set forth by the DTD.  It also spits out
+a more explicit form of your document, with all ``macros'' and elements
+expanded, which is understood by <CODE>sgmlsasp</CODE>, the next part of the
+process.  
+<P><CODE>sgmlsasp</CODE> is responsible for converting the output of <CODE>sgmls</CODE> to
+another format (such as LaTeX).  It does this using <EM>replacement files</EM>,
+which describe how to convert elements in the original SGML document into
+corresponding source in the ``target'' format (such as LaTeX or groff).  
+<P>For example, part of the replacement file for LaTeX looks like:
+<BLOCKQUOTE><CODE>
+<PRE>
+&lt;itemize>    +    "\\begin{itemize}   +
+&lt;/itemize>   +    "\\end{itemize}    +
+</PRE>
+</CODE></BLOCKQUOTE>
+
+Which says that whenever you begin an <CODE>itemize</CODE> element in the 
+SGML source, it should be replaced with 
+<BLOCKQUOTE><CODE>
+<PRE>
+\begin{itemize}
+</PRE>
+</CODE></BLOCKQUOTE>
+
+in the LaTeX source.  (As I said, elements in the DTD
+are very similar to their LaTeX counterparts).  
+<P>So, to convert the SGML to another format, all you have to do is write
+a new replacement file for that format that gives the appropriate 
+analogies to the SGML elements in that new format.  In practice, it's not
+that simple---for example, if you're trying to convert to a format that
+isn't structured at all like your DTD, you're going to have trouble.  In 
+any case, it's much easier to do than writing individual parsers and
+translators for many kinds of output formats; SGML provides a generalized
+system for converting one source to many formats.
+<P>Once <CODE>sgmlsasp</CODE> has completed its work, you have LaTeX source which
+corresponds to your original SGML document, which you can format using
+LaTeX as you normally would.
+<P>
+<H2><A NAME="ss6.4">6.4 Further Information</A>
+</H2>
+
+<P>
+<UL>
+<LI>The QWERTZ User's Guide is available from 
+<CODE>
+<A HREF="ftp://ftp.cs.cornell.edu/pub/mdw/SGML">ftp://ftp.cs.cornell.edu/pub/mdw/SGML</A></CODE>.
+QWERTZ (and hence, SGML-Tools) supports many features such as 
+mathematical formulae, tables, figures, and so forth.
+If you'd like to write general 
+documentation in SGML, I suggest using the original QWERTZ DTD instead 
+of the hacked-up linuxdoc DTD, which I've modified for use 
+particularly by the Linux HOWTOs and other such documentation.  
+</LI>
+<LI>Tom Gordon's original QWERTZ tools can be found at 
+<CODE>
+<A HREF="ftp://ftp.gmd.de/GMD/sgml">ftp://ftp.gmd.de/GMD/sgml</A></CODE>.
+</LI>
+<LI>More information on SGML can be found at the following WWW 
+pages: 
+<OL>
+<LI><CODE>
+<A HREF="http://www.w3.org/hypertext/WWW/MarkUp/SGML/">SGML and the Web</A></CODE></LI>
+<LI><CODE>
+<A HREF="http://www.sil.org/sgml/sgml.html">SGML Web Page</A></CODE></LI>
+<LI><CODE>
+<A HREF="http://www.yahoo.com/Computers_and_Internet/Software/Data_Formats/SGML">Yahoo's SGML Page</A></CODE></LI>
+</OL>
+
+</LI>
+<LI>James Clark's <CODE>sgmls</CODE> parser, and it's successor <CODE>nsgmls</CODE>
+and other tools can be found at
+<CODE>
+<A HREF="ftp://ftp.jclark.com">ftp://ftp.jclark.com</A></CODE> and at <CODE>
+<A HREF="http://www.jclark.com">James Clark's WWW Page</A></CODE>.
+</LI>
+<LI>The emacs psgml package can be found at
+<CODE>
+<A HREF="ftp://ftp.lysator.liu.se/pub/sgml">ftp://ftp.lysator.liu.se/pub/sgml</A></CODE>.  This package
+provides a lot of SGML functionality.
+</LI>
+<LI>You can join the SGML-Tools mailing list by sending mail to
+<CODE>
+<A HREF="mailto:majordomo@via.ecp.fr">majordomo@via.ecp.fr</A></CODE> with <CODE>subscribe linuxdoc-sgml</CODE> in 
+the message body.  The list address is 
+<CODE>
+<A HREF="mailto:linuxdoc-sgml@via.ecp.fr">linuxdoc-sgml@via.ecp.fr</A></CODE>.
+</LI>
+<LI>More information on <CODE>LyX</CODE> can be found at the
+<CODE>
+<A HREF="http://wsiserv.informatik.uni-tuebingen.de/~ettrich/">LyX WWW Page</A></CODE>.  <CODE>LyX</CODE> is a high-level word processor 
+frontend to LaTeX.  Quasi-WYSIWYG interface, many LaTeX styles and 
+layouts automatically generated.  Speeds up learning LaTeX and makes 
+complicated layouts easy and intuitive.
+</LI>
+</UL>
+<HR>
+Next
+<A HREF="guide-5.html">Previous</A>
+<A HREF="guide.html#toc6">Contents</A>
+</BODY>
+</HTML>

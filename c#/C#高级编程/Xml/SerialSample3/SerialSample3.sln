@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialSample3", "SerialSample3.csproj", "{713B6F8B-D6ED-482E-BBD2-0F83DABE744E}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{713B6F8B-D6ED-482E-BBD2-0F83DABE744E}.Debug.ActiveCfg = Debug|.NET
+		{713B6F8B-D6ED-482E-BBD2-0F83DABE744E}.Debug.Build.0 = Debug|.NET
+		{713B6F8B-D6ED-482E-BBD2-0F83DABE744E}.Release.ActiveCfg = Release|.NET
+		{713B6F8B-D6ED-482E-BBD2-0F83DABE744E}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

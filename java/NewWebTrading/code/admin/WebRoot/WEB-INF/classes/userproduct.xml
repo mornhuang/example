@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-2.5.xsd" default-lazy-init="false">
+
+    
+	<bean id = "productService" class = "com.itsz.sht.service.channels.ProductServiceImpl">
+		<property name ="productAdminService" ref="productAdminService" />
+	</bean>
+	
+	        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+                <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="jdbcUrl" value="jdbc:oracle:thin:@172.30.201.19:1521:mtwsb"/>
+				<property name="user" value="nweb"/>
+				<property name="password" value="nweb2628"/>
+                <property name="minPoolSize" value="2" />
+                <property name="maxPoolSize" value="20" />
+                <property name="preferredTestQuery" value="SELECT 1 FROM DUAL" />
+                <property name="breakAfterAcquireFailure" value="true" />
+                <property name="connectionTesterClassName" value="com.mchange.v2.c3p0.impl.DefaultConnectionTester" />
+                <property name="idleConnectionTestPeriod" value="1800" />
+                <property name="acquireIncrement" value="5" />
+                <property name="maxIdleTime" value="3600" />
+                <property name="maxIdleTimeExcessConnections" value="600" />
+                <property name="initialPoolSize" value="2" />
+                <property name="acquireRetryAttempts" value="0" />
+                <property name="acquireRetryDelay" value="30000" />
+                <property name="testConnectionOnCheckout" value="false" />
+                <property name="testConnectionOnCheckin" value="true" />
+                <property name="checkoutTimeout" value="5000" />
+        </bean>
+		
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+	    <property name="dataSource" ref="dataSource" />  
+	    <property name="mappingResources">  
+	        <list>  
+           		<value>com/itsz/sht/dao/hibernate/model/Product.hbm.xml</value>
+           		<value>com/itsz/sht/dao/hibernate/model/UserProduct.hbm.xml</value>
+           		<value>com/itsz/sht/dao/hibernate/model/RtqAccount.hbm.xml</value>  
+	            <value>com/itsz/sht/dao/hibernate/model/RtqAccountAssignment.hbm.xml</value>  
+	            <value>com/itsz/sht/dao/hibernate/model/RtqApplication.hbm.xml</value> 
+	            <value>com/itsz/sht/dao/hibernate/model/ServicesAccessLog.hbm.xml</value>  
+	        </list>
+	    </property> 
+	    	 
+<!--	   <property name='hibernateProperties'>-->
+<!--	       <props>-->
+<!--	               <prop key='hibernate.dialect'>org.hibernate.dialect.OracleDialect</prop>-->
+<!--	               <prop key='hibernate.show_sql'>true</prop>-->
+<!--	               <prop key='hibernate.format_sql'>true</prop>	-->
+<!--	       </props>-->
+<!--		</property>-->
+	</bean>
+	
+	
+	  
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">  
+	    <property name="sessionFactory">
+	        <ref bean="sessionFactory" />
+	    </property>
+	</bean>
+	
+	<bean id="productAdminService" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager" ref="txManager"></property>
+	    <property name="transactionAttributes">
+	        <props>
+	            <prop key="get*">PROPAGATION_SUPPORTS, readOnly</prop> 
+	            <prop key="access*">PROPAGATION_REQUIRED</prop> 
+	        </props>
+	    </property>
+	    <property name="target" ref="productAdminServiceImpl"></property>
+	</bean>
+	
+	<bean id="productAdminServiceImpl" class="com.itsz.sht.service.datas.ProductAdminServiceImpl">
+		<property name="userProductDao" ref="userProductDao" />
+		<property name="productDao" ref="productDao" />
+		<property name="rtqAccountDao" ref="rtqAccountDao" />	
+		<property name="rtqAccountAssignmentDao" ref="rtqAccountAssignmentDao" />
+		<property name="servicesAccessLogDao" ref="servicesAccessLogDao" />
+		<property name="rtqApplicationDao" ref="rtqApplicationDao"/>
+	</bean>
+	
+   <bean id="userProductDao" class="com.itsz.sht.dao.impl.UserProductDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	 </property>
+   </bean>  
+   <bean id="productDao" class="com.itsz.sht.dao.impl.ProductDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqAccountAssignmentDao" class="com.itsz.sht.dao.impl.RtqAccountAssignmentDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqAccountDao" class="com.itsz.sht.dao.impl.RtqAccountDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqApplicationDao" class="com.itsz.sht.dao.impl.RtqApplicationDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="servicesAccessLogDao" class="com.itsz.sht.dao.impl.ServicesAccessLogDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+  
+</beans>

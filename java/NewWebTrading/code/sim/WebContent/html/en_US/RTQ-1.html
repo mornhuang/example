@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Haitong International Securities Group Limited</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/en_US/style.css" />
+    <script src="../../Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.layout.js" type="text/javascript"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnNext").click(function () {
+                if ($("#rdFlow").attr("checked"))
+                    location.href = "RTQ-2-1.html";
+                if ($("#rdSys").attr("checked"))
+                    location.href = "RTQ-2-2.html";
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="page-title">
+        <span class="shaddow"><span>RTQ</span><b></b></span> <span class="position">Account Services
+            > RTQ</span>
+    </h1>
+    <div class="page-content">
+        <table class="form-table ui-corner-all">
+            <tr>
+                <td class="title">
+                    Purchase Securities Quotation
+                </td>
+            </tr>
+            <tr class="form-table-first">
+                <td>
+                    <table width="100%">
+                        <tr>
+                            <th colspan="2">
+                                Securities Quotation
+                          </th>
+                            <th colspan="2">Particulars
+                                
+                          </th>
+                            <th>Price
+                          </th>
+                        </tr>
+                        <tr class="alternating">
+                            <td>
+                                <input name="radio" type="radio" id="rdFlow" checked="checked" />
+                                <label for="rdFlow">
+                                    ETNet IQ</label>
+                            </td>
+                            <td>
+                                <a href="javascript:parent.openCommonDialog('示範','http://www1.etnet.com.hk/iq/intro.html');">
+                                    Demo</a>
+                            </td>
+                            <td>
+                                Local stocks,Hang Sengg Index,Hang Seng Index Futures,<br />
+                                Equity Options,Futures Options and World Wide indices
+                            </td>
+                            <td>
+                                <a href="javascript:parent.openCommonDialog('詳情','http://www.htisec.com/tc/securities/system_etnet.jsp');">Details</a>
+                            </td>
+                            <td>
+                                <a href="javascript:alert('Please add link: Fees & Charges at Entrant Portal');">Ref. to Price List</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input name="radio" type="radio" id="rdSys" />
+                                <label for="rdSys">
+                                    Quote Winner</label>
+                            </td>
+                            <td>
+                                <a href="javascript:parent.openCommonDialog('示範','http://www.aastocks.com/pkages/broker/taifook/demo/Q800_chi.asp');">
+                                    Demo</a>
+                            </td>
+                            <td>
+                                Local stocks,Hang Seng Index,Hang Seng Index Futures and Futures Options
+                            </td>
+                            <td>
+                                <a href="javascript:parent.openCommonDialog('詳情','http://www.htisec.com/tc/securities/system_aa.jsp');">Details</a>
+                            </td>
+                            <td>
+                                <a href="javascript:alert('Please add link: Fees & Charges at Entrant Portal');">Ref. to Price List</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <p class="form-notice">
+            <strong>*** Note: If the order is placed in non-trading hour, the service will be effective at 10am on next trading day.</strong>
+        </p>
+        <table class="form-table ui-corner-all">
+            <tr>
+                <td class="title" colspan="2">
+                    Settings
+                </td>
+            </tr>
+            <tr class="form-table-first">
+                <th rowspan="2">
+                    Securities Quotation Settings 
+                </th>
+                <td>
+                    <input type="radio" name="rdSetting" id="rdThis" checked="checked" /><label for="rdThis"> Nov 2010 (Effective Period: Now to XXX)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" name="rdSetting" id="rdNext" /><label for="rdNext">  Dec 2010 (Effective Period: Now to XXX)
+
+</label>
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    Auto-enrolment Option<br />
+                    (Only applicable for monthly-based service)
+                </th>
+                <td>
+                    <input type="checkbox" id="ck" /><label for="ck">  Choose auto-enroll the service selected in the above every month  
+
+
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <p class="form-notice">
+            <strong>If auto-enrolment is selected, system will automatically subscribe the same service for you in the morning of first day every month and the monthly subscription fee will be deducted accordingly.</strong>
+        </p>
+        <br />
+                <p>
+            <input type="button" class="yellow-btn" id="btnNext" value="Buy Now" />
+        </p>
+    </div>
+</body>
+</html>

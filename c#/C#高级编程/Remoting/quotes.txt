@@ -1,0 +1,7 @@
+"640K ought to be enough for everybody", Bill Gates, 1981
+"This 'telephone' has too many shortcomings to be seriously considered as a means of communication. The device is inherently of no value to us.", Western Union internal memo, 1876
+"Computer in the future may weigh no more than 1.5 tones.", Popular Mechanics, forecasting the relentless march of science, 1949
+"There is no reason anyone would want a computer in their home.", Ken Olsen, Digital Equipment Corp., 1977
+"I think there is a world market for maybe five computers", T. Watson, Chairman of IBM, 1943
+"But what is it good for?", IBM commenting on the development of the Microchip. 
+"We will think about software more as a service than we have in the past.", Bill Gates, Microsoft Chief Software Architect, 2000

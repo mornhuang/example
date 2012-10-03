@@ -1,0 +1,11 @@
+gridx and gridy
+
+
+The gridx and gridy constraints specify the upper left-hand grid cell of a component's display area. Grid cell 
+locations are zero-based, and therefore a grid cell in the upper left-hand corner of a container always has a 
+(gridx,gridy) of (0,0). 
+
+In addition to specifying a numerical grid position, both gridx and gridy may be assigned GridBagConstraints.RELATIVE.
+A RELATIVE setting for gridx means that the component will be placed to the right of the last component added to the 
+container. A RELATIVE setting for gridy means that the component will be placed in the row below the last component 
+added to the container.  

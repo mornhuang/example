@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="loginForm" type="cn.itsz.newsim.view.form.LoginForm" />
+		<form-bean name="RegForm" type="cn.itsz.newsim.view.form.RegForm" />
+		<form-bean name="IsUserExistForm" type="cn.itsz.newsim.view.form.IsUserExistForm" />
+		<form-bean name="baseForm" type="cn.itsz.newsim.view.form.BaseForm" />
+		<form-bean name="webLoginForm" type="cn.itsz.newsim.view.form.LoginForm" />
+		<form-bean name="ChangePwdForm" type="cn.itsz.newsim.view.form.ChangePwdForm" />
+		<form-bean name="webPlaceOrderForm" type="cn.itsz.newsim.view.form.PlaceOrderForm" />
+		<form-bean name="webEnquireShortRTQForm" type="cn.itsz.newsim.view.form.EnquireShortRTQForm" />
+		<form-bean name="webListOrderForm" type="cn.itsz.newsim.view.form.ListOrderForm" />
+		<form-bean name="webModifyOrderForm" type="cn.itsz.newsim.view.form.ModifyOrderForm" />
+		<form-bean name="webOrderDetailForm" type="cn.itsz.newsim.view.form.OrderDetailForm" />
+		<form-bean name="webCancelOrderForm" type="cn.itsz.newsim.view.form.CancelOrderForm" />
+		<form-bean name="webOrderFeeForm" type="cn.itsz.newsim.view.form.OrderFeeForm" />
+		<form-bean name="webTransactionProtectionForm" type="cn.itsz.newsim.view.form.TransactionProtectionForm" />
+		<form-bean name="webTradeListForm" type="cn.itsz.newsim.view.form.TradeListForm" />
+		<form-bean name="webEnquireRTQForm" type="cn.itsz.newsim.view.form.EnquireRTQForm" />
+		<form-bean name="webEnquiryPositionForm" type="cn.itsz.newsim.view.form.EnquiryPositionForm" />
+		<form-bean name="isParamExistForm" type="cn.itsz.newsim.view.form.IsParamExistForm" />
+		<form-bean name="parameterForm" type="cn.itsz.newsim.view.form.ParameterForm" />
+		<form-bean name="adminChangePwdForm" type="cn.itsz.newsim.view.form.AdminChangePwdForm" />
+		<form-bean name="adminLoginForm" type="cn.itsz.newsim.view.form.AdminLoginForm" />
+		<form-bean name="searchForm" type="cn.itsz.newsim.view.form.SearchForm" />
+	</form-beans>
+
+	<global-forwards>
+		<forward name="failure" path="/jsp/login.jsp" redirect="false" />
+		<forward name="error" path="/jsp/login.jsp" redirect="false" />
+	</global-forwards>
+
+	<action-mappings>
+		<action
+			path="/changeLang"
+			name="baseForm"			
+			scope="request"
+			validate="false">
+				<forward name="loginPage"  path="/index.do"/>
+				<forward name="mainPage"  path="/jsp/Main.jsp" />
+				<forward name="riskPage"  path="/jsp/Risk-disclosure.jsp" />
+				<forward name="regPage"  path="/jsp/reg.jsp" />
+		</action>
+		<action
+			path="/webRTQ"
+			name="baseForm"			
+			scope="request"
+			validate="false">
+				<forward name="SUCCESS" path="/jsp/trading-hk-stock.jsp"/>
+		</action>
+	
+	
+		<action path="/reg" name="RegForm" scope="request">
+			<forward name="SUCCESS" path="/jsp/reg.jsp"  />
+			<forward name="FAILED" path="/jsp/reg.jsp" />
+			<forward name="WARN" path="/jsp/reg.jsp"  />
+		</action>
+		
+		<action path="/isUserExist" name="IsUserExistForm" scope="request">
+		</action>
+		
+		<action path="/index" name="baseForm" scope="request" validate="false">
+				<forward name="SUCCESS" path="/jsp/login.jsp"/>
+		</action>
+		
+		<action path="/logout" name="baseForm" scope="request" validate="false">
+				<forward name="NORMAL" path="/index.do"/>
+		</action>
+		
+		<action path="/changePwd" name="ChangePwdForm" scope="request" validate="false">
+				<forward name="NORMAL" path="/jsp/ChangePasswordSuccess.jsp"/>
+				<forward name="FAILED"  path="/jsp/ChangePassword.jsp"/>
+				<forward name="WARN"  path="/jsp/ChangePassword.jsp"/>
+		</action>
+		
+		<action path="/webLogin" name="webLoginForm" scope="request">
+			<forward name="NORMAL"  path="/jsp/Risk-disclosure.jsp" />
+			<forward name="FAILED"  path="/jsp/login.jsp" />
+			<forward name="WARN"  path="/jsp/login.jsp" />
+		</action>
+		
+		<action
+			path="/webOrderDetail"
+			type="cn.itsz.newsim.view.action.OrderDetailAction"
+			name="webOrderDetailForm"
+			scope="request"
+			validate="false"/>
+			
+		<action
+			path="/webListOrder"
+			type="cn.itsz.newsim.view.action.ListOrderAction"
+			name="webListOrderForm"
+			scope="request"
+			validate="false"/>
+		
+		<action
+			path="/webCancelOrder"
+			type="cn.itsz.newsim.view.action.CancelOrderAction"
+			name="webCancelOrderForm"
+			scope="request"
+			validate="false"/>
+			
+		<action
+			path="/webModifyOrder"
+			type="cn.itsz.newsim.view.action.ModifyOrderAction"
+			name="webModifyOrderForm"
+			scope="request"
+			validate="false"/>
+			
+		<action
+			path="/webOrderFee"
+			type="cn.itsz.newsim.view.action.OrderFeeAction"
+			name="webOrderFeeForm"
+			scope="request"
+			validate="false"/>
+
+		<action
+			path="/webPlaceOrder"
+			type="cn.itsz.newsim.view.action.PlaceOrderAction"
+			name="webPlaceOrderForm"
+			scope="request"
+			validate="false"/>
+
+		<action
+			path="/webEnquireShortRTQ"
+			type="cn.itsz.newsim.view.action.EnquireShortRTQAction"
+			name="webEnquireShortRTQForm"
+			scope="request"
+			validate="false"/>
+			
+		<action
+			path="/webEnquireDelayRTQ"
+			type="cn.itsz.newsim.view.action.EnquireDelayRTQAction"
+			name="webEnquireRTQForm"
+			scope="request"
+			validate="false"/>
+
+		<action
+			path="/webEnquireStockPosition"
+			type="cn.itsz.newsim.view.action.EnquireStockPositionAction"
+			name="webEnquiryPositionForm"
+			scope="request"
+			validate="false"/>
+
+		<action
+			path="/webTP"
+
+			name="webTransactionProtectionForm"
+			scope="request"
+			validate="false"/>
+		
+		<action
+			path="/webTradeList"
+			type="cn.itsz.newsim.view.action.TradeListAction"
+			name="baseForm"
+			scope="request"
+			validate="false"/>
+			
+		<action
+			path="/webEnquireAccount"
+			type="cn.itsz.newsim.view.action.EnquiryAccountAction"
+			name="baseForm"
+			scope="request"
+			validate="false"/>
+		
+		<action
+			path="/webCallMos"
+			type="cn.itsz.newsim.view.action.CallMosAction"
+			name="baseForm"
+			scope="request"
+			validate="false"/>
+			
+		<!-- admin action add by kdu -->
+		<!-- user -->
+		<action path="/nadmin/userAdd" name="RegForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/userList.do"  />
+			<forward name="FAILED" path="/nadmin/user-add.jsp" />
+			<forward name="WARN" path="/nadmin/user-add.jsp"  />
+		</action>
+		<action path="/nadmin/userList" name="RegForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/user-list.jsp"/>
+		</action>
+		<action path="/nadmin/userQuery" name="RegForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/user-update.jsp"  />
+			<forward name="FAILED" path="/nadmin/userList.do" />
+			<forward name="WARN" path="/nadmin/userList.do"  />
+		</action>
+		<action path="/nadmin/userUpdate" name="RegForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/userList.do"/>
+			<forward name="FAILED" path="/nadmin/user-update.jsp" />
+			<forward name="WARN" path="/nadmin/user-update.jsp"  />
+		</action>
+		<action path="/nadmin/userDelete" name="RegForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/userList.do"  />
+			<forward name="FAILED" path="/nadmin/userList.do" />
+			<forward name="WARN" path="/nadmin/userList.do"  />
+		</action>
+		<action path="/nadmin/userSearch" name="searchForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/user-list.jsp"/>
+			<forward name="FAILED" path="/nadmin/userList.do" />
+			<forward name="WARN" path="/nadmin/userList.do"  />
+		</action>
+		
+		<!-- parameter -->
+		<action path="/nadmin/isParamExist" name="isParamExistForm" scope="request"/>
+		<action path="/nadmin/paramList" name="parameterForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/param-list.jsp"/>
+		</action>
+		<action path="/nadmin/paramQuery" name="parameterForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/param-update.jsp"/>
+		</action>
+		<action path="/nadmin/paramAdd" name="parameterForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/paramList.do"/>
+		</action>
+		<action path="/nadmin/paramUpdate" name="parameterForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/paramList.do"/>
+		</action>
+		<action path="/nadmin/paramDel" name="parameterForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/paramList.do"/>
+		</action>
+		<action path="/nadmin/adminChangePwd" name="adminChangePwdForm" scope="request">
+			<forward name="SUCCESS" path="/nadmin/admin-info.jsp"/>
+			<forward name="FAILED" path="/nadmin/admin-info.jsp"/>
+		</action>
+		<action path="/nadmin/adminLogin" name="adminLoginForm" scope="request">
+			<forward name="NORMAL"  path="/nadmin/Main.jsp" />
+			<forward name="FAILED"  path="/nadmin/login.jsp" />
+			<forward name="WARN"  path="/nadmin/login.jsp" />
+		</action>
+		<action path="/nadmin/adminLogout" name="baseForm" scope="request" validate="false">
+				<forward name="NORMAL" path="/nadmin/login.jsp"/>
+		</action>
+		
+		<!-- Async -->
+		<action path="/nadmin/userQueryAsy" name="RegForm" scope="request"/>
+		
+		<!-- admin action add by kdu -->
+	</action-mappings>
+	<controller>
+		<set-property property="processorClass"
+					  value="org.springframework.web.struts.DelegatingRequestProcessor"/>
+	</controller>
+
+	<message-resources parameter="cn.itsz.newsim.resource.ApplicationResourcesWEB" />
+</struts-config>

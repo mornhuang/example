@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Haitong International Securities Group Limited</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/en_US/style.css" />
+    <script src="../../Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery-ui.custom.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.layout.js" type="text/javascript"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1 class="page-title">
+        <span class="shaddow"><span>Transactions History</span><b></b></span> <span class="position">Account Services > Transactions History</span>
+    </h1>
+    <div class="page-content">
+        <form action="">
+        <table class="form-table ui-corner-all">
+            <tr>
+                <td colspan="2" class="title">
+                    Account Details
+                </td>
+            </tr>
+            <tr class="form-table-first">
+                <th>
+                    Client Name
+                </th>
+                <td>
+                    Taifook Sec Co Ltd - IT
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    Account No
+                </th>
+                <td>
+                    <select class="jquery-select">
+                        <option>02-0076440-30(Online cash)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table class="form-table ui-corner-all">
+            <tr>
+                <td colspan="2" class="title">
+                    Search Criteria
+                </td>
+            </tr>
+            <tr class="form-table-first">
+                <th rowspan="2">
+                    Period(Trading Day)
+                </th>
+                <td>
+                    <label class="float-left"><input type="radio" name="radioDate" value="radio" checked="checked" /></label>
+                    <select class="jquery-select">
+                        <option>last 1 Days</option>
+                        <option>last 2 Days</option>
+                        <option>last 3 Days</option>
+                        <option>last 4 Days</option>
+                        <option>last 5 Days</option>
+                        <option>last 6 Days</option>
+                        <option>last 7 Days</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="float-left"><input type="radio" name="radioDate" value="radio" /></label>
+                    <select class="jquery-select">
+                        <option>2010-11-10</option>
+                    </select>
+                    <label class="float-left">To</label>
+                    <select class="jquery-select">
+                        <option>2010-11-10</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    Securities Code
+                </th>
+                <td>
+                    <input type="radio" name="radioCode" value="radio" checked="checked" />
+                    All
+                    <input type="radio" name="radioCode" value="radio" />
+                    Particular Stock
+                    <input type="text" class="form-input" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Transaction Type
+                </th>
+                <td>
+                    <select class="jquery-select">
+                        <option>All</option>
+                        <option>Buy</option>
+                        <option>Sell</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    Service Channel
+                </th>
+                <td>
+                    <select class="jquery-select">
+                        <option>All</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                    <input type="button" class="form-button" value="Search" onclick="location.href='history-1.html'" />
+                    <input type="reset" class="form-button" value="Reset" />
+                </td>
+            </tr>
+        </table>
+        </form>
+        <h2>Remarks</h2>
+        <ul class="form-number-ul">
+            <li><span class="number">1</span>Amount does not include brokerage, stamp, transaction levy, trading fee, CCASS fee or other trading fees.</li>
+            <li><span class="number">2</span>All transactions are subject to the records printed in statements.</li>
+            <li><span class="number">3</span>Transaction records within 7 days are available. To retrieve records over 7 days ago, please refer to the account statement.</li>
+        </ul>
+    </div>
+</body>
+</html>

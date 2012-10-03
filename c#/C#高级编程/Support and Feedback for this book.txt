@@ -1,0 +1,59 @@
+How to Get Support
+------------------
+
+One of the most irritating things about any programming book is when you 
+find that bit of code you’ve just spent an hour typing simply doesn’t work.  
+You check it a hundred times to see if you’ve set it up correctly, and 
+then you notice the spelling mistake in the variable name on the book page.  
+Of course, you can blame the authors for not taking enough care and testing 
+the code, the editors for not doing their job properly, or the proofreaders 
+for not being eagle-eyed enough, but this doesn’t get around the fact that 
+mistakes do happen.
+
+We try hard to ensure no mistakes sneak out into the real world, but we 
+can’t promise that this book is 100% error free.  What we can do is offer 
+the next best thing, by providing you with immediate support and feedback 
+from experts who have worked on the book and try to ensure that future 
+editions eliminate these gremlins.
+
+If you wish to directly query a problem in the book with somebody who knows 
+the book in detail then e-mail support@wrox.com, with the title of the 
+book, the last four numbers of the ISBN and where possible the relevant 
+page number in the subject field of the e-mail.
+
+Your message is delivered to one of our support staff who are the first 
+people to read it. We have files on the most frequently asked questions and 
+will answer anything generally immediately. We answer general questions 
+about the book and the web site. 
+
+Deeper queries are forwarded to the technical editor responsible for that 
+book. They have experience with the programming language or particular 
+product and are able to answer detailed technical questions on the subject. 
+Once an issue has been resolved, if necessary the editor can post the errata 
+to the web site. 
+
+Finally, in the unlikely event that the editor can't answer your problem, 
+he/she will forward the request to the author.  We try to protect the author 
+from any distractions from writing.  However, we are quite happy to forward 
+specific book related requests to them.  All Wrox authors help with the 
+support on their books.  They will either directly mail the customer with the 
+answer, or will send their response to the editor or the support department 
+who will then pass it on to the reader.
+
+How To Tell Us Exactly What You Think
+-------------------------------------
+
+We always value hearing from our readers, as this is the only way in which 
+we can find out what we are doing right as well as wrong.
+
+You might want to tell us how much you liked or loathed the book in question.  
+Or you might have ideas about how this whole process could be improved, in 
+which case you should e-mail feedback@wrox.com.  We are committed to achieving 
+high standards of editing and reviewing on all our books, and we assess our 
+editorial process on an ongoing basis - we'll take your comments into account, 
+and will consider them in future editorial decisions.  You can also be assured 
+that every person working for Wrox, will see and have chance to discuss your 
+comments, in a concerted effort to improve our future titles and performance.
+
+Phil Perks (philp@wrox.com)
+Technical Support Manager

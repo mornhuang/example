@@ -1,0 +1,718 @@
+<HTML
+><HEAD
+><TITLE
+>Coding Style</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.48"><LINK
+REL="HOME"
+TITLE="GNOME Programming Guidelines"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="The Importance of Writing Good Code"
+HREF="good-code.html"><LINK
+REL="NEXT"
+TITLE="Correctness and Robustness"
+HREF="robust.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+BGCOLOR="#ffffff"
+CELLPADDING="1"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="4"
+ALIGN="center"
+><FONT
+COLOR="#000000"
+SIZE="2"
+>GNOME Programming Guidelines</FONT
+></TH
+></TR
+><TR
+><TD
+WIDTH="25%"
+BGCOLOR="#ffffff"
+ALIGN="left"
+><A
+HREF="good-code.html"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+>&#60;&#60;&#60; Previous</B
+></FONT
+></A
+></TD
+><TD
+WIDTH="25%"
+COLSPAN="2"
+BGCOLOR="#ffffff"
+ALIGN="center"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+><A
+HREF="index.html"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+>Home</B
+></FONT
+></A
+></B
+></FONT
+></TD
+><TD
+WIDTH="25%"
+BGCOLOR="#ffffff"
+ALIGN="right"
+><A
+HREF="robust.html"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+>Next &#62;&#62;&#62;</B
+></FONT
+></A
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="CODE-STYLE"
+>Coding Style</A
+></H1
+><P
+>      &#8216;Coding style&#8217; refers to the way source code is
+      formatted.  For C, this involves things like brace placement,
+      indentation, and the way parentheses are used.  GNOME has a mix
+      of coding styles, and we do not enforce any one of them.  The
+      most important thing is for the code to be consistent within a
+      program or library &#8212; code with sloppy formatting is not
+      acceptable, since it is hard to read.
+    </P
+><P
+>      When writing a new program or library, please follow a
+      consistent style of brace placement and indentation.  If you do
+      not have any personal preference for a style, we recommend the
+      Linux kernel coding style, or the GNU coding style.
+    </P
+><P
+>      Read the <TT
+CLASS="FILENAME"
+>(Standards)Writing C</TT
+> info node in
+      the GNU documentation.  Then, get the Linux kernel sources and
+      read the file
+      <TT
+CLASS="FILENAME"
+>linux/Documentation/CodingStyle</TT
+>, and ignore
+      Linus's jokes.  These two documents will give you a good idea of
+      what we recommend for GNOME code.
+    </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="INDENT"
+>Indentation Style</A
+></H2
+><P
+>	For core GNOME code we prefer the Linux kernel indentation
+	style.  Use 8-space tabs for indentation.
+      </P
+><P
+>        Using 8-space tabs for indentation provides a number of
+	benefits.  It makes the code easier to read, since the
+	indentation is clearly marked.  It also helps you keep your
+	code honest by forcing you to split functions into more
+	modular and well-defined chunks &#8212; if your indentation
+	goes too far to the right, then it means your function is
+	designed badly and you should split it to make it more modular
+	or re-think it.
+      </P
+><P
+>        8-space tabs for indentation also helps you to design
+        functions that fit nicely in a single screen, which means that
+        people can understand the code without having to scroll back
+        and forth in order to understand it.
+      </P
+><P
+>	If you use Emacs, then you can select the Linux kernel
+	indentation style by including this in your
+	<TT
+CLASS="FILENAME"
+>.emacs</TT
+> file:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-set-style "k&#38;r")
+            (setq c-basic-offset 8)))
+	</PRE
+></TD
+></TR
+></TABLE
+>
+
+	On newer Emacsen or with a newer cc-mode, you may be able to
+	simply do this instead:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>(add-hook 'c-mode-common-hook
+          (lambda ()
+            (c-set-style "linux")))
+	</PRE
+></TD
+></TR
+></TABLE
+>
+
+	If you use vim, then you can select the GNOME kernel
+	indentation style by including this fragment in your
+	<TT
+CLASS="FILENAME"
+>~/.vimrc</TT
+> file:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>set ts=8
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+  augroup C
+      autocmd BufRead *.c set cindent
+  augroup END
+endif
+	</PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	The GNU indentation style is the default for Emacs, so you do
+	not need to put anything in your <TT
+CLASS="FILENAME"
+>.emacs</TT
+> to
+	enable it.  If you wish to select it explicitly, substitute
+	&#8220;gnu&#8221; for &#8220;linux&#8221; in the example above.
+      </P
+><P
+>	If you know how to customize indentation styles in other popular
+	editors, please tell us about it so that we can expand this
+	document.
+      </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="NAMING"
+>Naming Conventions</A
+></H2
+><P
+>	It is important to follow a good naming convention for the
+	symbols in your programs.  This is especially important for
+	libraries, since they should not pollute the global namespace
+	&#8212; it is very annoying when a library has sloppily-named
+	symbols that clash with names you may want to use in your
+	programs.
+      </P
+><P
+>	Function names should be of the form
+	<TT
+CLASS="FUNCTION"
+>module_submodule_operation</TT
+>, for example,
+	<TT
+CLASS="FUNCTION"
+>gnome_canvas_set_scroll_region</TT
+> or
+	<TT
+CLASS="FUNCTION"
+>gnome_mime_get_keys</TT
+>.  This naming
+	convention eliminates inter-module clashes of symbol names.
+	This is very important for libraries.
+      </P
+><P
+>	Symbols should have descriptive names.  As Linus says, do not
+	use <TT
+CLASS="FUNCTION"
+>cntusr()</TT
+>, use
+	<TT
+CLASS="FUNCTION"
+>count_active_users()</TT
+> instead.  This makes
+	code very easy to read and almost self-documenting.
+      </P
+><P
+>	Try to use the same naming conventions as in GTK+ and the
+	GNOME libraries:
+
+	<P
+></P
+><UL
+><LI
+><P
+>	      Function names are lowercase, with underscores to
+	      separate words, like this:
+	      <TT
+CLASS="FUNCTION"
+>gnome_canvas_set_scroll_region()</TT
+>,
+	      <TT
+CLASS="FUNCTION"
+>gnome_mime_get_keys()</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>	      Macros and enumerations are uppercase, with underscores
+	      to separate words, like this:
+	      <SPAN
+CLASS="SYMBOL"
+>GNOMEUIINFO_SUBTREE()</SPAN
+> for a macro, and
+	      <SPAN
+CLASS="SYMBOL"
+>GNOME_INTERACT_NONE</SPAN
+> for an enumeration
+	      value.
+	    </P
+></LI
+><LI
+><P
+>	      Types and structure names are mixed upper and lowercase,
+	      like this:  <SPAN
+CLASS="SYMBOL"
+>GnomeCanvasItem</SPAN
+>,
+	      <SPAN
+CLASS="SYMBOL"
+>GnomeIconList</SPAN
+>.
+	    </P
+></LI
+></UL
+>
+
+	Using underscores to separate words makes the code less
+	cramped and easier to edit, since you can use your editor's
+	word commands to navigate quickly.
+      </P
+><P
+>	If you are writing a library, then you may need to have
+	exported symbols that are to be used only within the library.
+	For example, two of the object files that compose the library
+	<TT
+CLASS="FILENAME"
+>libfoo.so</TT
+> may need to access symbols from
+	each other, but this symbols are not meant to be used from
+	user programs.  In that case, put an underscore before the
+	function name and make the first words follow the standard
+	module/submodule convention.  For example, you could have a
+	function called
+	<TT
+CLASS="FUNCTION"
+>_foo_internal_frobnicate()</TT
+>.
+      </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="CONSIST"
+>Consistency in Naming</A
+></H3
+><P
+>	  It is important that your variables be consistently named.
+	  For example, a module that does a list manipulation may
+	  choose to name the variables that hold a list pointer
+	  &#8220;<SPAN
+CLASS="SYMBOL"
+>l</SPAN
+>&#8221;, for terseness and
+	  simplicity.  However, it is important that a module that
+	  manipulates widgets and sizes does not use variables called
+	  &#8220;<SPAN
+CLASS="SYMBOL"
+>w</SPAN
+>&#8221; for both widgets and widths
+	  (as in width/height values); this would make the code
+	  inconsistent and harder to read.
+	</P
+><P
+>	  Of course, these very short and terse names should only be
+	  used for the local variables of functions.  Never call a
+	  global variable &#8220;<SPAN
+CLASS="SYMBOL"
+>x</SPAN
+>&#8221;; use a
+	  longer name that tells what it does.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="CLEAN"
+>Cleanliness</A
+></H2
+><P
+>	GNOME code should be as clean as possible.  This implies
+	using a consistent indentation style and good naming
+	conventions, as described above.  It also implies the
+	following.
+      </P
+><P
+>	Learn the correct use of the <SPAN
+CLASS="SYMBOL"
+>static</SPAN
+> keyword.
+	Do <I
+CLASS="EMPHASIS"
+>not</I
+> make all your symbols global.
+	This has the advantage that you can use shorter names for
+	internal functions within a single source file, since they are
+	not globally visible and thus you do not need the
+	module/submodule prefix.
+      </P
+><P
+>	Learn the correct use of the <SPAN
+CLASS="SYMBOL"
+>const</SPAN
+> keyword.
+	Use it consistently, as it can make the compiler catch a lot
+	of stupid bugs for you.
+      </P
+><P
+>        If you have a function that returns a pointer to internal data
+        which the user is not supposed to free, you should use a const
+        modifier.  This will warn the user if he tries to do something
+        incorrect, for example:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>const char *gnome_mime_get_info (const char *info);
+	</PRE
+></TD
+></TR
+></TABLE
+>
+
+	The compiler will warn the user if he tries to free the
+	returned string.  This can catch a lot of bugs.
+      </P
+><P
+>	If you have random &#8216;magic values&#8217; in your program
+	or library, use macros to define them instead of hardcoding
+	them where they are used:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>/* Amount of padding for GUI elements */
+#define GNOME_PAD          8
+#define GNOME_PAD_SMALL    4
+#define GNOME_PAD_BIG      12
+	</PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	If you have a list of possible values for a variable, do not
+	use macros for them; use an enum instead and give it a type
+	name &#8212; this lets you have symbolic names for those
+	values in a debugger.  Also, do not use an &#8216;int&#8217;
+	to store an enumeration value; use the enum type instead.
+	This lets the compiler catch errors for you, allows the
+	debugger to show proper values for these values and makes it
+	obvious what values a variable can take.  An example follows:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>/* Shadow types */
+typedef enum {
+	GTK_SHADOW_NONE,
+	GTK_SHADOW_IN,
+	GTK_SHADOW_OUT,
+	GTK_SHADOW_ETCHED_IN,
+	GTK_SHADOW_ETCHED_OUT
+} GtkShadowType;
+
+void gtk_frame_set_shadow_type (GtkFrame *frame, GtkShadowType type);
+	</PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	If you define a set of values for a bit field, do it like
+	this:
+
+	<TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="PROGRAMLISTING"
+>/* Update flags for items */
+enum {
+	GNOME_CANVAS_UPDATE_REQUESTED  = 1 &#60;&#60; 0,
+	GNOME_CANVAS_UPDATE_AFFINE     = 1 &#60;&#60; 1,
+	GNOME_CANVAS_UPDATE_CLIP       = 1 &#60;&#60; 2,
+	GNOME_CANVAS_UPDATE_VISIBILITY = 1 &#60;&#60; 3,
+	GNOME_CANVAS_UPDATE_IS_VISIBLE = 1 &#60;&#60; 4
+};
+	</PRE
+></TD
+></TR
+></TABLE
+>
+
+	This makes it easier to modify the list of values, and is less
+	error-prone than specifying the values by hand.  It also lets
+	you use those values as symbols in a debugger.
+      </P
+><P
+>	Do not write obfuscated code, but also try to be spartan.  Do
+	not use more parentheses than are necessary to clarify an
+	expression.  Use spaces before parentheses and after commas,
+	and also around binary operators.
+      </P
+><P
+>	Please do not put hacks in the code.  Instead of writing an
+	ugly hack, re-work the code so that it is clean, extensible
+	and maintainable.
+      </P
+><P
+>	Make sure your code compiles with absolutely no warnings from
+	the compiler.  These help you catch stupid bugs.  Use function
+	prototypes in header files consistently.
+      </P
+><P
+>        Within GNOME you can use the
+        <SPAN
+CLASS="SYMBOL"
+>GNOME_COMPILE_WARNINGS</SPAN
+> Autoconf macro in your
+        <TT
+CLASS="FILENAME"
+>configure.in</TT
+>.  This will take care of
+        turning on a good set of compiler warnings in a portable
+        fashion.
+      </P
+><P
+>	Comment your code.  Please put a comment before each function
+	that says what it does.  Do not say how it does it unless it
+	is absolutely necessary; this should be obvious from reading
+	the code.  If it is not, you may want to rework it until the
+	code is easy to understand.
+      </P
+><P
+>        While documenting API functions for a library, please follow
+        the guidelines specified in the file
+        <TT
+CLASS="FILENAME"
+>gnome-libs/devel-docs/api-comment-style.txt</TT
+>.
+        This allows your source code to provide inline documentation
+        that is later extracted by the <TT
+CLASS="FILENAME"
+>gtk-doc</TT
+>
+        system to create a DocBook manual automatically.
+      </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="GTK"
+>GTK+-related Issues</A
+></H3
+><P
+>	  GTK+ lets you do a lot of magic and obfuscation with signal
+	  handlers, passed closures, and datasets.  If you find
+	  yourself doing a lot of
+	  <SPAN
+CLASS="SYMBOL"
+>gtk_object_set_data()</SPAN
+> all over the place,
+	  or passing state around in bizarre ways via signal handlers,
+	  please rework the code.  If you need to attach a lot of data
+	  to a particular object, then it is a good candidate for a
+	  new derived class, which will not only make the code
+	  cleaner, but more extensible as well.
+	</P
+><P
+>	  A lot of heuristics in complicated event handlers can often
+	  be replaced by clean code in the form of a state machine.
+	  This is useful when you want to implement tricky things like
+	  selection and dragging behavior, and will make the code
+	  easier to debug and extend.
+	</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><BR><BR><TABLE
+WIDTH="100%"
+BORDER="0"
+BGCOLOR="#ffffff"
+CELLPADDING="1"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="25%"
+BGCOLOR="#ffffff"
+ALIGN="left"
+><A
+HREF="good-code.html"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+>&#60;&#60;&#60; Previous</B
+></FONT
+></A
+></TD
+><TD
+WIDTH="25%"
+COLSPAN="2"
+BGCOLOR="#ffffff"
+ALIGN="center"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+><A
+HREF="index.html"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+>Home</B
+></FONT
+></A
+></B
+></FONT
+></TD
+><TD
+WIDTH="25%"
+BGCOLOR="#ffffff"
+ALIGN="right"
+><A
+HREF="robust.html"
+><FONT
+COLOR="#0000ff"
+SIZE="2"
+><B
+>Next &#62;&#62;&#62;</B
+></FONT
+></A
+></TD
+></TR
+><TR
+><TD
+COLSPAN="2"
+ALIGN="left"
+><FONT
+COLOR="#000000"
+SIZE="2"
+><B
+>The Importance of Writing Good Code</B
+></FONT
+></TD
+><TD
+COLSPAN="2"
+ALIGN="right"
+><FONT
+COLOR="#000000"
+SIZE="2"
+><B
+>Correctness and Robustness</B
+></FONT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

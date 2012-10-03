@@ -1,0 +1,1 @@
+csc /t:winexe /debug+ /r:System.dll /r:System.Data.dll /r:system.windows.forms.dll /recurse:*.cs

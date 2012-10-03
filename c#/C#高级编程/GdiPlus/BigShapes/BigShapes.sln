@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigShapes", "BigShapes.csproj", "{4FA6A182-FBCD-4F49-B062-9519CED386BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4FA6A182-FBCD-4F49-B062-9519CED386BF}.Debug.ActiveCfg = Debug|.NET
+		{4FA6A182-FBCD-4F49-B062-9519CED386BF}.Debug.Build.0 = Debug|.NET
+		{4FA6A182-FBCD-4F49-B062-9519CED386BF}.Release.ActiveCfg = Release|.NET
+		{4FA6A182-FBCD-4F49-B062-9519CED386BF}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

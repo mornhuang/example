@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfPlacingWindow", "SelfPlacingWindow.csproj", "{FD7782DC-0527-405E-B4C7-7547E68750BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{FD7782DC-0527-405E-B4C7-7547E68750BC}.Debug.ActiveCfg = Debug|.NET
+		{FD7782DC-0527-405E-B4C7-7547E68750BC}.Debug.Build.0 = Debug|.NET
+		{FD7782DC-0527-405E-B4C7-7547E68750BC}.Release.ActiveCfg = Release|.NET
+		{FD7782DC-0527-405E-B4C7-7547E68750BC}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

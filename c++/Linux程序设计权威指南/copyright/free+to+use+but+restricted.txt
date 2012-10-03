@@ -1,0 +1,5 @@
+The software may be obtained and used without fee, but may have
+restrictions on copying, modifying, redistributing, or possibly any other
+aspect of usage. Please see the homepage or the distribution archive for
+further information.
+

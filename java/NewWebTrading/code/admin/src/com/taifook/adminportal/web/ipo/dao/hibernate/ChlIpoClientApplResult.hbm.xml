@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Wed Jul 06 13:32:52 GMT+08:00 2005                         -->
+<hibernate-mapping>
+    <class name="com.taifook.adminportal.web.ipo.dto.IPOResult" table="CHL_IPO_CLIENT_APPL_RESULT">
+        <id name="applyId" column="APPL_ID" type="java.lang.Long">
+		 <generator class="assigned" />
+        </id> 
+        <property name="ipoCode" column="MIS_REF_CODE" type="java.lang.String" />
+        <property name="accountId" column="ACC_ID" type="java.lang.String" />
+        <property name="applyQuantity" column="QTY_APPLY" type="int" />
+        <property name="dsptAmount" column="DEPOSIT" type="java.math.BigDecimal" />
+        <property name="prgStatus" column="PROCESS_STATUS" type="java.lang.String" />
+        <property name="misRefCode" column="MIS_IPOORDER_SERIAL" type="java.lang.String" />
+        <property name="rejectCode" column="REJECT_CODE" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>

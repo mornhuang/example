@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>海通国际证券集团有限公司</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/zh_CN/style.css" />
+    <script src="../../Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.layout.js" type="text/javascript"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.warrants-cbbcs.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1 class="page-title">
+        <span class="shaddow"><span>认股证分析</span><b></b></span>
+        <input type="button" onclick="javascript:parent.changeCenterSrc('Warrants-CBBCs.html');"
+            class="short-button" value="返回" />
+    </h1>
+    <div class="page-content">
+        <ul class="warrants-cbbcs-nav warrants-nav ui-helper-clearfix">
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/search_c.cgi',800);">
+                认股证搜寻工具</a></li>
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/compare_c.cgi',550);">
+                认股证比较工具</a></li>
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/cal_chart_c.cgi',800);">
+                认股证计算机</a></li>
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/aiv_c.cgi',550);"
+                class="long">认股证<br />
+                平均引伸波幅</a></li>
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/new_c.cgi',550);">
+                最新发行认股证</a></li>
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/expiring_c.cgi',800);">
+                即将到期认股证</a></li>
+            <li><a href="javascript:changeTopTenSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/gainers_c.cgi;http://chart.dbpower.com.hk/taifook/ch2 /warrants/losers_c.cgi;http://chart.dbpower.com.hk/taifook/ch2/warrants/turnover_c.cgi',300);"
+                class="long">认股证<br />
+                十大排行榜</a></li>
+            <li><a href="javascript:changeInnerSrc('http://chart.dbpower.com.hk/taifook/ch2/warrants/wfunds_flow_date_c.cgi',700);">
+                认股证资金流</a></li>
+        </ul>
+        <h2 class="warrants-cbbcs-top-ten-title">
+            十大升幅认股证</h2>
+        <iframe id="center-frame-1" class="iframe" src="" frameborder="0"></iframe>
+        <h2 class="warrants-cbbcs-top-ten-title">
+            十大跌幅认股证</h2>
+        <iframe id="center-frame-2" class="iframe" src="" frameborder="0"></iframe>
+        <h2 class="warrants-cbbcs-top-ten-title">
+            十大成交认股证</h2>
+        <iframe id="center-frame-3" class="iframe" src="" frameborder="0"></iframe>
+    </div>
+</body>
+</html>

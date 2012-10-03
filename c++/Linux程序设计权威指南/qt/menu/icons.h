@@ -1,0 +1,70 @@
+
+/* XPM */
+static const char * p1_xpm[] = {
+"16 16 3 1",
+" 	c None",
+".	c #000000000000",
+"X	c #FFFFFFFF0000",
+"                ",
+"                ",
+"         ....   ",
+"        .XXXX.  ",
+" .............. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .XXXXXXXXXXXX. ",
+" .............. ",
+"                "};
+
+/* XPM */
+static const char * p2_xpm[] = {
+"16 16 3 1",
+" 	c None",
+".	c #000000000000",
+"X	c #FFFFFFFFFFFF",
+"                ",
+"   ......       ",
+"   .XXX.X.      ",
+"   .XXX.XX.     ",
+"   .XXX.XXX.    ",
+"   .XXX.....    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .XXXXXXX.    ",
+"   .........    ",
+"                ",
+"                "};
+
+/* XPM */
+static const char * p3_xpm[] = {
+"16 16 3 1",
+" 	c None",
+".	c #000000000000",
+"X	c #FFFFFFFFFFFF",
+"                ",
+"                ",
+"   .........    ",
+"  ...........   ",
+"  ........ ..   ",
+"  ...........   ",
+"  ...........   ",
+"  ...........   ",
+"  ...........   ",
+"  ...XXXXX...   ",
+"  ...XXXXX...   ",
+"  ...XXXXX...   ",
+"  ...XXXXX...   ",
+"   .........    ",
+"                ",
+"                "};
+

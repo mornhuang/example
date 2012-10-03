@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/head.do" location="1850,650" dimension="67,62" />
+  <StrutsActivity path="/left.do" location="1550,1350" dimension="59,62" />
+  <StrutsActivity path="/main.do" location="350,450" dimension="65,62" />
+  <StrutsActivity path="/index.do" location="650,150" dimension="69,62" />
+  <StrutsActivity path="/refreshuseractiondetail.do" location="1850,50" dimension="190,60" />
+  <StrutsActivity path="/editparameter.do" location="2150,50" dimension="130,60" />
+  <StrutsActivity path="/addparameterinit.do" location="2450,50" dimension="148,60" />
+  <StrutsActivity path="/addbroadcastinit.do" location="350,1450" dimension="123,62" />
+  <StrutsActivity path="/editbroadcast.do" location="1850,1450" dimension="109,62" />
+  <StrutsActivity path="/login.do" location="50,50" dimension="65,62" />
+  <StrutsActivity path="/logout.do" location="650,350" dimension="73,62" />
+  <StrutsActivity path="/queryparameter.do" location="2450,250" dimension="442,84" />
+  <StrutsActivity path="/updateparameter.do" location="2450,450" dimension="448,84" />
+  <StrutsActivity path="/channelsswitchinit.do" location="1550,1150" dimension="383,88" />
+  <StrutsActivity path="/channelsswitchupdate.do" location="950,1250" dimension="407,88" />
+  <StrutsActivity path="/managerchannelserver.do" location="2150,1750" dimension="472,84" />
+  <StrutsActivity path="/addbroadcast.do" location="350,1450" dimension="109,62" />
+  <StrutsActivity path="/showbroadcastinit.do" location="1850,250" dimension="377,88" />
+  <StrutsActivity path="/updatebroadcast.do" location="1550,450" dimension="386,88" />
+  <StrutsActivity path="/deletebroadcast.do" location="2450,1050" dimension="448,84" />
+  <StrutsActivity path="/onlineuserchart.do" location="2150,1250" dimension="376,88" />
+  <StrutsActivity path="/onlineuserdetail.do" location="1550,1650" dimension="376,88" />
+  <StrutsActivity path="/systemmonitor.do" location="50,1650" dimension="395,88" />
+  <StrutsActivity path="/systemmonitorchart.do" location="1250,1850" dimension="442,84" />
+  <StrutsActivity path="/deletesysmonitor.do" location="950,650" dimension="478,84" />
+  <StrutsActivity path="/useractiondetail.do" location="650,1750" dimension="376,88" />
+  <StrutsActivity path="/deleteuseractiondetail.do" location="2450,1450" dimension="496,84" />
+  <StrutsActivity path="/useractionchart.do" location="2150,650" dimension="454,84" />
+  <StrutsActivity path="/changepwd.do" location="50,1850" dimension="406,84" />
+  <StrutsActivity path="success;6" location="2150,1450" dimension="116,75" />
+  <StrutsActivity path="fail;6" location="2150,950" dimension="93,75" />
+  <StrutsActivity path="test;6" location="50,550" dimension="124,72" />
+  <StrutsActivity path="/jsp/head.jsp" location="1850,1350" dimension="93,49" />
+  <StrutsActivity path="/jsp/left.jsp" location="50,1450" dimension="85,49" />
+  <StrutsActivity path="/jsp/main.jsp" location="950,250" dimension="91,49" />
+  <StrutsActivity path="/jsp/login.jsp" location="50,250" dimension="91,49" />
+  <StrutsActivity path="/useractiondetail" location="650,1950" dimension="142,48" />
+  <StrutsActivity path="/jsp/editparameter.jsp" location="50,450" dimension="137,49" />
+  <StrutsActivity path="/jsp/addparameter.jsp" location="350,750" dimension="137,49" />
+  <StrutsActivity path="/jsp/addbroadcast.jsp" location="650,1450" dimension="135,49" />
+  <StrutsActivity path="/jsp/editbroadcast.jsp" location="50,1550" dimension="135,49" />
+  <StrutsActivity path="/login.jsp" location="350,150" dimension="73,49" />
+  <StrutsActivity path="/jsp/queryparameter.jsp" location="2450,1950" dimension="178,48" />
+  <StrutsActivity path="queryparameter.jsp" location="50,2050" dimension="148,48" />
+  <StrutsActivity path="editparameter.jsp" location="650,550" dimension="115,49" />
+  <StrutsActivity path="addparameter.jsp" location="650,2050" dimension="136,48" />
+  <StrutsActivity path="/jsp/channelsswitch.jsp" location="650,1350" dimension="141,49" />
+  <StrutsActivity path="channelsswitch.jsp" location="50,1350" dimension="119,49" />
+  <StrutsActivity path="/jsp/managerchannelserver.jsp" location="1550,2050" dimension="214,48" />
+  <StrutsActivity path="/jsp/fail.jsp" location="50,350" dimension="83,49" />
+  <StrutsActivity path="managerchannelserver.jsp" location="1550,2150" dimension="184,48" />
+  <StrutsActivity path="addbroadcast.jsp" location="650,1550" dimension="113,49" />
+  <StrutsActivity path="/jsp/showbroadcast.jsp" location="1250,1450" dimension="142,49" />
+  <StrutsActivity path="/jsp/onlineuserchart.jsp" location="1850,850" dimension="143,49" />
+  <StrutsActivity path="/jsp/onlineuserdetail.jsp" location="1250,950" dimension="144,49" />
+  <StrutsActivity path="/jsp/systemmonitor.jsp" location="2150,550" dimension="139,49" />
+  <StrutsActivity path="/jsp/systemmonitorchart.jsp" location="950,1650" dimension="164,49" />
+  <StrutsActivity path="/jsp/useractiondetail.jsp" location="350,1250" dimension="145,49" />
+  <StrutsActivity path="/jsp/useractionchart.jsp" location="350,1350" dimension="184,48" />
+  <StrutsActivity path="/jsp/changepassword.jsp" location="1550,1550" dimension="150,49" />
+  <StrutsActivity path="/jsp/success.jsp" location="1550,850" dimension="106,49" />
+  <StrutsActivity path="/jsp/test.jsp" location="1250,850" dimension="118,48" />
+  <StrutsActivity path="/jsp/editparameterother.jsp" location="50,750" dimension="163,49" />
+  <StrutsActivity path="/jsp/editparametersystem.jsp" location="350,650" dimension="171,49" />
+  <StrutsActivity path="/jsp/queryparametersystem.jsp" location="1250,550" dimension="181,49" />
+  <StrutsActivity path="queryparametersystem.jsp" location="650,950" dimension="159,49" />
+  <StrutsActivity path="/jsp/queryparameterother.jsp" location="1250,450" dimension="173,49" />
+  <StrutsActivity path="queryparameterother.jsp" location="950,950" dimension="151,49" />
+  <StrutsActivity path="editparameterohter.jsp" location="1250,1150" dimension="141,49" />
+  <StrutsActivity path="editparametersystem.jsp" location="650,650" dimension="149,49" />
+  <StrutsActivity path="/jsp/onlineuser.jsp" location="2150,1150" dimension="118,49" />
+  <StrutsActivity path="/jsp/onlineuser1.jsp" location="2150,450" dimension="124,49" />
+  <StrutsActivity path="/jsp/channelswitch.jsp" location="650,1250" dimension="136,49" />
+  <StrutsActivity path="/success" location="1250,350" dimension="70,49" />
+  <StrutsActivity path="/MyJsp.jsp" location="350,50" dimension="81,49" />
+  <StrutsActivity path="/form//queryparameter.jsp" location="50,850" dimension="159,49" />
+  <StrutsActivity path="editparameterother.jsp" location="350,850" dimension="141,49" />
+  <StrutsActivity path="/jsp/queyparametersystem.jsp" location="950,450" dimension="177,49" />
+  <StrutsActivity path="/index" location="950,1050" dimension="59,49" />
+  <StrutsActivity path="/main" location="1250,1050" dimension="55,49" />
+  <StrutsActivity path="/fail" location="50,1150" dimension="47,49" />
+  <StrutsActivity path="/logout" location="350,1150" dimension="63,49" />
+  <StrutsActivity path="/editparameterother" location="950,1150" dimension="127,49" />
+  <StrutsActivity path="channelswitch.jsp" location="50,1250" dimension="114,49" />
+  <StrutsActivity path="/showonlineuser" location="650,1650" dimension="107,49" />
+  <StrutsActivity path="/jsp/online.jsp" location="2150,850" dimension="97,49" />
+  <StrutsActivity path="/onlineuserdetail.jsp" location="2150,1650" dimension="126,49" />
+  <StrutsActivity path="/fail.jsp" location="950,1450" dimension="94,48" />
+  <StrutsActivity path="/delparameter.do" location="1850,1950" dimension="430,84" />
+  <StrutsActivity path="/addparameter.do" location="2450,850" dimension="430,84" />
+  <StrutsTransition id="/channelsswitchinit.do,success,/jsp/channelsswitch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,1184" />
+      <AbsolutePoint location="1409,1184" />
+      <AbsolutePoint location="1409,1374" />
+      <AbsolutePoint location="791,1374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/changepwd.do,fail,/jsp/fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1892" />
+      <AbsolutePoint location="-25,1892" />
+      <AbsolutePoint location="-25,374" />
+      <AbsolutePoint location="50,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/changepwd.do,success,/jsp/changepassword.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="456,1892" />
+      <AbsolutePoint location="1189,1892" />
+      <AbsolutePoint location="1189,1574" />
+      <AbsolutePoint location="1550,1574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jsp/editbroadcast.jsp,null,/updatebroadcast.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,1574" />
+      <AbsolutePoint location="5,1574" />
+      <AbsolutePoint location="5,527" />
+      <AbsolutePoint location="1550,527" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="test;6,null,/jsp/test.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="112,622" />
+      <AbsolutePoint location="112,714" />
+      <AbsolutePoint location="725,714" />
+      <AbsolutePoint location="725,874" />
+      <AbsolutePoint location="1250,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/index.do,null,/jsp/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="654,212" />
+      <AbsolutePoint location="654,314" />
+      <AbsolutePoint location="95,314" />
+      <AbsolutePoint location="95,299" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="managerchannelserver.jsp,null,/managerchannelserver.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1734,2174" />
+      <AbsolutePoint location="2386,2174" />
+      <AbsolutePoint location="2386,1834" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="fail;6,null,/jsp/fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2196,950" />
+      <AbsolutePoint location="2196,914" />
+      <AbsolutePoint location="579,914" />
+      <AbsolutePoint location="579,374" />
+      <AbsolutePoint location="133,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/showbroadcastinit.do,success,/jsp/showbroadcast.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2038,338" />
+      <AbsolutePoint location="2038,1295" />
+      <AbsolutePoint location="1372,1295" />
+      <AbsolutePoint location="1372,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="addparameter.jsp,null,,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="786,2074" />
+      <AbsolutePoint location="950,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/onlineuserdetail.do,success,/jsp/onlineuserdetail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1550,1684" />
+      <AbsolutePoint location="1529,1684" />
+      <AbsolutePoint location="1529,974" />
+      <AbsolutePoint location="1394,974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="addbroadcast.jsp,null,/addbroadcast.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1574" />
+      <AbsolutePoint location="404,1574" />
+      <AbsolutePoint location="404,1512" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/useractiondetail.do,success,/jsp/useractiondetail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="838,1750" />
+      <AbsolutePoint location="838,1165" />
+      <AbsolutePoint location="428,1165" />
+      <AbsolutePoint location="428,1250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/left.do,null,/jsp/left.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1579,1412" />
+      <AbsolutePoint location="1579,1427" />
+      <AbsolutePoint location="92,1427" />
+      <AbsolutePoint location="92,1450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/onlineuserchart.do,success,/jsp/onlineuserchart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1295" />
+      <AbsolutePoint location="2098,1295" />
+      <AbsolutePoint location="2098,874" />
+      <AbsolutePoint location="1993,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="success;6,null,/jsp/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1487" />
+      <AbsolutePoint location="1974,1487" />
+      <AbsolutePoint location="1974,1065" />
+      <AbsolutePoint location="1409,1065" />
+      <AbsolutePoint location="1409,874" />
+      <AbsolutePoint location="1550,874" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/queryparameter.do,success,/jsp/queryparameter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2892,292" />
+      <AbsolutePoint location="3021,292" />
+      <AbsolutePoint location="3021,1974" />
+      <AbsolutePoint location="2628,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.jsp,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,174" />
+      <AbsolutePoint location="82,174" />
+      <AbsolutePoint location="82,112" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/head.do,null,/jsp/head.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1917,681" />
+      <AbsolutePoint location="2128,681" />
+      <AbsolutePoint location="2128,1374" />
+      <AbsolutePoint location="1943,1374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="addparameter.jsp,null,/addparameter.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="718,2098" />
+      <AbsolutePoint location="718,2363" />
+      <AbsolutePoint location="3111,2363" />
+      <AbsolutePoint location="3111,892" />
+      <AbsolutePoint location="2880,892" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logout.do,success,/index.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="684,350" />
+      <AbsolutePoint location="684,212" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="channelsswitch.jsp,null,/channelsswitchupdate.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="109,1350" />
+      <AbsolutePoint location="109,1314" />
+      <AbsolutePoint location="950,1314" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/refreshuseractiondetail.do,null,/useractiondetail,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,80" />
+      <AbsolutePoint location="609,80" />
+      <AbsolutePoint location="609,1974" />
+      <AbsolutePoint location="650,1974" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/managerchannelserver.do,success,/jsp/managerchannelserver.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2356,1834" />
+      <AbsolutePoint location="2356,2074" />
+      <AbsolutePoint location="1764,2074" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemmonitorchart.do,success,/jsp/systemmonitorchart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1471,1850" />
+      <AbsolutePoint location="1471,1684" />
+      <AbsolutePoint location="1114,1684" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="queryparameter.jsp,null,/queryparameter.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="124,2098" />
+      <AbsolutePoint location="124,2273" />
+      <AbsolutePoint location="2961,2273" />
+      <AbsolutePoint location="2961,322" />
+      <AbsolutePoint location="2892,322" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/useractionchart.do,success,/jsp/useractionchart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2377,650" />
+      <AbsolutePoint location="2377,-85" />
+      <AbsolutePoint location="549,-85" />
+      <AbsolutePoint location="549,1374" />
+      <AbsolutePoint location="534,1374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editparameter.do,null,/jsp/editparameter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2215,50" />
+      <AbsolutePoint location="2215,-25" />
+      <AbsolutePoint location="156,-25" />
+      <AbsolutePoint location="156,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addparameterinit.do,null,/jsp/addparameter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2524,50" />
+      <AbsolutePoint location="2524,5" />
+      <AbsolutePoint location="228,5" />
+      <AbsolutePoint location="228,774" />
+      <AbsolutePoint location="350,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editbroadcast.do,null,/jsp/editbroadcast.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1904,1512" />
+      <AbsolutePoint location="1904,1627" />
+      <AbsolutePoint location="117,1627" />
+      <AbsolutePoint location="117,1599" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addbroadcastinit.do,null,/jsp/addbroadcast.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="473,1481" />
+      <AbsolutePoint location="650,1481" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="editparameter.jsp,null,/delparameter.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,574" />
+      <AbsolutePoint location="898,574" />
+      <AbsolutePoint location="898,1574" />
+      <AbsolutePoint location="1129,1574" />
+      <AbsolutePoint location="1129,1983" />
+      <AbsolutePoint location="1850,1983" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemmonitor.do,success,/jsp/systemmonitor.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="247,1650" />
+      <AbsolutePoint location="247,1127" />
+      <AbsolutePoint location="2008,1127" />
+      <AbsolutePoint location="2008,574" />
+      <AbsolutePoint location="2150,574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/main.do,null,/jsp/main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="382,450" />
+      <AbsolutePoint location="382,274" />
+      <AbsolutePoint location="950,274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="editparameter.jsp,null,/updateparameter.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="707,599" />
+      <AbsolutePoint location="707,637" />
+      <AbsolutePoint location="2674,637" />
+      <AbsolutePoint location="2674,534" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="addparameter.jsp,null,/delparameter.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="718,2050" />
+      <AbsolutePoint location="718,2013" />
+      <AbsolutePoint location="1850,2013" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,success,/main.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="115,81" />
+      <AbsolutePoint location="288,81" />
+      <AbsolutePoint location="288,481" />
+      <AbsolutePoint location="350,481" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/managerchannelserver.do,fail,/jsp/fail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2150,1792" />
+      <AbsolutePoint location="2068,1792" />
+      <AbsolutePoint location="2068,427" />
+      <AbsolutePoint location="91,427" />
+      <AbsolutePoint location="91,399" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

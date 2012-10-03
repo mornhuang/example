@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messenger", "Messenger.csproj", "{BF475E8B-2810-41A5-801D-BA7A4508A2A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{BF475E8B-2810-41A5-801D-BA7A4508A2A3}.Debug.ActiveCfg = Debug|.NET
+		{BF475E8B-2810-41A5-801D-BA7A4508A2A3}.Debug.Build.0 = Debug|.NET
+		{BF475E8B-2810-41A5-801D-BA7A4508A2A3}.Release.ActiveCfg = Release|.NET
+		{BF475E8B-2810-41A5-801D-BA7A4508A2A3}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

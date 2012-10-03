@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<newBookstore>
+  <book genre="Mystery" publicationdate="2001" ISBN="123456789">
+    <title>Case of the Missing Cookie</title>
+    <author>
+      <name>C. Monster</name>
+    </author>
+    <price>9.95</price>
+  </book>
+</newBookstore>

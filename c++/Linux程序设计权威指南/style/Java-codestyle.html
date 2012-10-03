@@ -1,0 +1,1190 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.04 [en] (WinNT; U) [Netscape]">
+   <TITLE>Java Software Coding Standards Guide</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<H2>
+<CENTER>
+<FONT SIZE=+3>N</FONT>ETSCAPE'S
+<FONT SIZE=+3>S</FONT>OFTWARE
+<FONT SIZE=+3>C</FONT>ODING
+<FONT SIZE=+3>S</FONT>TANDARDS
+<FONT SIZE=+3>G</FONT>UIDE FOR
+<FONT SIZE=+3>J</FONT>AVA
+</H2>
+
+
+<B>Christie Badeaux, Technology Evangelist
+</B>
+</CENTER>
+
+<P><B>I<FONT SIZE=-1>NTRODUCTION</FONT></B>
+
+
+<P>In August 1997, Marc Andreesen announced that Netscape would be releasing
+a 100% Pure Java Navigator in 1998.&nbsp; At that time the client product
+engineers were already well into coding applications with Java.&nbsp; Along
+the way, the engineers had created a set of Java coding guidelines to be
+used in creating this next generation Communicator product.&nbsp; What
+follows is a subset of those guidelines that I thought you might be interested
+in using for your own Java development.
+<P>
+<HR WIDTH="100%">
+
+<P><A NAME="Process"></A>
+<H3>
+<FONT SIZE=+2>G</FONT>OALS OF
+<FONT SIZE=+2>T</FONT>HESE
+<FONT SIZE=+2>S</FONT>TANDARDS
+</H3>
+
+<P>First of all there is the need to recognize the purpose of these guidelines
+and set some goals.&nbsp; Following are three basic, but very important
+goals:
+<UL>
+<LI>
+The use of these guidelines should result in readable code and should encourage
+adherence.</LI>
+
+<LI>
+The resulting documentation should be easy to maintain.</LI>
+
+<LI>
+This document should be a living document in that as we discover better
+ways to do things, it gets reflected here.</LI>
+</UL>
+In order to write great software, you have to write software greatly. Vague?
+Well, the point is that before you can produce great code, you have to
+have developed a process for writing great code. And that is what these
+standards are intended to help with.
+
+<P>Some amount of standardization is especially important in a large development
+organization writing component software.&nbsp; Everybody will be in everybody
+else's code, and that code must be clear.&nbsp; It must be clear what the
+code does, how it should be used, how it can be extended, etc.&nbsp; The
+standards within this document have been written to balance the group need
+for standardization with the individual's desires to code in the ways they
+feel most efficient.
+<BR>&nbsp;
+
+<P>
+<H3>
+<FONT SIZE=+2>S</FONT>COPE AND
+<FONT SIZE=+2>A</FONT>PPLICATION OF
+<FONT SIZE=+2>T</FONT>HESE 
+<FONT SIZE=+2>S</FONT>TANDARDS
+</H3>
+
+<P>It is very important to note that this document is divided into two
+distinct areas -- <B><I>Rules </I></B>and <B><I>Guidelines. </I></B>It
+is very important to recognize the following....
+<UL>
+<LI>
+<B><I>Rules </I></B>are those coding standards that are <I>"necessary and
+required"</I> coding practices that have been agreed upon by members of
+the Java Communicator team. Everyone is expected to follow these "rules".</LI>
+</UL>
+
+<UL>
+<LI>
+<B><I>Guidelines </I></B>are <I>"suggested" </I>coding practices that have
+been written to recognize the need for individuality AND for common coding
+practices. The purpose of the guidelines is to provide a framework upon
+which we can all create better code.&nbsp; However, the guidelines are
+not meant to impede engineering efforts when these guidelines are found
+to be in direct conflict with an individual's preference, so long as that
+preference is implemented consistently and is well documented. Finally,
+because we recognize that this opens the code upon to individual stylist
+coding habits, it is important that these habits are well documented and
+will then become the basis for all other updates within the affected files,
+i.e. when in someone else's code do as they do.</LI>
+<B><FONT SIZE=+1></FONT></B>
+
+<P><B><FONT SIZE=+1>What is expected of everyone...</FONT></B>
+<UL>
+<LI>
+Everyone should read these guidelines.</LI>
+
+<LI>
+Everyone should understand them.</LI>
+
+<LI>
+Everyone should use them.</LI>
+
+<LI>
+Then <I>and only then </I>should anyone begin to challenge them*.</LI>
+</UL>
+
+
+<P>&nbsp;<FONT SIZE=-1>*Ultimately, everyone is expected to help refine
+the rules embodied in this document.</FONT>
+<BR>&nbsp;</UL>
+
+
+<P>
+<H3>
+<FONT SIZE=+2>O</FONT>VERVIEW OF THE
+<FONT SIZE=+2>D</FONT>EVELOPMENT
+<FONT SIZE=+2>D</FONT>OCUMENTATION
+</H3>
+
+<DIR>
+<LI>
+<A HREF="#Coding Rules">General Coding Rules</A></LI>
+
+<DIR>
+<LI>
+<A HREF="#Naming Conventions - Rules">Naming Conventions</A></LI>
+
+<LI>
+<A HREF="#Commenting Code">Commenting Code</A></LI>
+</DIR>
+
+<LI>
+<A HREF="#General Coding">General Coding Guidelines</A></LI>
+
+<DIR>
+<LI>
+<A HREF="#Source Code Style">Source Code Style Guidelines</A></LI>
+
+<LI>
+<A HREF="#Naming Conventions">Naming Guidelines</A></LI>
+
+<LI>
+<A HREF="#Layout of Source Files (*.java)">Layout of Source (.java) Files</A></LI>
+
+<LI>
+<A HREF="#Documentation for Methods and Functions">Documentation for Methods
+and Functions</A></LI>
+
+<DIR>&nbsp;</DIR>
+</DIR>
+</DIR>
+
+<HR WIDTH="100%">
+
+<P><A NAME="Coding Rules"></A>
+<H3>
+<FONT SIZE=+2>G</FONT>ENERAL
+<FONT SIZE=+2>C</FONT>ODING
+<FONT SIZE=+2>R</FONT>ULES
+</H3>
+
+<P><B><I>Rules </I></B>are those coding standards that are <I>"necessary
+and required"</I> coding practices that have been agreed upon by members
+of the Java Communicator team. Everyone is expected to follow these "rules".
+<BR>&nbsp;
+
+<P><A NAME="Naming Conventions - Rules"></A>
+<B>
+N<FONT SIZE=-1>AMING</FONT>
+C<FONT SIZE=-1>ONVENTIONS</FONT>
+</B>
+
+<UL><B>Package Names</B>
+
+<UL>
+<LI>
+Package names should be single lowercase words.</LI>
+</UL>
+
+<P><B>Class Names</B>
+
+<UL>
+<LI>
+Concrete classes should use natural descriptive names, begin with a capital,
+and have mixed case:&nbsp; <I>FooBarReader</I></LI>
+</UL>
+
+<P><B>Member Function Names</B>
+
+<UL>
+<LI>
+Method ("member function") names should begin with a lowercase letter with
+each subsequent new word in uppercase, and subsequent letters in each word
+in lower case.</LI>
+
+<LI>
+Methods for debug-only implementation should begin with "mortMortMort".
+(Alternatively they can begin with the word "debug").</LI>
+
+<LI>
+Static methods should begin with a capital letter with each subsequent
+new word in uppercase, and subsequent letters in each word in lower case.</LI>
+</UL>
+
+<DD>
+<I><TT>example</TT></I></DD>
+
+<DIR>
+<DIR><TT>public class MyClass</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; void doSomethingNeat(int aValue);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; void debugDumpToScreen();</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; static void SomeClassMethod(int
+aValue);</TT>
+<BR><TT>};</TT></DIR>
+</DIR>
+</UL>
+
+<P><B>
+C<FONT SIZE=-1>OMPONENT</FONT>
+F<FONT SIZE=-1>ACTORY</FONT>
+N<FONT SIZE=-1>AMES</FONT></B>
+
+<P>A component factory is a public class that implements only static methods.
+These static methods are "Factory functions" or "component constructors".&nbsp;
+Factory class names should include the word "Factory".&nbsp; Factory method
+names should start with the word "Make."&nbsp; For example,
+
+<UL><I>example</I></UL>
+</UL>
+
+<UL>
+<DL>
+<DL>
+<DD>
+<TT>public class WidgetFactory</TT></DD>
+
+<DD>
+<TT>{</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; static Button MakeButton(int aButtonType);</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; static ListBox MakeListBox();</TT></DD>
+
+<DD>
+<TT>};</TT></DD>
+</DL>
+</DL>
+</UL>
+
+<UL><B>Function Naming Patterns</B>
+
+<UL>
+<LI>
+Getters and setters should begin with "get" / "set" and return the appropriate
+object type.</LI>
+
+<LI>
+Boolean getters should use "is" or "can" as a prefix, such as "isUndoable()"
+rather than "getUndoable()"</LI>
+</UL>
+</UL>
+&nbsp;
+
+<P><A NAME="Commenting Code"></A><B>
+C<FONT SIZE=-1>OMMENTING</FONT>
+C<FONT SIZE=-1>ODE</FONT></B>
+
+<P>All interfaces and public classes should have JavaDoc comments. See
+the <A HREF="http://java.sun.com/software/jdk/javadoc/index.html" TARGET=_top>JavaDoc
+documentation</A> available from JavaSoft.
+
+<P>
+<HR WIDTH="100%">
+
+<P><A NAME="General Coding"></A>
+<H3>
+<FONT SIZE=+2>G</FONT>ENERAL
+<FONT SIZE=+2>C</FONT>ODING
+<FONT SIZE=+2>G</FONT>UIDELINES
+</H3>
+
+
+<P><B><I>Guidelines </I></B>are <I>"suggested" </I>coding practices that
+have been written to recognize the need for individuality AND for common
+coding practices. The purpose of the guidelines is to provide a framework
+upon which we can all create better code.&nbsp; However, the guidelines
+are not meant to impede engineering efforts when these guidelines are found
+to be in direct conflict with an individual's preference, so long as that
+preference is implemented consistently and is well documented. Finally,
+because we recognize that this opens the code upon to individual stylist
+coding habits, it is important that these habits are well documented and
+will then become the basis for all other updates within the affected files,
+i.e. when in someone else's code do as they do.
+<BR><FONT SIZE=-1>&nbsp;</FONT>
+
+<P><B>
+J<FONT SIZE=-1>AVA</FONT>
+G<FONT SIZE=-1>RAMMAR</FONT></B>
+<UL>Wherever appropriate, avoid code that embeds many operations in a single
+line.&nbsp; For example, avoid:&nbsp;<TT><FONT SIZE=+1> someObject.doThis(i++,
+otherObject.someField.doThat(), x?y:z)</FONT></TT>.&nbsp; This kind of
+code is error prone, difficult to decipher, and hard to maintain.</UL>
+
+
+<B>P<FONT SIZE=-1>ARENTHESES</FONT></B>
+<UL>Parentheses are recommended for Boolean expressions to ensure proper
+evaluation .
+<BR>&nbsp;
+<UL><I>example</I></UL>
+<TT>&nbsp;</TT>
+<UL>
+<UL><TT>&nbsp;&nbsp;&nbsp; if (((someValue&lt;foo(theParm)) &amp;&amp;
+anotherValue) || todayIsMyBirthday)</TT></UL>
+</UL>
+<TT><FONT SIZE=-1>&nbsp;</FONT></TT>
+<BR><B>T<FONT SIZE=-1>IP:</FONT> </B>Place constants on the left side of your expressions; assignment,
+boolean and otherwise. This technique can catch assignment (versus equality)
+errors, as well as promote constant factoring for poor quality compilers.</UL>
+
+<B>
+C<FONT SIZE=-1>ONSTANTS</FONT></B>
+<UL>Constants will use mixed case and begin with lowercase k. They offer
+compile time type checking.
+<DIR><I>example</I>
+<DIR>
+<DD>
+<TT><FONT SIZE=+1>static final float kPi = 3.14159;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>static final int kDaysInWeek = 7;</FONT></TT></DD>
+</DIR>
+</DIR>
+</UL>
+
+<DIR>
+<DIR>&nbsp;</DIR>
+</DIR>
+<B>
+"M<FONT SIZE=-1>AGIC</FONT>" 
+N<FONT SIZE=-1>UMBERS</FONT></B>
+<UL>Literal ordinal constants embedded within source should <I>almost </I>never
+be used. Whenever possible, use constants instead of literal ordinal constants:</UL>
+
+<UL>
+<DIR><I>example</I>
+<DIR>
+<DIR><FONT FACE="Courier New"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+
+<DD>
+<TT><FONT SIZE=+1>int totalDays = 10 * DAYSINWEEK;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//boo, hiss!</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>static final int kDaysInWeek = 7;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//hooray! hooray!</FONT></TT></DD>
+</DIR>
+</DIR>
+</UL>
+
+<P><B>D<FONT SIZE=-1>EBUGGING</FONT></B>
+<OL>
+<LI>
+First and foremost, understand how to write solid code. Then go back and
+reread the <A HREF="http://java.sun.com/software/jdk/1.1/docs/api/packages.html" TARGET=_top>java
+programming language reference documentation</A> from JavaSoft to refresh
+you memory on the precedence order of operators.</LI>
+
+<LI>
+Now go read the internal document on abnormal condition handling.</LI>
+
+<LI>
+Make sure <I>every</I> path of execution through your code has been thoroughly
+tested. You can never do enough coverage testing. Here's a neat idea: try
+actually stepping through each line! While you're hard at work testing
+your code, be sure to throw invalid inputs at every public interface you
+provide. The last thing we want to do is crash because <I>your</I> routine
+didn't handle invalid inputs from <I>ours.</I> Never <B><I>ever</I> </B>break
+the build.</LI>
+
+<LI>
+Want to know the secret to fast code? Calculate those comparison values
+once: reuse them often. Avoid global variables too, since they can wreak
+havoc with the pre-fetch instruction queue.</LI>
+
+<LI>
+Don't forget to adhere to our Orthodox Canonical Form. This is a template
+that, when followed, guarantees that you have all the default methods your
+class needs to be a good java citizen. It is our policy to produce code
+that can test itself to the greatest extent possible. To that end, we encourage
+the use of three debugging techniques: asserts, pre/post conditions and
+self testing methods.</LI>
+</OL>
+
+<UL>
+<H2>
+<I><FONT SIZE=+1>1. Asserts</FONT></I></H2>
+It is highly recommended that assert methods (warnings/errors) be used
+to aid in debugging, especially to verify assumptions made in code. This
+will be the technique used for reporting run-time errors and warnings.
+<H2>
+<I><FONT SIZE=+1>2. Pre and Post Conditions</FONT></I></H2>
+In order to bulletproof your code, you should use asserts to test all boundary
+conditions. You're not doing any favors for anyone by "defensive" programming
+practices that allow clients of your code to make improper calls.&nbsp;
+In other words, it is better to blow up in debug builds if you are given
+bad data rather than trying to "fix" the data and hide bugs.
+<BR>&nbsp;
+<DIR><I>example</I>
+<DIR>
+<DIR><I>&nbsp;</I></DIR>
+</DIR>
+
+<DD>
+<TT><FONT SIZE=+1>String copyString(String aOtherString)</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>{</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; Assert.PreCondition(NULL != aOtherStr,
+"Null string given");</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; ...</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; Assert.PostCondition(fSelfString.length()
+>=aOtherString.length(),</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"lengths don't match after copy.");</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+
+<DIR><TT><FONT SIZE=+1>&nbsp;</FONT></TT></DIR>
+</DIR>
+We do not want debug code to be included into release builds. Therefore,
+all assertions are removed by the compiler (the java equivalent of #defines)
+by flipping the debug flag in the Assert class.
+<H2>
+<I><FONT SIZE=+1>3. SelfTest Methods</FONT></I></H2>
+Each package will include a SelfTest class.&nbsp; This class should have
+routines to thoroughly unit test every class in the package.&nbsp; If appropriate,
+the SelfTest class may also contain methods for test integration between
+the classes in this package, and between the classes in this package and
+their dependencies in other packages.
+
+<P>Here is the rule for using SelfTest Methods:&nbsp; When you design your
+class, you should design its unit test.&nbsp; When you design your package,
+you should design your integration test.&nbsp; You are NOT done with the
+implementation of a class until its unit test is implemented and can be
+run successfully.&nbsp; You are NOT done with your package implementation
+until all unit tests are coded and run successfully, and the integration
+tests (if appropriate) are coded and run successfully.</UL>
+<FONT FACE="Courier New"><FONT SIZE=+2>&nbsp;</FONT></FONT>&nbsp;
+<HR WIDTH="100%">
+
+<P><A NAME="Source Code Style"></A>
+<H3>
+<FONT SIZE=+2>S</FONT>OURCE
+<FONT SIZE=+2>C</FONT>ODE
+<FONT SIZE=+2>S</FONT>TYLE
+<FONT SIZE=+2>G</FONT>UIDELINES
+</H3>
+
+<P><B>L<FONT SIZE=-1>INE</FONT>
+S<FONT SIZE=-1>PACING</FONT></B>
+
+<UL>
+<LI>
+Line width should not ordinarily exceed 80 characters. Use your best judgment.</LI>
+
+<LI>
+Tab sizes should be set equal to 2 spaces and set to be expanded to spaces.</LI>
+</UL>
+
+<B>B<FONT SIZE=-1>RACES</FONT></B>
+<UL>
+<LI>
+The starting brace can be optionally at the end of the conditional or on
+the next line aligned with the conditional. The ending brace must be on
+a separate line and aligned with the conditional. It is strongly recommended
+that all conditional constructs define a block of code for single lines
+of code.</LI>
+</UL>
+
+<UL>
+<LI>
+We give some options below to accommodate the vast majority of programmer's
+styles.&nbsp; <B><I>HOWEVER, be consistent!&nbsp;</I></B> When you pick
+a style, stick to it.&nbsp; When editing another person's code, respect
+the code, copy the style. (When in Rome, do as the Romans do).</LI>
+</UL>
+<FONT SIZE=-1>&nbsp;</FONT>
+<BR><B>I<FONT SIZE=-1>F</FONT> / E<FONT SIZE=-1>LSE</FONT></B>
+<UL>Place the IF keyword and conditional expression on the same line.</UL>
+
+<DIR><I>examples<FONT SIZE=-1>:</FONT></I>
+<DIR>
+<DIR>
+<DIR><FONT FACE="Courier New"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+
+<DD>
+<TT>if (expression)</TT></DD>
+
+<DD>
+<TT>{</TT></DD>
+
+<DD>
+<TT>&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>}</TT></DD>
+
+<DD>
+<TT>else</TT></DD>
+
+<DD>
+<TT>{</TT></DD>
+
+<DD>
+<TT>&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>}</TT></DD>
+</DIR>
+
+<DD>
+<B><I><TT>or</TT></I></B></DD>
+
+<DIR>
+<DD>
+<TT>if (expression) {</TT></DD>
+
+<DD>
+<TT>&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>} else {</TT></DD>
+
+<DD>
+<TT>&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>}</TT></DD>
+
+
+<P><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+<B>W<FONT SIZE=-1>HILE</FONT></B>
+
+<UL>The WHILE construct uses the same layout format as the IF construct.
+The WHILE keyword should appear on its own line, immediately followed by
+the conditional expression. The statement block is placed on the next line.
+The curly braces may optionally be indented by up to 1 tab character. (1
+TAB=2 spaces).</UL>
+
+<DIR><I>examples<FONT SIZE=-1>:</FONT></I>
+<DIR>
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+
+<DD>
+<TT><FONT SIZE=+1>while (</FONT>expression<FONT SIZE=+1>)</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>{</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+</DIR>
+
+<DD>
+<B><I><TT><FONT SIZE=+1>or</FONT></TT></I></B></DD>
+
+<DIR>
+<DD>
+<TT><FONT SIZE=+1>while (</FONT>expression<FONT SIZE=+1>) {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+</DIR>
+</DIR>
+<B>D<FONT SIZE=-1>O</FONT>..W<FONT SIZE=-1>HILE</FONT></B>
+
+<UL>The DO..WHILE form of the while construct should appear as shown below:</UL>
+
+<UL><I>examples</I> :</UL>
+
+<DIR>
+<DIR>
+<DD>
+<TT><FONT SIZE=+1>do {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>} while (</FONT>expression<FONT SIZE=+1>);</FONT></TT></DD>
+
+
+<P><B><I><TT><FONT SIZE=+1>or</FONT></TT></I></B>
+<DD>
+<TT><FONT SIZE=+1>do {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>} while (</FONT>expression<FONT SIZE=+1>);</FONT></TT></DD>
+
+
+<P><FONT FACE="Courier New"><FONT SIZE=-1>&nbsp;</FONT></FONT></DIR>
+</DIR>
+
+<B>S<FONT SIZE=-1>WITCH</FONT></B>
+
+<UL>The SWITCH construct uses the same layout format as the if construct.
+The SWITCH keyword should appear on its own line, immediately followed
+by its test expression. The statement block is placed on the next line.
+The curly braces may optionally be indented by up to 1 tab character.
+
+<P><I>examples:</I>
+<DIR>
+<DD>
+<TT>switch (expression)</TT></DD>
+
+<DD>
+<TT>{</TT></DD>
+
+<DD>
+<TT>&nbsp; case n:</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; break;</TT></DD>
+
+<DD>
+<TT>&nbsp; case x:</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; // Continue to default case</TT></DD>
+
+<DD>
+<TT>&nbsp; default:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//always add the default case</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; break;</TT></DD>
+
+<DD>
+<TT>}</TT></DD>
+</DIR>
+
+<DD>
+<B><I><TT>or</TT></I></B></DD>
+
+<DIR>
+<DD>
+<TT>switch (expression) {</TT></DD>
+
+<DD>
+<TT>&nbsp; case n:</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; break;</TT></DD>
+
+<DD>
+<TT>&nbsp; case x:</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; // Continue to default case</TT></DD>
+
+<DD>
+<TT>&nbsp; default:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+//always add the default case</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; statement;</TT></DD>
+
+<DD>
+<TT>&nbsp;&nbsp;&nbsp; break;</TT></DD>
+
+<DD>
+<TT>}</TT></DD>
+</DIR>
+</UL>
+
+<B>
+T<FONT SIZE=-1>RY</FONT>/C<FONT SIZE=-1>ATCH</FONT>/F<FONT SIZE=-1>INALLY</FONT></B>
+
+<UL>The try/catch construct is similar to the others.&nbsp; TRY keyword
+should appear on its own line; followed by the open brace (optionally on
+the same line); followed by the statement body; followed by the close brace
+on its own line.&nbsp; Any number of CATCH phrases are next consisting
+of the CATCH keyword and the exception expression on its own line; followed
+by the CATCH body; followed by the close brace on its own line.&nbsp; The
+FINALLY clause is the same as a CATCH.
+
+<P><I>examples:</I></UL>
+
+<UL>
+<UL>
+<DD>
+<TT><FONT SIZE=+1>try</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>{</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>catch (ExceptionClass e)</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>{</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>finally</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>{</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+</UL>
+
+<DD>
+<B><I><TT><FONT SIZE=+1>or</FONT></TT></I></B></DD>
+
+<UL>
+<DD>
+<TT><FONT SIZE=+1>try {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>catch (ExceptionClass e) {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>finally {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; statement;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+</UL>
+</UL>
+
+<HR WIDTH="100%">
+
+<P><A NAME="Naming Conventions"></A>
+<H3>
+<FONT SIZE=+2>N</FONT>AMING
+<FONT SIZE=+2>G</FONT>UIDELINES
+</H3>
+
+<P><B>G<FONT SIZE=-1>ENERAL</FONT></B>
+<BR>All type declarations should follow standard java package naming.
+<UL>
+<LI>
+<B>Package </B>: All projects need to pick a prefix (we usually choose
+2 letters).&nbsp; The project may split itself into any number of packages
+below this prefix. All package names are entirely lower case.&nbsp; Remember,
+java tools are case sensitive, and as of this writing somewhat inconsistent
+across platforms concerning package names.</LI>
+
+<LI>
+<B>Interface </B>: Everyone is encouraged to use the prefix "<I>I</I>"
+in your interface classes, such as I<I>Part. </I>This is optional, but
+strongly encouraged.</LI>
+
+<LI>
+<B>Constants : </B>begin with <I>k</I>:&nbsp;&nbsp; <TT>kMyConstant</TT></LI>
+
+<LI>
+<B>Global Types : </B>begin with <I>g</I>:&nbsp;&nbsp; <TT>gDays </TT>(or
+"globalDays" is ok.)</LI>
+</UL>
+<B>M<FONT SIZE=-1>EMBER</FONT>
+D<FONT SIZE=-1>ATA</FONT>
+N<FONT SIZE=-1>AMES</FONT></B>
+<UL>All member data will begin with a lowercase <I>f</I>, and then follow
+the normal naming convention for other identifiers (mixed case, each word
+beginning with uppercase). Keep in mind that providing publicly visible
+member data reflects negatively on your family. Use access functions instead.&nbsp;
+Respect the Java Beans coding patterns for member access unless you have
+a good reason not to.
+
+<P><I>example</I></UL>
+
+<DIR>
+<DIR>
+<DD>
+<TT><FONT SIZE=+1>public class CxMyClass {</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; public void setMyOrdinalValue(int
+aValue);</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; public int getMyOrdinalValue();</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;&nbsp;&nbsp; private int fMyOrdinalValue;</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>};</FONT></TT></DD>
+</DIR>
+</DIR>
+<B>P<FONT SIZE=-1>ARAMETER</FONT>
+N<FONT SIZE=-1>AMES</FONT></B>
+
+<UL>Parameter names should be constructed like identifiers, and include
+the type in the name if the type is not explicit. They begin with lowercase
+letters, and they typically start with the letter "<I>a</I>".&nbsp; Some
+may feel "<I>an</I>" is more readable for parameters that start with a
+vowel, such as "anObject."</UL>
+
+<DIR><I>example</I>
+<DIR>
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+
+<DD>
+<TT><FONT SIZE=+1>public boolean numberIsEven(int aValue, Object anObject)&nbsp;
+{</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp; ...</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>}</FONT></TT></DD>
+
+<DIR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+</DIR>
+
+<HR WIDTH="100%">
+
+<P><A NAME="Layout of Source Files (*.java)"></A>
+<H3>
+<FONT SIZE=+2>L</FONT>AYOUT OF
+<FONT SIZE=+2>S</FONT>OURCE
+<FONT SIZE=+2>F</FONT>ILES (*.java)
+</H3>
+
+
+
+<P>The layout for a class will be broken up into the following main sections:
+<I>Copyright Notice</I>,&nbsp; <I>File Description</I>; <I>Package Name,
+Imports, Constants, Methods, protected and private members.</I> Each section
+will be prefaced by an appropriate header block defining the section.
+
+<DL>
+
+<DT><P><B>C<FONT SIZE=-1>OPYRIGHT</FONT>
+N<FONT SIZE=-1>OTICE</FONT></B>
+<DD>This will be the standard "legalese" copyright notice.
+<P>
+<DL>
+<DD>
+<TT><FONT SIZE=+1>/* Copyright Notice =====================================*</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;* This file contains proprietary information of
+Netscape Communications.</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;* Copying or reproduction without prior written
+approval is prohibited.</FONT></TT></DD>
+
+<DD>
+<TT><FONT SIZE=+1>&nbsp;* Copyright (c) 1997 =====================================*
+/</FONT></TT></DD>
+</DL>
+
+<P>
+<DT><B>F<FONT SIZE=-1>ILE</FONT>
+D<FONT SIZE=-1>ESCRIPTION</FONT></B>
+
+<DD>This is a brief description of what the file is, does and represents.
+It should describe the overview of how to use the file (or classes therein).
+JavaDoc compatible commenting style is required. See the <A HREF="http://java.sun.com/software/jdk/javadoc/index.html" TARGET=_top>JavaDoc
+documentation</A> available from JavaSoft.
+
+<UL><TT><FONT SIZE=+1>/* Description</FONT></TT>
+<BR><TT><FONT SIZE=+1>&nbsp;* Appropriate Description.</FONT></TT>
+<BR><TT><FONT SIZE=+1>&nbsp;* Description</FONT></TT>
+<BR><TT><FONT SIZE=+1>&nbsp;*/</FONT></TT></UL>
+
+
+
+<DT><P><B>P<FONT SIZE=-1>ACKAGE</FONT>
+N<FONT SIZE=-1>AME</FONT></B>
+<DD>Package names should occur on the first non-commented line of the source
+file and should following the <A HREF="#Naming Conventions">naming conventions</A>
+defined in this document.
+
+<DT><P><B>I<FONT SIZE=-1>MPORTS</FONT></B>
+<DD>Immediately following the package name should be the imported class
+names.
+
+<DT><P><B>C<FONT SIZE=-1>ONSTANTS</FONT></B>
+<DD>See the <A HREF="#Naming Conventions">naming
+conventions</A> defined in this document.
+
+
+<DT><P><B>M<FONT SIZE=-1>ETHOD</FONT>
+D<FONT SIZE=-1>ECLARATIONS</FONT></B>
+
+<DD>Each method is preceded by a description in JavaDoc format. Public
+methods <B>MUST </B>have a standard javadoc comment header.&nbsp; These
+must be <B>professionally </B>commented.&nbsp; Remember, you never know
+what code will eventually be made public outside of Netscape.
+
+<P>Standard access methods may be grouped without a description (access
+methods assign or return an object attribute). Optionally, methods may
+be grouped within logical groupings. Here are some suggestions...
+<BR>&nbsp;
+<UL>
+<LI>
+Factory</LI>
+
+<LI>
+Private</LI>
+
+<LI>
+Protected</LI>
+
+<LI>
+Interfaces</LI>
+
+<LI>
+Accessor</LI>
+
+<LI>
+Temporal (fickle)</LI>
+
+<LI>
+I/O</LI>
+
+<LI>
+Debugging</LI>
+
+<DIR>
+<DIR><B>&nbsp;</B></DIR>
+</DIR>
+</UL>
+<I>example</I>
+<BR>&nbsp;
+<UL><TT>/* ======================================================= *</TT>
+<BR><TT>CONSTRUCTOR/DESTRUCTOR METHODS&nbsp;</TT>
+<BR><TT>* ======================================================= */</TT>
+
+<P><TT>&nbsp;&nbsp;&nbsp; public CkSomeClass();</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; public CkSomeClass(CkSomeClass aSourceToCopy);&nbsp;</TT>
+
+<P><TT>/* ======================================================= *</TT>
+<BR><TT>FACTORY METHODS (usually static)</TT>
+<BR><TT>* ======================================================= */</TT>
+
+<P><TT>/** brief description&nbsp; */</TT>
+
+<P><TT>&nbsp;&nbsp;&nbsp; public CkSomeClass createSomeClass(void){ }</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>/* ======================================================= *</TT>
+<BR><TT>ACCESSOR METHODS&nbsp;</TT>
+<BR><TT>* ======================================================= */</TT>
+
+<P><TT>&nbsp;&nbsp;&nbsp; public int getState(void);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; public void setState(int aNewValue);</TT>
+
+<P><TT>/* ======================================================= *</TT>
+<BR><TT>STANDARD METHODS&nbsp;</TT>
+<BR><TT>* ======================================================= */</TT>
+
+<P><TT>//...whatever these might be...</TT>
+
+<P><TT>/* ======================================================= *</TT>
+<BR><TT>DEBUGGING METHODS&nbsp;</TT>
+<BR><TT>* ======================================================= */</TT>
+
+<P><TT>&nbsp;&nbsp;&nbsp; void DoUnitTest(void);</TT>
+<DIR>
+<DIR><FONT SIZE=-1>&nbsp;</FONT></DIR>
+</DIR>
+</UL>
+
+
+<DT><B>C<FONT SIZE=-1>LASS</FONT>
+D<FONT SIZE=-1>EFINITIONS</FONT></B>
+
+<DD>This section is the actual implementation of the class. Each method
+(and private function) will be prefaced by the standard documentation header.
+Read the <A HREF="#Documentation for Methods and Functions">Documentation
+for Methods and Functions</A> defined in this document.
+</DL>
+<P>
+<HR WIDTH="100%">
+
+<P><A NAME="Documentation for Methods and Functions"></A>
+<H3>
+<FONT SIZE=+2>D</FONT>OCUMENTATION
+FOR 
+<FONT SIZE=+2>M</FONT>ETHODS AND
+<FONT SIZE=+2>F</FONT>UNCTIONS
+</H3>
+
+<P>The following standard has been established for the documentation of
+methods and functions. Optional items are to be included only where applicable.
+A complete description of each section in the routine documentation follows.
+
+<P>The header is designed to be easy to use. Many items are optional, and
+may be omitted where they are not applicable. Each line item begins with
+an asterisk, and ends with blank space. You do not place an asterisk next
+to each line in a multiline component, only the topmost, next to the title.
+All subsequent lines in multiline component are to be indented so that
+they line up vertically with the previous line.
+<BR>&nbsp;
+<UL><I>example</I>
+
+<P><TT><FONT SIZE=+1>/**</FONT></TT>
+<BR><TT><FONT SIZE=+1>* &lt;Detailed description of method.></FONT></TT>
+<BR><TT><FONT SIZE=+1>*</FONT></TT>
+<BR><TT><FONT SIZE=+1>* @param&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;Description of each parameter></FONT></TT>
+<BR><TT><FONT SIZE=+1>* @return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;explain
+each return type></FONT></TT>
+<BR><TT><FONT SIZE=+1>* @exception&nbsp;&nbsp;&nbsp; &lt;explain each exception></FONT></TT>
+<BR><TT><FONT SIZE=+1>* @author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;your
+name>&nbsp;&nbsp; &lt;04-22-97 3:57pm></FONT></TT>
+<BR><TT><FONT SIZE=+1>**/</FONT></TT></UL>
+<B>D<FONT SIZE=-1>ESCRIPTION</FONT></B>
+<UL>Provide a detailed description.&nbsp; This may include:</UL>
+
+<UL>
+<UL>
+<LI>
+intent of method</LI>
+
+<LI>
+pre and post conditions</LI>
+
+<LI>
+side effects</LI>
+
+<LI>
+dependencies</LI>
+
+<LI>
+implementation notes</LI>
+
+<LI>
+who should be calling this method</LI>
+
+<LI>
+whether the method should or should not be overridden</LI>
+
+<LI>
+where to invoke super when overriding</LI>
+
+<LI>
+control flow or state dependencies that need to exist before calling this
+method.</LI>
+</UL>
+</UL>
+<B>P<FONT SIZE=-1>ARMS</FONT>
+S<FONT SIZE=-1>ECTION</FONT></B>
+<UL>Describes the type, class, or protocol of all the method or routine
+arguments.&nbsp; Should describe the parameters intended use (in, out,
+in/out) and constraints.
+
+<P><I>example</I>
+<DD>
+* <TT>@param&nbsp;&nbsp;&nbsp; aSource - the input source string.&nbsp;
+Cannot be 0-length.</TT></DD>
+</UL>
+
+<B>R<FONT SIZE=-1>ETURNS</FONT>
+S<FONT SIZE=-1>ECTION</FONT></B>
+<UL>This section is used to describe the method/routine return type. Specifically,
+it needs to detail the actual data type returned, the range of possible
+return values, and where applicable, error information returned by the
+method. Also note that if the return value is self, you do not have to
+specify a type (defaults to ID). All other cases require an explicit return
+type specification.</UL>
+
+<UL><I>example</I>
+<BR>&nbsp;
+<DD>
+<TT>* @return&nbsp;&nbsp; Possible values are 1..n.</TT></DD>
+</UL>
+<B>E<FONT SIZE=-1>XCEPTION</FONT>
+S<FONT SIZE=-1>ECTION</FONT></B>
+
+<UL>The purpose section is a complete description of all the non-system
+exceptions that this method throws.&nbsp; A description about whether the
+exception is recoverable or not should be included.&nbsp; If applicable,
+a recovery strategy for the exception can be described here.&nbsp; Remember,
+when you throw a recoverable exception, you MUST reset the class state
+for re-entrancy!</UL>
+
+<UL><I>example</I></UL>
+<FONT FACE="Courier New">&nbsp;</FONT>&nbsp;<FONT FACE="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT>
+<TT>* @exception ResourceNotFoundException. recoverable, try another resource</TT>
+<DIV ALIGN=right><TT>&nbsp;</TT></DIV>
+
+<CENTER>
+
+<P>
+<FONT FACE="Arial, Helvetica" SIZE=-1>
+For the latest technical information on Sun-Netscape Alliance products, go to: <A HREF="http://developer.iplanet.com/index.html" TARGET="_top">http://developer.iplanet.com</A>
+<BR>
+<P>
+For more Internet development resources, try <A HREF="http://home.netscape.com/computing/techsearch/index.html?cp=dev01bnts" TARGET="_top">Netscape TechSearch</A>.</FONT></CENTER>
+<HR SIZE=1><CENTER>
+<FONT FACE="Arial, Helvetica" SIZE=-2><NOBR>Copyright &copy; 1999 <A HREF="http://home.netscape.com/misc/trademarks.html" TARGET="_top">Netscape Communications Corporation</A></NOBR>.<BR>This site powered by: <A HREF="http://home.netscape.com/servers/index.html" TARGET="_top">Netscape Enterprise Server</A> and <A HREF="http://home.netscape.com/compass/v3.0/index.html" TARGET="_top">Netscape Compass Server</A>.</FONT><BR>
+
+</CENTER>
+
+
+</BODY>
+</HTML>

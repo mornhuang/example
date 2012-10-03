@@ -1,0 +1,5921 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<!-- This HTML file has been created by texi2html 1.54
+     from standards.texi on 1 September 2000 -->
+
+<TITLE>GNU Coding Standards - GNU Project - Free Software Foundation (FSF)</TITLE>
+<LINK REV="made" HREF="mailto:webmasters@www.gnu.org">
+
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#1F00FF" ALINK="#FF0000" VLINK="#9900DD">
+<H1>GNU Coding Standards</H1>
+<ADDRESS>Richard Stallman</ADDRESS>
+<ADDRESS>last updated August 29, 2000</ADDRESS>
+<P>
+<A HREF="/graphics/agnuhead.html"><IMG SRC="/graphics/gnu-head-sm.jpg"
+   ALT=" [image of the Head of a GNU] "
+   WIDTH="129" HEIGHT="122"></A>
+<P>
+<P>
+<P><HR><P>
+<H1>Table of Contents</H1>
+<UL>
+<LI><A NAME="TOC1" HREF="standards.html#SEC1">About the GNU Coding Standards</A>
+<LI><A NAME="TOC2" HREF="standards.html#SEC2">Keeping Free Software Free</A>
+<UL>
+<LI><A NAME="TOC3" HREF="standards.html#SEC3">Referring to Proprietary Programs</A>
+<LI><A NAME="TOC4" HREF="standards.html#SEC4">Accepting Contributions</A>
+<LI><A NAME="TOC5" HREF="standards.html#SEC5">Trademarks</A>
+</UL>
+<LI><A NAME="TOC6" HREF="standards.html#SEC6">General Program Design</A>
+<UL>
+<LI><A NAME="TOC7" HREF="standards.html#SEC7">Which Languages to Use</A>
+<LI><A NAME="TOC8" HREF="standards.html#SEC8">Compatibility with Other Implementations</A>
+<LI><A NAME="TOC9" HREF="standards.html#SEC9">Using Non-standard Features</A>
+<LI><A NAME="TOC10" HREF="standards.html#SEC10">Standard C and Pre-Standard C</A>
+</UL>
+<LI><A NAME="TOC11" HREF="standards.html#SEC11">Program Behavior for All Programs</A>
+<UL>
+<LI><A NAME="TOC12" HREF="standards.html#SEC12">Writing Robust Programs</A>
+<LI><A NAME="TOC13" HREF="standards.html#SEC13">Library Behavior</A>
+<LI><A NAME="TOC14" HREF="standards.html#SEC14">Formatting Error Messages</A>
+<LI><A NAME="TOC15" HREF="standards.html#SEC15">Standards for Interfaces Generally</A>
+<LI><A NAME="TOC16" HREF="standards.html#SEC16">Standards for Graphical Interfaces</A>
+<LI><A NAME="TOC17" HREF="standards.html#SEC17">Standards for Command Line Interfaces</A>
+<LI><A NAME="TOC18" HREF="standards.html#SEC18">Table of Long Options</A>
+<LI><A NAME="TOC19" HREF="standards.html#SEC19">Memory Usage</A>
+<LI><A NAME="TOC20" HREF="standards.html#SEC20">File Usage</A>
+</UL>
+<LI><A NAME="TOC21" HREF="standards.html#SEC21">Making The Best Use of C</A>
+<UL>
+<LI><A NAME="TOC22" HREF="standards.html#SEC22">Formatting Your Source Code</A>
+<LI><A NAME="TOC23" HREF="standards.html#SEC23">Commenting Your Work</A>
+<LI><A NAME="TOC24" HREF="standards.html#SEC24">Clean Use of C Constructs</A>
+<LI><A NAME="TOC25" HREF="standards.html#SEC25">Naming Variables and Functions</A>
+<LI><A NAME="TOC26" HREF="standards.html#SEC26">Portability between System Types</A>
+<LI><A NAME="TOC27" HREF="standards.html#SEC27">Portability between CPUs</A>
+<LI><A NAME="TOC28" HREF="standards.html#SEC28">Calling System Functions</A>
+<LI><A NAME="TOC29" HREF="standards.html#SEC29">Internationalization</A>
+<LI><A NAME="TOC30" HREF="standards.html#SEC30">Mmap</A>
+</UL>
+<LI><A NAME="TOC31" HREF="standards.html#SEC31">Documenting Programs</A>
+<UL>
+<LI><A NAME="TOC32" HREF="standards.html#SEC32">GNU Manuals</A>
+<LI><A NAME="TOC33" HREF="standards.html#SEC33">Doc Strings and Manuals</A>
+<LI><A NAME="TOC34" HREF="standards.html#SEC34">Manual Structure Details</A>
+<LI><A NAME="TOC35" HREF="standards.html#SEC35">License for Manuals</A>
+<LI><A NAME="TOC36" HREF="standards.html#SEC36">Manual Credits</A>
+<LI><A NAME="TOC37" HREF="standards.html#SEC37">The NEWS File</A>
+<LI><A NAME="TOC38" HREF="standards.html#SEC38">Change Logs</A>
+<UL>
+<LI><A NAME="TOC39" HREF="standards.html#SEC39">Change Log Concepts</A>
+<LI><A NAME="TOC40" HREF="standards.html#SEC40">Style of Change Logs</A>
+<LI><A NAME="TOC41" HREF="standards.html#SEC41">Simple Changes</A>
+<LI><A NAME="TOC42" HREF="standards.html#SEC42">Conditional Changes</A>
+<LI><A NAME="TOC43" HREF="standards.html#SEC43">Indicating the Part Changed</A>
+</UL>
+<LI><A NAME="TOC44" HREF="standards.html#SEC44">Man Pages</A>
+<LI><A NAME="TOC45" HREF="standards.html#SEC45">Reading other Manuals</A>
+</UL>
+<LI><A NAME="TOC46" HREF="standards.html#SEC46">The Release Process</A>
+<UL>
+<LI><A NAME="TOC47" HREF="standards.html#SEC47">How Configuration Should Work</A>
+</UL>
+<LI><A NAME="TOC48" HREF="standards.html#SEC48">Makefile Conventions</A>
+<UL>
+<LI><A NAME="TOC49" HREF="standards.html#SEC49">General Conventions for Makefiles</A>
+<LI><A NAME="TOC50" HREF="standards.html#SEC50">Utilities in Makefiles</A>
+<LI><A NAME="TOC51" HREF="standards.html#SEC51">Variables for Specifying Commands</A>
+<LI><A NAME="TOC52" HREF="standards.html#SEC52">Variables for Installation Directories</A>
+<LI><A NAME="TOC53" HREF="standards.html#SEC53">Standard Targets for Users</A>
+<LI><A NAME="TOC54" HREF="standards.html#SEC54">Install Command Categories</A>
+<LI><A NAME="TOC55" HREF="standards.html#SEC55">Making Releases</A>
+</UL>
+<LI><A NAME="TOC56" HREF="standards.html#SEC56">References to Non-Free Software and Documentation</A>
+<LI><A NAME="TOC57" HREF="standards.html#SEC57">Index</A>
+</UL>
+<P><HR><P>
+
+
+<H1><A NAME="SEC1" HREF="standards.html#TOC1">About the GNU Coding Standards</A></H1>
+
+<P>
+The GNU Coding Standards were written by Richard Stallman and other GNU
+Project volunteers.  Their purpose is to make the GNU system clean,
+consistent, and easy to install.  This document can also be read as a
+guide to writing portable, robust and reliable programs.  It focuses on
+programs written in C, but many of the rules and principles are useful
+even if you write in another programming language.  The rules often
+state reasons for writing in a certain way.
+
+</P>
+<P>
+Corrections or suggestions for this document should be sent to
+<A HREF="mailto:bug-standards@gnu.org"><TT>bug-standards@gnu.org</TT></A>.  If you make a suggestion, please include a
+suggested new wording for it; our time is limited.  We prefer a context
+diff to the <TT>`standards.texi'</TT> or <TT>`make-stds.texi'</TT> files, but if
+you don't have those files, please mail your suggestion anyway.
+
+</P>
+<P>
+This release of the GNU Coding Standards was last updated
+August 29, 2000.
+
+</P>
+<P>
+<A NAME="IDX1"></A>
+<A NAME="IDX2"></A>
+If you did not obtain this file directly from the GNU project and
+recently, please check for a newer version.  You can ftp the GNU Coding
+Standards from any GNU FTP host in the directory
+<TT>`/pub/gnu/standards/'</TT>.  The GNU Coding Standards are available
+there in several different formats: <TT>`standards.text'</TT>,
+<TT>`standards.texi'</TT>, <TT>`standards.info'</TT>, and <TT>`standards.dvi'</TT>.
+The GNU Coding Standards are also available on the GNU World Wide Web
+server: <A HREF="http://www.gnu.org/prep/standards_toc.html"><TT>http://www.gnu.org/prep/standards_toc.html</TT></A>.
+
+</P>
+
+
+<H1><A NAME="SEC2" HREF="standards.html#TOC2">Keeping Free Software Free</A></H1>
+<P>
+<A NAME="IDX3"></A>
+
+</P>
+<P>
+This node discusses how you can make sure that GNU software
+avoids legal difficulties, and other related issues.
+
+</P>
+
+
+
+<H2><A NAME="SEC3" HREF="standards.html#TOC3">Referring to Proprietary Programs</A></H2>
+<P>
+<A NAME="IDX4"></A>
+<A NAME="IDX5"></A>
+
+</P>
+<P>
+Don't in any circumstances refer to Unix source code for or during
+your work on GNU!  (Or to any other proprietary programs.)
+
+</P>
+<P>
+If you have a vague recollection of the internals of a Unix program,
+this does not absolutely mean you can't write an imitation of it, but
+do try to organize the imitation internally along different lines,
+because this is likely to make the details of the Unix version
+irrelevant and dissimilar to your results.
+
+</P>
+<P>
+For example, Unix utilities were generally optimized to minimize
+memory use; if you go for speed instead, your program will be very
+different.  You could keep the entire input file in core and scan it
+there instead of using stdio.  Use a smarter algorithm discovered more
+recently than the Unix program.  Eliminate use of temporary files.  Do
+it in one pass instead of two (we did this in the assembler).
+
+</P>
+<P>
+Or, on the contrary, emphasize simplicity instead of speed.  For some
+applications, the speed of today's computers makes simpler algorithms
+adequate.
+
+</P>
+<P>
+Or go for generality.  For example, Unix programs often have static
+tables or fixed-size strings, which make for arbitrary limits; use
+dynamic allocation instead.  Make sure your program handles NULs and
+other funny characters in the input files.  Add a programming language
+for extensibility and write part of the program in that language.
+
+</P>
+<P>
+Or turn some parts of the program into independently usable libraries.
+Or use a simple garbage collector instead of tracking precisely when
+to free memory, or use a new GNU facility such as obstacks.
+
+</P>
+
+
+<H2><A NAME="SEC4" HREF="standards.html#TOC4">Accepting Contributions</A></H2>
+<P>
+<A NAME="IDX6"></A>
+<A NAME="IDX7"></A>
+
+</P>
+<P>
+If the program you are working on is copyrighted by the Free Software
+Foundation, then when someone else sends you a piece of code to add to
+the program, we need legal papers to use it--just as we asked you to
+sign papers initially.  <EM>Each</EM> person who makes a nontrivial
+contribution to a program must sign some sort of legal papers in order
+for us to have clear title to the program; the main author alone is not
+enough.
+
+</P>
+<P>
+So, before adding in any contributions from other people, please tell
+us, so we can arrange to get the papers.  Then wait until we tell you
+that we have received the signed papers, before you actually use the
+contribution.
+
+</P>
+<P>
+This applies both before you release the program and afterward.  If
+you receive diffs to fix a bug, and they make significant changes, we
+need legal papers for that change.
+
+</P>
+<P>
+This also applies to comments and documentation files.  For copyright
+law, comments and code are just text.  Copyright applies to all kinds of
+text, so we need legal papers for all kinds.
+
+</P>
+<P>
+We know it is frustrating to ask for legal papers; it's frustrating for
+us as well.  But if you don't wait, you are going out on a limb--for
+example, what if the contributor's employer won't sign a disclaimer?
+You might have to take that code out again!
+
+</P>
+<P>
+You don't need papers for changes of a few lines here or there, since
+they are not significant for copyright purposes.  Also, you don't need
+papers if all you get from the suggestion is some ideas, not actual code
+which you use.  For example, if someone send you one implementation, but
+you write a different implementation of the same idea, you don't need to
+get papers.
+
+</P>
+<P>
+The very worst thing is if you forget to tell us about the other
+contributor.  We could be very embarrassed in court some day as a
+result.
+
+</P>
+<P>
+We have more detailed advice for maintainers of programs; if you have
+reached the stage of actually maintaining a program for GNU (whether
+released or not), please ask us for a copy.
+
+</P>
+
+
+<H2><A NAME="SEC5" HREF="standards.html#TOC5">Trademarks</A></H2>
+<P>
+<A NAME="IDX8"></A>
+
+</P>
+<P>
+Please do not include any trademark acknowledgements in GNU software
+packages or documentation.
+
+</P>
+<P>
+Trademark acknowledgements are the statements that such-and-such is a
+trademark of so-and-so.  The GNU Project has no objection to the basic
+idea of trademarks, but these acknowledgements feel like kowtowing, so
+we don't use them.  There is no legal requirement for them.
+
+</P>
+<P>
+What is legally required, as regards other people's trademarks, is to
+avoid using them in ways which a reader might read as naming or labeling
+our own programs or activities.  For example, since "Objective C" is
+(or at least was) a trademark, we made sure to say that we provide a
+"compiler for the Objective C language" rather than an "Objective C
+compiler".  The latter is meant to be short for the former, but it does
+not explicitly state the relationship, so it could be misinterpreted as
+using "Objective C" as a label for the compiler rather than for the
+language.
+
+</P>
+
+
+<H1><A NAME="SEC6" HREF="standards.html#TOC6">General Program Design</A></H1>
+<P>
+<A NAME="IDX9"></A>
+
+</P>
+<P>
+This node discusses some of the issues you should take into
+account when designing your program.
+
+</P>
+
+
+
+<H2><A NAME="SEC7" HREF="standards.html#TOC7">Which Languages to Use</A></H2>
+<P>
+<A NAME="IDX10"></A>
+
+</P>
+<P>
+When you want to use a language that gets compiled and runs at high
+speed, the best language to use is C.  Using another language is like
+using a non-standard feature: it will cause trouble for users.  Even if
+GCC supports the other language, users may find it inconvenient to have
+to install the compiler for that other language in order to build your
+program.  For example, if you write your program in C++, people will
+have to install the GNU C++ compiler in order to compile your program.
+
+</P>
+<P>
+C has one other advantage over C++ and other compiled languages: more
+people know C, so more people will find it easy to read and modify the
+program if it is written in C.
+
+</P>
+<P>
+So in general it is much better to use C, rather than the
+comparable alternatives.
+
+</P>
+<P>
+But there are two exceptions to that conclusion:
+
+</P>
+
+<UL>
+<LI>
+
+It is no problem to use another language to write a tool specifically
+intended for use with that language.  That is because the only people
+who want to build the tool will be those who have installed the other
+language anyway.
+
+<LI>
+
+If an application is of interest only to a narrow part of the community,
+then the question of which language it is written in has less effect on
+other people, so you may as well please yourself.
+</UL>
+
+<P>
+Many programs are designed to be extensible: they include an interpreter
+for a language that is higher level than C.  Often much of the program
+is written in that language, too.  The Emacs editor pioneered this
+technique.
+
+</P>
+<P>
+<A NAME="IDX11"></A>
+The standard extensibility interpreter for GNU software is GUILE, which
+implements the language Scheme (an especially clean and simple dialect
+of Lisp).  <A HREF="http://www.gnu.org/software/guile/"><TT>http://www.gnu.org/software/guile/</TT></A>.  We don't reject
+programs written in other "scripting languages" such as Perl and
+Python, but using GUILE is very important for the overall consistency of
+the GNU system.
+
+</P>
+
+
+<H2><A NAME="SEC8" HREF="standards.html#TOC8">Compatibility with Other Implementations</A></H2>
+<P>
+<A NAME="IDX12"></A>
+<A NAME="IDX13"></A>
+
+</P>
+<P>
+With occasional exceptions, utility programs and libraries for GNU
+should be upward compatible with those in Berkeley Unix, and upward
+compatible with Standard C if Standard C specifies their
+behavior, and upward compatible with POSIX if POSIX specifies
+their behavior.
+
+</P>
+<P>
+When these standards conflict, it is useful to offer compatibility
+modes for each of them.
+
+</P>
+<P>
+<A NAME="IDX14"></A>
+Standard C and POSIX prohibit many kinds of extensions.  Feel
+free to make the extensions anyway, and include a <SAMP>`--ansi'</SAMP>,
+<SAMP>`--posix'</SAMP>, or <SAMP>`--compatible'</SAMP> option to turn them off.
+However, if the extension has a significant chance of breaking any real
+programs or scripts, then it is not really upward compatible.  So you
+should try to redesign its interface to make it upward compatible.
+
+</P>
+<P>
+<A NAME="IDX15"></A>
+Many GNU programs suppress extensions that conflict with POSIX if the
+environment variable <CODE>POSIXLY_CORRECT</CODE> is defined (even if it is
+defined with a null value).  Please make your program recognize this
+variable if appropriate.
+
+</P>
+<P>
+When a feature is used only by users (not by programs or command
+files), and it is done poorly in Unix, feel free to replace it
+completely with something totally different and better.  (For example,
+<CODE>vi</CODE> is replaced with Emacs.)  But it is nice to offer a compatible
+feature as well.  (There is a free <CODE>vi</CODE> clone, so we offer it.)
+
+</P>
+<P>
+Additional useful features are welcome regardless of whether
+there is any precedent for them.
+
+</P>
+
+
+<H2><A NAME="SEC9" HREF="standards.html#TOC9">Using Non-standard Features</A></H2>
+<P>
+<A NAME="IDX16"></A>
+
+</P>
+<P>
+Many GNU facilities that already exist support a number of convenient
+extensions over the comparable Unix facilities.  Whether to use these
+extensions in implementing your program is a difficult question.
+
+</P>
+<P>
+On the one hand, using the extensions can make a cleaner program.
+On the other hand, people will not be able to build the program
+unless the other GNU tools are available.  This might cause the
+program to work on fewer kinds of machines.
+
+</P>
+<P>
+With some extensions, it might be easy to provide both alternatives.
+For example, you can define functions with a "keyword" <CODE>INLINE</CODE>
+and define that as a macro to expand into either <CODE>inline</CODE> or
+nothing, depending on the compiler.
+
+</P>
+<P>
+In general, perhaps it is best not to use the extensions if you can
+straightforwardly do without them, but to use the extensions if they
+are a big improvement.
+
+</P>
+<P>
+An exception to this rule are the large, established programs (such as
+Emacs) which run on a great variety of systems.  Using GNU extensions in
+such programs would make many users unhappy, so we don't do that.
+
+</P>
+<P>
+Another exception is for programs that are used as part of compilation:
+anything that must be compiled with other compilers in order to
+bootstrap the GNU compilation facilities.  If these require the GNU
+compiler, then no one can compile them without having them installed
+already.  That would be extremely troublesome in certain cases.
+
+</P>
+
+
+<H2><A NAME="SEC10" HREF="standards.html#TOC10">Standard C and Pre-Standard C</A></H2>
+<P>
+<A NAME="IDX17"></A>
+
+</P>
+<P>
+1989 Standard C is widespread enough now that it is ok to use its
+features in new programs.  There is one exception: do not ever use the
+"trigraph" feature of Standard C.
+
+</P>
+<P>
+1999 Standard C is not widespread yet, so please do not require its
+features in programs.  It is ok to use its features if they are present.
+
+</P>
+<P>
+However, it is easy to support pre-standard compilers in most programs,
+so if you know how to do that, feel free.  If a program you are
+maintaining has such support, you should try to keep it working.
+
+</P>
+<P>
+<A NAME="IDX18"></A>
+To support pre-standard C, instead of writing function definitions in
+standard prototype form,
+
+</P>
+
+<PRE>
+int
+foo (int x, int y)
+...
+</PRE>
+
+<P>
+write the definition in pre-standard style like this,
+
+</P>
+
+<PRE>
+int
+foo (x, y)
+     int x, y;
+...
+</PRE>
+
+<P>
+and use a separate declaration to specify the argument prototype:
+
+</P>
+
+<PRE>
+int foo (int, int);
+</PRE>
+
+<P>
+You need such a declaration anyway, in a header file, to get the benefit
+of prototypes in all the files where the function is called.  And once
+you have the declaration, you normally lose nothing by writing the
+function definition in the pre-standard style.
+
+</P>
+<P>
+This technique does not work for integer types narrower than <CODE>int</CODE>.
+If you think of an argument as being of a type narrower than <CODE>int</CODE>,
+declare it as <CODE>int</CODE> instead.
+
+</P>
+<P>
+There are a few special cases where this technique is hard to use.  For
+example, if a function argument needs to hold the system type
+<CODE>dev_t</CODE>, you run into trouble, because <CODE>dev_t</CODE> is shorter than
+<CODE>int</CODE> on some machines; but you cannot use <CODE>int</CODE> instead,
+because <CODE>dev_t</CODE> is wider than <CODE>int</CODE> on some machines.  There
+is no type you can safely use on all machines in a non-standard
+definition.  The only way to support non-standard C and pass such an
+argument is to check the width of <CODE>dev_t</CODE> using Autoconf and choose
+the argument type accordingly.  This may not be worth the trouble.
+
+</P>
+<P>
+In order to support pre-standard compilers that do not recognize
+prototypes, you may want to use a preprocessor macro like this:
+
+</P>
+
+<PRE>
+/* Declare the prototype for a general external function.  */
+#if defined (__STDC__) || defined (WINDOWSNT)
+#define P_(proto) proto
+#else
+#define P_(proto) ()
+#endif
+</PRE>
+
+
+
+<H1><A NAME="SEC11" HREF="standards.html#TOC11">Program Behavior for All Programs</A></H1>
+
+<P>
+This node describes conventions for writing robust
+software.  It also describes general standards for error messages, the
+command line interface, and how libraries should behave.
+
+</P>
+
+
+
+<H2><A NAME="SEC12" HREF="standards.html#TOC12">Writing Robust Programs</A></H2>
+
+<P>
+<A NAME="IDX19"></A>
+Avoid arbitrary limits on the length or number of <EM>any</EM> data
+structure, including file names, lines, files, and symbols, by allocating
+all data structures dynamically.  In most Unix utilities, "long lines
+are silently truncated".  This is not acceptable in a GNU utility.
+
+</P>
+<P>
+<A NAME="IDX20"></A>
+Utilities reading files should not drop NUL characters, or any other
+nonprinting characters <EM>including those with codes above 0177</EM>.
+The only sensible exceptions would be utilities specifically intended
+for interface to certain types of terminals or printers
+that can't handle those characters.
+Whenever possible, try to make programs work properly with
+sequences of bytes that represent multibyte characters, using encodings
+such as UTF-8 and others.
+
+</P>
+<P>
+<A NAME="IDX21"></A>
+Check every system call for an error return, unless you know you wish to
+ignore errors.  Include the system error text (from <CODE>perror</CODE> or
+equivalent) in <EM>every</EM> error message resulting from a failing
+system call, as well as the name of the file if any and the name of the
+utility.  Just "cannot open foo.c" or "stat failed" is not
+sufficient.
+
+</P>
+<P>
+<A NAME="IDX22"></A>
+<A NAME="IDX23"></A>
+Check every call to <CODE>malloc</CODE> or <CODE>realloc</CODE> to see if it
+returned zero.  Check <CODE>realloc</CODE> even if you are making the block
+smaller; in a system that rounds block sizes to a power of 2,
+<CODE>realloc</CODE> may get a different block if you ask for less space.
+
+</P>
+<P>
+In Unix, <CODE>realloc</CODE> can destroy the storage block if it returns
+zero.  GNU <CODE>realloc</CODE> does not have this bug: if it fails, the
+original block is unchanged.  Feel free to assume the bug is fixed.  If
+you wish to run your program on Unix, and wish to avoid lossage in this
+case, you can use the GNU <CODE>malloc</CODE>.
+
+</P>
+<P>
+You must expect <CODE>free</CODE> to alter the contents of the block that was
+freed.  Anything you want to fetch from the block, you must fetch before
+calling <CODE>free</CODE>.
+
+</P>
+<P>
+If <CODE>malloc</CODE> fails in a noninteractive program, make that a fatal
+error.  In an interactive program (one that reads commands from the
+user), it is better to abort the command and return to the command
+reader loop.  This allows the user to kill other processes to free up
+virtual memory, and then try the command again.
+
+</P>
+<P>
+<A NAME="IDX24"></A>
+Use <CODE>getopt_long</CODE> to decode arguments, unless the argument syntax
+makes this unreasonable.
+
+</P>
+<P>
+When static storage is to be written in during program execution, use
+explicit C code to initialize it.  Reserve C initialized declarations
+for data that will not be changed.
+
+</P>
+<P>
+Try to avoid low-level interfaces to obscure Unix data structures (such
+as file directories, utmp, or the layout of kernel memory), since these
+are less likely to work compatibly.  If you need to find all the files
+in a directory, use <CODE>readdir</CODE> or some other high-level interface.
+These are supported compatibly by GNU.
+
+</P>
+<P>
+<A NAME="IDX25"></A>
+The preferred signal handling facilities are the BSD variant of
+<CODE>signal</CODE>, and the POSIX <CODE>sigaction</CODE> function; the
+alternative USG <CODE>signal</CODE> interface is an inferior design.
+
+</P>
+<P>
+Nowadays, using the POSIX signal functions may be the easiest way
+to make a program portable.  If you use <CODE>signal</CODE>, then on GNU/Linux
+systems running GNU libc version 1, you should include
+<TT>`bsd/signal.h'</TT> instead of <TT>`signal.h'</TT>, so as to get BSD
+behavior.  It is up to you whether to support systems where
+<CODE>signal</CODE> has only the USG behavior, or give up on them.
+
+</P>
+<P>
+<A NAME="IDX26"></A>
+In error checks that detect "impossible" conditions, just abort.
+There is usually no point in printing any message.  These checks
+indicate the existence of bugs.  Whoever wants to fix the bugs will have
+to read the source code and run a debugger.  So explain the problem with
+comments in the source.  The relevant data will be in variables, which
+are easy to examine with the debugger, so there is no point moving them
+elsewhere.
+
+</P>
+<P>
+Do not use a count of errors as the exit status for a program.
+<EM>That does not work</EM>, because exit status values are limited to 8
+bits (0 through 255).  A single run of the program might have 256
+errors; if you try to return 256 as the exit status, the parent process
+will see 0 as the status, and it will appear that the program succeeded.
+
+</P>
+<P>
+<A NAME="IDX27"></A>
+<A NAME="IDX28"></A>
+If you make temporary files, check the <CODE>TMPDIR</CODE> environment
+variable; if that variable is defined, use the specified directory
+instead of <TT>`/tmp'</TT>.
+
+</P>
+<P>
+In addition, be aware that there is a possible security problem when
+creating temporary files in world-writable directories.  In C, you can
+avoid this problem by creating temporary files in this manner:
+
+</P>
+
+<PRE>
+fd = open(filename, O_WRONLY | O_CREAT | O_EXCL, 0600);
+</PRE>
+
+<P>
+or by using the <CODE>mkstemps</CODE> function from libiberty.
+
+</P>
+<P>
+In bash, use <CODE>set -C</CODE> to avoid this problem.
+
+</P>
+
+
+<H2><A NAME="SEC13" HREF="standards.html#TOC13">Library Behavior</A></H2>
+<P>
+<A NAME="IDX29"></A>
+
+</P>
+<P>
+Try to make library functions reentrant.  If they need to do dynamic
+storage allocation, at least try to avoid any nonreentrancy aside from
+that of <CODE>malloc</CODE> itself.
+
+</P>
+<P>
+Here are certain name conventions for libraries, to avoid name
+conflicts.
+
+</P>
+<P>
+Choose a name prefix for the library, more than two characters long.
+All external function and variable names should start with this
+prefix.  In addition, there should only be one of these in any given
+library member.  This usually means putting each one in a separate
+source file.
+
+</P>
+<P>
+An exception can be made when two external symbols are always used
+together, so that no reasonable program could use one without the
+other; then they can both go in the same file.
+
+</P>
+<P>
+External symbols that are not documented entry points for the user
+should have names beginning with <SAMP>`_'</SAMP>.  They should also contain
+the chosen name prefix for the library, to prevent collisions with
+other libraries.  These can go in the same files with user entry
+points if you like.
+
+</P>
+<P>
+Static functions and variables can be used as you like and need not
+fit any naming convention.
+
+</P>
+
+
+<H2><A NAME="SEC14" HREF="standards.html#TOC14">Formatting Error Messages</A></H2>
+<P>
+<A NAME="IDX30"></A>
+<A NAME="IDX31"></A>
+
+</P>
+<P>
+Error messages from compilers should look like this:
+
+</P>
+
+<PRE>
+<VAR>source-file-name</VAR>:<VAR>lineno</VAR>: <VAR>message</VAR>
+</PRE>
+
+<P>
+If you want to mention the column number, use this format:
+
+</P>
+
+<PRE>
+<VAR>source-file-name</VAR>:<VAR>lineno</VAR>:<VAR>column</VAR>: <VAR>message</VAR>
+</PRE>
+
+<P>
+Line numbers should start from 1 at the beginning of the file, and
+column numbers should start from 1 at the beginning of the line.  (Both
+of these conventions are chosen for compatibility.)  Calculate column
+numbers assuming that space and all ASCII printing characters have
+equal width, and assuming tab stops every 8 columns.
+
+</P>
+<P>
+Error messages from other noninteractive programs should look like this:
+
+</P>
+
+<PRE>
+<VAR>program</VAR>:<VAR>source-file-name</VAR>:<VAR>lineno</VAR>: <VAR>message</VAR>
+</PRE>
+
+<P>
+when there is an appropriate source file, or like this:
+
+</P>
+
+<PRE>
+<VAR>program</VAR>: <VAR>message</VAR>
+</PRE>
+
+<P>
+when there is no relevant source file.
+
+</P>
+<P>
+If you want to mention the column number, use this format:
+
+</P>
+
+<PRE>
+<VAR>program</VAR>:<VAR>source-file-name</VAR>:<VAR>lineno</VAR>:<VAR>column</VAR>: <VAR>message</VAR>
+</PRE>
+
+<P>
+In an interactive program (one that is reading commands from a
+terminal), it is better not to include the program name in an error
+message.  The place to indicate which program is running is in the
+prompt or with the screen layout.  (When the same program runs with
+input from a source other than a terminal, it is not interactive and
+would do best to print error messages using the noninteractive style.)
+
+</P>
+<P>
+The string <VAR>message</VAR> should not begin with a capital letter when
+it follows a program name and/or file name.  Also, it should not end
+with a period.
+
+</P>
+<P>
+Error messages from interactive programs, and other messages such as
+usage messages, should start with a capital letter.  But they should not
+end with a period.
+
+</P>
+
+
+<H2><A NAME="SEC15" HREF="standards.html#TOC15">Standards for Interfaces Generally</A></H2>
+
+<P>
+<A NAME="IDX32"></A>
+<A NAME="IDX33"></A>
+Please don't make the behavior of a utility depend on the name used
+to invoke it.  It is useful sometimes to make a link to a utility
+with a different name, and that should not change what it does.
+
+</P>
+<P>
+Instead, use a run time option or a compilation switch or both
+to select among the alternate behaviors.
+
+</P>
+<P>
+<A NAME="IDX34"></A>
+Likewise, please don't make the behavior of the program depend on the
+type of output device it is used with.  Device independence is an
+important principle of the system's design; do not compromise it merely
+to save someone from typing an option now and then.  (Variation in error
+message syntax when using a terminal is ok, because that is a side issue
+that people do not depend on.)
+
+</P>
+<P>
+If you think one behavior is most useful when the output is to a
+terminal, and another is most useful when the output is a file or a
+pipe, then it is usually best to make the default behavior the one that
+is useful with output to a terminal, and have an option for the other
+behavior.
+
+</P>
+<P>
+Compatibility requires certain programs to depend on the type of output
+device.  It would be disastrous if <CODE>ls</CODE> or <CODE>sh</CODE> did not do so
+in the way all users expect.  In some of these cases, we supplement the
+program with a preferred alternate version that does not depend on the
+output device type.  For example, we provide a <CODE>dir</CODE> program much
+like <CODE>ls</CODE> except that its default output format is always
+multi-column format.
+
+</P>
+
+
+<H2><A NAME="SEC16" HREF="standards.html#TOC16">Standards for Graphical Interfaces</A></H2>
+<P>
+<A NAME="IDX35"></A>
+
+</P>
+<P>
+<A NAME="IDX36"></A>
+When you write a program that provides a graphical user interface,
+please make it work with X Windows and the GTK toolkit unless the
+functionality specifically requires some alternative (for example,
+"displaying jpeg images while in console mode").
+
+</P>
+<P>
+In addition, please provide a command-line interface to control the
+functionality.  (In many cases, the graphical user interface can be a
+separate program which invokes the command-line program.)  This is
+so that the same jobs can be done from scripts.
+
+</P>
+<P>
+<A NAME="IDX37"></A>
+<A NAME="IDX38"></A>
+Please also consider providing a CORBA interface (for use from GNOME), a
+library interface (for use from C), and perhaps a keyboard-driven
+console interface (for use by users from console mode).  Once you are
+doing the work to provide the functionality and the graphical interface,
+these won't be much extra work.
+
+</P>
+
+
+<H2><A NAME="SEC17" HREF="standards.html#TOC17">Standards for Command Line Interfaces</A></H2>
+<P>
+<A NAME="IDX39"></A>
+
+</P>
+<P>
+<A NAME="IDX40"></A>
+It is a good idea to follow the POSIX guidelines for the
+command-line options of a program.  The easiest way to do this is to use
+<CODE>getopt</CODE> to parse them.  Note that the GNU version of <CODE>getopt</CODE>
+will normally permit options anywhere among the arguments unless the
+special argument <SAMP>`--'</SAMP> is used.  This is not what POSIX
+specifies; it is a GNU extension.
+
+</P>
+<P>
+<A NAME="IDX41"></A>
+Please define long-named options that are equivalent to the
+single-letter Unix-style options.  We hope to make GNU more user
+friendly this way.  This is easy to do with the GNU function
+<CODE>getopt_long</CODE>.
+
+</P>
+<P>
+One of the advantages of long-named options is that they can be
+consistent from program to program.  For example, users should be able
+to expect the "verbose" option of any GNU program which has one, to be
+spelled precisely <SAMP>`--verbose'</SAMP>.  To achieve this uniformity, look at
+the table of common long-option names when you choose the option names
+for your program (see section <A HREF="standards.html#SEC18">Table of Long Options</A>).
+
+</P>
+<P>
+It is usually a good idea for file names given as ordinary arguments to
+be input files only; any output files would be specified using options
+(preferably <SAMP>`-o'</SAMP> or <SAMP>`--output'</SAMP>).  Even if you allow an output
+file name as an ordinary argument for compatibility, try to provide an
+option as another way to specify it.  This will lead to more consistency
+among GNU utilities, and fewer idiosyncracies for users to remember.
+
+</P>
+<P>
+<A NAME="IDX42"></A>
+All programs should support two standard options: <SAMP>`--version'</SAMP>
+and <SAMP>`--help'</SAMP>.
+
+</P>
+<DL COMPACT>
+
+<DT><CODE>--version</CODE>
+<DD>
+<A NAME="IDX43"></A>
+ 
+This option should direct the program to print information about its name,
+version, origin and legal status, all on standard output, and then exit
+successfully.  Other options and arguments should be ignored once this
+is seen, and the program should not perform its normal function.
+
+<A NAME="IDX44"></A>
+<A NAME="IDX45"></A>
+The first line is meant to be easy for a program to parse; the version
+number proper starts after the last space.  In addition, it contains
+the canonical name for this program, in this format:
+
+
+<PRE>
+GNU Emacs 19.30
+</PRE>
+
+The program's name should be a constant string; <EM>don't</EM> compute it
+from <CODE>argv[0]</CODE>.  The idea is to state the standard or canonical
+name for the program, not its file name.  There are other ways to find
+out the precise file name where a command is found in <CODE>PATH</CODE>.
+
+If the program is a subsidiary part of a larger package, mention the
+package name in parentheses, like this:
+
+
+<PRE>
+emacsserver (GNU Emacs) 19.30
+</PRE>
+
+If the package has a version number which is different from this
+program's version number, you can mention the package version number
+just before the close-parenthesis.
+
+If you <STRONG>need</STRONG> to mention the version numbers of libraries which
+are distributed separately from the package which contains this program,
+you can do so by printing an additional line of version info for each
+library you want to mention.  Use the same format for these lines as for
+the first line.
+
+Please do not mention all of the libraries that the program uses "just
+for completeness"---that would produce a lot of unhelpful clutter.
+Please mention library version numbers only if you find in practice that
+they are very important to you in debugging.
+
+The following line, after the version number line or lines, should be a
+copyright notice.  If more than one copyright notice is called for, put
+each on a separate line.
+
+Next should follow a brief statement that the program is free software,
+and that users are free to copy and change it on certain conditions.  If
+the program is covered by the GNU GPL, say so here.  Also mention that
+there is no warranty, to the extent permitted by law.
+
+It is ok to finish the output with a list of the major authors of the
+program, as a way of giving credit.
+
+Here's an example of output that follows these rules:
+
+
+<PRE>
+GNU Emacs 19.34.5
+Copyright (C) 1996 Free Software Foundation, Inc.
+GNU Emacs comes with NO WARRANTY,
+to the extent permitted by law.
+You may redistribute copies of GNU Emacs
+under the terms of the GNU General Public License.
+For more information about these matters,
+see the files named COPYING.
+</PRE>
+
+You should adapt this to your program, of course, filling in the proper
+year, copyright holder, name of program, and the references to
+distribution terms, and changing the rest of the wording as necessary.
+
+This copyright notice only needs to mention the most recent year in
+which changes were made--there's no need to list the years for previous
+versions' changes.  You don't have to mention the name of the program in
+these notices, if that is inconvenient, since it appeared in the first
+line.
+
+<A NAME="IDX46"></A>
+<DT><CODE>--help</CODE>
+<DD>
+This option should output brief documentation for how to invoke the
+program, on standard output, then exit successfully.  Other options and
+arguments should be ignored once this is seen, and the program should
+not perform its normal function.
+
+<A NAME="IDX47"></A>
+<A NAME="IDX48"></A>
+Near the end of the <SAMP>`--help'</SAMP> option's output there should be a line
+that says where to mail bug reports.  It should have this format:
+
+
+<PRE>
+Report bugs to <VAR>mailing-address</VAR>.
+</PRE>
+
+</DL>
+
+
+
+<H2><A NAME="SEC18" HREF="standards.html#TOC18">Table of Long Options</A></H2>
+<P>
+<A NAME="IDX49"></A>
+<A NAME="IDX50"></A>
+
+</P>
+<P>
+Here is a table of long options used by GNU programs.  It is surely
+incomplete, but we aim to list all the options that a new program might
+want to be compatible with.  If you use names not already in the table,
+please send <A HREF="mailto:bug-standards@gnu.org"><TT>bug-standards@gnu.org</TT></A> a list of them, with their
+meanings, so we can update the table.
+
+</P>
+
+<DL COMPACT>
+
+<DT><SAMP>`after-date'</SAMP>
+<DD>
+<SAMP>`-N'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`all'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>du</CODE>, <CODE>ls</CODE>, <CODE>nm</CODE>, <CODE>stty</CODE>, <CODE>uname</CODE>,
+and <CODE>unexpand</CODE>.
+
+<DT><SAMP>`all-text'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`almost-all'</SAMP>
+<DD>
+<SAMP>`-A'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`append'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>etags</CODE>, <CODE>tee</CODE>, <CODE>time</CODE>;
+<SAMP>`-r'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`archive'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>cp</CODE>.
+
+<DT><SAMP>`archive-name'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`arglength'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`ascii'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`assign'</SAMP>
+<DD>
+<SAMP>`-v'</SAMP> in <CODE>gawk</CODE>.
+
+<DT><SAMP>`assume-new'</SAMP>
+<DD>
+<SAMP>`-W'</SAMP> in Make.
+
+<DT><SAMP>`assume-old'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in Make.
+
+<DT><SAMP>`auto-check'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`auto-pager'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`auto-reference'</SAMP>
+<DD>
+<SAMP>`-A'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`avoid-wraps'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`background'</SAMP>
+<DD>
+For server programs, run in the background.
+
+<DT><SAMP>`backward-search'</SAMP>
+<DD>
+<SAMP>`-B'</SAMP> in <CODE>ctags</CODE>.
+
+<DT><SAMP>`basename'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`batch'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`baud'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`before'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>tac</CODE>.
+
+<DT><SAMP>`binary'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>cpio</CODE> and <CODE>diff</CODE>.
+
+<DT><SAMP>`bits-per-code'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`block-size'</SAMP>
+<DD>
+Used in <CODE>cpio</CODE> and <CODE>tar</CODE>.
+
+<DT><SAMP>`blocks'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>head</CODE> and <CODE>tail</CODE>.
+
+<DT><SAMP>`break-file'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`brief'</SAMP>
+<DD>
+Used in various programs to make output shorter.
+
+<DT><SAMP>`bytes'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>head</CODE>, <CODE>split</CODE>, and <CODE>tail</CODE>.
+
+<DT><SAMP>`c<TT>++</TT>'</SAMP>
+<DD>
+<SAMP>`-C'</SAMP> in <CODE>etags</CODE>.
+
+<DT><SAMP>`catenate'</SAMP>
+<DD>
+<SAMP>`-A'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`cd'</SAMP>
+<DD>
+Used in various programs to specify the directory to use.
+
+<DT><SAMP>`changes'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>chgrp</CODE> and <CODE>chown</CODE>.
+
+<DT><SAMP>`classify'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`colons'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`command'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>su</CODE>;
+<SAMP>`-x'</SAMP> in GDB.
+
+<DT><SAMP>`compare'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`compat'</SAMP>
+<DD>
+Used in <CODE>gawk</CODE>.
+
+<DT><SAMP>`compress'</SAMP>
+<DD>
+<SAMP>`-Z'</SAMP> in <CODE>tar</CODE> and <CODE>shar</CODE>.
+
+<DT><SAMP>`concatenate'</SAMP>
+<DD>
+<SAMP>`-A'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`confirmation'</SAMP>
+<DD>
+<SAMP>`-w'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`context'</SAMP>
+<DD>
+Used in <CODE>diff</CODE>.
+
+<DT><SAMP>`copyleft'</SAMP>
+<DD>
+<SAMP>`-W copyleft'</SAMP> in <CODE>gawk</CODE>.
+
+<DT><SAMP>`copyright'</SAMP>
+<DD>
+<SAMP>`-C'</SAMP> in <CODE>ptx</CODE>, <CODE>recode</CODE>, and <CODE>wdiff</CODE>;
+<SAMP>`-W copyright'</SAMP> in <CODE>gawk</CODE>.
+
+<DT><SAMP>`core'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`count'</SAMP>
+<DD>
+<SAMP>`-q'</SAMP> in <CODE>who</CODE>.
+
+<DT><SAMP>`count-links'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>du</CODE>.
+
+<DT><SAMP>`create'</SAMP>
+<DD>
+Used in <CODE>tar</CODE> and <CODE>cpio</CODE>.
+
+<DT><SAMP>`cut-mark'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`cxref'</SAMP>
+<DD>
+<SAMP>`-x'</SAMP> in <CODE>ctags</CODE>.
+
+<DT><SAMP>`date'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>touch</CODE>.
+
+<DT><SAMP>`debug'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in Make and <CODE>m4</CODE>;
+<SAMP>`-t'</SAMP> in Bison.
+
+<DT><SAMP>`define'</SAMP>
+<DD>
+<SAMP>`-D'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`defines'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in Bison and <CODE>ctags</CODE>.
+
+<DT><SAMP>`delete'</SAMP>
+<DD>
+<SAMP>`-D'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`dereference'</SAMP>
+<DD>
+<SAMP>`-L'</SAMP> in <CODE>chgrp</CODE>, <CODE>chown</CODE>, <CODE>cpio</CODE>, <CODE>du</CODE>,
+<CODE>ls</CODE>, and <CODE>tar</CODE>.
+
+<DT><SAMP>`dereference-args'</SAMP>
+<DD>
+<SAMP>`-D'</SAMP> in <CODE>du</CODE>.
+
+<DT><SAMP>`device'</SAMP>
+<DD>
+Specify an I/O device (special file name).
+
+<DT><SAMP>`diacritics'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`dictionary-order'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>look</CODE>.
+
+<DT><SAMP>`diff'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`digits'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>csplit</CODE>.
+
+<DT><SAMP>`directory'</SAMP>
+<DD>
+Specify the directory to use, in various programs.  In <CODE>ls</CODE>, it
+means to show directories themselves rather than their contents.  In
+<CODE>rm</CODE> and <CODE>ln</CODE>, it means to not treat links to directories
+specially.
+
+<DT><SAMP>`discard-all'</SAMP>
+<DD>
+<SAMP>`-x'</SAMP> in <CODE>strip</CODE>.
+
+<DT><SAMP>`discard-locals'</SAMP>
+<DD>
+<SAMP>`-X'</SAMP> in <CODE>strip</CODE>.
+
+<DT><SAMP>`dry-run'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in Make.
+
+<DT><SAMP>`ed'</SAMP>
+<DD>
+<SAMP>`-e'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`elide-empty-files'</SAMP>
+<DD>
+<SAMP>`-z'</SAMP> in <CODE>csplit</CODE>.
+
+<DT><SAMP>`end-delete'</SAMP>
+<DD>
+<SAMP>`-x'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`end-insert'</SAMP>
+<DD>
+<SAMP>`-z'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`entire-new-file'</SAMP>
+<DD>
+<SAMP>`-N'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`environment-overrides'</SAMP>
+<DD>
+<SAMP>`-e'</SAMP> in Make.
+
+<DT><SAMP>`eof'</SAMP>
+<DD>
+<SAMP>`-e'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`epoch'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`error-limit'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`error-output'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`escape'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`exclude-from'</SAMP>
+<DD>
+<SAMP>`-X'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`exec'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`exit'</SAMP>
+<DD>
+<SAMP>`-x'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`exit-0'</SAMP>
+<DD>
+<SAMP>`-e'</SAMP> in <CODE>unshar</CODE>.
+
+<DT><SAMP>`expand-tabs'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`expression'</SAMP>
+<DD>
+<SAMP>`-e'</SAMP> in <CODE>sed</CODE>.
+
+<DT><SAMP>`extern-only'</SAMP>
+<DD>
+<SAMP>`-g'</SAMP> in <CODE>nm</CODE>.
+
+<DT><SAMP>`extract'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>cpio</CODE>;
+<SAMP>`-x'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`faces'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>finger</CODE>.
+
+<DT><SAMP>`fast'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>su</CODE>.
+
+<DT><SAMP>`fatal-warnings'</SAMP>
+<DD>
+<SAMP>`-E'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`file'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>info</CODE>, <CODE>gawk</CODE>, Make, <CODE>mt</CODE>, and <CODE>tar</CODE>;
+<SAMP>`-n'</SAMP> in <CODE>sed</CODE>;
+<SAMP>`-r'</SAMP> in <CODE>touch</CODE>.
+
+<DT><SAMP>`field-separator'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>gawk</CODE>.
+
+<DT><SAMP>`file-prefix'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in Bison.
+
+<DT><SAMP>`file-type'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`files-from'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`fill-column'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`flag-truncation'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`fixed-output-files'</SAMP>
+<DD>
+<SAMP>`-y'</SAMP> in Bison.
+
+<DT><SAMP>`follow'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>tail</CODE>.
+
+<DT><SAMP>`footnote-style'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`force'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>cp</CODE>, <CODE>ln</CODE>, <CODE>mv</CODE>, and <CODE>rm</CODE>.
+
+<DT><SAMP>`force-prefix'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`foreground'</SAMP>
+<DD>
+For server programs, run in the foreground;
+in other words, don't do anything special to run the server
+in the background.
+
+<DT><SAMP>`format'</SAMP>
+<DD>
+Used in <CODE>ls</CODE>, <CODE>time</CODE>, and <CODE>ptx</CODE>.
+
+<DT><SAMP>`freeze-state'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`fullname'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`gap-size'</SAMP>
+<DD>
+<SAMP>`-g'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`get'</SAMP>
+<DD>
+<SAMP>`-x'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`graphic'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>ul</CODE>.
+
+<DT><SAMP>`graphics'</SAMP>
+<DD>
+<SAMP>`-g'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`group'</SAMP>
+<DD>
+<SAMP>`-g'</SAMP> in <CODE>install</CODE>.
+
+<DT><SAMP>`gzip'</SAMP>
+<DD>
+<SAMP>`-z'</SAMP> in <CODE>tar</CODE> and <CODE>shar</CODE>.
+
+<DT><SAMP>`hashsize'</SAMP>
+<DD>
+<SAMP>`-H'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`header'</SAMP>
+<DD>
+<SAMP>`-h'</SAMP> in <CODE>objdump</CODE> and <CODE>recode</CODE>
+
+<DT><SAMP>`heading'</SAMP>
+<DD>
+<SAMP>`-H'</SAMP> in <CODE>who</CODE>.
+
+<DT><SAMP>`help'</SAMP>
+<DD>
+Used to ask for brief usage information.
+
+<DT><SAMP>`here-delimiter'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`hide-control-chars'</SAMP>
+<DD>
+<SAMP>`-q'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`html'</SAMP>
+<DD>
+In <CODE>makeinfo</CODE>, output HTML.  
+
+<DT><SAMP>`idle'</SAMP>
+<DD>
+<SAMP>`-u'</SAMP> in <CODE>who</CODE>.
+
+<DT><SAMP>`ifdef'</SAMP>
+<DD>
+<SAMP>`-D'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`ignore'</SAMP>
+<DD>
+<SAMP>`-I'</SAMP> in <CODE>ls</CODE>;
+<SAMP>`-x'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`ignore-all-space'</SAMP>
+<DD>
+<SAMP>`-w'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`ignore-backups'</SAMP>
+<DD>
+<SAMP>`-B'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`ignore-blank-lines'</SAMP>
+<DD>
+<SAMP>`-B'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`ignore-case'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>look</CODE> and <CODE>ptx</CODE>;
+<SAMP>`-i'</SAMP> in <CODE>diff</CODE> and <CODE>wdiff</CODE>.
+
+<DT><SAMP>`ignore-errors'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in Make.
+
+<DT><SAMP>`ignore-file'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`ignore-indentation'</SAMP>
+<DD>
+<SAMP>`-I'</SAMP> in <CODE>etags</CODE>.
+
+<DT><SAMP>`ignore-init-file'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in Oleo.
+
+<DT><SAMP>`ignore-interrupts'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>tee</CODE>.
+
+<DT><SAMP>`ignore-matching-lines'</SAMP>
+<DD>
+<SAMP>`-I'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`ignore-space-change'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`ignore-zeros'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`include'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>etags</CODE>;
+<SAMP>`-I'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`include-dir'</SAMP>
+<DD>
+<SAMP>`-I'</SAMP> in Make.
+
+<DT><SAMP>`incremental'</SAMP>
+<DD>
+<SAMP>`-G'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`info'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP>, <SAMP>`-l'</SAMP>, and <SAMP>`-m'</SAMP> in Finger.
+
+<DT><SAMP>`init-file'</SAMP>
+<DD>
+In some programs, specify the name of the file to read as the user's
+init file.
+
+<DT><SAMP>`initial'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>expand</CODE>.
+
+<DT><SAMP>`initial-tab'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`inode'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`interactive'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>cp</CODE>, <CODE>ln</CODE>, <CODE>mv</CODE>, <CODE>rm</CODE>;
+<SAMP>`-e'</SAMP> in <CODE>m4</CODE>;
+<SAMP>`-p'</SAMP> in <CODE>xargs</CODE>;
+<SAMP>`-w'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`intermix-type'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`iso-8601'</SAMP>
+<DD>
+Used in <CODE>date</CODE>
+
+<DT><SAMP>`jobs'</SAMP>
+<DD>
+<SAMP>`-j'</SAMP> in Make.
+
+<DT><SAMP>`just-print'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in Make.
+
+<DT><SAMP>`keep-going'</SAMP>
+<DD>
+<SAMP>`-k'</SAMP> in Make.
+
+<DT><SAMP>`keep-files'</SAMP>
+<DD>
+<SAMP>`-k'</SAMP> in <CODE>csplit</CODE>.
+
+<DT><SAMP>`kilobytes'</SAMP>
+<DD>
+<SAMP>`-k'</SAMP> in <CODE>du</CODE> and <CODE>ls</CODE>.
+
+<DT><SAMP>`language'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>etags</CODE>.
+
+<DT><SAMP>`less-mode'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`level-for-gzip'</SAMP>
+<DD>
+<SAMP>`-g'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`line-bytes'</SAMP>
+<DD>
+<SAMP>`-C'</SAMP> in <CODE>split</CODE>.
+
+<DT><SAMP>`lines'</SAMP>
+<DD>
+Used in <CODE>split</CODE>, <CODE>head</CODE>, and <CODE>tail</CODE>.
+
+<DT><SAMP>`link'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`lint'</SAMP>
+<DD>
+<DT><SAMP>`lint-old'</SAMP>
+<DD>
+Used in <CODE>gawk</CODE>.
+
+<DT><SAMP>`list'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>cpio</CODE>;
+<SAMP>`-l'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`list'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`literal'</SAMP>
+<DD>
+<SAMP>`-N'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`load-average'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in Make.
+
+<DT><SAMP>`login'</SAMP>
+<DD>
+Used in <CODE>su</CODE>.
+
+<DT><SAMP>`machine'</SAMP>
+<DD>
+No listing of which programs already use this;
+someone should check to
+see if any actually do, and tell <A HREF="mailto:gnu@gnu.org"><TT>gnu@gnu.org</TT></A>.
+
+<DT><SAMP>`macro-name'</SAMP>
+<DD>
+<SAMP>`-M'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`mail'</SAMP>
+<DD>
+<SAMP>`-m'</SAMP> in <CODE>hello</CODE> and <CODE>uname</CODE>.
+
+<DT><SAMP>`make-directories'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`makefile'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in Make.
+
+<DT><SAMP>`mapped'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`max-args'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`max-chars'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`max-lines'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`max-load'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in Make.
+
+<DT><SAMP>`max-procs'</SAMP>
+<DD>
+<SAMP>`-P'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`mesg'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>who</CODE>.
+
+<DT><SAMP>`message'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>who</CODE>.
+
+<DT><SAMP>`minimal'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`mixed-uuencode'</SAMP>
+<DD>
+<SAMP>`-M'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`mode'</SAMP>
+<DD>
+<SAMP>`-m'</SAMP> in <CODE>install</CODE>, <CODE>mkdir</CODE>, and <CODE>mkfifo</CODE>.
+
+<DT><SAMP>`modification-time'</SAMP>
+<DD>
+<SAMP>`-m'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`multi-volume'</SAMP>
+<DD>
+<SAMP>`-M'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`name-prefix'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in Bison.
+
+<DT><SAMP>`nesting-limit'</SAMP>
+<DD>
+<SAMP>`-L'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`net-headers'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`new-file'</SAMP>
+<DD>
+<SAMP>`-W'</SAMP> in Make.
+
+<DT><SAMP>`no-builtin-rules'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in Make.
+
+<DT><SAMP>`no-character-count'</SAMP>
+<DD>
+<SAMP>`-w'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`no-check-existing'</SAMP>
+<DD>
+<SAMP>`-x'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`no-common'</SAMP>
+<DD>
+<SAMP>`-3'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`no-create'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>touch</CODE>.
+
+<DT><SAMP>`no-defines'</SAMP>
+<DD>
+<SAMP>`-D'</SAMP> in <CODE>etags</CODE>.
+
+<DT><SAMP>`no-deleted'</SAMP>
+<DD>
+<SAMP>`-1'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`no-dereference'</SAMP>
+<DD>
+<SAMP>`-d'</SAMP> in <CODE>cp</CODE>.
+
+<DT><SAMP>`no-inserted'</SAMP>
+<DD>
+<SAMP>`-2'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`no-keep-going'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in Make.
+
+<DT><SAMP>`no-lines'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in Bison.
+
+<DT><SAMP>`no-piping'</SAMP>
+<DD>
+<SAMP>`-P'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`no-prof'</SAMP>
+<DD>
+<SAMP>`-e'</SAMP> in <CODE>gprof</CODE>.
+
+<DT><SAMP>`no-regex'</SAMP>
+<DD>
+<SAMP>`-R'</SAMP> in <CODE>etags</CODE>.
+
+<DT><SAMP>`no-sort'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>nm</CODE>.
+
+<DT><SAMP>`no-split'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`no-static'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>gprof</CODE>.
+
+<DT><SAMP>`no-time'</SAMP>
+<DD>
+<SAMP>`-E'</SAMP> in <CODE>gprof</CODE>.
+
+<DT><SAMP>`no-timestamp'</SAMP>
+<DD>
+<SAMP>`-m'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`no-validate'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`no-wait'</SAMP>
+<DD>
+Used in <CODE>emacsclient</CODE>.
+
+<DT><SAMP>`no-warn'</SAMP>
+<DD>
+Used in various programs to inhibit warnings.
+
+<DT><SAMP>`node'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>info</CODE>.
+
+<DT><SAMP>`nodename'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>uname</CODE>.
+
+<DT><SAMP>`nonmatching'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`nstuff'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>objdump</CODE>.
+
+<DT><SAMP>`null'</SAMP>
+<DD>
+<SAMP>`-0'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`number'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>cat</CODE>.
+
+<DT><SAMP>`number-nonblank'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>cat</CODE>.
+
+<DT><SAMP>`numeric-sort'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>nm</CODE>.
+
+<DT><SAMP>`numeric-uid-gid'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>cpio</CODE> and <CODE>ls</CODE>.
+
+<DT><SAMP>`nx'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`old-archive'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`old-file'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in Make.
+
+<DT><SAMP>`one-file-system'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>tar</CODE>, <CODE>cp</CODE>, and <CODE>du</CODE>.
+
+<DT><SAMP>`only-file'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`only-prof'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>gprof</CODE>.
+
+<DT><SAMP>`only-time'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>gprof</CODE>.
+
+<DT><SAMP>`options'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>getopt</CODE>, <CODE>fdlist</CODE>, <CODE>fdmount</CODE>,
+<CODE>fdmountd</CODE>, and <CODE>fdumount</CODE>.
+
+<DT><SAMP>`output'</SAMP>
+<DD>
+In various programs, specify the output file name.
+
+<DT><SAMP>`output-prefix'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`override'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>rm</CODE>.
+
+<DT><SAMP>`overwrite'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>unshar</CODE>.
+
+<DT><SAMP>`owner'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>install</CODE>.
+
+<DT><SAMP>`paginate'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`paragraph-indent'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`parents'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>mkdir</CODE> and <CODE>rmdir</CODE>.
+
+<DT><SAMP>`pass-all'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>ul</CODE>.
+
+<DT><SAMP>`pass-through'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`port'</SAMP>
+<DD>
+<SAMP>`-P'</SAMP> in <CODE>finger</CODE>.
+
+<DT><SAMP>`portability'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>cpio</CODE> and <CODE>tar</CODE>.
+
+<DT><SAMP>`posix'</SAMP>
+<DD>
+Used in <CODE>gawk</CODE>.
+
+<DT><SAMP>`prefix-builtins'</SAMP>
+<DD>
+<SAMP>`-P'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`prefix'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>csplit</CODE>.
+
+<DT><SAMP>`preserve'</SAMP>
+<DD>
+Used in <CODE>tar</CODE> and <CODE>cp</CODE>.
+
+<DT><SAMP>`preserve-environment'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>su</CODE>.
+
+<DT><SAMP>`preserve-modification-time'</SAMP>
+<DD>
+<SAMP>`-m'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`preserve-order'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`preserve-permissions'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`print'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`print-chars'</SAMP>
+<DD>
+<SAMP>`-L'</SAMP> in <CODE>cmp</CODE>.
+
+<DT><SAMP>`print-data-base'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in Make.
+
+<DT><SAMP>`print-directory'</SAMP>
+<DD>
+<SAMP>`-w'</SAMP> in Make.
+
+<DT><SAMP>`print-file-name'</SAMP>
+<DD>
+<SAMP>`-o'</SAMP> in <CODE>nm</CODE>.
+
+<DT><SAMP>`print-symdefs'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>nm</CODE>.
+
+<DT><SAMP>`printer'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`prompt'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>ed</CODE>.
+
+<DT><SAMP>`proxy'</SAMP>
+<DD>
+Specify an HTTP proxy.
+
+<DT><SAMP>`query-user'</SAMP>
+<DD>
+<SAMP>`-X'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`question'</SAMP>
+<DD>
+<SAMP>`-q'</SAMP> in Make.
+
+<DT><SAMP>`quiet'</SAMP>
+<DD>
+Used in many programs to inhibit the usual output.  <STRONG>Note:</STRONG> every
+program accepting <SAMP>`--quiet'</SAMP> should accept <SAMP>`--silent'</SAMP> as a
+synonym.
+
+<DT><SAMP>`quiet-unshar'</SAMP>
+<DD>
+<SAMP>`-Q'</SAMP> in <CODE>shar</CODE>
+
+<DT><SAMP>`quote-name'</SAMP>
+<DD>
+<SAMP>`-Q'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`rcs'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`re-interval'</SAMP>
+<DD>
+Used in <CODE>gawk</CODE>.
+
+<DT><SAMP>`read-full-blocks'</SAMP>
+<DD>
+<SAMP>`-B'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`readnow'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`recon'</SAMP>
+<DD>
+<SAMP>`-n'</SAMP> in Make.
+
+<DT><SAMP>`record-number'</SAMP>
+<DD>
+<SAMP>`-R'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`recursive'</SAMP>
+<DD>
+Used in <CODE>chgrp</CODE>, <CODE>chown</CODE>, <CODE>cp</CODE>, <CODE>ls</CODE>, <CODE>diff</CODE>,
+and <CODE>rm</CODE>.
+
+<DT><SAMP>`reference-limit'</SAMP>
+<DD>
+Used in <CODE>makeinfo</CODE>.
+
+<DT><SAMP>`references'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`regex'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in <CODE>tac</CODE> and <CODE>etags</CODE>.
+
+<DT><SAMP>`release'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in <CODE>uname</CODE>.
+
+<DT><SAMP>`reload-state'</SAMP>
+<DD>
+<SAMP>`-R'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`relocation'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in <CODE>objdump</CODE>.
+
+<DT><SAMP>`rename'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`replace'</SAMP>
+<DD>
+<SAMP>`-i'</SAMP> in <CODE>xargs</CODE>.
+
+<DT><SAMP>`report-identical-files'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`reset-access-time'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`reverse'</SAMP>
+<DD>
+<SAMP>`-r'</SAMP> in <CODE>ls</CODE> and <CODE>nm</CODE>.
+
+<DT><SAMP>`reversed-ed'</SAMP>
+<DD>
+<SAMP>`-f'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`right-side-defs'</SAMP>
+<DD>
+<SAMP>`-R'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`same-order'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`same-permissions'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`save'</SAMP>
+<DD>
+<SAMP>`-g'</SAMP> in <CODE>stty</CODE>.
+
+<DT><SAMP>`se'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`sentence-regexp'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`separate-dirs'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in <CODE>du</CODE>.
+
+<DT><SAMP>`separator'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>tac</CODE>.
+
+<DT><SAMP>`sequence'</SAMP>
+<DD>
+Used by <CODE>recode</CODE> to chose files or pipes for sequencing passes.
+
+<DT><SAMP>`shell'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>su</CODE>.
+
+<DT><SAMP>`show-all'</SAMP>
+<DD>
+<SAMP>`-A'</SAMP> in <CODE>cat</CODE>.
+
+<DT><SAMP>`show-c-function'</SAMP>
+<DD>
+<SAMP>`-p'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`show-ends'</SAMP>
+<DD>
+<SAMP>`-E'</SAMP> in <CODE>cat</CODE>.
+
+<DT><SAMP>`show-function-line'</SAMP>
+<DD>
+<SAMP>`-F'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`show-tabs'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>cat</CODE>.
+
+<DT><SAMP>`silent'</SAMP>
+<DD>
+Used in many programs to inhibit the usual output.
+<STRONG>Note:</STRONG> every program accepting
+<SAMP>`--silent'</SAMP> should accept <SAMP>`--quiet'</SAMP> as a synonym.
+
+<DT><SAMP>`size'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`socket'</SAMP>
+<DD>
+Specify a file descriptor for a network server to use for its socket,
+instead of opening and binding a new socket.  This provides a way to
+run, in a nonpriveledged process, a server that normally needs a
+reserved port number.
+
+<DT><SAMP>`sort'</SAMP>
+<DD>
+Used in <CODE>ls</CODE>.
+
+<DT><SAMP>`source'</SAMP>
+<DD>
+<SAMP>`-W source'</SAMP> in <CODE>gawk</CODE>.
+
+<DT><SAMP>`sparse'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`speed-large-files'</SAMP>
+<DD>
+<SAMP>`-H'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`split-at'</SAMP>
+<DD>
+<SAMP>`-E'</SAMP> in <CODE>unshar</CODE>.
+
+<DT><SAMP>`split-size-limit'</SAMP>
+<DD>
+<SAMP>`-L'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`squeeze-blank'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>cat</CODE>.
+
+<DT><SAMP>`start-delete'</SAMP>
+<DD>
+<SAMP>`-w'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`start-insert'</SAMP>
+<DD>
+<SAMP>`-y'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`starting-file'</SAMP>
+<DD>
+Used in <CODE>tar</CODE> and <CODE>diff</CODE> to specify which file within
+a directory to start processing with.
+
+<DT><SAMP>`statistics'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`stdin-file-list'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`stop'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in Make.
+
+<DT><SAMP>`strict'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>recode</CODE>.
+
+<DT><SAMP>`strip'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>install</CODE>.
+
+<DT><SAMP>`strip-all'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>strip</CODE>.
+
+<DT><SAMP>`strip-debug'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in <CODE>strip</CODE>.
+
+<DT><SAMP>`submitter'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`suffix'</SAMP>
+<DD>
+<SAMP>`-S'</SAMP> in <CODE>cp</CODE>, <CODE>ln</CODE>, <CODE>mv</CODE>.
+
+<DT><SAMP>`suffix-format'</SAMP>
+<DD>
+<SAMP>`-b'</SAMP> in <CODE>csplit</CODE>.
+
+<DT><SAMP>`sum'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>gprof</CODE>.
+
+<DT><SAMP>`summarize'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>du</CODE>.
+
+<DT><SAMP>`symbolic'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>ln</CODE>.
+
+<DT><SAMP>`symbols'</SAMP>
+<DD>
+Used in GDB and <CODE>objdump</CODE>.
+
+<DT><SAMP>`synclines'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`sysname'</SAMP>
+<DD>
+<SAMP>`-s'</SAMP> in <CODE>uname</CODE>.
+
+<DT><SAMP>`tabs'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>expand</CODE> and <CODE>unexpand</CODE>.
+
+<DT><SAMP>`tabsize'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>ls</CODE>.
+
+<DT><SAMP>`terminal'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>tput</CODE> and <CODE>ul</CODE>.
+<SAMP>`-t'</SAMP> in <CODE>wdiff</CODE>.
+
+<DT><SAMP>`text'</SAMP>
+<DD>
+<SAMP>`-a'</SAMP> in <CODE>diff</CODE>.
+
+<DT><SAMP>`text-files'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`time'</SAMP>
+<DD>
+Used in <CODE>ls</CODE> and <CODE>touch</CODE>.
+
+<DT><SAMP>`timeout'</SAMP>
+<DD>
+Specify how long to wait before giving up on some operation.
+
+<DT><SAMP>`to-stdout'</SAMP>
+<DD>
+<SAMP>`-O'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`total'</SAMP>
+<DD>
+<SAMP>`-c'</SAMP> in <CODE>du</CODE>.
+
+<DT><SAMP>`touch'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in Make, <CODE>ranlib</CODE>, and <CODE>recode</CODE>.
+
+<DT><SAMP>`trace'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`traditional'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>hello</CODE>;
+<SAMP>`-W traditional'</SAMP> in <CODE>gawk</CODE>;
+<SAMP>`-G'</SAMP> in <CODE>ed</CODE>, <CODE>m4</CODE>, and <CODE>ptx</CODE>.
+
+<DT><SAMP>`tty'</SAMP>
+<DD>
+Used in GDB.
+
+<DT><SAMP>`typedefs'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>ctags</CODE>.
+
+<DT><SAMP>`typedefs-and-c++'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>ctags</CODE>.
+
+<DT><SAMP>`typeset-mode'</SAMP>
+<DD>
+<SAMP>`-t'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`uncompress'</SAMP>
+<DD>
+<SAMP>`-z'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`unconditional'</SAMP>
+<DD>
+<SAMP>`-u'</SAMP> in <CODE>cpio</CODE>.
+
+<DT><SAMP>`undefine'</SAMP>
+<DD>
+<SAMP>`-U'</SAMP> in <CODE>m4</CODE>.
+
+<DT><SAMP>`undefined-only'</SAMP>
+<DD>
+<SAMP>`-u'</SAMP> in <CODE>nm</CODE>.
+
+<DT><SAMP>`update'</SAMP>
+<DD>
+<SAMP>`-u'</SAMP> in <CODE>cp</CODE>, <CODE>ctags</CODE>, <CODE>mv</CODE>, <CODE>tar</CODE>.
+
+<DT><SAMP>`usage'</SAMP>
+<DD>
+Used in <CODE>gawk</CODE>; same as <SAMP>`--help'</SAMP>.
+
+<DT><SAMP>`uuencode'</SAMP>
+<DD>
+<SAMP>`-B'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`vanilla-operation'</SAMP>
+<DD>
+<SAMP>`-V'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`verbose'</SAMP>
+<DD>
+Print more information about progress.  Many programs support this.
+
+<DT><SAMP>`verify'</SAMP>
+<DD>
+<SAMP>`-W'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`version'</SAMP>
+<DD>
+Print the version number.
+
+<DT><SAMP>`version-control'</SAMP>
+<DD>
+<SAMP>`-V'</SAMP> in <CODE>cp</CODE>, <CODE>ln</CODE>, <CODE>mv</CODE>.
+
+<DT><SAMP>`vgrind'</SAMP>
+<DD>
+<SAMP>`-v'</SAMP> in <CODE>ctags</CODE>.
+
+<DT><SAMP>`volume'</SAMP>
+<DD>
+<SAMP>`-V'</SAMP> in <CODE>tar</CODE>.
+
+<DT><SAMP>`what-if'</SAMP>
+<DD>
+<SAMP>`-W'</SAMP> in Make.
+
+<DT><SAMP>`whole-size-limit'</SAMP>
+<DD>
+<SAMP>`-l'</SAMP> in <CODE>shar</CODE>.
+
+<DT><SAMP>`width'</SAMP>
+<DD>
+<SAMP>`-w'</SAMP> in <CODE>ls</CODE> and <CODE>ptx</CODE>.
+
+<DT><SAMP>`word-regexp'</SAMP>
+<DD>
+<SAMP>`-W'</SAMP> in <CODE>ptx</CODE>.
+
+<DT><SAMP>`writable'</SAMP>
+<DD>
+<SAMP>`-T'</SAMP> in <CODE>who</CODE>.
+
+<DT><SAMP>`zeros'</SAMP>
+<DD>
+<SAMP>`-z'</SAMP> in <CODE>gprof</CODE>.
+</DL>
+
+
+
+<H2><A NAME="SEC19" HREF="standards.html#TOC19">Memory Usage</A></H2>
+<P>
+<A NAME="IDX51"></A>
+
+</P>
+<P>
+If a program typically uses just a few meg of memory, don't bother making any
+effort to reduce memory usage.  For example, if it is impractical for
+other reasons to operate on files more than a few meg long, it is
+reasonable to read entire input files into core to operate on them.
+
+</P>
+<P>
+However, for programs such as <CODE>cat</CODE> or <CODE>tail</CODE>, that can
+usefully operate on very large files, it is important to avoid using a
+technique that would artificially limit the size of files it can handle.
+If a program works by lines and could be applied to arbitrary
+user-supplied input files, it should keep only a line in memory, because
+this is not very hard and users will want to be able to operate on input
+files that are bigger than will fit in core all at once.
+
+</P>
+<P>
+If your program creates complicated data structures, just make them in
+core and give a fatal error if <CODE>malloc</CODE> returns zero.
+
+</P>
+
+
+<H2><A NAME="SEC20" HREF="standards.html#TOC20">File Usage</A></H2>
+<P>
+<A NAME="IDX52"></A>
+
+</P>
+<P>
+Programs should be prepared to operate when <TT>`/usr'</TT> and <TT>`/etc'</TT>
+are read-only file systems.  Thus, if the program manages log files,
+lock files, backup files, score files, or any other files which are
+modified for internal purposes, these files should not be stored in
+<TT>`/usr'</TT> or <TT>`/etc'</TT>.
+
+</P>
+<P>
+There are two exceptions.  <TT>`/etc'</TT> is used to store system
+configuration information; it is reasonable for a program to modify
+files in <TT>`/etc'</TT> when its job is to update the system configuration.
+Also, if the user explicitly asks to modify one file in a directory, it
+is reasonable for the program to store other files in the same
+directory.
+
+</P>
+
+
+<H1><A NAME="SEC21" HREF="standards.html#TOC21">Making The Best Use of C</A></H1>
+
+<P>
+This node provides advice on how best to use the C language
+when writing GNU software.
+
+</P>
+
+
+
+<H2><A NAME="SEC22" HREF="standards.html#TOC22">Formatting Your Source Code</A></H2>
+<P>
+<A NAME="IDX53"></A>
+
+</P>
+<P>
+<A NAME="IDX54"></A>
+<A NAME="IDX55"></A>
+It is important to put the open-brace that starts the body of a C
+function in column zero, and avoid putting any other open-brace or
+open-parenthesis or open-bracket in column zero.  Several tools look
+for open-braces in column zero to find the beginnings of C functions.
+These tools will not work on code not formatted that way.
+
+</P>
+<P>
+It is also important for function definitions to start the name of the
+function in column zero.  This helps people to search for function
+definitions, and may also help certain tools recognize them.  Thus,
+the proper format is this:
+
+</P>
+
+<PRE>
+static char *
+concat (s1, s2)        /* Name starts in column zero here */
+     char *s1, *s2;
+{                     /* Open brace in column zero here */
+  ...
+}
+</PRE>
+
+<P>
+or, if you want to use Standard C syntax, format the definition like
+this:
+
+</P>
+
+<PRE>
+static char *
+concat (char *s1, char *s2)
+{
+  ...
+}
+</PRE>
+
+<P>
+In Standard C, if the arguments don't fit nicely on one line,
+split it like this:
+
+</P>
+
+<PRE>
+int
+lots_of_args (int an_integer, long a_long, short a_short,
+              double a_double, float a_float)
+...
+</PRE>
+
+<P>
+The rest of this section gives our recommendations for other aspects of
+C formatting style.  We don't think of them as requirements, because it
+causes no problems for users if two different programs have different
+formatting styles.
+
+</P>
+<P>
+But whatever style you use, please use it consistently, since a mixture
+of styles within one program tends to look ugly.  If you are
+contributing changes to an existing program, please follow the style of
+that program.
+
+</P>
+<P>
+For the body of the function, our recommended style looks like this:
+
+</P>
+
+<PRE>
+if (x &#60; foo (y, z))
+  haha = bar[4] + 5;
+else
+  {
+    while (z)
+      {
+        haha += foo (z, z);
+        z--;
+      }
+    return ++x + bar ();
+  }
+</PRE>
+
+<P>
+<A NAME="IDX56"></A>
+We find it easier to read a program when it has spaces before the
+open-parentheses and after the commas.  Especially after the commas.
+
+</P>
+<P>
+When you split an expression into multiple lines, split it
+before an operator, not after one.  Here is the right way:
+
+</P>
+<P>
+<A NAME="IDX57"></A>
+
+<PRE>
+if (foo_this_is_long &#38;&#38; bar &#62; win (x, y, z)
+    &#38;&#38; remaining_condition)
+</PRE>
+
+<P>
+Try to avoid having two operators of different precedence at the same
+level of indentation.  For example, don't write this:
+
+</P>
+
+<PRE>
+mode = (inmode[j] == VOIDmode
+        || GET_MODE_SIZE (outmode[j]) &#62; GET_MODE_SIZE (inmode[j])
+        ? outmode[j] : inmode[j]);
+</PRE>
+
+<P>
+Instead, use extra parentheses so that the indentation shows the nesting:
+
+</P>
+
+<PRE>
+mode = ((inmode[j] == VOIDmode
+         || (GET_MODE_SIZE (outmode[j]) &#62; GET_MODE_SIZE (inmode[j])))
+        ? outmode[j] : inmode[j]);
+</PRE>
+
+<P>
+Insert extra parentheses so that Emacs will indent the code properly.
+For example, the following indentation looks nice if you do it by hand,
+
+</P>
+
+<PRE>
+v = rup-&#62;ru_utime.tv_sec*1000 + rup-&#62;ru_utime.tv_usec/1000
+    + rup-&#62;ru_stime.tv_sec*1000 + rup-&#62;ru_stime.tv_usec/1000;
+</PRE>
+
+<P>
+but Emacs would alter it.  Adding a set of parentheses produces
+something that looks equally nice, and which Emacs will preserve:
+
+</P>
+
+<PRE>
+v = (rup-&#62;ru_utime.tv_sec*1000 + rup-&#62;ru_utime.tv_usec/1000
+     + rup-&#62;ru_stime.tv_sec*1000 + rup-&#62;ru_stime.tv_usec/1000);
+</PRE>
+
+<P>
+Format do-while statements like this:
+
+</P>
+
+<PRE>
+do
+  {
+    a = foo (a);
+  }
+while (a &#62; 0);
+</PRE>
+
+<P>
+<A NAME="IDX58"></A>
+<A NAME="IDX59"></A>
+Please use formfeed characters (control-L) to divide the program into
+pages at logical places (but not within a function).  It does not matter
+just how long the pages are, since they do not have to fit on a printed
+page.  The formfeeds should appear alone on lines by themselves.
+
+</P>
+
+
+<H2><A NAME="SEC23" HREF="standards.html#TOC23">Commenting Your Work</A></H2>
+<P>
+<A NAME="IDX60"></A>
+
+</P>
+<P>
+Every program should start with a comment saying briefly what it is for.
+Example: <SAMP>`fmt - filter for simple filling of text'</SAMP>.
+
+</P>
+<P>
+Please write the comments in a GNU program in English, because English
+is the one language that nearly all programmers in all countries can
+read.  If you do not write English well, please write comments in
+English as well as you can, then ask other people to help rewrite them.
+If you can't write comments in English, please find someone to work with
+you and translate your comments into English.
+
+</P>
+<P>
+Please put a comment on each function saying what the function does,
+what sorts of arguments it gets, and what the possible values of
+arguments mean and are used for.  It is not necessary to duplicate in
+words the meaning of the C argument declarations, if a C type is being
+used in its customary fashion.  If there is anything nonstandard about
+its use (such as an argument of type <CODE>char *</CODE> which is really the
+address of the second character of a string, not the first), or any
+possible values that would not work the way one would expect (such as,
+that strings containing newlines are not guaranteed to work), be sure
+to say so.
+
+</P>
+<P>
+Also explain the significance of the return value, if there is one.
+
+</P>
+<P>
+Please put two spaces after the end of a sentence in your comments, so
+that the Emacs sentence commands will work.  Also, please write
+complete sentences and capitalize the first word.  If a lower-case
+identifier comes at the beginning of a sentence, don't capitalize it!
+Changing the spelling makes it a different identifier.  If you don't
+like starting a sentence with a lower case letter, write the sentence
+differently (e.g., "The identifier lower-case is ...").
+
+</P>
+<P>
+The comment on a function is much clearer if you use the argument
+names to speak about the argument values.  The variable name itself
+should be lower case, but write it in upper case when you are speaking
+about the value rather than the variable itself.  Thus, "the inode
+number NODE_NUM" rather than "an inode".
+
+</P>
+<P>
+There is usually no purpose in restating the name of the function in
+the comment before it, because the reader can see that for himself.
+There might be an exception when the comment is so long that the function
+itself would be off the bottom of the screen.
+
+</P>
+<P>
+There should be a comment on each static variable as well, like this:
+
+</P>
+
+<PRE>
+/* Nonzero means truncate lines in the display;
+   zero means continue them.  */
+int truncate_lines;
+</PRE>
+
+<P>
+<A NAME="IDX61"></A>
+<A NAME="IDX62"></A>
+Every <SAMP>`#endif'</SAMP> should have a comment, except in the case of short
+conditionals (just a few lines) that are not nested.  The comment should
+state the condition of the conditional that is ending, <EM>including
+its sense</EM>.  <SAMP>`#else'</SAMP> should have a comment describing the condition
+<EM>and sense</EM> of the code that follows.  For example:
+
+</P>
+
+<PRE>
+#ifdef foo
+  ...
+#else /* not foo */
+  ...
+#endif /* not foo */
+#ifdef foo
+  ...
+#endif /* foo */
+</PRE>
+
+<P>
+but, by contrast, write the comments this way for a <SAMP>`#ifndef'</SAMP>:
+
+</P>
+
+<PRE>
+#ifndef foo
+  ...
+#else /* foo */
+  ...
+#endif /* foo */
+#ifndef foo
+  ...
+#endif /* not foo */
+</PRE>
+
+
+
+<H2><A NAME="SEC24" HREF="standards.html#TOC24">Clean Use of C Constructs</A></H2>
+<P>
+<A NAME="IDX63"></A>
+
+</P>
+<P>
+<A NAME="IDX64"></A>
+<A NAME="IDX65"></A>
+Please explicitly declare the types of all objects.  For example, you
+should explicitly declare all arguments to functions, and you should
+declare functions to return <CODE>int</CODE> rather than omitting the
+<CODE>int</CODE>.
+
+</P>
+<P>
+<A NAME="IDX66"></A>
+<A NAME="IDX67"></A>
+Some programmers like to use the GCC <SAMP>`-Wall'</SAMP> option, and change the
+code whenever it issues a warning.  If you want to do this, then do.
+Other programmers prefer not to use <SAMP>`-Wall'</SAMP>, because it gives
+warnings for valid and legitimate code which they do not want to change.
+If you want to do this, then do.  The compiler should be your servant,
+not your master.
+
+</P>
+<P>
+Declarations of external functions and functions to appear later in the
+source file should all go in one place near the beginning of the file
+(somewhere before the first function definition in the file), or else
+should go in a header file.  Don't put <CODE>extern</CODE> declarations inside
+functions.
+
+</P>
+<P>
+<A NAME="IDX68"></A>
+It used to be common practice to use the same local variables (with
+names like <CODE>tem</CODE>) over and over for different values within one
+function.  Instead of doing this, it is better declare a separate local
+variable for each distinct purpose, and give it a name which is
+meaningful.  This not only makes programs easier to understand, it also
+facilitates optimization by good compilers.  You can also move the
+declaration of each local variable into the smallest scope that includes
+all its uses.  This makes the program even cleaner.
+
+</P>
+<P>
+Don't use local variables or parameters that shadow global identifiers.
+
+</P>
+<P>
+<A NAME="IDX69"></A>
+Don't declare multiple variables in one declaration that spans lines.
+Start a new declaration on each line, instead.  For example, instead
+of this:
+
+</P>
+
+<PRE>
+int    foo,
+       bar;
+</PRE>
+
+<P>
+write either this:
+
+</P>
+
+<PRE>
+int foo, bar;
+</PRE>
+
+<P>
+or this:
+
+</P>
+
+<PRE>
+int foo;
+int bar;
+</PRE>
+
+<P>
+(If they are global variables, each should have a comment preceding it
+anyway.)
+
+</P>
+<P>
+When you have an <CODE>if</CODE>-<CODE>else</CODE> statement nested in another
+<CODE>if</CODE> statement, always put braces around the <CODE>if</CODE>-<CODE>else</CODE>.
+Thus, never write like this:
+
+</P>
+
+<PRE>
+if (foo)
+  if (bar)
+    win ();
+  else
+    lose ();
+</PRE>
+
+<P>
+always like this:
+
+</P>
+
+<PRE>
+if (foo)
+  {
+    if (bar)
+      win ();
+    else
+      lose ();
+  }
+</PRE>
+
+<P>
+If you have an <CODE>if</CODE> statement nested inside of an <CODE>else</CODE>
+statement, either write <CODE>else if</CODE> on one line, like this,
+
+</P>
+
+<PRE>
+if (foo)
+  ...
+else if (bar)
+  ...
+</PRE>
+
+<P>
+with its <CODE>then</CODE>-part indented like the preceding <CODE>then</CODE>-part,
+or write the nested <CODE>if</CODE> within braces like this:
+
+</P>
+
+<PRE>
+if (foo)
+  ...
+else
+  {
+    if (bar)
+      ...
+  }
+</PRE>
+
+<P>
+Don't declare both a structure tag and variables or typedefs in the
+same declaration.  Instead, declare the structure tag separately
+and then use it to declare the variables or typedefs.
+
+</P>
+<P>
+Try to avoid assignments inside <CODE>if</CODE>-conditions.  For example,
+don't write this:
+
+</P>
+
+<PRE>
+if ((foo = (char *) malloc (sizeof *foo)) == 0)
+  fatal ("virtual memory exhausted");
+</PRE>
+
+<P>
+instead, write this:
+
+</P>
+
+<PRE>
+foo = (char *) malloc (sizeof *foo);
+if (foo == 0)
+  fatal ("virtual memory exhausted");
+</PRE>
+
+<P>
+<A NAME="IDX70"></A>
+Don't make the program ugly to placate <CODE>lint</CODE>.  Please don't insert any
+casts to <CODE>void</CODE>.  Zero without a cast is perfectly fine as a null
+pointer constant, except when calling a varargs function.
+
+</P>
+
+
+<H2><A NAME="SEC25" HREF="standards.html#TOC25">Naming Variables and Functions</A></H2>
+
+<P>
+<A NAME="IDX71"></A>
+The names of global variables and functions in a program serve as
+comments of a sort.  So don't choose terse names--instead, look for
+names that give useful information about the meaning of the variable or
+function.  In a GNU program, names should be English, like other
+comments.
+
+</P>
+<P>
+Local variable names can be shorter, because they are used only within
+one context, where (presumably) comments explain their purpose.
+
+</P>
+<P>
+Try to limit your use of abbreviations in symbol names.  It is ok to
+make a few abbreviations, explain what they mean, and then use them
+frequently, but don't use lots of obscure abbreviations.
+
+</P>
+<P>
+Please use underscores to separate words in a name, so that the Emacs
+word commands can be useful within them.  Stick to lower case; reserve
+upper case for macros and <CODE>enum</CODE> constants, and for name-prefixes
+that follow a uniform convention.
+
+</P>
+<P>
+For example, you should use names like <CODE>ignore_space_change_flag</CODE>;
+don't use names like <CODE>iCantReadThis</CODE>.
+
+</P>
+<P>
+Variables that indicate whether command-line options have been
+specified should be named after the meaning of the option, not after
+the option-letter.  A comment should state both the exact meaning of
+the option and its letter.  For example,
+
+</P>
+
+<PRE>
+/* Ignore changes in horizontal whitespace (-b).  */
+int ignore_space_change_flag;
+</PRE>
+
+<P>
+When you want to define names with constant integer values, use
+<CODE>enum</CODE> rather than <SAMP>`#define'</SAMP>.  GDB knows about enumeration
+constants.
+
+</P>
+<P>
+<A NAME="IDX72"></A>
+<A NAME="IDX73"></A>
+Use file names of 14 characters or less, to avoid creating gratuitous
+problems on older System V systems.  You can use the program
+<CODE>doschk</CODE> to test for this.  <CODE>doschk</CODE> also tests for potential
+name conflicts if the files were loaded onto an MS-DOS file
+system--something you may or may not care about.
+
+</P>
+
+
+<H2><A NAME="SEC26" HREF="standards.html#TOC26">Portability between System Types</A></H2>
+<P>
+<A NAME="IDX74"></A>
+
+</P>
+<P>
+In the Unix world, "portability" refers to porting to different Unix
+versions.  For a GNU program, this kind of portability is desirable, but
+not paramount.
+
+</P>
+<P>
+The primary purpose of GNU software is to run on top of the GNU kernel,
+compiled with the GNU C compiler, on various types of CPU.  The
+amount and kinds of variation among GNU systems on different CPUs
+will be comparable to the variation among Linux-based GNU systems or
+among BSD systems today.  So the kinds of portability that are absolutely
+necessary are quite limited.
+
+</P>
+<P>
+But many users do run GNU software on non-GNU Unix or Unix-like systems.
+So supporting a variety of Unix-like systems is desirable, although not
+paramount.
+
+</P>
+<P>
+<A NAME="IDX75"></A>
+The easiest way to achieve portability to most Unix-like systems is to
+use Autoconf.  It's unlikely that your program needs to know more
+information about the host platform than Autoconf can provide, simply
+because most of the programs that need such knowledge have already been
+written.
+
+</P>
+<P>
+Avoid using the format of semi-internal data bases (e.g., directories)
+when there is a higher-level alternative (<CODE>readdir</CODE>).
+
+</P>
+<P>
+<A NAME="IDX76"></A>
+As for systems that are not like Unix, such as MSDOS, Windows, the
+Macintosh, VMS, and MVS, supporting them is often a lot of work.  When
+that is the case, it is better to spend your time adding features that
+will be useful on GNU and GNU/Linux, rather than on supporting other
+incompatible systems.
+
+</P>
+<P>
+It is a good idea to define the "feature test macro"
+<CODE>_GNU_SOURCE</CODE> when compiling your C files.  When you compile on GNU
+or GNU/Linux, this will enable the declarations of GNU library extension
+functions, and that will usually give you a compiler error message if
+you define the same function names in some other way in your program.
+(You don't have to actually <EM>use</EM> these functions, if you prefer
+to make the program more portable to other systems.)
+
+</P>
+<P>
+But whether or not you use these GNU extensions, you should avoid
+using their names for any other meanings.  Doing so would make it hard
+to move your code into other GNU programs.
+
+</P>
+
+
+<H2><A NAME="SEC27" HREF="standards.html#TOC27">Portability between CPUs</A></H2>
+
+<P>
+<A NAME="IDX77"></A>
+<A NAME="IDX78"></A>
+Even GNU systems will differ because of differences among CPU
+types--for example, difference in byte ordering and alignment
+requirements.  It is absolutely essential to handle these differences.
+However, don't make any effort to cater to the possibility that an
+<CODE>int</CODE> will be less than 32 bits.  We don't support 16-bit machines
+in GNU.
+
+</P>
+<P>
+Similarly, don't make any effort to cater to the possibility that
+<CODE>long</CODE> will be smaller than predefined types like <CODE>size_t</CODE>.
+For example, the following code is ok:
+
+</P>
+
+<PRE>
+printf ("size = %lu\n", (unsigned long) sizeof array);
+printf ("diff = %ld\n", (long) (pointer2 - pointer1));
+</PRE>
+
+<P>
+1989 Standard C requires this to work, and we know of only one
+counterexample: 64-bit programs on Microsoft Windows IA-64.  We will
+leave it to those who want to port GNU programs to that environment
+to figure out how to do it.
+
+</P>
+<P>
+Predefined file-size types like <CODE>off_t</CODE> are an exception: they are
+longer than <CODE>long</CODE> on many platforms, so code like the above won't
+work with them.  One way to print an <CODE>off_t</CODE> value portably is to
+print its digits yourself, one by one.
+
+</P>
+<P>
+Don't assume that the address of an <CODE>int</CODE> object is also the
+address of its least-significant byte.  This is false on big-endian
+machines.  Thus, don't make the following mistake:
+
+</P>
+
+<PRE>
+int c;
+...
+while ((c = getchar()) != EOF)
+  write(file_descriptor, &#38;c, 1);
+</PRE>
+
+<P>
+When calling functions, you need not worry about the difference between
+pointers of various types, or between pointers and integers.  On most
+machines, there's no difference anyway.  As for the few machines where
+there is a difference, all of them support Standard C prototypes, so you can
+use prototypes (perhaps conditionalized to be active only in Standard C)
+to make the code work on those systems.
+
+</P>
+<P>
+In certain cases, it is ok to pass integer and pointer arguments
+indiscriminately to the same function, and use no prototype on any
+system.  For example, many GNU programs have error-reporting functions
+that pass their arguments along to <CODE>printf</CODE> and friends:
+
+</P>
+
+<PRE>
+error (s, a1, a2, a3)
+     char *s;
+     char *a1, *a2, *a3;
+{
+  fprintf (stderr, "error: ");
+  fprintf (stderr, s, a1, a2, a3);
+}
+</PRE>
+
+<P>
+In practice, this works on all machines, since a pointer is generally
+the widest possible kind of argument; it is much simpler than any
+"correct" alternative.  Be sure <EM>not</EM> to use a prototype for such
+functions.
+
+</P>
+<P>
+If you have decided to use Standard C, then you can instead define
+<CODE>error</CODE> using <TT>`stdarg.h'</TT>, and pass the arguments along to
+<CODE>vfprintf</CODE>.
+
+</P>
+<P>
+<A NAME="IDX79"></A>
+Avoid casting pointers to integers if you can.  Such casts greatly
+reduce portability, and in most programs they are easy to avoid.  In the
+cases where casting pointers to integers is essential--such as, a Lisp
+interpreter which stores type information as well as an address in one
+word--you'll have to make explicit provisions to handle different word
+sizes.  You will also need to make provision for systems in which the
+normal range of addresses you can get from <CODE>malloc</CODE> starts far away
+from zero.
+
+</P>
+
+
+<H2><A NAME="SEC28" HREF="standards.html#TOC28">Calling System Functions</A></H2>
+<P>
+<A NAME="IDX80"></A>
+<A NAME="IDX81"></A>
+
+</P>
+<P>
+C implementations differ substantially.  Standard C reduces but does
+not eliminate the incompatibilities; meanwhile, many GNU packages still
+support pre-standard compilers because this is not hard to do.  This
+chapter gives recommendations for how to use the more-or-less standard C
+library functions to avoid unnecessary loss of portability.
+
+</P>
+
+<UL>
+<LI>
+
+Don't use the return value of <CODE>sprintf</CODE>.  It returns the number of
+characters written on some systems, but not on all systems.
+
+<LI>
+
+Be aware that <CODE>vfprintf</CODE> is not always available.
+
+<LI>
+
+<CODE>main</CODE> should be declared to return type <CODE>int</CODE>.  It should
+terminate either by calling <CODE>exit</CODE> or by returning the integer
+status code; make sure it cannot ever return an undefined value.
+
+<A NAME="IDX82"></A>
+<LI>
+
+Don't declare system functions explicitly.
+
+Almost any declaration for a system function is wrong on some system.
+To minimize conflicts, leave it to the system header files to declare
+system functions.  If the headers don't declare a function, let it
+remain undeclared.
+
+While it may seem unclean to use a function without declaring it, in
+practice this works fine for most system library functions on the
+systems where this really happens; thus, the disadvantage is only
+theoretical.  By contrast, actual declarations have frequently caused
+actual conflicts.
+
+<LI>
+
+If you must declare a system function, don't specify the argument types.
+Use an old-style declaration, not a Standard C prototype.  The more you
+specify about the function, the more likely a conflict.
+
+<LI>
+
+In particular, don't unconditionally declare <CODE>malloc</CODE> or
+<CODE>realloc</CODE>.
+
+Most GNU programs use those functions just once, in functions
+conventionally named <CODE>xmalloc</CODE> and <CODE>xrealloc</CODE>.  These
+functions call <CODE>malloc</CODE> and <CODE>realloc</CODE>, respectively, and
+check the results.
+
+Because <CODE>xmalloc</CODE> and <CODE>xrealloc</CODE> are defined in your program,
+you can declare them in other files without any risk of type conflict.
+
+On most systems, <CODE>int</CODE> is the same length as a pointer; thus, the
+calls to <CODE>malloc</CODE> and <CODE>realloc</CODE> work fine.  For the few
+exceptional systems (mostly 64-bit machines), you can use
+<STRONG>conditionalized</STRONG> declarations of <CODE>malloc</CODE> and
+<CODE>realloc</CODE>---or put these declarations in configuration files
+specific to those systems.
+
+<A NAME="IDX83"></A>
+<LI>
+
+The string functions require special treatment.  Some Unix systems have
+a header file <TT>`string.h'</TT>; others have <TT>`strings.h'</TT>.  Neither
+file name is portable.  There are two things you can do: use Autoconf to
+figure out which file to include, or don't include either file.
+
+<LI>
+
+If you don't include either strings file, you can't get declarations for
+the string functions from the header file in the usual way.
+
+That causes less of a problem than you might think.  The newer standard
+string functions should be avoided anyway because many systems still
+don't support them.  The string functions you can use are these:
+
+
+<PRE>
+strcpy   strncpy   strcat   strncat
+strlen   strcmp    strncmp
+strchr   strrchr
+</PRE>
+
+The copy and concatenate functions work fine without a declaration as
+long as you don't use their values.  Using their values without a
+declaration fails on systems where the width of a pointer differs from
+the width of <CODE>int</CODE>, and perhaps in other cases.  It is trivial to
+avoid using their values, so do that.
+
+The compare functions and <CODE>strlen</CODE> work fine without a declaration
+on most systems, possibly all the ones that GNU software runs on.
+You may find it necessary to declare them <STRONG>conditionally</STRONG> on a
+few systems.
+
+The search functions must be declared to return <CODE>char *</CODE>.  Luckily,
+there is no variation in the data type they return.  But there is
+variation in their names.  Some systems give these functions the names
+<CODE>index</CODE> and <CODE>rindex</CODE>; other systems use the names
+<CODE>strchr</CODE> and <CODE>strrchr</CODE>.  Some systems support both pairs of
+names, but neither pair works on all systems.
+
+You should pick a single pair of names and use it throughout your
+program.  (Nowadays, it is better to choose <CODE>strchr</CODE> and
+<CODE>strrchr</CODE> for new programs, since those are the standard
+names.)  Declare both of those names as functions returning <CODE>char
+*</CODE>.  On systems which don't support those names, define them as macros
+in terms of the other pair.  For example, here is what to put at the
+beginning of your file (or in a header) if you want to use the names
+<CODE>strchr</CODE> and <CODE>strrchr</CODE> throughout:
+
+
+<PRE>
+#ifndef HAVE_STRCHR
+#define strchr index
+#endif
+#ifndef HAVE_STRRCHR
+#define strrchr rindex
+#endif
+
+char *strchr ();
+char *strrchr ();
+</PRE>
+
+</UL>
+
+<P>
+Here we assume that <CODE>HAVE_STRCHR</CODE> and <CODE>HAVE_STRRCHR</CODE> are
+macros defined in systems where the corresponding functions exist.
+One way to get them properly defined is to use Autoconf.
+
+</P>
+
+
+<H2><A NAME="SEC29" HREF="standards.html#TOC29">Internationalization</A></H2>
+<P>
+<A NAME="IDX84"></A>
+
+</P>
+<P>
+<A NAME="IDX85"></A>
+GNU has a library called GNU gettext that makes it easy to translate the
+messages in a program into various languages.  You should use this
+library in every program.  Use English for the messages as they appear
+in the program, and let gettext provide the way to translate them into
+other languages.
+
+</P>
+<P>
+Using GNU gettext involves putting a call to the <CODE>gettext</CODE> macro
+around each string that might need translation--like this:
+
+</P>
+
+<PRE>
+printf (gettext ("Processing file `%s'..."));
+</PRE>
+
+<P>
+This permits GNU gettext to replace the string <CODE>"Processing file
+`%s'..."</CODE> with a translated version.
+
+</P>
+<P>
+Once a program uses gettext, please make a point of writing calls to
+<CODE>gettext</CODE> when you add new strings that call for translation.
+
+</P>
+<P>
+Using GNU gettext in a package involves specifying a <STRONG>text domain
+name</STRONG> for the package.  The text domain name is used to separate the
+translations for this package from the translations for other packages.
+Normally, the text domain name should be the same as the name of the
+package--for example, <SAMP>`fileutils'</SAMP> for the GNU file utilities.
+
+</P>
+<P>
+<A NAME="IDX86"></A>
+To enable gettext to work well, avoid writing code that makes
+assumptions about the structure of words or sentences.  When you want
+the precise text of a sentence to vary depending on the data, use two or
+more alternative string constants each containing a complete sentences,
+rather than inserting conditionalized words or phrases into a single
+sentence framework.
+
+</P>
+<P>
+Here is an example of what not to do:
+
+</P>
+
+<PRE>
+printf ("%d file%s processed", nfiles,
+        nfiles != 1 ? "s" : "");
+</PRE>
+
+<P>
+The problem with that example is that it assumes that plurals are made
+by adding `s'.  If you apply gettext to the format string, like this,
+
+</P>
+
+<PRE>
+printf (gettext ("%d file%s processed"), nfiles,
+        nfiles != 1 ? "s" : "");
+</PRE>
+
+<P>
+the message can use different words, but it will still be forced to use
+`s' for the plural.  Here is a better way:
+
+</P>
+
+<PRE>
+printf ((nfiles != 1 ? "%d files processed"
+         : "%d file processed"),
+        nfiles);
+</PRE>
+
+<P>
+This way, you can apply gettext to each of the two strings
+independently:
+
+</P>
+
+<PRE>
+printf ((nfiles != 1 ? gettext ("%d files processed")
+         : gettext ("%d file processed")),
+        nfiles);
+</PRE>
+
+<P>
+This can be any method of forming the plural of the word for "file", and
+also handles languages that require agreement in the word for
+"processed".
+
+</P>
+<P>
+A similar problem appears at the level of sentence structure with this
+code:
+
+</P>
+
+<PRE>
+printf ("#  Implicit rule search has%s been done.\n",
+        f-&#62;tried_implicit ? "" : " not");
+</PRE>
+
+<P>
+Adding <CODE>gettext</CODE> calls to this code cannot give correct results for
+all languages, because negation in some languages requires adding words
+at more than one place in the sentence.  By contrast, adding
+<CODE>gettext</CODE> calls does the job straightfowardly if the code starts
+out like this:
+
+</P>
+
+<PRE>
+printf (f-&#62;tried_implicit
+        ? "#  Implicit rule search has been done.\n",
+        : "#  Implicit rule search has not been done.\n");
+</PRE>
+
+
+
+<H2><A NAME="SEC30" HREF="standards.html#TOC30">Mmap</A></H2>
+<P>
+<A NAME="IDX87"></A>
+
+</P>
+<P>
+Don't assume that <CODE>mmap</CODE> either works on all files or fails
+for all files.  It may work on some files and fail on others.
+
+</P>
+<P>
+The proper way to use <CODE>mmap</CODE> is to try it on the specific file for
+which you want to use it--and if <CODE>mmap</CODE> doesn't work, fall back on
+doing the job in another way using <CODE>read</CODE> and <CODE>write</CODE>.
+
+</P>
+<P>
+The reason this precaution is needed is that the GNU kernel (the HURD)
+provides a user-extensible file system, in which there can be many
+different kinds of "ordinary files."  Many of them support
+<CODE>mmap</CODE>, but some do not.  It is important to make programs handle
+all these kinds of files.
+
+</P>
+
+
+<H1><A NAME="SEC31" HREF="standards.html#TOC31">Documenting Programs</A></H1>
+<P>
+<A NAME="IDX88"></A>
+
+</P>
+<P>
+A GNU program should ideally come with full free documentation, adequate
+for both reference and tutorial purposes.  If the package can be
+programmed or extended, the documentation should cover programming or
+extending it, as well as just using it.
+
+</P>
+
+
+
+<H2><A NAME="SEC32" HREF="standards.html#TOC32">GNU Manuals</A></H2>
+
+<P>
+The preferred document format for the GNU system is the Texinfo
+formatting language.  Every GNU package should (ideally) have
+documentation in Texinfo both for reference and for learners.  Texinfo
+makes it possible to produce a good quality formatted book, using
+TeX, and to generate an Info file.  It is also possible to generate
+HTML output from Texinfo source.  See the Texinfo manual, either the
+hardcopy, or the on-line version available through <CODE>info</CODE> or the
+Emacs Info subsystem (<KBD>C-h i</KBD>).
+
+</P>
+<P>
+Nowadays some other formats such as Docbook and Sgmltexi can be
+converted automatically into Texinfo.  It is ok to produce the Texinfo
+documentation by conversion this way, as long as it gives good results.
+
+</P>
+<P>
+Programmers often find it most natural to structure the documentation
+following the structure of the implementation, which they know.  But
+this structure is not necessarily good for explaining how to use the
+program; it may be irrelevant and confusing for a user.
+
+</P>
+<P>
+At every level, from the sentences in a paragraph to the grouping of
+topics into separate manuals, the right way to structure documentation
+is according to the concepts and questions that a user will have in mind
+when reading it.  Sometimes this structure of ideas matches the
+structure of the implementation of the software being documented--but
+often they are different.  Often the most important part of learning to
+write good documentation is learning to notice when you are structuring
+the documentation like the implementation, and think about better
+alternatives.
+
+</P>
+<P>
+For example, each program in the GNU system probably ought to be
+documented in one manual; but this does not mean each program should
+have its own manual.  That would be following the structure of the
+implementation, rather than the structure that helps the user
+understand.
+
+</P>
+<P>
+Instead, each manual should cover a coherent <EM>topic</EM>.  For example,
+instead of a manual for <CODE>diff</CODE> and a manual for <CODE>diff3</CODE>, we
+have one manual for "comparison of files" which covers both of those
+programs, as well as <CODE>cmp</CODE>.  By documenting these programs
+together, we can make the whole subject clearer.
+
+</P>
+<P>
+The manual which discusses a program should certainly document all of
+the program's command-line options and all of its commands.  It should
+give examples of their use.  But don't organize the manual as a list of
+features.  Instead, organize it logically, by subtopics.  Address the
+questions that a user will ask when thinking about the job that the
+program does.
+
+</P>
+<P>
+In general, a GNU manual should serve both as tutorial and reference.
+It should be set up for convenient access to each topic through Info,
+and for reading straight through (appendixes aside).  A GNU manual
+should give a good introduction to a beginner reading through from the
+start, and should also provide all the details that hackers want.
+The Bison manual is a good example of this--please take a look at it
+to see what we mean.
+
+</P>
+<P>
+That is not as hard as it first sounds.  Arrange each chapter as a
+logical breakdown of its topic, but order the sections, and write their
+text, so that reading the chapter straight through makes sense.  Do
+likewise when structuring the book into chapters, and when structuring a
+section into paragraphs.  The watchword is, <EM>at each point, address
+the most fundamental and important issue raised by the preceding text.</EM>
+
+</P>
+<P>
+If necessary, add extra chapters at the beginning of the manual which
+are purely tutorial and cover the basics of the subject.  These provide
+the framework for a beginner to understand the rest of the manual.  The
+Bison manual provides a good example of how to do this.
+
+</P>
+<P>
+To serve as a reference, a manual should have an Index that list all the
+functions, variables, options, and important concepts that are part of
+the program.  One combined Index should do for a short manual, but
+sometimes for a complex package it is better to use multiple indices.
+The Texinfo manual includes advice on preparing good index entries, see
+section `Making Index Entries' in <CITE>The GNU Texinfo Manual</CITE>, and see section `Defining the Entries of an Index' in <CITE>The GNU Texinfo manual</CITE>.
+
+</P>
+<P>
+Don't use Unix man pages as a model for how to write GNU documentation;
+most of them are terse, badly structured, and give inadequate
+explanation of the underlying concepts.  (There are, of course, some
+exceptions.)  Also, Unix man pages use a particular format which is
+different from what we use in GNU manuals.
+
+</P>
+<P>
+Please include an email address in the manual for where to report
+bugs <EM>in the manual</EM>.
+
+</P>
+<P>
+Please do not use the term "pathname" that is used in Unix
+documentation; use "file name" (two words) instead.  We use the term
+"path" only for search paths, which are lists of directory names.
+
+</P>
+<P>
+Please do not use the term "illegal" to refer to erroneous input to a
+computer program.  Please use "invalid" for this, and reserve the term
+"illegal" for activities punishable by law.
+
+</P>
+
+
+<H2><A NAME="SEC33" HREF="standards.html#TOC33">Doc Strings and Manuals</A></H2>
+
+<P>
+Some programming systems, such as Emacs, provide a documentation string
+for each function, command or variable.  You may be tempted to write a
+reference manual by compiling the documentation strings and writing a
+little additional text to go around them--but you must not do it.  That
+approach is a fundamental mistake.  The text of well-written
+documentation strings will be entirely wrong for a manual.
+
+</P>
+<P>
+A documentation string needs to stand alone--when it appears on the
+screen, there will be no other text to introduce or explain it.
+Meanwhile, it can be rather informal in style.
+
+</P>
+<P>
+The text describing a function or variable in a manual must not stand
+alone; it appears in the context of a section or subsection.  Other text
+at the beginning of the section should explain some of the concepts, and
+should often make some general points that apply to several functions or
+variables.  The previous descriptions of functions and variables in the
+section will also have given information about the topic.  A description
+written to stand alone would repeat some of that information; this
+redundance looks bad.  Meanwhile, the informality that is acceptable in
+a documentation string is totally unacceptable in a manual.
+
+</P>
+<P>
+The only good way to use documentation strings in writing a good manual
+is to use them as a source of information for writing good text.
+
+</P>
+
+
+<H2><A NAME="SEC34" HREF="standards.html#TOC34">Manual Structure Details</A></H2>
+<P>
+<A NAME="IDX89"></A>
+
+</P>
+<P>
+The title page of the manual should state the version of the programs or
+packages documented in the manual.  The Top node of the manual should
+also contain this information.  If the manual is changing more
+frequently than or independent of the program, also state a version
+number for the manual in both of these places.
+
+</P>
+<P>
+Each program documented in the manual should have a node named
+<SAMP>`<VAR>program</VAR> Invocation'</SAMP> or <SAMP>`Invoking <VAR>program</VAR>'</SAMP>.  This
+node (together with its subnodes, if any) should describe the program's
+command line arguments and how to run it (the sort of information people
+would look in a man page for).  Start with an <SAMP>`@example'</SAMP>
+containing a template for all the options and arguments that the program
+uses.
+
+</P>
+<P>
+Alternatively, put a menu item in some menu whose item name fits one of
+the above patterns.  This identifies the node which that item points to
+as the node for this purpose, regardless of the node's actual name.
+
+</P>
+<P>
+The <SAMP>`--usage'</SAMP> feature of the Info reader looks for such a node
+or menu item in order to find the relevant text, so it is essential
+for every Texinfo file to have one.
+
+</P>
+<P>
+If one manual describes several programs, it should have such a node for
+each program described in the manual.
+
+</P>
+
+
+<H2><A NAME="SEC35" HREF="standards.html#TOC35">License for Manuals</A></H2>
+<P>
+<A NAME="IDX90"></A>
+
+</P>
+<P>
+Please use the GNU Free Documentation License for all GNU manuals that
+are more than a few pages long.  Likewise for a collection of short
+documents--you only need one copy of the GNU FDL for the whole
+collection.  For a single short document, you can use a very permissive
+non-copyleft license, to avoid taking up space with a long license.
+
+</P>
+
+
+<H2><A NAME="SEC36" HREF="standards.html#TOC36">Manual Credits</A></H2>
+<P>
+<A NAME="IDX91"></A>
+
+</P>
+<P>
+Please credit the principal human writers of the manual as the authors,
+on the title page of the manual.  If a company sponsored the work, thank
+the company in a suitable place in the manual, but do not cite the
+company as an author.
+
+</P>
+
+
+<H2><A NAME="SEC37" HREF="standards.html#TOC37">The NEWS File</A></H2>
+<P>
+<A NAME="IDX92"></A>
+
+</P>
+<P>
+In addition to its manual, the package should have a file named
+<TT>`NEWS'</TT> which contains a list of user-visible changes worth
+mentioning.  In each new release, add items to the front of the file and
+identify the version they pertain to.  Don't discard old items; leave
+them in the file after the newer items.  This way, a user upgrading from
+any previous version can see what is new.
+
+</P>
+<P>
+If the <TT>`NEWS'</TT> file gets very long, move some of the older items
+into a file named <TT>`ONEWS'</TT> and put a note at the end referring the
+user to that file.
+
+</P>
+
+
+<H2><A NAME="SEC38" HREF="standards.html#TOC38">Change Logs</A></H2>
+<P>
+<A NAME="IDX93"></A>
+
+</P>
+<P>
+Keep a change log to describe all the changes made to program source
+files.  The purpose of this is so that people investigating bugs in the
+future will know about the changes that might have introduced the bug.
+Often a new bug can be found by looking at what was recently changed.
+More importantly, change logs can help you eliminate conceptual
+inconsistencies between different parts of a program, by giving you a
+history of how the conflicting concepts arose and who they came from.
+
+</P>
+
+
+
+<H3><A NAME="SEC39" HREF="standards.html#TOC39">Change Log Concepts</A></H3>
+
+<P>
+You can think of the change log as a conceptual "undo list" which
+explains how earlier versions were different from the current version.
+People can see the current version; they don't need the change log
+to tell them what is in it.  What they want from a change log is a
+clear explanation of how the earlier version differed.
+
+</P>
+<P>
+The change log file is normally called <TT>`ChangeLog'</TT> and covers an
+entire directory.  Each directory can have its own change log, or a
+directory can use the change log of its parent directory--it's up to
+you.
+
+</P>
+<P>
+Another alternative is to record change log information with a version
+control system such as RCS or CVS.  This can be converted automatically
+to a <TT>`ChangeLog'</TT> file using <CODE>rcs2log</CODE>; in Emacs, the command
+<KBD>C-x v a</KBD> (<CODE>vc-update-change-log</CODE>) does the job.
+
+</P>
+<P>
+There's no need to describe the full purpose of the changes or how they
+work together.  If you think that a change calls for explanation, you're
+probably right.  Please do explain it--but please put the explanation
+in comments in the code, where people will see it whenever they see the
+code.  For example, "New function" is enough for the change log when
+you add a function, because there should be a comment before the
+function definition to explain what it does.
+
+</P>
+<P>
+However, sometimes it is useful to write one line to describe the
+overall purpose of a batch of changes.
+
+</P>
+<P>
+The easiest way to add an entry to <TT>`ChangeLog'</TT> is with the Emacs
+command <KBD>M-x add-change-log-entry</KBD>.  An entry should have an
+asterisk, the name of the changed file, and then in parentheses the name
+of the changed functions, variables or whatever, followed by a colon.
+Then describe the changes you made to that function or variable.
+
+</P>
+
+
+<H3><A NAME="SEC40" HREF="standards.html#TOC40">Style of Change Logs</A></H3>
+<P>
+<A NAME="IDX94"></A>
+
+</P>
+<P>
+Here are some simple examples of change log entries, starting with the
+header line that says who made the change and when, followed by
+descriptions of specific changes.  (These examples are drawn from Emacs
+and GCC.)
+
+</P>
+
+<PRE>
+1998-08-17  Richard Stallman  &#60;rms@gnu.org&#62;
+
+* register.el (insert-register): Return nil.
+(jump-to-register): Likewise.
+
+* sort.el (sort-subr): Return nil.
+
+* tex-mode.el (tex-bibtex-file, tex-file, tex-region):
+Restart the tex shell if process is gone or stopped.
+(tex-shell-running): New function.
+
+* expr.c (store_one_arg): Round size up for move_block_to_reg.
+(expand_call): Round up when emitting USE insns.
+* stmt.c (assign_parms): Round size up for move_block_from_reg.
+</PRE>
+
+<P>
+It's important to name the changed function or variable in full.  Don't
+abbreviate function or variable names, and don't combine them.
+Subsequent maintainers will often search for a function name to find all
+the change log entries that pertain to it; if you abbreviate the name,
+they won't find it when they search.
+
+</P>
+<P>
+For example, some people are tempted to abbreviate groups of function
+names by writing <SAMP>`* register.el ({insert,jump-to}-register)'</SAMP>;
+this is not a good idea, since searching for <CODE>jump-to-register</CODE> or
+<CODE>insert-register</CODE> would not find that entry.
+
+</P>
+<P>
+Separate unrelated change log entries with blank lines.  When two
+entries represent parts of the same change, so that they work together,
+then don't put blank lines between them.  Then you can omit the file
+name and the asterisk when successive entries are in the same file.
+
+</P>
+<P>
+Break long lists of function names by closing continued lines with
+<SAMP>`)'</SAMP>, rather than <SAMP>`,'</SAMP>, and opening the continuation with
+<SAMP>`('</SAMP> as in this example:
+
+</P>
+
+<PRE>
+* keyboard.c (menu_bar_items, tool_bar_items)
+(Fexecute_extended_command): Deal with `keymap' property.
+</PRE>
+
+
+
+<H3><A NAME="SEC41" HREF="standards.html#TOC41">Simple Changes</A></H3>
+
+<P>
+Certain simple kinds of changes don't need much detail in the change
+log.
+
+</P>
+<P>
+When you change the calling sequence of a function in a simple fashion,
+and you change all the callers of the function to use the new calling
+sequence, there is no need to make individual entries for all the
+callers that you changed.  Just write in the entry for the function
+being called, "All callers changed"---like this:
+
+</P>
+
+<PRE>
+* keyboard.c (Fcommand_execute): New arg SPECIAL.
+All callers changed.
+</PRE>
+
+<P>
+When you change just comments or doc strings, it is enough to write an
+entry for the file, without mentioning the functions.  Just "Doc
+fixes" is enough for the change log.
+
+</P>
+<P>
+There's no need to make change log entries for documentation files.
+This is because documentation is not susceptible to bugs that are hard
+to fix.  Documentation does not consist of parts that must interact in a
+precisely engineered fashion.  To correct an error, you need not know
+the history of the erroneous passage; it is enough to compare what the
+documentation says with the way the program actually works.
+
+</P>
+
+
+<H3><A NAME="SEC42" HREF="standards.html#TOC42">Conditional Changes</A></H3>
+<P>
+<A NAME="IDX95"></A>
+<A NAME="IDX96"></A>
+
+</P>
+<P>
+C programs often contain compile-time <CODE>#if</CODE> conditionals.  Many
+changes are conditional; sometimes you add a new definition which is
+entirely contained in a conditional.  It is very useful to indicate in
+the change log the conditions for which the change applies.
+
+</P>
+<P>
+Our convention for indicating conditional changes is to use square
+brackets around the name of the condition.
+
+</P>
+<P>
+Here is a simple example, describing a change which is conditional but
+does not have a function or entity name associated with it:
+
+</P>
+
+<PRE>
+* xterm.c [SOLARIS2]: Include string.h.
+</PRE>
+
+<P>
+Here is an entry describing a new definition which is entirely
+conditional.  This new definition for the macro <CODE>FRAME_WINDOW_P</CODE> is
+used only when <CODE>HAVE_X_WINDOWS</CODE> is defined:
+
+</P>
+
+<PRE>
+* frame.h [HAVE_X_WINDOWS] (FRAME_WINDOW_P): Macro defined.
+</PRE>
+
+<P>
+Here is an entry for a change within the function <CODE>init_display</CODE>,
+whose definition as a whole is unconditional, but the changes themselves
+are contained in a <SAMP>`#ifdef HAVE_LIBNCURSES'</SAMP> conditional:
+
+</P>
+
+<PRE>
+* dispnew.c (init_display) [HAVE_LIBNCURSES]: If X, call tgetent.
+</PRE>
+
+<P>
+Here is an entry for a change that takes affect only when
+a certain macro is <EM>not</EM> defined:
+
+</P>
+
+<PRE>
+(gethostname) [!HAVE_SOCKETS]: Replace with winsock version.
+</PRE>
+
+
+
+<H3><A NAME="SEC43" HREF="standards.html#TOC43">Indicating the Part Changed</A></H3>
+
+<P>
+Indicate the part of a function which changed by using angle brackets
+enclosing an indication of what the changed part does.  Here is an entry
+for a change in the part of the function <CODE>sh-while-getopts</CODE> that
+deals with <CODE>sh</CODE> commands:
+
+</P>
+
+<PRE>
+* progmodes/sh-script.el (sh-while-getopts) &#60;sh&#62;: Handle case that
+user-specified option string is empty.
+</PRE>
+
+
+
+<H2><A NAME="SEC44" HREF="standards.html#TOC44">Man Pages</A></H2>
+<P>
+<A NAME="IDX97"></A>
+
+</P>
+<P>
+In the GNU project, man pages are secondary.  It is not necessary or
+expected for every GNU program to have a man page, but some of them do.
+It's your choice whether to include a man page in your program.
+
+</P>
+<P>
+When you make this decision, consider that supporting a man page
+requires continual effort each time the program is changed.  The time
+you spend on the man page is time taken away from more useful work.
+
+</P>
+<P>
+For a simple program which changes little, updating the man page may be
+a small job.  Then there is little reason not to include a man page, if
+you have one.
+
+</P>
+<P>
+For a large program that changes a great deal, updating a man page may
+be a substantial burden.  If a user offers to donate a man page, you may
+find this gift costly to accept.  It may be better to refuse the man
+page unless the same person agrees to take full responsibility for
+maintaining it--so that you can wash your hands of it entirely.  If
+this volunteer later ceases to do the job, then don't feel obliged to
+pick it up yourself; it may be better to withdraw the man page from the
+distribution until someone else agrees to update it.
+
+</P>
+<P>
+When a program changes only a little, you may feel that the
+discrepancies are small enough that the man page remains useful without
+updating.  If so, put a prominent note near the beginning of the man
+page explaining that you don't maintain it and that the Texinfo manual
+is more authoritative.  The note should say how to access the Texinfo
+documentation.
+
+</P>
+
+
+<H2><A NAME="SEC45" HREF="standards.html#TOC45">Reading other Manuals</A></H2>
+
+<P>
+There may be non-free books or documentation files that describe the
+program you are documenting.
+
+</P>
+<P>
+It is ok to use these documents for reference, just as the author of a
+new algebra textbook can read other books on algebra.  A large portion
+of any non-fiction book consists of facts, in this case facts about how
+a certain program works, and these facts are necessarily the same for
+everyone who writes about the subject.  But be careful not to copy your
+outline structure, wording, tables or examples from preexisting non-free
+documentation.  Copying from free documentation may be ok; please check
+with the FSF about the individual case.
+
+</P>
+
+
+<H1><A NAME="SEC46" HREF="standards.html#TOC46">The Release Process</A></H1>
+<P>
+<A NAME="IDX98"></A>
+
+</P>
+<P>
+Making a release is more than just bundling up your source files in a
+tar file and putting it up for FTP.  You should set up your software so
+that it can be configured to run on a variety of systems.  Your Makefile
+should conform to the GNU standards described below, and your directory
+layout should also conform to the standards discussed below.  Doing so
+makes it easy to include your package into the larger framework of
+all GNU software.
+
+</P>
+
+
+
+<H2><A NAME="SEC47" HREF="standards.html#TOC47">How Configuration Should Work</A></H2>
+<P>
+<A NAME="IDX99"></A>
+
+</P>
+<P>
+<A NAME="IDX100"></A>
+Each GNU distribution should come with a shell script named
+<CODE>configure</CODE>.  This script is given arguments which describe the
+kind of machine and system you want to compile the program for.
+
+</P>
+<P>
+The <CODE>configure</CODE> script must record the configuration options so
+that they affect compilation.
+
+</P>
+<P>
+One way to do this is to make a link from a standard name such as
+<TT>`config.h'</TT> to the proper configuration file for the chosen system.
+If you use this technique, the distribution should <EM>not</EM> contain a
+file named <TT>`config.h'</TT>.  This is so that people won't be able to
+build the program without configuring it first.
+
+</P>
+<P>
+Another thing that <CODE>configure</CODE> can do is to edit the Makefile.  If
+you do this, the distribution should <EM>not</EM> contain a file named
+<TT>`Makefile'</TT>.  Instead, it should include a file <TT>`Makefile.in'</TT> which
+contains the input used for editing.  Once again, this is so that people
+won't be able to build the program without configuring it first.
+
+</P>
+<P>
+If <CODE>configure</CODE> does write the <TT>`Makefile'</TT>, then <TT>`Makefile'</TT>
+should have a target named <TT>`Makefile'</TT> which causes <CODE>configure</CODE>
+to be rerun, setting up the same configuration that was set up last
+time.  The files that <CODE>configure</CODE> reads should be listed as
+dependencies of <TT>`Makefile'</TT>.
+
+</P>
+<P>
+All the files which are output from the <CODE>configure</CODE> script should
+have comments at the beginning explaining that they were generated
+automatically using <CODE>configure</CODE>.  This is so that users won't think
+of trying to edit them by hand.
+
+</P>
+<P>
+The <CODE>configure</CODE> script should write a file named <TT>`config.status'</TT>
+which describes which configuration options were specified when the
+program was last configured.  This file should be a shell script which,
+if run, will recreate the same configuration.
+
+</P>
+<P>
+The <CODE>configure</CODE> script should accept an option of the form
+<SAMP>`--srcdir=<VAR>dirname</VAR>'</SAMP> to specify the directory where sources are found
+(if it is not the current directory).  This makes it possible to build
+the program in a separate directory, so that the actual source directory
+is not modified.
+
+</P>
+<P>
+If the user does not specify <SAMP>`--srcdir'</SAMP>, then <CODE>configure</CODE> should
+check both <TT>`.'</TT> and <TT>`..'</TT> to see if it can find the sources.  If
+it finds the sources in one of these places, it should use them from
+there.  Otherwise, it should report that it cannot find the sources, and
+should exit with nonzero status.
+
+</P>
+<P>
+Usually the easy way to support <SAMP>`--srcdir'</SAMP> is by editing a
+definition of <CODE>VPATH</CODE> into the Makefile.  Some rules may need to
+refer explicitly to the specified source directory.  To make this
+possible, <CODE>configure</CODE> can add to the Makefile a variable named
+<CODE>srcdir</CODE> whose value is precisely the specified directory.
+
+</P>
+<P>
+The <CODE>configure</CODE> script should also take an argument which specifies the
+type of system to build the program for.  This argument should look like
+this:
+
+</P>
+
+<PRE>
+<VAR>cpu</VAR>-<VAR>company</VAR>-<VAR>system</VAR>
+</PRE>
+
+<P>
+For example, a Sun 3 might be <SAMP>`m68k-sun-sunos4.1'</SAMP>.
+
+</P>
+<P>
+The <CODE>configure</CODE> script needs to be able to decode all plausible
+alternatives for how to describe a machine.  Thus, <SAMP>`sun3-sunos4.1'</SAMP>
+would be a valid alias.  For many programs, <SAMP>`vax-dec-ultrix'</SAMP> would
+be an alias for <SAMP>`vax-dec-bsd'</SAMP>, simply because the differences
+between Ultrix and BSD are rarely noticeable, but a few programs
+might need to distinguish them.
+
+</P>
+<P>
+There is a shell script called <TT>`config.sub'</TT> that you can use
+as a subroutine to validate system types and canonicalize aliases.
+
+</P>
+<P>
+<A NAME="IDX101"></A>
+Other options are permitted to specify in more detail the software
+or hardware present on the machine, and include or exclude optional
+parts of the package:
+
+</P>
+<DL COMPACT>
+
+<DT><SAMP>`--enable-<VAR>feature</VAR>[=<VAR>parameter</VAR>]'</SAMP>
+<DD>
+Configure the package to build and install an optional user-level
+facility called <VAR>feature</VAR>.  This allows users to choose which
+optional features to include.  Giving an optional <VAR>parameter</VAR> of
+<SAMP>`no'</SAMP> should omit <VAR>feature</VAR>, if it is built by default.
+
+No <SAMP>`--enable'</SAMP> option should <STRONG>ever</STRONG> cause one feature to
+replace another.  No <SAMP>`--enable'</SAMP> option should ever substitute one
+useful behavior for another useful behavior.  The only proper use for
+<SAMP>`--enable'</SAMP> is for questions of whether to build part of the program
+or exclude it.
+
+<DT><SAMP>`--with-<VAR>package</VAR>'</SAMP>
+<DD>
+The package <VAR>package</VAR> will be installed, so configure this package
+to work with <VAR>package</VAR>.
+
+Possible values of <VAR>package</VAR> include 
+<SAMP>`gnu-as'</SAMP> (or <SAMP>`gas'</SAMP>), <SAMP>`gnu-ld'</SAMP>, <SAMP>`gnu-libc'</SAMP>,
+<SAMP>`gdb'</SAMP>,
+<SAMP>`x'</SAMP>, 
+and
+<SAMP>`x-toolkit'</SAMP>.
+
+Do not use a <SAMP>`--with'</SAMP> option to specify the file name to use to
+find certain files.  That is outside the scope of what <SAMP>`--with'</SAMP>
+options are for.
+</DL>
+
+<P>
+All <CODE>configure</CODE> scripts should accept all of these "detail"
+options, whether or not they make any difference to the particular
+package at hand.  In particular, they should accept any option that
+starts with <SAMP>`--with-'</SAMP> or <SAMP>`--enable-'</SAMP>.  This is so users will
+be able to configure an entire GNU source tree at once with a single set
+of options.
+
+</P>
+<P>
+You will note that the categories <SAMP>`--with-'</SAMP> and <SAMP>`--enable-'</SAMP>
+are narrow: they <STRONG>do not</STRONG> provide a place for any sort of option
+you might think of.  That is deliberate.  We want to limit the possible
+configuration options in GNU software.  We do not want GNU programs to
+have idiosyncratic configuration options.
+
+</P>
+<P>
+Packages that perform part of the compilation process may support
+cross-compilation.  In such a case, the host and target machines for the
+program may be different.
+
+</P>
+<P>
+The <CODE>configure</CODE> script should normally treat the specified type of
+system as both the host and the target, thus producing a program which
+works for the same type of machine that it runs on.
+
+</P>
+<P>
+To configure a cross-compiler, cross-assembler, or what have you, you
+should specify a target different from the host, using the configure
+option <SAMP>`--target=<VAR>targettype</VAR>'</SAMP>.  The syntax for
+<VAR>targettype</VAR> is the same as for the host type.  So the command would
+look like this:
+
+</P>
+
+<PRE>
+./configure <VAR>hosttype</VAR> --target=<VAR>targettype</VAR>
+</PRE>
+
+<P>
+Programs for which cross-operation is not meaningful need not accept the
+<SAMP>`--target'</SAMP> option, because configuring an entire operating system for
+cross-operation is not a meaningful operation.
+
+</P>
+<P>
+Bootstrapping a cross-compiler requires compiling it on a machine other
+than the host it will run on.  Compilation packages accept a
+configuration option <SAMP>`--build=<VAR>buildtype</VAR>'</SAMP> for specifying the
+configuration on which you will compile them, but the configure script
+should normally guess the build machine type (using
+<TT>`config.guess'</TT>), so this option is probably not necessary.  The
+host and target types normally default from the build type, so in
+bootstrapping a cross-compiler you must specify them both explicitly.
+
+</P>
+<P>
+Some programs have ways of configuring themselves automatically.  If
+your program is set up to do this, your <CODE>configure</CODE> script can simply
+ignore most of its arguments.
+
+</P>
+<P>
+@lowersections
+
+</P>
+
+
+<H1><A NAME="SEC48" HREF="standards.html#TOC48">Makefile Conventions</A></H1>
+<P>
+<A NAME="IDX102"></A>
+<A NAME="IDX103"></A>
+<A NAME="IDX104"></A>
+
+</P>
+<P>
+This
+section
+describes conventions for writing the Makefiles for GNU programs.
+Using Automake will help you write a Makefile that follows these
+conventions.
+
+</P>
+
+
+
+<H2><A NAME="SEC49" HREF="standards.html#TOC49">General Conventions for Makefiles</A></H2>
+
+<P>
+Every Makefile should contain this line:
+
+</P>
+
+<PRE>
+SHELL = /bin/sh
+</PRE>
+
+<P>
+to avoid trouble on systems where the <CODE>SHELL</CODE> variable might be
+inherited from the environment.  (This is never a problem with GNU
+<CODE>make</CODE>.)
+
+</P>
+<P>
+Different <CODE>make</CODE> programs have incompatible suffix lists and
+implicit rules, and this sometimes creates confusion or misbehavior.  So
+it is a good idea to set the suffix list explicitly using only the
+suffixes you need in the particular Makefile, like this:
+
+</P>
+
+<PRE>
+.SUFFIXES:
+.SUFFIXES: .c .o
+</PRE>
+
+<P>
+The first line clears out the suffix list, the second introduces all
+suffixes which may be subject to implicit rules in this Makefile.
+
+</P>
+<P>
+Don't assume that <TT>`.'</TT> is in the path for command execution.  When
+you need to run programs that are a part of your package during the
+make, please make sure that it uses <TT>`./'</TT> if the program is built as
+part of the make or <TT>`$(srcdir)/'</TT> if the file is an unchanging part
+of the source code.  Without one of these prefixes, the current search
+path is used.
+
+</P>
+<P>
+The distinction between <TT>`./'</TT> (the <STRONG>build directory</STRONG>) and
+<TT>`$(srcdir)/'</TT> (the <STRONG>source directory</STRONG>) is important because
+users can build in a separate directory using the <SAMP>`--srcdir'</SAMP> option
+to <TT>`configure'</TT>.  A rule of the form:
+
+</P>
+
+<PRE>
+foo.1 : foo.man sedscript
+        sed -e sedscript foo.man &#62; foo.1
+</PRE>
+
+<P>
+will fail when the build directory is not the source directory, because
+<TT>`foo.man'</TT> and <TT>`sedscript'</TT> are in the source directory.
+
+</P>
+<P>
+When using GNU <CODE>make</CODE>, relying on <SAMP>`VPATH'</SAMP> to find the source
+file will work in the case where there is a single dependency file,
+since the <CODE>make</CODE> automatic variable <SAMP>`$&#60;'</SAMP> will represent the
+source file wherever it is.  (Many versions of <CODE>make</CODE> set <SAMP>`$&#60;'</SAMP>
+only in implicit rules.)  A Makefile target like
+
+</P>
+
+<PRE>
+foo.o : bar.c
+        $(CC) -I. -I$(srcdir) $(CFLAGS) -c bar.c -o foo.o
+</PRE>
+
+<P>
+should instead be written as
+
+</P>
+
+<PRE>
+foo.o : bar.c
+        $(CC) -I. -I$(srcdir) $(CFLAGS) -c $&#60; -o $@
+</PRE>
+
+<P>
+in order to allow <SAMP>`VPATH'</SAMP> to work correctly.  When the target has
+multiple dependencies, using an explicit <SAMP>`$(srcdir)'</SAMP> is the easiest
+way to make the rule work well.  For example, the target above for
+<TT>`foo.1'</TT> is best written as:
+
+</P>
+
+<PRE>
+foo.1 : foo.man sedscript
+        sed -e $(srcdir)/sedscript $(srcdir)/foo.man &#62; $@
+</PRE>
+
+<P>
+GNU distributions usually contain some files which are not source
+files--for example, Info files, and the output from Autoconf, Automake,
+Bison or Flex.  Since these files normally appear in the source
+directory, they should always appear in the source directory, not in the
+build directory.  So Makefile rules to update them should put the
+updated files in the source directory.
+
+</P>
+<P>
+However, if a file does not appear in the distribution, then the
+Makefile should not put it in the source directory, because building a
+program in ordinary circumstances should not modify the source directory
+in any way.
+
+</P>
+<P>
+Try to make the build and installation targets, at least (and all their
+subtargets) work correctly with a parallel <CODE>make</CODE>.
+
+</P>
+
+
+<H2><A NAME="SEC50" HREF="standards.html#TOC50">Utilities in Makefiles</A></H2>
+
+<P>
+Write the Makefile commands (and any shell scripts, such as
+<CODE>configure</CODE>) to run in <CODE>sh</CODE>, not in <CODE>csh</CODE>.  Don't use any
+special features of <CODE>ksh</CODE> or <CODE>bash</CODE>.
+
+</P>
+<P>
+The <CODE>configure</CODE> script and the Makefile rules for building and
+installation should not use any utilities directly except these:
+
+</P>
+
+
+<PRE>
+cat cmp cp diff echo egrep expr false grep install-info
+ln ls mkdir mv pwd rm rmdir sed sleep sort tar test touch true
+</PRE>
+
+<P>
+The compression program <CODE>gzip</CODE> can be used in the <CODE>dist</CODE> rule.
+
+</P>
+<P>
+Stick to the generally supported options for these programs.  For
+example, don't use <SAMP>`mkdir -p'</SAMP>, convenient as it may be, because
+most systems don't support it.
+
+</P>
+<P>
+It is a good idea to avoid creating symbolic links in makefiles, since a
+few systems don't support them.
+
+</P>
+<P>
+The Makefile rules for building and installation can also use compilers
+and related programs, but should do so via <CODE>make</CODE> variables so that the
+user can substitute alternatives.  Here are some of the programs we
+mean:
+
+</P>
+
+<PRE>
+ar bison cc flex install ld ldconfig lex
+make makeinfo ranlib texi2dvi yacc
+</PRE>
+
+<P>
+Use the following <CODE>make</CODE> variables to run those programs:
+
+</P>
+
+<PRE>
+$(AR) $(BISON) $(CC) $(FLEX) $(INSTALL) $(LD) $(LDCONFIG) $(LEX)
+$(MAKE) $(MAKEINFO) $(RANLIB) $(TEXI2DVI) $(YACC)
+</PRE>
+
+<P>
+When you use <CODE>ranlib</CODE> or <CODE>ldconfig</CODE>, you should make sure
+nothing bad happens if the system does not have the program in question.
+Arrange to ignore an error from that command, and print a message before
+the command to tell the user that failure of this command does not mean
+a problem.  (The Autoconf <SAMP>`AC_PROG_RANLIB'</SAMP> macro can help with
+this.)
+
+</P>
+<P>
+If you use symbolic links, you should implement a fallback for systems
+that don't have symbolic links.
+
+</P>
+<P>
+Additional utilities that can be used via Make variables are:
+
+</P>
+
+<PRE>
+chgrp chmod chown mknod
+</PRE>
+
+<P>
+It is ok to use other utilities in Makefile portions (or scripts)
+intended only for particular systems where you know those utilities
+exist.
+
+</P>
+
+
+<H2><A NAME="SEC51" HREF="standards.html#TOC51">Variables for Specifying Commands</A></H2>
+
+<P>
+Makefiles should provide variables for overriding certain commands, options,
+and so on.
+
+</P>
+<P>
+In particular, you should run most utility programs via variables.
+Thus, if you use Bison, have a variable named <CODE>BISON</CODE> whose default
+value is set with <SAMP>`BISON = bison'</SAMP>, and refer to it with
+<CODE>$(BISON)</CODE> whenever you need to use Bison.
+
+</P>
+<P>
+File management utilities such as <CODE>ln</CODE>, <CODE>rm</CODE>, <CODE>mv</CODE>, and
+so on, need not be referred to through variables in this way, since users
+don't need to replace them with other programs.
+
+</P>
+<P>
+Each program-name variable should come with an options variable that is
+used to supply options to the program.  Append <SAMP>`FLAGS'</SAMP> to the
+program-name variable name to get the options variable name--for
+example, <CODE>BISONFLAGS</CODE>.  (The names <CODE>CFLAGS</CODE> for the C
+compiler, <CODE>YFLAGS</CODE> for yacc, and <CODE>LFLAGS</CODE> for lex, are
+exceptions to this rule, but we keep them because they are standard.)
+Use <CODE>CPPFLAGS</CODE> in any compilation command that runs the
+preprocessor, and use <CODE>LDFLAGS</CODE> in any compilation command that
+does linking as well as in any direct use of <CODE>ld</CODE>.
+
+</P>
+<P>
+If there are C compiler options that <EM>must</EM> be used for proper
+compilation of certain files, do not include them in <CODE>CFLAGS</CODE>.
+Users expect to be able to specify <CODE>CFLAGS</CODE> freely themselves.
+Instead, arrange to pass the necessary options to the C compiler
+independently of <CODE>CFLAGS</CODE>, by writing them explicitly in the
+compilation commands or by defining an implicit rule, like this:
+
+</P>
+
+<PRE>
+CFLAGS = -g
+ALL_CFLAGS = -I. $(CFLAGS)
+.c.o:
+        $(CC) -c $(CPPFLAGS) $(ALL_CFLAGS) $&#60;
+</PRE>
+
+<P>
+Do include the <SAMP>`-g'</SAMP> option in <CODE>CFLAGS</CODE>, because that is not
+<EM>required</EM> for proper compilation.  You can consider it a default
+that is only recommended.  If the package is set up so that it is
+compiled with GCC by default, then you might as well include <SAMP>`-O'</SAMP>
+in the default value of <CODE>CFLAGS</CODE> as well.
+
+</P>
+<P>
+Put <CODE>CFLAGS</CODE> last in the compilation command, after other variables
+containing compiler options, so the user can use <CODE>CFLAGS</CODE> to
+override the others.
+
+</P>
+<P>
+<CODE>CFLAGS</CODE> should be used in every invocation of the C compiler,
+both those which do compilation and those which do linking.
+
+</P>
+<P>
+Every Makefile should define the variable <CODE>INSTALL</CODE>, which is the
+basic command for installing a file into the system.
+
+</P>
+<P>
+Every Makefile should also define the variables <CODE>INSTALL_PROGRAM</CODE>
+and <CODE>INSTALL_DATA</CODE>.  (The default for <CODE>INSTALL_PROGRAM</CODE> should
+be <CODE>$(INSTALL)</CODE>; the default for <CODE>INSTALL_DATA</CODE> should be
+<CODE>${INSTALL} -m 644</CODE>.)  Then it should use those variables as the
+commands for actual installation, for executables and nonexecutables
+respectively.  Use these variables as follows:
+
+</P>
+
+<PRE>
+$(INSTALL_PROGRAM) foo $(bindir)/foo
+$(INSTALL_DATA) libfoo.a $(libdir)/libfoo.a
+</PRE>
+
+<P>
+Optionally, you may prepend the value of <CODE>DESTDIR</CODE> to the target
+filename.  Doing this allows the installer to create a snapshot of the
+installation to be copied onto the real target filesystem later.  Do not
+set the value of <CODE>DESTDIR</CODE> in your Makefile, and do not include it
+in any installed files.  With support for <CODE>DESTDIR</CODE>, the above
+examples become:
+
+</P>
+
+<PRE>
+$(INSTALL_PROGRAM) foo $(DESTDIR)$(bindir)/foo
+$(INSTALL_DATA) libfoo.a $(DESTDIR)$(libdir)/libfoo.a
+</PRE>
+
+<P>
+Always use a file name, not a directory name, as the second argument of
+the installation commands.  Use a separate command for each file to be
+installed.
+
+</P>
+
+
+<H2><A NAME="SEC52" HREF="standards.html#TOC52">Variables for Installation Directories</A></H2>
+
+<P>
+Installation directories should always be named by variables, so it is
+easy to install in a nonstandard place.  The standard names for these
+variables are described below.  They are based on a standard filesystem
+layout; variants of it are used in SVR4, 4.4BSD, GNU/Linux, Ultrix v4,
+and other modern operating systems.
+
+</P>
+<P>
+These two variables set the root for the installation.  All the other
+installation directories should be subdirectories of one of these two,
+and nothing should be directly installed into these two directories.
+
+</P>
+<DL COMPACT>
+
+<DT><CODE>prefix</CODE>
+<DD>
+<A NAME="IDX105"></A>
+A prefix used in constructing the default values of the variables listed
+below.  The default value of <CODE>prefix</CODE> should be <TT>`/usr/local'</TT>.
+When building the complete GNU system, the prefix will be empty and
+<TT>`/usr'</TT> will be a symbolic link to <TT>`/'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@prefix@'</SAMP>.)
+
+Running <SAMP>`make install'</SAMP> with a different value of <CODE>prefix</CODE> from
+the one used to build the program should <EM>not</EM> recompile the
+program.
+
+<DT><CODE>exec_prefix</CODE>
+<DD>
+<A NAME="IDX106"></A>
+A prefix used in constructing the default values of some of the
+variables listed below.  The default value of <CODE>exec_prefix</CODE> should
+be <CODE>$(prefix)</CODE>.
+(If you are using Autoconf, write it as <SAMP>`@exec_prefix@'</SAMP>.)
+
+Generally, <CODE>$(exec_prefix)</CODE> is used for directories that contain
+machine-specific files (such as executables and subroutine libraries),
+while <CODE>$(prefix)</CODE> is used directly for other directories.
+
+Running <SAMP>`make install'</SAMP> with a different value of <CODE>exec_prefix</CODE>
+from the one used to build the program should <EM>not</EM> recompile the
+program.
+</DL>
+
+<P>
+Executable programs are installed in one of the following directories.
+
+</P>
+<DL COMPACT>
+
+<DT><CODE>bindir</CODE>
+<DD>
+<A NAME="IDX107"></A>
+The directory for installing executable programs that users can run.
+This should normally be <TT>`/usr/local/bin'</TT>, but write it as
+<TT>`$(exec_prefix)/bin'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@bindir@'</SAMP>.)
+
+<DT><CODE>sbindir</CODE>
+<DD>
+<A NAME="IDX108"></A>
+The directory for installing executable programs that can be run from
+the shell, but are only generally useful to system administrators.  This
+should normally be <TT>`/usr/local/sbin'</TT>, but write it as
+<TT>`$(exec_prefix)/sbin'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@sbindir@'</SAMP>.)
+
+<DT><CODE>libexecdir</CODE>
+<DD>
+<A NAME="IDX109"></A>
+The directory for installing executable programs to be run by other
+programs rather than by users.  This directory should normally be
+<TT>`/usr/local/libexec'</TT>, but write it as <TT>`$(exec_prefix)/libexec'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@libexecdir@'</SAMP>.)
+</DL>
+
+<P>
+Data files used by the program during its execution are divided into
+categories in two ways.
+
+</P>
+
+<UL>
+<LI>
+
+Some files are normally modified by programs; others are never normally
+modified (though users may edit some of these).
+
+<LI>
+
+Some files are architecture-independent and can be shared by all
+machines at a site; some are architecture-dependent and can be shared
+only by machines of the same kind and operating system; others may never
+be shared between two machines.
+</UL>
+
+<P>
+This makes for six different possibilities.  However, we want to
+discourage the use of architecture-dependent files, aside from object
+files and libraries.  It is much cleaner to make other data files
+architecture-independent, and it is generally not hard.
+
+</P>
+<P>
+Therefore, here are the variables Makefiles should use to specify
+directories:
+
+</P>
+<DL COMPACT>
+
+<DT><SAMP>`datadir'</SAMP>
+<DD>
+The directory for installing read-only architecture independent data
+files.  This should normally be <TT>`/usr/local/share'</TT>, but write it as
+<TT>`$(prefix)/share'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@datadir@'</SAMP>.)
+As a special exception, see <TT>`$(infodir)'</TT>
+and <TT>`$(includedir)'</TT> below.
+
+<DT><SAMP>`sysconfdir'</SAMP>
+<DD>
+The directory for installing read-only data files that pertain to a
+single machine--that is to say, files for configuring a host.  Mailer
+and network configuration files, <TT>`/etc/passwd'</TT>, and so forth belong
+here.  All the files in this directory should be ordinary ASCII text
+files.  This directory should normally be <TT>`/usr/local/etc'</TT>, but
+write it as <TT>`$(prefix)/etc'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@sysconfdir@'</SAMP>.)
+
+Do not install executables here in this directory (they probably belong
+in <TT>`$(libexecdir)'</TT> or <TT>`$(sbindir)'</TT>).  Also do not install
+files that are modified in the normal course of their use (programs
+whose purpose is to change the configuration of the system excluded).
+Those probably belong in <TT>`$(localstatedir)'</TT>.
+
+<DT><SAMP>`sharedstatedir'</SAMP>
+<DD>
+The directory for installing architecture-independent data files which
+the programs modify while they run.  This should normally be
+<TT>`/usr/local/com'</TT>, but write it as <TT>`$(prefix)/com'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@sharedstatedir@'</SAMP>.)
+
+<DT><SAMP>`localstatedir'</SAMP>
+<DD>
+The directory for installing data files which the programs modify while
+they run, and that pertain to one specific machine.  Users should never
+need to modify files in this directory to configure the package's
+operation; put such configuration information in separate files that go
+in <TT>`$(datadir)'</TT> or <TT>`$(sysconfdir)'</TT>.  <TT>`$(localstatedir)'</TT>
+should normally be <TT>`/usr/local/var'</TT>, but write it as
+<TT>`$(prefix)/var'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@localstatedir@'</SAMP>.)
+
+<DT><SAMP>`libdir'</SAMP>
+<DD>
+The directory for object files and libraries of object code.  Do not
+install executables here, they probably ought to go in <TT>`$(libexecdir)'</TT>
+instead.  The value of <CODE>libdir</CODE> should normally be
+<TT>`/usr/local/lib'</TT>, but write it as <TT>`$(exec_prefix)/lib'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@libdir@'</SAMP>.)
+
+<DT><SAMP>`infodir'</SAMP>
+<DD>
+The directory for installing the Info files for this package.  By
+default, it should be <TT>`/usr/local/info'</TT>, but it should be written
+as <TT>`$(prefix)/info'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@infodir@'</SAMP>.)
+
+<DT><SAMP>`lispdir'</SAMP>
+<DD>
+The directory for installing any Emacs Lisp files in this package.  By
+default, it should be <TT>`/usr/local/share/emacs/site-lisp'</TT>, but it
+should be written as <TT>`$(prefix)/share/emacs/site-lisp'</TT>.
+
+If you are using Autoconf, write the default as <SAMP>`@lispdir@'</SAMP>.
+In order to make <SAMP>`@lispdir@'</SAMP> work, you need the following lines
+in your <TT>`configure.in'</TT> file:
+
+
+<PRE>
+lispdir='${datadir}/emacs/site-lisp'
+AC_SUBST(lispdir)
+</PRE>
+
+<DT><SAMP>`includedir'</SAMP>
+<DD>
+The directory for installing header files to be included by user
+programs with the C <SAMP>`#include'</SAMP> preprocessor directive.  This
+should normally be <TT>`/usr/local/include'</TT>, but write it as
+<TT>`$(prefix)/include'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@includedir@'</SAMP>.)
+
+Most compilers other than GCC do not look for header files in directory
+<TT>`/usr/local/include'</TT>.  So installing the header files this way is
+only useful with GCC.  Sometimes this is not a problem because some
+libraries are only really intended to work with GCC.  But some libraries
+are intended to work with other compilers.  They should install their
+header files in two places, one specified by <CODE>includedir</CODE> and one
+specified by <CODE>oldincludedir</CODE>.
+
+<DT><SAMP>`oldincludedir'</SAMP>
+<DD>
+The directory for installing <SAMP>`#include'</SAMP> header files for use with
+compilers other than GCC.  This should normally be <TT>`/usr/include'</TT>.
+(If you are using Autoconf, you can write it as <SAMP>`@oldincludedir@'</SAMP>.)
+
+The Makefile commands should check whether the value of
+<CODE>oldincludedir</CODE> is empty.  If it is, they should not try to use
+it; they should cancel the second installation of the header files.
+
+A package should not replace an existing header in this directory unless
+the header came from the same package.  Thus, if your Foo package
+provides a header file <TT>`foo.h'</TT>, then it should install the header
+file in the <CODE>oldincludedir</CODE> directory if either (1) there is no
+<TT>`foo.h'</TT> there or (2) the <TT>`foo.h'</TT> that exists came from the Foo
+package.
+
+To tell whether <TT>`foo.h'</TT> came from the Foo package, put a magic
+string in the file--part of a comment--and <CODE>grep</CODE> for that string.
+</DL>
+
+<P>
+Unix-style man pages are installed in one of the following:
+
+</P>
+<DL COMPACT>
+
+<DT><SAMP>`mandir'</SAMP>
+<DD>
+The top-level directory for installing the man pages (if any) for this
+package.  It will normally be <TT>`/usr/local/man'</TT>, but you should
+write it as <TT>`$(prefix)/man'</TT>.
+(If you are using Autoconf, write it as <SAMP>`@mandir@'</SAMP>.)
+
+<DT><SAMP>`man1dir'</SAMP>
+<DD>
+The directory for installing section 1 man pages.  Write it as
+<TT>`$(mandir)/man1'</TT>.
+<DT><SAMP>`man2dir'</SAMP>
+<DD>
+The directory for installing section 2 man pages.  Write it as
+<TT>`$(mandir)/man2'</TT>
+<DT><SAMP>`...'</SAMP>
+<DD>
+<STRONG>Don't make the primary documentation for any GNU software be a
+man page.  Write a manual in Texinfo instead.  Man pages are just for
+the sake of people running GNU software on Unix, which is a secondary
+application only.</STRONG>
+
+<DT><SAMP>`manext'</SAMP>
+<DD>
+The file name extension for the installed man page.  This should contain
+a period followed by the appropriate digit; it should normally be <SAMP>`.1'</SAMP>.
+
+<DT><SAMP>`man1ext'</SAMP>
+<DD>
+The file name extension for installed section 1 man pages.
+<DT><SAMP>`man2ext'</SAMP>
+<DD>
+The file name extension for installed section 2 man pages.
+<DT><SAMP>`...'</SAMP>
+<DD>
+Use these names instead of <SAMP>`manext'</SAMP> if the package needs to install man
+pages in more than one section of the manual.
+</DL>
+
+<P>
+And finally, you should set the following variable:
+
+</P>
+<DL COMPACT>
+
+<DT><SAMP>`srcdir'</SAMP>
+<DD>
+The directory for the sources being compiled.  The value of this
+variable is normally inserted by the <CODE>configure</CODE> shell script.
+(If you are using Autconf, use <SAMP>`srcdir = @srcdir@'</SAMP>.)
+</DL>
+
+<P>
+For example:
+
+</P>
+
+<PRE>
+# Common prefix for installation directories.
+# NOTE: This directory must exist when you start the install.
+prefix = /usr/local
+exec_prefix = $(prefix)
+# Where to put the executable for the command `gcc'.
+bindir = $(exec_prefix)/bin
+# Where to put the directories used by the compiler.
+libexecdir = $(exec_prefix)/libexec
+# Where to put the Info files.
+infodir = $(prefix)/info
+</PRE>
+
+<P>
+If your program installs a large number of files into one of the
+standard user-specified directories, it might be useful to group them
+into a subdirectory particular to that program.  If you do this, you
+should write the <CODE>install</CODE> rule to create these subdirectories.
+
+</P>
+<P>
+Do not expect the user to include the subdirectory name in the value of
+any of the variables listed above.  The idea of having a uniform set of
+variable names for installation directories is to enable the user to
+specify the exact same values for several different GNU packages.  In
+order for this to be useful, all the packages must be designed so that
+they will work sensibly when the user does so.
+
+</P>
+
+
+<H2><A NAME="SEC53" HREF="standards.html#TOC53">Standard Targets for Users</A></H2>
+
+<P>
+All GNU programs should have the following targets in their Makefiles:
+
+</P>
+<DL COMPACT>
+
+<DT><SAMP>`all'</SAMP>
+<DD>
+Compile the entire program.  This should be the default target.  This
+target need not rebuild any documentation files; Info files should
+normally be included in the distribution, and DVI files should be made
+only when explicitly asked for.
+
+By default, the Make rules should compile and link with <SAMP>`-g'</SAMP>, so
+that executable programs have debugging symbols.  Users who don't mind
+being helpless can strip the executables later if they wish.
+
+<DT><SAMP>`install'</SAMP>
+<DD>
+Compile the program and copy the executables, libraries, and so on to
+the file names where they should reside for actual use.  If there is a
+simple test to verify that a program is properly installed, this target
+should run that test.
+
+Do not strip executables when installing them.  Devil-may-care users can
+use the <CODE>install-strip</CODE> target to do that.
+
+If possible, write the <CODE>install</CODE> target rule so that it does not
+modify anything in the directory where the program was built, provided
+<SAMP>`make all'</SAMP> has just been done.  This is convenient for building the
+program under one user name and installing it under another.
+
+The commands should create all the directories in which files are to be
+installed, if they don't already exist.  This includes the directories
+specified as the values of the variables <CODE>prefix</CODE> and
+<CODE>exec_prefix</CODE>, as well as all subdirectories that are needed.
+One way to do this is by means of an <CODE>installdirs</CODE> target
+as described below.
+
+Use <SAMP>`-'</SAMP> before any command for installing a man page, so that
+<CODE>make</CODE> will ignore any errors.  This is in case there are systems
+that don't have the Unix man page documentation system installed.
+
+The way to install Info files is to copy them into <TT>`$(infodir)'</TT>
+with <CODE>$(INSTALL_DATA)</CODE> (see section <A HREF="standards.html#SEC51">Variables for Specifying Commands</A>), and then run
+the <CODE>install-info</CODE> program if it is present.  <CODE>install-info</CODE>
+is a program that edits the Info <TT>`dir'</TT> file to add or update the
+menu entry for the given Info file; it is part of the Texinfo package.
+Here is a sample rule to install an Info file:
+
+
+<PRE>
+$(DESTDIR)$(infodir)/foo.info: foo.info
+        $(POST_INSTALL)
+# There may be a newer info file in . than in srcdir.
+        -if test -f foo.info; then d=.; \
+         else d=$(srcdir); fi; \
+        $(INSTALL_DATA) $$d/foo.info $(DESTDIR)$@; \
+# Run install-info only if it exists.
+# Use `if' instead of just prepending `-' to the
+# line so we notice real errors from install-info.
+# We use `$(SHELL) -c' because some shells do not
+# fail gracefully when there is an unknown command.
+        if $(SHELL) -c 'install-info --version' \
+           &#62;/dev/null 2&#62;&#38;1; then \
+          install-info --dir-file=$(DESTDIR)$(infodir)/dir \
+                       $(DESTDIR)$(infodir)/foo.info; \
+        else true; fi
+</PRE>
+
+When writing the <CODE>install</CODE> target, you must classify all the
+commands into three categories: normal ones, <STRONG>pre-installation</STRONG>
+commands and <STRONG>post-installation</STRONG> commands.  See section <A HREF="standards.html#SEC54">Install Command Categories</A>.
+
+<DT><SAMP>`uninstall'</SAMP>
+<DD>
+Delete all the installed files--the copies that the <SAMP>`install'</SAMP>
+target creates.
+
+This rule should not modify the directories where compilation is done,
+only the directories where files are installed.
+
+The uninstallation commands are divided into three categories, just like
+the installation commands.  See section <A HREF="standards.html#SEC54">Install Command Categories</A>.
+
+<DT><SAMP>`install-strip'</SAMP>
+<DD>
+Like <CODE>install</CODE>, but strip the executable files while installing
+them.  In simple cases, this target can use the <CODE>install</CODE> target in
+a simple way:
+
+
+<PRE>
+install-strip:
+        $(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' \
+                install
+</PRE>
+
+But if the package installs scripts as well as real executables, the
+<CODE>install-strip</CODE> target can't just refer to the <CODE>install</CODE>
+target; it has to strip the executables but not the scripts.
+
+<CODE>install-strip</CODE> should not strip the executables in the build
+directory which are being copied for installation.  It should only strip
+the copies that are installed.
+
+Normally we do not recommend stripping an executable unless you are sure
+the program has no bugs.  However, it can be reasonable to install a
+stripped executable for actual execution while saving the unstripped
+executable elsewhere in case there is a bug.
+
+<DT><SAMP>`clean'</SAMP>
+<DD>
+Delete all files from the current directory that are normally created by
+building the program.  Don't delete the files that record the
+configuration.  Also preserve files that could be made by building, but
+normally aren't because the distribution comes with them.
+
+Delete <TT>`.dvi'</TT> files here if they are not part of the distribution.
+
+<DT><SAMP>`distclean'</SAMP>
+<DD>
+Delete all files from the current directory that are created by
+configuring or building the program.  If you have unpacked the source
+and built the program without creating any other files, <SAMP>`make
+distclean'</SAMP> should leave only the files that were in the distribution.
+
+<DT><SAMP>`mostlyclean'</SAMP>
+<DD>
+Like <SAMP>`clean'</SAMP>, but may refrain from deleting a few files that people
+normally don't want to recompile.  For example, the <SAMP>`mostlyclean'</SAMP>
+target for GCC does not delete <TT>`libgcc.a'</TT>, because recompiling it
+is rarely necessary and takes a lot of time.
+
+<DT><SAMP>`maintainer-clean'</SAMP>
+<DD>
+Delete almost everything from the current directory that can be
+reconstructed with this Makefile.  This typically includes everything
+deleted by <CODE>distclean</CODE>, plus more: C source files produced by
+Bison, tags tables, Info files, and so on.
+
+The reason we say "almost everything" is that running the command
+<SAMP>`make maintainer-clean'</SAMP> should not delete <TT>`configure'</TT> even if
+<TT>`configure'</TT> can be remade using a rule in the Makefile.  More generally,
+<SAMP>`make maintainer-clean'</SAMP> should not delete anything that needs to
+exist in order to run <TT>`configure'</TT> and then begin to build the
+program.  This is the only exception; <CODE>maintainer-clean</CODE> should
+delete everything else that can be rebuilt.
+
+The <SAMP>`maintainer-clean'</SAMP> target is intended to be used by a maintainer of
+the package, not by ordinary users.  You may need special tools to
+reconstruct some of the files that <SAMP>`make maintainer-clean'</SAMP> deletes.
+Since these files are normally included in the distribution, we don't
+take care to make them easy to reconstruct.  If you find you need to
+unpack the full distribution again, don't blame us.
+
+To help make users aware of this, the commands for the special
+<CODE>maintainer-clean</CODE> target should start with these two:
+
+
+<PRE>
+@echo 'This command is intended for maintainers to use; it'
+@echo 'deletes files that may need special tools to rebuild.'
+</PRE>
+
+<DT><SAMP>`TAGS'</SAMP>
+<DD>
+Update a tags table for this program.
+
+<DT><SAMP>`info'</SAMP>
+<DD>
+Generate any Info files needed.  The best way to write the rules is as
+follows:
+
+
+<PRE>
+info: foo.info
+
+foo.info: foo.texi chap1.texi chap2.texi
+        $(MAKEINFO) $(srcdir)/foo.texi
+</PRE>
+
+You must define the variable <CODE>MAKEINFO</CODE> in the Makefile.  It should
+run the <CODE>makeinfo</CODE> program, which is part of the Texinfo
+distribution.
+
+Normally a GNU distribution comes with Info files, and that means the
+Info files are present in the source directory.  Therefore, the Make
+rule for an info file should update it in the source directory.  When
+users build the package, ordinarily Make will not update the Info files
+because they will already be up to date.
+
+<DT><SAMP>`dvi'</SAMP>
+<DD>
+Generate DVI files for all Texinfo documentation.
+For example:
+
+
+<PRE>
+dvi: foo.dvi
+
+foo.dvi: foo.texi chap1.texi chap2.texi
+        $(TEXI2DVI) $(srcdir)/foo.texi
+</PRE>
+
+You must define the variable <CODE>TEXI2DVI</CODE> in the Makefile.  It should
+run the program <CODE>texi2dvi</CODE>, which is part of the Texinfo
+distribution.<A NAME="DOCF1" HREF="standards.html#FOOT1">(1)</A>  Alternatively,
+write just the dependencies, and allow GNU <CODE>make</CODE> to provide the command.
+
+<DT><SAMP>`dist'</SAMP>
+<DD>
+Create a distribution tar file for this program.  The tar file should be
+set up so that the file names in the tar file start with a subdirectory
+name which is the name of the package it is a distribution for.  This
+name can include the version number.
+
+For example, the distribution tar file of GCC version 1.40 unpacks into
+a subdirectory named <TT>`gcc-1.40'</TT>.
+
+The easiest way to do this is to create a subdirectory appropriately
+named, use <CODE>ln</CODE> or <CODE>cp</CODE> to install the proper files in it, and
+then <CODE>tar</CODE> that subdirectory.
+
+Compress the tar file with <CODE>gzip</CODE>.  For example, the actual
+distribution file for GCC version 1.40 is called <TT>`gcc-1.40.tar.gz'</TT>.
+
+The <CODE>dist</CODE> target should explicitly depend on all non-source files
+that are in the distribution, to make sure they are up to date in the
+distribution.
+See section <A HREF="standards.html#SEC55">Making Releases</A>.
+
+<DT><SAMP>`check'</SAMP>
+<DD>
+Perform self-tests (if any).  The user must build the program before
+running the tests, but need not install the program; you should write
+the self-tests so that they work when the program is built but not
+installed.
+</DL>
+
+<P>
+The following targets are suggested as conventional names, for programs
+in which they are useful.
+
+</P>
+<DL COMPACT>
+
+<DT><CODE>installcheck</CODE>
+<DD>
+Perform installation tests (if any).  The user must build and install
+the program before running the tests.  You should not assume that
+<TT>`$(bindir)'</TT> is in the search path.
+
+<DT><CODE>installdirs</CODE>
+<DD>
+It's useful to add a target named <SAMP>`installdirs'</SAMP> to create the
+directories where files are installed, and their parent directories.
+There is a script called <TT>`mkinstalldirs'</TT> which is convenient for
+this; you can find it in the Texinfo package.
+You can use a rule like this:
+
+
+<PRE>
+# Make sure all installation directories (e.g. $(bindir))
+# actually exist by making them if necessary.
+installdirs: mkinstalldirs
+        $(srcdir)/mkinstalldirs $(bindir) $(datadir) \
+                                $(libdir) $(infodir) \
+                                $(mandir)
+</PRE>
+
+This rule should not modify the directories where compilation is done.
+It should do nothing but create installation directories.
+</DL>
+
+
+
+<H2><A NAME="SEC54" HREF="standards.html#TOC54">Install Command Categories</A></H2>
+
+<P>
+<A NAME="IDX110"></A>
+<A NAME="IDX111"></A>
+When writing the <CODE>install</CODE> target, you must classify all the
+commands into three categories: normal ones, <STRONG>pre-installation</STRONG>
+commands and <STRONG>post-installation</STRONG> commands.
+
+</P>
+<P>
+Normal commands move files into their proper places, and set their
+modes.  They may not alter any files except the ones that come entirely
+from the package they belong to.
+
+</P>
+<P>
+Pre-installation and post-installation commands may alter other files;
+in particular, they can edit global configuration files or data bases.
+
+</P>
+<P>
+Pre-installation commands are typically executed before the normal
+commands, and post-installation commands are typically run after the
+normal commands.
+
+</P>
+<P>
+The most common use for a post-installation command is to run
+<CODE>install-info</CODE>.  This cannot be done with a normal command, since
+it alters a file (the Info directory) which does not come entirely and
+solely from the package being installed.  It is a post-installation
+command because it needs to be done after the normal command which
+installs the package's Info files.
+
+</P>
+<P>
+Most programs don't need any pre-installation commands, but we have the
+feature just in case it is needed.
+
+</P>
+<P>
+To classify the commands in the <CODE>install</CODE> rule into these three
+categories, insert <STRONG>category lines</STRONG> among them.  A category line
+specifies the category for the commands that follow.
+
+</P>
+<P>
+A category line consists of a tab and a reference to a special Make
+variable, plus an optional comment at the end.  There are three
+variables you can use, one for each category; the variable name
+specifies the category.  Category lines are no-ops in ordinary execution
+because these three Make variables are normally undefined (and you
+<EM>should not</EM> define them in the makefile).
+
+</P>
+<P>
+Here are the three possible category lines, each with a comment that
+explains what it means:
+
+</P>
+
+<PRE>
+        $(PRE_INSTALL)     # Pre-install commands follow.
+        $(POST_INSTALL)    # Post-install commands follow.
+        $(NORMAL_INSTALL)  # Normal commands follow.
+</PRE>
+
+<P>
+If you don't use a category line at the beginning of the <CODE>install</CODE>
+rule, all the commands are classified as normal until the first category
+line.  If you don't use any category lines, all the commands are
+classified as normal.
+
+</P>
+<P>
+These are the category lines for <CODE>uninstall</CODE>:
+
+</P>
+
+<PRE>
+        $(PRE_UNINSTALL)     # Pre-uninstall commands follow.
+        $(POST_UNINSTALL)    # Post-uninstall commands follow.
+        $(NORMAL_UNINSTALL)  # Normal commands follow.
+</PRE>
+
+<P>
+Typically, a pre-uninstall command would be used for deleting entries
+from the Info directory.
+
+</P>
+<P>
+If the <CODE>install</CODE> or <CODE>uninstall</CODE> target has any dependencies
+which act as subroutines of installation, then you should start
+<EM>each</EM> dependency's commands with a category line, and start the
+main target's commands with a category line also.  This way, you can
+ensure that each command is placed in the right category regardless of
+which of the dependencies actually run.
+
+</P>
+<P>
+Pre-installation and post-installation commands should not run any
+programs except for these:
+
+</P>
+
+<PRE>
+[ basename bash cat chgrp chmod chown cmp cp dd diff echo
+egrep expand expr false fgrep find getopt grep gunzip gzip
+hostname install install-info kill ldconfig ln ls md5sum
+mkdir mkfifo mknod mv printenv pwd rm rmdir sed sort tee
+test touch true uname xargs yes
+</PRE>
+
+<P>
+<A NAME="IDX112"></A>
+The reason for distinguishing the commands in this way is for the sake
+of making binary packages.  Typically a binary package contains all the
+executables and other files that need to be installed, and has its own
+method of installing them--so it does not need to run the normal
+installation commands.  But installing the binary package does need to
+execute the pre-installation and post-installation commands.
+
+</P>
+<P>
+Programs to build binary packages work by extracting the
+pre-installation and post-installation commands.  Here is one way of
+extracting the pre-installation commands:
+
+</P>
+
+<PRE>
+make -n install -o all \
+      PRE_INSTALL=pre-install \
+      POST_INSTALL=post-install \
+      NORMAL_INSTALL=normal-install \
+  | gawk -f pre-install.awk
+</PRE>
+
+<P>
+where the file <TT>`pre-install.awk'</TT> could contain this:
+
+</P>
+
+<PRE>
+$0 ~ /^\t[ \t]*(normal_install|post_install)[ \t]*$/ {on = 0}
+on {print $0}
+$0 ~ /^\t[ \t]*pre_install[ \t]*$/ {on = 1}
+</PRE>
+
+<P>
+The resulting file of pre-installation commands is executed as a shell
+script as part of installing the binary package.
+@raisesections
+
+</P>
+
+
+<H2><A NAME="SEC55" HREF="standards.html#TOC55">Making Releases</A></H2>
+<P>
+<A NAME="IDX113"></A>
+
+</P>
+<P>
+Package the distribution of <CODE>Foo version 69.96</CODE> up in a gzipped tar
+file with the name <TT>`foo-69.96.tar.gz'</TT>.  It should unpack into a
+subdirectory named <TT>`foo-69.96'</TT>.
+
+</P>
+<P>
+Building and installing the program should never modify any of the files
+contained in the distribution.  This means that all the files that form
+part of the program in any way must be classified into <STRONG>source
+files</STRONG> and <STRONG>non-source files</STRONG>.  Source files are written by humans
+and never changed automatically; non-source files are produced from
+source files by programs under the control of the Makefile.
+
+</P>
+<P>
+<A NAME="IDX114"></A>
+The distribution should contain a file named <TT>`README'</TT> which gives
+the name of the package, and a general description of what it does.  It
+is also good to explain the purpose of each of the first-level
+subdirectories in the package, if there are any.  The <TT>`README'</TT> file
+should either state the version number of the package, or refer to where
+in the package it can be found.
+
+</P>
+<P>
+The <TT>`README'</TT> file should refer to the file <TT>`INSTALL'</TT>, which
+should contain an explanation of the installation procedure.
+
+</P>
+<P>
+The <TT>`README'</TT> file should also refer to the file which contains the
+copying conditions.  The GNU GPL, if used, should be in a file called
+<TT>`COPYING'</TT>.  If the GNU LGPL is used, it should be in a file called
+<TT>`COPYING.LIB'</TT>.
+
+</P>
+<P>
+Naturally, all the source files must be in the distribution.  It is okay
+to include non-source files in the distribution, provided they are
+up-to-date and machine-independent, so that building the distribution
+normally will never modify them.  We commonly include non-source files
+produced by Bison, <CODE>lex</CODE>, TeX, and <CODE>makeinfo</CODE>; this helps avoid
+unnecessary dependencies between our distributions, so that users can
+install whichever packages they want to install.
+
+</P>
+<P>
+Non-source files that might actually be modified by building and
+installing the program should <STRONG>never</STRONG> be included in the
+distribution.  So if you do distribute non-source files, always make
+sure they are up to date when you make a new distribution.
+
+</P>
+<P>
+Make sure that the directory into which the distribution unpacks (as
+well as any subdirectories) are all world-writable (octal mode 777).
+This is so that old versions of <CODE>tar</CODE> which preserve the
+ownership and permissions of the files from the tar archive will be
+able to extract all the files even if the user is unprivileged.
+
+</P>
+<P>
+Make sure that all the files in the distribution are world-readable.
+
+</P>
+<P>
+Make sure that no file name in the distribution is more than 14
+characters long.  Likewise, no file created by building the program
+should have a name longer than 14 characters.  The reason for this is
+that some systems adhere to a foolish interpretation of the POSIX
+standard, and refuse to open a longer name, rather than truncating as
+they did in the past.
+
+</P>
+<P>
+Don't include any symbolic links in the distribution itself.  If the tar
+file contains symbolic links, then people cannot even unpack it on
+systems that don't support symbolic links.  Also, don't use multiple
+names for one file in different directories, because certain file
+systems cannot handle this and that prevents unpacking the
+distribution.
+
+</P>
+<P>
+Try to make sure that all the file names will be unique on MS-DOS.  A
+name on MS-DOS consists of up to 8 characters, optionally followed by a
+period and up to three characters.  MS-DOS will truncate extra
+characters both before and after the period.  Thus,
+<TT>`foobarhacker.c'</TT> and <TT>`foobarhacker.o'</TT> are not ambiguous; they
+are truncated to <TT>`foobarha.c'</TT> and <TT>`foobarha.o'</TT>, which are
+distinct.
+
+</P>
+<P>
+<A NAME="IDX115"></A>
+Include in your distribution a copy of the <TT>`texinfo.tex'</TT> you used
+to test print any <TT>`*.texinfo'</TT> or <TT>`*.texi'</TT> files.
+
+</P>
+<P>
+Likewise, if your program uses small GNU software packages like regex,
+getopt, obstack, or termcap, include them in the distribution file.
+Leaving them out would make the distribution file a little smaller at
+the expense of possible inconvenience to a user who doesn't know what
+other files to get.
+
+</P>
+
+
+<H1><A NAME="SEC56" HREF="standards.html#TOC56">References to Non-Free Software and Documentation</A></H1>
+<P>
+<A NAME="IDX116"></A>
+
+</P>
+<P>
+A GNU program should not recommend use of any non-free program.  We
+can't stop some people from writing proprietary programs, or stop other
+people from using them.  But we can and should avoid helping to
+advertise them to new customers.
+
+</P>
+<P>
+Sometimes it is important to mention how to build your package on top of
+some non-free operating system or other non-free base package.  In such
+cases, please mention the name of the non-free package or system in the
+briefest possible way.  Don't include any references for where to find
+more information about the proprietary program.  The goal should be that
+people already using the proprietary program will get the advice they
+need about how to use your free program, while people who don't already
+use the proprietary program will not see anything to encourage them to
+take an interest in it.
+
+</P>
+<P>
+Likewise, a GNU package should not refer the user to any non-free
+documentation for free software.  The need for free documentation to go
+with free software is now a major focus of the GNU project; to show that
+we are serious about the need for free documentation, we must not
+undermine our position by recommending use of documentation that isn't
+free.
+
+</P>
+
+
+<H1><A NAME="SEC57" HREF="standards.html#TOC57">Index</A></H1>
+<P>
+<H2>#</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX62"><CODE>#endif</CODE>, commenting</A>
+</DIR>
+<H2>-</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX46"><SAMP>`--help'</SAMP> option</A>
+<LI><A HREF="standards.html#IDX43"><SAMP>`--version'</SAMP> option</A>
+<LI><A HREF="standards.html#IDX67"><SAMP>`-Wall'</SAMP> compiler option</A>
+</DIR>
+<H2>a</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX7">accepting contributions</A>
+<LI><A HREF="standards.html#IDX47">address for bug reports</A>
+<LI><A HREF="standards.html#IDX17">ANSI C standard</A>
+<LI><A HREF="standards.html#IDX19">arbitrary limits on data</A>
+<LI><A HREF="standards.html#IDX75">autoconf</A>
+<LI><A HREF="standards.html#IDX5">avoiding proprietary code</A>
+</DIR>
+<H2>b</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX33">behavior, dependent on program's name</A>
+<LI><A HREF="standards.html#IDX112">binary packages</A>
+<LI><A HREF="standards.html#IDX107">bindir</A>
+<LI><A HREF="standards.html#IDX55">braces, in C source</A>
+<LI><A HREF="standards.html#IDX48">bug reports</A>
+</DIR>
+<H2>c</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX44">canonical name of a program</A>
+<LI><A HREF="standards.html#IDX79">casting pointers to integers</A>
+<LI><A HREF="standards.html#IDX93">change logs</A>
+<LI><A HREF="standards.html#IDX96">change logs, conditional changes</A>
+<LI><A HREF="standards.html#IDX94">change logs, style</A>
+<LI><A HREF="standards.html#IDX24">command-line arguments, decoding</A>
+<LI><A HREF="standards.html#IDX39">command-line interface</A>
+<LI><A HREF="standards.html#IDX60">commenting</A>
+<LI><A HREF="standards.html#IDX12">compatibility with C and POSIX standards</A>
+<LI><A HREF="standards.html#IDX66">compiler warnings</A>
+<LI><A HREF="standards.html#IDX95">conditional changes, and change logs</A>
+<LI><A HREF="standards.html#IDX61">conditionals, comments for</A>
+<LI><A HREF="standards.html#IDX100">configure</A>
+<LI><A HREF="standards.html#IDX59">control-L</A>
+<LI><A HREF="standards.html#IDX103">conventions for makefiles</A>
+<LI><A HREF="standards.html#IDX37">corba</A>
+<LI><A HREF="standards.html#IDX91">credits for manuals</A>
+</DIR>
+<H2>d</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX77">data types, and portability</A>
+<LI><A HREF="standards.html#IDX82">declaration for system functions</A>
+<LI><A HREF="standards.html#IDX88">documentation</A>
+<LI><A HREF="standards.html#IDX73">doschk</A>
+<LI><A HREF="standards.html#IDX2">downloading this manual</A>
+</DIR>
+<H2>e</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX21">error messages</A>
+<LI><A HREF="standards.html#IDX31">error messages, formatting</A>
+<LI><A HREF="standards.html#IDX106">exec_prefix</A>
+<LI><A HREF="standards.html#IDX57">expressions, splitting</A>
+</DIR>
+<H2>f</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX52">file usage</A>
+<LI><A HREF="standards.html#IDX72">file-name limitations</A>
+<LI><A HREF="standards.html#IDX30">formatting error messages</A>
+<LI><A HREF="standards.html#IDX53">formatting source code</A>
+<LI><A HREF="standards.html#IDX58">formfeed</A>
+<LI><A HREF="standards.html#IDX65">function argument, declaring</A>
+<LI><A HREF="standards.html#IDX18">function prototypes</A>
+</DIR>
+<H2>g</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX40">getopt</A>
+<LI><A HREF="standards.html#IDX85">gettext</A>
+<LI><A HREF="standards.html#IDX38">gnome</A>
+<LI><A HREF="standards.html#IDX35">graphical user interface</A>
+<LI><A HREF="standards.html#IDX36">gtk</A>
+<LI><A HREF="standards.html#IDX11">GUILE</A>
+</DIR>
+<H2>i</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX64">implicit <CODE>int</CODE></A>
+<LI><A HREF="standards.html#IDX26">impossible conditions</A>
+<LI><A HREF="standards.html#IDX84">internationalization</A>
+</DIR>
+<H2>l</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX3">legal aspects</A>
+<LI><A HREF="standards.html#IDX6">legal papers</A>
+<LI><A HREF="standards.html#IDX109">libexecdir</A>
+<LI><A HREF="standards.html#IDX29">libraries</A>
+<LI><A HREF="standards.html#IDX80">library functions, and portability</A>
+<LI><A HREF="standards.html#IDX90">license for manuals</A>
+<LI><A HREF="standards.html#IDX70">lint</A>
+<LI><A HREF="standards.html#IDX49">long option names</A>
+<LI><A HREF="standards.html#IDX41">long-named options</A>
+</DIR>
+<H2>m</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX102">makefile, conventions for</A>
+<LI><A HREF="standards.html#IDX22"><CODE>malloc</CODE> return value</A>
+<LI><A HREF="standards.html#IDX97">man pages</A>
+<LI><A HREF="standards.html#IDX89">manual structure</A>
+<LI><A HREF="standards.html#IDX23">memory allocation failure</A>
+<LI><A HREF="standards.html#IDX51">memory usage</A>
+<LI><A HREF="standards.html#IDX86">message text, and internationalization</A>
+<LI><A HREF="standards.html#IDX87">mmap</A>
+<LI><A HREF="standards.html#IDX69">multiple variables in a line</A>
+</DIR>
+<H2>n</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX71">names of variables and functions</A>
+<LI><A HREF="standards.html#IDX92"><TT>`NEWS'</TT> file</A>
+<LI><A HREF="standards.html#IDX76">non-POSIX systems, and portability</A>
+<LI><A HREF="standards.html#IDX16">non-standard extensions</A>
+<LI><A HREF="standards.html#IDX20"><CODE>NUL</CODE> characters</A>
+</DIR>
+<H2>o</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX54">open brace</A>
+<LI><A HREF="standards.html#IDX101">optional features, configure-time</A>
+<LI><A HREF="standards.html#IDX14">options for compatibility</A>
+<LI><A HREF="standards.html#IDX34">output device and program's behavior</A>
+</DIR>
+<H2>p</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX113">packaging</A>
+<LI><A HREF="standards.html#IDX78">portability, and data types</A>
+<LI><A HREF="standards.html#IDX81">portability, and library functions</A>
+<LI><A HREF="standards.html#IDX74">portability, between system types</A>
+<LI><A HREF="standards.html#IDX13">POSIX compatibility</A>
+<LI><A HREF="standards.html#IDX15"><CODE>POSIXLY_CORRECT</CODE>, environment variable</A>
+<LI><A HREF="standards.html#IDX111">post-installation commands</A>
+<LI><A HREF="standards.html#IDX110">pre-installation commands</A>
+<LI><A HREF="standards.html#IDX105">prefix</A>
+<LI><A HREF="standards.html#IDX99">program configuration</A>
+<LI><A HREF="standards.html#IDX9">program design</A>
+<LI><A HREF="standards.html#IDX32">program name and its behavior</A>
+<LI><A HREF="standards.html#IDX45">program's canonical name</A>
+<LI><A HREF="standards.html#IDX10">programming languges</A>
+<LI><A HREF="standards.html#IDX4">proprietary programs</A>
+</DIR>
+<H2>r</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX114"><TT>`README'</TT> file</A>
+<LI><A HREF="standards.html#IDX116">references to non-free material</A>
+<LI><A HREF="standards.html#IDX98">releasing</A>
+</DIR>
+<H2>s</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX108">sbindir</A>
+<LI><A HREF="standards.html#IDX25">signal handling</A>
+<LI><A HREF="standards.html#IDX56">spaces before open-paren</A>
+<LI><A HREF="standards.html#IDX42">standard command-line options</A>
+<LI><A HREF="standards.html#IDX104">standards for makefiles</A>
+<LI><A HREF="standards.html#IDX83">string library functions</A>
+<LI><A HREF="standards.html#IDX63">syntactic conventions</A>
+</DIR>
+<H2>t</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX50">table of long options</A>
+<LI><A HREF="standards.html#IDX27">temporary files</A>
+<LI><A HREF="standards.html#IDX68">temporary variables</A>
+<LI><A HREF="standards.html#IDX115"><TT>`texinfo.tex'</TT>, in a distribution</A>
+<LI><A HREF="standards.html#IDX28"><CODE>TMPDIR</CODE> environment variable</A>
+<LI><A HREF="standards.html#IDX8">trademarks</A>
+</DIR>
+<H2>w</H2>
+<DIR>
+<LI><A HREF="standards.html#IDX1">where to obtain <CODE>standards.texi</CODE></A>
+</DIR>
+
+</P>
+
+<P><HR><P>
+<H1>Footnotes</H1>
+<H3><A NAME="FOOT1" HREF="standards.html#DOCF1">(1)</A></H3>
+<P><CODE>texi2dvi</CODE> uses TeX to do the real work
+of formatting. TeX is not distributed with Texinfo.
+<P><HR><P>
+This document was generated on 1 September 2000 using the
+<A HREF="http://wwwcn.cern.ch/dci/texi2html/">texi2html</A>
+translator version 1.54.</P>
+<P>
+<HR>
+
+Return to <A HREF="/home.html">GNU's home page</A>.
+<P>
+FSF &amp; GNU inquiries &amp; questions to
+<A HREF="mailto:gnu@gnu.org"><EM>gnu@gnu.org</EM></A>.
+Other <A HREF="/home.html#ContactInfo">ways to contact</A> the FSF.
+<P>
+Comments on these web pages to
+<A HREF="mailto:webmasters@gnu.org"><EM>webmasters@gnu.org</EM></A>,
+send other questions to
+<A HREF="mailto:gnu@gnu.org"><EM>gnu@gnu.org</EM></A>.
+<P>
+Copyright notice above.
+<HR>
+</BODY>
+</HTML>

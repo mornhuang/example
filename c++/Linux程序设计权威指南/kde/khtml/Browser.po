@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2000-10-15 01:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=gb2312\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: khtml.cpp:23
+msgid "&Quit"
+msgstr "退出(&Q)"
+
+#: khtml.cpp:24
+msgid ""
+"Browser 1.0\n"
+"\n"
+"(C) 2000 Yu Mingjian\n"
+"yumj@opencjk.org\n"
+msgstr "小浏览器 1.0\n"
+"\n"
+"(C) 2000 于明俭版权所由\n"
+"yumj@opencjk.org\n"
+
+#: khtml.cpp:29
+msgid "&File"
+msgstr "文件(&F)"
+
+#: khtml.cpp:31
+msgid "&Help"
+msgstr "帮助(&H)"
+
+#: khtml.cpp:36
+msgid "reload"
+msgstr "重载"
+
+#: khtml.cpp:38
+msgid "Add to Bookmarks"
+msgstr "加入到书签"
+
+#: khtml.cpp:39
+msgid "back"
+msgstr "后退"
+
+#: khtml.cpp:41
+msgid "Back to previous page"
+msgstr "后退到前一页"
+
+#: khtml.cpp:42
+msgid "exit"
+msgstr "退出"
+
+#: khtml.cpp:44
+msgid "Quit the application"
+msgstr "退出程序"

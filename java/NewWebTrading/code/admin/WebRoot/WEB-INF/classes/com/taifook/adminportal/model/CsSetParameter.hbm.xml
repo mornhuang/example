@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Thu aug 25 11:19:38 GMT+08:00 2008                         -->
+<hibernate-mapping package="com.taifook.adminportal.model">
+
+    <class name="CsSetParameter" table="NW_CS_SET_PARAMETER">
+        <composite-id name="id" class="CsSetParameterKey">
+            <key-property name="paramName" column="PARAM_NAME" type="string"/>
+            <key-property name="paramValue" column="PARAM_VALUE" type="string"/>
+        </composite-id>
+ 
+        <property name="description" column="DESCRIPTION" type="string"  not-null="false" />
+        <property name="updateTime" column="UPDATE_TIME" type="timestamp"  not-null="false" />
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Mon Apr 03 18:26:30 GMT+08:00 2006                         -->
+<hibernate-mapping package="com.taifook.adminportal.model">
+
+    <class name="CsUseractionlog" table="NW_CS_USERACTIONLOG">
+        <id name="seqno" column="SEQNO_PK" type="long">
+            <generator class="native">
+            <param name="sequence">CS_USERACTIONLOG_SEQNO</param>
+            </generator>
+        </id>
+ 
+        <property name="userid" column="USERID" type="string"  not-null="true" />
+        <property name="actionid" column="ACTIONID" type="string"  not-null="true" />
+        <property name="channelType" column="channelType" type="string"  not-null="true" />
+        <property name="ip" column="IP" type="string"  not-null="true" />
+        <property name="operationtime" column="OPERATIONTIME" type="timestamp" />
+    </class>
+    
+</hibernate-mapping>

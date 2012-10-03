@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+
+  	<listener>
+		<listener-class>
+			com.itsz.listener.ContextListener
+		</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>
+			com.itsz.Contingency.SystemStartup
+		</listener-class>
+	</listener>
+	<!-- 
+	<servlet>
+      <servlet-name>proxoolServletConfigurator</servlet-name>
+      <servlet-class>org.logicalcobwebs.proxool.configuration.ServletConfigurator</servlet-class>
+     <init-param>
+       <param-name>xmlFile</param-name>
+       <param-value>WEB-INF/classes/proxool.xml</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+	-->
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config-stock.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

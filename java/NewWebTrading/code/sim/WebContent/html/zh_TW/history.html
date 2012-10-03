@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>海通國際證券集團有限公司</title>
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/core.css" />
+    <link rel="Stylesheet" type="text/css" href="../../Style/blue/zh_TW/style.css" />
+    <script src="../../Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery-ui.custom.min.js" type="text/javascript"></script>
+    <script src="../../Script/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../../Script/taifook.layout.js" type="text/javascript"></script>
+    <script src="../../Script/jselect.js" type="text/javascript"></script>
+    <script src="../../Script/shieldingMouse.js" type="text/javascript"></script>
+</head>
+<body>
+    <h1 class="page-title">
+        <span class="shaddow"><span>交易記錄</span><b></b></span> <span class="position">賬戶服務 > 交易記錄</span>
+    </h1>
+    <div class="page-content">
+        <form action="">
+        <table class="form-table ui-corner-all">
+            <tr>
+                <td colspan="2" class="title">
+                    戶口資料
+                </td>
+            </tr>
+            <tr class="form-table-first">
+                <th>
+                    客戶名稱
+                </th>
+                <td>
+                    Taifook Sec Co Ltd - IT
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    賬戶號碼
+                </th>
+                <td>
+                    <select class="jquery-select">
+                        <option>02-0076440-30(网上现金)</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <table class="form-table ui-corner-all">
+            <tr>
+                <td colspan="2" class="title">
+                    搜尋條件
+                </td>
+            </tr>
+            <tr class="form-table-first">
+                <th rowspan="2">
+                    交易日期
+                </th>
+                <td>
+                    <label class="float-left"><input type="radio" name="radioDate" value="radio" checked="checked" /></label>
+                    <select class="jquery-select">
+                        <option>最近1天</option>
+                        <option>最近2天</option>
+                        <option>最近3天</option>
+                        <option>最近4天</option>
+                        <option>最近5天</option>
+                        <option>最近6天</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="float-left"><input type="radio" name="radioDate" value="radio" /></label>
+                    <select class="jquery-select">
+                        <option>2010-11-10</option>
+                    </select>
+                    <label class="float-left">至</label>
+                    <select class="jquery-select">
+                        <option>2010-11-10</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    股票代號
+                </th>
+                <td>
+                    <input type="radio" name="radioCode" value="radio" checked="checked" />
+                    所有
+                    <input type="radio" name="radioCode" value="radio" />
+                    指定股票
+                    <input type="text" class="form-input" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    交易種類
+                </th>
+                <td>
+                    <select class="jquery-select">
+                        <option>所有</option>
+                        <option>買入</option>
+                        <option>賣出</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="alternating">
+                <th>
+                    下單渠道
+                </th>
+                <td>
+                    <select class="jquery-select">
+                        <option>所有</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <td>
+                    <input type="button" class="form-button" value="搜尋" onclick="location.href='history-1.html'" />
+                    <input type="reset" class="form-button" value="重設" />
+                </td>
+            </tr>
+        </table>
+        </form>
+        <h2>備註</h2>
+        <ul class="form-number-ul">
+            <li><span class="number">1</span>金額並不包括經紀佣金、印花稅、交易徵費、聯交所交易費、中央結算費及其他交易費用。</li>
+            <li><span class="number">2</span>所有交易項目以結單顯示記錄為準。</li>
+            <li><span class="number">3</span>交易記錄查詢功能只提供最近7天的記錄。閣下如需查詢7天以前的交易記錄，請查閱你的戶口結單。</li>
+        </ul>
+    </div>
+</body>
+</html>

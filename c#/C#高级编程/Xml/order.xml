@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Inventory xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <InventoryItems>
+    <Prod>
+      <ProductID>100</ProductID>
+      <ProductName>Product Thing</ProductName>
+      <SupplierID>10</SupplierID>
+    </Prod>
+    <Book>
+      <ProductID>101</ProductID>
+      <ProductName>How to Use Your New Product Thing</ProductName>
+      <SupplierID>10</SupplierID>
+      <ISBN>123456789</ISBN>
+    </Book>
+  </InventoryItems>
+</Inventory>

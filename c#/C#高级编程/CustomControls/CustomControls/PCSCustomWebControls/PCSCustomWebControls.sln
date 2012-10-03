@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCSCustomWebControlsTestApp", "http://localhost/PCSCustomWebControlsTestApp/PCSCustomWebControlsTestApp.csproj", "{AE8AAFAB-4647-48C8-ABA1-1B9627DA72E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCSCustomWebControls", "PCSCustomWebControls.csproj", "{627D3CB0-1F7D-43C5-BBE0-21DB410D4E92}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{AE8AAFAB-4647-48C8-ABA1-1B9627DA72E1}.Debug.ActiveCfg = Debug|.NET
+		{AE8AAFAB-4647-48C8-ABA1-1B9627DA72E1}.Debug.Build.0 = Debug|.NET
+		{AE8AAFAB-4647-48C8-ABA1-1B9627DA72E1}.Release.ActiveCfg = Release|.NET
+		{AE8AAFAB-4647-48C8-ABA1-1B9627DA72E1}.Release.Build.0 = Release|.NET
+		{627D3CB0-1F7D-43C5-BBE0-21DB410D4E92}.Debug.ActiveCfg = Debug|.NET
+		{627D3CB0-1F7D-43C5-BBE0-21DB410D4E92}.Debug.Build.0 = Debug|.NET
+		{627D3CB0-1F7D-43C5-BBE0-21DB410D4E92}.Release.ActiveCfg = Release|.NET
+		{627D3CB0-1F7D-43C5-BBE0-21DB410D4E92}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

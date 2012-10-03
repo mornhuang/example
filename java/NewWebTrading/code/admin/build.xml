@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<project default="sit_dist" name="admin portal system">
+	<description>admin portal system</description>
+	<property name="src.dir" location="src" />
+	<property name="build.dir" location="WebRoot/WEB-INF/classes" />
+	<property name="base.dir" location="." />
+	<property name="dist.dir" location="dist" />
+	<property name="temp.dir" location="temp" />
+	<property name="lib.dir" location="WebRoot/WEB-INF/lib" />
+	<property name="sit.conf.path" location="conf/sit" />
+	<property name="uat.conf.path" location="conf/uat" />
+	<property name="product.conf.path" location="conf/product" />
+
+	<path id="project.classpath">       
+	   <fileset dir="${lib.dir}" casesensitive="yes">
+	       <include name="*.jar"/>
+	   	   <include name="*.zip"/>
+	   </fileset>		
+	</path>	
+	   	
+	<target name="clean">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                        CLEAN                      |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete dir="${temp.dir}" />
+	</target>
+
+	<target name="init" depends="clean">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                  INITIATION                       |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<tstamp />
+		<mkdir dir="${src.dir}" />
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${temp.dir}" />
+	</target>
+
+	<target name="compile" depends="init" >
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                    COMPILING                      |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<javac srcdir="${src.dir}" encoding="UTF-8" classpathref="project.classpath" destdir="${build.dir}" debug="on" includeantruntime="on">
+			<compilerarg value="-Xlint:unchecked -Xlint:deprecation" />
+		</javac>
+	</target> 
+	
+	<target name="copy" depends="compile">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                    COPYING COMMON FILE            |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<copydir dest="${temp.dir}" src="${base.dir}/WebRoot"/>
+		<copydir dest="${temp.dir}/WEB-INF/lib/" src="${lib.dir}/"/>
+		
+		<copy todir="${temp.dir}/WEB-INF/classes/com/itsz/sht/dao/hibernate/model">
+			<fileset dir="${src.dir}/com/itsz/sht/dao/hibernate/model">
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+			
+		<copy todir="${temp.dir}/WEB-INF/classes/com/itsz/sht/properties">
+			<fileset dir="${src.dir}/com/itsz/sht/properties">
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir}/WEB-INF/classes/com/taifook/adminportal/model">
+			<fileset dir="${src.dir}/com/taifook/adminportal/model">
+				<include name="*.xml" />
+			</fileset>			
+		</copy>	
+
+		<copy todir="${temp.dir}/WEB-INF/classes/com/taifook/adminportal/web/ipo/dao/hibernate">
+			<fileset dir="${src.dir}/com/taifook/adminportal/web/ipo/dao/hibernate">
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+				
+		<copy todir="${temp.dir}/WEB-INF/classes/com/taifook/adminportal/web/resources">
+			<fileset dir="${src.dir}/com/taifook/adminportal/web/resources">
+				<include name="*.properties" />
+			</fileset>
+		</copy>		
+
+		<copy todir="${temp.dir}/WEB-INF/classes">
+			<fileset dir="${src.dir}">
+				<include name="*.properties" />
+				<include name="*.xml" />
+			</fileset>
+		</copy>			
+	</target>	
+	
+	<target name="nps_copy" depends="compile">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                    COPYING COMMON FILE            |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+
+		<copydir dest="${temp.dir}/com/itsz/sht/common/model/common/request" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/common/model/common/request">
+			<include name="AccessRTQRequestModel.class"/>
+			<include name="AccessSHKRequestModel.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/common/model/common/response" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/common/model/common/response">
+			<include name="AccessRTQResponseModel.class"/>
+			<include name="AccessSHKResponseModel.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/common/model/common" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/common/model/common">
+			<include name="AbstractRequestModel.class"/>
+			<include name="AbstractResponseModel.class"/>
+			<include name="LoggerFactory.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/common" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/common">
+			<include name="Consts.class"/>
+			<include name="DateUtil.class"/>
+			<include name="ForwardMappingUtil.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/common/util" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/common/util">
+			<include name="StringMap.class"/>
+		</copydir>
+		
+		<copy todir="${temp.dir}/com/itsz/sht/dao/hibernate/model">
+			<fileset dir="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/dao/hibernate/model">
+				<include name="Product.class" />
+				<include name="RtqAccAsgnId.class" />
+				<include name="RtqAccId.class" />
+				<include name="RtqAccount.class" />
+				<include name="RtqAccountAssignment.class" />
+				<include name="RtqApplication.class" />
+				<include name="ServicesAccessLog.class" />
+				<include name="UserProduct.class" />
+				<include name="UsrProdId.class" />
+				<include name="Product.hbm.xml" />
+				<include name="RtqAccount.hbm.xml" />
+				<include name="RtqAccountAssignment.hbm.xml" />
+				<include name="RtqApplication.hbm.xml" />
+				<include name="ServicesAccessLog.hbm.xml" />
+				<include name="UserProduct.hbm.xml" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir}/com/itsz/sht/dao/hibernate/model">
+			<fileset dir="${src.dir}/com/itsz/sht/dao/hibernate/model">
+				<include name="Product.hbm.xml" />
+				<include name="RtqAccount.hbm.xml" />
+				<include name="RtqAccountAssignment.hbm.xml" />
+				<include name="RtqApplication.hbm.xml" />
+				<include name="ServicesAccessLog.hbm.xml" />
+				<include name="UserProduct.hbm.xml" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir}/com/itsz/sht/dao/impl">
+			<fileset dir="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/dao/impl">
+				<include name="BaseDao.class" />
+				<include name="ProductDaoImpl.class" />
+				<include name="RtqAccountAssignmentDaoImpl.class" />
+				<include name="RtqAccountDaoImpl.class" />
+				<include name="RtqApplicationDaoImpl.class" />
+				<include name="ServicesAccessLogDaoImpl.class" />
+				<include name="UserProductDaoImpl.class" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir}/com/itsz/sht/dao">
+			<fileset dir="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/dao">
+				<include name="Dao.class" />
+				<include name="ProductDao.class" />
+				<include name="RtqAccountAssignmentDao.class" />
+				<include name="RtqAccountDao.class" />
+				<include name="RtqApplicationDao.class" />
+				<include name="ServicesAccessLogDao.class" />
+				<include name="UserProductDao.class" />
+			</fileset>
+		</copy>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/exception" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/exception">
+			<include name="ITSZException.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/model" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/model">
+			<include name="RTQAccess.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/service/channels" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/service/channels">
+			<include name="ProductService.class"/>
+			<include name="ProductServiceImpl.class"/>
+		</copydir>
+		
+		<copydir dest="${temp.dir}/com/itsz/sht/service/datas" src="${base.dir}/WebRoot/WEB-INF/classes/com/itsz/sht/service/datas">
+			<include name="ProductAdminService.class"/>
+			<include name="ProductAdminServiceImpl.class"/>
+		</copydir>		
+		
+		<copydir dest="${temp.dir}/com/taifook/adminportal/common/util/page" src="${base.dir}/WebRoot/WEB-INF/classes/com/taifook/adminportal/common/util/page">
+			<include name="HibernatePage.class"/>
+			<include name="Page.class"/>
+		</copydir>
+	</target>
+
+	<target name="sit_dist" depends="copy">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                      SIT  DIST                    |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>					
+		<copy todir="${temp.dir}/WEB-INF/classes" overwrite="true">
+			<fileset dir="${sit.conf.path}">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+		
+		<jar destfile="${dist.dir}/admin_${DSTAMP}_sit_bin.jar" basedir="${temp.dir}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}_[${DSTAMP} ${TSTAMP}]" />
+			</manifest>
+		</jar>
+		
+		<war warfile="${dist.dir}/admin_${DSTAMP}_sit.war" webxml="${temp.dir}/WEB-INF/web.xml">
+			<fileset dir="${temp.dir}"/>
+		</war>
+		
+		<delete dir="${temp.dir}" />
+	</target>
+
+	<target name="uat_dist" depends="copy">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                      UAT  DIST                    |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<copy todir="${temp.dir}/WEB-INF/classes" overwrite="true">
+			<fileset dir="${uat.conf.path}">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+
+		<jar destfile="${dist.dir}/admin_${DSTAMP}_uat_bin.jar" basedir="${temp.dir}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+		
+		<war warfile="${dist.dir}/admin_${DSTAMP}_uat.war" webxml="${temp.dir}/WEB-INF/web.xml">
+			<fileset dir="${temp.dir}"/>
+		</war>
+				
+		<delete dir="${temp.dir}" />
+	</target>
+
+	<target name="product_dist" depends="copy">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                      PRODUCT  DIST                |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		<copy todir="${temp.dir}/WEB-INF/classes" overwrite="true">
+			<fileset dir="${product.conf.path}">
+				<include name="*.*" />
+			</fileset>
+		</copy>
+
+		<jar destfile="${dist.dir}/admin_${DSTAMP}_product_bin.jar" basedir="${temp.dir}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+			</manifest>
+		</jar>
+		
+		<war warfile="${dist.dir}/admin_${DSTAMP}_pdt.war" webxml="${temp.dir}/WEB-INF/web.xml">
+			<fileset dir="${temp.dir}"/>
+		</war>
+		
+		<delete dir="${temp.dir}" />
+	</target>
+
+	<target name="rtqService_dist" depends="compile">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                    rtqService  DIST               |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>
+		
+		<copy todir="${build.dir}/com/itsz/sht/dao/hibernate/model">
+			<fileset dir="${src.dir}/com/itsz/sht/dao/hibernate/model">
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+
+		<delete dir="${build.dir}/com/taifook" />
+		<delete dir="${build.dir}/com/itsz/sht/struts" />
+		
+		<jar destfile="${dist.dir}/rtqService.jar" basedir="${build.dir}/">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}_[${DSTAMP} ${TSTAMP}]" />
+			</manifest>
+		</jar>
+
+		<copy todir="${dist.dir}/lib">
+			<fileset dir="${lib.dir}">
+				<include name="MISGateway.jar" />
+				<include name="ccisclient-0.0.2.jar" />
+			</fileset>
+			<fileset dir="${dist.dir}">
+				<include name="rtqService.jar" />
+			</fileset>
+		</copy>
+
+		<copy todir="${dist.dir}/">
+			<fileset dir="${src.dir}">
+				<include name="rtqbeans.xml" />
+				<include name="mis-ds.xml" />
+				<include name="MSSEconfig.properties"/>
+			</fileset>
+		</copy>
+					
+		<delete dir="${temp.dir}" />
+		<zip destfile="${dist.dir}/rtqService.zip" basedir="${dist.dir}"/>
+		<delete dir="${dist.dir}/" excludes="rtqService.zip" />
+		<delete dir="${dist.dir}/lib" />
+	</target>
+	
+	<target name="npsService_dist" depends="nps_copy">
+		<echo>+---------------------------------------------------+</echo>
+		<echo>|                                                   |</echo>
+		<echo>|                  npsService DIST                  |</echo>
+		<echo>|                                                   |</echo>
+		<echo>+---------------------------------------------------+</echo>					
+		
+		<jar destfile="${dist.dir}/npsService.jar" basedir="${temp.dir}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}_[${DSTAMP} ${TSTAMP}]" />
+			</manifest>
+		</jar>
+		
+		<copy todir="${dist.dir}/">
+			<fileset dir="${src.dir}">
+				<include name="userproduct.xml" />
+				<include name="log4j.properties" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${dist.dir}/lib">
+			<fileset dir="${base.dir}/WebRoot/WEB-INF/lib">
+				<include name="spring-2.5.6.jar" />
+				<include name="junit.jar" />
+				<include name="log4j-1.2.14.jar" />
+				<include name="commons-logging-1.0.4.jar" />
+				<include name="dom4j.jar" />
+				<include name="ehcache-1.1.jar" />
+				<include name="ojdbc6_g.jar" />
+				<include name="asm.jar" />
+				<include name="antlr-2.7.6.jar" />
+				<include name="hibernate3.jar" />
+				<include name="c3p0-0.9.1.2.jar" />
+				<include name="cglib-2.1.jar" />
+			</fileset>
+		</copy>
+		
+		<delete dir="${temp.dir}" />
+		<zip destfile="${dist.dir}/npsService.zip" basedir="${dist.dir}"/>
+		<delete dir="${dist.dir}/" excludes="npsService.zip" />
+		<delete dir="${dist.dir}/lib" />
+	</target>
+	
+	<target name="msse_wsdl2java" depends="init">
+		<java classname="org.apache.axis.wsdl.WSDL2Java" fork="yes" dir=".">
+			<classpath refid="project.classpath" />
+			<arg value="-pcom.taifook.mtss.mss.webservice" />
+			<arg value="-o${temp.dir}/msse" />
+			<arg value="-s" />
+			<arg value="-S false" />
+			<arg value="${base.dir}/src/MSSEService.wsdl" />
+		</java>
+	</target>
+	
+	<target name="msse_wsdl2jar" depends="msse_wsdl2java">
+		<javac classpathref="project.classpath" destdir="${build.dir}" encoding="UTF-8" debug="on">
+			<src path="${temp.dir}/msse" /> 
+		</javac>
+		<copy todir="${build.dir}/com/taifook/mtss/mss/webservice" file="${base.dir}/src/MSSEService.wsdl" /> 
+		<jar jarfile="${dist.dir}/msse.jar">
+			<manifest>
+				<attribute name="BuildBy" value="${auth}" /> 
+			</manifest>
+			<fileset dir="${build.dir}" /> 
+		</jar>
+		<delete dir="${temp.dir}"/>
+	</target>
+
+</project>

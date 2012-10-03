@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.itsz.sht.dao.hibernate.model.AutoPurchase" table="NW_AUTO_PURC">
+        <id name="autoPurcId" type="java.lang.String">
+            <column name="AUTO_PURC_ID" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="clntId" type="java.lang.String">
+            <column name="CLNT_ID" length="20" />
+        </property>
+        <property name="prodId" type="java.lang.String">
+            <column name="PROD_ID" length="32" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" length="20" />
+        </property>
+        <property name="priceInHkd" type="java.lang.Long">
+            <column name="PRICE_IN_HKD" precision="12" scale="0" />
+        </property>
+        <property name="debtRemarks" type="java.lang.String">
+            <column name="DEBT_REMARKS" length="1000" />
+        </property>
+        <property name="updDate" type="java.util.Date">
+            <column name="UPD_DATE" />
+        </property>
+        <property name="updBy" type="java.lang.String">
+            <column name="UPD_BY" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

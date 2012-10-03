@@ -1,0 +1,9 @@
+
+# resource file for scale
+
+Scale.scale.width: 100
+Scale.scale.height: 300
+Scale*fontList: 8x16;-*-song-medium-r-normal--16-*:
+Scale.scale.titleString: ±Í«©
+Scale.scale.showValue: True
+

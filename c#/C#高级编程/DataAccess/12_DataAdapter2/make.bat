@@ -1,0 +1,1 @@
+csc /t:exe /debug+ /r:System.dll /r:System.Data.dll dataadapter2.cs ..\login.cs

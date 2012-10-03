@@ -1,0 +1,31 @@
+import java.applet.Applet;
+import java.awt.*;
+
+public class SimpleLightweight extends Applet {
+	private Image dining, paper;
+
+	public void init() {
+		dining = getImage(getCodeBase(),"../gifs/Dining.gif"); 
+		paper  = getImage(getCodeBase(),"../gifs/paper.gif");
+		add(new Lightweight(dining));
+	}
+	public void paint(Graphics g) {
+		Util.wallPaper(this, g, paper);
+		super.paint(g);
+	}
+}
+class Lightweight extends Container {
+	private Image   image;
+
+	public Lightweight(Image image) {
+		this.image = image;
+		Util.waitForImage(this, image);
+	}
+	public void paint(Graphics g) {
+		g.drawImage(image, 0, 0, this);
+	}
+	public Dimension getPreferredSize() {
+		return new Dimension(image.getWidth(this),
+		                     image.getHeight(this));
+	}
+}

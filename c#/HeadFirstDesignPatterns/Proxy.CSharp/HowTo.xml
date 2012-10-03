@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<!--
+Compile the files at the command prompt:
+csc /noconfig /t:library RemotableType.cs
+csc /noconfig /r:RemotableType.dll Listener.cs
+csc /noconfig /r:RemotableType.dll Client.cs
+
+To run the application:
+-Create a subdirectory called Client. 
+-Copy the RemotableType.dll, Client.exe, and Client.exe.config 
+files to the Client directory. 
+-At the command prompt in the Listener directory, type: Listener 
+
+-When the Listener application is running, open a new 
+command prompt in the Client directory and type: Client 
+
+Changing the Channel
+-Because the Listener.exe.config and Client.exe.config files 
+contain all the configuration information necessary to make a 
+remote connection, you can change the channel without recompiling 
+your application merely by changing the channel specified in the 
+configuration file.
+
+To change the channel to a TcpChannel object, which uses binary 
+serialization by default, you merely change the <wellknown> element 
+in the Client.exe.config file to the following:
+
+<wellknown 
+   type="RemotableType, RemotableType"
+   url="tcp://localhost:8989/RemotableType.rem"
+/>
+You must also change the <channel> element in the Listener.exe.config 
+file to the following:
+
+<channel ref="tcp" port="8989"/>
+Rerun the application according to the preceding execution instructions. 
+You do not need to recompile the application.
+-->

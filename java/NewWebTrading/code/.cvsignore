@@ -1,0 +1,10 @@
+.classpath
+.project
+.settings
+dist
+classes
+Thumbs.db
+temp
+build
+logs
+tags

@@ -1,0 +1,7 @@
+
+# resource file for edit
+
+Edit*fontList: 8x16;-*-song-medium-r-normal--16-*:
+!Edit*inputMethod: Chinput
+!root overthespot offthespot onthespot
+!Edit*preeditType: overthespot 

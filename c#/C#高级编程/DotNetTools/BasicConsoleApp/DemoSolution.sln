@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicConsoleApp", "BasicConsoleApp.csproj", "{C3E6FC00-E4A5-4EAE-A698-C5126FC690BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicForm", "..\BasicForm\BasicForm.csproj", "{94FC1C3E-3F97-40A3-8622-F2C48569E80C}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C3E6FC00-E4A5-4EAE-A698-C5126FC690BC}.Debug.ActiveCfg = Debug|.NET
+		{C3E6FC00-E4A5-4EAE-A698-C5126FC690BC}.Debug.Build.0 = Debug|.NET
+		{C3E6FC00-E4A5-4EAE-A698-C5126FC690BC}.Release.ActiveCfg = Release|.NET
+		{C3E6FC00-E4A5-4EAE-A698-C5126FC690BC}.Release.Build.0 = Release|.NET
+		{94FC1C3E-3F97-40A3-8622-F2C48569E80C}.Debug.ActiveCfg = Debug|.NET
+		{94FC1C3E-3F97-40A3-8622-F2C48569E80C}.Debug.Build.0 = Debug|.NET
+		{94FC1C3E-3F97-40A3-8622-F2C48569E80C}.Release.ActiveCfg = Release|.NET
+		{94FC1C3E-3F97-40A3-8622-F2C48569E80C}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

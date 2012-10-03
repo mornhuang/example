@@ -1,0 +1,135 @@
+
+		Linux文档计划的版权许可协议
+
+		最后修订日期：1997年1月6日
+
+  下述版权许可协议适用于Linux文档计划的所有作品。请仔细阅读本许
+可协议，它与GNU通用公共许可协议（General Public License，简称
+GPL）类似，但其中有几个条件会有所不同。如果有什么疑问，可与LDP
+的组织者联系，e-mail地址为mdw@sunsite.unc.edu。
+
+版权许可协议
+  Linux文档计划的手册可以被全部或部分地再版和发布，但要遵守如下
+条件：
+  Linux文档计划的所有手册，其版权归各自的作者所有，它们并不是位
+于公共域中的内容。
+  * 上述版权声明和许可声明必须完全保留在任何全部或部分的复制品中。
+  * 《Linux Installation and Getting Started》的任何翻译或派生作
+品在发布之前必须得到其作者的认可。
+  * 如果要部分地发布《Linux Installation and Getting Started》，
+必须包括获取本手册完全版本的说明并提供获取完全版本的方法。
+  * 在其它作品中，为了评论或说明而合理地引用手册中的少量内容，可
+以不受许可声明的限制。
+  * 下面引用的GNU通用公共许可协议可以在它规定的条件下复制。
+  这些准则对于以教学研究为目的的人员例外，它们在这里只是为了保护
+作者的权益而不是为了限制教育工作者和学习者。《Linux Installation 
+and Getting Started》中的所有源码遵从GNU通用公共许可证协议，它们
+可以通过匿名FTP从ftp://prep.ai.mit.edu/pub/gnu/COPYING处得到。
+
+出版LDP手册
+  如果你是一个出版公司并且对出版LDP手册感兴趣，请阅读下面的内容。
+  按照前面一节所提供的许可协议，任何人都允许出版和发布LDP手册的
+完全相同的复制品，并且不需要获得我们的明确许可。然而，如果你想要
+出版以任何LDP手册为基础的翻译或派生作品，那么在出版之前必须得到作
+者的许可。
+  LDP手册的所有翻译和派生作品必须接受前面一节所提供的Linux文档许
+可协议，也就是说，如果你打算发行某个手册的译本，按照许可协议所描
+述的条件它必须也可以被自由地发布。
+  当然，你可能是为了赢利的目的而出售LDP手册页，我们也支持你这么做，
+但是要记住，因为LDP手册可以自由发布，因此只要他们愿意，任何人都可
+以免费地影印或发布它们印刷的复制品。
+  我们不需要你从销售LDP手册所获得的利润中向我们支付版税；但是，如
+果你确实是以赢利为目的销售LDP手册，那么我们建议你或者向作者提供一
+些版税，或者把你收入的一部分捐赠给作者、LDP或linux开发界，你可能还
+会免费地向作者邮寄一本或几本你正在出版的LDP手册。你对LDP和linux领
+域的支持，我们将深表感谢。
+  我们非常希望获悉出版或发布LDP手册的任何计划，这样我们就可以知道
+如何得到它们。如果你正在出版或准备出版任何LDP手册，请向
+mdw@sunsite.unc.edu处的Matt Welsh发送e-mail。
+  我们鼓励linux软件发行商同他们的软件一起发布LDP手册（例如《Linux 
+Installation and Getting Started》）。LDP手册旨在成为"正式"的linux
+文档，我们希望看到邮购发行商把LDP手册同软件捆绑在一起。随着LDP手册
+的日趋成熟，实现这一目标会离我们越来越近。
+
+
+
+      LINUX DOCUMENTATION PROJECT LICENSE (LDPL) v2.0, 12 January 1998
+
+    I. COPYRIGHT
+       The copyright to each Linux Documentation Project (LDP) document
+       is owned by its author or authors.
+   II. LICENSE
+       The following license terms apply to all LDP documents, unless
+       otherwise stated in the document. The LDP documents may be
+       reproduced and distributed in whole or in part, in any medium
+       physical or electronic, provided that this license notice is
+       displayed in the reproduction. Commercial redistribution is
+       permitted and encouraged. Thirty days advance notice via email to
+       the author(s) of redistribution is appreciated, to give the
+       authors time to provide updated documents.
+
+    A. REQUIREMENTS OF MODIFIED WORKS
+       All modified documents, including translations, anthologies, and
+       partial documents, must meet the following requirements:
+         1. The modified version must be labeled as such.
+         2. The person making the modifications must be identified.
+         3. Acknowledgement of the original author must be retained.
+         4. The location of the original unmodified document be
+            identified.
+         5. The original author's (or authors') name(s) may not be used
+            to assert or imply endorsement of the resulting document
+            without the original author's (or authors') permission.
+       In addition it is requested that:
+
+    1. The modifications (including deletions) be noted.
+    2. The author be notified by email of the modification in advance of
+       redistribution, if an email address is provided in the document.
+
+   As a special exception, anthologies of LDP documents may include a
+   single copy of these license terms in a conspicuous location within
+   the anthology and replace other copies of this license with a
+   reference to the single copy of the license without the document being
+   considered "modified" for the purposes of this section.
+
+   Mere aggregation of LDP documents with other documents or programs on
+   the same media shall not cause this license to apply to those other
+   works.
+
+   All translations, derivative documents, or modified documents that
+   incorporate any LDP document may not have more restrictive license
+   terms than these, except that you may require distributors to make the
+   resulting document available in source format.
+
+   LDP documents are available in source format via the LDP home page at
+   http://sunsite.unc.edu/LDP/.
+     _________________________________________________________________
+
+                           LDP Policy Appendices
+
+    A. TO USE THE LDP LICENSE
+       LDP authors who want to use the LDP License should put the
+       following statement in their document:
+
+     Copyright (c) by . This document may be distributed only subject to
+     the terms and conditions set forth in the LDP License at
+     sunsite.unc.edu/LDP/LICENSE.html>.
+       Authors may include a copy of the license in their documents, as
+       well. If they do so, they have the option of ommitting the
+       appendices.
+    B. TO USE THE LDP LICENSE, BUT PREVENT MODIFICATION
+       LDP authors who want to prevent modification to their document
+       should put the following statement in their document:
+
+     Copyright (c) by . This document may be distributed only subject to
+     the terms and conditions set forth in the LDP License at
+     sunsite.unc.edu/LDP/LICENSE.html>, except that this document must
+     not be distributed in modified form without the author's consent.
+    C. TO USE YOUR OWN LICENSE
+       LDP authors who want to include their own license on LDP works may
+       do so, as long as their terms are not more restrictive than the
+       LDP license, except that they may require that the document may
+       not be modified.
+         _____________________________________________________________
+
+       If you have questions about the LDP License, please contact
+       Guylhem Aznar, guylhem@oeil.qc.ca.

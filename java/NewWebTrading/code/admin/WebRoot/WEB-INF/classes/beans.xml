@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-2.5.xsd" default-lazy-init="false">
+
+    
+   <!-- facade -->
+	<bean id = "facade" class = "com.itsz.sht.service.FacadeImpl">
+	    <property name ="businessTemplate" ref="businessTemplate" />
+	</bean>
+
+	<!-- business template -->
+	<bean id = "businessTemplate" class = "com.itsz.sht.service.channels.BusinessTemplateImpl">
+		<property name ="adminService" ref="adminService" />
+		<property name ="ccisService" ref="ccisService" />
+		<property name ="misService" ref="misService" />
+		<property name ="memoDebitService" ref="memoDebitService"/>
+	</bean>
+	
+	<bean id="memoDebitService" class="com.itsz.sht.service.memodebit.MemoDebitServiceImpl">
+		<property name="memoDebitSystem" value="MIS"/>
+		<property name="misService" ref="misService" />
+		<property name="msseService" ref="msseService"/>
+	</bean>
+	
+	 <bean id = "ccisService" class = "com.itsz.sht.service.ccis.CcisServiceImpl"/>
+	 <bean id = "misService" class = "com.itsz.sht.service.mis.MisServiceImpl"/>
+	 <bean id = "msseService" class = "com.itsz.sht.service.msse.MsseServiceImpl"/>
+	
+        <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+            <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.14.100:1521:sht"/>
+			<property name="user" value="web"/>
+			<property name="password" value="12345678"/>
+         <property name="minPoolSize" value="2" />
+         <property name="maxPoolSize" value="20" />
+         <property name="preferredTestQuery" value="SELECT 1 FROM DUAL" />
+         <property name="breakAfterAcquireFailure" value="true" />
+         <property name="connectionTesterClassName" value="com.mchange.v2.c3p0.impl.DefaultConnectionTester" />
+         <property name="idleConnectionTestPeriod" value="300" />
+         <property name="acquireIncrement" value="5" />
+         <property name="maxIdleTime" value="3600" />
+         <property name="maxIdleTimeExcessConnections" value="600" />
+         <property name="initialPoolSize" value="2" />
+         <property name="acquireRetryAttempts" value="0" />
+         <property name="acquireRetryDelay" value="30000" />
+         <property name="testConnectionOnCheckout" value="false" />
+         <property name="testConnectionOnCheckin" value="true" />
+         <property name="checkoutTimeout" value="5000" />
+     </bean>
+		
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+	    <property name="dataSource" ref="dataSource" />  
+	    <property name="mappingResources">  
+	        <list>  
+	              <value>com/itsz/sht/dao/hibernate/model/AclRole.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/AclRoleFnctnPrmisn.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/AclUserProfile.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/NotificationMedia.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/Product.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/ProductChangeLog.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/RtqAccount.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/RtqAccountAssignment.hbm.xml</value>  
+	              <value>com/itsz/sht/dao/hibernate/model/RtqAccountAssignmentLog.hbm.xml</value> 
+	              <value>com/itsz/sht/dao/hibernate/model/RtqApplication.hbm.xml</value> 
+	              <value>com/itsz/sht/dao/hibernate/model/ServicesAccessLog.hbm.xml</value> 
+	              <value>com/itsz/sht/dao/hibernate/model/UserProfile.hbm.xml</value> 
+	              <value>com/itsz/sht/dao/hibernate/model/UserProduct.hbm.xml</value> 
+	              <value>com/itsz/sht/dao/hibernate/model/UserProductAllotment.hbm.xml</value>
+	              <value>com/itsz/sht/dao/hibernate/model/UserProductAllotmentLog.hbm.xml</value>      
+	              <value>com/itsz/sht/dao/hibernate/model/UserProductLog.hbm.xml</value>      
+	              <value>com/itsz/sht/dao/hibernate/model/UserProductPayment.hbm.xml</value>        
+	              <value>com/itsz/sht/dao/hibernate/model/CsParameter.hbm.xml</value>
+	              <value>com/itsz/sht/dao/hibernate/model/AutoPurchase.hbm.xml</value>
+	        </list>
+	    </property>  
+	     	 
+	    <property name='hibernateProperties'>
+	       <props>
+               <prop key='hibernate.dialect'>org.hibernate.dialect.OracleDialect</prop>
+               <prop key='hibernate.show_sql'>false</prop>
+               <prop key='hibernate.format_sql'>true</prop>	
+	       </props>
+		</property>     
+	</bean>
+	  
+	<bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">  
+	    <property name="sessionFactory">
+	        <ref bean="sessionFactory" />
+	    </property>
+	</bean>
+	<bean abstract="true" id="serviceTxProxy"   class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">  
+	    <property name="transactionManager" ref="txManager"></property>
+	    <property name="transactionAttributes">
+	        <props>
+	            <prop key="save*">PROPAGATION_REQUIRED</prop>  
+	            <prop key="add*">PROPAGATION_REQUIRED</prop> 
+	            <prop key="remove*">PROPAGATION_REQUIRED</prop>
+	            <prop key="delete*">PROPAGATION_REQUIRED</prop> 
+	            <prop key="update*">PROPAGATION_REQUIRED</prop>  
+	            <prop key="list*">PROPAGATION_SUPPORTS, readOnly</prop> 
+	            <prop key="find*">PROPAGATION_SUPPORTS, readOnly</prop>
+	            <prop key="get*">PROPAGATION_SUPPORTS, readOnly</prop> 
+				<prop key="exe**">PROPAGATION_REQUIRED</prop> 
+				<prop key="reserve*">PROPAGATION_SUPPORTS</prop> 
+				<prop key="cancel*">PROPAGATION_SUPPORTS</prop>
+				<prop key="release*">PROPAGATION_SUPPORTS</prop>
+				<prop key="monthly*">PROPAGATION_SUPPORTS, readOnly</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	<bean id="adminService" parent="serviceTxProxy">
+	    <property name="target" ref="adminServiceImpl"></property>
+	</bean>
+	
+	<bean id="adminServiceImpl" class="com.itsz.sht.service.datas.AdminServiceImpl">
+	    <property name="userProfileDao" ref="userProfileDao" />
+		<property name="userProductDao" ref="userProductDao" />
+		<property name="aclRoleDao" ref="aclRoleDao" />
+		<property name="aclRoleFnctnPrmisnDao" ref="aclRoleFnctnPrmisnDao" />
+		<property name="aclUserProfileDao" ref="aclUserProfileDao" />
+		<property name="rtqApplicationDao" ref="rtqApplicationDao"/>
+		<property name="notificationMediaDao" ref="notificationMediaDao" />
+		<property name="productChangeLogDao" ref="productChangeLogDao" />
+		<property name="productDao" ref="productDao" />
+		<property name="rtqAccountDao" ref="rtqAccountDao" />		
+		<property name="rtqAccountAssignmentDao" ref="rtqAccountAssignmentDao" />
+		<property name="rtqAccountAssignmentLogDao" ref="rtqAccountAssignmentLogDao" />
+		<property name="servicesAccessLogDao" ref="servicesAccessLogDao" />
+		<property name="userProductAllotmentDao" ref="userProductAllotmentDao" />
+		<property name="userProductAllotmentLogDao" ref="userProductAllotmentLogDao" />
+		<property name="userProductLogDao" ref="userProductLogDao" />
+		<property name="userProductPaymentDao" ref="userProductPaymentDao" />
+		<property name="csParameterDao" ref="csParameterDao" />
+		<property name="autoPurchaseDao" ref="autoPurchaseDao"/>
+	</bean>
+	
+	<!--Dao Party -->
+	<bean id="userProfileDao" class="com.itsz.sht.dao.impl.UserProfileDaoImpl">  
+	    <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+	</bean>
+   <bean id="userProductDao" class="com.itsz.sht.dao.impl.UserProductDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+  
+   <bean id="aclRoleDao" class="com.itsz.sht.dao.impl.AclRoleDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="aclRoleFnctnPrmisnDao" class="com.itsz.sht.dao.impl.AclRoleFnctnPrmisnDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="aclUserProfileDao" class="com.itsz.sht.dao.impl.AclUserProfileDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="notificationMediaDao" class="com.itsz.sht.dao.impl.NotificationMediaDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="productChangeLogDao" class="com.itsz.sht.dao.impl.ProductChangeLogDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="productDao" class="com.itsz.sht.dao.impl.ProductDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqAccountAssignmentDao" class="com.itsz.sht.dao.impl.RtqAccountAssignmentDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqAccountAssignmentLogDao" class="com.itsz.sht.dao.impl.RtqAccountAssignmentLogDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqAccountDao" class="com.itsz.sht.dao.impl.RtqAccountDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="rtqApplicationDao" class="com.itsz.sht.dao.impl.RtqApplicationDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="servicesAccessLogDao" class="com.itsz.sht.dao.impl.ServicesAccessLogDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="userProductAllotmentDao" class="com.itsz.sht.dao.impl.UserProductAllotmentDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="userProductAllotmentLogDao" class="com.itsz.sht.dao.impl.UserProductAllotmentLogDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+   <bean id="userProductLogDao" class="com.itsz.sht.dao.impl.UserProductLogDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+  <bean id="userProductPaymentDao" class="com.itsz.sht.dao.impl.UserProductPaymentDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+  <bean id="csParameterDao" class="com.itsz.sht.dao.impl.CsParameterDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+  <bean id="autoPurchaseDao" class="com.itsz.sht.dao.impl.AutoPurchaseDaoImpl">
+     <property name="sessionFactory">
+	      <ref local="sessionFactory" /> 
+	    </property>
+  </bean>
+</beans>
