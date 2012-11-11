@@ -1,0 +1,21 @@
+Dr. Simon Robinson graduated with a PHD in theoretical
+physics in 1992. He then spent a couple of years working
+as a physics researcher, mostly doing mathematical modelling
+of certain types of superconductor, before he realised there
+was more money in doing straight computer programming!
+
+He worked for a period at Lucent Technologies, doing a mixture
+of programming and research into new technologies, before
+taking up a career in full time writing/freelance development.
+
+His main specialist areas include COM and COM+, data access,
+directories, DirectX and web development, and he has authored
+and coauthored a number of books for Wrox Press.
+
+Simon lives in Lancaster, UK, where he shares a house
+with some students. His outside interests include
+theatre and street dance. He has also maintained an interest
+in science, and does some research in computational fluid
+mechanics for Lancaster University.
+
+You can visit Simon's WebSite at http://www.SimonRobinson.com

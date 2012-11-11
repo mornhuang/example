@@ -1,0 +1,5 @@
+Insets
+
+Just like insets can be specified for a container, insets can also be specified for a component's display area with 
+an Insets object. Positive values for insets effectively shrinks the size of the component, while negative values 
+will increase the component's size.

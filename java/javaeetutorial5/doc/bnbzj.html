@@ -1,0 +1,514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Enterprise Bean Example Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level3"><a href="bnbyl.html">Securing Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbyn">Accessing an Enterprise Bean Caller's Security Context</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbyo">Declaring Security Role Names Referenced from Enterprise Bean Code</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyp">Declaring Security Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyq">Declaring Security Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level4 tocsp"><a href="bnbyl.html#bnbyr">Defining a Security View of Enterprise Beans</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbys">Defining Security Roles</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyu">Specifying an Authentication Mechanism</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyv">Specifying Method Permissions</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyy">Mapping Security Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyz">Propagating Security Identity</a></p>
+<p class="toc level4 tocsp"><a href="bnbyl.html#bnbzd">Using Enterprise Bean Security Annotations</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbze">Using Enterprise Bean Security Deployment Descriptor Elements</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbzf">Configuring IOR Security</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbzg">Deploying Secure Enterprise Beans</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbzh">Accepting Unauthenticated Users</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbzi">Accessing Unprotected Enterprise Beans</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Enterprise Bean Example Applications</a></p>
+<p class="toc level4"><a href="#bnbzk">Example: Securing an Enterprise Bean</a></p>
+<p class="toc level5"><a href="#bnbzl">Annotating the Bean</a></p>
+<p class="toc level5"><a href="#bnbzm">Setting Runtime Properties</a></p>
+<p class="toc level5"><a href="#bnbzn">Building, Deploying, and Running the Secure Cart Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnbzo">Building, Deploying, and Running the Secure Cart Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="#bncaa">Example: Using the <tt>isCallerInRole</tt> and <tt>getCallerPrincipal</tt> Methods</a></p>
+<p class="toc level5"><a href="#bncab">Modifying <tt>ConverterBean</tt></a></p>
+<p class="toc level5"><a href="#bncac">Modifying Runtime Properties for the Secure Converter Example</a></p>
+<p class="toc level5"><a href="#bncad">Building, Deploying, and Running the Secure Converter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bncae">Building, Deploying, and Running the Secure Converter Example Using Ant</a></p>
+<p class="toc level5"><a href="#bncaf">Troubleshooting the Secure Converter Application</a></p>
+<p class="toc level4 tocsp"><a href="#bncag">Discussion: Securing the Duke's Bank Example</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncah.html">Securing Application Clients</a></p>
+<p class="toc level4"><a href="bncah.html#bncai">Using Login Modules</a></p>
+<p class="toc level4"><a href="bncah.html#bncaj">Using Programmatic Login</a></p>
+<p class="toc level3 tocsp"><a href="bncal.html">Securing EIS Applications</a></p>
+<p class="toc level4"><a href="bncal.html#bncam">Container-Managed Sign-On</a></p>
+<p class="toc level4"><a href="bncal.html#bncan">Component-Managed Sign-On</a></p>
+<p class="toc level4"><a href="bncal.html#bncao">Configuring Resource Adapter Security</a></p>
+<p class="toc level4"><a href="bncal.html#bncap">Mapping an Application Principal to EIS Principals</a></p>
+<p class="toc level2 tocsp"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbyl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncah.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbzj"></a><h3>Enterprise Bean Example Applications</h3>
+<p>The following example applications demonstrate adding security to enterprise beans applications:</p>
+<ul><li><p><a href="#bnbzk">Example: Securing an Enterprise Bean</a> demonstrates adding basic login authentication to an enterprise bean application.</p></li>
+<li><p><a href="#bncaa">Example: Using the <tt>isCallerInRole</tt> and <tt>getCallerPrincipal</tt> Methods</a> demonstrates the use of the <tt>getCallerPrincipal()</tt> and <tt>isCallerInRole(String role)</tt> methods.</p></li>
+<li><p><a href="#bncag">Discussion: Securing the Duke's Bank Example</a> provides a brief discussion of how the Duke&rsquo;s Bank example provides security in that application.</p></li></ul>
+
+
+<a name="bnbzk"></a><h4>Example: Securing an Enterprise Bean</h4>
+<p>This section discusses how to configure an enterprise bean for username-password authentication. When
+a bean that is constrained in this way is requested, the server requests
+a user name and password from the client and verifies that the user
+name and password are valid by comparing them against a database of authorized
+users on the Application Server.</p><p>If the topic of authentication is new to you, please refer to
+the section titled <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>.</p><p>For this tutorial, you will add the security elements to an enterprise bean;
+add security elements to the deployment descriptors; build, package, and deploy the application;
+and then build and run the client application.</p><p>The completed version of this example can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart-secure/</tt>. This
+example was developed by starting with the unsecured enterprise bean application, <tt>cart</tt>, which
+is found in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart/</tt> and is discussed in <a href="bnbod.html">The <tt>cart</tt> Example</a>. You build
+on this example by adding the necessary elements to secure the application using
+username-password authentication.</p><p>In general, the following steps are necessary to add username-password authentication to an
+enterprise bean. In the example application included with this tutorial, many of these
+steps have been completed for you and are listed here simply to show
+what needs to be done should you wish to create a similar application.</p>
+<ol><li><p>Create an application like the one in <a href="bnbod.html">The <tt>cart</tt> Example</a>. The example in this tutorial starts with this example and demonstrates adding basic authentication of the client to this application. The example application discussed in this section can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart-secure/</tt>.</p></li>
+<li><p>If you have not already done so, complete the steps in <a href="bnaan.html">Building the Examples</a> to configure your system properly for running the tutorial applications.</p></li>
+<li><p>If you have not already done so, add a user to the <tt>file</tt> realm and specify <tt>user</tt> for the group of this new user. Write down the user name and password so that you can use them for testing this application in a later step. Refer to the section <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a> for instructions on completing this step.</p></li>
+<li><p>Modify the source code for the enterprise bean, <tt>CartBean.java</tt>, to specify which roles are authorized to access which protected methods. This step is discussed in <a href="#bnbzl">Annotating the Bean</a>.</p></li>
+<li><p>Modify the runtime deployment descriptor, <tt>sun-ejb-jar.xml</tt>, to map the role used in this application (<tt>CartUser</tt>) to a group defined on the Application Server (<tt>user</tt>) and to add security elements that specify that username-password authentication is to be performed. This step is discussed in <a href="#bnbzm">Setting Runtime Properties</a>.</p></li>
+<li><p>Build, package, and deploy the enterprise bean, then build and run the client application by following the steps in <a href="#bnbzn">Building, Deploying, and Running the Secure Cart Example Using NetBeans IDE</a> or <a href="#bnbzo">Building, Deploying, and Running the Secure Cart Example Using Ant</a>.</p></li></ol>
+
+
+<a name="bnbzl"></a><h5>Annotating the Bean</h5>
+<p>The source code for the original <tt>cart</tt> application was modified as shown in
+the following code snippet (modifications in <b>bold</b>, method details removed to save
+space). The resulting file can be found in the following location:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart-secure/cart-secure-ejb/src/java/cart/secure/ ejb/CartBean.java</tt></pre><p>The code snippet is as follows:</p><pre>package com.sun.tutorial.javaee.ejb;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.ejb.Remove;
+import javax.ejb.Stateful;
+<b>import javax.annotation.security.RolesAllowed;</b>
+@Stateful()
+public class CartBean implements Cart {
+
+    String customerName;
+    String customerId;
+    List&lt;String> contents;
+
+    public void initialize(String person) throws BookException {
+         ...
+        }
+
+    public void initialize(String person, String id) throws BookException {
+         ... }
+
+    <b>@RolesAllowed("CartUser")</b>
+    public void addBook(String title) {
+        contents.add(title);
+    }
+
+    <b>@RolesAllowed("CartUser")</b>
+    public void removeBook(String title) throws BookException {
+         ... }
+    }
+    <b>@RolesAllowed("CartUser")</b>
+    public List&lt;String> getContents() {
+        return contents;
+    }
+
+    @Remove()
+        public void remove() {
+        contents = null;
+    }
+}</pre><p>The <tt>@RolesAllowed</tt> annotation is specified on methods for which you want to restrict
+access. In this example, only users in the role of <tt>CartUser</tt> will be
+allowed to add and remove books from the cart, and to list the
+contents of the cart. An <tt>@RolesAllowed</tt> annotation implicitly declares a role that will
+be referenced in the application; therefore, no <tt>@DeclareRoles</tt> annotation is required.</p>
+
+<a name="bnbzm"></a><h5>Setting Runtime Properties</h5>
+<p>The role of <tt>CartUser</tt> has been defined for this application, but there is
+no group of <tt>CartUser</tt> defined for the Application Server. To map the role
+that is defined for the application (<tt>CartUser</tt>) to a group that is defined
+on the Application Server (<tt>user</tt>), add a <tt>&lt;security-role-mapping></tt> element to the runtime deployment descriptor,
+<tt>sun-ejb-jar.xml</tt>, as shown below. In the original example, there was no need for
+this deployment descriptor, so it has been added for this example.</p><p>To enable username-password authentication for the application, add security elements to the runtime
+deployment descriptor, <tt>sun-ejb-jar.xml</tt>. The security element that needs to be added to
+the deployment descriptor is the &lt;<tt>ior-security-config</tt>> element. The deployment descriptor is located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart-secure/cart-secure-ejb/src/conf/sun-ejb-jar.xml</tt>.</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE sun-ejb-jar PUBLIC 
+"-//Sun Microsystems, Inc.//DTD Application Server 9.0 EJB 3.0//EN" 
+"http://www.sun.com/software/appserver/dtds/sun-ejb-jar_3_0-0.dtd">
+&lt;sun-ejb-jar>
+    &lt;security-role-mapping>
+        &lt;role-name>CartUser&lt;/role-name>
+        &lt;group-name>user&lt;/group-name>
+    &lt;/security-role-mapping>
+    &lt;enterprise-beans>
+        &lt;unique-id>0&lt;/unique-id>
+        &lt;ejb>
+            &lt;ejb-name>CartBean&lt;/ejb-name>
+            &lt;jndi-name>jacc_mr_CartBean&lt;/jndi-name>
+            &lt;pass-by-reference>false&lt;/pass-by-reference>
+            &lt;ior-security-config>
+                &lt;transport-config>
+                    &lt;integrity>supported&lt;/integrity>
+                    &lt;confidentiality>supported&lt;/confidentiality>
+                    &lt;establish-trust-in-target>supported&lt;/establish-trust-in-target>
+                    &lt;establish-trust-in-client>supported&lt;/establish-trust-in-client>
+                &lt;/transport-config>
+                &lt;as-context>
+                    &lt;auth-method>username_password&lt;/auth-method>
+                    &lt;realm>default&lt;/realm>
+                    &lt;required>true&lt;/required>
+                &lt;/as-context>
+                &lt;sas-context>
+                    &lt;caller-propagation>supported&lt;/caller-propagation>
+                &lt;/sas-context>
+            &lt;/ior-security-config>
+            &lt;is-read-only-bean>false&lt;/is-read-only-bean>
+            &lt;refresh-period-in-seconds>-1&lt;/refresh-period-in-seconds>
+            &lt;gen-classes/>
+        &lt;/ejb>
+    &lt;/enterprise-beans>
+&lt;/sun-ejb-jar></pre><p>For more information on this topic, read <a href="bnbyl.html#bnbyu">Specifying an Authentication Mechanism</a> and <a href="bnbyl.html#bnbzf">Configuring IOR Security</a>.</p>
+
+<a name="bnbzn"></a><h5>Building, Deploying, and Running the Secure Cart Example Using NetBeans IDE</h5>
+<p>Follow these instructions to build, deploy, and run the <tt>cart-secure</tt> example in
+your Application Server instance using NetBeans IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/</tt>.</p></li>
+<li><p>Select the <tt>cart-secure</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>cart-secure</tt> project and select Clean and Build.</p></li>
+<li><p>In the Projects tab, right-click the <tt>cart-secure</tt> project and select Undeploy and Deploy.</p><p>This step builds and packages the application into <tt>cart-secure.ear</tt>, located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart-secure/dist/</tt>, and deploys this ear file to your Application Server instance.</p></li>
+<li><p>To run secure cart&rsquo;s application client, select Run&rarr;Run Main Project. You will be prompted for your username and password.</p></li>
+<li><p>Enter the username and password of a user that has been entered into the database of users for the file realm and has been assigned to the group of user.</p></li></ol>
+<p>If the username and password you enter are authorized, you will see the
+output of the application client in the Output pane:</p><pre>...
+Retrieving book title from cart: Infinite Jest
+Retrieving book title from cart: Bel Canto
+Retrieving book title from cart: Kafka on the Shore
+Removing "Gravity&rsquo;s Rainbow" from cart.
+Caught a BookException: "Gravity&rsquo;s Rainbow" not in cart.
+Java Result: 1
+run-cart-secure-app-client:</pre>
+
+<a name="bnbzo"></a><h5>Building, Deploying, and Running the Secure Cart Example Using Ant</h5>
+<p>To build, deploy, and run the secure EJB example using the Ant
+tool, follow these steps:</p>
+<ol><li><p>If you have not already done so, specify properties specific to your installation in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/bp-project/build.properties</tt> file and the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/common/admin-password.txt</tt> file. See <a href="bnaan.html">Building the Examples</a> for information on which properties need to be set in which files.</p></li>
+<li><p>If you have not already done so, add a user to the <tt>file</tt> realm and specify <tt>user</tt> for the group of this new user. Refer to the section <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a> for instructions on completing this step.</p></li>
+<li><p>From a terminal window or command prompt, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/cart-secure/</tt> directory.</p></li>
+<li><p>Build, package, and deploy the enterprise application, and build and run the client, by entering the following at the terminal window or command prompt in the <tt>ejb/cart-secure/</tt> directory:</p><pre><tt><b>ant all</b></tt></pre>
+<hr><p><b>Note - </b>This step assumes that you have the executable for <tt>ant</tt> in your path; if not, you will need to provide the fully qualified path to the <tt>ant</tt> executable. This command runs the <tt>ant</tt> target named <tt>all</tt> in the <tt>build.xml</tt> file.</p>
+<hr>
+</li>
+<li><p>A Login for User dialog displays. Enter a user name and password that correspond to a user set up on the Application Server with a group of <tt>user</tt>. Click OK.</p></li></ol>
+<p>If the user name and password are authenticated, the client displays the following
+output:</p><pre>run:
+    [echo] Running appclient for Cart.
+
+appclient-command-common:
+    [exec] Infinite Jest
+    [exec] Bel Canto
+    [exec] Kafka on the Shore
+    [exec] Caught a BookException: "Gravity&rsquo;s Rainbow" not in cart.</pre><p>If the username and password are <b>not</b> authenticated, the client displays the following
+error:</p><pre>run:
+    [echo] Running appclient for Cart.
+
+appclient-command-common:
+    [exec] Caught an unexpected exception!
+    [exec] javax.ejb.EJBException: nested exception is: java.rmi.AccessException:
+     CORBA NO_PERMISSION 9998 Maybe; nested exception is:
+    [exec]     org.omg.<b>CORBA.NO_PERMISSION</b>:
+     ----------BEGIN server-side stack trace----------
+    [exec] org.omg.CORBA.NO_PERMISSION:   vmcid: 0x2000  minor code: 1806</pre><p>If you see this response, verify the user name and password of
+the user that you entered in the login dialog, make sure that user
+is assigned to the group <b>user</b>, and rerun the client application.</p>
+
+<a name="bncaa"></a><h4>Example: Using the <tt>isCallerInRole</tt> and <tt>getCallerPrincipal</tt> Methods</h4>
+<p>This example demonstrates how to use the <tt>getCallerPrincipal()</tt> and <tt>isCallerInRole(String role)</tt> methods with
+an enterprise bean. This example starts with a very simple EJB application, <tt>converter</tt>, and
+modifies the methods of the <tt>ConverterBean</tt> so that currency conversion will only occur
+when the requester is in the role of <tt>BeanUser</tt>.</p><p>For this tutorial, you will add the security elements to an enterprise bean;
+add the security elements to the deployment descriptor; build, package, and deploy the
+application; and then build and run the client application. The completed version of
+this example can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter-secure</tt>. This example was developed by
+starting with the unsecured enterprise bean application, <tt>converter</tt>, which is discussed in <a href="bnbnb.html">Chapter&nbsp;21, Getting Started with Enterprise Beans</a>
+and is found in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter/</tt>. This section builds on this example
+by adding the necessary elements to secure the application using the <tt>getCallerPrincipal()</tt> and
+<tt>isCallerInRole(String role)</tt> methods, which are discussed in more detail in <a href="bnbyl.html#bnbyn">Accessing an Enterprise Bean Caller's Security Context</a>.</p><p>In general, the following steps are necessary when using the <tt>getCallerPrincipal()</tt> and
+<tt>isCallerInRole(String role)</tt> methods with an enterprise bean. In the example application included with this
+tutorial, many of these steps have been completed for you and are listed
+here simply to show what needs to be done should you wish to
+create a similar application.</p>
+<ol><li><p>Create a simple enterprise bean application, such as the <tt>converter</tt> example. See <a href="bnbnb.html">Chapter&nbsp;21, Getting Started with Enterprise Beans</a> for more information on creating and understanding this example. This section of the tutorial starts with this unsecured application and demonstrates how to access an enterprise bean caller&rsquo;s security context. The completed example application discussed in this section can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter-secure/</tt>.</p></li>
+<li><p>If you have not already done so, follow the steps in <a href="bnaan.html">Building the Examples</a> to set properties specific to your installation.</p></li>
+<li><p>If you have not already done so, set up a user on the Application Server in the <tt>file</tt> realm. Make sure that the user is included in the group named <tt>user</tt>. For information on adding a user to the <tt>file</tt> realm, read <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a>.</p></li>
+<li><p>Modify <tt>ConverterBean</tt> to add the <tt>getCallerPrincipal()</tt> and <tt>isCallerInRole(String role)</tt> methods. For this example, callers that are in the role of <tt>BeanUser</tt> will be able to calculate the currency conversion. Callers not in the role of <tt>BeanUser</tt> will see a value of zero for the conversion amount. Modifying the <tt>ConverterBean</tt> code is discussed in <a href="#bncab">Modifying <tt>ConverterBean</tt></a>.</p></li>
+<li><p>Modify the <tt>sun-ejb-jar.xml</tt> file to specify a secure connection, username-password login, and security role mapping. Modifying the <tt>sun-ejb-jar.xml</tt> file is discussed in <a href="#bncac">Modifying Runtime Properties for the Secure Converter Example</a>.</p></li>
+<li><p>Build, package, deploy, and run the application. These steps are discussed in <a href="#bncad">Building, Deploying, and Running the Secure Converter Example Using NetBeans IDE</a> and <a href="#bncae">Building, Deploying, and Running the Secure Converter Example Using Ant</a>.</p></li>
+<li><p>If necessary, refer to the tips in <a href="#bncaf">Troubleshooting the Secure Converter Application</a> for tips on errors you might encounter and some possible solutions.</p></li></ol>
+
+
+<a name="bncab"></a><h5>Modifying <tt>ConverterBean</tt></h5>
+<p>The source code for the original <tt>converter</tt> application was modified as shown in
+the following code snippet (modifications in <b>bold</b>) to add the <tt>if..else</tt> clause that
+tests if the caller is in the role of <tt>BeanUser</tt>. If the user
+is in the correct role, the currency conversion is computed and displayed. If
+the user is not in the correct role, the computation is not
+performed, and the application displays the result as <tt>0</tt>. The code example can be
+found in the following file: </p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter-secure/converter-secure-ejb/src/java/ converter/secure/ejb/ConverterBean.java</tt></pre><p>The code snippet is as follows:</p><pre>package converter.secure.ejb;
+
+import java.math.BigDecimal;
+import javax.ejb.*;
+<b>import java.security.Principal; import javax.annotation.Resource; import javax.ejb.SessionContext; import javax.annotation.security.DeclareRoles; import javax.annotation.security.RolesAllowed;</b>
+@Stateless()
+<b>@DeclareRoles("BeanUser")</b>
+public class ConverterBean implements converter.secure.ejb.Converter {
+    <b>@Resource SessionContext ctx;</b>
+    private BigDecimal yenRate = new BigDecimal("115.3100");
+    private BigDecimal euroRate = new BigDecimal("0.0071");
+
+    <b>@RolesAllowed("BeanUser")</b>
+     public BigDecimal dollarToYen(BigDecimal dollars) {
+        <b>BigDecimal result = new BigDecimal("0.0");</b>
+        <b>Principal callerPrincipal = ctx.getCallerPrincipal();</b>
+        <b>if (ctx.isCallerInRole("BeanUser")) {</b>
+            result = dollars.multiply(yenRate);
+            return result.setScale(2, BigDecimal.ROUND_UP);
+        <b>}else{</b>
+            return result.setScale(2, BigDecimal.ROUND_UP);
+        }
+        }
+    <b>@RolesAllowed("BeanUser")</b>
+    public BigDecimal yenToEuro(BigDecimal yen) {
+        <b>BigDecimal result = new BigDecimal("0.0"); Principal callerPrincipal = ctx.getCallerPrincipal();</b>
+         <b>if (ctx.isCallerInRole("BeanUser")) {</b>
+             result = yen.multiply(euroRate);
+             return result.setScale(2, BigDecimal.ROUND_UP);
+        <b>}else{</b>
+            return result.setScale(2, BigDecimal.ROUND_UP);
+        }
+    }
+}</pre>
+
+<a name="bncac"></a><h5>Modifying Runtime Properties for the Secure Converter Example</h5>
+<p>Secure connections, username-password login, and the mapping of application roles to Application Server
+groups and principals are specified in the runtime deployment descriptor file <tt>sun-ejb-jar.xml</tt>. The
+original <tt>converter</tt> application that did not include any security mechanisms did not have
+a need for this file: it has been added specifically for this application.</p><p>To map the role of <tt>BeanUser</tt> that is defined for this application to
+the group with the name of <tt>user</tt> in the file realm of the
+Application Server, specify the <tt>security-role-mapping</tt> element as shown below. Make sure that the
+<tt>role-name</tt> and <tt>group-name</tt> elements are specified exactly as they are used (the
+mapping is case-sensitive).</p><p>To specify username-password login and a secure connection, use the <tt>ior-security-config</tt> element.
+The IOR security elements are described in more detail in <a href="bnbyl.html#bnbzf">Configuring IOR Security</a>.</p><p>The following <tt>sun-ejb-jar.xml</tt> file demonstrates how to specify a secure connection, username-password login,
+and security role mapping. The completed version of this file can be found
+in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter-secure/converter-secure-ejb/src/conf/sun-ejb-jar.xml</tt>.</p><pre>&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;!DOCTYPE sun-ejb-jar PUBLIC 
+"-//Sun Microsystems, Inc.//DTD Application Server 9.0 EJB 3.0//EN" 
+"http://www.sun.com/software/appserver/dtds/sun-ejb-jar_3_0-0.dtd">
+&lt;sun-ejb-jar>
+
+    &lt;security-role-mapping>
+        &lt;role-name>BeanUser&lt;/role-name>
+        &lt;group-name>user&lt;/group-name>
+    &lt;/security-role-mapping>
+
+     &lt;enterprise-beans>
+        &lt;unique-id>0&lt;/unique-id>
+        &lt;ejb>
+            &lt;ejb-name>ConverterBean&lt;/ejb-name>
+            &lt;jndi-name>ConverterBean&lt;/jndi-name>
+            &lt;pass-by-reference>false&lt;/pass-by-reference>
+            &lt;ior-security-config>
+                 <b>&lt;transport-config> &lt;integrity>supported&lt;/integrity> &lt;confidentiality>supported&lt;/confidentiality></b>
+                    &lt;establish-trust-in-target>
+                        supported
+                    &lt;/establish-trust-in-target>
+                     &lt;establish-trust-in-client>
+                        supported
+                    &lt;/establish-trust-in-client>
+                     &lt;/transport-config>
+                 &lt;as-context>
+                    <b>&lt;auth-method>username_password&lt;/auth-method></b>
+                    &lt;realm>file&lt;/realm>
+                    &lt;required>true&lt;/required>
+                &lt;/as-context>
+                &lt;sas-context>
+                    &lt;caller-propagation>
+                        supported
+                    &lt;/caller-propagation>
+                &lt;/sas-context>
+                &lt;/ior-security-config>
+                &lt;is-read-only-bean>false&lt;/is-read-only-bean>
+                &lt;refresh-period-in-seconds>
+                    -1
+                &lt;/refresh-period-in-seconds>
+                &lt;gen-classes/>
+            &lt;/ejb>
+    &lt;/enterprise-beans>
+ &lt;/sun-ejb-jar</pre>
+
+<a name="bncad"></a><h5>Building, Deploying, and Running the Secure Converter Example Using NetBeans IDE</h5>
+<p>Follow these instructions to build, package, and deploy the <tt>converter-secure</tt> example to
+your Application Server instance using NetBeans IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/</tt>.</p></li>
+<li><p>Select the <tt>converter-secure</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>converter-secure</tt> project and select Clean and Build.</p></li>
+<li><p>In the Projects tab, right-click the <tt>converter-secure</tt> project and select Undeploy and Deploy.</p><p>This step builds and packages the application into <tt>converter-secure.ear</tt>, located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter-secure/dist/</tt>, and deploys this ear file to your Application Server instance.</p></li>
+<li><p>To run the secure converter&rsquo;s application client, select Run&rarr;Run Main Project. You will be prompted for your username and password.</p></li>
+<li><p>Enter the username and password of a user that has been entered into the database of users for the file realm and has been assigned to the group of user.</p><p>If the username and password you enter are authorized, you will see the output of the application client in the Output pane:</p><pre>[exec] $100.00 is 11531.00 Yen.
+[exec] 11531.00 Yen is 81.88 Euro.</pre></li></ol>
+
+
+<a name="bncae"></a><h5>Building, Deploying, and Running the Secure Converter Example Using Ant</h5>
+<p>To build the secure converter enterprise beans and client, package and deploy the
+enterprise application, and run the client application, follow these steps:</p>
+<ol><li><p>Set up your system for running the tutorial examples if you haven&rsquo;t done so already by following the instructions in <a href="bnaan.html">Building the Examples</a>.</p></li>
+<li><p>From a terminal window or command prompt, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/converter-secure/</tt> directory.</p></li>
+<li><p>Build, package, deploy, and run the enterprise application and application client by entering the following at the terminal window or command prompt in the <tt>ejb/converter-secure/</tt> directory:</p><pre><tt><b>ant all</b></tt></pre>
+<hr><p><b>Note - </b>This step assumes that you have the executable for <tt>ant</tt> in your path; if not, you will need to provide the fully qualified path to the <tt>ant</tt> executable. This command runs the <tt>ant</tt> target named <tt>all</tt> in the <tt>build.xml</tt> file.</p>
+<hr>
+</li></ol>
+<p>The running application will look like this:</p><pre>appclient-command-common:</pre><p>At this point, a system login dialog will display. Enter the user
+name and password that correspond to a user in the group <b>user</b> on the
+Application Server. If the user name and password are authenticated, the following text
+displays in the terminal window or command prompt:</p><pre>appclient-command-common:
+    [exec] $100.00 is 11531.00 Yen.
+    [exec] 11531.00 Yen is 81.88 Euro.</pre>
+
+<a name="bncaf"></a><h5>Troubleshooting the Secure Converter Application</h5>
+<p><b>Problem</b>: The application displays zero values after authentication, as shown here:</p><pre>appclient-command-common:
+    [exec] $100.00 is 0.00 Yen.
+    [exec] 0.00 Yen is 0.00 Euro.</pre><p><b>Solution</b>: Verify that the user name and password that you entered for authentication
+match a user name and password in the Application Server, and that this
+user is assigned to the group named <b>user</b>. User names and passwords
+are case-sensitive. Read <a href="bnbxj.html#bnbxs">Adding Users to the Application Server</a> for more information on adding users to the <tt>file</tt>
+realm of the Application Server.</p>
+
+<a name="bncag"></a><h4>Discussion: Securing the Duke&rsquo;s Bank Example</h4>
+<p>The Duke&rsquo;s Bank application is an online banking application. Duke&rsquo;s Bank has two
+clients: an application client used by administrators to manage customers and accounts, and
+a web client used by customers to access account histories and perform transactions.
+The clients access the customer, account, and transaction information maintained in a database
+through enterprise beans. The Duke&rsquo;s Bank application demonstrates the way that many of the
+component technologies presented in this tutorial (enterprise beans, application clients, and web components)
+are applied to provide a simple but functional application.</p><p>To secure the Duke&rsquo;s Bank example, the following security mechanisms are used:</p>
+<ul><li><p>Defining security roles</p></li>
+<li><p>Specifying form-based user authentication for the web client in a security constraint</p></li>
+<li><p>Adding authorized users and groups to the appropriate Application Server realm</p></li>
+<li><p>Specifying method permissions for enterprise beans</p></li>
+<li><p>Configuring Interoperable Object References (IOR)</p></li></ul>
+<p>Read <a href="bnclz.html">Chapter&nbsp;37, The Duke's Bank Application</a> for more information on securing the Duke&rsquo;s Bank example.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbyl.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncah.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

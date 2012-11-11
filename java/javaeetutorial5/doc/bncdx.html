@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Basic JMS API Concepts - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level3"><a href="bncdr.html">Overview of the JMS API</a></p>
+<p class="toc level4"><a href="bncdr.html#bncds">What Is Messaging?</a></p>
+<p class="toc level4"><a href="bncdr.html#bncdt">What Is the JMS API?</a></p>
+<p class="toc level4"><a href="bncdr.html#bncdu">When Can You Use the JMS API?</a></p>
+<p class="toc level4"><a href="bncdr.html#bncdw">How Does the JMS API Work with the Java EE Platform?</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Basic JMS API Concepts</a></p>
+<p class="toc level4"><a href="#bncdy">JMS API Architecture</a></p>
+<p class="toc level4"><a href="#bncea">Messaging Domains</a></p>
+<p class="toc level5"><a href="#bnceb">Point-to-Point Messaging Domain</a></p>
+<p class="toc level5"><a href="#bnced">Publish/Subscribe Messaging Domain</a></p>
+<p class="toc level5"><a href="#bncef">Programming with the Common Interfaces</a></p>
+<p class="toc level4 tocsp"><a href="#bnceg">Message Consumption</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnceh.html">The JMS API Programming Model</a></p>
+<p class="toc level4"><a href="bnceh.html#bncej">JMS Administered Objects</a></p>
+<p class="toc level5"><a href="bnceh.html#bncek">JMS Connection Factories</a></p>
+<p class="toc level5"><a href="bnceh.html#bncel">JMS Destinations</a></p>
+<p class="toc level4 tocsp"><a href="bnceh.html#bncem">JMS Connections</a></p>
+<p class="toc level4"><a href="bnceh.html#bncen">JMS Sessions</a></p>
+<p class="toc level4"><a href="bnceh.html#bnceo">JMS Message Producers</a></p>
+<p class="toc level4"><a href="bnceh.html#bncep">JMS Message Consumers</a></p>
+<p class="toc level5"><a href="bnceh.html#bnceq">JMS Message Listeners</a></p>
+<p class="toc level5"><a href="bnceh.html#bncer">JMS Message Selectors</a></p>
+<p class="toc level4 tocsp"><a href="bnceh.html#bnces">JMS Messages</a></p>
+<p class="toc level5"><a href="bnceh.html#bncet">Message Headers</a></p>
+<p class="toc level5"><a href="bnceh.html#bncev">Message Properties</a></p>
+<p class="toc level5"><a href="bnceh.html#bncew">Message Bodies</a></p>
+<p class="toc level4 tocsp"><a href="bnceh.html#bncey">JMS Queue Browsers</a></p>
+<p class="toc level4"><a href="bnceh.html#bncez">JMS Exception Handling</a></p>
+<p class="toc level3 tocsp"><a href="bncfa.html">Writing Simple JMS Client Applications</a></p>
+<p class="toc level4"><a href="bncfa.html#bncfb">A Simple Example of Synchronous Message Receives</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfc">Writing the Client Programs for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfd">Starting the JMS Provider</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfe">Creating JMS Administered Objects for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncff">Compiling and Packaging the Clients for the Synchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfg">Running the Clients for the Synchronous Receive Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfh">A Simple Example of Asynchronous Message Consumption</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfi">Writing the Client Programs for the Asynchronous Receive Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfj">Compiling and Packaging the <tt>AsynchConsumer</tt> Client</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfk">Running the Clients for the Asynchronous Receive Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfl">A Simple Example of Browsing Messages in a Queue</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfm">Writing the Client Program for the Queue Browser Example</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfn">Compiling and Packaging the <tt>MessageBrowser</tt> Client</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfo">Running the Clients for the Queue Browser Example</a></p>
+<p class="toc level4 tocsp"><a href="bncfa.html#bncfp">Running JMS Client Programs on Multiple Systems</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfq">Creating Administered Objects for Multiple Systems</a></p>
+<p class="toc level5"><a href="bncfa.html#bncfs">Editing, Recompiling, Repackaging, and Running the Programs</a></p>
+<p class="toc level5"><a href="bncfa.html#bncft">Deleting the Connection Factory and Stopping the Server</a></p>
+<p class="toc level3 tocsp"><a href="bncfu.html">Creating Robust JMS Applications</a></p>
+<p class="toc level4"><a href="bncfu.html#bncfv">Using Basic Reliability Mechanisms</a></p>
+<p class="toc level5"><a href="bncfu.html#bncfw">Controlling Message Acknowledgment</a></p>
+<p class="toc level5"><a href="bncfu.html#bncfy">Specifying Message Persistence</a></p>
+<p class="toc level5"><a href="bncfu.html#bncfz">Setting Message Priority Levels</a></p>
+<p class="toc level5"><a href="bncfu.html#bncga">Allowing Messages to Expire</a></p>
+<p class="toc level5"><a href="bncfu.html#bncgb">Creating Temporary Destinations</a></p>
+<p class="toc level4 tocsp"><a href="bncfu.html#bncgc">Using Advanced Reliability Mechanisms</a></p>
+<p class="toc level5"><a href="bncfu.html#bncgd">Creating Durable Subscriptions</a></p>
+<p class="toc level5"><a href="bncfu.html#bncgh">Using JMS API Local Transactions</a></p>
+<p class="toc level3 tocsp"><a href="bncgl.html">Using the JMS API in a Java EE Application</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgm">Using <tt>@Resource</tt> Annotations in Java EE Components</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgn">Using Session Beans to Produce and to Synchronously Receive Messages</a></p>
+<p class="toc level5"><a href="bncgl.html#bncgo">Resource Management</a></p>
+<p class="toc level5"><a href="bncgl.html#bncgp">Transactions</a></p>
+<p class="toc level4 tocsp"><a href="bncgl.html#bncgq">Using Message-Driven Beans to Receive Messages Asynchronously</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgs">Managing Distributed Transactions</a></p>
+<p class="toc level4"><a href="bncgl.html#bncgt">Using the JMS API with Application Clients and Web Components</a></p>
+<p class="toc level3 tocsp"><a href="bncgu.html">Further Information about JMS</a></p>
+<p class="toc level2 tocsp"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncdr.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnceh.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncdx"></a><h3>Basic JMS API Concepts</h3>
+<a name="indexterm-2787"></a><p>This section introduces the most basic JMS API concepts, the ones you must
+know to get started writing simple JMS client applications:</p>
+<ul><li><p><a href="#bncdy">JMS API Architecture</a></p></li>
+<li><p><a href="#bncea">Messaging Domains</a></p></li>
+<li><p><a href="#bnceg">Message Consumption</a></p></li></ul>
+<p>The next section introduces the JMS API programming model. Later sections cover more
+advanced concepts, including the ones you need to write Java EE applications that
+use message-driven beans.</p>
+
+<a name="bncdy"></a><h4>JMS API Architecture</h4>
+<a name="indexterm-2788"></a><p>A JMS application is composed of the following parts.</p>
+<ul><li><p><a name="indexterm-2789"></a>A <b>JMS provider</b> is a messaging system that implements the JMS interfaces and provides administrative and control features. An implementation of the Java EE platform includes a JMS provider.</p></li>
+<li><p><b>JMS clients</b> are the programs or components, written in the Java programming language, that produce and consume messages. Any Java EE application component can act as a JMS client.</p></li>
+<li><p><a name="indexterm-2790"></a><b>Messages</b> are the objects that communicate information between JMS clients.</p></li>
+<li><p><a name="indexterm-2791"></a><b>Administered objects</b> are preconfigured JMS objects created by an administrator for the use of clients. The two kinds of JMS administered objects are destinations and connection factories, which are described in <a href="bnceh.html#bncej">JMS Administered Objects</a>.</p></li></ul>
+<p><a href="#bncdz">Figure&nbsp;31-2</a> illustrates the way these parts interact. Administrative tools allow you to bind
+destinations and connection factories into a JNDI namespace. A JMS client can then
+use resource injection to access the administered objects in the namespace and then establish
+a logical connection to the same objects through the JMS provider.</p><a name="bncdz"></a><h6>Figure&nbsp;31-2 JMS API Architecture</h6><img src="figures/jms-architecture.gif" alt="Diagram of JMS API architecture, showing administrative tool, JMS client, JNDI namespace, and JMS provider"></img>
+
+<a name="bncea"></a><h4>Messaging Domains</h4>
+<a name="indexterm-2792"></a><a name="indexterm-2793"></a><p>Before the JMS API existed, most messaging products supported either the <b>point-to-point</b> or
+the <b>publish/subscribe</b> approach to messaging. The JMS specification provides a separate domain for
+each approach and defines compliance for each domain. A stand-alone JMS provider can
+implement one or both domains. A Java EE provider must implement both domains.</p><p>In fact, most implementations of the JMS API support both the point-to-point and
+the publish/subscribe domains, and some JMS clients combine the use of both domains
+in a single application. In this way, the JMS API has extended the
+power and flexibility of messaging products.</p><p>The JMS 1.1 specification goes one step further: It provides common interfaces that
+enable you to use the JMS API in a way that is
+not specific to either domain. The following subsections describe the two messaging domains and
+then describe the use of the common interfaces.</p>
+
+<a name="bnceb"></a><h5>Point-to-Point Messaging Domain</h5>
+<a name="indexterm-2794"></a><a name="indexterm-2795"></a><p>A point-to-point (PTP) product or application is built on the concept of message
+queues, senders, and receivers. Each message is addressed to a specific queue, and
+receiving clients extract messages from the queues established to hold their messages. Queues
+retain all messages sent to them until the messages are consumed or until
+the messages expire.</p><p>PTP messaging has the following characteristics and is illustrated in <a href="#bncec">Figure&nbsp;31-3</a>.</p><a name="bncec"></a><h6>Figure&nbsp;31-3 Point-to-Point Messaging</h6><img src="figures/jms-pointToPoint.gif" alt="Diagram of point-to-point messaging, showing Client 1 sending a message to a queue, and Client 2 consuming and acknowledging the message"></img>
+<ul><li><p>Each message has only one consumer.</p></li>
+<li><p>A sender and a receiver of a message have no timing dependencies. The receiver can fetch the message whether or not it was running when the client sent the message.</p></li>
+<li><p>The receiver acknowledges the successful processing of a message.</p></li></ul>
+<p>Use PTP messaging when every message you send must be processed successfully by
+one consumer.</p>
+
+<a name="bnced"></a><h5>Publish/Subscribe Messaging Domain</h5>
+<a name="indexterm-2796"></a><a name="indexterm-2797"></a><p>In a publish/subscribe (pub/sub) product or application, clients address messages to a <b>topic</b>,
+which functions somewhat like a bulletin board. Publishers and subscribers are generally anonymous
+and can dynamically publish or subscribe to the content hierarchy. The system takes care
+of distributing the messages arriving from a topic&rsquo;s multiple publishers to its multiple
+subscribers. Topics retain messages only as long as it takes to distribute them
+to current subscribers.</p><p>Pub/sub messaging has the following characteristics.</p>
+<ul><li><p>Each message can have multiple consumers.</p></li>
+<li><p>Publishers and subscribers have a timing dependency. A client that subscribes to a topic can consume only messages published after the client has created a subscription, and the subscriber must continue to be active in order for it to consume messages.</p></li></ul>
+<p>The JMS API relaxes this timing dependency to some extent by allowing subscribers
+to create <b>durable subscriptions</b>, which receive messages sent while the subscribers are not active.
+Durable subscriptions provide the flexibility and reliability of queues but still allow clients to
+send messages to many recipients. For more information about durable subscriptions, see <a href="bncfu.html#bncgd">Creating Durable Subscriptions</a>.</p><p>Use pub/sub messaging when each message can be processed by zero, one, or
+many consumers. <a href="#bncee">Figure&nbsp;31-4</a> illustrates pub/sub messaging.</p><a name="bncee"></a><h6>Figure&nbsp;31-4 Publish/Subscribe Messaging</h6><img src="figures/jms-publishSubscribe.gif" alt="Diagram of pub/sub messaging, showing Client 1 publishing a message to a topic, and the message being delivered to two subscribers to the topic"></img>
+
+<a name="bncef"></a><h5>Programming with the Common Interfaces</h5>
+<a name="indexterm-2798"></a><p>Version 1.1 of the JMS API allows you to use the same
+code to send and receive messages under either the PTP or the pub/sub
+domain. The destinations that you use remain domain-specific, and the behavior of the
+application will depend in part on whether you are using a queue or
+a topic. However, the code itself can be common to both domains, making
+your applications flexible and reusable. This tutorial describes and illustrates these common interfaces.</p>
+
+<a name="bnceg"></a><h4>Message Consumption</h4>
+<a name="indexterm-2799"></a><p>Messaging products are inherently asynchronous: There is no fundamental timing dependency between the
+production and the consumption of a message. However, the JMS specification uses this
+term in a more precise sense. Messages can be consumed in either of
+two ways:</p>
+<ul><li><p><a name="indexterm-2800"></a><a name="indexterm-2801"></a><b>Synchronously</b>: A subscriber or a receiver explicitly fetches the message from the destination by calling the <tt>receive</tt> method. The <tt>receive</tt> method can block until a message arrives or can time out if a message does not arrive within a specified time limit.</p></li>
+<li><p><a name="indexterm-2802"></a><a name="indexterm-2803"></a><b>Asynchronously</b>: A client can register a <b>message listener</b> with a consumer. A message listener is similar to an event listener. Whenever a message arrives at the destination, the JMS provider delivers the message by calling the listener&rsquo;s <tt>onMessage</tt> method, which acts on the contents of the message.</p></li></ul>
+
+         </div>
+         <div class="navigation">
+             <a href="bncdr.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnceh.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

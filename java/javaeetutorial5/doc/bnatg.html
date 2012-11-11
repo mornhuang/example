@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Binding Component Values and Instances to External Data Sources - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level3"><a href="bnara.html">The Example JavaServer Faces Application</a></p>
+<p class="toc level3"><a href="bnarb.html">Setting Up a Page</a></p>
+<p class="toc level3"><a href="bnarc.html">Using the Core Tags</a></p>
+<p class="toc level3"><a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a></p>
+<p class="toc level4"><a href="bnarf.html#bnarg">UI Component Tag Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarh">The <tt>id</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarj">The <tt>rendered</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnark">The <tt>style</tt> and <tt>styleClass</tt> Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarl">The <tt>value</tt> and <tt>binding</tt> Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarm">Adding a Form Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnaro">Using Text Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarr">Rendering a Text Field with the <tt>inputText</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnars">Rendering a Label with the <tt>outputLabel</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnart">Rendering a Hyperlink with the <tt>outputLink</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnaru">Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarv">Rendering a Password Field with the <tt>inputSecret</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarw">Using Command Components for Performing Actions and Navigation</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarx">Rendering a Button with the <tt>commandButton</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnary">Rendering a Hyperlink with the <tt>commandLink</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarz">Using Data-Bound Table Components</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasb">Adding Graphics and Images with the <tt>graphicImage</tt> Tag</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasc">Laying Out Components with the <tt>UIPanel</tt> Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnase">Rendering Components for Selecting One Value</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasg">Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a></p>
+<p class="toc level4"><a href="bnarf.html#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasm">Using the <tt>selectItems</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasn">Using the <tt>selectItem</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnasp.html">Using Localized Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasq">Loading a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasr">Referencing Localized Static Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnast.html">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="bnast.html#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="bnast.html#bnasx">Using <tt>NumberConverter</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnasz.html">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a></p>
+<p class="toc level3 tocsp"><a href="bnatc.html">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="bnatc.html#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="bnatc.html#bnatf">Using the <tt>LongRangeValidator</tt></a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Binding Component Values and Instances to External Data Sources</a></p>
+<p class="toc level4"><a href="#bnati">Binding a Component Value to a Property</a></p>
+<p class="toc level4"><a href="#bnatj">Binding a Component Value to an Implicit Object</a></p>
+<p class="toc level4"><a href="#bnatl">Binding a Component Instance to a Bean Property</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a></p>
+<p class="toc level3"><a href="bnatn.html">Referencing a Backing Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a></p>
+<p class="toc level3 tocsp"><a href="bnatt.html">Using Custom Objects</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatu">Using a Custom Converter</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatv">Using a Custom Validator</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatw">Using a Custom Component</a></p>
+<p class="toc level2 tocsp"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnatc.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnatm.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnatg"></a><h3>Binding Component Values and Instances to External Data Sources</h3>
+<a name="indexterm-1187"></a><p>As explained in <a href="bnaqm.html">Backing Beans</a>, a component tag can wire its component&rsquo;s data to
+a back-end data object by doing one of the following:</p>
+<ul><li><p><a name="indexterm-1188"></a><a name="indexterm-1189"></a>Binding its component&rsquo;s value to a bean property or other external data source</p></li>
+<li><p><a name="indexterm-1190"></a><a name="indexterm-1191"></a>Binding its component&rsquo;s instance to a bean property</p></li></ul>
+<p><a name="indexterm-1192"></a><a name="indexterm-1193"></a><a name="indexterm-1194"></a><a name="indexterm-1195"></a><a name="indexterm-1196"></a><a name="indexterm-1197"></a>A component tag&rsquo;s <tt>value</tt> attribute uses a value expression to bind the component&rsquo;s
+value to an external data source, such as a bean property. A component
+tag&rsquo;s <tt>binding</tt> attribute uses a value expression to bind a component instance to
+a bean property.</p><p>When a component instance is bound to a backing bean property, the
+property holds the component&rsquo;s local value. Conversely, when a component&rsquo;s value is bound to
+a backing bean property, the property holds the value stored in the backing
+bean. This value is updated with the local value during the update model
+values phase of the life cycle. There are advantages to both of these
+techniques.</p><p>Binding a component instance to a bean property has these advantages:</p>
+<ul><li><p>The backing bean can programmatically modify component attributes.</p></li>
+<li><p>The backing bean can instantiate components rather than let the page author do so.</p></li></ul>
+<p>Binding a component&rsquo;s value to a bean property has these advantages:</p>
+<ul><li><p>The page author has more control over the component attributes.</p></li>
+<li><p>The backing bean has no dependencies on the JavaServer Faces API (such as the UI component classes), allowing for greater separation of the presentation layer from the model layer.</p></li>
+<li><p>The JavaServer Faces implementation can perform conversions on the data based on the type of the bean property without the developer needing to apply a converter.</p></li></ul>
+<p>In most situations, you will bind a component&rsquo;s value rather than its instance
+to a bean property. You&rsquo;ll need to use a component binding only when
+you need to change one of the component&rsquo;s attributes dynamically. For example, if
+an application renders a component only under certain conditions, it can set the
+component&rsquo;s <tt>rendered</tt> property accordingly by accessing the property to which the component is
+bound.</p><p>When referencing the property using the component tag&rsquo;s <tt>value</tt> attribute, you need
+to use the proper syntax. For example, suppose a backing bean called <tt>MyBean</tt>
+has this <tt>int</tt> property:</p><pre>int currentOption = null;
+int getCurrentOption(){...}
+void setCurrentOption(int option){...}</pre><p>The value attribute that references this property must have this value-binding expression:</p><pre>#{MyBean.currentOption}</pre><p>In addition to binding a component&rsquo;s value to a bean property, the <tt>value</tt>
+attribute can specify a literal value or can map the component&rsquo;s data to
+any primitive (such as <tt>int</tt>), structure (such as an array), or collection (such
+as a list), independent of a JavaBeans component. <a href="#bnath">Table&nbsp;11-8</a> lists some example value-binding expressions
+that you can use with the <tt>value</tt> attribute.</p><a name="bnath"></a><h6>Table&nbsp;11-8 Example Value-binding Expressions</h6><a name="indexterm-1198"></a><table><col width="53%"><col width="46%"><tr><th align="left" valign="top" scope="column"><p>Value</p></th>
+<th align="left" valign="top" scope="column"><p>Expression</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>A Boolean</p></td>
+<td align="left" valign="top" scope="row"><p><tt>cart.numberOfItems > 0</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>A property initialized from
+a context <tt>init</tt> parameter</p></td>
+<td align="left" valign="top" scope="row"><p><tt>initParam.quantity</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>A bean property</p></td>
+<td align="left" valign="top" scope="row"><p><tt>CashierBean.name</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Value in an array</p></td>
+<td align="left" valign="top" scope="row"><p><tt>books[3]</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Value in a collection</p></td>
+<td align="left" valign="top" scope="row"><p><tt>books["fiction"]</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Property
+of an object in an array of objects</p></td>
+<td align="left" valign="top" scope="row"><p><tt>books[3].price</tt></p></td>
+</tr>
+</table><p>The next two sections explain in more detail how to use the
+<tt>value</tt> attribute to bind a component&rsquo;s value to a bean property or other
+external data sources and how to use the <tt>binding</tt> attribute to bind a component
+instance to a bean property.</p>
+
+<a name="bnati"></a><h4>Binding a Component Value to a Property</h4>
+<a name="indexterm-1199"></a><a name="indexterm-1200"></a><a name="indexterm-1201"></a><a name="indexterm-1202"></a><p>To bind a component&rsquo;s value to a bean property, you specify the name
+of the bean and the property using the <tt>value</tt> attribute. As explained in
+<a href="bnaqm.html">Backing Beans</a>, the value expression of the component tag&rsquo;s <tt>value</tt> attribute must match the corresponding
+managed bean declaration in the application configuration resource file.</p><p><a name="indexterm-1203"></a><a name="indexterm-1204"></a>This means that the name of the bean in the value expression
+must match the <tt>managed-bean-name</tt> element of the managed bean declaration up to the first
+period (<tt>.</tt>) in the expression. Similarly, the part of the value expression after
+the period must match the name specified in the corresponding <tt>property-name</tt> element in the
+application configuration resource file.</p><p>For example, consider this managed bean configuration, which configures the <tt>ImageArea</tt> bean corresponding
+to the North America part of the image map on the <tt>chooselocale.jsp</tt> page
+of the Duke&rsquo;s Bookstore application:</p><pre>&lt;managed-bean>
+    &lt;managed-bean-name> NA &lt;/managed-bean-name>
+    &lt;managed-bean-class> model.ImageArea &lt;/managed-bean-class>
+    &lt;managed-bean-scope> application &lt;/managed-bean-scope>
+    &lt;managed-property>
+        &lt;property-name>shape&lt;/property-name>
+        &lt;value>poly&lt;/value>
+    &lt;/managed-property>
+    &lt;managed-property>
+        &lt;property-name>alt&lt;/property-name>
+        &lt;value>NAmerica&lt;/value>
+    &lt;/managed-property>
+    ...
+&lt;/managed-bean></pre><p>This example configures a bean called <tt>NA</tt>, which has several properties, one of
+which is called <tt>shape</tt>.</p><p>Although the <tt>area</tt> tags on the <tt>chooselocale.jsp</tt> page do not bind to
+an <tt>ImageArea</tt> property (they bind to the bean itself), to do this, you
+refer to the property using a value expression from the <tt>value</tt> attribute of
+the component&rsquo;s tag:</p><pre>&lt;h:outputText value="#{NA.shape}" /></pre><p>Much of the time you will not include definitions for a managed
+bean&rsquo;s properties when configuring it. You need to define a property and its
+value only when you want the property to be initialized with a value
+when the bean is initialized.</p><p>If a component tag&rsquo;s <tt>value</tt> attribute must refer to a property that is
+not initialized in the <tt>managed-bean</tt> configuration, the part of the value-binding expression after
+the period must match the property name as it is defined in the
+backing bean.</p><p>See <a href="bnawp.html">Application Configuration Resource File</a> for information on how to configure beans in the application configuration
+resource file.</p><p><a href="bnaty.html">Writing Bean Properties</a> explains in more detail how to write the backing bean properties for
+each of the component types.</p>
+
+<a name="bnatj"></a><h4>Binding a Component Value to an Implicit Object</h4>
+<a name="indexterm-1205"></a><p>One external data source that a <tt>value</tt> attribute can refer to is an
+implicit object.</p><p><a name="indexterm-1206"></a>The <tt>bookreceipt.jsp</tt> page of the Duke&rsquo;s Bookstore application includes a reference to an
+implicit object from a parameter substitution tag:</p><pre>&lt;h:outputFormat title="thanks" value="#{bundle.ThankYouParam}">
+    &lt;f:param value="#{sessionScope.name}"/>
+&lt;/h:outputFormat></pre><p>This tag gets the name of the customer from the session scope
+and inserts it into the parameterized message at the key <tt>ThankYouParam</tt> from the resource
+bundle. For example, if the name of the customer is Gwen Canigetit, this
+tag will render:</p><pre>Thank you, Gwen Canigetit, for purchasing your books from us.</pre><p>The <tt>name</tt> tag on the <tt>bookcashier.jsp</tt> page has the <tt>NameChanged</tt> listener implementation registered on
+it. This listener saves the customer&rsquo;s name in the session scope when the
+<tt>bookcashier.jsp</tt> page is submitted. See <a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a> for more information on how this listener
+works. See <a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a> to learn how the listener is registered on the tag.</p><p>Retrieving values from other <a name="indexterm-1207"></a>implicit objects is done in a similar way
+to the example shown in this section. <a href="#bnatk">Table&nbsp;11-9</a> lists the implicit objects that a
+value attribute can refer to. All of the implicit objects except for the
+scope objects are read-only and therefore should not be used as a value
+for a <tt>UIInput</tt> component.</p><a name="bnatk"></a><h6>Table&nbsp;11-9 Implicit Objects</h6><a name="indexterm-1208"></a><table><col width="22%"><col width="77%"><tr><th align="left" valign="top" scope="column"><p>Implicit Object</p></th>
+<th align="left" valign="top" scope="column"><p>What It Is</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>applicationScope</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of the application scope
+attribute values, keyed by attribute name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>cookie</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of the cookie values for the
+current request, keyed by cookie name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>facesContext</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The <tt>FacesContext</tt> instance for the current request</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>header</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt>
+of HTTP header values for the current request, keyed by header name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>headerValues</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt>
+of <tt>String</tt> arrays containing all the header values for HTTP headers in the
+current request, keyed by header name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>initParam</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of the context initialization parameters for this
+web application</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>param</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of the request parameters for this request, keyed by parameter
+name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>paramValues</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of <tt>String</tt> arrays containing all the parameter values for request parameters
+in the current request, keyed by parameter name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>requestScope</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of the request attributes
+for this request, keyed by attribute name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>sessionScope</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A <tt>Map</tt> of the session attributes for
+this request, keyed by attribute name</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>view</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The root <tt>UIComponent</tt> in the current component tree stored
+in the <tt>FacesRequest</tt> for this request</p></td>
+</tr>
+</table>
+
+<a name="bnatl"></a><h4>Binding a Component Instance to a Bean Property</h4>
+<a name="indexterm-1209"></a><a name="indexterm-1210"></a><p><a name="indexterm-1211"></a><a name="indexterm-1212"></a><a name="indexterm-1213"></a>A component instance can be bound to a bean property using a
+value expression with the <tt>binding</tt> attribute of the component&rsquo;s tag. You usually bind a
+component instance rather than its value to a bean property if the bean
+must dynamically change the component&rsquo;s attributes.</p><p>Here are two tags from the <tt>bookcashier.jsp</tt> page that bind components to bean
+properties:</p><pre>&lt;h:selectBooleanCheckbox
+     id="fanClub"
+    rendered="false"
+    binding="#{cashier.specialOffer}" />
+&lt;h:outputLabel for="fanClub"
+    rendered="false"        
+    binding="#{cashier.specialOfferText}"  >
+    &lt;h:outputText id="fanClubLabel"
+        value="#{bundle.DukeFanClub}"
+    />
+&lt;/h:outputLabel></pre><p>The <tt>selectBooleanCheckbox</tt> tag renders a check box and binds the <tt>fanClub</tt> <tt>UISelectBoolean</tt> component to
+the <tt>specialOffer</tt> property of <tt>CashierBean</tt>. The <tt>outputLabel</tt> tag binds the component representing the check
+box&rsquo;s label to the <tt>specialOfferText</tt> property of <tt>CashierBean</tt>. If the application&rsquo;s locale is
+English, the <tt>outputLabel</tt> tag renders:</p><pre>I&rsquo;d like to join the Duke Fan Club, free with my purchase of over $100</pre><p><a name="indexterm-1214"></a>The <tt>rendered</tt> attributes of both tags are set to <tt>false</tt>, which prevents the
+check box and its label from being rendered. If the customer orders more
+than $100 (or 100 euros) worth of books and clicks the <tt>Submit</tt> button, the
+<tt>submit</tt> method of <tt>CashierBean</tt> sets both components&rsquo; <tt>rendered</tt> properties to <tt>true</tt>, causing the check
+box and its label to be rendered.</p><p>These tags use component bindings rather than value bindings because the backing bean
+must dynamically set the values of the components&rsquo; <tt>rendered</tt> properties.</p><p>If the tags were to use value bindings instead of component bindings, the
+backing bean would not have direct access to the components, and would therefore
+require additional code to access the components from the <tt>FacesContext</tt> instance to
+change the components&rsquo; <tt>rendered</tt> properties.</p><p><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a> explains how to write the bean properties bound to the example components
+and also discusses how the <tt>submit</tt> method sets the <tt>rendered</tt> properties of the components.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnatc.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnatm.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

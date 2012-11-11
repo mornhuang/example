@@ -1,0 +1,14 @@
+Note : 
+
+To reduce the size of the zip file, i have deleted the lib folder from the root, 
+but you can copy back from dist folder.
+
+While you are changing the app(development), please remember to locate dll file under %jdk/bin% 
+Please remember to add the libraries, which are located under dist\lib to buildpath
+
+For any further questions, you can contact with me.
+
+Regards
+
+
+

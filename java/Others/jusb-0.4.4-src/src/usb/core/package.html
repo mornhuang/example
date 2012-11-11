@@ -1,0 +1,261 @@
+<html><head>
+    <!-- $Id: package.html,v 1.1 2008/10/15 09:28:17 huangmeng Exp $ -->
+    <title> required </title>
+</head><body>
+
+<p> This package provides a USB Host Driver Interface,
+letting Java programs access USB Devices from USB Hosts.
+The initial implementation is of course for the
+<a href="../linux/package-summary.html">GNU/Linux</a> OS,
+but alternative operating systems (such as Win32) could also
+be supported through an appropriate server implementation.
+Some currently notable aspects of this API include:  <ul>
+
+    <li> Open Source.  The libraries are under the "Lesser" GPL (LGPL),
+    which means you can use them in proprietary products as well as in
+    Free Software projects.
+
+    <li> Provides multi-threaded access to multiple
+    physical USB Devices.
+
+    <li> Supports access to native or remote devices.
+
+    <li> Devices with multiple interface can support multiple
+    drivers; each claims a different interface.
+
+    <li> Synchronous control and bulk messaging are well supported;
+    interrupt messaging is in development.
+    
+    <li> You can enumerate devices, and receive notifications when devices
+    (or USB controllers) are added or removed.
+
+    </ul>
+
+<p> Simple example programs are available,
+and a more substantial and useful application is available at
+<a href="http://jphoto.sourceforge.net">jphoto.sourceforge.net</a>.
+JPhoto exposes USB "class driver" functionality as an API and tool,
+for "Digital Still Imaging" devices (cameras and more).
+
+<p> At this writing, two implementations of this interface
+are available.  One uses the Linux 2.4 kernel; the other
+uses RMI.  That should reduces the number of porting problems,
+as well as enabling application development on any platform
+that has sufficient Java support.
+The relevant Service Provider Interface (SPI) is not for applications
+use, and is subject to change.
+
+
+<h3> Overview of Device Selection, Setup, and Use </h3>
+
+<p> To use a device, you first need to find it.  In this API,
+the file system is not used to discover or identify devices.
+If you're using the Java API, you'll likely need to use
+one or more <a href="Endpoint.html">Endpoint</a>s to
+do your I/O; but you need to get them first! </p> <ol>
+
+    <li> Bootstrap by getting a USB <a href="Host.html">Host</a>
+    from the <a href="HostFactory.html">HostFactory</a>.
+
+    <li> Then get a <a href="Device.html">Device</a>.
+    Given a host, you have several choices here, all of
+    which can give you access to a device in "operational"
+    mode (no further setup is required):<ul>
+
+	<li> You can address devices at specific hub ports using the
+	<a href="PortIdentifier.html">PortIdentifier</a> class.
+	Such port IDs won't change unless you recable.
+
+	<li> To find out about devices which are currently connected,
+	ask the host about its <a href="Bus.html">Bus</a>ses.
+
+	<li> Ask the Host to notify you about them as they connect,
+	using a <a href="USBListener.html">USBListener</a>.
+
+	<li> Walk up or down a USB tree from a device you have.
+
+	</ul>
+
+    <li> Look at the Device and its current
+    <a href="Configuration.html">Configuration</a>
+    to see if it's one that you want to deal with; there might
+    be many similar devices to use.
+
+    </ol>
+
+<p> Once you have such a device, interact directly with it
+using control messaging, or use 
+<a href="Endpoint.html">Endpoint</a>s
+to transport data in various ways.
+To get an endpoint,
+claim an <a href="Interface.html">Interface</a>,
+from its Configuration,
+and then you may use its endpoints.
+Get interfaces from the current configuration,
+and keep track of whether you've claimed them. </p>
+
+<p> In the "interface claiming" process, other drivers may be able
+to claim the interface before your Java code.
+ As yet there's no way to ask another
+module to release its claim on an interface, much less to do
+so in your favor.  You can tell which driver claimed an interface.
+<em>Note:  you don't claim devices, only interfaces.
+Devices can be shared between drivers, with
+interfaces as the nonsharable unit.</em>
+</p>
+
+<h3> Device Driver Modes </h3>
+
+<p> USB offers a lot of flexibility in how functionality is structured
+in different devices.
+At this writing, two of those mechanisms should be avoided in
+this API:  multiple configurations, and alternate settings for
+interfaces.  (Most devices don't use these, so temporarily
+avoiding that USB functionality should be no real hardship.)
+
+<p> Some interesting driver modes include: 
+
+<ul>
+
+    <li> Some applications may may get substantial work done
+    without claiming any interface.  They may only be visible
+    except to the extent that they use control messaging.
+
+    <li> Some drivers may provide standard USB <em>Class</em>
+    functionality such as a hub, keyboard, or still imaging device.
+
+    <li> Other drivers may support some vendor-specific
+    functionality.  Device characteristics such as
+    vendor number and product number help
+    determine what drivers might talk to the device.
+    These drivers are typically associated with a lists
+    of devices they handle, which evolves over time.
+
+    </ul> 
+
+<p> You may find that a driver you have written for one type of
+device can work with another one.  Often new models retain protocol
+compatibility with older ones.  So, manage the lists of devices supported
+by your driver carefully, and try to make it so that end users can
+update the lists easily (use some text config file, perhaps XML).
+
+
+<h3> USB Communication Types </h3>
+
+<p> Each USB device supports four types of communication.  One of them can
+be used with every device, and is implicitly available with every
+interface.  (Called the "default control pipe" or "endpoint zero".) <ul>
+
+    <li><a href="ControlMessage.html"><em>Control</em></a>
+    messaging (no endpoint type) is used in request/response messages
+    to devices, and are used for device management.  They can be used to
+    access the device's identification information (identifying device
+    type, manufacturer, product, perhaps a serial number, and more).
+    Drivers share access to such "command style" communications to the
+    device, and there may be extended periods where they must exclude
+    access from other drivers.
+
+    </ul>
+
+<p> Other types of communication are grouped in "interfaces".  Interfaces
+have at least one "endpoint", used to describe one of the
+other three types of communication: <ul>
+
+    <li><a href="#bulk"><em>Bulk</em></a> endpoints are reliable.
+    They have some reserved bandwidth, and also take up what's left
+    at the end of a USB frame, after periodic transfers.
+    They are used in storage units
+    such as high-capacity removable disks, flash memory readers,
+    in still imaging devices (scanners,
+    cameras), in MP3 players to transfer data to or from the USB device,
+    in network interfaces,
+    and in other kinds of devices.</li>
+
+    <li><a href="#interrupt"><em>Interrupt</em></a>
+    endpoints preallocate a certain amount of
+    bandwidth for periodic (every N frames of USB traffic)
+    use in communicating events from the device to the USB
+    host (or sometimes vice versa, as in a force feedback
+    joystick).  Examples include mouse movements and
+    key presses; at most 64 bytes of data can be transferred each interrupt.
+    (Note that these are not real interrupts.  The USB host polls each
+    device for interrupt data, with a period chosen by the endpoint.)</li>
+
+    <li> <em>Isochronous</em> endpoints (<em>iso</em> for short) are not
+    currently supported in this package.  These are used for media data such
+    as sound (to speakers or a headset; from a microphone) and video (most
+    of the USB "webcams" use this).
+    These are periodic unreliable transfers,
+    typically larger than interrupt data.
+    Such media often have OS support that is automatically used by the
+    Java Media APIs, and need little user mode support. </li>
+
+    </ul>
+
+<p> It's likely that features using isochronous endpoints could leverage
+the real time extensions to Java, or be exposed through higher level APIs
+such as the Java Media Framework (JMF).  Such support has not been the
+top priority for this package thus far.  </p>
+
+
+<h4><a name="bulk">Bulk Messaging</a></h4>
+
+<p> If you have a bulk input endpoint, it is associated with a 
+<code>java.io.InputStream</code> which you can read and write as you need.
+If you have a bulk output endpoint, it provides you with a 
+<code>java.io.OutputStream</code>.  Only high speed devices
+use bulk messaging.
+
+<p> Note that there are no limits to the amount of data you can send or
+receive through a bulk endpoint, other than elapsed time it takes to send
+the data.
+Unlike TCP, there are packet boundaries; you can send packets of up
+to a per-endpoint maximum (such as 64 bytes, the biggest) and you
+can detect "short" reads (less than the maximum, including
+zero bytes) through the API.
+
+<p> USB 1.1 is nominally at 12 Megabit/second speed,
+and USB 2.0 is nominally at 480 Megabit/second,
+but your host controller or OS may limit your throughput.
+You can help the USB Host
+Controller Driver (HCD) get top throughput by using larger writes.
+
+
+<h4><a name="interrupt">Interrupt Endpoints</a></h4>
+
+<p> You may send interrupt data to a device at any time using
+<code>Endpoint.sendInterrupt</code>, sending data to
+the device (maximum of 64 bytes, but check the specific
+endpoint size limit).
+
+<p> To receive interrupts from a device, dedicate a thread
+to issue <code>Endpoint.recvInterrupt</code>, and do at least partial
+processing of the interrupt data provided by device.  (This threading
+model and API is highly subject to change.
+It's not debugged yet, for one thing; likely a user mode timer
+should just do the polling, to simplify the kernel interaction.)
+
+
+<h3> Other API Notes </h3>
+
+<p> In most places the USB specification defines values to be
+unsigned eight or sixteen bit units, they are exposed in this
+API using (signed) <code>int</code> values.
+In places where values are defined as BCD encoded release
+numbers, they are exposed as strings.
+
+<p> USB numbers things starting at one.  This means that
+this API uses one-based ranges for things such as port
+numbers and USB addresses.
+
+<p> In places where the USB specification defines values to be string
+index descriptor numbers, they are exposed here as strings.
+Device strings may of course be cached at various
+levels of the system.  You can facilitate this by asking to
+use a default language;
+just pass zero where language codes are required.
+(The Linux implementation uses its system locale when choosing
+among a selection of languages; other native implementations
+might consider other factors.) </li>
+
+</body></html>

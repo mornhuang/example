@@ -1,0 +1,75 @@
+h2.Title
+{
+  color: #000000;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 51pt;
+  text-align: right;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none
+}
+h3.Subtitle
+{
+  color: Black;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: right;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none
+}
+h4.TitleAuthor
+{
+  color: #003366;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 20px;
+  text-align: right;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none
+}
+h4.TitleDate
+{
+  color: #003366;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 5em;
+  text-align: right;
+  text-decoration: none;
+  text-indent: 0px;
+  text-transform: none
+}
+
+div.navigation {margin-top:15px; margin-bottom:15px;}
+div.header-links {margin-top:4px; margin-bottom:8px;}
+div.header-links-top {margin-top 0px; margin-bottom:4px;}
+
+div.onpage {background-color: #C5D5A9;  padding-top: 6px; padding-bottom: 6px; }
+
+div.copyright {margin-top: 40px}
+.copyright p {font-size: 8px}
+.copyright a {font-size: 8px}

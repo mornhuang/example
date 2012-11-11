@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HeaderExample" default="default" basedir=".">
+    <description>Builds, tests, and runs the project HeaderExample.</description>
+    <property name="is.java-client.module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-headers" depends="compile"
+    description="Runs HeaderExample. Argument: -Dsoap=&lt;1.1|1.2&gt;">
+    <echo message="Running HeaderExample."/>
+    <java classname="HeaderExample" fork="yes">
+      <arg value="${soap}" />
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

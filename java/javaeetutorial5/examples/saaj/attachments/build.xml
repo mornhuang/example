@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Attachments" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Attachments.</description>
+    <property name="is.java-client.module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-att" depends="compile"
+    description="Runs Attachments. Argument: -Dfile=&lt;file&gt;">
+    <echo message="Running Attachments."/>
+    <java classname="Attachments" fork="yes">
+      <arg value="${file}" />
+      <classpath refid="classpath" />
+    </java>
+  </target>
+  
+</project>

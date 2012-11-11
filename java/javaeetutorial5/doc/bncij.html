@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Container-Managed Transactions - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level3"><a href="bncii.html">What Is a Transaction?</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Container-Managed Transactions</a></p>
+<p class="toc level4"><a href="#bncik">Transaction Attributes</a></p>
+<p class="toc level5"><a href="#bncim"><tt>Required</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bncin"><tt>RequiresNew</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bncio"><tt>Mandatory</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bncip"><tt>NotSupported</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bnciq"><tt>Supports</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bncir"><tt>Never</tt> Attribute</a></p>
+<p class="toc level5"><a href="#bncis">Summary of Transaction Attributes</a></p>
+<p class="toc level5"><a href="#bnciu">Setting Transaction Attributes</a></p>
+<p class="toc level4 tocsp"><a href="#bnciv">Rolling Back a Container-Managed Transaction</a></p>
+<p class="toc level4"><a href="#bnciw">Synchronizing a Session Bean's Instance Variables</a></p>
+<p class="toc level4"><a href="#bncix">Methods Not Allowed in Container-Managed Transactions</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnciy.html">Bean-Managed Transactions</a></p>
+<p class="toc level4"><a href="bnciy.html#bnciz">JTA Transactions</a></p>
+<p class="toc level4"><a href="bnciy.html#bncja">Returning without Committing</a></p>
+<p class="toc level4"><a href="bnciy.html#bncjb">Methods Not Allowed in Bean-Managed Transactions</a></p>
+<p class="toc level3 tocsp"><a href="bncjc.html">Transaction Timeouts</a></p>
+<p class="toc level3"><a href="bncjd.html">Updating Multiple Databases</a></p>
+<p class="toc level3"><a href="bncjg.html">Transactions in Web Components</a></p>
+<p class="toc level2 tocsp"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncii.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnciy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncij"></a><h3>Container-Managed Transactions</h3>
+<a name="indexterm-3017"></a><p><a name="indexterm-3018"></a><a name="indexterm-3019"></a><a name="indexterm-3020"></a><a name="indexterm-3021"></a><a name="indexterm-3022"></a>In an enterprise bean with <b>container-managed transaction demarcation</b>, the EJB container sets the boundaries
+of the transactions. You can use container-managed transactions with any type of enterprise
+bean: session, or message-driven. Container-managed transactions simplify development because the enterprise bean code does
+not explicitly mark the transaction&rsquo;s boundaries. The code does not include statements that
+begin and end the transaction.</p><p><a name="indexterm-3023"></a>By default if no transaction demarcation is specified enterprise beans use container-managed transaction
+demarcation.</p><p><a name="indexterm-3024"></a>Typically, the container begins a transaction immediately before an enterprise bean method starts.
+It commits the transaction just before the method exits. Each method can be
+associated with a single transaction. Nested or multiple transactions are not allowed within
+a method.</p><p>Container-managed transactions do not require all methods to be associated with transactions. When
+developing a bean, you can specify which of the bean&rsquo;s methods are associated
+with transactions by setting the transaction attributes.</p><p>Enterprise beans that use container-managed transaction demarcation must not use any transaction management
+methods that interfere with the container&rsquo;s transaction demarcation boundaries. Examples of such methods
+are the <tt>commit</tt>, <tt>setAutoCommit</tt>, and <tt>rollback</tt> methods of <tt>java.sql.Connection</tt> or the <tt>commit</tt> and
+<tt>rollback</tt> methods of <tt>javax.jms.Session</tt>. If you require control over the transaction demarcation, you
+must use application-managed transaction demarcation.</p><p>Enterprise beans that use container-managed transaction demarcation also must not use the <tt>javax.transaction.UserTransaction</tt>
+interface.</p>
+
+<a name="bncik"></a><h4>Transaction Attributes</h4>
+<a name="indexterm-3025"></a><p><a name="indexterm-3026"></a>A <b>transaction attribute</b> controls the scope of a transaction. <a href="#bncil">Figure&nbsp;33-1</a> illustrates why controlling the scope
+is important. In the diagram, <tt>method-A</tt> begins a transaction and then invokes <tt>method-B</tt>
+of <tt>Bean-2</tt>. When <tt>method-B</tt> executes, does it run within the scope of the transaction
+started by <tt>method-A</tt>, or does it execute with a new transaction? The answer
+depends on the transaction attribute of <tt>method-B</tt>.</p><a name="bncil"></a><h6>Figure&nbsp;33-1 Transaction Scope</h6><img src="figures/trans-transactionScope.gif" alt="A diagram showing a transaction between two beans."></img><p>A transaction attribute can have one of the following values:</p>
+<ul><li><p><tt>Required</tt></p></li>
+<li><p><tt>RequiresNew</tt></p></li>
+<li><p><tt>Mandatory</tt></p></li>
+<li><p><tt>NotSupported</tt></p></li>
+<li><p><tt>Supports</tt></p></li>
+<li><p><tt>Never</tt></p></li></ul>
+
+
+<a name="bncim"></a><h5><tt>Required</tt> Attribute</h5>
+<p>If the client is running within a transaction and invokes the enterprise bean&rsquo;s
+method, the method executes within the client&rsquo;s transaction. If the client is not
+associated with a transaction, the container starts a new transaction before running the
+method.</p><p>The <tt>Required</tt> attribute is the implicit transaction attribute for all enterprise bean methods
+running with container-managed transaction demarcation. You typically do not set the <tt>Required</tt> attribute unless
+you need to override another transaction attribute. Because transaction attributes are declarative, you
+can easily change them later.</p>
+
+<a name="bncin"></a><h5><tt>RequiresNew</tt> Attribute</h5>
+<p>If the client is running within a transaction and invokes the enterprise bean&rsquo;s
+method, the container takes the following steps:</p>
+<ol><li><p>Suspends the client&rsquo;s transaction</p></li>
+<li><p>Starts a new transaction</p></li>
+<li><p>Delegates the call to the method</p></li>
+<li><p>Resumes the client&rsquo;s transaction after the method completes</p></li></ol>
+<p>If the client is not associated with a transaction, the container starts a
+new transaction before running the method.</p><p>You should use the <tt>RequiresNew</tt> attribute when you want to ensure that the
+method always runs within a new transaction.</p>
+
+<a name="bncio"></a><h5><tt>Mandatory</tt> Attribute</h5>
+<p><a name="indexterm-3027"></a>If the client is running within a transaction and invokes the enterprise bean&rsquo;s
+method, the method executes within the client&rsquo;s transaction. If the client is not
+associated with a transaction, the container throws the <tt>TransactionRequiredException</tt>.</p><p>Use the <tt>Mandatory</tt> attribute if the enterprise bean&rsquo;s method must use the transaction
+of the client.</p>
+
+<a name="bncip"></a><h5><tt>NotSupported</tt> Attribute</h5>
+<p>If the client is running within a transaction and invokes the enterprise bean&rsquo;s
+method, the container suspends the client&rsquo;s transaction before invoking the method. After the
+method has completed, the container resumes the client&rsquo;s transaction.</p><p>If the client is not associated with a transaction, the container does not
+start a new transaction before running the method.</p><p>Use the <tt>NotSupported</tt> attribute for methods that don&rsquo;t need transactions. Because transactions involve
+overhead, this attribute may improve performance.</p>
+
+<a name="bnciq"></a><h5><tt>Supports</tt> Attribute</h5>
+<p>If the client is running within a transaction and invokes the enterprise bean&rsquo;s
+method, the method executes within the client&rsquo;s transaction. If the client is not
+associated with a transaction, the container does not start a new transaction before
+running the method.</p><p>Because the transactional behavior of the method may vary, you should use the
+<tt>Supports</tt> attribute with caution.</p>
+
+<a name="bncir"></a><h5><tt>Never</tt> Attribute</h5>
+<p><a name="indexterm-3028"></a>If the client is running within a transaction and invokes the enterprise bean&rsquo;s
+method, the container throws a <tt>RemoteException</tt>. If the client is not associated with
+a transaction, the container does not start a new transaction before running the
+method.</p>
+
+<a name="bncis"></a><h5>Summary of Transaction Attributes</h5>
+<p><a href="#bncit">Table&nbsp;33-1</a> summarizes the effects of the transaction attributes. Both the <tt>T1</tt> and the
+<tt>T2</tt> transactions are controlled by the container. A <tt>T1</tt> transaction is associated with
+the client that calls a method in the enterprise bean. In most cases,
+the client is another enterprise bean. A <tt>T2</tt> transaction is started by the
+container just before the method executes.</p><p><a name="indexterm-3029"></a><a name="indexterm-3030"></a><a name="indexterm-3031"></a>In the last column of <a href="#bncit">Table&nbsp;33-1</a>, the word <b>None</b> means that the business method
+does not execute within a transaction controlled by the container. However, the database
+calls in such a business method might be controlled by the transaction manager
+of the DBMS.</p><a name="bncit"></a><h6>Table&nbsp;33-1 Transaction Attributes and Scope</h6><table><col width="29%"><col width="29%"><col width="41%"><tr><th align="left" valign="top" scope="column"><p>Transaction Attribute</p></th>
+<th align="left" valign="top" scope="column"><p>Client&rsquo;s Transaction</p></th>
+<th align="left" valign="top" scope="column"><p>Business Method&rsquo;s Transaction</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Required</tt></p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+<td align="left" valign="top" scope="row"><p>T2</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>RequiresNew</tt></p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+<td align="left" valign="top" scope="row"><p>T2</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+<td align="left" valign="top" scope="row"><p>T2</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Mandatory</tt></p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+<td align="left" valign="top" scope="row"><p>error</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>NotSupported</tt></p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Supports</tt></p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Never</tt></p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+<td align="left" valign="top" scope="row"><p>None</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"></td>
+<td align="left" valign="top" scope="row"><p>T1</p></td>
+<td align="left" valign="top" scope="row"><p>Error</p></td>
+</tr>
+</table>
+
+<a name="bnciu"></a><h5>Setting Transaction Attributes</h5>
+<a name="indexterm-3032"></a><p>Transaction attributes are specified by decorating the enterprise bean class or method with
+a <tt>javax.ejb.TransactionAttribute</tt> annotation, and setting it to one of the <tt>javax.ejb.TransactionAttributeType</tt> constants.</p><p>If you decorate the enterprise bean class with <tt>@TransactionAttribute</tt>, the specified <tt>TransactionAttributeType</tt>
+is applied to all the business methods in the class. Decoration a business
+method with <tt>@TransactionAttribute</tt> applies the <tt>TransactionAttributeType</tt> only to that method. If a <tt>@TransactionAttribute</tt>annotation decorates
+both the class and the method, the method <tt>TransactionAttributeType</tt> overrides the class
+<tt>TransactionAttributeType</tt>.</p><p>The <tt>TransactionAttributeType</tt> constants encapsulate the transaction attributes described earlier in this section.</p>
+<ul><li><p><tt>Required</tt>: <tt>TransactionAttributeType.REQUIRED</tt></p></li>
+<li><p><tt>RequiresNew</tt>: <tt>TransactionAttributeType.REQUIRES_NEW</tt></p></li>
+<li><p><tt>Mandatory</tt>: <tt>TransactionAttributeType.MANDATORY</tt></p></li>
+<li><p><tt>NotSupported</tt>: <tt>TransactionAttributeType.NOT_SUPPORTED</tt></p></li>
+<li><p><tt>Supports</tt>: <tt>TransactionAttributeType.SUPPORTS</tt></p></li>
+<li><p><tt>Never</tt>: <tt>TransactionAttributeType.NEVER</tt></p></li></ul>
+<p>The following code snippet demonstrates how to use the <tt>@TransactionAttribute</tt> annotation:</p><pre>@TransactionAttribute(NOT_SUPPORTED)
+@Stateful
+public class TransactionBean implements Transaction {
+...
+    @TransactionAttribute(REQUIRES_NEW)
+    public void firstMethod() {...}
+
+    @TransactionAttribute(REQUIRED)
+    public void secondMethod() {...}
+
+    public void thirdMethod() {...}
+
+    public void fourthMethod() {...}
+}</pre><p>In this example, the <tt>TransactionBean</tt> class&rsquo;s transaction attribute has been set to <tt>NotSupported</tt>.
+<tt>firstMethod</tt> has been set to <tt>RequiresNew</tt>, and <tt>secondMethod</tt> has been set to
+<tt>Required</tt>. Because a <tt>@TransactionAttribute</tt> set on a method overrides the class <tt>@TransactionAttribute</tt>,
+calls to <tt>firstMethod</tt> will create a new transaction, and calls to <tt>secondMethod</tt> will
+either run in the current transaction, or start a new transaction. Calls to
+<tt>thirdMethod</tt> or <tt>fourthMethod</tt> do not take place within a transaction.</p>
+
+<a name="bnciv"></a><h4>Rolling Back a Container-Managed Transaction</h4>
+<a name="indexterm-3033"></a><p><a name="indexterm-3034"></a><a name="indexterm-3035"></a>There are two ways to roll back a container-managed transaction. First, if a
+system exception is thrown, the container will automatically roll back the transaction. Second,
+by invoking the <tt>setRollbackOnly</tt> method of the <tt>EJBContext</tt> interface, the bean method instructs the
+container to roll back the transaction. If the bean throws an application exception,
+the rollback is not automatic but can be initiated by a call
+to <tt>setRollbackOnly</tt>.</p>
+
+<a name="bnciw"></a><h4>Synchronizing a Session Bean&rsquo;s Instance Variables</h4>
+<a name="indexterm-3036"></a><a name="indexterm-3037"></a><p>The <tt>SessionSynchronization</tt> interface, which is optional, allows stateful session bean instances to receive
+transaction synchronization notifications. For example, you could synchronize the instance variables of an enterprise
+bean with their corresponding values in the database. The container invokes the <tt>SessionSynchronization</tt>
+methods (<tt>afterBegin</tt>, <tt>beforeCompletion</tt>, and <tt>afterCompletion</tt>) at each of the main stages of a
+transaction.</p><p><a name="indexterm-3038"></a>The <tt>afterBegin</tt> method informs the instance that a new transaction has begun. The
+container invokes <tt>afterBegin</tt> immediately before it invokes the business method.</p><p><a name="indexterm-3039"></a><a name="indexterm-3040"></a>The container invokes the <tt>beforeCompletion</tt> method after the business method has finished, but
+just before the transaction commits. The <tt>beforeCompletion</tt> method is the last opportunity for the
+session bean to roll back the transaction (by calling <tt>setRollbackOnly</tt>).</p><p>The <tt>afterCompletion</tt> method indicates that the transaction has completed. It has a single
+<tt>boolean</tt> parameter whose value is <tt>true</tt> if the transaction was committed and <tt>false</tt>
+if it was rolled back.</p>
+
+<a name="bncix"></a><h4>Methods Not Allowed in Container-Managed Transactions</h4>
+<p><a name="indexterm-3041"></a>You should not invoke any method that might interfere with the transaction boundaries
+set by the container. The list of prohibited methods follows:</p>
+<ul><li><p><a name="indexterm-3042"></a><a name="indexterm-3043"></a><a name="indexterm-3044"></a>The <tt>commit</tt>, <tt>setAutoCommit</tt>, and <tt>rollback</tt> methods of <tt>java.sql.Connection</tt></p></li>
+<li><p><a name="indexterm-3045"></a>The <tt>getUserTransaction</tt> method of <tt>javax.ejb.EJBContext</tt></p></li>
+<li><p><a name="indexterm-3046"></a>Any method of <tt>javax.transaction.UserTransaction</tt></p></li></ul>
+<p>You can, however, use these methods to set boundaries in application-managed transactions.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncii.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnciy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

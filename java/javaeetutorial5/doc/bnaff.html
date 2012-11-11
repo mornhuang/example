@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The Example Servlets - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level3"><a href="bnafe.html">What Is a Servlet?</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">The Example Servlets</a></p>
+<p class="toc level4"><a href="#bnafh">Troubleshooting Duke's Bookstore Database Problems</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnafi.html">Servlet Life Cycle</a></p>
+<p class="toc level4"><a href="bnafi.html#bnafj">Handling Servlet Life-Cycle Events</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafk">Defining the Listener Class</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafm">Specifying Event Listener Classes</a></p>
+<p class="toc level4 tocsp"><a href="bnafi.html#bnafn">Handling Servlet Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnafo.html">Sharing Information</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafp">Using Scope Objects</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafs">Controlling Concurrent Access to Shared Resources</a></p>
+<p class="toc level4"><a href="bnafo.html#bnaft">Accessing Databases</a></p>
+<p class="toc level3 tocsp"><a href="bnafu.html">Initializing a Servlet</a></p>
+<p class="toc level3"><a href="bnafv.html">Writing Service Methods</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafw">Getting Information from Requests</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafz">Constructing Responses</a></p>
+<p class="toc level3 tocsp"><a href="bnagb.html">Filtering Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagc">Programming Filters</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagd">Programming Customized Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagf">Specifying Filter Mappings</a></p>
+<p class="toc level3 tocsp"><a href="bnagi.html">Invoking Other Web Resources</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagj">Including Other Resources in the Response</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagk">Transferring Control to Another Web Component</a></p>
+<p class="toc level3 tocsp"><a href="bnagl.html">Accessing the Web Context</a></p>
+<p class="toc level3"><a href="bnagm.html">Maintaining Client State</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagn">Accessing a Session</a></p>
+<p class="toc level4"><a href="bnagm.html#bnago">Associating Objects with a Session</a></p>
+<p class="toc level5"><a href="bnagm.html#bnagp">Notifying Objects That Are Associated with a Session</a></p>
+<p class="toc level4 tocsp"><a href="bnagm.html#bnagq">Session Management</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagr">Session Tracking</a></p>
+<p class="toc level3 tocsp"><a href="bnags.html">Finalizing a Servlet</a></p>
+<p class="toc level4"><a href="bnags.html#bnagt">Tracking Service Requests</a></p>
+<p class="toc level4"><a href="bnags.html#bnagu">Notifying Methods to Shut Down</a></p>
+<p class="toc level4"><a href="bnags.html#bnagv">Creating Polite Long-Running Methods</a></p>
+<p class="toc level3 tocsp"><a href="bnagw.html">Further Information about Java Servlet Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnafe.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnafi.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaff"></a><h3>The Example Servlets</h3>
+<p><a name="indexterm-212"></a>This chapter uses the Duke&rsquo;s Bookstore application to illustrate the tasks involved in
+programming servlets. The source code for the bookstore application is located in the
+<tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/</tt> directory, which is created when you unzip the tutorial bundle (see <a href="bnaan.html">Building the Examples</a>).</p><p><a href="#bnafg">Table&nbsp;4-1</a> lists the servlets that handle each bookstore function. You can find these
+servlet classes in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/src/java/com/sun/bookstore1/</tt>. Each programming task is illustrated by one or
+more servlets. For example, <tt>BookDetailsServlet</tt> illustrates how to handle HTTP <tt>GET</tt> requests, <tt>BookDetailsServlet</tt> and
+<tt>CatalogServlet</tt> show how to construct responses, and <tt>CatalogServlet</tt> illustrates how to track
+session information.</p><a name="bnafg"></a><h6>Table&nbsp;4-1 Duke&rsquo;s Bookstore Example Servlets</h6><table><col width="57%"><col width="42%"><tr><th align="left" valign="top" scope="column"><p>Function</p></th>
+<th align="left" valign="top" scope="column"><p>Servlet</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Enter the bookstore</p></td>
+<td align="left" valign="top" scope="row"><p><tt>BookStoreServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Create the bookstore banner</p></td>
+<td align="left" valign="top" scope="row"><p><tt>BannerServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Browse the bookstore catalog</p></td>
+<td align="left" valign="top" scope="row"><p><tt>CatalogServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Put a book
+in a shopping cart</p></td>
+<td align="left" valign="top" scope="row"><p><tt>CatalogServlet</tt>,</p><p><tt>BookDetailsServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Get detailed information on a specific book</p></td>
+<td align="left" valign="top" scope="row"><p><tt>BookDetailsServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Display the shopping
+cart</p></td>
+<td align="left" valign="top" scope="row"><p><tt>ShowCartServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Remove one or more books from the shopping cart</p></td>
+<td align="left" valign="top" scope="row"><p><tt>ShowCartServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Buy the books in
+the shopping cart</p></td>
+<td align="left" valign="top" scope="row"><p><tt>CashierServlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Send an acknowledgment of the purchase</p></td>
+<td align="left" valign="top" scope="row"><p><tt>ReceiptServlet</tt></p></td>
+</tr>
+</table><p>The data for the bookstore application is maintained in a database and accessed
+through the database access class <tt>database.BookDBAO</tt>. The <tt>database</tt> package also contains the class
+<tt>Book</tt> which represents a book. The shopping cart and shopping cart items are
+represented by the classes <tt>cart.ShoppingCart</tt> and <tt>cart.ShoppingCartItem</tt>, respectively.</p><p>To deploy and run the application using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Perform all the operations described in <a href="bnaez.html">Accessing Databases from Web Applications</a>.</p></li>
+<li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><i>tut-install</i>/javaeetutorial5/examples/web/</pre></li>
+<li><p>Select the <tt>bookstore1</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box and the Open Required Projects check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>bookstore1</tt> project, and select Undeploy and Deploy.</p></li>
+<li><p>To run the application, open the bookstore URL <tt>http://localhost:8080/bookstore1/bookstore</tt>.</p></li></ol>
+<p>To deploy and run the application using Ant, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/</tt>.</p></li>
+<li><p>Type <tt><b>ant</b></tt>. This command will spawn any necessary compilations, copy files to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/build/</tt> directory, and create a WAR file and copy it to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/dist/</tt> directory.</p></li>
+<li><p>Start the Application Server.</p></li>
+<li><p>Perform all the operations described in <a href="bnaez.html#bnafb">Creating a Data Source in the Application Server</a>.</p></li>
+<li><p>To deploy the example, type <tt><b>ant deploy</b></tt>. The deploy target outputs a URL for running the application. Ignore this URL, and instead use the one shown in the next step.</p></li>
+<li><p>To run the application, open the bookstore URL <tt>http://localhost:8080/bookstore1/bookstore</tt>.</p></li></ol>
+<p>To learn how to configure the example, refer to the deployment descriptor (the
+<tt>web.xml</tt> file), which includes the following configurations:</p>
+<ul><li><p>A <tt>display-name</tt> element that specifies the name that tools use to identify the application.</p></li>
+<li><p>A set of <tt>filter</tt> elements that identify servlet filters contained in the application.</p></li>
+<li><p>A set of <tt>filter-mapping</tt> elements that identify which servlets will have their requests or responses filtered by the filters identified by the <tt>filter</tt> elements. A <tt>filter-mapping</tt> element can define more than one servlet mapping and more than one URL pattern for a particular filter.</p></li>
+<li><p>A set of <tt>servlet</tt> elements that identify all the servlet instances of the application.</p></li>
+<li><p>A set of <tt>servlet-mapping</tt> elements that map the servlets to URL patterns. More than one URL pattern can be defined for a particular servlet.</p></li>
+<li><p>A set of error-page mappings that map exception types to an HTML page, so that the HTML page opens when an exception of that type is thrown by the application.</p></li></ul>
+
+
+<a name="bnafh"></a><h4>Troubleshooting Duke's Bookstore Database Problems</h4>
+<p>The Duke&rsquo;s Bookstore database access object returns the following exceptions:</p>
+<ul><li><p><tt>BookNotFoundException</tt>: Returned if a book can&rsquo;t be located in the bookstore database. This will occur if you haven&rsquo;t loaded the bookstore database with data or the server has not been started or has crashed. You can populate the database by running <tt><b>ant create-tables</b></tt>.</p></li>
+<li><p><tt>BooksNotFoundException</tt>: Returned if the bookstore data can&rsquo;t be retrieved. This will occur if you haven&rsquo;t loaded the bookstore database with data or if the database server hasn&rsquo;t been started or it has crashed.</p></li>
+<li><p><tt>UnavailableException</tt>: Returned if a servlet can&rsquo;t retrieve the web context attribute representing the bookstore. This will occur if the database server hasn&rsquo;t been started.</p></li></ul>
+<p>Because you have specified an error page, you will see the message</p><pre>The application is unavailable. Please try later.</pre><p>If you don&rsquo;t specify an error page, the web container generates a default
+page containing the message</p><pre>A Servlet Exception Has Occurred</pre><p>and a stack trace that can help you diagnose the cause of
+the exception. If you use <tt>errorpage.html</tt>, you will have to look in the server
+log to determine the cause of the exception.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnafe.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnafi.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

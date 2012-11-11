@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Securing Java EE Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<div class="onpage">
+<p class="toc level2"><a href="">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+</div>
+<p class="toc level3"><a href="bnbyl.html">Securing Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbyn">Accessing an Enterprise Bean Caller's Security Context</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbyo">Declaring Security Role Names Referenced from Enterprise Bean Code</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyp">Declaring Security Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyq">Declaring Security Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level4 tocsp"><a href="bnbyl.html#bnbyr">Defining a Security View of Enterprise Beans</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbys">Defining Security Roles</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyu">Specifying an Authentication Mechanism</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyv">Specifying Method Permissions</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyy">Mapping Security Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbyz">Propagating Security Identity</a></p>
+<p class="toc level4 tocsp"><a href="bnbyl.html#bnbzd">Using Enterprise Bean Security Annotations</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbze">Using Enterprise Bean Security Deployment Descriptor Elements</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbzf">Configuring IOR Security</a></p>
+<p class="toc level4"><a href="bnbyl.html#bnbzg">Deploying Secure Enterprise Beans</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbzh">Accepting Unauthenticated Users</a></p>
+<p class="toc level5"><a href="bnbyl.html#bnbzi">Accessing Unprotected Enterprise Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbzj.html">Enterprise Bean Example Applications</a></p>
+<p class="toc level4"><a href="bnbzj.html#bnbzk">Example: Securing an Enterprise Bean</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzl">Annotating the Bean</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzm">Setting Runtime Properties</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzn">Building, Deploying, and Running the Secure Cart Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbzj.html#bnbzo">Building, Deploying, and Running the Secure Cart Example Using Ant</a></p>
+<p class="toc level4 tocsp"><a href="bnbzj.html#bncaa">Example: Using the <tt>isCallerInRole</tt> and <tt>getCallerPrincipal</tt> Methods</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncab">Modifying <tt>ConverterBean</tt></a></p>
+<p class="toc level5"><a href="bnbzj.html#bncac">Modifying Runtime Properties for the Secure Converter Example</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncad">Building, Deploying, and Running the Secure Converter Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncae">Building, Deploying, and Running the Secure Converter Example Using Ant</a></p>
+<p class="toc level5"><a href="bnbzj.html#bncaf">Troubleshooting the Secure Converter Application</a></p>
+<p class="toc level4 tocsp"><a href="bnbzj.html#bncag">Discussion: Securing the Duke's Bank Example</a></p>
+<p class="toc level3 tocsp"><a href="bncah.html">Securing Application Clients</a></p>
+<p class="toc level4"><a href="bncah.html#bncai">Using Login Modules</a></p>
+<p class="toc level4"><a href="bncah.html#bncaj">Using Programmatic Login</a></p>
+<p class="toc level3 tocsp"><a href="bncal.html">Securing EIS Applications</a></p>
+<p class="toc level4"><a href="bncal.html#bncam">Container-Managed Sign-On</a></p>
+<p class="toc level4"><a href="bncal.html#bncan">Component-Managed Sign-On</a></p>
+<p class="toc level4"><a href="bncal.html#bncao">Configuring Resource Adapter Security</a></p>
+<p class="toc level4"><a href="bncal.html#bncap">Mapping an Application Principal to EIS Principals</a></p>
+<p class="toc level2 tocsp"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbyj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbyl.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             <a name="bnbyk"></a><h3>Chapter&nbsp;29</h3><h3>Securing Java EE Applications</h3><a name="indexterm-2571"></a><p>Java EE applications are made up of components that can be deployed into
+different containers. These components are used to build multitier enterprise applications. Security services
+are provided by the component container and can be implemented using declarative or
+programmatic techniques. Java EE security services provide a robust and easily configured security
+mechanism for authenticating users and authorizing access to application functions and associated data. Java
+EE security services are separate from the security mechanisms of the operating system.</p><p>The ways to implement Java EE security services are discussed in a
+general way in <a href="bnbxe.html">Securing Containers</a>. This chapter provides more detail and a few examples that
+explore these security services as they relate to Java EE components. Java EE
+security services can be implemented in the following ways:</p>
+<ul><li><p><a name="indexterm-2572"></a><a name="indexterm-2573"></a><b>Metadata annotations</b> (or simply, <b>annotations</b>) enable a declarative style of programming. Users can specify information about security within a class file using annotations. When the application is deployed, this information can either be used by or overridden by the application deployment descriptor.</p></li>
+<li><p><a name="indexterm-2574"></a><a name="indexterm-2575"></a><a name="indexterm-2576"></a><b>Declarative security</b> expresses an application&rsquo;s security structure, including security roles, access control, and authentication requirements in a deployment descriptor, which is external to the application.</p><p>Any values explicitly specified in the deployment descriptor override any values specified in annotations.</p></li>
+<li><p><a name="indexterm-2577"></a><a name="indexterm-2578"></a><b>Programmatic security</b> is embedded in an application and is used to make security decisions. Programmatic security is useful when declarative security alone is not sufficient to express the security model of an application.</p></li></ul>
+<p>Some of the material in this chapter assumes that you have already
+read <a href="bnbwj.html">Chapter&nbsp;28, Introduction to Security in the Java EE Platform</a>.</p><p>This chapter includes the following topics:</p>
+<ul><li><p><a href="bnbyl.html">Securing Enterprise Beans</a></p></li>
+<li><p><a href="bnbzj.html">Enterprise Bean Example Applications</a></p></li>
+<li><p><a href="bncah.html">Securing Application Clients</a></p></li>
+<li><p><a href="bncal.html">Securing EIS Applications</a></p></li></ul>
+<p><a href="bncas.html">Chapter&nbsp;30, Securing Web Applications</a> discusses security specific to web components such as servlets and JSP pages.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbyj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbyl.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

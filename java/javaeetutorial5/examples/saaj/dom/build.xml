@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="DOMExample" default="default" basedir=".">
+    <description>Builds, tests, and runs the project DOMExample.</description>
+    <property name="is.java-client.module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <!-- file must be a valid XML file -->
+  <target name="run-dom" depends="compile"
+    description="Runs DOMExample. Argument: -Dxml-file=&lt;file&gt;">
+    <echo message="Running DOMExample."/>
+    <java classname="DOMExample" fork="yes">
+      <arg value="${xml-file}" />
+      <classpath refid="classpath" />
+    </java>
+  </target>
+
+  <!-- file must have correct SOAP envelope, header, and body -->
+  <target name="run-domsrc" depends="compile"
+    description="Runs DOMSrcExample. Argument: -Dxml-file=&lt;file&gt;">
+    <echo message="Running DOMSrcExample."/>
+    <java classname="DOMSrcExample" fork="yes">
+      <arg value="${xml-file}" />
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

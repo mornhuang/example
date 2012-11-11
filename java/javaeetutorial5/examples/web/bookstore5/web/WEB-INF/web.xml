@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>bookstore5</display-name>
+
+  <context-param>
+    <param-name>booksURL</param-name>
+    <param-value>http://localhost:8080/books/books.jspx</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+    <param-value>com.sun.bookstore.messages.BookstoreMessages</param-value>
+  </context-param>
+
+  <servlet>
+    <display-name>bookshowcart</display-name>
+    <servlet-name>bookshowcart</servlet-name>
+    <jsp-file>/books/bookshowcart.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <display-name>bookdetails</display-name>
+    <servlet-name>bookdetails</servlet-name>
+    <jsp-file>/books/bookdetails.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <display-name>bookreceipt</display-name>
+    <servlet-name>bookreceipt</servlet-name>
+    <jsp-file>/books/bookreceipt.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <display-name>bookcashier</display-name>
+    <servlet-name>bookcashier</servlet-name>
+    <jsp-file>/books/bookcashier.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <display-name>bookstore</display-name>
+    <servlet-name>bookstore</servlet-name>
+    <jsp-file>/books/bookstore.jsp</jsp-file>
+  </servlet>
+
+  <servlet>
+    <display-name>bookcatalog</display-name>
+    <servlet-name>bookcatalog</servlet-name>
+    <jsp-file>/books/bookcatalog.jsp</jsp-file>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>bookshowcart</servlet-name>
+    <url-pattern>/books/bookshowcart</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>bookdetails</servlet-name>
+    <url-pattern>/books/bookdetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>bookreceipt</servlet-name>
+    <url-pattern>/books/bookreceipt</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>bookcashier</servlet-name>
+    <url-pattern>/books/bookcashier</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>bookstore</servlet-name>
+    <url-pattern>/books/bookstore</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>bookcatalog</servlet-name>
+    <url-pattern>/books/bookcatalog</url-pattern>
+  </servlet-mapping>
+
+  <jsp-config>
+   <jsp-property-group>
+      <display-name>bookstore5</display-name>
+      <url-pattern>/books/*</url-pattern>
+      <el-ignored>false</el-ignored>
+      <scripting-invalid>false</scripting-invalid>
+      <is-xml>false</is-xml>
+      <include-prelude>/template/preludeTagLib.jspf</include-prelude>
+      <include-prelude>/template/preludeErrorPage.jspf</include-prelude>
+      <include-prelude>/template/prelude.jspf</include-prelude>
+      <include-coda>/template/coda.jspf</include-coda>
+    </jsp-property-group>
+    
+    <jsp-property-group>
+      <display-name>bookstore5</display-name>
+      <url-pattern>/error/*</url-pattern>
+      <el-ignored>false</el-ignored>
+      <scripting-invalid>false</scripting-invalid>
+      <is-xml>false</is-xml>
+      <include-prelude>/template/preludeTagLib.jspf</include-prelude>
+      <include-prelude>/template/prelude.jspf</include-prelude>
+      <include-coda>/template/coda.jspf</include-coda>
+    </jsp-property-group>        
+
+  </jsp-config>
+
+</web-app>
+

@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>JavaBeans Components - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level3"><a href="bnagy.html">What Is a JSP Page?</a></p>
+<p class="toc level4"><a href="bnagy.html#bnagz">A Simple JSP Page Example</a></p>
+<p class="toc level3 tocsp"><a href="bnahb.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnahe.html">The Life Cycle of a JSP Page</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahf">Translation and Compilation</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahg">Execution</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahh">Buffering</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahi">Handling JSP Page Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnahj.html">Creating Static Content</a></p>
+<p class="toc level4"><a href="bnahj.html#bnahk">Response and Page Encoding</a></p>
+<p class="toc level3 tocsp"><a href="bnahl.html">Creating Dynamic Content</a></p>
+<p class="toc level4"><a href="bnahl.html#bnahm">Using Objects within JSP Pages</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahn">Using Implicit Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnaho">Using Application-Specific Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahp">Using Shared Objects</a></p>
+<p class="toc level3 tocsp"><a href="bnahq.html">Unified Expression Language</a></p>
+<p class="toc level4"><a href="bnahq.html#bnahr">Immediate and Deferred Evaluation Syntax</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahs">Immediate Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaht">Deferred Evaluation</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnahu">Value and Method Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahv">Value Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahz">Method Expressions</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaia">Defining a Tag Attribute Type</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaic">Deactivating Expression Evaluation</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaid">Literal Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaif">Resolving Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaig">Process of Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaih">EL Resolvers</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaij">Implicit Objects</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaik">Operators</a></p>
+<p class="toc level4"><a href="bnahq.html#bnail">Reserved Words</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaim">Examples of EL Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaio">Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaip">Using Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaiq">Defining Functions</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">JavaBeans Components</a></p>
+<p class="toc level4"><a href="#bnais">JavaBeans Component Design Conventions</a></p>
+<p class="toc level4"><a href="#bnait">Creating and Using a JavaBeans Component</a></p>
+<p class="toc level4"><a href="#bnaiu">Setting JavaBeans Component Properties</a></p>
+<p class="toc level4"><a href="#bnaix">Retrieving JavaBeans Component Properties</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaiy.html">Using Custom Tags</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaiz">Declaring Tag Libraries</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaja">Including the Tag Library Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bnajb.html">Reusing Content in JSP Pages</a></p>
+<p class="toc level3"><a href="bnajc.html">Transferring Control to Another Web Component</a></p>
+<p class="toc level4"><a href="bnajc.html#bnajd"><tt>jsp:param</tt> Element</a></p>
+<p class="toc level3 tocsp"><a href="bnaje.html">Including an Applet</a></p>
+<p class="toc level3"><a href="bnajg.html">Setting Properties for Groups of JSP Pages</a></p>
+<p class="toc level4"><a href="bnajg.html#bnajh">Deactivating EL Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajk">Declaring Page Encodings</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajl">Defining Implicit Includes</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajm">Eliminating Extra White Space</a></p>
+<p class="toc level3 tocsp"><a href="bnajn.html">Further Information about JavaServer Pages Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnahq.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaiy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnair"></a><h3>JavaBeans Components</h3>
+<p><a name="indexterm-369"></a>JavaBeans components are Java classes that can be easily reused and composed together into
+applications. Any Java class that follows certain design conventions is a JavaBeans component.</p><p>JavaServer Pages technology directly supports using JavaBeans components with standard JSP language elements.
+You can easily create and initialize beans and get and set the values
+of their properties.</p>
+
+<a name="bnais"></a><h4>JavaBeans Component Design Conventions</h4>
+<p><a name="indexterm-370"></a>JavaBeans component design conventions govern the properties of the class and govern the
+public methods that give access to the properties.</p><p><a name="indexterm-371"></a>A JavaBeans component property can be:</p>
+<ul><li><p>Read/write, read-only, or write-only</p></li>
+<li><p>Simple, which means it contains a single value, or indexed, which means it represents an array of values</p></li></ul>
+<p><a name="indexterm-372"></a>A property does not have to be implemented by an instance variable. It
+must simply be accessible using public methods that conform to the following conventions:</p>
+<ul><li><p>For each readable property, the bean must have a method of the form:</p><pre>PropertyClass getProperty() { ... }</pre></li>
+<li><p>For each writable property, the bean must have a method of the form:</p><pre>setProperty(PropertyClass pc) { ... }</pre></li></ul>
+<p>In addition to the property methods, a JavaBeans component must define a constructor
+that takes no parameters.</p><p>The Duke&rsquo;s Bookstore application JSP pages <tt>bookstore.jsp</tt>, <tt>bookdetails.jsp</tt>, <tt>catalog.jsp</tt>, and <tt>showcart.jsp</tt>, all
+located at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore2/web</tt>, use the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore2/src/java/com/sun/bookstore2/database/BookDB.java</tt> JavaBeans component.</p><p><tt>BookDB</tt> provides a JavaBeans component front end to the access object <tt>BookDBAO</tt>. The
+JSP pages <tt>showcart.jsp</tt> and <tt>cashier.jsp</tt> access the bean <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore/src/com/sun/bookstore/cart/ShoppingCart.java</tt>, which represents a
+user&rsquo;s shopping cart.</p><p>The <tt>BookDB</tt> bean has two writable properties, <tt>bookId</tt> and <tt>database</tt>, and three
+readable properties: <tt>bookDetails</tt>, <tt>numberOfBooks</tt>, and <tt>books</tt>. These latter properties do not correspond to
+any instance variables but rather are a function of the <tt>bookId</tt> and <tt>database</tt>
+properties.</p><pre>package database;
+public class BookDB {
+    private String bookId = "0";
+    private BookDBAO database = null;
+    public BookDB () {
+    }
+    public void setBookId(String bookId) {
+    this.bookId = bookId;
+    }
+    public void setDatabase(BookDBAO database) {
+    this.database = database;
+    }
+    public Book getBook() throws
+         BookNotFoundException {
+        return (Book)database.getBook(bookId);
+     }
+    public List getBooks() throws BooksNotFoundException {
+        return database.getBooks();
+    }
+    public void buyBooks(ShoppingCart cart)
+         throws OrderException {
+        database.buyBooks(cart);
+    }
+    public int getNumberOfBooks() throws BooksNotFoundException {
+        return database.getNumberOfBooks();
+    }
+}<a name="indexterm-373"></a></pre>
+
+<a name="bnait"></a><h4>Creating and Using a JavaBeans Component</h4>
+<p><a name="indexterm-374"></a><a name="indexterm-375"></a>To declare that your JSP page will use a JavaBeans component, you use
+a <tt>jsp:useBean</tt> element. There are two forms:</p><pre>&lt;jsp:useBean id="<i>beanName</i>"
+    class="<i>fully-qualified-classname</i>" scope="<i>scope</i>"/></pre><p>and</p><pre>&lt;jsp:useBean id="<i>beanName</i>"
+    class="<i>fully-qualified-classname</i>" scope="<i>scope</i>">
+    &lt;jsp:setProperty .../>
+&lt;/jsp:useBean></pre><p>The second form is used when you want to include <tt>jsp:setProperty</tt> statements, described
+in the next section, for initializing bean properties.</p><p><a name="indexterm-376"></a><a name="indexterm-377"></a>The <tt>jsp:useBean</tt> element declares that the page will use a bean that
+is stored within and is accessible from the specified scope, which can be
+<tt>application</tt>, <tt>session</tt>, <tt>request</tt>, or <tt>page</tt>. If no such bean exists, the statement creates
+the bean and stores it as an attribute of the scope object (see
+<a href="bnafo.html#bnafp">Using Scope Objects</a>). The value of the <tt>id</tt> attribute determines the <b>name</b> of the bean in
+the scope and the <b>identifier</b> used to reference the bean in EL expressions,
+other JSP elements, and scripting expressions (see <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a>). The value supplied for the <tt>class</tt>
+attribute must be a fully qualified class name. Note that beans cannot be
+in the unnamed package. Thus the format of the value must be <i>package-name.class-name</i>.</p><p>The following element creates an instance of <tt>mypkg.myLocales</tt> if none exists, stores it
+as an attribute of the application scope, and makes the bean available throughout
+the application by the identifier <tt>locales</tt>:</p><pre>&lt;jsp:useBean id="locales" scope="application"
+    class="mypkg.MyLocales"/></pre>
+
+<a name="bnaiu"></a><h4>Setting JavaBeans Component Properties</h4>
+<p><a name="indexterm-378"></a><a name="indexterm-379"></a><a name="indexterm-380"></a>The standard way to set JavaBeans component properties in a JSP page is
+by using the <tt>jsp:setProperty</tt> element. The syntax of the <tt>jsp:setProperty</tt> element depends on
+the source of the property value. <a href="#bnaiv">Table&nbsp;5-6</a> summarizes the various ways to set a
+property of a JavaBeans component using the <tt>jsp:setProperty</tt> element.</p>
+<hr><p><b>Note - </b><p>Syntax rules of attribute values used in this table:</p>
+<ol><li><p><i>beanName</i> must be the same as that specified for the <tt>id</tt> attribute in a <tt>useBean</tt> element.</p></li>
+<li><p>There must be a <i>setPropName</i> method in the JavaBeans component.</p></li>
+<li><p><i>paramName</i> must be a request parameter name.</p></li></ol>
+
+<hr>
+<a name="bnaiv"></a><h6>Table&nbsp;5-6 Valid Bean Property Assignments from String Values</h6><table><col width="32%"><col width="67%"><tr><th align="left" valign="top" scope="column"><p>Value Source</p></th>
+<th align="left" valign="top" scope="column"><p>Element Syntax</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>String constant</p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;jsp:setProperty name="<i>beanName</i>"
+   property="<i>propName</i>" value="<i>string-constant</i>"/></pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Request parameter</p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;jsp:setProperty name="<i>beanName</i>"
+   property="<i>propName</i>" param="<i>paramName</i>"/></pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Request parameter name that matches bean property</p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;jsp:setProperty name="<i>beanName</i>"
+   property="<i>propName</i>"/>
+&lt;jsp:setProperty name="<i>beanName</i>"
+   property="*"/></pre></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Expression</p></td>
+<td align="left" valign="top" scope="row"><pre>&lt;jsp:setProperty name="<i>beanName</i>"
+   property="<i>propName</i>" value="<i>expression</i>"/>
+&lt;jsp:setProperty name="<i>beanName</i>"
+   property="<i>propName</i>" >
+   &lt;jsp:attribute name="value">
+      <i>expression</i>
+   &lt;/jsp:attribute>
+&lt;/jsp:setProperty></pre></td>
+</tr>
+</table><p><a name="indexterm-381"></a><a name="indexterm-382"></a><a name="indexterm-383"></a><a name="indexterm-384"></a>A property set from a constant string or request parameter must have one
+of the types listed in <a href="#bnaiw">Table&nbsp;5-7</a>. Because constants and request parameters are strings,
+the web container automatically converts the value to the property&rsquo;s type; the conversion
+applied is shown in the table.</p><p><tt>String</tt> values can be used to assign values to a property that has
+a <tt>PropertyEditor</tt> class. When that is the case, the <tt>setAsText(String)</tt> method is used.
+A conversion failure arises if the method throws an <tt>IllegalArgumentException</tt>.</p><p>The value assigned to an indexed property must be an array, and
+the rules just described apply to the elements.</p><p><a name="indexterm-385"></a><a name="indexterm-386"></a>You use an expression to set the value of a property whose type
+is a compound Java programming language type. The type returned from an expression
+must match or be castable to the type of the property.</p><a name="bnaiw"></a><h6>Table&nbsp;5-7 Valid Property Value Assignments from String Values</h6><table><col width="28%"><col width="71%"><tr><th align="left" valign="top" scope="column"><p>Property Type</p></th>
+<th align="left" valign="top" scope="column"><p>Conversion
+on String Value</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Bean Property</p></td>
+<td align="left" valign="top" scope="row"><p>Uses <tt>setAsText(</tt><i>string-literal</i><tt>)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>boolean</tt> or <tt>Boolean</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in <tt>java.lang.Boolean.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>byte</tt> or <tt>Byte</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As
+indicated in <tt>java.lang.Byte.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>char</tt> or <tt>Character</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in <tt>java.lang.String.charAt(0)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>double</tt> or <tt>Double</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in
+<tt>java.lang.Double.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>int</tt> or <tt>Integer</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in <tt>java.lang.Integer.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>float</tt> or <tt>Float</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in <tt>java.lang.Float.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>long</tt> or
+<tt>Long</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in <tt>java.lang.Long.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>short</tt> or <tt>Short</tt></p></td>
+<td align="left" valign="top" scope="row"><p>As indicated in <tt>java.lang.Short.valueOf(String)</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>Object</tt></p></td>
+<td align="left" valign="top" scope="row"><p>new <tt>String(</tt><i>string-literal</i><tt>)</tt></p></td>
+</tr>
+</table><p>The Duke&rsquo;s Bookstore application demonstrates how to use the <tt>setProperty</tt> element to
+set the current book from a request parameter in the database bean in
+<tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore2/web/books/bookdetails.jsp</tt>:</p><pre>&lt;c:set var="bid" value="${param.bookId}"/>
+&lt;jsp:setProperty name="bookDB" property="bookId"
+    value="${bid}" /></pre><p>The following fragment from the page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore2/web/books/bookshowcart.jsp</tt> illustrates how to initialize a
+<tt>BookDB</tt> bean with a <tt>database</tt> object. Because the initialization is nested in a <tt>useBean</tt>
+element, it is executed only when the bean is created.</p><pre>&lt;jsp:useBean id="bookDB" class="database.BookDB" scope="page">
+    &lt;jsp:setProperty name="bookDB" property="database"
+         value="${bookDBAO}" />
+&lt;/jsp:useBean></pre>
+
+<a name="bnaix"></a><h4>Retrieving JavaBeans Component Properties</h4>
+<p><a name="indexterm-387"></a><a name="indexterm-388"></a>The main way to retrieve JavaBeans component properties is by using the unified
+EL expressions. Thus, to retrieve a book title, the Duke&rsquo;s Bookstore application uses
+the following expression:</p><pre>${bookDB.bookDetails.title}</pre><p><a name="indexterm-389"></a>Another way to retrieve component properties is to use the <tt>jsp:getProperty</tt> element.
+This element converts the value of the property into a <tt>String</tt> and
+inserts the value into the response stream:</p><pre>&lt;jsp:getProperty name="<i>beanName</i>" property="<i>propName</i>"/></pre><p>Note that <i>beanName</i> must be the same as that specified for the <tt>id</tt>
+attribute in a <tt>useBean</tt> element, and there must be a <tt>get<i>PropName</i></tt> method in the
+JavaBeans component. Although the preferred approach to getting properties is to use an
+EL expression, the <tt>getProperty</tt> element is available if you need to disable expression
+evaluation.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnahq.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaiy.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

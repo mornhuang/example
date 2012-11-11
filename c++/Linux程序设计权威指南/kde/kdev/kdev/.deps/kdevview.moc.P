@@ -1,0 +1,96 @@
+kdevview.moc.o: kdevview.moc.cpp kdevview.h \
+ /root/qt-2.2.1/include/qwidget.h /root/qt-2.2.1/include/qwindowdefs.h \
+ /root/qt-2.2.1/include/qobjectdefs.h /root/qt-2.2.1/include/qglobal.h \
+ /root/qt-2.2.1/include/qfeatures.h /root/qt-2.2.1/include/qconfig.h \
+ /root/qt-2.2.1/include/qstring.h /root/qt-2.2.1/include/qcstring.h \
+ /root/qt-2.2.1/include/qarray.h /root/qt-2.2.1/include/qgarray.h \
+ /root/qt-2.2.1/include/qshared.h /usr/include/string.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h \
+ /usr/lib/gcc-lib/i586-pc-linux/2.95.2/include/stddef.h \
+ /root/qt-2.2.1/include/qnamespace.h \
+ /usr/lib/gcc-lib/i586-pc-linux/2.95.2/include/limits.h \
+ /usr/lib/gcc-lib/i586-pc-linux/2.95.2/include/syslimits.h \
+ /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+ /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+ /usr/include/bits/posix2_lim.h /root/qt-2.2.1/include/qobject.h \
+ /root/qt-2.2.1/include/qevent.h /root/qt-2.2.1/include/qregion.h \
+ /root/qt-2.2.1/include/qrect.h /root/qt-2.2.1/include/qsize.h \
+ /root/qt-2.2.1/include/qpoint.h /root/qt-2.2.1/include/qmime.h \
+ /root/qt-2.2.1/include/qstringlist.h \
+ /root/qt-2.2.1/include/qvaluelist.h \
+ /root/qt-2.2.1/include/qdatastream.h \
+ /root/qt-2.2.1/include/qiodevice.h /root/qt-2.2.1/include/qregexp.h \
+ /root/qt-2.2.1/include/qpaintdevice.h \
+ /root/qt-2.2.1/include/qpalette.h /root/qt-2.2.1/include/qcolor.h \
+ /root/qt-2.2.1/include/qbrush.h /root/qt-2.2.1/include/qcursor.h \
+ /root/qt-2.2.1/include/qfont.h /root/qt-2.2.1/include/qfontmetrics.h \
+ /root/qt-2.2.1/include/qfontinfo.h /root/qt-2.2.1/include/qstyle.h \
+ /root/qt-2.2.1/include/qsizepolicy.h \
+ /root/qt-2.2.1/include/qmetaobject.h \
+ /root/qt-2.2.1/include/qconnection.h \
+ /root/qt-2.2.1/include/qstrlist.h /root/qt-2.2.1/include/qlist.h \
+ /root/qt-2.2.1/include/qglist.h /root/qt-2.2.1/include/qcollection.h \
+ /root/qt-2.2.1/include/qapplication.h \
+ /root/qt-2.2.1/include/qasciidict.h /root/qt-2.2.1/include/qgdict.h \
+ /root/qt-2.2.1/include/qtranslator.h \
+ /root/qt-2.2.1/include/qintdict.h
+kdevview.moc.cpp :
+kdevview.h :
+/root/qt-2.2.1/include/qwidget.h :
+/root/qt-2.2.1/include/qwindowdefs.h :
+/root/qt-2.2.1/include/qobjectdefs.h :
+/root/qt-2.2.1/include/qglobal.h :
+/root/qt-2.2.1/include/qfeatures.h :
+/root/qt-2.2.1/include/qconfig.h :
+/root/qt-2.2.1/include/qstring.h :
+/root/qt-2.2.1/include/qcstring.h :
+/root/qt-2.2.1/include/qarray.h :
+/root/qt-2.2.1/include/qgarray.h :
+/root/qt-2.2.1/include/qshared.h :
+/usr/include/string.h :
+/usr/include/features.h :
+/usr/include/sys/cdefs.h :
+/usr/include/gnu/stubs.h :
+/usr/lib/gcc-lib/i586-pc-linux/2.95.2/include/stddef.h :
+/root/qt-2.2.1/include/qnamespace.h :
+/usr/lib/gcc-lib/i586-pc-linux/2.95.2/include/limits.h :
+/usr/lib/gcc-lib/i586-pc-linux/2.95.2/include/syslimits.h :
+/usr/include/limits.h :
+/usr/include/bits/posix1_lim.h :
+/usr/include/bits/local_lim.h :
+/usr/include/linux/limits.h :
+/usr/include/bits/posix2_lim.h :
+/root/qt-2.2.1/include/qobject.h :
+/root/qt-2.2.1/include/qevent.h :
+/root/qt-2.2.1/include/qregion.h :
+/root/qt-2.2.1/include/qrect.h :
+/root/qt-2.2.1/include/qsize.h :
+/root/qt-2.2.1/include/qpoint.h :
+/root/qt-2.2.1/include/qmime.h :
+/root/qt-2.2.1/include/qstringlist.h :
+/root/qt-2.2.1/include/qvaluelist.h :
+/root/qt-2.2.1/include/qdatastream.h :
+/root/qt-2.2.1/include/qiodevice.h :
+/root/qt-2.2.1/include/qregexp.h :
+/root/qt-2.2.1/include/qpaintdevice.h :
+/root/qt-2.2.1/include/qpalette.h :
+/root/qt-2.2.1/include/qcolor.h :
+/root/qt-2.2.1/include/qbrush.h :
+/root/qt-2.2.1/include/qcursor.h :
+/root/qt-2.2.1/include/qfont.h :
+/root/qt-2.2.1/include/qfontmetrics.h :
+/root/qt-2.2.1/include/qfontinfo.h :
+/root/qt-2.2.1/include/qstyle.h :
+/root/qt-2.2.1/include/qsizepolicy.h :
+/root/qt-2.2.1/include/qmetaobject.h :
+/root/qt-2.2.1/include/qconnection.h :
+/root/qt-2.2.1/include/qstrlist.h :
+/root/qt-2.2.1/include/qlist.h :
+/root/qt-2.2.1/include/qglist.h :
+/root/qt-2.2.1/include/qcollection.h :
+/root/qt-2.2.1/include/qapplication.h :
+/root/qt-2.2.1/include/qasciidict.h :
+/root/qt-2.2.1/include/qgdict.h :
+/root/qt-2.2.1/include/qtranslator.h :
+/root/qt-2.2.1/include/qintdict.h :

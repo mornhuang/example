@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Resource Injection - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level3"><a href="bncji.html">Resources and JNDI Naming</a></p>
+<p class="toc level3"><a href="bncjj.html"><tt>DataSource</tt> Objects and Connection Pools</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Resource Injection</a></p>
+<p class="toc level4"><a href="#bncjl">Field-Based Injection</a></p>
+<p class="toc level4"><a href="#bncjm">Method-Based Injection</a></p>
+<p class="toc level4"><a href="#bncjn">Class-Based Injection</a></p>
+<p class="toc level5"><a href="#bncjo">Declaring Multiple Resources</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncjp.html">The <tt>confirmer</tt> Example Application</a></p>
+<p class="toc level4"><a href="bncjp.html#bncjq">Running the <tt>confirmer</tt> Example Application</a></p>
+<p class="toc level5"><a href="bncjp.html#bncjr">Creating a Mail Session</a></p>
+<p class="toc level5"><a href="bncjp.html#bncjs">Building, Packaging, and Deploying <tt>confirmer</tt> in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncjp.html#bncjt">Building, Packaging, and Deploying <tt>confirmer</tt> Using Ant</a></p>
+<p class="toc level5"><a href="bncjp.html#bncju">Running the <tt>confirmer</tt> Client in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncjp.html#bncjv">Running the <tt>confirmer</tt> Client Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bncjw.html">Further Information about Resources</a></p>
+<p class="toc level2 tocsp"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncjj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncjp.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncjk"></a><h3>Resource Injection</h3>
+<a name="indexterm-3090"></a><p>The <tt>javax.annotation.Resource</tt> annotation is used to declare a reference to a resource. <tt>@Resource</tt>
+can decorate a class, a field, or a method. The container will inject
+the resource referred to by <tt>@Resource</tt> into the component either at runtime or when
+the component is initialized, depending on whether field/method injection or class injection is
+used. With field and method-based injection, the container will inject the resource when
+the application is initialized. For class-based injection, the resource is looked up by
+the application at runtime.</p><p><tt>@Resource</tt> has the following elements:</p>
+<ul><li><p><tt>name</tt>: The JNDI name of the resource</p></li>
+<li><p><tt>type</tt>: The Java language type of the resource</p></li>
+<li><p><tt>authenticationType</tt>: The authentication type to use for the resource</p></li>
+<li><p><tt>shareable</tt>: Indicates whether the resource can be shared</p></li>
+<li><p><tt>mappedName</tt>: A non-portable, implementation-specific name to which the resource should be mapped</p></li>
+<li><p><tt>description</tt>: The description of the resource</p></li></ul>
+<p>The <tt>name</tt> element is the JNDI name of the resource, and is optional
+for field- and method-based injection. For field-based injection, the default <tt>name</tt> is the
+field name qualified by the class name. For method-based injection, the default <tt>name</tt>
+is the JavaBeans property name based on the method qualified by the class
+name. The <tt>name</tt> element must be specified for class-based injection.</p><p>The type of resource is determined by one of the following:</p>
+<ul><li><p>The type of the field the <tt>@Resource</tt> annotation is decorating for field-based injection</p></li>
+<li><p>The type of the JavaBeans property the <tt>@Resource</tt> annotation is decorating for method-based injection</p></li>
+<li><p>The <tt>type</tt> element of <tt>@Resource</tt></p></li></ul>
+<p>For class-based injection, the <tt>type</tt> element is required.</p><p>The <tt>authenticationType</tt> element is used only for connection factory resources, and can be
+set to one of the <tt>javax.annotation.Resource.AuthenticationType</tt> enumerated type values: <tt>CONTAINER</tt>, the default, and
+<tt>APPLICATION</tt>.</p><p>The <tt>shareable</tt> element is used only for ORB instance resources or connection factory
+resource. It indicates whether the resource can be shared between this component and
+other components, and may be set to <tt>true</tt>, the default, or <tt>false</tt>.</p><p>The <tt>mappedName</tt> element is a non-portable, implementation-specific name that the resource should be
+mapped to. Because the <tt>name</tt> element, when specified or defaulted, is local only
+to the application, many Java EE servers provide a way of referring to
+resources across the application server. This is done by setting the <tt>mappedName</tt> element.
+Use of the <tt>mappedName</tt> element is non-portable across Java EE server implementations.</p><p>The <tt>description</tt> element is the description of the resource, typically in the default
+language of the system on which the application is deployed. It is used
+to help identify resources, and to help application developers choose the correct resource.</p>
+
+<a name="bncjl"></a><h4>Field-Based Injection</h4>
+<p>To use field-based resource injection, declare a field and decorate it with the
+<tt>@Resource</tt> annotation. The container will infer the name and type of the resource
+if the <tt>name</tt> and <tt>type</tt> elements are not specified. If you do
+specify the type element, it must match the field&rsquo;s type declaration.</p><pre>package com.example;
+
+public class SomeClass {
+    @Resource
+    private javax.sql.DataSource myDB;
+...
+}</pre><p>In the code above, the container infers the <tt>name</tt> of the resource based
+on the class name and the field name: <tt>com.example.SomeClass/myDB</tt>. The inferred <tt>type</tt>
+is <tt>javax.sql.DataSource.class</tt>.</p><pre>package com.example;
+
+public class SomeClass {
+    @Resource(name="customerDB")
+    private javax.sql.DataSource myDB;
+...
+}</pre><p>In the code above, the JNDI name is <tt>customerDB</tt>, and the inferred <tt>type</tt>
+is <tt>javax.sql.DataSource.class</tt>.</p>
+
+<a name="bncjm"></a><h4>Method-Based Injection</h4>
+<p>To use method-based injection, declare a setter method and decorate it with the
+<tt>@Resource</tt> annotation. The container will infer the name and type of the resource
+if the <tt>name</tt> and <tt>type</tt> elements are not specified. The setter method
+must follow the JavaBeans conventions for property names: the method name must begin
+with <tt>set</tt>, have a <tt>void</tt> return type, and only one parameter. If you
+do specify the <tt>type</tt> element, it must match the field&rsquo;s type declaration.</p><pre>package com.example;
+
+public class SomeClass {
+
+    private javax.sql.DataSource myDB;
+...
+    @Resource
+    private void setMyDB(javax.sql.DataSource ds) {
+        myDB = ds;
+    }
+...
+}</pre><p>In the code above, the container infers the <tt>name</tt> of the resource based
+on the class name and the field name: <tt>com.example.SomeClass/myDB</tt>. The inferred <tt>type</tt>
+is <tt>javax.sql.DataSource.class</tt>.</p><pre>package com.example;
+
+public class SomeClass {
+
+    private javax.sql.DataSource myDB;
+...
+    @Resource(name="customerDB")
+    private void setMyDB(javax.sql.DataSource ds) {
+        myDB = ds;
+    }
+...
+}</pre><p>In the code above, the JNDI name is <tt>customerDB</tt>, and the inferred <tt>type</tt>
+is <tt>javax.sql.DataSource.class</tt>.</p>
+
+<a name="bncjn"></a><h4>Class-Based Injection</h4>
+<p>To use class-based injection, decorate the class with a <tt>@Resource</tt> annotation, and
+set the required <tt>name</tt> and <tt>type</tt> elements.</p><pre>@Resource(name="myMessageQueue",
+                type="javax.jms.ConnectionFactory")
+public class SomeMessageBean {
+...
+}</pre>
+
+<a name="bncjo"></a><h5>Declaring Multiple Resources</h5>
+<p>The <tt>@Resources</tt> annotation is used to group together multiple <tt>@Resource</tt> declarations for class-based
+injection.</p><pre>@Resources({
+    @Resource(name="myMessageQueue",
+                    type="javax.jms.ConnectionFactory"),
+    @Resource(name="myMailSession",
+                    type="javax.mail.Session")
+})
+public class SomeMessageBean {
+...
+}</pre><p>The code above shows the <tt>@Resources</tt> annotation containing two <tt>@Resource</tt> declarations. One is
+a JMS message queue, and the other is a JavaMail session.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncjj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncjp.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

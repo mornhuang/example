@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Creating the Component Tag Handler - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level3"><a href="bnavh.html">Determining Whether You Need a Custom Component or Renderer</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavi">When to Use a Custom Component</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavj">When to Use a Custom Renderer</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavk">Component, Renderer, and Tag Combinations</a></p>
+<p class="toc level3 tocsp"><a href="bnavm.html">Understanding the Image Map Example</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavn">Why Use JavaServer Faces Technology to Implement an Image Map?</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavo">Understanding the Rendered HTML</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavp">Understanding the JSP Page</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavq">Configuring Model Data</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavr">Summary of the Application Classes</a></p>
+<p class="toc level3 tocsp"><a href="bnavt.html">Steps for Creating a Custom Component</a></p>
+<p class="toc level3"><a href="bnavu.html">Creating Custom Component Classes</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavv">Specifying the Component Family</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavw">Performing Encoding</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavx">Performing Decoding</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavy">Enabling Component Properties to Accept Expressions</a></p>
+<p class="toc level4"><a href="bnavu.html#bnavz">Saving and Restoring State</a></p>
+<p class="toc level3 tocsp"><a href="bnawa.html">Delegating Rendering to a Renderer</a></p>
+<p class="toc level4"><a href="bnawa.html#bnawb">Creating the Renderer Class</a></p>
+<p class="toc level4"><a href="bnawa.html#bnawc">Identifying the Renderer Type</a></p>
+<p class="toc level3 tocsp"><a href="bnawd.html">Handling Events for Custom Components</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Creating the Component Tag Handler</a></p>
+<p class="toc level4"><a href="#bnawf">Retrieving the Component Type</a></p>
+<p class="toc level4"><a href="#bnawg">Setting Component Property Values</a></p>
+<p class="toc level5"><a href="#bnawh">Getting the Attribute Values</a></p>
+<p class="toc level5"><a href="#bnawi">Setting the Component Property Values</a></p>
+<p class="toc level4 tocsp"><a href="#bnawl">Providing the Renderer Type</a></p>
+<p class="toc level4"><a href="#bnawm">Releasing Resources</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnawn.html">Defining the Custom Component Tag in a Tag Library Descriptor</a></p>
+<p class="toc level2 tocsp"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnawd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnawn.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnawe"></a><h3>Creating the Component Tag Handler</h3>
+<a name="indexterm-1551"></a><p>Now that you&rsquo;ve created your component and renderer classes, you&rsquo;re ready to define
+how a tag handler processes the tag representing the component and renderer combination.
+If you&rsquo;ve created your own JSP custom tags before, creating a component tag
+handler should be easy for you.</p><p><a name="indexterm-1552"></a><a name="indexterm-1553"></a>In JavaServer Faces applications, the tag handler class associated with a component drives
+the render response phase of the JavaServer Faces life cycle. For more information
+on the JavaServer Faces life cycle, see <a href="bnaqq.html">The Life Cycle of a JavaServer Faces Page</a>.</p><p>The first thing that the tag handler does is to retrieve the
+type of the component associated with the tag. Next, it sets the component&rsquo;s attributes
+to the values given in the page. It then returns the type
+of the renderer (if there is one) to the JavaServer Faces implementation so
+that the component&rsquo;s encoding can be performed when the tag is processed. Finally, it
+releases resources used during the processing of the tag.</p><p>The image map custom component includes two tag handlers: <tt>AreaTag</tt> and <tt>MapTag</tt>.
+To see how the operations on a JavaServer Faces tag handler are implemented,
+let&rsquo;s take a look at <tt>MapTag</tt>.</p><p><a name="indexterm-1554"></a>The <tt>MapTag</tt> class extends <tt>UIComponentELTag</tt>, which supports <tt>jsp.tagext.Tag</tt> functionality as well as JavaServer
+Faces-specific functionality. <tt>UIComponentELTag</tt> is the base class for all JavaServer Faces tags that
+correspond to a component. Tags that need to process their tag bodies should
+instead subclass <tt>UIComponentBodyELTag</tt>.</p>
+
+<a name="bnawf"></a><h4>Retrieving the Component Type</h4>
+<p><a name="indexterm-1555"></a>As explained earlier, the first thing <tt>MapTag</tt> does is to retrieve the
+type of the component. It does this by using the <tt>getComponentType</tt> operation:</p><pre>    public String getComponentType() {
+        return ("DemoMap");
+    }</pre><p>The value returned from <tt>getComponentType</tt> must match the value configured for the component
+with the <tt>component-type</tt> element of the application&rsquo;s application configuration resource file. <a href="bnaxi.html">Registering a Custom Component</a> explains
+how to configure a component.</p>
+
+<a name="bnawg"></a><h4>Setting Component Property Values</h4>
+<p>After retrieving the type of the component, the tag handler sets the component&rsquo;s
+property values to those supplied as tag attributes values in the page. This
+section assumes that your component properties are enabled to accept expressions, as explained
+in <a href="bnavu.html#bnavy">Enabling Component Properties to Accept Expressions</a>.</p>
+
+<a name="bnawh"></a><h5>Getting the Attribute Values</h5>
+<p>Before setting the values in the component class, the <tt>MapTag</tt> handler first gets
+the attribute values from the page by means of JavaBeans component properties that
+correspond to the attributes. The following code shows the property used to access
+the value of the <tt>immediate</tt> attribute.</p><pre>private javax.el.ValueExpression immediate = null;
+
+public void setImmediate(javax.el.ValueExpression immediate)
+ {
+    this.immediate = immediate;
+}</pre><p>As this code shows, the <tt>setImmediate</tt> method takes a <tt>ValueExpression</tt> object. This means
+that the <tt>immediate</tt> attribute of the <tt>map</tt> tag accepts value expressions.</p><p>Similarly, the <tt>setActionListener</tt> and <tt>setAction</tt> methods take <tt>MethodExpression</tt> objects, which means that these
+attributes accept method expressions. The following code shows the properties used to access the
+values of the <tt>actionListener</tt> and the <tt>action</tt> attributes</p><pre>private javax.el.MethodExpression actionListener = null;
+
+public void setActionListener(
+    javax.el.MethodExpression actionListener) {
+    
+    this.actionListener = actionListener;
+}
+private javax.el.MethodExpression action = null;
+
+public void setAction(javax.el.MethodExpression action) {
+        this.action = action;
+}</pre>
+
+<a name="bnawi"></a><h5>Setting the Component Property Values</h5>
+<p>To pass the value of the tag attributes to <tt>MapComponent</tt>, the tag handler
+implements the <tt>setProperties</tt> method. The way <tt>setProperties</tt> passes the attribute values to the
+component class depends on whether the values are value expressions or method expressions.</p>
+
+<a name="bnawj"></a><h5>Setting Value Expressions on Component Properties</h5>
+<p>When the attribute value is a value expression, <tt>setProperties</tt> first checks if it
+is not a literal expression. If the expression is not a literal,
+<tt>setProperties</tt> stores the expression into a collection, from which the component class can
+retrieve it and resolve it at the appropriate time. If the expression is
+a literal, <tt>setProperties</tt> performs any required type conversion and then does one of
+the following:</p>
+<ul><li><p>If the attribute is renderer-independent, meaning that it is defined by the component class, then <tt>setProperties</tt> calls the corresponding setter method of the component class.</p></li>
+<li><p>If the attribute is renderer-dependent, <tt>setProperties</tt> stores the converted value into the component&rsquo;s map of generic renderer attributes.</p></li></ul>
+<p>The following piece of the <tt>MapTag</tt> handler&rsquo;s <tt>setProperties</tt> method sets the renderer-dependent
+property, <tt>styleClass</tt>, and the renderer-independent property, <tt>immediate</tt>:</p><pre>if (styleClass != null) {
+    if (!styleClass.isLiteralText()) {
+        map.setValueExpression("styleClass", styleClass);
+    } else {
+        map.getAttributes().put("styleClass",
+             styleClass.getExpressionString());
+    }
+}
+...
+if (immediate != null) {
+    if (!immediate.isLiteralText()) {
+        map.setValueExpression("immediate", immediate);
+    } else {
+        map.setImmediate(new
+             Boolean(immediate.getExpressionString()).
+                booleanValue());
+    }
+}</pre>
+
+<a name="bnawk"></a><h5>Setting Method Expressions on Component Properties</h5>
+<p>The process of setting the properties that accept method expressions is done differently
+depending on the purpose of the method. The <tt>actionListener</tt> attribute uses a
+method expression to reference a method that handles action events. The <tt>action</tt> attribute
+uses a method expression to either specify a logical outcome or to reference
+a method that returns a logical outcome, which is used for navigation purposes.</p><p>To handle the method expression referenced by <tt>actionListener</tt>, the <tt>setProperties</tt> method must wrap
+the expression in a special action listener object called <tt>MethodExpressionActionListener</tt>. This listener executes the
+method referenced by the expression when it receives the action event. The <tt>setProperties</tt>
+method then adds this <tt>MethodExpressionActionListener</tt> object to the list of listeners to be
+notified when the event of a user clicking on the map occurs.
+The following piece of <tt>setProperties</tt> does all of this:</p><pre>if (actionListener != null) {
+    map.addActionListener(
+        new MethodExpressionActionListener(actionListener));
+}</pre><p>If your component fires value change events, your tag handler&rsquo;s <tt>setProperties</tt> method
+does a similar thing, except it wraps the expression in a <tt>MethodExpressionValueChangeListener</tt> object
+and adds the listener using the <tt>addValueChangeListener</tt> method.</p><p>In the case of the method expression referenced by the <tt>action</tt> attribute, the
+<tt>setProperties</tt> method uses the <tt>setActionExpression</tt> method of <tt>ActionSource2</tt> to set the corresponding property
+on <tt>MapComponent</tt>:</p><pre>if (action != null) {
+    map.setActionExpression(action);
+}</pre>
+
+<a name="bnawl"></a><h4>Providing the Renderer Type</h4>
+<p><a name="indexterm-1556"></a>After setting the component properties, the tag handler provides a renderer type (if
+there is a renderer associated with the component) to the JavaServer Faces implementation.
+It does this using the <tt>getRendererType</tt> method:</p><pre>public String getRendererType() {return "DemoMap";}</pre><p>The renderer type that is returned is the name under which the
+renderer is registered with the application. See <a href="bnawa.html">Delegating Rendering to a Renderer</a> for more information.</p><p>If your component does not have a renderer associated with it, <tt>getRendererType</tt>
+should return <tt>null</tt>. In this case, the <tt>renderer-type</tt> element in the application
+configuration file should also be set to <tt>null</tt>.</p>
+
+<a name="bnawm"></a><h4>Releasing Resources</h4>
+<p><a name="indexterm-1557"></a>It&rsquo;s recommended practice that all tag handlers implement a <tt>release</tt> method, which releases
+resources allocated during the execution of the tag handler. The release method of
+<tt>MapTag</tt> as follows:</p><pre>public void release() {
+    super.release();
+    current = null;
+    styleClass = null;
+    actionListener = null;
+    immediate = null;
+    action = null;
+}</pre><p><a name="indexterm-1558"></a>This method first calls the <tt>UIComponentTag.release</tt> method to release resources associated with
+<tt>UIComponentTag</tt>. Next, the method sets all attribute values to <tt>null</tt>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnawd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnawn.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

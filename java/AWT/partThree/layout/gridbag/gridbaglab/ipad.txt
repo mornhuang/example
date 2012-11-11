@@ -1,0 +1,7 @@
+ipadx and ipady
+
+
+Whereas the insets constraint specifies an external padding between the edges of a component and its display area, 
+ipadx and ipady specify an internal padding applied to the component (not the display area).  The rarely used ipadx 
+and ipady constraints result in a component's preferred and minimum sizes increasing (for positive values) and 
+decreasing (for negative values).

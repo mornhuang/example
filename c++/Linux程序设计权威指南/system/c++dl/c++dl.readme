@@ -1,0 +1,69 @@
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 8bit
+MIME-Version: 1.0
+Date: Thu, 11 Jun 1998 13:57:15 +0100 (IST)
+Organization: Interactive Design Center
+XFMstatus: 0001
+From: Caolan McNamara <Caolan.McNamara@ul.ie>
+To: ilug-l@ul.ie
+Subject: re: libraries
+
+on the topic of shared libraries, i thought id
+just mention an idea close to my heart.
+
+there are linux and solaris calls dlopen and friends
+that allow you to at runtime from inside your
+own code open explictly a shared library and
+execute the code found there, theres an
+example in the dlopen manpage. so for
+instance you could have a widget library that
+consists of a scrollbar shared library, a button
+shared library etc, and the program rather than
+being linked to these libraries actually expliclty
+opens the button shared lib and runs the button
+stuff, so from a menu you could select
+which of multiple button libs, each with a utterly
+different look and feel that you want your program to
+use. pretty snazzy eh ? 
+
+the point of this mail though is that its bitch difficult
+to do this with c++, when you open the lib with
+dlopen in c you basically search for a function named for 
+instance foo and then run it, with c++ if you had a function
+named foo, then compiled to a lib foo becomes due
+to name mangling foo_int23qwe_ug_addh or some other
+nonsense, so you cant just find the function you
+want with dlsym when c++ does its bizz to it, and if
+you want to get a handle to an object etc you might
+as well piss against the breeze, but there is a way
+out of the problem if you have *one* c call protected
+with extern C in the shared lib that returns a pointer
+the the object. now the name doesnt get mangled so
+you can find it with dlsym, and you get a handle to the
+pointer so you're off. of course as the program you
+call dysym from isnt actually linked to the program
+it wont actually have any knowledge of the object being
+passed to it, so you cant use the object unless you have
+a common parent class that the shared lib inherits from and that
+is visible to the dlopen code. so what you have now is a parent class 
+definition that the code using dlopen has included, and that the object 
+that the extern C protected call in the shared lib will return is based
+on so you can use the baby. from the dlopen calling code the
+only methods you can call directly on the returned objects are ones
+that had definitions in the base class, this is a big limitation, but
+it still allow a mechanism where a program can at run time with c++, swap in
+and out widget modules, change the style of buttons its using at the
+drop of a hat, any program using such a lib would be fully configurable.  Im
+not too sure whether something like this is of *any* use, but its a damn cool
+idea. it all works pretty well in theory, and a sample chunk code that
+demonstrates the basic code for the concept is at
+http://www.csn.ul.ie/~caolan/docs/dynamic.html
+ive also gotten it to work with cygnus's windows library as well, so the same
+thing is possible under windows.
+
+C.
+
+Real Life: Caolan McNamara           *  Doing: MSc in HCI
+Work: Caolan.McNamara@ul.ie          *  Phone: +353-61-202699
+URL: http://skynet.csn.ul.ie/~caolan *  Sig: an oblique strategy
+Get your neck massaged

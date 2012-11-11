@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Web Modules - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level3"><a href="geysj.html">Web Applications</a></p>
+<p class="toc level3"><a href="bnadu.html">Web Application Life Cycle</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Web Modules</a></p>
+<p class="toc level4"><a href="#bnadz">Packaging Web Modules</a></p>
+<p class="toc level4"><a href="#bnaea">Deploying a WAR File</a></p>
+<p class="toc level5"><a href="#bnaeb">Setting the Context Root</a></p>
+<p class="toc level5"><a href="#bnaec">Deploying a Packaged Web Module</a></p>
+<p class="toc level4 tocsp"><a href="#bnaeh">Testing Deployed Web Modules</a></p>
+<p class="toc level4"><a href="#bnaei">Listing Deployed Web Modules</a></p>
+<p class="toc level4"><a href="#bnaej">Updating Web Modules</a></p>
+<p class="toc level5"><a href="#bnaek">Updating a Packaged Web Module</a></p>
+<p class="toc level5"><a href="#bnaem">Dynamic Reloading</a></p>
+<p class="toc level4 tocsp"><a href="#bnaen">Undeploying Web Modules</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaeo.html">Configuring Web Applications</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaep">Mapping URLs to Web Components</a></p>
+<p class="toc level5"><a href="bnaeo.html#bnaeq">Setting the Component Alias</a></p>
+<p class="toc level4 tocsp"><a href="bnaeo.html#bnaer">Declaring Welcome Files</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaes">Setting Initialization Parameters</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaet">Mapping Errors to Error Screens</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaeu">Declaring Resource References</a></p>
+<p class="toc level5"><a href="bnaeo.html#bnaew">Declaring a Reference to a Resource</a></p>
+<p class="toc level5"><a href="bnaeo.html#bnaex">Declaring a Reference to a Web Service</a></p>
+<p class="toc level3 tocsp"><a href="bnaey.html">Duke's Bookstore Examples</a></p>
+<p class="toc level3"><a href="bnaez.html">Accessing Databases from Web Applications</a></p>
+<p class="toc level4"><a href="bnaez.html#bnafa">Populating the Example Database</a></p>
+<p class="toc level4"><a href="bnaez.html#bnafb">Creating a Data Source in the Application Server</a></p>
+<p class="toc level3 tocsp"><a href="bnafc.html">Further Information about Web Applications</a></p>
+<p class="toc level2 tocsp"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnadu.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaeo.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnadx"></a><h3>Web Modules</h3>
+<p><a name="indexterm-173"></a><a name="indexterm-174"></a><a name="indexterm-175"></a>In the Java EE architecture, web components and static web content files such
+as images are called <b>web resources</b>. A <b>web module</b> is the smallest deployable and
+usable unit of web resources. A Java EE web module corresponds to a
+<b>web application</b> as defined in the Java Servlet specification.</p><p>In addition to web components and web resources, a web module can
+contain other files:</p>
+<ul><li><p><a name="indexterm-176"></a><a name="indexterm-177"></a>Server-side utility classes (database beans, shopping carts, and so on). Often these classes conform to the JavaBeans component architecture.</p></li>
+<li><p>Client-side classes (applets and utility classes).</p></li></ul>
+<p>A web module has a specific structure. The top-level directory of a web
+module is the <b>document root</b> of the application. The document root is where JSP
+pages, <b>client-side</b> classes and archives, and static web resources, such as images, are
+stored.</p><p>The document root contains a subdirectory named <tt>WEB-INF</tt>, which contains the following files
+and directories:</p>
+<ul><li><p><a name="indexterm-178"></a><tt>web.xml</tt>: The web application deployment descriptor</p></li>
+<li><p>Tag library descriptor files (see <a href="bnamu.html">Tag Library Descriptors</a>)</p></li>
+<li><p><tt>classes</tt>: A directory that contains <b>server-side classes</b>: servlets, utility classes, and JavaBeans components</p></li>
+<li><p><tt>tags</tt>: A directory that contains tag files, which are implementations of tag libraries (see <a href="bnama.html#bnamb">Tag File Location</a>)</p></li>
+<li><p><tt>lib</tt>: A directory that contains JAR archives of libraries called by server-side classes</p></li></ul>
+<p>If your web module does not contain any servlets, filter, or listener components
+then it does not need a web application deployment descriptor. In other words,
+if your web module only contains JSP pages and static files then you
+are not required to include a <tt>web.xml</tt> file. The <tt>hello1</tt> example, first discussed
+in <a href="#bnadz">Packaging Web Modules</a>, contains only JSP pages and images and therefore does not include
+a deployment descriptor.</p><p>You can also create application-specific subdirectories (that is, package directories) in either the
+document root or the <tt>WEB-INF/classes/</tt> directory.</p><p>A web module can be deployed as an unpacked file structure or
+can be packaged in a JAR file known as a web archive (WAR)
+file. Because the contents and use of WAR files differ from those of
+JAR files, WAR file names use a <tt>.war</tt> extension. The web module
+just described is portable; you can deploy it into any web container that
+conforms to the Java Servlet Specification.</p><p><a name="indexterm-179"></a>To deploy a WAR on the Application Server, the file must also contain
+a runtime deployment descriptor. The runtime deployment descriptor is an XML file that
+contains information such as the context root of the web application and the
+mapping of the portable names of an application&rsquo;s resources to the Application Server&rsquo;s resources.
+The Application Server web application runtime DD is named <tt>sun-web.xml</tt> and is
+located in the <tt>WEB-INF</tt> directory along with the web application DD. The structure
+of a web module that can be deployed on the Application Server is
+shown in <a href="#bnady">Figure&nbsp;3-5</a>.</p><a name="bnady"></a><h6>Figure&nbsp;3-5 Web Module Structure</h6><img src="figures/web-module.gif" alt="Diagram of web module structure. WEB-INF and web pages are under the root. Under WEB-INF are descriptors and the lib, classes, and tags directories."></img>
+
+<a name="bnadz"></a><h4>Packaging Web Modules</h4>
+<p>A web module must be packaged into a WAR in certain deployment
+scenarios and whenever you want to distribute the web module. You package a
+web module into a WAR by executing the <tt>jar</tt> command in a directory laid
+out in the format of a web module, by using the Ant
+utility, or by using the IDE tool of your choice. This tutorial shows
+you how to use NetBeans IDE or Ant to build, package, and deploy
+the sample applications.</p><p>To build the <tt>hello1</tt> application with NetBeans IDE, follow these instructions:</p>
+<ol><li><p>Select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><i>tut-install</i>/javaeetutorial5/examples/web/</pre></li>
+<li><p>Select the <tt>hello1</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>hello1</tt> project and select Build.</p></li></ol>
+<p>To build the <tt>hello1</tt> application using the Ant utility, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1/</tt>.</p></li>
+<li><p>Type <tt><b>ant</b></tt>. This command will spawn any necessary compilations, copy files to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1/build/</tt> directory, create the WAR file, and copy it to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1/dist/</tt> directory.</p></li></ol>
+
+
+<a name="bnaea"></a><h4>Deploying a WAR File</h4>
+<p><a name="indexterm-180"></a>You can deploy a WAR file to the Application Server in a
+few ways:</p>
+<ul><li><p>Copying the WAR into the <tt></tt><i>domain-dir</i><tt>/autodeploy/</tt> directory.</p></li>
+<li><p>Using the Admin Console.</p></li>
+<li><p>By running <tt>asadmin</tt> or <tt>ant</tt> to deploy the WAR.</p></li>
+<li><p>Using NetBeans IDE.</p></li></ul>
+<p>All these methods are described briefly in this chapter; however, throughout the tutorial,
+you will use <tt>ant</tt> and NetBeans IDE for packaging and deploying.</p>
+
+<a name="bnaeb"></a><h5>Setting the Context Root</h5>
+<p><a name="indexterm-181"></a>A <b>context root</b> identifies a web application in a Java EE server. You
+specify the context root when you deploy a web module. A context root
+must start with a forward slash (<tt>/</tt>) and end with a string.</p><p>In a packaged web module for deployment on the Application Server, the context
+root is stored in <tt>sun-web.xml</tt>.</p><p>To edit the context root, do the following:</p>
+<ol><li><p>Expand your project tree in the Projects pane of NetBeans IDE.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes of your project.</p></li>
+<li><p>Double-click <tt>sun-web.xml</tt>.</p></li>
+<li><p>In the editor pane, click Edit As XML.</p></li>
+<li><p>Edit the context root, which is enclosed by the <tt>context-root</tt> element.</p></li></ol>
+
+
+<a name="bnaec"></a><h5>Deploying a Packaged Web Module</h5>
+<p><a name="indexterm-182"></a>If you have deployed the <tt>hello1</tt> application, before proceeding with this section,
+undeploy the application by following one of the procedures described in <a href="#bnaen">Undeploying Web Modules</a>.</p>
+
+<a name="bnaed"></a><h5>Deploying with the Admin Console</h5>
+
+<ol><li><p>Expand the Applications node.</p></li>
+<li><p>Select the Web Applications node.</p></li>
+<li><p>Click the Deploy button.</p></li>
+<li><p>Select the radio button labeled &ldquo;Package file to be uploaded to the Application Server.&rdquo;</p></li>
+<li><p>Type the full path to the WAR file (or click on Browse to find it), and then click the OK button.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Type the application name.</p></li>
+<li><p>Type the context root.</p></li>
+<li><p>Select the Enabled box.</p></li>
+<li><p>Click the Finish button.</p></li></ol>
+
+
+<a name="bnaee"></a><h5>Deploying with <tt>asadmin</tt></h5>
+<p><a name="indexterm-183"></a>To deploy a WAR with <tt>asadmin</tt>, open a terminal window or command prompt
+and execute</p><pre><tt><b>asadmin deploy </tt><i>full-path-to-war-file</i><tt></b></tt></pre>
+
+<a name="bnaef"></a><h5>Deploying with Ant</h5>
+<p>To deploy a WAR with the Ant tool, open a terminal window
+or command prompt in the directory where you built and packaged the WAR,
+and execute</p><pre><tt><b>ant deploy</b></tt></pre>
+
+<a name="bnaeg"></a><h5>Deploying with NetBeans IDE</h5>
+<p>To deploy a WAR with NetBeans IDE, do the following:</p>
+<ol><li><p>Select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to your project and open it.</p></li>
+<li><p>In the Projects tab, right-click the project and select Undeploy and Deploy.</p></li></ol>
+
+
+<a name="bnaeh"></a><h4>Testing Deployed Web Modules</h4>
+<p>Now that the web module is deployed, you can view it by
+opening the application in a web browser. By default, the application is deployed
+to host <tt>localhost</tt> on port 8080. The context root of the web
+application is <tt>hello1</tt>.</p><p>To test the application, follow these steps:</p>
+<ol><li><p>Open a web browser.</p></li>
+<li><p>Enter the following URL in the web address box:</p><pre>http://localhost:8080/hello1</pre></li>
+<li><p>Enter your name, and click Submit.</p></li></ol>
+<p>The application should display the name you submitted as shown in <a href="bnadu.html#bnadv">Figure&nbsp;3-3</a>
+and <a href="bnadu.html#bnadw">Figure&nbsp;3-4</a>.</p>
+
+<a name="bnaei"></a><h4>Listing Deployed Web Modules</h4>
+<p><a name="indexterm-184"></a>The Application Server provides two ways to view the deployed web modules: the
+Admin Console and the <tt>asadmin</tt> command.</p><p>To use the Admin Console:</p>
+<ol><li><p>Open the URL <tt>http://localhost:4848/asadmin</tt> in a browser.</p></li>
+<li><p>Expand the nodes Applications&rarr;Web Applications.</p></li></ol>
+<p>Use the <tt>asadmin</tt> command as follows:</p><pre><tt><b>asadmin list-components</b></tt></pre>
+
+<a name="bnaej"></a><h4>Updating Web Modules</h4>
+<p><a name="indexterm-185"></a><a name="indexterm-186"></a>A typical iterative development cycle involves deploying a web module and then making
+changes to the application components. To update a deployed web module, you must
+do the following:</p>
+<ol><li><p>Recompile any modified classes.</p></li>
+<li><p>If you have deployed a packaged web module, update any modified components in the WAR.</p></li>
+<li><p>Redeploy the module.</p></li>
+<li><p>Reload the URL in the client.</p></li></ol>
+
+
+<a name="bnaek"></a><h5>Updating a Packaged Web Module</h5>
+<p><a name="indexterm-187"></a>This section describes how to update the <tt>hello1</tt> web module that you packaged.</p><p>First, change the greeting in the file <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello1/web/index.jsp</tt> to</p><pre>&lt;h2>Hi, my name is Duke. What&rsquo;s yours?&lt;/h2></pre><p>To update the project in NetBeans IDE:</p>
+<ul><li><p>Right-click on the project and select Build.</p></li>
+<li><p>Right-click on the project and select Undeploy and Deploy.</p></li></ul>
+<p>To update the project using the Ant build tool:</p>
+<ul><li><p>Type <tt><b>ant</b></tt> to copy the modified JSP page into the <tt>build</tt> directory.</p></li>
+<li><p>Type <tt><b>ant deploy</b></tt> to deploy the WAR file.</p></li></ul>
+<p>To view the modified module, reload the URL in the browser.</p><p>You should see the screen in <a href="#bnael">Figure&nbsp;3-6</a> in the browser.</p><a name="bnael"></a><h6>Figure&nbsp;3-6 New Greeting</h6><img src="figures/web-newGreeting.gif" alt="Screen capture of Duke's new greeting, "Hi, my name is Duke. What's yours?" Includes a text field for your name and Submit and Reset buttons." width="662" height="350"></img>
+
+<a name="bnaem"></a><h5>Dynamic Reloading</h5>
+<p><a name="indexterm-188"></a>If dynamic reloading is enabled, you do not have to redeploy an application
+or module when you change its code or deployment descriptors. All you have
+to do is copy the changed JSP or class files into the
+deployment directory for the application or module. The deployment directory for a web module
+named <i>context-root</i> is <tt></tt><i>domain-dir</i><tt>/applications/j2ee-modules/</tt><i>context-root</i><tt></tt>. The server checks for changes periodically and redeploys the
+application, automatically and dynamically, with the changes.</p><p>This capability is useful in a development environment, because it allows code changes
+to be tested quickly. Dynamic reloading is not recommended for a production environment,
+however, because it may degrade performance. In addition, whenever a reload is done,
+the sessions at that time become invalid and the client must restart the
+session.</p><p>To enable dynamic reloading, use the Admin Console:</p>
+<ol><li><p>Select the Applications Server node.</p></li>
+<li><p>Select the Advanced tab.</p></li>
+<li><p>Check the Reload Enabled box to enable dynamic reloading.</p></li>
+<li><p>Enter a number of seconds in the Reload Poll Interval field to set the interval at which applications and modules are checked for code changes and dynamically reloaded.</p></li>
+<li><p>Click the Save button.</p></li></ol>
+<p>In addition, to load new servlet files or reload deployment descriptor changes, you
+must do the following:</p>
+<ol><li><p>Create an empty file named <tt>.reload</tt> at the root of the module:</p><pre><i>domain-dir</i>/applications/j2ee-modules/<i>context-root</i>/.reload</pre></li>
+<li><p>Explicitly update the <tt>.reload</tt> file&rsquo;s time stamp each time you make these changes. On UNIX, execute</p><pre><tt><b>touch .reload</b></tt></pre></li></ol>
+<p>For JSP pages, changes are reloaded automatically at a frequency set in the
+Reload Poll Interval field. To disable dynamic reloading of JSP pages, set the
+Reload Poll Interval field value to &ndash;1.<a name="indexterm-189"></a></p>
+
+<a name="bnaen"></a><h4>Undeploying Web Modules</h4>
+<p><a name="indexterm-190"></a>You can undeploy web modules in four ways: you can use NetBeans
+IDE, the Admin Console, the <tt>asadmin</tt> command, or the Ant tool.</p><p>To use NetBeans IDE:</p>
+<ol><li><p>Ensure the Sun Java System Application Server is running.</p></li>
+<li><p>In the Runtime window, expand the Sun Java System Application Server instance and the node containing the application or module.</p></li>
+<li><p>Right-click the application or module and choose Undeploy.</p></li></ol>
+<p>To use the Admin Console:</p>
+<ol><li><p>Open the URL <tt>http://localhost:4848/asadmin</tt> in a browser.</p></li>
+<li><p>Expand the Applications node.</p></li>
+<li><p>Select Web Applications.</p></li>
+<li><p>Click the check box next to the module you wish to undeploy.</p></li>
+<li><p>Click the Undeploy button.</p></li></ol>
+<p>Use the <tt>asadmin</tt> command as follows:</p><pre><tt><b>asadmin undeploy </tt><i>context-root</i><tt></b></tt></pre><p>To use the Ant tool, execute the following command in the directory where
+you built and packaged the WAR:</p><pre><tt><b>ant undeploy</b></tt></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnadu.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaeo.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

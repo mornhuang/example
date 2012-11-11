@@ -1,0 +1,12 @@
+This is the odo theme which is based on the sample Pixmap-Based theme
+distributed with the GTK Pixmap Theme Engine. The name really means
+nothing except the base colors are base on the odometer skin for GQmpeg.
+All the pixmaps are new, and the only change to the supplied gtkrc was the
+default colors.
+
+Please do with it what you like. 
+
+All data for this Theme comes under the GPL License.
+
+Created by John Ellis. (09-02-98)
+

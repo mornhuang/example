@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Using Custom Objects - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level3"><a href="bnara.html">The Example JavaServer Faces Application</a></p>
+<p class="toc level3"><a href="bnarb.html">Setting Up a Page</a></p>
+<p class="toc level3"><a href="bnarc.html">Using the Core Tags</a></p>
+<p class="toc level3"><a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a></p>
+<p class="toc level4"><a href="bnarf.html#bnarg">UI Component Tag Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarh">The <tt>id</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarj">The <tt>rendered</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnark">The <tt>style</tt> and <tt>styleClass</tt> Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarl">The <tt>value</tt> and <tt>binding</tt> Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarm">Adding a Form Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnaro">Using Text Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarr">Rendering a Text Field with the <tt>inputText</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnars">Rendering a Label with the <tt>outputLabel</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnart">Rendering a Hyperlink with the <tt>outputLink</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnaru">Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarv">Rendering a Password Field with the <tt>inputSecret</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarw">Using Command Components for Performing Actions and Navigation</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarx">Rendering a Button with the <tt>commandButton</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnary">Rendering a Hyperlink with the <tt>commandLink</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarz">Using Data-Bound Table Components</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasb">Adding Graphics and Images with the <tt>graphicImage</tt> Tag</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasc">Laying Out Components with the <tt>UIPanel</tt> Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnase">Rendering Components for Selecting One Value</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasg">Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a></p>
+<p class="toc level4"><a href="bnarf.html#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasm">Using the <tt>selectItems</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasn">Using the <tt>selectItem</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnasp.html">Using Localized Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasq">Loading a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasr">Referencing Localized Static Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnast.html">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="bnast.html#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="bnast.html#bnasx">Using <tt>NumberConverter</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnasz.html">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="bnasz.html#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="bnasz.html#bnatb">Registering an Action Listener on a Component</a></p>
+<p class="toc level3 tocsp"><a href="bnatc.html">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="bnatc.html#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="bnatc.html#bnatf">Using the <tt>LongRangeValidator</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a></p>
+<p class="toc level4"><a href="bnatg.html#bnati">Binding a Component Value to a Property</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatj">Binding a Component Value to an Implicit Object</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a></p>
+<p class="toc level3 tocsp"><a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a></p>
+<p class="toc level3"><a href="bnatn.html">Referencing a Backing Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Using Custom Objects</a></p>
+<p class="toc level4"><a href="#bnatu">Using a Custom Converter</a></p>
+<p class="toc level4"><a href="#bnatv">Using a Custom Validator</a></p>
+<p class="toc level4"><a href="#bnatw">Using a Custom Component</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnatn.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnatx.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnatt"></a><h3>Using Custom Objects</h3>
+<a name="indexterm-1264"></a><a name="indexterm-1265"></a><p>As a page author, you might need to use custom converters, validators, or
+components packaged with the application on your JSP pages.</p><p><a name="indexterm-1266"></a><a name="indexterm-1267"></a>A custom converter is applied to a component in one of the following
+ways:</p>
+<ul><li><p><a name="indexterm-1268"></a><a name="indexterm-1269"></a>Reference the converter from the component tag&rsquo;s <tt>converter</tt> attribute.</p></li>
+<li><p><a name="indexterm-1270"></a><a name="indexterm-1271"></a>Nest a <tt>converter</tt> tag inside the component&rsquo;s tag and reference the custom converter from one of the <tt>converter</tt> tag&rsquo;s attributes.</p></li></ul>
+<p><a name="indexterm-1272"></a><a name="indexterm-1273"></a>A custom validator is applied to a component in one of the
+following ways:</p>
+<ul><li><p><a name="indexterm-1274"></a><a name="indexterm-1275"></a>Nest a <tt>validator</tt> tag inside the component&rsquo;s tag and reference the custom validator from the <tt>validator</tt> tag.</p></li>
+<li><p>Nest the validator&rsquo;s custom tag (if there is one) inside the component&rsquo;s tag.</p></li></ul>
+<p><a name="indexterm-1276"></a><a name="indexterm-1277"></a><a name="indexterm-1278"></a>To use a custom component, you add the custom tag associated with the
+component to the page.</p><p>As explained in <a href="bnarb.html">Setting Up a Page</a>, you must ensure that the TLD that defines any
+custom tags is packaged in the application if you intend to use the
+tags in your pages. TLD files are stored in the <tt>WEB-INF/</tt> directory or
+subdirectory of the WAR file or in the <tt>META-INF/</tt> directory or subdirectory of a
+tag library packaged in a JAR file.</p><p><a name="indexterm-1279"></a>You also need to include a <tt>taglib</tt> declaration in the page so that
+the page has access to the tags. All custom objects for the Duke&rsquo;s
+Bookstore application are defined in <tt>bookstore.tld</tt>. Here is the <tt>taglib</tt> declaration that you would
+include on your page so that you can use the tags from
+this TLD:</p><pre>&lt;%@ taglib uri="/WEB-INF/bookstore.tld" prefix="bookstore" %></pre><p>When including the custom tag in the page, you can consult the
+TLD to determine which attributes the tag supports and how they are used.</p><p>The next three sections describe how to use the custom converter, validator, and
+UI components included in the Duke&rsquo;s Bookstore application.</p>
+
+<a name="bnatu"></a><h4>Using a Custom Converter</h4>
+<a name="indexterm-1280"></a><a name="indexterm-1281"></a><a name="indexterm-1282"></a><p><a name="indexterm-1283"></a><a name="indexterm-1284"></a>As described in the previous section, to apply the data conversion performed by
+a custom converter to a particular component&rsquo;s value, you must either reference the
+custom converter from the component tag&rsquo;s <tt>converter</tt> attribute or from a <tt>converter</tt>
+tag nested inside the component tag.</p><p>If you are using the component tag&rsquo;s <tt>converter</tt> attribute, this attribute must reference
+the <tt>Converter</tt> implementation&rsquo;s identifier or the fully-qualified class name of the converter. The
+application architect provides this identifier when registering the <tt>Converter</tt> implementation with the application, as
+explained in <a href="bnaxe.html">Registering a Custom Converter</a>. <a href="bnaus.html">Creating a Custom Converter</a> explains how a custom converter is implemented.</p><p>The identifier for the credit card converter is <tt>CreditCardConverter</tt>. The <tt>CreditCardConverter</tt> instance
+is registered on the <tt>ccno</tt> component, as shown in this tag from the
+<tt>bookcashier.jsp</tt> page:</p><pre>&lt;h:inputText id="ccno"
+    size="19"
+    converter="CreditCardConverter"
+    required="true">
+    ...
+&lt;/h:inputText></pre><p><a name="indexterm-1285"></a>By setting the <tt>converter</tt> attribute of a component&rsquo;s tag to the converter&rsquo;s
+identifier or its class name, you cause that component&rsquo;s local value to be
+automatically converted according to the rules specified in the <tt>Converter</tt> implementation.</p><p>Instead of referencing the converter from the component tag&rsquo;s <tt>converter</tt> attribute, you
+can reference the converter from a <tt>converter</tt> tag nested inside the component&rsquo;s
+tag. To reference the custom converter using the <tt>converter</tt> tag, you do one
+of the following:</p>
+<ul><li><p>Set the <tt>converter</tt> tag&rsquo;s <tt>converterId</tt> attribute to the <tt>Converter</tt> implementation&rsquo;s identifier defined in the application configuration file.</p></li>
+<li><p>Bind the <tt>Converter</tt> implementation to a backing bean property using the <tt>converter</tt> tag&rsquo;s <tt>binding</tt> attribute, as described in <a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a>.</p></li></ul>
+
+
+<a name="bnatv"></a><h4>Using a Custom Validator</h4>
+<a name="indexterm-1286"></a><a name="indexterm-1287"></a><a name="indexterm-1288"></a><p><a name="indexterm-1289"></a>To register a custom validator on a component, you must do one of
+the following:</p>
+<ul><li><p>Nest the validator&rsquo;s custom tag inside the tag of the component whose value you want to be validated.</p></li>
+<li><p>Nest the standard <tt>validator</tt> tag within the tag of the component and reference the custom <tt>Validator</tt> implementation from the <tt>validator</tt> tag.</p></li></ul>
+<p>Here is the custom <tt>formatValidator</tt> tag from the <tt>ccno</tt> field on the
+<tt>bookcashier.jsp</tt> page of the Duke&rsquo;s Bookstore application:</p><pre>&lt;h:inputText id="ccno" size="19"
+    ...
+    required="true">
+    &lt;bookstore:formatValidator
+         formatPatterns="9999999999999999|9999 9999 9999 9999|
+        9999-9999-9999-9999" />
+&lt;/h:inputText>
+&lt;h:message styleClass="validationMessage"  for="ccno"/></pre><p>This tag validates the input of the <tt>ccno</tt> field against the patterns defined
+by the page author in the <tt>formatPatterns</tt> attribute.</p><p>You can use the same custom validator for any similar component by
+simply nesting the custom validator tag within the component tag.</p><p><a href="bnauw.html">Creating a Custom Validator</a> describes how to create the custom validator and its custom tag.</p><p><a name="indexterm-1290"></a>If the application developer who created the custom validator prefers to configure the
+attributes in the <tt>Validator</tt> implementation rather than allow the page author to configure
+the attributes from the page, the developer will not create a custom tag
+for use with the validator.</p><p>In this case, the page author must nest the <tt>validator</tt> tag inside the
+tag of the component whose data needs to be validated. Then the page
+author needs to do one of the following:</p>
+<ol><li><p>Set the <tt>validator</tt> tag&rsquo;s <tt>validatorId</tt> attribute to the ID of the validator that is defined in the application configuration resource file. <a href="bnaxd.html">Registering a Custom Validator</a> explains how to configure the validator in the application configuration resource file.</p></li>
+<li><p>Bind the custom <tt>Validator</tt> implementation to a backing bean property using the <tt>validator</tt> tag&rsquo;s <tt>binding</tt> attribute, as described in <a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a>.</p></li></ol>
+<p>The following tag registers a hypothetical validator on a component using a <tt>validator</tt>
+tag and references the ID of the validator:</p><pre>&lt;h:inputText id="name" value="#{CustomerBean.name}"
+            size="10" ... >
+    &lt;f:validator validatorId="customValidator" />
+    ...
+&lt;/h:inputText></pre>
+
+<a name="bnatw"></a><h4>Using a Custom Component</h4>
+<a name="indexterm-1291"></a><p>In order to use a custom component in a page, you need
+to declare the tag library that defines the custom tag that renders the
+custom component, as explained in <a href="">Using Custom Objects</a>, and you add the component&rsquo;s tag to the
+page.</p><p>The Duke&rsquo;s Bookstore application includes a custom image map component on the <tt>chooselocale.jsp</tt>
+page. This component allows you to select the locale for the application by
+clicking on a region of the image map:</p><pre>...
+&lt;h:graphicImage id="mapImage" url="/template/world.jpg"
+    alt="#{bundle.chooseLocale}"
+    usemap="#worldMap" />
+    &lt;bookstore:map id="worldMap" current="NAmericas"
+         immediate="true"
+        action="bookstore"
+        actionListener="#{localeBean.chooseLocaleFromMap}">
+        &lt;bookstore:area id="NAmerica" value="#{NA}"
+             onmouseover="/template/world_namer.jpg"
+             onmouseout="/template/world.jpg"
+            targetImage="mapImage" />
+        ...
+        &lt;bookstore:area id="France" value="#{fraA}"
+            onmouseover="/template/world_france.jpg"
+             onmouseout="/template/world.jpg"
+            targetImage="mapImage" />
+&lt;/bookstore:map></pre><p>The standard <tt>graphicImage</tt> tag associates an image (<tt>world.jpg</tt>) with an image map that
+is referenced in the <tt>usemap</tt> attribute value.</p><p>The custom <tt>map</tt> tag that represents the custom component, <tt>MapComponent</tt>, specifies the
+image map, and contains a set of <tt>area</tt> tags. Each custom <tt>area</tt>
+tag represents a custom <tt>AreaComponent</tt> and specifies a region of the image
+map.</p><p>On the page, the <tt>onmouseover</tt> and <tt>onmouseout</tt> attributes specify the image that is
+displayed when the user performs the actions described by the attributes. The page
+author defines what these images are. The custom renderer also renders an <tt>onclick</tt>
+attribute.</p><p>In the rendered HTML page, the <tt>onmouseover</tt>, <tt>onmouseout</tt>, and <tt>onclick</tt> attributes define
+which JavaScript code is executed when these events occur. When the user moves
+the mouse over a region, the <tt>onmouseover</tt> function associated with the region displays the
+map with that region highlighted. When the user moves the mouse out of
+a region, the <tt>onmouseout</tt> function redisplays the original image. When the user clicks
+a region, the <tt>onclick</tt> function sets the value of a hidden <tt>input</tt> tag
+to the ID of the selected area and submits the page.</p><p>When the custom renderer renders these attributes in HTML, it also renders the
+JavaScript code. The custom renderer also renders the entire <tt>onclick</tt> attribute rather
+than let the page author set it.</p><p><a name="indexterm-1292"></a>The custom renderer that renders the <tt>map</tt> tag also renders a hidden <tt>input</tt>
+component that holds the current area. The server-side objects retrieve the value of the
+hidden <tt>input</tt> field and set the locale in the <tt>FacesContext</tt> instance according
+to which region was selected.</p><p><a href="bnavg.html">Chapter&nbsp;13, Creating Custom UI Components</a> describes the custom tags in more detail and also explains how to
+create the custom image map components, renderers, and tags. </p>
+         </div>
+         <div class="navigation">
+             <a href="bnatn.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnatx.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

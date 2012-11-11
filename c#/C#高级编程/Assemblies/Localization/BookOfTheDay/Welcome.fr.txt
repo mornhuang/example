@@ -1,0 +1,4 @@
+GoodMorning=Bonjour
+GoodAfternoon=Bonjour
+GoodEvening=Bonsoir
+Description=C'est un exemple avec la localisation.

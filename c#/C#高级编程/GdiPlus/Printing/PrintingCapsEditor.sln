@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintingCapsEditor", "PrintingCapsEditor.csproj", "{3BA4187B-51D8-4A1A-8024-33B199C58EA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3BA4187B-51D8-4A1A-8024-33B199C58EA3}.Debug.ActiveCfg = Debug|.NET
+		{3BA4187B-51D8-4A1A-8024-33B199C58EA3}.Debug.Build.0 = Debug|.NET
+		{3BA4187B-51D8-4A1A-8024-33B199C58EA3}.Release.ActiveCfg = Release|.NET
+		{3BA4187B-51D8-4A1A-8024-33B199C58EA3}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="replybean" default="default" basedir="." xmlns:ejbjarproject="http://www.netbeans.org/ns/j2ee-ejbjarproject/2">
+    <description>Builds, tests, and runs the project replybean.</description>
+    <property name="is.ejb-jar.module" value="true"/>
+    <import file="../../../bp-project/main.xml"/>
+
+  <target name="deploy-remote" 
+    description="Deploys on remote system. Argument: -Dsys=&lt;sysname&gt;">
+    <antcall target="deploy">
+        <param name="javaee.server.name" value="${sys}" />
+    </antcall>
+  </target>
+
+  <target name="undeploy-remote" 
+    description="Undeploys from remote system. Argument: -Dsys=&lt;sysname&gt;">
+    <antcall target="undeploy">
+        <param name="javaee.server.name" value="${sys}" />
+    </antcall>
+  </target>
+
+</project>

@@ -1,0 +1,15 @@
+weightx and weighty
+
+
+If a container is larger than the combined preferred sizes of its components, then a component's weightx and 
+weighty constraints determine how much of the extra space a component's display area consumes. The weightx and 
+weighty constraints apply strictly to the component's display area, and not the component itself, although 
+components can be coaxed into filling their display areas in a number of different ways by setting the fill 
+constraint.
+
+GridBagConstraints.weightx and GridBagConstraints.weighty are the only constraints that are specified as double 
+values. Additionally, both weightx and weighty must be positive. Typically, weightx and weighty are specified as 
+a number between 0.0 and 1.0, although numbers greater than 1.0 may be specified. 
+
+A component's weighting affects not only how much extra space the component's display area is given, but also 
+potentially affects the display areas of components residing in the same row and the same column. 

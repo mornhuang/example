@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPSend", "TCPSend.csproj", "{5E397B6D-3D4A-4ED2-97A9-3CC268AD9D11}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5E397B6D-3D4A-4ED2-97A9-3CC268AD9D11}.Debug.ActiveCfg = Debug|.NET
+		{5E397B6D-3D4A-4ED2-97A9-3CC268AD9D11}.Debug.Build.0 = Debug|.NET
+		{5E397B6D-3D4A-4ED2-97A9-3CC268AD9D11}.Release.ActiveCfg = Release|.NET
+		{5E397B6D-3D4A-4ED2-97A9-3CC268AD9D11}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cursor" default="default" basedir=".">
+    <description>Builds, tests, and runs the project cursor.</description>
+    <property name="is.java-client-module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-cursor" depends="compile"
+    description="Runs cursor. ">
+    <echo message="Running cursor."/>
+    <java classname="cursor.CursorParse" fork="yes">
+      <arg value="-x"/>
+      <arg value="1"/>
+      <arg value="BookCatalog.xml"/>
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="GB2312"?>
+<project basedir="." default="compile" name="JavaAPI">
+    <!--主要的系统环境属性-->
+    <property environment="env"/><!--取window,unix...的环境变量-->
+    <property name="java.home" 		value="${env.JAVA_HOME}"/>
+	
+    <!--主要的app、demo环境属性-->
+    <property name="app.name"      	value="SII"/>
+    <property name="app.jar"       	value="${app.name}.jar"/>
+    <property name="app.copyright" 	value=" Copyright Harbour Technologies, Inc. All rights reserved."/>
+	<property name="demo.name"		value="SIIDemo"/>
+	<property name="demo.jar"		value="${demo.name}.jar"/>
+	
+    <!--app中src的属性-->
+    <property name="src.dir" 		location="src" />
+    <property name="src.main"   	location="${src.dir}/main"/>
+	<property name="src.test" 		location="${src.dir}/test"/>
+	<property name="src.demo"       location="${src.dir}/demo"/>
+	<property name="siimanifest"   	value="${src.main}/SIIManifest"/>
+	<property name="sdmanifest"		value="${src.demo}/SDManifest"/>
+	
+    <!--app用到的lib-->
+    <property name="lib.dir" 		location="lib"/>
+
+    <!--app的build目录中-->
+    <property name="build.dir"      location="build" />
+	<property name="build.classes"  location="${build.dir}/classes"/>
+	<property name="classes.main"   location="${build.classes}/main"/>
+	<property name="classes.test"   location="${build.classes}/test"/>
+	<property name="classes.demo"	location="${build.classes}/demo"/>
+    <property name="build.doc"      location="${build.dir}/doc"/>
+    <property name="build.bin"      location="${build.dir}/bin"/>
+
+    <!--app的dist (distribution) 目录中-->
+    <property name="dist.dir"      	location="dist"/>
+	<property name="dist.zip"      	value="${dist.dir}/NE-Adapter.zip"/>
+	
+	<!-- 定义一组路径以后可以通过id重用这组路径 -->
+	<path id="project.class.path">
+	    <pathelement location="${classes.main}"/>
+	    <pathelement location="${classes.test}"/>
+		<pathelement location="${classes.demo}"/>
+		<pathelement location="${lib.dir}/antlr.jar"/>
+		<pathelement location="${lib.dir}/antlrcore.jar"/>
+		<pathelement location="${lib.dir}/jace.jar"/>
+		<pathelement location="${lib.dir}/junit.jar"/>
+		<pathelement location="${lib.dir}/log4j-1.2.8.jar"/>
+		<pathelement location="${lib.dir}/SNMP4J.jar"/>
+	</path>
+
+	<!-- 初始化处理-->
+    <target name="init">
+        <mkdir dir="${build.classes}"/>
+        <mkdir dir="${classes.main}"/>
+        <mkdir dir="${classes.test}"/>
+    	<mkdir dir="${classes.demo}"/>
+    	<mkdir dir="${build.bin}"/>
+    	<mkdir dir="${build.doc}"/>
+    </target>	
+	
+	<!-- 编译前置处理 -->
+	<target name="precompile">
+		<!--property name="codegen.dir"			location="..\tools\NEAdapter\codegen"/-->
+		<!--property name="codegen.app"    		value="${codegen.dir}\codegen.bat"/-->
+		<!--property name="oiddef.java.dir"		location="${src.main}/com/harbour/sii/implement/drivers/snmp"/-->
+		<!--property name="cardhelper.java.dir" location="${src.main}/com/harbour/sii/implement/blemf"/-->
+		
+		<!--exec dir="${codegen.dir}" executable="${codegen.app}" os="Windows 2000"/-->
+		<!--move todir="${oiddef.java.dir}" file="${codegen.dir}/OIDDef.java"/-->
+		<!--move todir="${cardhelper.java.dir}" file="${codegen.dir}/CardHelper.java"/-->		
+	</target>
+	
+	<!-- 编译处理-->
+	<target name="compile" depends="init">
+		<javac srcdir="${src.main}" destdir="${classes.main}" debug="on" source="1.4" deprecation="off" target="1.4" fork="yes" memoryMaximumSize="283886080">
+			<classpath refid="project.class.path"/>
+    	</javac>
+
+		<javac srcdir="${src.test}" destdir="${classes.test}" debug="on" source="1.4" deprecation="off" target="1.4" fork="yes" memoryMaximumSize="283886080">
+			<classpath refid="project.class.path"/>
+    	</javac>
+		
+		<javac srcdir="${src.demo}" destdir="${classes.demo}" debug="on" source="1.4" deprecation="off" target="1.4" fork="yes" memoryMaximumSize="283886080">
+			<classpath refid="project.class.path"/>
+    	</javac>
+	</target>
+	
+	<!-- 编译后置处理 -->
+	<target name="postcompile"/>
+	
+	<!-- 资源文件处理 -->
+	<target name="resource"/>
+	
+	<!-- 构建jar包 -->
+	<target name="archive" depends="init,resource,compile">
+		<jar manifest="${siimanifest}" jarfile="${build.bin}/${app.jar}" 
+			basedir="${classes.main}"/>
+		
+		<jar manifest="${sdmanifest}" jarfile="${build.bin}/${demo.jar}"
+			basedir="${classes.demo}"/>
+	</target>
+
+	<!-- 生成javadoc -->
+	<target name="javadoc" depends="init">
+       <javadoc classpathref="project.class.path"
+       			packagenames="com.harbour.sii, 
+       						  com.harbour.sii.alarm, 
+       	                      com.harbour.sii.crossConnection,
+       					      com.harbour.sii.equip,
+       						  com.harbour.sii.inventory,
+       						  com.harbour.sii.msp,
+       						  com.harbour.sii.msspring,
+       						  com.harbour.sii.session"
+                sourcepath="${src.main}"
+                defaultexcludes="yes"
+                destdir="${build.doc}"
+                author="true"
+                version="true"
+                use="true">			
+			<doctitle><![CDATA[<h1>NE-Adapter</h1>]]></doctitle>
+            <bottom><![CDATA[<i>${app.copyright}</i>]]></bottom>
+		</javadoc>
+	</target>	
+
+	<!-- 构建应用程序 -->
+	<target name="package" depends="archive,javadoc"/>
+
+	<!-- 构建配置处理 -->
+	<target name="deploy"/>
+
+	<!-- 完整的构建应用程序输出 -->
+	<target name="build" depends="precompile,compile,postcompile,package,deploy"/>
+	
+	<!-- 清除操作 -->
+	<target name="clean">
+		<delete failonerror="false" includeemptydirs="true">
+			<fileset dir="${build.classes}"/>
+		  	<fileset dir="${build.bin}"/>
+			<fileset dir="${build.doc}"/>
+		</delete>
+	</target>
+
+	<!-- rebuild -->
+	<target name="rebuild" depends="clean,build"/>
+	
+	<!-- 进行版本发布打包 -->
+	<target name="distribution" depends="rebuild">
+		<zip destfile="${dist.zip}">
+			<zipfileset dir="${lib.dir}"   	prefix="lib">
+				<exclude name="junit.jar"/>
+			</zipfileset>
+	        <zipfileset dir="${build.bin}" 	prefix="bin"/>
+		    <zipfileset dir="${build.doc}" 	prefix="doc"/>
+   	        <zipfileset file="CHANGES.txt"/>
+		</zip>		
+	</target>
+</project>

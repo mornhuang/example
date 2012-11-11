@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloServer", "HelloServer.csproj", "{F7DC058D-6FA6-4C9F-A8D4-22F9AB1EB517}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackingHandler", "..\TrackingHandler\TrackingHandler.csproj", "{1D68D454-9601-4C7C-AF0A-96A40A12852F}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F7DC058D-6FA6-4C9F-A8D4-22F9AB1EB517}.Debug.ActiveCfg = Debug|.NET
+		{F7DC058D-6FA6-4C9F-A8D4-22F9AB1EB517}.Debug.Build.0 = Debug|.NET
+		{F7DC058D-6FA6-4C9F-A8D4-22F9AB1EB517}.Release.ActiveCfg = Release|.NET
+		{F7DC058D-6FA6-4C9F-A8D4-22F9AB1EB517}.Release.Build.0 = Release|.NET
+		{1D68D454-9601-4C7C-AF0A-96A40A12852F}.Debug.ActiveCfg = Debug|.NET
+		{1D68D454-9601-4C7C-AF0A-96A40A12852F}.Debug.Build.0 = Debug|.NET
+		{1D68D454-9601-4C7C-AF0A-96A40A12852F}.Release.ActiveCfg = Release|.NET
+		{1D68D454-9601-4C7C-AF0A-96A40A12852F}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

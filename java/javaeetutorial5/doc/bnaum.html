@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Performing Localization - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="bnaty.html">Writing Bean Properties</a></p>
+<p class="toc level4"><a href="bnaty.html#bnatz">Writing Properties Bound to Component Values</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaub"><tt>UIInput</tt> and <tt>UIOutput</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauc"><tt>UIData</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaud"><tt>UISelectBoolean</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaue"><tt>UISelectMany</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauf"><tt>UISelectOne</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnaug"><tt>UISelectItem</tt> Properties</a></p>
+<p class="toc level5"><a href="bnaty.html#bnauh"><tt>UISelectItems</tt> Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnaty.html#bnauk">Writing Properties Bound to Component Instances</a></p>
+<p class="toc level4"><a href="bnaty.html#bnaul">Writing Properties Bound to Converters, Listeners, or Validators</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Performing Localization</a></p>
+<p class="toc level4"><a href="#bnaun">Creating a Resource Bundle</a></p>
+<p class="toc level4"><a href="#bnauo">Localizing Dynamic Data</a></p>
+<p class="toc level4"><a href="#bnaup">Localizing Messages</a></p>
+<p class="toc level5"><a href="#bnauq">Creating a Message with a Message Factory</a></p>
+<p class="toc level5"><a href="#bnaur">Using <tt>FacesMessage</tt> to Create a Message</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaus.html">Creating a Custom Converter</a></p>
+<p class="toc level3"><a href="bnaut.html">Implementing an Event Listener</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a></p>
+<p class="toc level4"><a href="bnaut.html#bnauv">Implementing Action Listeners</a></p>
+<p class="toc level3 tocsp"><a href="bnauw.html">Creating a Custom Validator</a></p>
+<p class="toc level4"><a href="bnauw.html#bnaux">Implementing the Validator Interface</a></p>
+<p class="toc level4"><a href="bnauw.html#bnauy">Creating a Custom Tag</a></p>
+<p class="toc level5"><a href="bnauw.html#bnauz">Writing the Tag Handler</a></p>
+<p class="toc level5"><a href="bnauw.html#bnava">Writing the Tag Library Descriptor</a></p>
+<p class="toc level3 tocsp"><a href="bnavb.html">Writing Backing Bean Methods</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavc">Writing a Method to Handle Navigation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavd">Writing a Method to Handle an Action Event</a></p>
+<p class="toc level4"><a href="bnavb.html#bnave">Writing a Method to Perform Validation</a></p>
+<p class="toc level4"><a href="bnavb.html#bnavf">Writing a Method to Handle a Value-Change Event</a></p>
+<p class="toc level2 tocsp"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaty.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaus.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaum"></a><h3>Performing Localization</h3>
+<a name="indexterm-1329"></a><p>As mentioned in <a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a>, data and messages in the Duke&rsquo;s Bookstore application have
+been localized for French, German, Spanish, and American English.</p><p>This section explains how to produce the localized error messages as well as
+how to localize dynamic data and messages.</p><p><a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a> describes how page authors access localized data from the page.</p><p>If you are not familiar with the basics of localizing web applications, see
+<a href="bnaxu.html">Chapter&nbsp;15, Internationalizing and Localizing Web Applications</a>.</p>
+
+<a name="bnaun"></a><h4>Creating a Resource Bundle</h4>
+<p>A <tt>ResourceBundle</tt> contains a set of localized messages. To learn how to create
+a <tt>ResourceBundle</tt>, see <a href="http://java.sun.com/docs/books/tutorial/i18n/index.html">http://java.sun.com/docs/books/tutorial/i18n/index.html</a>.</p><p>After you create the <tt>ResourceBundle</tt>, put it in the same directory as your
+classes. Much of the data for the Duke&rsquo;s Bookstore application is stored in
+a <tt>ResourceBundle</tt> called <tt>BookstoreMessages,</tt> located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore/src/com/sun/bookstore/messages/</tt>.</p>
+
+<a name="bnauo"></a><h4>Localizing Dynamic Data</h4>
+<p>The Duke&rsquo;s Bookstore application has some data that is set dynamically in backing
+beans. Because of this, the beans must load the localized data themselves; the
+data can&rsquo;t be loaded from the page.</p><p>The <tt>message</tt> method in <i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/src/java/com/sun/bookstore6/backing/AbstractBean.java</tt> is a general-purpose method that looks up
+localized data used in the backing beans:</p><pre>protected void message(String clientId, String key) {
+    // Look up the requested message text
+    String text = null;
+    try {
+        ResourceBundle bundle =
+            ResourceBundle.getBundle("messages.BookstoreMessages",
+                context().getViewRoot().getLocale());
+        text = bundle.getString(key);
+    } catch (Exception e) {
+        text = "???" + key + "???";
+    }
+    // Construct and add a FacesMessage containing it
+    context().addMessage(clientId, new FacesMessage(text));
+}</pre><p>This method gets the current locale from the <tt>UIViewRoot</tt> instance of the current
+request and loads the localized data for the messages using the <tt>getBundle</tt> method,
+passing in the path to the <tt>ResourceBundle</tt> and the current locale.</p><p>The other backing beans call this method by using the key to
+the message that they are trying to retrieve from the resource bundle. Here
+is a call to the <tt>message</tt> method from <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/src/java/com/sun/bookstore6/backing/ShowCartBean.java</tt>:</p><pre>message(null, "Quantities Updated");</pre>
+
+<a name="bnaup"></a><h4>Localizing Messages</h4>
+<a name="indexterm-1330"></a><a name="indexterm-1331"></a><p>The JavaServer Faces API provides two ways to create messages from a resource
+bundle:</p>
+<ul><li><p><a name="indexterm-1332"></a><a name="indexterm-1333"></a><a name="indexterm-1334"></a>You can register the <tt>ResourceBundle</tt> instance with the application configuration resource file and use a message factory pattern to examine the <tt>ResourceBundle</tt> and to generate localized <tt>FacesMessage</tt> instances, which represent single localized messages. The message factory pattern is required to access messages that are registered with the <tt>Application</tt> instance. Instead of writing your own message factory pattern, you can use the one included with the Duke&rsquo;s Bookstore application. It is called <tt>MessageFactory</tt> and is located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/src/java/com/sun/bookstore6/util/</tt>.</p></li>
+<li><p><a name="indexterm-1335"></a><a name="indexterm-1336"></a>You can use the <tt>FacesMessage</tt> class to get the localized string directly from the <tt>ResourceBundle</tt> instance.</p></li></ul>
+<p><a href="bnaxb.html">Registering Custom Error Messages</a> includes an example of registering a <tt>ResourceBundle</tt> in the application configuration resource file.</p>
+
+<a name="bnauq"></a><h5>Creating a Message with a Message Factory</h5>
+<a name="indexterm-1337"></a><a name="indexterm-1338"></a><p>To use a message factory to create a message, follow these steps:</p>
+<ol><li><p>Register the <tt>ResourceBundle</tt> instance with the application. This is explained in <a href="bnaxb.html">Registering Custom Error Messages</a>.</p></li>
+<li><p><a name="indexterm-1339"></a><a name="indexterm-1340"></a><a name="indexterm-1341"></a><a name="indexterm-1342"></a>Create a message factory implementation. You can simply copy the <tt>MessageFactory</tt> class included with the Duke&rsquo;s Bookstore application to your application.</p></li>
+<li><p><a name="indexterm-1343"></a><a name="indexterm-1344"></a><a name="indexterm-1345"></a>Access a message from your application by calling the <tt>getMessage(FacesContext, String, Object)</tt> method of the <tt>MessageFactory</tt> class. The <tt>MessageFactory</tt> class uses the <tt>FacesContext</tt> to access the <tt>Application</tt> instance on which the messages are registered. The <tt>String</tt> argument is the key that corresponds to the message in the <tt>ResourceBundle</tt>. The <tt>Object</tt> instance typically contains the substitution parameters that are embedded in the message. For example, the custom validator described in <a href="bnauw.html#bnaux">Implementing the Validator Interface</a> will substitute the format pattern for the <tt>{0}</tt> in this error message:</p><pre>Input must match one of the following patterns {0}</pre></li></ol>
+<p><a href="bnauw.html#bnaux">Implementing the Validator Interface</a> gives an example of accessing messages.</p>
+
+<a name="bnaur"></a><h5>Using <tt>FacesMessage</tt> to Create a Message</h5>
+<a name="indexterm-1346"></a><a name="indexterm-1347"></a><p>Instead of registering messages in the application configuration resource file, you can access
+the <tt>ResourceBundle</tt> directly from the code. The <tt>validateEmail</tt> method from the Coffee Break
+example does this:</p><pre>...
+String message = "";
+...
+message = CoffeeBreakBean.loadErrorMessage(context,
+    CoffeeBreakBean.CB_RESOURCE_BUNDLE_NAME,
+         "EMailError");
+context.addMessage(toValidate.getClientId(context),
+    new FacesMessage(message));
+...</pre><p>These lines also call the <tt>loadErrorMessage</tt> to get the message from the <tt>ResourceBundle</tt>.
+Here is the <tt>loadErrorMessage</tt> method from <tt>CoffeeBreakBean</tt>:</p><pre>public static String loadErrorMessage(FacesContext context,
+     String basename, String key) {
+    if ( bundle == null ) {
+         try {
+            bundle = ResourceBundle.getBundle(basename,
+                 context.getViewRoot().getLocale());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+    return bundle.getString(key);
+}</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnaty.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaus.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

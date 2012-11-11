@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/user.do" location="45,45" dimension="280,84" />
+  <StrutsActivity path="/form/user.jsp" location="480,60" dimension="124,48" />
+  <StrutsActivity path="/success.jsp" location="75,225" dimension="150,100" />
+  <StrutsTransition id="/user.do,success,/success.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="185,129" />
+      <AbsolutePoint location="185,225" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/form/user.jsp,null,/user.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="480,84" />
+      <AbsolutePoint location="325,84" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

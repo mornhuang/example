@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="converter-secure" default="default" basedir="." xmlns:ear="http://www.netbeans.org/ns/j2ee-earproject/1">
+    <description>Builds, tests, and runs the project .</description>
+    <property name="is.ear.module" value="true"/>
+
+    <path id="ear-components">
+        <filelist dir="./converter-secure-ejb" files="build.xml"/>
+        <filelist dir="./converter-secure-app-client" files="build.xml"/>
+        <filelist dir="./converter-secure-war" files="build.xml"/>
+    </path>
+
+    <import file="../../bp-project/main.xml"/>
+    
+    <target name="-pre-init" if="debug">
+        <echo message="---------------------------------------------------"/>
+        <echo message="Classpath info"/>
+        <echo message="---------------------------------------------------"/>
+        <property name="cp" refid="classpath"/>
+        <echo message="Classpath is ${cp}"/>
+        <echo message="---------------------------------------------------"/>
+        <echo message="Project properties"/>
+        <echo message="---------------------------------------------------"/>
+        <echoproperties/>
+    </target>
+
+    <target name="all" unless="netbeans.home" depends="clean,default,run-deploy">
+        <antcall target="run"/>
+    </target>
+
+    <target name="run-ant" unless="netbeans.home" depends="init">
+        <antcall target="client-jar"/>
+        <antcall target="bpp-run-app-client"/>
+    </target>
+    
+    <target name="run-nb" if="netbeans.home" depends="run-deploy">
+        <antcall target="run-ac"/>
+    </target>
+    
+    <target name="run" depends="init,run-nb,run-ant" />
+</project>

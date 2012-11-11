@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>books</display-name>
+
+  <listener>
+    <listener-class>com.sun.books.listeners.ContextListener</listener-class>
+  </listener>
+
+  <servlet>
+    <display-name>books</display-name>
+    <servlet-name>books</servlet-name>
+    <jsp-file>/books.jspx</jsp-file>
+  </servlet>
+
+  <jsp-config>
+    <jsp-property-group>
+      <display-name>books</display-name>
+      <url-pattern>*.jspx</url-pattern>
+      <el-ignored>false</el-ignored>
+      <scripting-invalid>false</scripting-invalid>
+      <is-xml>true</is-xml>
+    </jsp-property-group>
+  </jsp-config>
+
+</web-app>
+

@@ -1,0 +1,10 @@
+<persistence>
+ <persistence-unit name="clientmdbentity">
+  <jta-data-source>jdbc/__default</jta-data-source>
+  <class>SetupOffice</class>
+  <properties>
+    <property name="toplink.ddl-generation"
+              value="drop-and-create-tables"/>
+   </properties>
+ </persistence-unit> 
+</persistence>

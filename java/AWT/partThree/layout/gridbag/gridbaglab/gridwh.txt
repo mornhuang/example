@@ -1,0 +1,12 @@
+gridwidth and gridheight
+
+
+The gridwidth and gridheight constraints determine the size of a component's display area, not necessarily the 
+size of the component itself. 
+
+In addition to integer values for gridwidth and gridheight, the values 
+GridBagConstraints.RELATIVE and GridBagConstraints.REMAINDER may also be specified. RELATIVE means that the 
+component will be the next to last component in its row (for gridwidth) or the next to last component in its 
+column (for gridheight). A value of REMAINDER results in the component being the last component in its row 
+(gridwidth) or column (gridheight). Specifying REMAINDER will cause the component's display area to expand in 
+order to span as many grid cells as required to be the last component in its respective row or column. 

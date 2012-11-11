@@ -1,0 +1,105 @@
+<project name="tutorial" basedir="../" default="all">
+
+	<property environment="env"/>
+	<property name="tomcat.home" value="${env.CATALINA_HOME}"/>
+
+	<!-- Local system paths -->
+	<property name="servlet-api.jar" value="${tomcat.home}/common/lib/servlet-api.jar"/>
+	<property name="jsp-api.jar" value="${tomcat.home}/common/lib/jsp-api.jar"/>
+	<property name="distpath.project" value="${tomcat.home}/webapps"/>
+
+	<!-- Project settings -->
+	<property name="project.title" value="Jakarta Struts Tutorial "/>
+	<property name="project.distname" value="tutorial"/>
+	<property name="project.version" value="1.1"/>
+
+	<!-- Path settings -->
+	<property name="doc.path" value="./doc/api"/>
+	<property name="doc.src" value="./src/java"/>
+
+	<!-- classpath for Struts 1.1 -->
+	<path id="compile.classpath">
+		<pathelement path ="lib/commons-beanutils.jar"/>
+		<pathelement path ="lib/commons-digester.jar"/>
+		<pathelement path ="lib/struts.jar"/>
+		<pathelement path ="lib/classes12.jar"/>
+		<pathelement path ="classes"/>
+		<pathelement path ="${classpath}"/>
+		<pathelement path ="${servlet-api.jar}"/>
+		<pathelement path ="${jsp-api.jar}"/>
+	</path>
+
+	<!-- Check timestamp on files -->
+	<target name="prepare">
+		<tstamp/>
+	</target>
+
+	<!-- Copy any resource or configuration files -->
+	<target name="resources">
+		<copy todir="classes" includeEmptyDirs="no">
+			<fileset dir="src/java">
+				<patternset>
+					<include name="**/*.conf"/>
+					<include name="**/*.properties"/>
+					<include name="**/*.xml"/>
+					<exclude name="**/*_zh_CN.properties"/>
+				</patternset>
+			</fileset>
+		</copy>
+		<native2ascii src="src/java" dest="classes" 
+								includes="**/*_zh_CN.properties" encoding="gb2312"/>
+	</target>
+
+	<!-- Normal build of application -->
+	<target name="compile" depends="prepare,resources">
+		<javac srcdir="src" destdir="classes">
+			<classpath refid="compile.classpath"/>
+		</javac>
+	</target>
+
+	<!-- Remove classes directory for clean build -->
+	<target name="clean"
+      description="Prepare for clean build">
+		<delete dir="classes"/>
+		<delete dir="${distpath.project}/${project.distname}"/>
+		<delete file="${distpath.project}/${project.distname}.war"/>
+		<mkdir  dir="classes"/>
+	</target>
+
+	<!-- Build entire project -->
+	<target name="project" depends="clean,prepare,compile"/>
+
+	<!-- Create binary distribution -->
+	<target name="dist"
+        description="Create binary distribution">
+
+		<war
+        basedir="../"
+        warfile="${distpath.project}/${project.distname}.war"
+        webxml="web.xml">
+			<exclude name="${distpath.project}/${project.distname}.war"/>
+		</war>
+	</target>
+
+
+	<!-- Build project and create distribution-->
+	<target name="all" depends="project,dist"/>
+
+	<target name="builddb" description="builds the database tables">
+		<sql driver="oracle.jdbc.driver.OracleDriver"
+				userid="scott"
+				password="tiger"
+				url="jdbc:oracle:thin:@192.168.10.121:1521:HiFinance">
+			<classpath refid="compile.classpath"/>
+			CREATE TABLE USERINFO(
+				EMAIL VARCHAR(80),
+				USER_NAME VARCHAR(80),
+				LOG_NAME VARCHAR(80),
+				PASSWORD VARCHAR(11),
+				PHONE VARCHAR(11),
+				FAX VARCHAR(11),
+				CONSTRAINT USER_PK PRIMARY KEY (LOG_NAME)
+			);
+		</sql>
+	</target>
+</project>

@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client.csproj", "{D254E996-69CF-47BE-8EE2-8FEC78B29DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSink", "..\EventSink\EventSink.csproj", "{DC58FCEA-7DE3-442D-8D42-483454A002C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D254E996-69CF-47BE-8EE2-8FEC78B29DCA}.Debug.ActiveCfg = Debug|.NET
+		{D254E996-69CF-47BE-8EE2-8FEC78B29DCA}.Debug.Build.0 = Debug|.NET
+		{D254E996-69CF-47BE-8EE2-8FEC78B29DCA}.Release.ActiveCfg = Release|.NET
+		{D254E996-69CF-47BE-8EE2-8FEC78B29DCA}.Release.Build.0 = Release|.NET
+		{DC58FCEA-7DE3-442D-8D42-483454A002C1}.Debug.ActiveCfg = Debug|.NET
+		{DC58FCEA-7DE3-442D-8D42-483454A002C1}.Debug.Build.0 = Debug|.NET
+		{DC58FCEA-7DE3-442D-8D42-483454A002C1}.Release.ActiveCfg = Release|.NET
+		{DC58FCEA-7DE3-442D-8D42-483454A002C1}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

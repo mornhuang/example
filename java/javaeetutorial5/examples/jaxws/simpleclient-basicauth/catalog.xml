@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+<system systemId="http://localhost:8080/helloservice-basicauth/HelloService?wsdl" uri="src/conf/xml-resources/web-service-references/HelloService/wsdl/localhost_8080/helloservice-basicauth/HelloService.wsdl"/>
+<system systemId="http://129.150.21.78:8080/helloservice-basicauth/HelloService/__container$publishing$subctx/WEB-INF/wsdl/HelloService_schema1.xsd" uri="src/conf/xml-resources/web-service-references/HelloService/wsdl/129.150.21.78_8080/helloservice-basicauth/HelloService/__container$publishing$subctx/WEB-INF/wsdl/HelloService_schema1.xsd"/>
+</catalog>

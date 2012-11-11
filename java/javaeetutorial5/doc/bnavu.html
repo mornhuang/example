@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Creating Custom Component Classes - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level3"><a href="bnavh.html">Determining Whether You Need a Custom Component or Renderer</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavi">When to Use a Custom Component</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavj">When to Use a Custom Renderer</a></p>
+<p class="toc level4"><a href="bnavh.html#bnavk">Component, Renderer, and Tag Combinations</a></p>
+<p class="toc level3 tocsp"><a href="bnavm.html">Understanding the Image Map Example</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavn">Why Use JavaServer Faces Technology to Implement an Image Map?</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavo">Understanding the Rendered HTML</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavp">Understanding the JSP Page</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavq">Configuring Model Data</a></p>
+<p class="toc level4"><a href="bnavm.html#bnavr">Summary of the Application Classes</a></p>
+<p class="toc level3 tocsp"><a href="bnavt.html">Steps for Creating a Custom Component</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Creating Custom Component Classes</a></p>
+<p class="toc level4"><a href="#bnavv">Specifying the Component Family</a></p>
+<p class="toc level4"><a href="#bnavw">Performing Encoding</a></p>
+<p class="toc level4"><a href="#bnavx">Performing Decoding</a></p>
+<p class="toc level4"><a href="#bnavy">Enabling Component Properties to Accept Expressions</a></p>
+<p class="toc level4"><a href="#bnavz">Saving and Restoring State</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnawa.html">Delegating Rendering to a Renderer</a></p>
+<p class="toc level4"><a href="bnawa.html#bnawb">Creating the Renderer Class</a></p>
+<p class="toc level4"><a href="bnawa.html#bnawc">Identifying the Renderer Type</a></p>
+<p class="toc level3 tocsp"><a href="bnawd.html">Handling Events for Custom Components</a></p>
+<p class="toc level3"><a href="bnawe.html">Creating the Component Tag Handler</a></p>
+<p class="toc level4"><a href="bnawe.html#bnawf">Retrieving the Component Type</a></p>
+<p class="toc level4"><a href="bnawe.html#bnawg">Setting Component Property Values</a></p>
+<p class="toc level5"><a href="bnawe.html#bnawh">Getting the Attribute Values</a></p>
+<p class="toc level5"><a href="bnawe.html#bnawi">Setting the Component Property Values</a></p>
+<p class="toc level4 tocsp"><a href="bnawe.html#bnawl">Providing the Renderer Type</a></p>
+<p class="toc level4"><a href="bnawe.html#bnawm">Releasing Resources</a></p>
+<p class="toc level3 tocsp"><a href="bnawn.html">Defining the Custom Component Tag in a Tag Library Descriptor</a></p>
+<p class="toc level2 tocsp"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnavt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnawa.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnavu"></a><h3>Creating Custom Component Classes</h3>
+<a name="indexterm-1497"></a><p>As explained in <a href="bnavh.html#bnavi">When to Use a Custom Component</a>, a component class defines the state and behavior of
+a UI component. The state information includes the component&rsquo;s type, identifier, and local
+value. The behavior defined by the component class includes the following:</p>
+<ul><li><p><a name="indexterm-1498"></a>Decoding (converting the request parameter to the component&rsquo;s local value)</p></li>
+<li><p><a name="indexterm-1499"></a>Encoding (converting the local value into the corresponding markup)</p></li>
+<li><p>Saving the state of the component</p></li>
+<li><p>Updating the bean value with the local value</p></li>
+<li><p>Processing validation on the local value</p></li>
+<li><p>Queueing events</p></li></ul>
+<p><a name="indexterm-1500"></a>The <tt>UIComponentBase</tt> class defines the default behavior of a component class. All the
+classes representing the standard components extend from <tt>UIComponentBase</tt>. These classes add their own behavior
+definitions, as your custom component class will do.</p><p><a name="indexterm-1501"></a>Your custom component class must either extend <tt>UIComponentBase</tt> directly or extend a class representing
+one of the standard components. These classes are located in the <tt>javax.faces.component</tt> package
+and their names begin with <tt>UI</tt>.</p><p>If your custom component serves the same purpose as a standard component, you
+should extend that standard component rather than directly extend <tt>UIComponentBase</tt>. For example,
+suppose you want to create an editable menu component. It makes sense to
+have this component extend <tt>UISelectOne</tt> rather than <tt>UIComponentBase</tt> because you can reuse the
+behavior already defined in <tt>UISelectOne</tt>. The only new functionality you need to define is
+to make the menu editable.</p><p>Whether you decide to have your component extend <tt>UIComponentBase</tt> or a standard component,
+you might also want your component to implement one or more of these
+behavioral interfaces:</p>
+<ul><li><p><a name="indexterm-1502"></a><tt>ActionSource</tt>: Indicates that the component can fire an <tt>ActionEvent</tt>.</p></li>
+<li><p><a name="indexterm-1503"></a><tt>ActionSource2</tt>: Extends <tt>ActionSource</tt> and allows component properties referencing methods that handle action events to use method expressions as defined by the unified EL. This class was introduced in JavaServer Faces Technology 1.2.</p></li>
+<li><p><a name="indexterm-1504"></a><tt>EditableValueHolder</tt>: Extends <tt>ValueHolder</tt> and specifies additional features for editable components, such as validation and emitting value-change events.</p></li>
+<li><p><a name="indexterm-1505"></a><a name="indexterm-1506"></a><tt>NamingContainer</tt>: Mandates that each component rooted at this component have a unique ID.</p></li>
+<li><p><a name="indexterm-1507"></a><tt>StateHolder</tt>: Denotes that a component has state that must be saved between requests.</p></li>
+<li><p><a name="indexterm-1508"></a><tt>ValueHolder</tt>: Indicates that the component maintains a local value as well as the option of accessing data in the model tier.</p></li></ul>
+<p>If your component extends <tt>UIComponentBase</tt>, it automatically implements only <tt>StateHolder</tt>. Because all components
+directly or indirectly extend <tt>UIComponentBase</tt>, they all implement <tt>StateHolder</tt>.</p><p>If your component extends one of the other standard components, it might also
+implement other behavioral interfaces in addition to <tt>StateHolder</tt>. If your component extends <tt>UICommand</tt>,
+it automatically implements <tt>ActionSource2</tt>. If your component extends <tt>UIOutput</tt> or one of the
+component classes that extend <tt>UIOutput</tt>, it automatically implements <tt>ValueHolder</tt>. If your component extends
+<tt>UIInput</tt>, it automatically implements <tt>EditableValueHolder</tt> and <tt>ValueHolder</tt>. See the JavaServer Faces API
+Javadoc to find out what the other component classes implement.</p><p>You can also make your component explicitly implement a behavioral interface that it
+doesn&rsquo;t already by virtue of extending a particular standard component. For example, if
+you have a component that extends <tt>UIInput</tt> and you want it to fire
+action events, you must make it explicitly implement <tt>ActionSource2</tt> because a <tt>UIInput</tt>
+component doesn&rsquo;t automatically implement this interface.</p><p>The image map example has two component classes: <tt>AreaComponent</tt> and <tt>MapComponent</tt>. The
+<tt>MapComponent</tt> class extends <tt>UICommand</tt> and therefore implements <tt>ActionSource2</tt>, which means it can fire
+action events when a user clicks on the map. The <tt>AreaComponent</tt> class
+extends the standard component <tt>UIOutput</tt>.</p><p>The <tt>MapComponent</tt> class represents the component corresponding to the <tt>map</tt> tag:</p><pre>&lt;bookstore:map id="worldMap" current="NAmericas"
+     immediate="true"
+     action="bookstore"
+    actionListener="#{localeBean.chooseLocaleFromMap}"></pre><p>The <tt>AreaComponent</tt> class represents the component corresponding to the <tt>area</tt> tag:</p><pre>&lt;bookstore:area id="NAmerica" value="#{NA}"
+    onmouseover="/template/world_namer.jpg"
+     onmouseout="/template/world.jpg"
+     targetImage="mapImage" /></pre><p><tt>MapComponent</tt> has one or more <tt>AreaComponent</tt> instances as children. Its behavior consists of
+the following</p>
+<ul><li><p>Retrieving the value of the currently selected area</p></li>
+<li><p>Defining the properties corresponding to the component&rsquo;s values</p></li>
+<li><p>Generating an event when the user clicks on the image map</p></li>
+<li><p>Queuing the event</p></li>
+<li><p>Saving its state</p></li>
+<li><p>Rendering the <tt>map</tt> tag and the <tt>input</tt> tag</p></li></ul>
+<p>The rendering of the <tt>map</tt> and <tt>input</tt> tags is performed by <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore6/src/java/com/sun/bookstore6/renderers/MapRenderer.java</tt>, but
+<tt>MapComponent</tt> delegates this rendering to <tt>MapRenderer</tt>.</p><p><tt>AreaComponent</tt> is bound to a bean that stores the shape and coordinates of
+the region of the image map. You&rsquo;ll see how all this data is
+accessed through the <tt>value</tt> expression in <a href="bnawa.html#bnawb">Creating the Renderer Class</a>. The behavior of <tt>AreaComponent</tt> consists of the
+following</p>
+<ul><li><p>Retrieving the shape and coordinate data from the bean</p></li>
+<li><p>Setting the value of the hidden tag to the <tt>id</tt> of this component</p></li>
+<li><p>Rendering the <tt>area</tt> tag, including the JavaScript for the <tt>onmouseover</tt>, <tt>onmouseout</tt>, and <tt>onclick</tt> functions</p></li></ul>
+<p>Although these tasks are actually performed by <tt>AreaRenderer</tt>, <tt>AreaComponent</tt> must delegate the
+tasks to <tt>AreaRenderer</tt>. See <a href="bnawa.html">Delegating Rendering to a Renderer</a> for more information.</p><p>The rest of this section describes the tasks that <tt>MapComponent</tt> performs as well
+as the encoding and decoding that it delegates to <tt>MapRenderer</tt>. <a href="bnawd.html">Handling Events for Custom Components</a> details
+how <tt>MapComponent</tt> handles events.</p>
+
+<a name="bnavv"></a><h4>Specifying the Component Family</h4>
+<p>If your custom component class delegates rendering, it needs to override the <tt>getFamily</tt>
+method of <tt>UIComponent</tt> to return the identifier of a <b>component family</b>, which is used to
+refer to a component or set of components that can be rendered
+by a renderer or set of renderers. The component family is used along
+with the renderer type to look up renderers that can render the component.</p><p>Because <tt>MapComponent</tt> delegates its rendering, it overrides the <tt>getFamily</tt> method:</p><pre>public String getFamily() {
+    return ("Map");
+}</pre><p>The component family identifier, <tt>Map</tt>, must match that defined by the <tt>component-family</tt> elements
+included in the component and renderer configurations in the application configuration resource file. <a href="bnaxh.html">Registering a Custom Renderer with a Render Kit</a>
+explains how to define the component family in the renderer configuration. <a href="bnaxi.html">Registering a Custom Component</a> explains how
+to define the component family in the component configuration.</p>
+
+<a name="bnavw"></a><h4>Performing Encoding</h4>
+<a name="indexterm-1509"></a><p><a name="indexterm-1510"></a>During the render response phase, the JavaServer Faces implementation processes the encoding methods
+of all components and their associated renderers in the view. The encoding methods
+convert the current local value of the component into the corresponding markup that
+represents it in the response.</p><p><a name="indexterm-1511"></a><a name="indexterm-1512"></a>The <tt>UIComponentBase</tt> class defines a set of methods for rendering markup: <tt>encodeBegin</tt>, <tt>encodeChildren</tt>,
+and <tt>encodeEnd</tt>. If the component has child components, you might need to use
+more than one of these methods to render the component; otherwise, all rendering
+should be done in <tt>encodeEnd</tt>.</p><p><a name="indexterm-1513"></a><a name="indexterm-1514"></a>Because <tt>MapComponent</tt> is a parent component of <tt>AreaComponent</tt>, the <tt>area</tt> tags must be rendered
+after the beginning <tt>map</tt> tag and before the ending <tt>map</tt> tag. To accomplish
+this, the <tt>MapRenderer</tt> class renders the beginning <tt>map</tt> tag in <tt>encodeBegin</tt> and the rest
+of the <tt>map</tt> tag in <tt>encodeEnd</tt>.</p><p>The JavaServer Faces implementation automatically invokes the <tt>encodeEnd</tt> method of <tt>AreaComponent</tt>&rsquo;s renderer
+after it invokes <tt>MapRenderer</tt>&rsquo;s <tt>encodeBegin</tt> method and before it invokes <tt>MapRenderer</tt>&rsquo;s <tt>encodeEnd</tt> method. If a
+component needs to perform the rendering for its children, it does this in
+the <tt>encodeChildren</tt> method.</p><p>Here are the <tt>encodeBegin</tt> and <tt>encodeEnd</tt> methods of <tt>MapRenderer</tt>:</p><pre>public void encodeBegin(FacesContext context,
+     UIComponent component) throws IOException {
+    if ((context == null)|| (component == null)){
+        throw new NullPointerException();
+    }
+    MapComponent map = (MapComponent) component;
+    ResponseWriter writer = context.getResponseWriter();
+    writer.startElement("map", map);
+    writer.writeAttribute("name", map.getId(),"id");
+}
+public void encodeEnd(FacesContext context) throws IOException {
+    if ((context == null) || (component == null)){
+        throw new NullPointerException();
+    }
+    MapComponent map = (MapComponent) component;
+    ResponseWriter writer = context.getResponseWriter();
+    writer.startElement("input", map);
+    writer.writeAttribute("type", "hidden", null);
+    writer.writeAttribute("name",
+         getName(context,map), "clientId");(
+    writer.endElement("input");
+    writer.endElement("map");
+}</pre><p>Notice that <tt>encodeBegin</tt> renders only the beginning <tt>map</tt> tag. The <tt>encodeEnd</tt> method
+renders the <tt>input</tt> tag and the ending <tt>map</tt> tag.</p><p><a name="indexterm-1515"></a>The encoding methods accept a <tt>UIComponent</tt> argument and a <tt>FacesContext</tt> argument. The <tt>FacesContext</tt>
+instance contains all the information associated with the current request. The <tt>UIComponent</tt> argument
+is the component that needs to be rendered.</p><p><a name="indexterm-1516"></a>The rest of the method renders the markup to the <tt>ResponseWriter</tt> instance, which
+writes out the markup to the current response. This basically involves passing the
+HTML tag names and attribute names to the <tt>ResponseWriter</tt> instance as strings, retrieving the
+values of the component attributes, and passing these values to the <tt>ResponseWriter</tt> instance.</p><p><a name="indexterm-1517"></a>The <tt>startElement</tt> method takes a <tt>String</tt> (the name of the tag) and the
+component to which the tag corresponds (in this case, <tt>map</tt>). (Passing this information to
+the <tt>ResponseWriter</tt> instance helps design-time tools know which portions of the generated markup
+are related to which components.)</p><p><a name="indexterm-1518"></a>After calling <tt>startElement</tt>, you can call <tt>writeAttribute</tt> to render the tag&rsquo;s attributes. The <tt>writeAttribute</tt>
+method takes the name of the attribute, its value, and the name of
+a property or attribute of the containing component corresponding to the attribute. The
+last parameter can be <tt>null</tt>, and it won&rsquo;t be rendered.</p><p>The <tt>name</tt> attribute value of the <tt>map</tt> tag is retrieved using the <tt>getId</tt>
+method of <tt>UIComponent</tt>, which returns the component&rsquo;s unique identifier. The <tt>name</tt> attribute value of
+the input tag is retrieved using the <tt>getName(FacesContext, UIComponent)</tt> method of <tt>MapRenderer</tt>.</p><p>If you want your component to perform its own rendering but delegate to
+a renderer if there is one, include the following lines in the
+encoding method to check whether there is a renderer associated with this component.</p><pre>if (getRendererType() != null) {
+    super.encodeEnd(context);
+    return;
+}</pre><p>If there is a renderer available, this method invokes the superclass&rsquo;s <tt>encodeEnd</tt>
+method, which does the work of finding the renderer. The <tt>MapComponent</tt> class
+delegates all rendering to <tt>MapRenderer</tt>, so it does not need to check for
+available renderers.</p><p>In some custom component classes that extend standard components, you might need to
+implement other methods in addition to <tt>encodeEnd</tt>. For example, if you need to
+retrieve the component&rsquo;s value from the request parameters, you must also implement the
+<tt>decode</tt> method.</p>
+
+<a name="bnavx"></a><h4>Performing Decoding</h4>
+<a name="indexterm-1519"></a><p><a name="indexterm-1520"></a><a name="indexterm-1521"></a>During the apply request values phase, the JavaServer Faces implementation processes the <tt>decode</tt>
+methods of all components in the tree. The <tt>decode</tt> method extracts a component&rsquo;s local
+value from incoming request parameters and uses a <tt>Converter</tt> class to convert the
+value to a type that is acceptable to the component class.</p><p><a name="indexterm-1522"></a><a name="indexterm-1523"></a>A custom component class or its renderer must implement the decode method only
+if it must retrieve the local value or if it needs to
+queue events. The <tt>MapRenderer</tt> instance retrieves the local value of the hidden <tt>input</tt> field
+and sets the <tt>current</tt> attribute to this value by using its <tt>decode</tt> method.
+The <tt>setCurrent</tt> method of <tt>MapComponent</tt> queues the event by calling <tt>queueEvent</tt>, passing
+in the <tt>AreaSelectedEvent</tt> instance generated by <tt>MapComponent</tt>.</p><p>Here is the decode method of <tt>MapRenderer</tt>:</p><pre>public void decode(FacesContext context, UIComponent component) {
+    if ((context == null) || (component == null)) {
+        throw new NullPointerException();
+    }
+    MapComponent map = (MapComponent) component;
+    String key = getName(context, map);
+    String value = (String)context.getExternalContext().
+        getRequestParameterMap().get(key);
+    if (value != null)
+         map.setCurrent(value);
+    }
+}</pre><p>The <tt>decode</tt> method first gets the name of the hidden <tt>input</tt> field
+by calling <tt>getName(FacesContext, UIComponent)</tt>. It then uses that name as the key to the
+request parameter map to retrieve the current value of the <tt>input</tt> field. This
+value represents the currently selected area. Finally, it sets the value of the
+<tt>MapComponent</tt> class&rsquo;s <tt>current</tt> attribute to the value of the <tt>input</tt> field.</p>
+
+<a name="bnavy"></a><h4>Enabling Component Properties to Accept Expressions</h4>
+<p><a name="indexterm-1524"></a><a name="indexterm-1525"></a>Nearly all the attributes of the standard JavaServer Faces tags can accept expressions,
+whether they are value expressions or method expressions. It is recommended that you
+also enable your component attributes to accept expressions because this is what page
+authors expect, and it gives page authors much more flexibility when authoring their
+pages.</p><p><a href="bnawe.html">Creating the Component Tag Handler</a> describes how <tt>MapTag</tt>, the tag handler for the <tt>map</tt> tag, sets the component&rsquo;s
+values when processing the tag. It does this by providing the following:</p>
+<ul><li><p>A method for each attribute that takes either a <tt>ValueExpression</tt> or <tt>MethodExpression</tt> object depending on what kind of expression the attribute accepts.</p></li>
+<li><p>A <tt>setProperties</tt> method that stores the <tt>ValueExpression</tt> or <tt>MethodExpression</tt> object for each component property so that the component class can retrieve the expression object later.</p></li></ul>
+<p>To retrieve the expression objects that <tt>setProperties</tt> stored, the component class must implement
+a method for each property that accesses the appropriate expression object, extracts the
+value from it and returns the value.</p><p>Because <tt>MapComponent</tt> extends <tt>UICommand</tt>, the <tt>UICommand</tt> class already does the work of getting
+the <tt>ValueExpression</tt> and <tt>MethodExpression</tt> instances associated with each of the attributes that it
+supports.</p><p>However, if you have a custom component class that extends <tt>UIComponentBase</tt>, you
+will need to implement the methods that get the <tt>ValueExpression</tt> and <tt>MethodExpression</tt>
+instances associated with those attributes that are enabled to accept expressions. For example,
+if <tt>MapComponent</tt> extended <tt>UIComponentBase</tt> instead of <tt>UICommand</tt>, it would need to include a
+method that gets the <tt>ValueExpression</tt> instance for the <tt>immediate</tt> attribute:</p><pre>public boolean isImmediate() {
+    if (this.immediateSet) {
+        return (this.immediate);
+    }
+    ValueExpression ve = getValueExpression("immediate");
+    if (ve != null) {
+        Boolean value = (Boolean) ve.getValue(
+            getFacesContext().getELContext());
+        return (value.booleanValue());
+    } else {
+        return (this.immediate);
+    }
+}</pre><p><a name="indexterm-1526"></a>The properties corresponding to the component attributes that accept method expressions must accept
+and return a <tt>MethodExpression</tt> object. For example, if <tt>MapComponent</tt> extended <tt>UIComponentBase</tt> instead of
+<tt>UICommand</tt>, it would need to provide an <tt>action</tt> property that returns and accepts
+a <tt>MethodExpression</tt> object:</p><pre>public MethodExpression getAction() {
+    return (this.action);
+}
+public void setAction(MethodExpression action) {
+    this.action = action;
+}</pre>
+
+<a name="bnavz"></a><h4>Saving and Restoring State</h4>
+<a name="indexterm-1527"></a><p><a name="indexterm-1528"></a><a name="indexterm-1529"></a><a name="indexterm-1530"></a>Because component classes implement <tt>StateHolder</tt>, they must implement the <tt>saveState(FacesContext)</tt> and <tt>restoreState(FacesContext, Object)</tt> methods
+to help the JavaServer Faces implementation save and restore the state of components
+across multiple requests.</p><p>To save a set of values, you must implement the <tt>saveState(FacesContext)</tt> method.
+This method is called during the render response phase, during which the state
+of the response is saved for processing on subsequent requests. Here is the
+method from <tt>MapComponent</tt>:</p><pre>public Object saveState(FacesContext context) {
+    Object values[] = new Object[2];
+    values[0] = super.saveState(context);
+    values[1] = current;
+    return (values);
+}</pre><p>This method initializes an array, which will hold the saved state. It next
+saves all of the state associated with <tt>MapComponent</tt>.</p><p><a name="indexterm-1531"></a>A component that implements <tt>StateHolder</tt> must also provide an implementation for <tt>restoreState(FacesContext, Object)</tt>,
+which restores the state of the component to that saved with the <tt>saveState(FacesContext)</tt>
+method. The <tt>restoreState(FacesContext, Object)</tt> method is called during the restore view phase, during
+which the JavaServer Faces implementation checks whether there is any state that was saved
+during the last render response phase and needs to be restored in preparation
+for the next postback. Here is the <tt>restoreState(FacesContext, Object)</tt> method from <tt>MapComponent</tt>:</p><pre>public void restoreState(FacesContext context, Object state) {
+    Object values[] = (Object[]) state;
+     super.restoreState(context, values[0]);
+    current = (String) values[1];
+}</pre><p>This method takes a <tt>FacesContext</tt> and an <tt>Object</tt> instance, representing the array that
+is holding the state for the component. This method sets the component&rsquo;s properties
+to the values saved in the <tt>Object</tt> array.</p><p><a name="indexterm-1532"></a>When you implement these methods in your component class, be sure to specify
+in the deployment descriptor where you want the state to be saved: either
+client or server. If state is saved on the client, the state of
+the entire view is rendered to a hidden field on the page.</p><p>To specify where state is saved for a particular web application, you need
+to set the <tt>javax.faces.STATE_SAVING_METHOD</tt> context parameter to either client or server in your
+application&rsquo;s deployment descriptor. See <a href="#bnavz">Saving and Restoring State</a> for more information on specifying where state is saved
+in the deployment descriptor.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnavt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnawa.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

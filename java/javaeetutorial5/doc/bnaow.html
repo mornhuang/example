@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Programming Tags That Accept Scripting Elements - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level3"><a href="bnaoo.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnaop.html">Using Scripting</a></p>
+<p class="toc level3"><a href="bnaoq.html">Disabling Scripting</a></p>
+<p class="toc level3"><a href="bnaos.html">JSP Declarations</a></p>
+<p class="toc level4"><a href="bnaos.html#bnaot">Initializing and Finalizing a JSP Page</a></p>
+<p class="toc level3 tocsp"><a href="bnaou.html">JSP Scriptlets</a></p>
+<p class="toc level3"><a href="bnaov.html">JSP Expressions</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Programming Tags That Accept Scripting Elements</a></p>
+<p class="toc level4"><a href="#bnaox">TLD Elements</a></p>
+<p class="toc level4"><a href="#bnaoy">Tag Handlers</a></p>
+<p class="toc level5"><a href="#bnapa">How Is a Classic Tag Handler Invoked?</a></p>
+<p class="toc level4 tocsp"><a href="#bnapb">Tags with Bodies</a></p>
+<p class="toc level5"><a href="#bnapc">Tag Handler Does Not Manipulate the Body</a></p>
+<p class="toc level5"><a href="#bnapd">Tag Handler Manipulates the Body</a></p>
+<p class="toc level4 tocsp"><a href="#bnape">Cooperating Tags</a></p>
+<p class="toc level4"><a href="#bnapf">Tags That Define Variables</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaov.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaph.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaow"></a><h3>Programming Tags That Accept Scripting Elements</h3>
+<p><a name="indexterm-629"></a><a name="indexterm-630"></a>Tags that accept scripting elements in attribute values or in the body cannot
+be programmed as simple tags; they must be implemented as classic tags. The
+following sections describe the TLD elements and JSP tag extension API specific to
+classic tag handlers. All other TLD elements are the same as for simple
+tags.</p>
+
+<a name="bnaox"></a><h4>TLD Elements</h4>
+<p><a name="indexterm-631"></a>You specify the character of a classic tag&rsquo;s body content using the <tt>body-content</tt>
+element:</p><pre>&lt;body-content>empty | JSP | tagdependent&lt;/body-content></pre><p>You must declare the body content of tags that do not have
+a body as <tt>empty</tt>. For tags that have a body, there are
+two options. Body content containing custom and core tags, scripting elements, and HTML
+text is categorized as <tt>JSP</tt>. All other types of body content (for example,
+SQL statements passed to the <tt>query</tt> tag) are labeled <tt>tagdependent</tt>.</p>
+
+<a name="bnaoy"></a><h4>Tag Handlers</h4>
+<p><a name="indexterm-632"></a><a name="indexterm-633"></a><a name="indexterm-634"></a><a name="indexterm-635"></a><a name="indexterm-636"></a><a name="indexterm-637"></a><a name="indexterm-638"></a><a name="indexterm-639"></a>The classes and interfaces used to implement classic tag handlers are contained in
+the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/package-summary.html">javax.servlet.jsp.tagext</a> package. Classic tag handlers implement either the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/Tag.html">Tag</a>, the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/IterationTag.html">IterationTag</a>, or
+the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/BodyTag.html">BodyTag</a> interface. Interfaces can be used to take an existing Java object
+and make it a tag handler. For newly created classic tag handlers, you
+can use the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/TagSupport.html">TagSupport</a> and <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/tagext/BodyTagSupport.html">BodyTagSupport</a> classes as base classes. These classes and
+interfaces are contained in the <tt>javax.servlet.jsp.tagext</tt> package.</p><p><a name="indexterm-640"></a><a name="indexterm-641"></a><a name="indexterm-642"></a>Tag handler methods defined by the <tt>Tag</tt> and <tt>BodyTag</tt> interfaces are called
+by the JSP page&rsquo;s servlet at various points during the evaluation of the
+tag. When the start element of a custom tag is encountered, the JSP
+page&rsquo;s servlet calls methods to initialize the appropriate handler and then invokes the handler&rsquo;s
+<tt>doStartTag</tt> method. When the end element of a custom tag is encountered, the
+handler&rsquo;s <tt>doEndTag</tt> method is invoked for all but simple tags. Additional methods are
+invoked in between when a tag handler needs to manipulate the body of
+the tag. For further information, see <a href="#bnapb">Tags with Bodies</a>. To provide a tag handler implementation, you
+must implement the methods, summarized in <a href="#bnaoz">Table&nbsp;9-2</a>, that are invoked at various stages
+of processing the tag.</p><a name="bnaoz"></a><h6>Table&nbsp;9-2 Tag Handler Methods</h6><table><col width="26%"><col width="16%"><col width="57%"><tr><th align="left" valign="top" scope="column"><p>Tag Type</p></th>
+<th align="left" valign="top" scope="column"><p>Interface</p></th>
+<th align="left" valign="top" scope="column"><p>Methods</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Basic</p></td>
+<td align="left" valign="top" scope="row"><p><tt>Tag</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doEndTag</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Attributes</p></td>
+<td align="left" valign="top" scope="row"><p><tt>Tag</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doEndTag</tt>, <tt>setAttribute1,...,N</tt>, <tt>release</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Body</p></td>
+<td align="left" valign="top" scope="row"><p><tt>Tag</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doEndTag</tt>, <tt>release</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Body, iterative
+evaluation</p></td>
+<td align="left" valign="top" scope="row"><p><tt>IterationTag</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doAfterBody</tt>, <tt>doEndTag</tt>, <tt>release</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Body, manipulation</p></td>
+<td align="left" valign="top" scope="row"><p><tt>BodyTag</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doEndTag</tt>, <tt>release</tt>, <tt>doInitBody</tt>, <tt>doAfterBody</tt></p></td>
+</tr>
+</table><p><a name="indexterm-643"></a><a name="indexterm-644"></a>A tag handler has access to an API that allows it to
+communicate with the JSP page. The entry points to the API are two
+objects: the JSP context (<a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/JspContext.html">javax.servlet.jsp.JspContext</a>) for simple tag handlers and the page context (<a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/PageContext.html">javax.servlet.jsp.PageContext</a>)
+for classic tag handlers. <tt>JspContext</tt> provides access to implicit objects. <tt>PageContext</tt> extends
+<tt>JspContext</tt> with HTTP-specific behavior. A tag handler can retrieve all the other implicit
+objects (request, session, and application) that are accessible from a JSP page through
+these objects. In addition, implicit objects can have named attributes associated with them.
+Such attributes are accessed using <tt>[set|get]Attribute</tt> methods.</p><p>If the tag is nested, a tag handler also has access to
+the handler (called the <b>parent</b>) associated with the enclosing tag.</p>
+
+<a name="bnapa"></a><h5>How Is a Classic Tag Handler Invoked?</h5>
+<p><a name="indexterm-645"></a><a name="indexterm-646"></a>The <tt>Tag</tt> interface defines the basic protocol between a tag handler and a
+JSP page&rsquo;s servlet. It defines the life cycle and the methods to
+be invoked when the start and end tags are encountered.</p><p>The JSP page&rsquo;s servlet invokes the <tt>setPageContext</tt>, <tt>setParent</tt>, and attribute-setting methods before
+calling <tt>doStartTag</tt>. The JSP page&rsquo;s servlet also guarantees that <tt>release</tt> will be invoked
+on the tag handler before the end of the page.</p><p>Here is a typical tag handler method invocation sequence:</p><pre>ATag t = new ATag();
+t.setPageContext(...);
+t.setParent(...);
+t.setAttribute1(value1);
+t.setAttribute2(value2);
+t.doStartTag();
+t.doEndTag();
+t.release();</pre><p>The <tt>BodyTag</tt> interface extends <tt>Tag</tt> by defining additional methods that let a tag
+handler access its body. The interface provides three new methods:</p>
+<ul><li><p><tt>setBodyContent</tt>: Creates body content and adds to the tag handler</p></li>
+<li><p><tt>doInitBody</tt>: Called before evaluation of the tag body</p></li>
+<li><p><tt>doAfterBody</tt>: Called after evaluation of the tag body</p></li></ul>
+<p>A typical invocation sequence is as follows:</p><pre>t.doStartTag();
+out = pageContext.pushBody();
+t.setBodyContent(out);
+// perform any initialization needed after body content is set
+t.doInitBody();
+t.doAfterBody();
+// while doAfterBody
+ returns EVAL_BODY_AGAIN
+ we
+ // iterate body evaluation
+...
+t.doAfterBody();
+t.doEndTag();
+out = pageContext.popBody();
+t.release();</pre>
+
+<a name="bnapb"></a><h4>Tags with Bodies</h4>
+<p><a name="indexterm-647"></a>A tag handler for a tag with a body is implemented differently depending
+on whether or not the tag handler needs to manipulate the body. A
+tag handler manipulates the body when it reads or modifies the contents of
+the body.</p>
+
+<a name="bnapc"></a><h5>Tag Handler Does Not Manipulate the Body</h5>
+<p>If the tag handler does not need to manipulate the body, the
+tag handler should implement the <tt>Tag</tt> interface. If the tag handler implements the <tt>Tag</tt>
+interface and the body of the tag needs to be evaluated, the <tt>doStartTag</tt>
+method must return <tt>EVAL_BODY_INCLUDE</tt>; otherwise it should return <tt>SKIP_BODY</tt>.</p><p>If a tag handler needs to iteratively evaluate the body, it should
+implement the <tt>IterationTag</tt> interface. The tag handler should return <tt>EVAL_BODY_AGAIN</tt> from the <tt>doAfterBody</tt>
+method if it determines that the body needs to be evaluated again.</p>
+
+<a name="bnapd"></a><h5>Tag Handler Manipulates the Body</h5>
+<p>If the tag handler needs to manipulate the body, the tag handler
+must implement <tt>BodyTag</tt> (or must be derived from <tt>BodyTagSupport</tt>).</p><p>When a tag handler implements the <tt>BodyTag</tt> interface, it must implement the <tt>doInitBody</tt>
+and the <tt>doAfterBody</tt> methods. These methods manipulate body content passed to the tag
+handler by the JSP page&rsquo;s servlet.</p><p>A <tt>BodyContent</tt> object supports several methods to read and write its contents. A
+tag handler can use the body content&rsquo;s <tt>getString</tt> or <tt>getReader</tt> method to
+extract information from the body, and the <tt>writeOut(out)</tt> method to write the body contents
+to an <tt>out</tt> stream. The writer supplied to the <tt>writeOut</tt> method is obtained
+using the tag handler&rsquo;s <tt>getPreviousOut</tt> method. This method is used to ensure
+that a tag handler&rsquo;s results are available to an enclosing tag handler.</p><p>If the body of the tag needs to be evaluated, the <tt>doStartTag</tt>
+method must return <tt>EVAL_BODY_BUFFERED</tt>; otherwise, it should return <tt>SKIP_BODY</tt>.</p>
+
+<a name="gexga"></a><h5><tt>doInitBody</tt> Method</h5>
+<p><a name="indexterm-648"></a>The <tt>doInitBody</tt> method is called after the body content is set but before
+it is evaluated. You generally use this method to perform any initialization that
+depends on the body content.</p>
+
+<a name="gexho"></a><h5><tt>doAfterBody</tt> Method</h5>
+<p><a name="indexterm-649"></a>The <tt>doAfterBody</tt> method is called <b>after</b> the body content is evaluated. <tt>doAfterBody</tt> must
+return an indication of whether to continue evaluating the body. Thus, if the
+body should be evaluated again, as would be the case if you were
+implementing an iteration tag, <tt>doAfterBody</tt> should return <tt>EVAL_BODY_AGAIN</tt>; otherwise, <tt>doAfterBody</tt> should return
+<tt>SKIP_BODY</tt>.</p><p>The following example reads the content of the body (which contains an SQL
+query) and passes it to an object that executes the query. Because the
+body does not need to be reevaluated, <tt>doAfterBody</tt> returns <tt>SKIP_BODY</tt>.</p><pre>public class QueryTag extends BodyTagSupport {
+    public int doAfterBody() throws JspTagException {
+        BodyContent bc = getBodyContent();
+        // get the bc as string
+        String query = bc.getString();
+        // clean up
+        bc.clearBody();
+        try {
+            Statement stmt = connection.createStatement();
+            result = stmt.executeQuery(query);
+        } catch (SQLException e) {
+            throw new JspTagException("QueryTag: " +
+                 e.getMessage());
+        }
+        return SKIP_BODY;
+    }
+}</pre>
+
+<a name="gexgp"></a><h5><tt>release</tt> Method</h5>
+<p><a name="indexterm-650"></a>A tag handler should reset its state and release any private resources in
+the <tt>release</tt> method.</p>
+
+<a name="bnape"></a><h4>Cooperating Tags</h4>
+<a name="indexterm-651"></a><p>Tags cooperate by sharing objects. JSP technology supports two styles of object sharing.</p><p>The first style requires that a shared object be named and stored
+in the page context (one of the implicit objects accessible to JSP pages
+as well as tag handlers). To access objects created and named by another
+tag, a tag handler uses the <tt>pageContext.getAttribute(name,scope)</tt> method.</p><p>In the second style of object sharing, an object created by the
+enclosing tag handler of a group of nested tags is available to all
+inner tag handlers. This form of object sharing has the advantage that it
+uses a private namespace for the objects, thus reducing the potential for naming
+conflicts.</p><p>To access an object created by an enclosing tag, a tag handler
+must first obtain its enclosing tag using the static method <tt>TagSupport.findAncestorWithClass(from,class)</tt> or the
+<tt>TagSupport.getParent</tt> method. The former method should be used when a specific nesting of
+tag handlers cannot be guaranteed. After the ancestor has been retrieved, a tag
+handler can access any statically or dynamically created objects. Statically created objects are
+members of the parent. Private objects can also be created dynamically. Such objects can
+be stored in a tag handler using the <tt>setValue</tt> method and can be
+retrieved using the <tt>getValue</tt> method.</p><p>The following example illustrates a tag handler that supports both the named approach
+and the private object approach to sharing objects. In the example, the handler
+for a query tag checks whether an attribute named <tt>connectionId</tt> has been
+set. If the <tt>connection</tt> attribute has been set, the handler retrieves the connection
+object from the page context. Otherwise, the tag handler first retrieves the tag
+handler for the enclosing tag and then retrieves the connection object from that
+handler.</p><pre>public class QueryTag extends BodyTagSupport {
+    public int doStartTag() throws JspException {
+        String cid = getConnectionId();
+        Connection connection;
+        if (cid != null) {
+        // there is a connection id, use it
+            connection =(Connection)pageContext.
+                getAttribute(cid);
+        } else {
+            ConnectionTag ancestorTag =
+                (ConnectionTag)findAncestorWithClass(this,
+                    ConnectionTag.class);
+            if (ancestorTag == null) {
+                throw new JspTagException("A query without
+                    a connection attribute must be nested
+                    within a connection tag.");
+            }
+            connection = ancestorTag.getConnection();
+            ...
+        }
+    }
+}</pre><p>The query tag implemented by this tag handler can be used in
+either of the following ways:</p><pre>&lt;tt:connection cid="con01" ... >
+     ...
+ &lt;/tt:connection>
+&lt;tt:query id="balances" connectionId="con01">
+     SELECT account, balance FROM acct_table
+         where customer_number = ?
+    &lt;tt:param value="${requestScope.custNumber}" />
+&lt;/tt:query>
+
+&lt;tt:connection ... >
+    &lt;tt:query cid="balances">
+         SELECT account, balance FROM acct_table
+         where customer_number = ?
+        &lt;tt:param value="${requestScope.custNumber}" />
+    &lt;/tt:query>
+&lt;/tt:connection></pre><p>The TLD for the tag handler use the following declaration to indicate that
+the <tt>connectionId</tt> attribute is optional:</p><pre>&lt;tag>
+    ...
+    &lt;attribute>
+        &lt;name>connectionId&lt;/name>
+        &lt;required>false&lt;/required>
+    &lt;/attribute>
+&lt;/tag></pre>
+
+<a name="bnapf"></a><h4>Tags That Define Variables</h4>
+<a name="indexterm-652"></a><p><a name="indexterm-653"></a>The mechanisms for defining variables in classic tags are similar to those described
+in <a href="bnalj.html">Chapter&nbsp;8, Custom Tags in JSP Pages</a>. You must declare the variable in a <tt>variable</tt> element of the
+TLD or in a tag extra info class. Use <tt>PageContext().setAttribute(name,value)</tt> or <tt>PageContext.setAttribute(name,value,scope)</tt> methods
+in the tag handler to create or update an association between a name
+that is accessible in the page context and the object that is the
+value of the variable. For classic tag handlers, <a href="#bnapg">Table&nbsp;9-3</a> illustrates how the availability of
+a variable affects when you may want to set or update the variable&rsquo;s
+value.</p><a name="bnapg"></a><h6>Table&nbsp;9-3 Variable Availability</h6><table><col width="9%"><col width="40%"><col width="49%"><tr><th align="left" valign="top" scope="column"><p>Value</p></th>
+<th align="left" valign="top" scope="column"><p>Availability</p></th>
+<th align="left" valign="top" scope="column"><p>In Methods</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>NESTED</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Between the start tag and the end tag</p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doInitBody</tt>, and <tt>doAfterBody</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>AT_BEGIN</tt></p></td>
+<td align="left" valign="top" scope="row"><p>From
+the start tag until the end of the page</p></td>
+<td align="left" valign="top" scope="row"><p><tt>doStartTag</tt>, <tt>doInitBody</tt>, <tt>doAfterBody</tt>, and
+<tt>doEndTag</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>AT_END</tt></p></td>
+<td align="left" valign="top" scope="row"><p>After the end tag until the end of the page</p></td>
+<td align="left" valign="top" scope="row"><p><tt>doEndTag</tt></p></td>
+</tr>
+</table><p>A variable defined by a custom tag can also be accessed in
+a scripting expression. For example, the web service described in the preceding section can
+be encapsulated in a custom tag that returns the response in a
+variable named by the <tt>var</tt> attribute, and then <tt>var</tt> can be accessed in a
+scripting expression as follows:</p><pre>&lt;ws:hello var="response"
+         name="&lt;%=request.getParameter("username")%>" />
+&lt;h2>&lt;font color="black">&lt;%= response %>!&lt;/font>&lt;/h2></pre><p>Remember that in situations where scripting is not allowed (in a tag body
+where the <tt>body-content</tt> is declared as <tt>scriptless</tt> and in a page where
+scripting is specified to be invalid), you wouldn&rsquo;t be able to access the
+variable in a scriptlet or an expression. Instead, you would have to use
+the JSP expression language to access the variable.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaov.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaph.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,704 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Encapsulating Reusable Content Using Tag Files - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level3"><a href="bnalk.html">What Is a Custom Tag?</a></p>
+<p class="toc level3"><a href="bnall.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnaln.html">Types of Tags</a></p>
+<p class="toc level4"><a href="bnaln.html#bnalo">Tags with Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalp">Simple Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalq">Fragment Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalr">Dynamic Attributes</a></p>
+<p class="toc level5"><a href="bnaln.html#bnals">Deferred Value</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalt">Deferred Method</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalu">Dynamic Attribute or Deferred Expression</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalv"><tt>jsp:attribute</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnaln.html#bnalw">Tags with Bodies</a></p>
+<p class="toc level5"><a href="bnaln.html#bnalx"><tt>jsp:body</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnaln.html#bnaly">Tags That Define Variables</a></p>
+<p class="toc level4"><a href="bnaln.html#bnalz">Communication between Tags</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Encapsulating Reusable Content Using Tag Files</a></p>
+<p class="toc level4"><a href="#bnamb">Tag File Location</a></p>
+<p class="toc level4"><a href="#bnamc">Tag File Directives</a></p>
+<p class="toc level5"><a href="#bname">Declaring Tags</a></p>
+<p class="toc level5"><a href="#bnamg">body-content Attribute</a></p>
+<p class="toc level5"><a href="#bnamh">Declaring Tag Attributes in Tag Files</a></p>
+<p class="toc level5"><a href="#bnamj">Declaring Tag Variables in Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="#bnamo">Evaluating Fragments Passed to Tag Files</a></p>
+<p class="toc level4"><a href="#bnamp">Custom Tag Examples</a></p>
+<p class="toc level5"><a href="#bnamq">Simple Attribute Example</a></p>
+<p class="toc level5"><a href="#bnamr">Simple and Fragment Attribute and Variable Example</a></p>
+<p class="toc level5"><a href="#bnams">Dynamic Attribute Example</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnamu.html">Tag Library Descriptors</a></p>
+<p class="toc level4"><a href="bnamu.html#bnamw">Top-Level Tag Library Descriptor Elements</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamx"><tt>validator</tt> Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamz"><tt>listener</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnana">Declaring Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanb"><tt>tag-file</tt> TLD Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnand">Unpackaged Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnane">Packaged Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnanf">Declaring Tag Handlers</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanh"><tt>body-content</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnani">Declaring Tag Attributes for Tag Handlers</a></p>
+<p class="toc level4"><a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a></p>
+<p class="toc level3 tocsp"><a href="bnann.html">Programming Simple Tag Handlers</a></p>
+<p class="toc level4"><a href="bnann.html#bnano">Including Tag Handlers in Web Applications</a></p>
+<p class="toc level4"><a href="bnann.html#bnanp">How Is a Simple Tag Handler Invoked?</a></p>
+<p class="toc level4"><a href="bnann.html#bnanq">Tag Handlers for Basic Tags</a></p>
+<p class="toc level4"><a href="bnann.html#bnanr">Tag Handlers for Tags with Attributes</a></p>
+<p class="toc level5"><a href="bnann.html#bnans">Defining Attributes in a Tag Handler</a></p>
+<p class="toc level5"><a href="bnann.html#bnant">Attribute Validation</a></p>
+<p class="toc level5"><a href="bnann.html#bnanu">Setting Dynamic Attributes</a></p>
+<p class="toc level5"><a href="bnann.html#bnanv">Setting Deferred Value Attributes and Deferred Method Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnanw">Tag Handlers for Tags with Bodies</a></p>
+<p class="toc level5"><a href="bnann.html#bnanx">Tag Handler Does Not Manipulate the Body</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnanz">Tag Handlers for Tags That Define Variables</a></p>
+<p class="toc level5"><a href="bnann.html#bnaob"><tt>TagExtraInfo</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnaoc">Cooperating Tags</a></p>
+<p class="toc level4"><a href="bnann.html#bnaod">Tag Handler Examples</a></p>
+<p class="toc level5"><a href="bnann.html#bnaoe">An Iteration Tag</a></p>
+<p class="toc level5"><a href="bnann.html#bnaoh">A Template Tag Library</a></p>
+<p class="toc level2 tocsp"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaln.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnamu.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnama"></a><h3>Encapsulating Reusable Content Using Tag Files</h3>
+<p><a name="indexterm-528"></a><a name="indexterm-529"></a>A tag file is a source file that contains a fragment of JSP
+code that is reusable as a custom tag. Tag files allow you to
+create custom tags using JSP syntax. Just as a JSP page gets translated
+into a servlet class and then compiled, a tag file gets translated into
+a tag handler and then compiled.</p><p>The recommended file extension for a tag file is <tt>.tag</tt>. As is the
+case with JSP files, the tag can be composed of a top
+file that includes other files that contain either a complete tag or a
+fragment of a tag file. Just as the recommended extension for a fragment
+of a JSP file is <tt>.jspf</tt>, the recommended extension for a fragment
+of a tag file is <tt>.tagf</tt>.</p><p>The following version of the Hello, World application introduced in <a href="bnadr.html">Chapter&nbsp;3, Getting Started with Web Applications</a> uses a
+tag to generate the response. The <tt>response</tt> tag, which accepts two attributes (a
+greeting string and a name) is encapsulated in <tt>response.tag</tt>:</p><pre>&lt;%@ attribute name="greeting" required="true" %>
+&lt;%@ attribute name="name" required="true" %>
+&lt;h2>&lt;font color="black">${greeting}, ${name}!&lt;/font>&lt;/h2></pre><p>The highlighted line in the <tt>greeting.jsp</tt> page invokes the <tt>response</tt> tag if the
+length of the <tt>username</tt> request parameter is greater than <tt>0</tt>:</p><pre>&lt;%@ taglib tagdir="/WEB-INF/tags" prefix="h" %>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core"
+     prefix="c" %>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/functions"
+    prefix="fn" %>
+&lt;html>
+&lt;head>&lt;title>Hello&lt;/title>&lt;/head>
+&lt;body bgcolor="white">
+&lt;img src="duke.waving.gif">
+ &lt;c:set var="greeting" value="Hello" />
+ &lt;h2>${greeting}, my name is Duke. What&rsquo;s yours?&lt;/h2>
+&lt;form method="get">
+&lt;input type="text" name="username" size="25">
+&lt;p>&lt;/p>
+&lt;input type="submit" value="Submit">
+&lt;input type="reset" value="Reset">
+&lt;/form>
+
+&lt;c:if test="${fn:length(param.username) > 0}" >
+    <b>&lt;h:response greeting="${greeting}" name="${param.username}"/></b>&lt;/c:if>
+&lt;/body>
+&lt;/html></pre><p>To deploy and run the <tt>hello3</tt> application with NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/</tt></pre></li>
+<li><p>Select the <tt>hello3</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>hello3</tt> project, and select Undeploy and Deploy.</p></li>
+<li><p>To run the application, open the bookstore URL <tt>http://localhost:8080/hello3</tt>.</p></li></ol>
+<p>To deploy and run the <tt>hello3</tt> application with Ant, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello3/</tt>.</p></li>
+<li><p>Type <tt><b>ant</b></tt>. This target will spawn any necessary compilations, copy files to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello3/build/</tt> directory, and create a WAR file.</p></li>
+<li><p>Start the Application Server.</p></li>
+<li><p>To deploy the example, type <tt><b>ant deploy</b></tt>.</p></li>
+<li><p>To run the example, open your browser to <tt>http://localhost:8080/hello3</tt>.</p></li></ol>
+<p>To learn how to configure the example, refer to the deployment descriptor (the
+<tt>web.xml</tt> file), which includes the following configurations:</p>
+<ul><li><p>A <tt>display-name</tt> element that specifies the name that tools use to identify the application.</p></li>
+<li><p>A <tt>welcome-file-list</tt> element that sets a particular page to be a welcome file.</p></li></ul>
+
+
+<a name="bnamb"></a><h4>Tag File Location</h4>
+<p><a name="indexterm-530"></a><a name="indexterm-531"></a>Tag files can be placed in one of two locations: in the <tt>/WEB-INF/tags/</tt>
+directory or subdirectory of a web application or in a JAR file (see
+<a href="bnamu.html#bnane">Packaged Tag Files</a>) in the <tt>/WEB-INF/lib/</tt> directory of a web application. Packaged tag files require
+a tag library descriptor (see <a href="bnamu.html">Tag Library Descriptors</a>), an XML document that contains information about a
+library as a whole and about each tag contained in the library. Tag
+files that appear in any other location are not considered tag extensions and
+are ignored by the web container.</p>
+
+<a name="bnamc"></a><h4>Tag File Directives</h4>
+<p><a name="indexterm-532"></a>Directives are used to control aspects of tag file translation to a tag
+handler, and to specify aspects of the tag, attributes of the tag, and
+variables exposed by the tag. <a href="#bnamd">Table&nbsp;8-1</a> lists the directives that you can use
+in tag files.</p><a name="bnamd"></a><h6>Table&nbsp;8-1 Tag File Directives</h6><table><col width="12%"><col width="87%"><tr><th align="left" valign="top" scope="column"><p>Directive</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>taglib</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Identical to <tt>taglib</tt> directive (see <a href="bnaiy.html#bnaiz">Declaring Tag Libraries</a>) for JSP pages.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>include</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Identical to
+<tt>include</tt> directive (see <a href="bnajb.html">Reusing Content in JSP Pages</a>) for JSP pages. Note that if the included file
+contains syntax unsuitable for tag files, a translation error will occur.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>tag</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Similar to the
+<tt>page</tt> directive in a JSP page, but applies to tag files instead of
+JSP pages. As with the <tt>page</tt> directive, a translation unit can contain more
+than one instance of the <tt>tag</tt> directive. All the attributes apply to the
+complete translation unit. However, there can be only one occurrence of any attribute
+or value defined by this directive in a given translation unit. With the
+exception of the <tt>import</tt> attribute, multiple attribute or value (re)definitions result in a
+translation error.</p><p>Also used for declaring custom tag properties such as display name. See
+<a href="#bname">Declaring Tags</a>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>attribute</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Declares an attribute of the custom tag defined in the tag file.
+See <a href="#bnamh">Declaring Tag Attributes in Tag Files</a>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>variable</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Declares an EL variable exposed by the tag to the calling
+page. See <a href="#bnamj">Declaring Tag Variables in Tag Files</a>.</p></td>
+</tr>
+</table>
+
+<a name="bname"></a><h5>Declaring Tags</h5>
+<a name="indexterm-533"></a><p>The <tt>tag</tt> directive is similar to the JSP page&rsquo;s page directive but applies
+to tag files. Some of the elements in the <tt>tag</tt> directive appear
+in the <tt>tag</tt> element of a TLD (see <a href="bnamu.html#bnanf">Declaring Tag Handlers</a>). <a href="#bnamf">Table&nbsp;8-2</a> lists the tag
+directive attributes.</p><a name="bnamf"></a><h6>Table&nbsp;8-2 <tt>tag</tt> Directive Attributes</h6><table><col width="22%"><col width="77%"><tr><th align="left" valign="top" scope="column"><p>Attribute</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>display-name</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) A short name that is intended to be displayed by
+tools. Defaults to the name of the tag file without the extension <tt>.tag</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>body-content</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional)
+Provides information on the content of the body of the tag. Can be
+either <tt>empty</tt>, <tt>tagdependent</tt>, or <tt>scriptless</tt>. A translation error will result if <tt>JSP</tt>
+or any other value is used. Defaults to <tt>scriptless</tt>. See <a href="#bnamg">body-content Attribute</a>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>dynamic-attributes</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Indicates whether
+this tag supports additional attributes with dynamic names. The value identifies a scoped
+attribute in which to place a <tt>Map</tt> containing the names and values of
+the dynamic attributes passed during invocation of the tag.</p><p>A translation error results if
+the value of the <tt>dynamic-attributes</tt> of a <tt>tag</tt> directive is equal to
+the value of a <tt>name-given</tt> of a <tt>variable</tt> directive or the value of a
+<tt>name</tt> attribute of an <tt>attribute</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>small-icon</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Relative path, from the tag source
+file, of an image file containing a small icon that can be used
+by tools. Defaults to no small icon.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>large-icon</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Relative path, from the tag
+source file, of an image file containing a large icon that can be
+used by tools. Defaults to no large icon.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>description</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Defines an arbitrary string
+that describes this tag. Defaults to no description.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>example</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Defines an arbitrary string that
+presents an informal description of an example of a use of this action.
+Defaults to no example.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>language</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Carries the same syntax and semantics of the
+<tt>language</tt> attribute of the <tt>page</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>import</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Carries the same syntax and semantics of
+the <tt>import</tt> attribute of the <tt>page</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>pageEncoding</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Carries the same syntax and semantics
+of the <tt>page-Encoding</tt> attribute in the <tt>page</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>isELIgnored</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Carries the same syntax
+and semantics of the <tt>isEL-Ignored</tt> attribute of the <tt>page</tt> directive.</p></td>
+</tr>
+</table>
+
+<a name="bnamg"></a><h5>body-content Attribute</h5>
+<p><a name="indexterm-534"></a><a name="indexterm-535"></a><a name="indexterm-536"></a>You specify the type of a tag&rsquo;s body content using the <tt>body-content</tt>
+attribute:</p><pre>bodycontent="empty | scriptless | tagdependent"</pre><p>You must declare the body content of tags that do not accept
+a body as <tt>empty</tt>. For tags that have a body there are two
+options. Body content containing custom and standard tags and HTML text is specified as
+<tt>scriptless</tt>. All other types of body content (for example, SQL statements passed to
+the <tt>query</tt> tag) is specified as <tt>tagdependent</tt>. If no attribute is specified,
+the default is <tt>scriptless</tt>.</p>
+
+<a name="bnamh"></a><h5>Declaring Tag Attributes in Tag Files</h5>
+<p><a name="indexterm-537"></a><a name="indexterm-538"></a>To declare the attributes of a custom tag defined in a tag file,
+you use the <tt>attribute</tt> directive. A TLD has an analogous <tt>attribute</tt> element (see
+<a href="bnamu.html#bnani">Declaring Tag Attributes for Tag Handlers</a>). <a href="#bnami">Table&nbsp;8-3</a> lists the <tt>attribute</tt> directive attributes.</p><a name="bnami"></a><h6>Table&nbsp;8-3 <tt>attribute</tt> Directive Attributes</h6><table><col width="26%"><col width="73%"><tr><th align="left" valign="top" scope="column"><p>Attribute</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>description</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Description of the attribute. Defaults
+to no description.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>name</tt></p></td>
+<td align="left" valign="top" scope="row"><p>The unique name of the attribute being declared. A translation
+error results if more than one <tt>attribute</tt> directive appears in the same translation unit
+with the same <tt>name</tt>.</p><p>A translation error results if the value of a
+<tt>name</tt> attribute of an <tt>attribute</tt> directive is equal to the value of the
+<tt>dynamic-attributes</tt> attribute of a <tt>tag</tt> directive or the value of a <tt>name-given</tt> attribute
+of a <tt>variable</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>required</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Whether this attribute is required (<tt>true</tt>) or optional (<tt>false</tt>).
+Defaults to <tt>false</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>rtexprvalue</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Whether the attribute&rsquo;s value can be dynamically calculated at runtime
+by an expression. Defaults to <tt>true</tt>. When this element is set to <tt>true</tt>
+and the attribute definition also includes either a <tt>deferred-value</tt> or <tt>deferred-method</tt> element then the
+attribute accepts both dynamic and deferred expressions.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>type</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) The runtime type of the
+attribute&rsquo;s value. Defaults to <tt>java.lang.String</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>deferredValue</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-539"></a>(optional) Indicates whether the attribute accepts deferred value expressions. Only
+one of <tt>deferredValue</tt> or <tt>deferredMethod</tt> can be true. If <tt>deferredValueType</tt> is specified, the
+default for <tt>deferredValue</tt> is <tt>true</tt>. Causes a translation error if specified in a
+tag file with a JSP version less than 2.1.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>deferredValueType</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) The type resulting from
+the evaluation of the attribute&rsquo;s value expression. The default is <tt>java.lang.String</tt> if no type
+is specified. If both <tt>deferredValueType</tt> and <tt>deferredValue</tt> are specified, <tt>deferredValue</tt> must be
+true. If <tt>deferredValue</tt> is <tt>true</tt>, the default of <tt>deferredValueType</tt> is <tt>java.lang.Object</tt>. Causes
+a translation error specified in a tag file with a JSP version less
+than 2.1.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>deferredMethod</tt></p></td>
+<td align="left" valign="top" scope="row"><p><a name="indexterm-540"></a>(optional) Indicates whether the tag attribute accepts deferred method expressions. If <tt>deferredMethod</tt>
+and <tt>deferredMethodSignature</tt> are specified then <tt>deferredMethod</tt> must be true. The default of <tt>deferredMethod</tt>
+is true if <tt>deferredMethodSignature</tt> is specified, otherwise the default of <tt>deferredMethod</tt> is false.
+The presence of a <tt>deferred-method</tt> element in an attribute definition precludes the inclusion
+of a <tt>deferred-value</tt> element. Causes a translation error if specified in a tag
+file with a JSP version less than 2.1.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>deferredMethodSignature</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) The signature of the method
+to be invoked by the expression defined by the accompanying <tt>deferredMethod</tt> attribute. If
+<tt>deferredMethod</tt> is true and this attribute is not specified, the method signature defaults
+to <tt>void methodName()</tt>. Causes a translation error if specified in a tag file with
+a JSP version less than 2.1.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>fragment</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Whether this attribute is a fragment to
+be evaluated by the tag handler (<tt>true</tt>) or a normal attribute to be
+evaluated by the container before being passed to the tag handler.</p><p>If this attribute
+is <tt>true</tt>:</p><p>You do not specify the <tt>rtexprvalue</tt> attribute. The container fixes the <tt>rtexprvalue</tt>
+attribute at <tt>true</tt>.</p><p>You do not specify the <tt>type</tt> attribute. The container fixes the
+<tt>type</tt> attribute at <tt>javax.servlet.jsp.tagext.JspFragment</tt>.</p><p>Defaults to <tt>false</tt>.</p></td>
+</tr>
+</table>
+
+<a name="bnamj"></a><h5>Declaring Tag Variables in Tag Files</h5>
+<p><a name="indexterm-541"></a>Tag attributes are used to customize tag behavior much as parameters are used
+to customize the behavior of object methods. In fact, using tag attributes and
+EL variables, it is possible to emulate various types of parameters: <tt>IN</tt>,
+<tt>OUT</tt>, and nested.</p><p>To emulate <tt>IN</tt> parameters, use tag attributes. A tag attribute is communicated between
+the calling page and the tag file when the tag is invoked. No
+further communication occurs between the calling page and the tag file.</p><p>To emulate <tt>OUT</tt> or nested parameters, use EL variables. The variable is not
+initialized by the calling page but instead is set by the tag file.
+Each type of parameter is synchronized with the calling page at various points
+according to the scope of the variable. See <a href="#bnaml">Variable Synchronization</a> for details.</p><p><a name="indexterm-542"></a><a name="indexterm-543"></a>To declare an EL variable exposed by a tag file, you use the
+<tt>variable</tt> directive. A TLD has an analogous <tt>variable</tt> element (see <a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a>). <a href="#bnamk">Table&nbsp;8-4</a> lists
+the <tt>variable</tt> directive attributes.</p><a name="bnamk"></a><h6>Table&nbsp;8-4 <tt>variable</tt> Directive Attributes</h6><table><col width="24%"><col width="75%"><tr><th align="left" valign="top" scope="column"><p>Attribute</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>description</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) An optional description of this variable. Defaults to no description.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>name-given | name-from-attribute</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Defines
+an EL variable to be used in the page invoking this tag.
+Either <tt>name-given</tt> or <tt>name-from-attribute</tt> must be specified. If <tt>name-given</tt> is specified, the value
+is the name of the variable. If <tt>name-from-attribute</tt> is specified, the value is the
+name of an attribute whose (translation-time) value at the start of the tag
+invocation will give the name of the variable.</p><p>Translation errors arise in the
+following circumstances:</p><p>1. Specifying neither <tt>name-given</tt> nor <tt>name-from-attribute</tt> or both.</p><p>2. If two <tt>variable</tt>
+directives have the same <tt>name-given</tt>.</p><p>3. If the value of a <tt>name-given</tt> attribute
+of a <tt>variable</tt> directive is equal to the value of a <tt>name</tt>
+attribute of an <tt>attribute</tt> directive or the value of a <tt>dynamic-attributes</tt> attribute of
+a <tt>tag</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>alias</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Defines a variable, local to the tag file, to hold
+the value of the EL variable. The container will synchronize this value with
+the variable whose name is given in <tt>name-from-attribute</tt>.</p><p>Required when <tt>name-from-attribute</tt> is specified. A translation
+error results if used without <tt>name-from-attribute</tt>.</p><p>A translation error results if the value
+of <tt>alias</tt> is the same as the value of a <tt>name</tt> attribute of
+an <tt>attribute</tt> directive or the <tt>name-given</tt> attribute of a <tt>variable</tt> directive.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>variable-class</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) The
+name of the class of the variable. The default is <tt>java.lang.String</tt>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>declare</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) Whether
+or not the variable is declared. <tt>True</tt> is the default.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>scope</tt></p></td>
+<td align="left" valign="top" scope="row"><p>(optional) The scope of
+the variable. Can be either <tt>AT_BEGIN</tt>, <tt>AT_END</tt>, or <tt>NESTED</tt>. Defaults to <tt>NESTED</tt>.</p></td>
+</tr>
+</table>
+
+<a name="bnaml"></a><h5>Variable Synchronization</h5>
+<a name="indexterm-544"></a><p>The web container handles the synchronization of variables between a tag file and
+a calling page. <a href="#bnamm">Table&nbsp;8-5</a> summarizes when and how each object is synchronized according
+to the object&rsquo;s scope.</p><a name="bnamm"></a><h6>Table&nbsp;8-5 Variable Synchronization Behavior</h6><table><col width="44%"><col width="19%"><col width="17%"><col width="18%"><tr><th align="left" valign="top" scope="column"><p>Tag File Location</p></th>
+<th align="left" valign="top" scope="column"><p><tt>AT_BEGIN</tt></p></th>
+<th align="left" valign="top" scope="column"><p><tt>NESTED</tt></p></th>
+<th align="left" valign="top" scope="column"><p><tt>AT_END</tt></p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Beginning</p></td>
+<td align="left" valign="top" scope="row"><p>Not sync.</p></td>
+<td align="left" valign="top" scope="row"><p>Save</p></td>
+<td align="left" valign="top" scope="row"><p>Not sync.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Before any fragment invocation using
+<tt>jsp:invoke</tt> or <tt>jsp:doBody</tt> (see <a href="#bnamo">Evaluating Fragments Passed to Tag Files</a>)</p></td>
+<td align="left" valign="top" scope="row"><p>Tag&rarr;page</p></td>
+<td align="left" valign="top" scope="row"><p>Tag&rarr;page</p></td>
+<td align="left" valign="top" scope="row"><p>Not sync.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>End</p></td>
+<td align="left" valign="top" scope="row"><p>Tag&rarr;page</p></td>
+<td align="left" valign="top" scope="row"><p>Restore</p></td>
+<td align="left" valign="top" scope="row"><p>Tag&rarr;page</p></td>
+</tr>
+</table><p>If <tt>name-given</tt> is used to specify the variable name, then the name of
+the variable in the calling page and the name of the variable in
+the tag file are the same and are equal to the value
+of <tt>name-given</tt>.</p><p>The <tt>name-from-attribute</tt> and <tt>alias</tt> attributes of the <tt>variable</tt> directive can be used to
+customize the name of the variable in the calling page while another name
+is used in the tag file. When using these attributes, you set the
+name of the variable in the calling page from the value of <tt>name-from-attribute</tt>
+at the time the tag was called. The name of the corresponding variable
+in the tag file is the value of <tt>alias</tt>.</p>
+
+<a name="bnamn"></a><h5>Synchronization Examples</h5>
+<p>The following examples illustrate how variable synchronization works between a tag file and
+its calling page. All the example JSP pages and tag files reference the
+JSTL core tag library with the prefix <tt>c</tt>. The JSP pages reference a
+tag file located in <tt>/WEB-INF/tags</tt> with the prefix <tt>my</tt>.</p><dl><dt><tt>AT_BEGIN</tt> Scope</dt>
+<dd><p>In this example, the <tt>AT_BEGIN</tt> scope is used to pass the value of the variable named <tt>x</tt> to the tag&rsquo;s body and at the end of the tag invocation.</p><pre>&lt;%-- callingpage.jsp --%>
+&lt;c:set var="x" value="1"/>
+${x} &lt;%-- (<b>x == 1</b>) --%>
+&lt;my:example>
+    ${x} &lt;%-- (<b>x == 2</b>) --%>
+&lt;/my:example>
+${x} &lt;%-- (<b>x == 4</b>) --%>
+&lt;%-- example.tag --%>
+&lt;%@ variable name-given="x" scope="AT_BEGIN" %>
+${x} &lt;%-- (x == null) --%>
+&lt;c:set var="x" value="2"/>
+&lt;jsp:doBody/>
+${x} &lt;%-- (x == 2) --%>
+&lt;c:set var="x" value="4"/></pre></dd>
+<dt><tt>NESTED</tt> Scope</dt>
+<dd><p>In this example, the <tt>NESTED</tt> scope is used to make a variable named <tt>x</tt> available only to the tag&rsquo;s body. The tag sets the variable to <tt>2</tt>, and this value is passed to the calling page before the body is invoked. Because the scope is <tt>NESTED</tt> and because the calling page also had a variable named <tt>x</tt>, its original value, <tt>1</tt>, is restored when the tag completes.</p><pre>&lt;%-- callingpage.jsp --%>
+&lt;c:set var="x" value="1"/>
+${x} &lt;%-- (<b>x == 1</b>) --%>
+&lt;my:example>
+    ${x} &lt;%-- (<b>x == 2</b>) --%>
+&lt;/my:example>
+${x} &lt;%-- (<b>x == 1</b>) --%>
+&lt;%-- example.tag --%>
+&lt;%@ variable name-given="x" scope="NESTED" %>
+${x} &lt;%-- (x == null) --%>
+&lt;c:set var="x" value="2"/>
+&lt;jsp:doBody/>
+${x} &lt;%-- (x == 2) --%>
+&lt;c:set var="x" value="4"/></pre></dd>
+<dt><tt>AT_END</tt> Scope</dt>
+<dd><p>In this example, the <tt>AT_END</tt> scope is used to return a value to the page. The body of the tag is not affected.</p><pre>&lt;%-- callingpage.jsp --%>
+&lt;c:set var="x" value="1"/>
+${x} &lt;%-- (<b>x == 1</b>) --%>
+&lt;my:example>
+    ${x} &lt;%-- (<b>x == 1</b>) --%>
+&lt;/my:example>
+${x} &lt;%-- (<b>x == 4</b>) --%>
+&lt;%-- example.tag --%>
+&lt;%@ variable name-given="x" scope="AT_END" %>
+${x} &lt;%-- (x == null) --%>
+&lt;c:set var="x" value="2"/>
+&lt;jsp:doBody/>
+${x} &lt;%-- (x == 2) --%>
+&lt;c:set var="x" value="4"/></pre></dd>
+<dt><tt>AT_BEGIN</tt> and <tt>name-from-attribute</tt></dt>
+<dd><p>In this example the <tt>AT_BEGIN</tt> scope is used to pass an EL variable to the tag&rsquo;s body and make to it available to the calling page at the end of the tag invocation. The name of the variable is specified by the value of the attribute <tt>var</tt>. The variable is referenced by a local name, <tt>result</tt>, in the tag file.</p><pre>&lt;%-- callingpage.jsp --%>
+&lt;c:set var="x" value="1"/>
+${x} &lt;%-- (x == 1) --%>
+&lt;my:example var="x">
+    ${x} &lt;%-- (x == 2) --%>
+    ${result} &lt;%-- (result == null) --%>
+    &lt;c:set var="result" value="invisible"/>
+&lt;/my:example>
+${x} &lt;%-- (x == 4) --%>
+${result} &lt;%-- (result == &rdquo;invisible&rsquo;) --%>
+&lt;%-- example.tag --%>
+&lt;%@ attribute name="var" required="true" rtexprvalue="false"%>
+&lt;%@ variable alias="result" name-from-attribute="var"
+    scope="AT_BEGIN" %>
+${x} &lt;%-- (x == null) --%>
+${result} &lt;%-- (result == null) --%>
+&lt;c:set var="x" value="ignored"/>
+&lt;c:set var="result" value="2"/>
+&lt;jsp:doBody/>
+${x} &lt;%-- (x == &rdquo;ignored&rsquo;) --%>
+${result} &lt;%-- (result == 2) --%>
+&lt;c:set var="result" value="4"/></pre></dd>
+</dl>
+
+
+<a name="bnamo"></a><h4>Evaluating Fragments Passed to Tag Files</h4>
+<p><a name="indexterm-545"></a><a name="indexterm-546"></a><a name="indexterm-547"></a><a name="indexterm-548"></a>When a tag file is executed, the web container passes it two
+types of fragments: fragment attributes and the tag body. Recall from the discussion of
+fragment attributes that fragments are evaluated by the tag handler as opposed to
+the web container. Within a tag file, you use the <tt>jsp:invoke</tt> element to
+evaluate a fragment attribute and use the <tt>jsp:doBody</tt> element to evaluate a tag
+file body.</p><p><a name="indexterm-549"></a>The result of evaluating either type of fragment is sent to the response
+or is stored in an EL variable for later manipulation. To store the
+result of evaluating a fragment to an EL variable, you specify the <tt>var</tt>
+or <tt>varReader</tt> attribute. If <tt>var</tt> is specified, the container stores the result in an
+EL variable of type <tt>String</tt> with the name specified by <tt>var</tt>. If
+<tt>varReader</tt> is specified, the container stores the result in an EL variable of
+type <tt>java.io.Reader</tt>, with the name specified by <tt>varReader</tt>. The <tt>Reader</tt> object can then be
+passed to a custom tag for further processing. A translation error occurs if
+both <tt>var</tt> and <tt>varReader</tt> are specified.</p><p>An optional <tt>scope</tt> attribute indicates the scope of the resulting variable. The possible
+values are <tt>page</tt> (default), <tt>request</tt>, <tt>session</tt>, or <tt>application</tt>. A translation error occurs if
+you use this attribute without specifying the <tt>var</tt> or <tt>varReader</tt> attribute.</p>
+
+<a name="bnamp"></a><h4>Custom Tag Examples</h4>
+<p>This section introduces examples that demonstrate using custom tags.</p>
+
+<a name="bnamq"></a><h5>Simple Attribute Example</h5>
+<p><a name="indexterm-550"></a><a name="indexterm-551"></a>The Duke&rsquo;s Bookstore <tt>shipDate</tt> tag, defined in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/WEB-INF/tags/shipDate.tag</tt>, is a custom tag
+that has a simple attribute. The tag generates the date of a book
+order according to the type of shipping requested.</p><pre>&lt;%@ taglib prefix="sc" tagdir="/WEB-INF/tags" %>
+&lt;h3>&lt;fmt:message key="ThankYou"/> ${param.cardname}.&lt;/h3>&lt;br>
+&lt;fmt:message key="With"/>
+ &lt;em>&lt;fmt:message key="${param.shipping}"/>&lt;/em>,
+  &lt;fmt:message key="ShipDateLC"/>
+&lt;sc:shipDate shipping="${param.shipping}" /></pre><p>The tag determines the number of days until shipment from the <tt>shipping</tt>
+attribute passed to it by the page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/bookreceipt.jsp</tt>. From the number of
+days, the tag computes the ship date. It then formats the ship date.</p><pre>&lt;%@ attribute name="shipping" required="true" %>
+
+&lt;jsp:useBean id="now" class="java.util.Date" />
+&lt;jsp:useBean id="shipDate" class="java.util.Date" />
+&lt;c:choose>
+  &lt;c:when test="${shipping == &rsquo;QuickShip&rsquo;}">
+    &lt;c:set var="days" value="2" />
+  &lt;/c:when>
+  &lt;c:when test="${shipping == &rsquo;NormalShip&rsquo;}">
+    &lt;c:set var="days" value="5" />
+  &lt;/c:when>
+  &lt;c:when test="${shipping == &rsquo;SaverShip&rsquo;}">
+     &lt;c:set var="days" value="7" />
+  &lt;/c:when>
+&lt;/c:choose>
+&lt;jsp:setProperty name="shipDate" property="time"
+    value="${now.time + 86400000 * days}" />
+&lt;fmt:formatDate value="${shipDate}" type="date"
+    dateStyle="full"/>.&lt;br>&lt;br></pre>
+
+<a name="bnamr"></a><h5>Simple and Fragment Attribute and Variable Example</h5>
+<p><a name="indexterm-552"></a><a name="indexterm-553"></a>The Duke&rsquo;s Bookstore <tt>catalog</tt> tag, defined in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/WEB-INF/tags/catalog.tag</tt>, is a custom tag with
+simple and fragment attributes and variables. The tag renders the catalog of a
+book database as an HTML table. The tag file declares that it sets
+variables named <tt>price</tt> and <tt>salePrice</tt> using <tt>variable</tt> directives. The fragment <tt>normalPrice</tt> uses
+the variable <tt>price</tt>, and the fragment <tt>onSale</tt> uses the variables <tt>price</tt> and
+<tt>salePrice</tt>. Before the tag invokes the fragment attributes using the <tt>jsp:invoke</tt> element,
+the web container passes values for the variables back to the calling page.</p><pre>&lt;%@ attribute name="bookDB" required="true"
+    type="database.BookDB" %>
+&lt;%@ attribute name="color" required="true" %>
+&lt;%@ attribute name="normalPrice" fragment="true" %>
+&lt;%@ attribute name="onSale" fragment="true" %>
+
+&lt;%@ variable name-given="price" %>
+ &lt;%@ variable name-given="salePrice" %>
+
+&lt;center>
+&lt;table>
+&lt;c:forEach var="book" begin="0" items="${bookDB.books}">
+    &lt;tr>
+    &lt;c:set var="bookId" value="${book.bookId}" />
+    &lt;td bgcolor="${color}">
+         &lt;c:url var="url" value="/bookdetails" >
+            &lt;c:param name="bookId" value="${bookId}" />
+        &lt;/c:url>
+        &lt;a href="${url}">&lt;
+            strong>${book.title}&amp;nbsp;&lt;/strong>&lt;/a>&lt;/td>
+     &lt;td bgcolor="${color}" rowspan=2>
+    &lt;c:set var="salePrice" value="${book.price * .85}" />
+    &lt;c:set var="price" value="${book.price}" />
+    &lt;c:choose>
+        &lt;c:when test="${book.onSale}" >
+            &lt;jsp:invoke fragment="onSale" />
+        &lt;/c:when>
+        &lt;c:otherwise>
+            &lt;jsp:invoke fragment="normalPrice"/>
+        &lt;/c:otherwise>
+    &lt;/c:choose>
+
+    &amp;nbsp;&lt;/td>
+
+ ...
+&lt;/table>
+&lt;/center></pre><p>The page <tt>bookcatalog.jsp</tt> invokes the <tt>catalog</tt> tag that has the simple attributes <tt>bookDB</tt>,
+which contains catalog data, and <tt>color</tt>, which customizes the coloring of the table rows.
+The formatting of the book price is determined by two fragment attributes,
+<tt>normalPrice</tt> and <tt>onSale</tt>, that are conditionally invoked by the tag according to data
+retrieved from the book database.</p><pre>&lt;sc:catalog bookDB ="${bookDB}" color="#cccccc">
+    &lt;jsp:attribute name="normalPrice">
+        &lt;fmt:formatNumber value="${price}" type="currency"/>
+    &lt;/jsp:attribute>
+    &lt;jsp:attribute name="onSale">
+        &lt;strike>
+        &lt;fmt:formatNumber value="${price}" type="currency"/>
+        &lt;/strike>&lt;br/>
+        &lt;font color="red">
+        &lt;fmt:formatNumber value="${salePrice}" type="currency"/>
+        &lt;/font>
+    &lt;/jsp:attribute>
+&lt;/sc:catalog></pre><p>The screen produced by <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/bookcatalog.jsp</tt> is shown in <a href="#bnamt">Figure&nbsp;8-2</a>. You can compare it
+to the version in <a href="bnahb.html#bnahd">Figure&nbsp;5-2</a>.</p><a name="bnamt"></a><h6>Figure&nbsp;8-2 Book Catalog</h6><img src="figures/web-bookCatalog2.gif" alt="Screen capture of Duke's Bookstore book catalog, with titles, authors, prices, and "Add to Cart" links. Three discount prices are highlighted." width="662" height="842"></img>
+
+<a name="bnams"></a><h5>Dynamic Attribute Example</h5>
+<p><a name="indexterm-554"></a>The following code implements the tag discussed in <a href="bnaln.html#bnalr">Dynamic Attributes</a>. An arbitrary number of attributes
+whose values are colors are stored in a <tt>Map</tt> named by the <tt>dynamic-attributes</tt>
+attribute of the <tt>tag</tt> directive. The JSTL <tt>forEach</tt> tag is used to iterate
+through the <tt>Map</tt> and the attribute keys and colored attribute values are
+printed in a bulleted list.</p><pre>&lt;%@ tag dynamic-attributes="colorMap"%>
+&lt;ul>
+&lt;c:forEach var="color" begin="0" items="${colorMap}">
+    &lt;li>${color.key} =
+         &lt;font color="${color.value}">${color.value}&lt;/font>&lt;/li>
+&lt;/c:forEach>
+&lt;/ul></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnaln.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnamu.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

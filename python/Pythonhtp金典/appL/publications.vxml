@@ -1,0 +1,150 @@
+<?xml version = "1.0"?>
+<vxml version = "1.0">
+
+<!-- Fig. L.6: publications.vxml         -->
+<!-- Voice page for various publications. -->
+
+<link next = "main.vxml#home">
+   <grammar>home</grammar>
+</link>
+<link next = "main.vxml#end">
+   <grammar>exit</grammar>
+</link>
+<link next = "#publication">
+   <grammar>menu</grammar>
+</link>
+
+<var name = "currentOption" expr = "'home'"/>
+
+<menu id = "publication">
+
+   <prompt count = "1" timeout = "12s"> 
+     Following are some of our publications. For more 
+     information visit our web page at www.deitel.com. 
+     To repeat the following menu, say menu at any time.
+     Please select by saying one of the following books:
+     <break msecs = "1000 "/>
+     <enumerate/>
+   </prompt>
+
+   <prompt count = "2">
+     Please select from the following books.
+     <break msecs = "1000"/>
+     <enumerate/>
+   </prompt>
+
+   <choice next = "#java">Java.</choice>
+   <choice next = "#c">C.</choice>
+   <choice next = "#cplus">C plus plus.</choice>
+</menu>
+
+<form id = "java">
+   <block>
+    Java How to program, third edition.
+    The complete, authoritative introduction to Java. 
+    Java is revolutionizing software development with 
+    multimedia-intensive, platform-independent, 
+    object-oriented code for conventional, Internet, 
+    Intranet and Extranet-based applets and applications. 
+    This Third Edition of the world's most widely used 
+    university-level Java textbook carefully explains 
+    Java's extraordinary capabilities. 
+    <assign name = "currentOption" expr = "'java'"/>
+    <goto next = "#repeat"/>
+   </block>
+</form>
+
+<form id = "c">
+   <block>
+      C How to Program, third edition.
+      This is the long-awaited, thorough revision to the 
+      world's best-selling introductory C book! The book's 
+      powerful "teach by example" approach is based on
+      more than 10,000 lines of live code, thoroughly 
+      explained and illustrated with screen captures showing 
+      detailed output.World-renowned corporate trainers and 
+      best-selling authors Harvey and Paul Deitel offer the 
+      most comprehensive, practical introduction to C ever 
+      published with hundreds of hands-on exercises, more 
+      than 250 complete programs written and documented for 
+      easy learning, and exceptional insight into good 
+      programming practices, maximizing performance, avoiding 
+      errors, debugging, and testing. New features include 
+      thorough introductions to C++, Java, and object-oriented 
+      programming that build directly on the C skills taught 
+      in this book; coverage of graphical user interface 
+      development and C library functions; and many new, 
+      substantial hands-on projects.For anyone who wants to 
+      learn C, improve their existing C skills, and understand 
+      how C serves as the foundation for C++, Java, and 
+      object-oriented development. 
+     <assign name = "currentOption" expr = "'c'"/>
+     <goto next = "#repeat"/>
+   </block>
+</form>
+
+<form id = "cplus">
+   <block>
+      The C++ how to program, second edition.
+      With nearly 250,000 sold, Harvey and Paul Deitel's C++ 
+      How to Program is the world's best-selling introduction
+      to C++ programming. Now, this classic has been thoroughly 
+      updated! The new, full-color Third Edition has been 
+      completely revised to reflect the ANSI C++ standard, add 
+      powerful new coverage of object analysis and design with 
+      UML, and give beginning C++ developers even better live 
+      code examples and real-world projects. The Deitels' C++ 
+      How to Program is the most comprehensive, practical 
+      introduction to C++ ever published with hundreds of 
+      hands-on exercises, roughly 250 complete programs written 
+      and documented for easy learning, and exceptional insight 
+      into good programming practices, maximizing performance, 
+      avoiding errors, debugging, and testing. This new Third 
+      Edition covers every key concept and technique ANSI C++ 
+      developers need to master: control structures, functions, 
+      arrays, pointers and strings, classes and data 
+      abstraction, operator overloading, inheritance, virtual 
+      functions, polymorphism, I/O, templates, exception 
+      handling, file processing, data structures, and more. It 
+      also includes a detailed introduction to Standard 
+      Template Library containers, container adapters, 
+      algorithms, and iterators. 
+     <assign name = "currentOption" expr = "'cplus'"/>
+     <goto next = "#repeat"/>
+   </block>
+</form>
+
+<form id = "repeat">
+   <field name = "confirm" type = "boolean">
+
+      <prompt>
+         To repeat say yes. Say no, to go back to home.
+      </prompt>
+
+      <filled>
+         <if cond = "confirm == true">
+            <goto expr = "'#' + currentOption"/>
+         <else/>
+            <goto next = "#publication"/>
+         </if>
+      </filled>
+   </field>
+</form> 
+</vxml>
+
+<!-- 
+ ************************************************************************** 
+ * (C) Copyright 2002 by Deitel & Associates, Inc. and Prentice Hall.     *
+ * All Rights Reserved.                                                   *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************
+-->

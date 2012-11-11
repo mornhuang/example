@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/barChart.do" location="45,15" dimension="328,84" />
+  <StrutsActivity path="/dynaStyle.do" location="45,240" dimension="334,84" />
+  <StrutsActivity path="/barchart.jsp" location="150,165" dimension="118,48" />
+  <StrutsActivity path="/dynastyle.jsp" location="150,390" dimension="124,48" />
+  <StrutsActivity path="/page.do" location="480,135" dimension="304,84" />
+  <StrutsActivity path="/page.jsp" location="585,285" dimension="94,48" />
+  <StrutsTransition id="/dynaStyle.do,display,/dynastyle.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="212,324" />
+      <AbsolutePoint location="212,390" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/barChart.do,display,/barchart.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="209,99" />
+      <AbsolutePoint location="209,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/page.do,display,/page.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="632,219" />
+      <AbsolutePoint location="632,285" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

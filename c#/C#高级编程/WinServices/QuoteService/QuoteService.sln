@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteService", "QuoteService.csproj", "{1CE85E12-6967-4B89-8A0B-5E9940FA462D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1CE85E12-6967-4B89-8A0B-5E9940FA462D}.Debug.ActiveCfg = Debug|.NET
+		{1CE85E12-6967-4B89-8A0B-5E9940FA462D}.Debug.Build.0 = Debug|.NET
+		{1CE85E12-6967-4B89-8A0B-5E9940FA462D}.Release.ActiveCfg = Release|.NET
+		{1CE85E12-6967-4B89-8A0B-5E9940FA462D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

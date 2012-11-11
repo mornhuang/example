@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!-- <!DOCTYPE map SYSTEM "persistence_layer_config.dtd"> -->
+
+<map>
+	<database>
+		<database-name>Database</database-name>
+		<database-class>pl.test.MysqlDatabase</database-class>
+
+		<parameter>
+			<parameter-name>user</parameter-name>
+			<parameter-value>root</parameter-value>
+		</parameter>
+		<parameter>
+			<parameter-name>password</parameter-name>
+			<parameter-value></parameter-value>
+		</parameter>
+		<parameter>
+			<parameter-name>driver</parameter-name>
+			<parameter-value>org.gjt.mm.mysql.Driver</parameter-value>
+		</parameter>
+		<parameter>
+			<parameter-name>url</parameter-name>
+			<parameter-value>jdbc:mysql://localhost/pltest</parameter-value>
+		</parameter>
+
+		<id-generator>
+			<id-generator-name>idGenerator</id-generator-name>
+			<id-generator-class>pl.test.MysqlIdGenerator</id-generator-class>
+		</id-generator>
+	</database>
+</map>

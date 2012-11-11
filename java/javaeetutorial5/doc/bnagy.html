@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>What Is a JSP Page? - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">What Is a JSP Page?</a></p>
+<p class="toc level4"><a href="#bnagz">A Simple JSP Page Example</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnahb.html">The Example JSP Pages</a></p>
+<p class="toc level3"><a href="bnahe.html">The Life Cycle of a JSP Page</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahf">Translation and Compilation</a></p>
+<p class="toc level4"><a href="bnahe.html#bnahg">Execution</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahh">Buffering</a></p>
+<p class="toc level5"><a href="bnahe.html#bnahi">Handling JSP Page Errors</a></p>
+<p class="toc level3 tocsp"><a href="bnahj.html">Creating Static Content</a></p>
+<p class="toc level4"><a href="bnahj.html#bnahk">Response and Page Encoding</a></p>
+<p class="toc level3 tocsp"><a href="bnahl.html">Creating Dynamic Content</a></p>
+<p class="toc level4"><a href="bnahl.html#bnahm">Using Objects within JSP Pages</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahn">Using Implicit Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnaho">Using Application-Specific Objects</a></p>
+<p class="toc level5"><a href="bnahl.html#bnahp">Using Shared Objects</a></p>
+<p class="toc level3 tocsp"><a href="bnahq.html">Unified Expression Language</a></p>
+<p class="toc level4"><a href="bnahq.html#bnahr">Immediate and Deferred Evaluation Syntax</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahs">Immediate Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaht">Deferred Evaluation</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnahu">Value and Method Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahv">Value Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnahz">Method Expressions</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaia">Defining a Tag Attribute Type</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaic">Deactivating Expression Evaluation</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaid">Literal Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaif">Resolving Expressions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaig">Process of Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaih">EL Resolvers</a></p>
+<p class="toc level4 tocsp"><a href="bnahq.html#bnaij">Implicit Objects</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaik">Operators</a></p>
+<p class="toc level4"><a href="bnahq.html#bnail">Reserved Words</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaim">Examples of EL Expressions</a></p>
+<p class="toc level4"><a href="bnahq.html#bnaio">Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaip">Using Functions</a></p>
+<p class="toc level5"><a href="bnahq.html#bnaiq">Defining Functions</a></p>
+<p class="toc level3 tocsp"><a href="bnair.html">JavaBeans Components</a></p>
+<p class="toc level4"><a href="bnair.html#bnais">JavaBeans Component Design Conventions</a></p>
+<p class="toc level4"><a href="bnair.html#bnait">Creating and Using a JavaBeans Component</a></p>
+<p class="toc level4"><a href="bnair.html#bnaiu">Setting JavaBeans Component Properties</a></p>
+<p class="toc level4"><a href="bnair.html#bnaix">Retrieving JavaBeans Component Properties</a></p>
+<p class="toc level3 tocsp"><a href="bnaiy.html">Using Custom Tags</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaiz">Declaring Tag Libraries</a></p>
+<p class="toc level4"><a href="bnaiy.html#bnaja">Including the Tag Library Implementation</a></p>
+<p class="toc level3 tocsp"><a href="bnajb.html">Reusing Content in JSP Pages</a></p>
+<p class="toc level3"><a href="bnajc.html">Transferring Control to Another Web Component</a></p>
+<p class="toc level4"><a href="bnajc.html#bnajd"><tt>jsp:param</tt> Element</a></p>
+<p class="toc level3 tocsp"><a href="bnaje.html">Including an Applet</a></p>
+<p class="toc level3"><a href="bnajg.html">Setting Properties for Groups of JSP Pages</a></p>
+<p class="toc level4"><a href="bnajg.html#bnajh">Deactivating EL Expression Evaluation</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajk">Declaring Page Encodings</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajl">Defining Implicit Includes</a></p>
+<p class="toc level5"><a href="bnajg.html#bnajm">Eliminating Extra White Space</a></p>
+<p class="toc level3 tocsp"><a href="bnajn.html">Further Information about JavaServer Pages Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnagx.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnahb.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnagy"></a><h3>What Is a JSP Page?</h3>
+<p><a name="indexterm-308"></a>A <b>JSP page</b> is a text document that contains two types of text: static
+data, which can be expressed in any text-based format (such as <a href="http://www.w3.org/MarkUp/">HTML</a>, <a href="http://www.w3.org/TR/SVG">SVG</a>,
+<a href="http://xml.coverpages.org/wap-wml.html">WML</a>, and <a href="http://www.w3.org/TR/REC-xml/">XML</a>), and JSP elements, which construct dynamic content.</p><p>The recommended file extension for the source file of a JSP page
+is <tt>.jsp</tt>. The page can be composed of a top file that
+includes other files that contain either a complete JSP page or a fragment
+of a JSP page. The recommended extension for the source file of a
+fragment of a JSP page is <tt>.jspf</tt>.</p><p><a name="indexterm-309"></a><a name="indexterm-310"></a>The JSP elements in a JSP page can be expressed in two
+syntaxes, standard and XML, though any given file can use only one syntax.
+A JSP page in XML syntax is an XML document and can be
+manipulated by tools and APIs for XML documents. This chapter and Chapters <a href="bnakc.html">Chapter&nbsp;7, JavaServer Pages Standard Tag Library</a>
+through <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a> document only the standard syntax. The XML syntax is covered in
+<a href="bnajo.html">Chapter&nbsp;6, JavaServer Pages Documents</a>.</p>
+
+<a name="bnagz"></a><h4>A Simple JSP Page Example</h4>
+<p>The web page in <a href="#bnaha">Figure&nbsp;5-1</a> is a form that allows you to select
+a locale and displays the date in a manner appropriate to the locale.</p><a name="bnaha"></a><h6>Figure&nbsp;5-1 Localized Date Form</h6><img src="figures/web-dateForm.gif" alt="Screen capture of localized date form. Locale drop-down shows Lithuanian. Get Date button displays the date, "Antradienis, 2004, Kovo 16."" width="662" height="237"></img><p><a name="indexterm-311"></a>The source code for this example is in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/date/</tt> directory. The
+JSP page, <tt>index.jsp</tt>, appears below; it is a typical mixture of static HTML
+markup and JSP elements. If you have developed web pages, you are probably
+familiar with the HTML document structure statements (<tt>&lt;head></tt>, <tt>&lt;body></tt>, and so on) and the
+HTML statements that create a form (<tt>&lt;form></tt>) and a menu (<tt>&lt;select></tt>).</p><p>The lines in bold in the example code contain the following types
+of JSP constructs:</p>
+<ul><li><p>A page directive (<tt><b>&lt;%@page ... %></b></tt>) sets the content type returned by the page.</p></li>
+<li><p>Tag library directives (<tt><b>&lt;%@taglib ... %></b></tt>) import custom tag libraries.</p></li>
+<li><p><tt><b>jsp:useBean</b></tt> is a standard element that creates an object containing a collection of locales and initializes an identifier that points to that object.</p></li>
+<li><p>JSP expression language expressions (<tt><b>${ }</b></tt>) retrieve the value of object properties. The values are used to set custom tag attribute values and create dynamic content.</p></li>
+<li><p>Custom tags (see <a href="bnalj.html">Chapter&nbsp;8, Custom Tags in JSP Pages</a>) set a variable (<tt><b>c:set</b></tt>), iterate over a collection of locale names (<tt><b>c:forEach</b></tt>), and conditionally insert HTML text into the response (<tt><b>c:if</b></tt>, <tt><b>c:choose</b></tt>, <tt><b>c:when</b></tt>, <tt><b>c:otherwise</b></tt>).</p></li>
+<li><p><tt><b>jsp:setProperty</b></tt> is another standard element that sets the value of an object property.</p></li>
+<li><p>A function (<tt><b>f:equals</b></tt>) tests the equality of an attribute and the current item of a collection. (A built-in <tt>==</tt> operator is usually used to test equality.)</p></li></ul>
+<p>Here is the JSP page:</p><pre>&lt;%@ <b>page contentType</b>="text/html; charset=UTF-8" %>
+&lt;%@ <b>taglib</b> uri="http://java.sun.com/jsp/jstl/core
+"
+         prefix="c" %>
+&lt;%@ <b>taglib</b> uri="/functions" prefix="f" %>
+&lt;html>
+&lt;head>&lt;title>Localized Dates&lt;/title>&lt;/head>
+&lt;body bgcolor="white">
+&lt;<b>jsp:useBean</b> id="locales" scope="application"
+    class="mypkg.MyLocales"/>
+
+&lt;form name="localeForm" action="index.jsp" method="post">
+&lt;<b>c:set</b> var="selectedLocaleString" value="<b>${param.locale}</b>" />
+&lt;<b>c:set</b> var="selectedFlag"
+     value="<b>${!empty selectedLocaleString}</b>" />
+&lt;b>Locale:&lt;/b>
+&lt;select name=locale>
+&lt;<b>c:forEach</b> var="localeString" items="<b>${locales.localeNames}</b>" >
+&lt;<b>c:choose</b>>
+    &lt;<b>c:when</b> test="<b>${selectedFlag}</b>">
+        &lt;<b>c:choose</b>>
+            &lt;<b>c:when</b>
+                 test="<b>${f:equals(selectedLocaleString, localeString)}</b>" >
+                &lt;option selected><b>${localeString}</b>&lt;/option>
+            &lt;/c:when>
+            &lt;c:otherwise>
+                &lt;option><b>${localeString}</b>&lt;/option>
+            &lt;/c:otherwise>
+        &lt;/c:choose>
+    &lt;/c:when>
+    &lt;<b>c:otherwise</b>>
+        &lt;option><b>${localeString}</b>&lt;/option>
+    &lt;/c:otherwise>
+&lt;/c:choose>
+&lt;/c:forEach>
+&lt;/select>
+&lt;input type="submit" name="Submit" value="Get Date">
+&lt;/form>
+
+&lt;<b>c:if</b> test="${selectedFlag}" >
+    &lt;<b>jsp:setProperty</b> name="locales"
+        property="selectedLocaleString"
+        value="<b>${selectedLocaleString}</b>" />
+    &lt;<b>jsp:useBean</b> id="date" class="mypkg.MyDate"/>
+    &lt;<b>jsp:setProperty</b> name="date" property="locale"
+        value="<b>${locales.selectedLocale}</b>"/>
+    &lt;b>Date: &lt;/b><b>${date.date}</b>&lt;/c:if>
+&lt;/body>
+&lt;/html></pre><p>To deploy the <tt>date</tt> application with NetBeans IDE, follow these steps:</p>
+<ol><li><p>Start the Application Server.</p></li>
+<li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><i>tut-install</i>/javaeetutorial5/examples/web/</pre></li>
+<li><p>Select the <tt>date</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>date</tt> project, and select Undeploy and Deploy.</p></li></ol>
+<p>To deploy the <tt>date</tt> application with the Ant tool, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/date/</tt>.</p></li>
+<li><p>Type <tt><b>ant</b></tt>. This command will spawn any necessary compilations, copy files to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/date/build/</tt> directory, and create a WAR file.</p></li>
+<li><p>Start the Application Server.</p></li>
+<li><p>Type <tt><b>ant deploy</b></tt>.</p></li></ol>
+<p>To run the example, do the following:</p>
+<ol><li><p>Set the character encoding in your browser to UTF-8.</p></li>
+<li><p>Open your browser to <tt>http://localhost:8080/date</tt>.</p></li>
+<li><p>You will see a combo box whose entries are locales. Select a locale and click Get Date. You will see the date expressed in a manner appropriate for that locale.</p></li></ol>
+<p>Some of the characters might not display properly if you don&rsquo;t have the
+appropriate language files installed on your machine. Consult the user guide or online
+help for your operating system to determine how you can install these language
+files.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnagx.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnahb.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

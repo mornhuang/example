@@ -1,0 +1,7 @@
+
+#resource file for helloworld
+
+HelloWorld.pushbutton.background:	red
+HelloWorld.pushbutton.foreground:	blue
+HelloWorld*pushbutton*fontList:		8x16
+

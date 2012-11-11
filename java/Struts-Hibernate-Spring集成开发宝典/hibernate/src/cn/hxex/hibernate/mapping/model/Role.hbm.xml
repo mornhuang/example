@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.hxex.hibernate.mapping.model">
+
+	<class name="Role" table="ROLEINFO">
+		<id name="id" column="roleId">
+      		<generator class="uuid.hex"/>
+    	</id>
+		<set name="users" table="user_role" inverse="true">
+    		<key column="roleId"/>
+    		<many-to-many column="userId" class="User"/>
+		</set>
+	</class>
+
+</hibernate-mapping>

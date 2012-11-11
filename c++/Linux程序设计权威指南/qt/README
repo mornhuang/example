@@ -1,0 +1,8 @@
+
+
+Before you make the files in the sub-directories.
+please specify the QTDIR environment, for example:
+
+
+export QTDIR=/root/qt-2.2.0
+export LD_LIBRARY_PATH=/root/qt-2.2.0/lib

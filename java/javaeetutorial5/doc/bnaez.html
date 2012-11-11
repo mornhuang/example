@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Accessing Databases from Web Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level3"><a href="geysj.html">Web Applications</a></p>
+<p class="toc level3"><a href="bnadu.html">Web Application Life Cycle</a></p>
+<p class="toc level3"><a href="bnadx.html">Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnadz">Packaging Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnaea">Deploying a WAR File</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaeb">Setting the Context Root</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaec">Deploying a Packaged Web Module</a></p>
+<p class="toc level4 tocsp"><a href="bnadx.html#bnaeh">Testing Deployed Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnaei">Listing Deployed Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnaej">Updating Web Modules</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaek">Updating a Packaged Web Module</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaem">Dynamic Reloading</a></p>
+<p class="toc level4 tocsp"><a href="bnadx.html#bnaen">Undeploying Web Modules</a></p>
+<p class="toc level3 tocsp"><a href="bnaeo.html">Configuring Web Applications</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaep">Mapping URLs to Web Components</a></p>
+<p class="toc level5"><a href="bnaeo.html#bnaeq">Setting the Component Alias</a></p>
+<p class="toc level4 tocsp"><a href="bnaeo.html#bnaer">Declaring Welcome Files</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaes">Setting Initialization Parameters</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaet">Mapping Errors to Error Screens</a></p>
+<p class="toc level4"><a href="bnaeo.html#bnaeu">Declaring Resource References</a></p>
+<p class="toc level5"><a href="bnaeo.html#bnaew">Declaring a Reference to a Resource</a></p>
+<p class="toc level5"><a href="bnaeo.html#bnaex">Declaring a Reference to a Web Service</a></p>
+<p class="toc level3 tocsp"><a href="bnaey.html">Duke's Bookstore Examples</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Accessing Databases from Web Applications</a></p>
+<p class="toc level4"><a href="#bnafa">Populating the Example Database</a></p>
+<p class="toc level4"><a href="#bnafb">Creating a Data Source in the Application Server</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnafc.html">Further Information about Web Applications</a></p>
+<p class="toc level2 tocsp"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaey.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnafc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaez"></a><h3>Accessing Databases from Web Applications</h3>
+<p><a name="indexterm-203"></a>Data that is shared between web components and is persistent between invocations of
+a web application is usually maintained in a database. To maintain a catalog
+of books, the Duke&rsquo;s Bookstore examples described in Chapters <a href="bnafd.html">Chapter&nbsp;4, Java Servlet Technology</a> through <a href="bnaxu.html">Chapter&nbsp;15, Internationalizing and Localizing Web Applications</a> use
+the Java DB database included with the Application Server.</p><p>To access the data in a database, web applications use the new
+Java Persistence API (see <a href="bnbpz.html">Chapter&nbsp;24, Introduction to the Java Persistence API</a>). See <a href="bnbrl.html">Chapter&nbsp;25, Persistence in the Web Tier</a> to learn how the Duke&rsquo;s Bookstore applications
+use this API to access the book data.</p><p>To run the Duke&rsquo;s Bookstore applications, you need to first populate the database
+with the book data and create a data source in the application server.
+The rest of this section explains how to perform these tasks.</p>
+
+<a name="bnafa"></a><h4>Populating the Example Database</h4>
+<p><a name="indexterm-204"></a>When you deploy any of the Duke&rsquo;s Bookstore applications using <tt><b>ant deploy</b></tt>, the database is
+automatically populated at the same time. If you want to populate the
+database separately from the deploy task or are using NetBeans IDE to deploy
+the application, follow these steps:</p>
+<ol><li><p>In a terminal window, go to the <tt>books</tt> directory or any one of the <tt>bookstore1</tt> through <tt>bookstore6</tt> example directories.</p></li>
+<li><p>Start the Java DB database server. For instructions, see <a href="bnadk.html">Starting and Stopping the Java DB Database Server</a>. You don&rsquo;t have to do this if you are using NetBeans IDE. It starts the database server automatically.</p></li>
+<li><p>Type <tt><b>ant create-tables</b></tt>. This task runs a command to read the file <tt>tutorial.sql</tt> and execute the SQL commands contained in the file.</p></li>
+<li><p>At the end of the processing, you should see the following output:</p><pre>...
+[sql] 181 of 181 SQL statements executed successfully</pre></li></ol>
+<p>When you are running <tt>create-tables</tt>, don&rsquo;t worry if you see a message that
+an SQL statement failed. This usually happens the first time you run the
+command because it always tries to delete an existing database table first before
+it creates a new one. The first time through, there is no table
+yet, of course.</p>
+
+<a name="bnafb"></a><h4>Creating a Data Source in the Application Server</h4>
+<p>A <tt>DataSource</tt> object has a set of properties that identify and describe the
+real world data source that it represents. These properties include information such as
+the location of the database server, the name of the database, the network
+protocol to use to communicate with the server, and so on.</p><p><a name="indexterm-205"></a>Data sources in the Application Server implement connection pooling. To define the Duke&rsquo;s
+Bookstore data source, you use the installed Derby connection pool named <tt>DerbyPool</tt>.</p><p>You create the data source using the Application Server Admin Console, following this
+procedure:</p>
+<ol><li><p>Expand the Resources node.</p></li>
+<li><p>Expand the JDBC node.</p></li>
+<li><p>Select the JDBC Resources node.</p></li>
+<li><p>Click the New... button.</p></li>
+<li><p>Type <tt>jdbc/BookDB</tt> in the JNDI Name field.</p></li>
+<li><p>Choose <tt>DerbyPool</tt> for the Pool Name.</p></li>
+<li><p>Click OK.</p></li></ol>
+
+         </div>
+         <div class="navigation">
+             <a href="bnaey.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnafc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

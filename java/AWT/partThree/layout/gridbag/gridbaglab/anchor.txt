@@ -1,0 +1,10 @@
+anchor
+
+
+The GridBagConstraints.anchor variable specifies where a component is anchored in its display area.  It's 
+important to note that setting the anchor constraint may seemingly have no effect if the component's fill 
+constraint is set to anything other than GridBagConstraints.NONE, due to the fact that the component will 
+expand to fill a portion of its display area.
+
+Although the anchor constraint is relative to a component's display area, it does not affect the display area 
+itself — only the placement of the component within the display area is affected.

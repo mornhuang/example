@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="filter" default="default" basedir=".">
+    <description>Builds, tests, and runs the project filter.</description>
+    <property name="is.java-client-module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-filter" depends="compile"
+    description="Runs the filter example. ">
+    <echo message="Running the filter example."/>
+    <java classname="filter.MyStreamFilter" fork="yes">
+      <arg value="-f"/>
+      <arg value="BookCatalog.xml"/>
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

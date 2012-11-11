@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config>
+	<dao 	id="userDao" 
+			type="cn.hxex.blog.dao.hibernate.UserDAO" />
+	<dao 	id="messageDao" 
+			type="cn.hxex.blog.dao.hibernate.MessageDAO" />
+</config>

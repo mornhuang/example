@@ -1,0 +1,48 @@
+/* CSS Document */
+BODY
+{
+	font-family:"宋体";
+	font-size:18px;
+	color:#000000;
+}
+
+INPUT,SELECT，textarea
+{
+    font-family:"宋体";
+	font-size:12px;
+	color:#000000;
+}
+	
+.tdcontent
+{
+    font-family:"宋体";
+	font-size:15px;
+	vertical-align: middle;	
+	background-color: #66CCFF;    
+}
+	
+.tdtitle
+{
+	font-family:"宋体";
+	font-size:16px;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #66CCFF;
+}
+		
+.title
+{
+    font-family:"黑体";
+	font-size:30px;
+	color:#000000;
+	text-align: center;	
+}
+
+.warnning
+{
+	font-family:"宋体";
+	font-size:15px;
+	color:#FF0000;
+	font-weight: bold;	
+}

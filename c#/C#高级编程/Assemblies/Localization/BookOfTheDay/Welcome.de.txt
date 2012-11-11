@@ -1,0 +1,4 @@
+GoodMorning=Guten Morgen
+GoodAfternoon=Guten Tag
+GoodEvening=Guten Abend
+Descpription=Das ist ein Beispiel mit Lokalisierung.

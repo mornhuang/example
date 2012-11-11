@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Defining Client Access with Interfaces - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level3"><a href="bnblt.html">What Is an Enterprise Bean?</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblu">Benefits of Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblv">When to Use Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnblt.html#bnblw">Types of Enterprise Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbly.html">What Is a Session Bean?</a></p>
+<p class="toc level4"><a href="bnbly.html#bnblz">State Management Modes</a></p>
+<p class="toc level5"><a href="bnbly.html#bnbma">Stateful Session Beans</a></p>
+<p class="toc level5"><a href="bnbly.html#bnbmb">Stateless Session Beans</a></p>
+<p class="toc level4 tocsp"><a href="bnbly.html#bnbmc">When to Use Session Beans</a></p>
+<p class="toc level3 tocsp"><a href="bnbmd.html">What Is a Message-Driven Bean?</a></p>
+<p class="toc level4"><a href="bnbmd.html#bnbme">What Makes Message-Driven Beans Different from Session Beans?</a></p>
+<p class="toc level4"><a href="bnbmd.html#bnbmf">When to Use Message-Driven Beans</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Defining Client Access with Interfaces</a></p>
+<p class="toc level4"><a href="#bnbmh">Remote Clients</a></p>
+<p class="toc level4"><a href="#bnbmj">Local Clients</a></p>
+<p class="toc level4"><a href="#bnbmk">Deciding on Remote or Local Access</a></p>
+<p class="toc level4"><a href="#bnbml">Web Service Clients</a></p>
+<p class="toc level4"><a href="#bnbmm">Method Parameters and Access</a></p>
+<p class="toc level5"><a href="#bnbmn">Isolation</a></p>
+<p class="toc level5"><a href="#bnbmo">Granularity of Accessed Data</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbmp.html">The Contents of an Enterprise Bean</a></p>
+<p class="toc level3"><a href="bnbmr.html">Naming Conventions for Enterprise Beans</a></p>
+<p class="toc level3"><a href="bnbmt.html">The Life Cycles of Enterprise Beans</a></p>
+<p class="toc level4"><a href="bnbmt.html#bnbmu">The Life Cycle of a Stateful Session Bean</a></p>
+<p class="toc level4"><a href="bnbmt.html#bnbmw">The Life Cycle of a Stateless Session Bean</a></p>
+<p class="toc level4"><a href="bnbmt.html#bnbmy">The Life Cycle of a Message-Driven Bean</a></p>
+<p class="toc level3 tocsp"><a href="bnbna.html">Further Information about Enterprise Beans</a></p>
+<p class="toc level2 tocsp"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbmd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbmp.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbmg"></a><h3>Defining Client Access with Interfaces</h3>
+<a name="indexterm-2034"></a><p>The material in this section applies only to session beans and not
+to message-driven beans. Because they have a different programming model, message-driven beans do not
+have interfaces that define client access.</p><p><a name="indexterm-2035"></a>A client can access a session bean only through the methods defined in
+the bean&rsquo;s business interface. The business interface defines the client&rsquo;s view of a
+bean. All other aspects of the bean (method implementations and deployment settings) are
+hidden from the client.</p><p>Well-designed interfaces simplify the development and maintenance of Java EE applications. Not only
+do clean interfaces shield the clients from any complexities in the EJB tier,
+but they also allow the beans to change internally without affecting the clients.
+For example, if you change a session bean from a stateless to a
+stateful session bean, you won&rsquo;t have to alter the client code. But if
+you were to change the method definitions in the interfaces, then you might
+have to modify the client code as well. Therefore, it is important that
+you design the interfaces carefully to isolate your clients from possible changes in
+the beans.</p><p>Session beans can have more than one business interface. Session beans should, but
+are not required to, implement their business interface or interfaces.</p><p>When you design a Java EE application, one of the first decisions
+you make is the type of client access allowed by the enterprise beans:
+remote, local, or web service.</p>
+
+<a name="bnbmh"></a><h4>Remote Clients</h4>
+<a name="indexterm-2036"></a><p>A remote client of an enterprise bean has the following traits:</p>
+<ul><li><p>It can run on a different machine and a different Java virtual machine (JVM) than the enterprise bean it accesses. (It is not required to run on a different JVM.)</p></li>
+<li><p>It can be a web component, an application client, or another enterprise bean.</p></li>
+<li><p>To a remote client, the location of the enterprise bean is transparent.</p></li></ul>
+<p>To create an enterprise bean that allows remote access, you must do one
+of the following:</p>
+<ul><li><p>Decorate the business interface of the enterprise bean with the <tt>@Remote</tt> annotation:</p><pre>@Remote
+public interface InterfaceName { ... }</pre></li>
+<li><p>Decorate the bean class with <tt>@Remote</tt>, specifying the business interface or interfaces:</p><pre>@Remote(InterfaceName.class)
+public class BeanName implements InterfaceName { ... }</pre></li></ul>
+<p><a name="indexterm-2037"></a><a name="indexterm-2038"></a>The <b>remote interface</b> defines the business and life cycle methods that are specific to
+the bean. For example, the remote interface of a bean named <tt>BankAccountBean</tt>
+might have business methods named <tt>deposit</tt> and <tt>credit</tt>. <a href="#bnbmi">Figure&nbsp;20-1</a> shows how the interface
+controls the client&rsquo;s view of an enterprise bean.</p><a name="bnbmi"></a><h6>Figure&nbsp;20-1 Interfaces for an Enterprise Bean with Remote Access</h6><img src="figures/ejbcon-enterpriseBeanInterfaces.gif" alt="Diagram showing a remote client accessing an enterprise bean's methods through its remote interface."></img>
+
+<a name="bnbmj"></a><h4>Local Clients</h4>
+<a name="indexterm-2039"></a><p>A local client has these characteristics:</p>
+<ul><li><p>It must run in the same JVM as the enterprise bean it accesses.</p></li>
+<li><p>It can be a web component or another enterprise bean.</p></li>
+<li><p>To the local client, the location of the enterprise bean it accesses is not transparent.</p></li></ul>
+<p><a name="indexterm-2040"></a>The <b>local business interface</b> defines the bean&rsquo;s business and life cycle methods. If the bean&rsquo;s
+business interface is not decorated with <tt>@Local</tt> or <tt>@Remote</tt>, and the bean class
+does not specify the interface using <tt>@Local</tt> or <tt>@Remote</tt>, the business interface is
+by default a local interface. To build an enterprise bean that allows
+only local access, you may, but are not required to do one of
+the following:</p>
+<ul><li><p>Annotate the business interface of the enterprise bean as a <tt>@Local</tt> interface. For example:</p><pre>@Local
+public interface InterfaceName { ... }</pre></li>
+<li><p>Specify the interface by decorating the bean class with <tt>@Local</tt> and specify the interface name. For example:</p><pre>@Local(InterfaceName.class)
+public class BeanName implements InterfaceName { ... }</pre></li></ul>
+
+
+<a name="bnbmk"></a><h4>Deciding on Remote or Local Access</h4>
+<p>Whether to allow local or remote access depends on the following factors.</p>
+<ul><li><p><b>Tight or loose coupling of related beans</b>: Tightly coupled beans depend on one another. For example, if a session bean that processes sales orders calls a session bean that emails a confirmation message to the customer, these beans are tightly coupled. Tightly coupled beans are good candidates for local access. Because they fit together as a logical unit, they typically call each other often and would benefit from the increased performance that is possible with local access.</p></li>
+<li><p><b>Type of client</b>: If an enterprise bean is accessed by application clients, then it should allow remote access. In a production environment, these clients almost always run on different machines than the Application Server. If an enterprise bean&rsquo;s clients are web components or other enterprise beans, then the type of access depends on how you want to distribute your components.</p></li>
+<li><p><a name="indexterm-2041"></a><b>Component distribution</b>: Java EE applications are scalable because their server-side components can be distributed across multiple machines. In a distributed application, for example, the web components may run on a different server than do the enterprise beans they access. In this distributed scenario, the enterprise beans should allow remote access.</p></li>
+<li><p><a name="indexterm-2042"></a><b>Performance</b>: Due to factors such as network latency, remote calls may be slower than local calls. On the other hand, if you distribute components among different servers, you may improve the application&rsquo;s overall performance. Both of these statements are generalizations; actual performance can vary in different operational environments. Nevertheless, you should keep in mind how your application design might affect performance.</p></li></ul>
+<p>If you aren&rsquo;t sure which type of access an enterprise bean should have,
+choose remote access. This decision gives you more flexibility. In the future you
+can distribute your components to accommodate the growing demands on your application.</p><p><a name="indexterm-2043"></a><a name="indexterm-2044"></a>Although it is uncommon, it is possible for an enterprise bean to allow
+both remote and local access. If this is the case, either the
+business interface of the bean must be explicitly designated as a business interface by
+being decorated with the <tt>@Remote</tt> or <tt>@Local</tt> annotations, or the bean class must
+explicitly designate the business interfaces by using the <tt>@Remote</tt> and <tt>@Local</tt> annotations. The same
+business interface cannot be both a local and remote business interface.</p>
+
+<a name="bnbml"></a><h4>Web Service Clients</h4>
+<a name="indexterm-2045"></a><p>A web service client can access a Java EE application in two
+ways. First, the client can access a web service created with JAX-WS. (For
+more information on JAX-WS, see <a href="bnayl.html">Chapter&nbsp;16, Building Web Services with JAX-WS</a>.) Second, a web service client can invoke
+the business methods of a stateless session bean. Message beans cannot be accessed
+by web service clients.</p><p>Provided that it uses the correct protocols (SOAP, HTTP, WSDL), any web service
+client can access a stateless session bean, whether or not the client is
+written in the Java programming language. The client doesn&rsquo;t even &ldquo;know&rdquo; what technology
+implements the service: stateless session bean, JAX-WS, or some other technology. In addition,
+enterprise beans and web components can be clients of web services. This flexibility
+enables you to integrate Java EE applications with web services.</p><p><a name="indexterm-2046"></a>A web service client accesses a stateless session bean through the bean&rsquo;s web
+service endpoint implementation class. By default, all public methods in the bean class
+are accessible to web service clients. The <tt>@WebMethod</tt> annotation may be used
+to customize the behavior of web service methods. If the <tt>@WebMethod</tt> annotation is used
+to decorate the bean class&rsquo;s methods, only those methods decorated with <tt>@WebMethod</tt> are
+exposed to web service clients.</p><p>For a code sample, see <a href="bnbor.html">A Web Service Example: <tt>helloservice</tt></a>.</p>
+
+<a name="bnbmm"></a><h4>Method Parameters and Access</h4>
+<p>The type of access affects the parameters of the bean methods that
+are called by clients. The following topics apply not only to method parameters but
+also to method return values.</p>
+
+<a name="bnbmn"></a><h5>Isolation</h5>
+<p>The parameters of remote calls are more isolated than those of local calls.
+With remote calls, the client and bean operate on different copies of a
+parameter object. If the client changes the value of the object, the value
+of the copy in the bean does not change. This layer of
+isolation can help protect the bean if the client accidentally modifies the data.</p><p>In a local call, both the client and the bean can modify
+the same parameter object. In general, you should not rely on this side
+effect of local calls. Perhaps someday you will want to distribute your components,
+replacing the local calls with remote ones.</p><p>As with remote clients, web service clients operate on different copies of parameters
+than does the bean that implements the web service.</p>
+
+<a name="bnbmo"></a><h5>Granularity of Accessed Data</h5>
+<p>Because remote calls are likely to be slower than local calls, the
+parameters in remote methods should be relatively coarse-grained. A coarse-grained object contains more data
+than a fine-grained one, so fewer access calls are required. For the same
+reason, the parameters of the methods called by web service clients should also
+be coarse-grained.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbmd.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbmp.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

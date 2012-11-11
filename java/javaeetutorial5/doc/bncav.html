@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Working with Security Roles - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level3"><a href="bncat.html">Overview of Web Application Security</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Working with Security Roles</a></p>
+<p class="toc level4"><a href="#bncaw">Declaring Security Roles</a></p>
+<p class="toc level5"><a href="#bncax">Specifying Security Roles Using Annotations</a></p>
+<p class="toc level5"><a href="#bncay">Specifying Security Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level4 tocsp"><a href="#bncaz">Mapping Security Roles to Application Server Groups</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncba.html">Checking Caller Identity Programmatically</a></p>
+<p class="toc level4"><a href="bncba.html#bncbb">Declaring and Linking Role References</a></p>
+<p class="toc level5"><a href="bncba.html#bncbc">Declaring Roles Using Annotations</a></p>
+<p class="toc level5"><a href="bncba.html#bncbd">Declaring Roles Using Deployment Descriptor Elements</a></p>
+<p class="toc level3 tocsp"><a href="bncbe.html">Defining Security Requirements for Web Applications</a></p>
+<p class="toc level4"><a href="bncbe.html#bncbf">Declaring Security Requirements Using Annotations</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbg">Using the <tt>@DeclareRoles</tt> Annotation</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbh">Using the <tt>@RunAs</tt> Annotation</a></p>
+<p class="toc level4 tocsp"><a href="bncbe.html#bncbj">Declaring Security Requirements in a Deployment Descriptor</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbk">Specifying Security Constraints</a></p>
+<p class="toc level4 tocsp"><a href="bncbe.html#bncbm">Specifying a Secure Connection</a></p>
+<p class="toc level4"><a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbo">HTTP Basic Authentication</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbq">Form-Based Authentication</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbs">HTTPS Client Authentication</a></p>
+<p class="toc level5"><a href="bncbe.html#bncbw">Digest Authentication</a></p>
+<p class="toc level3 tocsp"><a href="bncbx.html">Examples: Securing Web Applications</a></p>
+<p class="toc level4"><a href="bncbx.html#bncby">Example: Using Form-Based Authentication with a JSP Page</a></p>
+<p class="toc level5"><a href="bncbx.html#bncbz">Creating a Web Client for Form-Based Authentication</a></p>
+<p class="toc level5"><a href="bncbx.html#bncca">Creating the Login Form and the Error Page</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccb">Specifying a Security Constraint</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccd">Adding Authorized Roles and Users</a></p>
+<p class="toc level5"><a href="bncbx.html#bncce">Mapping Application Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccf">Building, Packaging, and Deploying the Form-Based Authentication Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccg">Building, Packaging, and Deploying the Form-Based Authentication Example Using Ant</a></p>
+<p class="toc level5"><a href="bncbx.html#bncch">Testing the Form-Based Authentication Web Client</a></p>
+<p class="toc level4 tocsp"><a href="bncbx.html#bncck">Example: Basic Authentication with a Servlet</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccl">Declaring Security Roles</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccm">Specifying the Security Constraint</a></p>
+<p class="toc level5"><a href="bncbx.html#bncco">Adding Authorized Roles and Users</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccp">Mapping Application Roles to Application Server Groups</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccq">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccr">Building, Packaging, and Deploying the Servlet Basic Authentication Example Using Ant</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccs">Running the Basic Authentication Servlet</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccu">Troubleshooting the Basic Authentication Example</a></p>
+<p class="toc level4 tocsp"><a href="bncbx.html#bnccv">Example: Basic Authentication with JAX-WS</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccw">Annotating the Service</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccx">Adding Security Elements to the Deployment Descriptor</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccy">Linking Roles to Groups</a></p>
+<p class="toc level5"><a href="bncbx.html#bnccz">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bncda">Building and Deploying <tt>helloservice</tt> with Basic Authentication Using Ant</a></p>
+<p class="toc level5"><a href="bncbx.html#bncdb">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bncbx.html#bncdc">Building and Running the <tt>helloservice</tt> Client Application with Basic Authentication Using Ant</a></p>
+<p class="toc level2 tocsp"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncat.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncba.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncav"></a><h3>Working with Security Roles</h3>
+<a name="indexterm-2721"></a><a name="indexterm-2722"></a><p>If you read <a href="bnbxj.html">Working with Realms, Users, Groups, and Roles</a>, you will remember the following definitions:</p>
+<ul><li><p><a name="indexterm-2723"></a><a name="indexterm-2724"></a>In applications, roles are defined using annotations or in application deployment descriptors such as <tt>web.xml</tt>, <tt>ejb-jar.xml</tt>, and <tt>application.xml</tt>.</p><p>A <b>role</b> is an abstract name for the permission to access a particular set of resources in an application. For more information, read <a href="bnbxj.html#bnbxp">What Is a Role?</a>.</p><p>For more information on defining roles, see <a href="#bncaw">Declaring Security Roles</a>.</p></li>
+<li><p>On the Application Server, the following options are configured using the Admin Console:</p>
+<ul><li><p>A <b>realm</b> is a complete database of <b>users</b> and <b>groups</b> that identify valid users of a web application (or a set of web applications) and are controlled by the same authentication policy. For more information, read <a href="bnbxj.html#bnbxm">What Is a Realm?</a>.</p></li>
+<li><p><a name="indexterm-2725"></a><a name="indexterm-2726"></a>A <b>user</b> is an individual (or application program) identity that has been defined in the Application Server. On the Application Server, a user generally has a user name, a password, and, optionally, a list of <b>groups</b> to which this user has been assigned. For more information, read <a href="bnbxj.html#bnbxn">What Is a User?</a>.</p></li>
+<li><p>A <b>group</b> is a set of authenticated <b>users</b>, classified by common traits, defined in the Application Server. For more information, read <a href="bnbxj.html#bnbxo">What Is a Group?</a>.</p></li>
+<li><p>A <b>principal</b> is an entity that can be authenticated by an authentication protocol in a security service that is deployed in an enterprise.</p><p>For more information on configuring users on the Application Server, read <a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a>.</p></li></ul>
+</li>
+<li><p>During deployment, the deployer takes the information provided in the application deployment descriptor and maps the roles specified for the application to users and groups defined on the server using the Application Server deployment descriptors <tt>sun-web.xml</tt>, <tt>sun-ejb-jar.xml</tt>, or <tt>sun-application.xml</tt>.</p><p>For more information, read <a href="#bncaz">Mapping Security Roles to Application Server Groups</a>.</p></li></ul>
+
+
+<a name="bncaw"></a><h4>Declaring Security Roles</h4>
+<a name="indexterm-2727"></a><a name="indexterm-2728"></a><a name="indexterm-2729"></a><a name="indexterm-2730"></a><p><a name="indexterm-2731"></a><a name="indexterm-2732"></a><a name="indexterm-2733"></a><a name="indexterm-2734"></a>You can declare security role names used in web applications using either the
+<tt>@DeclareRoles</tt> annotation (preferred) or the <tt>security-role-ref</tt> elements of the deployment descriptor. Declaring security
+role names in this way enables you to link the security role
+names used in the code to the security roles defined for an assembled
+application. In the absence of this linking step, any security role name used
+in the code will be assumed to correspond to a security role of
+the same name in the assembled application.</p><p><a name="indexterm-2735"></a><a name="indexterm-2736"></a><a name="indexterm-2737"></a><a name="indexterm-2738"></a>A security role reference, including the name defined by the reference, is scoped to
+the component whose class contains the <tt>@DeclareRoles</tt> annotation or whose deployment descriptor element
+contains the <tt>security-role-ref</tt> deployment descriptor element.</p><p>You can also use the <tt>security-role-ref</tt> elements for those references that were declared
+in annotations and you want to have linked to a <tt>security-role</tt> whose name
+differs from the reference value. If a security role reference is not linked
+to a security role in this way, the container must map the reference
+name to the security role of the same name. See <a href="bncba.html#bncbb">Declaring and Linking Role References</a> for a description
+of how security role references are linked to security roles.</p><p>For an example using each of these methods, read the following sections:</p>
+<ul><li><p><a href="#bncax">Specifying Security Roles Using Annotations</a></p></li>
+<li><p><a href="#bncay">Specifying Security Roles Using Deployment Descriptor Elements</a></p></li></ul>
+
+
+<a name="bncax"></a><h5>Specifying Security Roles Using Annotations</h5>
+<p>Annotations are the best way to define security roles on a class
+or a method. The <tt>@DeclareRoles</tt> annotation is used to define the security roles that
+comprise the security model of the application. This annotation is specified on a
+class, and it typically would be used to define roles that could be
+tested (for example, by calling <tt>isUserInRole</tt>) from within the methods of the annotated
+class.</p><p>Following is an example of how this annotation would be used. In
+this example, <tt>employee</tt> is the only security role specified, but the value of this
+parameter can include a list of security roles specified by the application.</p><pre>@DeclareRoles("employee")
+public class CalculatorServlet {
+    //...
+}</pre><p>Specifying <tt>@DeclareRoles("employee")</tt> is equivalent to defining the following in the <tt>web.xml</tt>:</p><pre>&lt;security-role>
+    &lt;role-name>employee&lt;/role-name>
+&lt;/security-role></pre><p>This annotation is not used to link application roles to other roles. When
+such linking is necessary, it is accomplished by defining an appropriate <tt>security-role-ref</tt>
+in the associated deployment descriptor, as described in <a href="bncba.html#bncbb">Declaring and Linking Role References</a>.</p><p>When a call is made to <tt>isUserInRole</tt> from the annotated class, the caller
+identity associated with the invocation of the class is tested for membership in
+the role with the same name as the argument to <tt>isUserInRole</tt>. If
+a <tt>security-role-ref</tt> has been defined for the argument <tt>role-name</tt>, the caller is tested for
+membership in the role mapped to the <tt>role-name</tt>.</p>
+
+<a name="bncay"></a><h5>Specifying Security Roles Using Deployment Descriptor Elements</h5>
+<p>The following snippet of a deployment descriptor is taken from the <tt>simple</tt>
+sample application. This snippet includes all of the elements needed to specify security
+roles using deployment descriptors:</p><pre>&lt;servlet>
+     ...
+    &lt;security-<b>role</b>-ref>
+        &lt;<b>role</b>-name>MGR&lt;/role-name>
+        &lt;!-- role name used in code -->
+        &lt;<b>role</b>-link>employee&lt;/role-link>
+    &lt;/security-role-ref>
+&lt;/servlet>
+
+&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>Protected Area&lt;/web-resource-name>
+        &lt;url-pattern>/jsp/security/protected/*&lt;/url-pattern>
+        &lt;http-method>PUT&lt;/http-method>
+        &lt;http-method>DELETE&lt;/http-method>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>POST&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>role1&lt;/role-name>
+        &lt;role-name>employee&lt;/role-name>
+    &lt;/auth-constraint>
+&lt;/security-constraint>
+
+ &lt;!-- Security roles referenced by this web application -->
+&lt;security-role>
+    &lt;role-name>role1&lt;/role-name>
+&lt;/security-role>
+&lt;security-role>
+    &lt;role-name>employee&lt;/role-name>
+&lt;/security-role></pre><p>In this example, the <tt>security-role</tt> element lists all of the security roles used
+in the application: <tt>role1</tt> and <tt>employee</tt>. This enables the deployer to map
+all of the roles defined in the application to users and groups defined
+on the Application Server.</p><p>The <tt>auth-constraint</tt> element specifies the roles (<tt>role1</tt>, <tt>employee</tt>) that can access HTTP
+methods (<tt>PUT</tt>, <tt>DELETE</tt>, <tt>GET</tt>, <tt>POST</tt>) located in the directory specified by the <tt>url-pattern</tt>
+element (<tt>/jsp/security/protected/*</tt>). You could also have used the <tt>@DeclareRoles</tt> annotation in the source
+code to accomplish this task.</p><p>The <tt>security-role-ref</tt> element is used when an application uses the <tt>HttpServletRequest.isUserInRole(String role)</tt> method. The value
+of the <tt>role-name</tt> element must be the <tt>String</tt> used as the parameter
+to the <tt>HttpServletRequest.isUserInRole(String role)</tt> method. The <tt>role-link</tt> must contain the name of one of
+the security roles defined in the <tt>security-role</tt> elements. The container uses the mapping
+of <tt>security-role-ref</tt> to <tt>security-role</tt> when determining the return value of the call.</p>
+
+<a name="bncaz"></a><h4>Mapping Security Roles to Application Server Groups</h4>
+<a name="indexterm-2739"></a><p>To map security roles to application server principals and groups, use the <tt>security-role-mapping</tt>
+element in the runtime deployment descriptor (DD). The runtime deployment descriptor is an
+XML file that contains information such as the context root of the web
+application and the mapping of the portable names of an application&rsquo;s resources to
+the Application Server&rsquo;s resources. The Application Server web application runtime DD is located in
+<tt>/WEB-INF/</tt> along with the web application DD. Runtime deployment descriptors are named <tt>sun-web.xml</tt>,
+<tt>sun-application.xml</tt>, or <tt>sun-ejb-jar.xml</tt>.</p><p>The following example demonstrates how to do this mapping:</p><pre>&lt;sun-web-app>
+
+      &lt;security-role-mapping>
+        &lt;role-name>CEO&lt;/role-name>
+        &lt;principal-name>smcneely&lt;/principal-name>
+    &lt;/security-role-mapping>
+
+    &lt;security-role-mapping>
+        &lt;role-name>Admin&lt;/role-name>
+        &lt;group-name>director&lt;/group-name>
+    &lt;/security-role-mapping>
+
+    ...
+
+&lt;/sun-web-app></pre><p>A role can be mapped to specific principals, specific groups, or both. The
+principal or group names must be valid principals or groups in the
+current default realm. The <tt>role-name</tt> element must match the <tt>role-name</tt> in the <tt>security-role</tt>
+element of the corresponding application deployment descriptor (<tt>web.xml</tt>, <tt>ejb-jar.xml</tt>) or the role name
+defined in the <tt>@DeclareRoles</tt> annotation.</p><p>Sometimes the role names used in the application are the same as
+the group names defined on the Application Server. Under these circumstances, you can use
+the Admin Console to define a default principal to role mapping that apply
+to the entire Application Server instance. From the Admin Console, select Configuration, then
+Security, then check the enable box beside Default Principal to Role Mapping. For
+more information, read the <a href="http://docs.sun.com/doc/819-3672"><i>Sun Java System Application Server 9.1 Developer&rsquo;s Guide</i></a> or <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncat.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncba.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

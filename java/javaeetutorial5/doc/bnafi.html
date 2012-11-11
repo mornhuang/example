@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Servlet Life Cycle - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level3"><a href="bnafe.html">What Is a Servlet?</a></p>
+<p class="toc level3"><a href="bnaff.html">The Example Servlets</a></p>
+<p class="toc level4"><a href="bnaff.html#bnafh">Troubleshooting Duke's Bookstore Database Problems</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Servlet Life Cycle</a></p>
+<p class="toc level4"><a href="#bnafj">Handling Servlet Life-Cycle Events</a></p>
+<p class="toc level5"><a href="#bnafk">Defining the Listener Class</a></p>
+<p class="toc level5"><a href="#bnafm">Specifying Event Listener Classes</a></p>
+<p class="toc level4 tocsp"><a href="#bnafn">Handling Servlet Errors</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnafo.html">Sharing Information</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafp">Using Scope Objects</a></p>
+<p class="toc level4"><a href="bnafo.html#bnafs">Controlling Concurrent Access to Shared Resources</a></p>
+<p class="toc level4"><a href="bnafo.html#bnaft">Accessing Databases</a></p>
+<p class="toc level3 tocsp"><a href="bnafu.html">Initializing a Servlet</a></p>
+<p class="toc level3"><a href="bnafv.html">Writing Service Methods</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafw">Getting Information from Requests</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafz">Constructing Responses</a></p>
+<p class="toc level3 tocsp"><a href="bnagb.html">Filtering Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagc">Programming Filters</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagd">Programming Customized Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagf">Specifying Filter Mappings</a></p>
+<p class="toc level3 tocsp"><a href="bnagi.html">Invoking Other Web Resources</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagj">Including Other Resources in the Response</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagk">Transferring Control to Another Web Component</a></p>
+<p class="toc level3 tocsp"><a href="bnagl.html">Accessing the Web Context</a></p>
+<p class="toc level3"><a href="bnagm.html">Maintaining Client State</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagn">Accessing a Session</a></p>
+<p class="toc level4"><a href="bnagm.html#bnago">Associating Objects with a Session</a></p>
+<p class="toc level5"><a href="bnagm.html#bnagp">Notifying Objects That Are Associated with a Session</a></p>
+<p class="toc level4 tocsp"><a href="bnagm.html#bnagq">Session Management</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagr">Session Tracking</a></p>
+<p class="toc level3 tocsp"><a href="bnags.html">Finalizing a Servlet</a></p>
+<p class="toc level4"><a href="bnags.html#bnagt">Tracking Service Requests</a></p>
+<p class="toc level4"><a href="bnags.html#bnagu">Notifying Methods to Shut Down</a></p>
+<p class="toc level4"><a href="bnags.html#bnagv">Creating Polite Long-Running Methods</a></p>
+<p class="toc level3 tocsp"><a href="bnagw.html">Further Information about Java Servlet Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaff.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnafo.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnafi"></a><h3>Servlet Life Cycle</h3>
+<a name="indexterm-213"></a><p>The life cycle of a servlet is controlled by the container in
+which the servlet has been deployed. When a request is mapped to a
+servlet, the container performs the following steps.</p>
+<ol><li><p><a name="indexterm-214"></a>If an instance of the servlet does not exist, the web container</p>
+<ol><li><p>Loads the servlet class.</p></li>
+<li><p>Creates an instance of the servlet class.</p></li>
+<li><p>Initializes the servlet instance by calling the <tt>init</tt> method. Initialization is covered in <a href="bnafu.html">Initializing a Servlet</a>.</p></li></ol>
+</li>
+<li><p>Invokes the <tt>service</tt> method, passing request and response objects. Service methods are discussed in <a href="bnafv.html">Writing Service Methods</a>.</p></li></ol>
+<p>If the container needs to remove the servlet, it finalizes the servlet by
+calling the servlet&rsquo;s <tt>destroy</tt> method. Finalization is discussed in <a href="bnags.html">Finalizing a Servlet</a>.</p>
+
+<a name="bnafj"></a><h4>Handling Servlet Life-Cycle Events</h4>
+<p><a name="indexterm-215"></a><a name="indexterm-216"></a>You can monitor and react to events in a servlet&rsquo;s life cycle by
+defining listener objects whose methods get invoked when life-cycle events occur. To use
+these listener objects you must define and specify the listener class.</p>
+
+<a name="bnafk"></a><h5>Defining the Listener Class</h5>
+<p><a name="indexterm-217"></a><a name="indexterm-218"></a>You define a listener class as an implementation of a listener interface. <a href="#bnafl">Table&nbsp;4-2</a>
+lists the events that can be monitored and the corresponding interface that must
+be implemented. When a listener method is invoked, it is passed an event
+that contains information appropriate to the event. For example, the methods in the
+<tt>HttpSessionListener</tt> interface are passed an <tt>HttpSessionEvent</tt>, which contains an <tt>HttpSession</tt>.</p><a name="bnafl"></a><h6>Table&nbsp;4-2 Servlet Life-Cycle Events</h6><table><col width="21%"><col width="21%"><col width="57%"><tr><th align="left" valign="top" scope="column"><p>Object</p></th>
+<th align="left" valign="top" scope="column"><p>Event</p></th>
+<th align="left" valign="top" scope="column"><p>Listener Interface and Event
+Class</p></th>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>Web context (see <a href="bnagl.html">Accessing the Web Context</a>)</p></td>
+<td align="left" valign="top" scope="row"><p>Initialization and destruction</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletContextListener.html">javax.servlet.ServletContextListener</a> and</p><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletContextEvent.html">ServletContextEvent</a></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Attribute added, removed, or replaced</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletContextAttributeListener.html">javax.servlet.ServletContextAttributeListener</a> and</p><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletContextAttributeEvent.html">ServletContextAttributeEvent</a></p></td>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>Session
+(See <a href="bnagm.html">Maintaining Client State</a>)</p></td>
+<td align="left" valign="top" scope="row"><p>Creation, invalidation, activation, passivation, and timeout</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionListener.html">javax.servlet.http.HttpSessionListener</a>, <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionActivationListener.html">javax.servlet.http.HttpSessionActivationListener</a>, and</p><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionEvent.html">HttpSessionEvent</a></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Attribute added, removed, or
+replaced</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionAttributeListener.html">javax.servlet.http.HttpSessionAttributeListener</a> and</p><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSessionBindingEvent.html">HttpSessionBindingEvent</a></p></td>
+</tr>
+<tr><td rowspan="2" align="left" valign="top" scope="row"><p>Request</p></td>
+<td align="left" valign="top" scope="row"><p>A servlet request has started being processed by web components</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletRequestListener.html">javax.servlet.ServletRequestListener</a> and</p><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletRequestEvent.html">ServletRequestEvent</a></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Attribute
+added, removed, or replaced</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletRequestAttributeListener.html">javax.servlet.ServletRequestAttributeListener</a> and</p><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletRequestAttributeEvent.html">ServletRequestAttributeEvent</a></p></td>
+</tr>
+</table><p><a name="indexterm-219"></a>The <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/src/java/com/sun/bookstore1/listeners/ContextListener</tt> class creates and removes the database access and counter objects used
+in the Duke&rsquo;s Bookstore application. The methods retrieve the web context object from
+<tt>ServletContextEvent</tt> and then store (and remove) the objects as servlet context attributes.</p><pre>import database.BookDBAO;
+import javax.servlet.*;
+import util.Counter;
+
+import javax.ejb.*;
+import javax.persistence.*;
+
+public final class ContextListener
+    implements ServletContextListener {
+    private ServletContext context = null;
+
+    @PersistenceUnit
+    EntityManagerFactory emf;
+
+    public void contextInitialized(ServletContextEvent event) {
+        context = event.getServletContext();
+        try {
+            BookDBAO bookDB = new BookDBAO(emf);
+            context.setAttribute("bookDB", bookDB);
+        } catch (Exception ex) {
+            System.out.println(
+                "Couldn&rsquo;t create database: " + ex.getMessage());
+        }
+        Counter counter = new Counter();
+        context.setAttribute("hitCounter", counter);
+        counter = new Counter();
+        context.setAttribute("orderCounter", counter);
+    }
+
+    public void contextDestroyed(ServletContextEvent event) {
+        context = event.getServletContext();
+        BookDBAO bookDB = context.getAttribute("bookDB");
+        bookDB.remove();
+        context.removeAttribute("bookDB");
+        context.removeAttribute("hitCounter");
+        context.removeAttribute("orderCounter");
+    }
+}</pre>
+
+<a name="bnafm"></a><h5>Specifying Event Listener Classes</h5>
+<p>You specify an event listener class using the <tt>listener</tt> element of the deployment
+descriptor. Review <a href="bnaff.html">The Example Servlets</a> for information on how to specify the <tt>ContextListener</tt> listener class.
+</p><p>You can specify an event listener using the deployment descriptor editor of NetBeans
+IDE by doing the following:</p>
+<ol><li><p>Expand your application&rsquo;s project node.</p></li>
+<li><p>Expand the project&rsquo;s Web Pages and WEB-INF nodes.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>Click General at the top of the <tt>web.xml</tt> editor.</p></li>
+<li><p>Expand the Web Application Listeners node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Listener dialog, click Browse to locate the listener class.</p></li>
+<li><p>Click OK.</p></li></ol>
+
+
+<a name="bnafn"></a><h4>Handling Servlet Errors</h4>
+<p>Any number of exceptions can occur when a servlet executes. When an exception
+occurs, the web container generates a default page containing the message</p><pre>A Servlet Exception Has Occurred</pre><p>But you can also specify that the container should return a specific error
+page for a given exception. Review the deployment descriptor file included with the
+example to learn how to map the exceptions <tt>exception.BookNotFound</tt>, <tt>exception.BooksNotFound</tt>, and <tt>exception.OrderException</tt>
+returned by the Duke&rsquo;s Bookstore application to <tt>errorpage.html</tt>.</p><p>See <a href="bnaeo.html#bnaet">Mapping Errors to Error Screens</a> for instructions on how to specify error pages using NetBeans IDE.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaff.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnafo.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

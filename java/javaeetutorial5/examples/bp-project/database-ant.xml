@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright 2005-2006 Sun Microsystems, Inc.  All rights reserved.  You may not modify, use, reproduce, or distribute this software except in compliance with the terms of the License at: 
+ http://developer.sun.com/berkeley_license.html
+ $Id: database-ant.xml,v 1.2 2006/04/28 04:31:24 ie139813 Exp $ -->
+
+<!-- This file defines tasks for using the Derby database. 
+     This file is not meant to be included in a project directly. 
+     @Author Ian Evans -->
+<project name="database-ant" default="dummy-default">
+    
+    <property file="${ant.file.app-server-ant}/../${db.vendor}.properties"/>
+    
+    <!-- Construct classpath to be used for DB -->
+    <path id="db.classpath">
+        <fileset dir="${db.root}/lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="-pre-deploy" depends="create-tables"/>
+
+    <target name="create-tables"
+        depends="init,start-db,delete-tables"
+        description="Create database tables and populate database using SQL script." >
+        <sql driver="${db.driver}"
+            url="${db.url}"
+            userid="${db.user}"
+            password="${db.password}"
+            classpathref="db.classpath"
+            delimiter="${db.delimiter}"
+            autocommit="false"
+            onerror="abort" >
+            <transaction src="${db.create.src}"/>
+        </sql>
+    </target>
+  
+    <target name="delete-tables"
+        description="Deletes database tables using a SQL script."
+        depends="init,start-db">
+        <sql driver="${db.driver}"
+            url="${db.url}"
+            userid="${db.user}"
+            password="${db.password}"
+            classpathref="db.classpath"
+            delimiter="${db.delimiter}"
+            autocommit="false"
+            onerror="continue" >
+            <transaction src="${db.delete.src}"/>
+        </sql>
+    </target>
+  
+    <target name="dummy-default"/>
+</project>

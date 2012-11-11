@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Numbers", "Numbers.csproj", "{4064A1DD-4EB3-49E3-91A7-D628C560BCFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Date", "..\Date\Date.csproj", "{B1B83E83-353D-4616-96DC-F01EE2FC6CB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{4064A1DD-4EB3-49E3-91A7-D628C560BCFD}.Debug.ActiveCfg = Debug|.NET
+		{4064A1DD-4EB3-49E3-91A7-D628C560BCFD}.Debug.Build.0 = Debug|.NET
+		{4064A1DD-4EB3-49E3-91A7-D628C560BCFD}.Release.ActiveCfg = Release|.NET
+		{4064A1DD-4EB3-49E3-91A7-D628C560BCFD}.Release.Build.0 = Release|.NET
+		{B1B83E83-353D-4616-96DC-F01EE2FC6CB4}.Debug.ActiveCfg = Debug|.NET
+		{B1B83E83-353D-4616-96DC-F01EE2FC6CB4}.Debug.Build.0 = Debug|.NET
+		{B1B83E83-353D-4616-96DC-F01EE2FC6CB4}.Release.ActiveCfg = Release|.NET
+		{B1B83E83-353D-4616-96DC-F01EE2FC6CB4}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

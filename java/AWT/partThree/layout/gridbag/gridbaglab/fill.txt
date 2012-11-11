@@ -1,0 +1,4 @@
+Fill
+
+The fill constraint determines how a component fills its display area.  The fill constraint affects the component 
+only; it does not affect the position or size of the component's display area.

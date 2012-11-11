@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.python.pydev.ui"
+   name="Pydev ui"
+   version="0.9.4"
+   provider-name="huangmeng"
+   class="org.python.pydev.ui.PydevDebugPlugin">
+
+   <runtime>
+      <library name="pydevui.jar"/>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+   </requires>
+
+</plugin>

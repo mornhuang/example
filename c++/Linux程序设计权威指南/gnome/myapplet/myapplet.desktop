@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=MyApplet
+Name[zh_CN]=我的 Applet
+Comment=Applet Programming Demonstration
+Comment[zh_CN]=Applet 编程演示
+Exec=/usr/bin/myapplet --activate-goad-server=myapplet myapplet
+Icon=icon_myapplet.xpm
+Terminal=0
+Type=Application

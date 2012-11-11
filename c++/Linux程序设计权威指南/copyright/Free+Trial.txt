@@ -1,0 +1,4 @@
+The software is available at no charge for evaluation purposes, but not for
+full usage.  The software may be time-limited, less featureful than the
+full version, or otherwise limited.
+

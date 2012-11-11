@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Resource Adapter Contracts - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level3"><a href="bncjy.html">About Resource Adapters</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Resource Adapter Contracts</a></p>
+<p class="toc level4"><a href="#bnckc">Management Contracts</a></p>
+<p class="toc level5"><a href="#bnckd">Life-Cycle Management</a></p>
+<p class="toc level5"><a href="#bncke">Work Management Contract</a></p>
+<p class="toc level4 tocsp"><a href="#bnckf">Outbound Contracts</a></p>
+<p class="toc level4"><a href="#bnckg">Inbound Contracts</a></p>
+<p class="toc level5"><a href="#bnckh">Messaging Contracts</a></p>
+<p class="toc level5"><a href="#bncki">Transaction Inflow</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnckj.html">Common Client Interface</a></p>
+<p class="toc level3"><a href="bnckk.html">Further Information about the Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncjy.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnckj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnckb"></a><h3>Resource Adapter Contracts</h3>
+<p>The resource adapter mediates communication between the Java EE server and the EIS
+by means of contracts. The <a name="indexterm-3102"></a>application contract defines the API through which a
+Java EE component such as an enterprise bean accesses the EIS. This API
+is the only view that the component has of the EIS. The system
+contracts link the resource adapter to important services that are managed by the
+Java EE server. The resource adapter itself and its <a name="indexterm-3103"></a>system contracts are
+transparent to the Java EE component.</p>
+
+<a name="bnckc"></a><h4>Management Contracts</h4>
+<p>The J2EE Connector architecture defines system contracts that enable resource adapter life cycle
+and thread management.</p>
+
+<a name="bnckd"></a><h5>Life-Cycle Management</h5>
+<p>The Connector architecture specifies a <a name="indexterm-3104"></a><a name="indexterm-3105"></a><b>life-cycle management contract</b> that allows an application server to
+manage the life cycle of a resource adapter. This contract provides a mechanism
+for the application server to bootstrap a resource adapter instance during the instance&rsquo;s deployment
+or application server startup. It also provides a means for the application server
+to notify the resource adapter instance when it is undeployed or when an
+orderly shutdown of the application server takes place.</p>
+
+<a name="bncke"></a><h5>Work Management Contract</h5>
+<p>The Connector architecture <a name="indexterm-3106"></a><a name="indexterm-3107"></a><b>work management contract</b> ensures that resource adapters use threads in the proper,
+recommended manner. It also enables an application server to manage threads for resource
+adapters.</p><p>Resource adapters that improperly use threads can create problems for the entire application
+server environment. For example, a resource adapter might create too many threads or
+it might not properly release threads it has created. Poor thread handling inhibits
+application server shutdown. It also impacts the application server&rsquo;s performance because creating and destroying
+threads are expensive operations.</p><p>The work management contract establishes a means for the application server to pool
+and reuse threads, similar to pooling and reusing connections. By adhering to this
+contract, the resource adapter does not have to manage threads itself. Instead, the
+resource adapter has the application server create and provide needed threads. When the
+resource adapter is finished with a given thread, it returns the thread to
+the application server. The application server manages the thread: It can return the
+thread to a pool and reuse it later, or it can destroy the
+thread. Handling threads in this manner results in increased application server performance and
+more efficient use of resources.</p><p>In addition to moving thread management to the application server, the Connector architecture
+provides a flexible model for a resource adapter that uses threads:</p>
+<ul><li><p>The requesting thread can choose to block (stop its own execution) until the work thread completes.</p></li>
+<li><p>Or the requesting thread can block while it waits to get the thread. When the application server provides a work thread, the requesting thread and the work thread execute in parallel.</p></li>
+<li><p>The resource adapter can opt to submit the work for the thread to a queue. The thread executes the work from the queue at some later point. The resource adapter continues its own execution from the point it submitted the work to the queue, no matter of when the thread executes it.</p></li></ul>
+<p>With the latter two approaches, the resource adapter and the thread may execute
+simultaneously or independently from each other. For these approaches, the contract specifies a
+listener mechanism to notify the resource adapter that the thread has completed its
+operation. The resource adapter can also specify the execution context for the thread,
+and the work management contract controls the context in which the thread executes.</p>
+
+<a name="bnckf"></a><h4>Outbound Contracts</h4>
+<p>The Connector architecture defines system-level contracts between an application server and an EIS
+that enable outbound connectivity to an EIS: connection management, transaction management, and security.</p><p>The <a name="indexterm-3108"></a><a name="indexterm-3109"></a><b>connection management contract</b> supports connection pooling, a technique that enhances application performance and scalability. Connection
+pooling is transparent to the application, which simply obtains a connection to the
+EIS.</p><p>The <a name="indexterm-3110"></a><a name="indexterm-3111"></a><b>transaction management contract</b> between the transaction manager and an EIS supports transactional access to
+EIS resource managers. This contract lets an application server use a transaction manager to
+manage transactions across multiple resource managers. This contract also supports transactions that are
+managed inside an EIS resource manager without the necessity of involving an external
+transaction manager. Because of the transaction management contract, a call to the EIS
+may be enclosed in an <a name="indexterm-3112"></a>XA transaction (a transaction type defined by the
+distributed transaction processing specification created by The Open Group). XA transactions are global:
+they can contain calls to multiple EISs, databases, and enterprise bean business methods.
+Although often appropriate, XA transactions are not mandatory. Instead, an application can use local
+transactions, which are managed by the individual EIS, or it can use no
+transactions at all.</p><p>The <a name="indexterm-3113"></a><a name="indexterm-3114"></a><b>security management contract</b> provides mechanisms for <a name="indexterm-3115"></a>authentication, <a name="indexterm-3116"></a>authorization, and secure communication between a J2EE server
+and an EIS to protect the information in the EIS.</p>
+
+<a name="bnckg"></a><h4>Inbound Contracts</h4>
+<p>The J2EE Connector architecture defines system contracts between a Java EE server and
+an EIS that enable inbound connectivity from the EIS: pluggability contracts for message
+providers and contracts for importing transactions.</p>
+
+<a name="bnckh"></a><h5>Messaging Contracts</h5>
+<p>To enable external systems to connect to a Java EE application server, the
+Connector architecture extends the capabilities of message-driven beans to handle messages from any
+message provider. That is, message-driven beans are no longer limited to handling JMS
+messages. Instead, EISs and message providers can plug any message provider, including their
+own custom or proprietary message providers, into a Java EE server.</p><p>To provide this feature, a message provider or an EIS resource adapter implements
+the <a name="indexterm-3117"></a><a name="indexterm-3118"></a><b>messaging contract</b>, which details APIs for message handling and message delivery. A conforming
+resource adapter is assured of the ability to send messages from any provider
+to a message-driven bean, and it also can be plugged into a
+Java EE server in a standard manner.</p>
+
+<a name="bncki"></a><h5>Transaction Inflow</h5>
+<p>The Connector architecture supports <a name="indexterm-3119"></a>importing transactions from an EIS to a Java EE
+server. The architecture specifies how to propagate the transaction context from the EIS.
+For example, a transaction can be started by the EIS, such as the
+Customer Information Control System (CICS). Within the same CICS transaction, a connection can
+be made through a resource adapter to an enterprise bean on the application
+server. The enterprise bean does its work under the CICS transaction context and
+commits within that transaction context.</p><p>The Connector architecture also specifies how the container participates in transaction completion and
+how it handles crash recovery to ensure that data integrity is not lost.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncjy.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnckj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

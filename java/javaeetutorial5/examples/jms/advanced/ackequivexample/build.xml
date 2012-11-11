@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ackequivexample" default="default" basedir=".">
+    <description>Builds, tests, and runs the project ackequivexample.</description>
+    <property name="is.app-client.module" value="true"/>
+    <import file="../../../bp-project/main.xml"/>
+
+  <target name="create-control-queue"
+    description="creates JMS queue.">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Queue" />
+        <param name="jms.resource.property" value="Name=ControlQueueP" />
+        <param name="jms.resource.name" value="jms/ControlQueue" />
+    </antcall>
+  </target>
+
+  <target name="create-durable-cf" 
+    description="creates JMS connection factory for durable subscribers.">
+    <antcall target="create-jms-connection-factory-prop">
+        <param name="jms.restype" value="javax.jms.ConnectionFactory" />
+        <param name="jms.resource.property" value="ClientId=MyId" />
+        <param name="jms.resource.name" value="jms/DurableConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="delete-control-queue"
+    description="deletes JMS queue.">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/ControlQueue" />
+    </antcall>
+  </target>
+
+  <target name="delete-durable-cf" 
+    description="deletes JMS connection factory for durable subscribers.">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/DurableConnectionFactory" />
+    </antcall>
+  </target>
+
+</project>

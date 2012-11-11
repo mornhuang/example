@@ -1,0 +1,9 @@
+<Assemblies Version="14">
+  <Assembly Name="System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="a964401a-5319-4e58-a60b-d9c18421037c.ReflectionCache" Timestamp="632254987220000000" />
+  <Assembly Name="System.Drawing, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Cache="594db309-d11f-4d70-a7e0-53a1f663404c.ReflectionCache" Timestamp="632254985380000000" />
+  <Assembly Name="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" Cache="eb034fdb-37fb-41ec-9ddd-8f2349a0417d.ReflectionCache" Timestamp="632813097160000000" />
+  <Assembly Name="mscorlib, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="9c4d6fc4-a775-4d49-b4e8-d987682d547c.ReflectionCache" Timestamp="632254985420000000" />
+  <Assembly Name="System.Xml, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="03cb70da-2fff-4ca8-a825-c9dfc55950d6.ReflectionCache" Timestamp="632254985400000000" />
+  <Assembly Name="System.Data, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="4a121775-b2ab-4f40-8bed-d613dfb2ea50.ReflectionCache" Timestamp="632254987200000000" />
+  <Assembly Name="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" Cache="d735cef8-9af3-4b72-b558-543fb776efd5.ReflectionCache" Timestamp="632254986760000000" />
+</Assemblies>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The <tt>confirmer</tt> Example Application - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level3"><a href="bncji.html">Resources and JNDI Naming</a></p>
+<p class="toc level3"><a href="bncjj.html"><tt>DataSource</tt> Objects and Connection Pools</a></p>
+<p class="toc level3"><a href="bncjk.html">Resource Injection</a></p>
+<p class="toc level4"><a href="bncjk.html#bncjl">Field-Based Injection</a></p>
+<p class="toc level4"><a href="bncjk.html#bncjm">Method-Based Injection</a></p>
+<p class="toc level4"><a href="bncjk.html#bncjn">Class-Based Injection</a></p>
+<p class="toc level5"><a href="bncjk.html#bncjo">Declaring Multiple Resources</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">The <tt>confirmer</tt> Example Application</a></p>
+<p class="toc level4"><a href="#bncjq">Running the <tt>confirmer</tt> Example Application</a></p>
+<p class="toc level5"><a href="#bncjr">Creating a Mail Session</a></p>
+<p class="toc level5"><a href="#bncjs">Building, Packaging, and Deploying <tt>confirmer</tt> in NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bncjt">Building, Packaging, and Deploying <tt>confirmer</tt> Using Ant</a></p>
+<p class="toc level5"><a href="#bncju">Running the <tt>confirmer</tt> Client in NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bncjv">Running the <tt>confirmer</tt> Client Using Ant</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bncjw.html">Further Information about Resources</a></p>
+<p class="toc level2 tocsp"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncjk.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bncjw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncjp"></a><h3>The <tt>confirmer</tt> Example Application</h3>
+<p>The <tt>confirmer</tt> example application demonstrates how to use an injected JavaMail session to
+send a confirmation email.</p><p><a name="indexterm-3091"></a>If you&rsquo;ve ever ordered a product from a web site, you&rsquo;ve probably received
+an email confirming your order. The <tt>ConfirmerBean</tt> class demonstrates how to send email
+from an enterprise bean.</p><p><a name="indexterm-3092"></a><a name="indexterm-3093"></a>Like a database connection, a mail session is a resource. In the
+Application Server, a mail session is called a JavaMail resource. The resource is
+injected into the class using <tt>@Resource</tt> and specifying the JNDI name of the resource.
+The type of the <tt>session</tt> field is <tt>javax.mail.Session</tt>.</p><pre>@Resource(name="mail/myMailSession")
+private Session session;</pre><p>After calling several <tt>set</tt> methods on the <tt>Message</tt> object, <tt>sendNotice</tt> invokes the
+<tt>send</tt> method of the <tt>javax.mail.Transport</tt> class to send the message. The source code for
+the <tt>sendNotice</tt> method follows.</p><pre>public void sendNotice(String recipient) {
+    try {
+        Message message = new MimeMessage(session);
+        message.setFrom();
+        message.setRecipients(Message.RecipientType.TO,
+                InternetAddress.parse(recipient, false));
+        message.setSubject("Test Message from ConfirmerBean");
+        DateFormat dateFormatter = DateFormat
+                .getDateTimeInstance(DateFormat.LONG,
+                DateFormat.SHORT);
+        Date timeStamp = new Date();
+
+        String messageText = "Thank you for your order." + &rsquo;\n&rsquo;
+                + "We received your order on "
+                + dateFormatter.format(timeStamp) + ".";
+        message.setText(messageText);
+
+        message.setHeader("X-Mailer", mailer);
+        message.setSentDate(timeStamp);
+
+        // Send message
+        Transport.send(message);
+        logger.info("Mail sent to " + recipient + ".");
+    } catch (MessagingException ex) {
+        ex.printStackTrace();
+        logger.info("Error in ConfirmerBean for " + recipient);
+    }
+}</pre>
+
+<a name="bncjq"></a><h4>Running the <tt>confirmer</tt> Example Application</h4>
+<p>To run the <tt>confirmer</tt> example, follow these steps, as described in the following
+sections:</p>
+<ol><li><p>Create a mail session in the Admin Console.</p></li>
+<li><p>Build the example.</p></li>
+<li><p>Deploy the example.</p></li>
+<li><p>Retrieve the client JAR.</p></li>
+<li><p>Run the client JAR.</p></li></ol>
+
+
+<a name="bncjr"></a><h5>Creating a Mail Session</h5>
+
+<ol><li><p><a name="indexterm-3094"></a><a name="indexterm-3095"></a>To create a mail session in the Application Server using the Admin Console, follow these steps:Open the URL <tt>http://localhost:4848/asadmin</tt> in a browser.</p></li>
+<li><p>Select the JavaMail Sessions node.</p></li>
+<li><p>Click New.</p></li>
+<li><p>Type <tt><b>mail/myMailSession</b></tt> in the JNDI Name field.</p></li>
+<li><p>Type the name of the host running your mail server in the Mail Host field.</p></li>
+<li><p>Type the destination email address in the Default User field.</p></li>
+<li><p>Type your email address in the Default Return Address field.</p></li>
+<li><p>Click OK.</p><p>Note that <tt>mail/myMailSession</tt> is listed under the JavaMail Sessions node.</p></li></ol>
+
+
+<a name="bncjs"></a><h5>Building, Packaging, and Deploying <tt>confirmer</tt> in NetBeans IDE</h5>
+<p>Follow these instructions to build, package, and deploy the <tt>confirmer</tt> example to
+your Application Server instance using the NetBeans IDE IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/</tt>.</p></li>
+<li><p>Select the <tt>confirmer</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>confirmer</tt> project and select Undeploy and Deploy.</p></li></ol>
+<p>This builds and packages the application into <tt>confirmer.ear</tt>, located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/confirmer/dist</tt>, and deploys this
+EAR file to your Application Server instance.</p>
+
+<a name="bncjt"></a><h5>Building, Packaging, and Deploying <tt>confirmer</tt> Using Ant</h5>
+<p>To build and package the <tt>confirmer</tt> example, do the following:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/examples/ejb/confirmer</tt>.</p></li>
+<li><p>Enter the following command:</p><pre><tt><b>ant</b></tt></pre><p>This compiles the source code and creates an EAR file, <tt>confirmer.ear</tt>, in the <tt>dist</tt> directory.</p></li></ol>
+<p>To deploy <tt>confirmer.ear</tt>, type the following command in a terminal window:</p><pre><tt><b>ant deploy</b></tt></pre>
+
+<a name="bncju"></a><h5>Running the <tt>confirmer</tt> Client in NetBeans IDE</h5>
+<p>By default, the client sends a message to <tt>pig.bodine@example.com</tt>, a fictional email address.
+To change the email address in NetBeans IDE, do the following:</p>
+<ol><li><p>Right-click the <tt>confirmer</tt> project in the Projects pane and select Properties.</p></li>
+<li><p>Click the Run category.</p></li>
+<li><p>In the Client Information area, under Arguments, enter the email address to which you want the message sent.</p></li>
+<li><p>Click OK.</p></li></ol>
+<p>To run the client in NetBeans IDE, right-click the <tt>confirmer</tt> project in the
+Projects pane and select Run. You should see the following line when the
+client has successfully sent the test message:</p><pre>...
+Message sent to pig.bodine@example.com.
+...</pre>
+
+<a name="bncjv"></a><h5>Running the <tt>confirmer</tt> Client Using Ant</h5>
+<p>By default, the client sends a message to <tt>pig.bodine@example.com</tt>, a fictional email address.
+To change the email address, set the <tt>app-client.args</tt> property in <tt></tt><i>tut-install</i><tt>/examples/ejb/confirmer/nbproject/project.properties</tt> to
+the email address to which you&rsquo;d like the test message sent. For example:</p><pre>app-client.args=duke@example.com</pre><p>To retrieve the client JAR and run the client, enter the following
+command in a terminal:</p><pre><tt><b>ant run</b></tt></pre><p>You should see the following line when the client has successfully sent the
+test message:</p><pre>[exec] Message sent to pig.bodine@example.com.</pre><p>If you changed the target email address, the test message should arrive in
+the user&rsquo;s inbox in a few moments.</p>
+         </div>
+         <div class="navigation">
+             <a href="bncjk.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bncjw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<!-- <!DOCTYPE map SYSTEM "persistence_layer_config.dtd"> -->
+
+<map>
+	<database>
+		<database-name>Database</database-name>
+		<database-class>pl.test.PostgresqlDatabase</database-class>
+
+		<parameter>
+			<parameter-name>user</parameter-name>
+			<parameter-value>username</parameter-value>
+		</parameter>
+		<parameter>
+			<parameter-name>password</parameter-name>
+			<parameter-value>password</parameter-value>
+		</parameter>
+		<parameter>
+			<parameter-name>driver</parameter-name>
+			<parameter-value>org.postgresql.Driver</parameter-value>
+		</parameter>
+		<parameter>
+			<parameter-name>url</parameter-name>
+			<parameter-value>jdbc:postgresql://hostname:portnumber</parameter-value>
+		</parameter>
+
+		<id-generator>
+			<id-generator-name>idGenerator</id-generator-name>
+			<id-generator-class>pl.test.PostgresqlIdGenerator</id-generator-class>
+		</id-generator>
+	</database>
+</map>

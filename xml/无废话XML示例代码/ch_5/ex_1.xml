@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312"?>
+<k:客户名单  xmlns:k="http://foo.bar.com/xml/customer.dtd"
+		xmlns:职工="http://foo.bar.com/xml/employee.dtd">
+  <k:客户> <!-- 客户甲 -->
+    <k:名称>新祥发</k:名称>
+    <k:地址>...</k:地址>
+    <k:电话>...</k:电话>
+    <fax>...</fax>
+    <k:连系人>
+      <职工:姓名>...</职工:姓名>
+      <职工:电话>
+        <职工:分机>...</职工:分机>
+        <职工:大哥大>...</职工:大哥大>
+      </职工:电话>
+      <职工:email>...</职工:email>
+    </k:连系人>
+  </k:客户>
+  <!-- 客户乙 -->
+  <客户 xmlns="http://foo.bar.com/xml/customer.dtd">
+    <名称>同仁堂</名称>
+    <地址>...</地址>
+    <电话>...</电话>
+    <fax>...</fax>
+    <连系人>
+      <职工:姓名>...</职工:姓名>
+      <电话 xmlns="http://foo.bar.com/xml/employee.dtd">
+        <分机>...</分机>
+        <大哥大>...</大哥大>
+      </电话>
+      <职工:email>...</职工:email>
+    </连系人>
+  </客户>
+</k:客户名单>

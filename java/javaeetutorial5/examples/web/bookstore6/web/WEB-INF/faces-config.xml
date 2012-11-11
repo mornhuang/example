@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+ Copyright 2004 Sun Microsystems, Inc. All rights reserved.
+ SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+-->
+
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+
+
+  <!-- ========== Application Wide Features ================================ -->
+
+
+  <application>
+    <message-bundle>com.sun.bookstore6.resources.ApplicationMessages</message-bundle>
+    <resource-bundle>
+	<base-name>com.sun.bookstore6.resources.CustomMessages</base-name>
+    	<var>customMessages</var>
+    </resource-bundle>
+    <locale-config>
+      <default-locale>en</default-locale>
+      <supported-locale>es</supported-locale>
+      <supported-locale>de</supported-locale>
+      <supported-locale>fr</supported-locale>
+    </locale-config>
+  </application>
+
+
+  <!-- ========== Custom Objects =========================================== -->
+
+
+  <converter>
+    <description>
+      Converter for credit card numbers that normalizes the
+      input to a standard format.
+    </description>
+    <converter-id>CreditCardConverter</converter-id>
+    <converter-class>com.sun.bookstore6.converters.CreditCardConverter</converter-class>
+  </converter>
+
+
+  <validator>
+    <description>
+      Validate an input string value against a series of format
+      patterns specified by the "formatPatterns" attribute.
+    </description>
+    <validator-id>FormatValidator</validator-id>
+    <validator-class>com.sun.bookstore6.validators.FormatValidator</validator-class>
+    <attribute>
+      <description>
+        A list of format patterns separated by "|" characters.
+        Patterns are composed of "A" to require a letter, "9" to
+        require a digit, "#" to require either a number or a letter,
+        and other characters that must match exactly.
+      </description>
+      <attribute-name>formatPatterns</attribute-name>
+      <attribute-class>java.lang.String</attribute-class>
+    </attribute>
+  </validator>
+
+
+  <!-- ========== Backing Beans ============================================ -->
+  
+   <!-- =================== Initialize Image Map Hotspot Data ============== -->
+
+  <managed-bean>
+    <description>
+      Causes the default VariableResolver implementation to instantiate the 
+      managed bean, NA of the class, components.model.ImageArea in application 
+      scope if the bean does not already exist in any scope and initialize the
+      shape, alt, and coords properties with the values specified by the
+      managed-property elements.
+    </description>
+    <managed-bean-name> NA </managed-bean-name>
+    <managed-bean-class> com.sun.bookstore6.model.ImageArea </managed-bean-class>
+    <managed-bean-scope> application </managed-bean-scope>
+    <managed-property>
+      <description>
+        Initializes the shape property of the managed bean, NA with the value, 
+        poly.
+      </description>
+      <property-name>shape</property-name>
+      <value>poly</value>
+    </managed-property>
+    <managed-property>
+      <description>
+        Initializes the alt property of the managed bean, NA with the value, 
+        NAmerica.
+      </description>
+      <property-name>alt</property-name>
+      <value>NAmerica</value>
+    </managed-property>
+    <managed-property>
+      <description>
+        Initializes the coords property of the managed bean, NA with the value 
+        specified by the value element. 
+      </description>
+      <property-name>coords</property-name>
+      <value>
+        53,109,1,110,2,167,19,168,52,149,67,164,67,165,68,167,70,168,72,170,74,172,75,174,77,175,79,177,81,179,80,179,77,179,81,179,81,178,80,178,82,211,28,238,15,233,15,242,31,252,36,247,36,246,32,239,89,209,92,216,93,216,100,216,103,218,113,217,116,224,124,221,128,230,163,234,185,189,178,177,162,188,143,173,79,173,73,163,79,157,64,142,54,139,53,109
+      </value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <description>
+      Causes the default VariableResolver implementation to instantiate the 
+      managed bean, SA of the class, components.model.ImageArea in application 
+      scope if the bean does not already exist in any scope and initialize the
+      shape, alt, and coords properties with the values specified by the
+      managed-property elements.
+    </description>
+    <managed-bean-name>SA</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.model.ImageArea</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+    <managed-property>
+      <description>
+        Initializes the shape property of the managed bean, SA with the value, 
+        poly.
+      </description>
+      <property-name>shape</property-name>
+      <value>poly</value>
+    </managed-property>
+    <managed-property>
+      <description>
+        Initializes the alt property of the managed bean, SA with the value, 
+        SAmerica.
+      </description>
+      <property-name>alt</property-name>
+      <value>SAmerica</value>
+    </managed-property>
+    <managed-property>
+      <description>
+         Initializes the coords property of the managed bean, SA with the value 
+         specified by the value element.
+      </description>
+      <property-name>coords</property-name>
+      <value>
+        89,217,95,228,100,234,107,239,109,240,109,237,106,231,110,234,113,240,115,246,118,250,125,254,131,256,135,255,140,257,146,263,151,269,157,271,160,273,159,279,157,287,156,294,163,315,168,324,172,329,173,338,172,351,169,368,168,379,167,388,165,399,165,408,170,415,177,420,183,420,183,415,180,408,180,405,186,400,186,395,186,391,188,388,190,384,193,382,196,379,199,377,201,374,201,371,201,366,197,362,197,358,198,354,199,351,199,347,197,344,196,340,194,337,191,335,191,332,194,332,201,332,199,326,193,317,184,310,180,309,179,311,177,314,175,312,174,308,172,305,170,304,171,302,174,298,177,296,177,290,177,288,180,287,183,287,186,287,187,284,188,280,190,279,192,278,191,282,191,286,194,288,196,288,199,286,201,285,204,285,206,285,208,285,206,280,205,279,205,276,205,274,197,270,194,267,191,265,186,262,182,262,177,261,173,261,167,261,165,265,163,266,159,265,157,263,157,260,153,253,149,251,147,251,149,247,149,244,148,240,144,238,141,238,139,241,138,244,137,245,134,246,131,245,130,242,130,238,130,236,130,233,129,230,125,225,123,221,119,221,118,223,117,220,113,219,104,217,101,215,96,215
+      </value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <description>
+      Causes the default VariableResolver implementation to instantiate the 
+      managed bean, gerA of the class, components.model.ImageArea in application 
+      scope if the bean does not already exist in any scope and initialize the
+      shape, alt, and coords properties with the values specified by the
+      managed-property elements.
+    </description>
+    <managed-bean-name> gerA </managed-bean-name>
+    <managed-bean-class> com.sun.bookstore6.model.ImageArea </managed-bean-class>
+    <managed-bean-scope> application </managed-bean-scope>
+    <managed-property>
+      <description>
+         Initializes the shape property of the managed bean, gerA with the value 
+         poly.
+      </description>
+      <property-name>shape</property-name>
+      <value>poly</value>
+    </managed-property>
+    <managed-property>
+      <description>
+        Initializes the alt property of the managed bean, gerA with the value 
+        Germany.
+      </description>
+      <property-name>alt</property-name>
+      <value>Germany</value>
+    </managed-property>
+    <managed-property>
+        <description>
+            Initializes the coords property of the managed bean, gerA with the value 
+            specified by the value element.
+      </description>
+      <property-name>coords</property-name>
+      <value>
+        324,163,323,170,322,172,320,173,320,175,321,176,321,177,321,179,321,180,319,180,318,180,317,182,316,183,315,181,314,181,313,181,312,181,311,180,310,177,310,177,307,176,307,173,307,172,308,170,309,169,309,167,309,166,311,165,311,163,311,161,312,159,314,159,316,160,316,162,318,162,319,162
+      </value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <description>
+      Causes the default VariableResolver implementation to instantiate the 
+      managed bean, fraA of the class, components.model.ImageArea in application 
+      scope if the bean does not already exist in any scope and initialize the
+      shape, alt, and coords properties with the values specified by the
+      managed-property elements.
+    </description>
+    <managed-bean-name> fraA </managed-bean-name>
+    <managed-bean-class> com.sun.bookstore6.model.ImageArea </managed-bean-class>
+    <managed-bean-scope> application </managed-bean-scope>
+    <managed-property>
+        <description>
+            Initializes the shape property of the managed bean, fraA with the value 
+            shape.
+      </description>
+      <property-name>shape</property-name>
+      <value>poly</value>
+    </managed-property>
+    <managed-property>
+        <description>
+            Initializes the alt property of the managed bean, fraA with the value 
+            France.
+      </description>
+      <property-name>alt</property-name>
+      <value>France</value>
+    </managed-property>
+    <managed-property>
+        <description>
+            Initializes the coords property of the managed bean, fraA with the value 
+            specified by the value element.
+      </description>
+      <property-name>coords</property-name>
+      <value>
+        312,178,308,182,310,184,310,187,310,189,309,191,307,192,305,192,304,192,304,193,303,195,302,195,300,194,299,194,297,194,295,193,295,191,295,189,294,186,293,184,292,182,291,181,289,180,288,178,288,176,289,175,292,175,293,176,294,174,296,174,297,174,299,174,299,172,300,170,302,170,304,172,306,173,308,173,310,174
+      </value>
+    </managed-property>
+  </managed-bean>
+
+  <!-- Abstract Bean -->
+
+  <managed-bean>
+    <managed-bean-name>abstractBean</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.AbstractBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <!-- Backing Bean for chooseLocale.jsp -->
+  
+  <managed-bean>
+    <managed-bean-name>localeBean</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.LocaleBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+    <!-- Backing Bean for bookcatalog.jsp -->
+  
+  <managed-bean>
+    <managed-bean-name>catalog</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.CatalogBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+
+  <!-- Backing Bean for bookcashier.jsp --> 
+  <managed-bean>
+    <managed-bean-name>cashier</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.CashierBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <!-- Backing Bean for bookdetails.jsp --> 
+  <managed-bean>
+    <managed-bean-name>details</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.BookDetailsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <!-- Backing Bean for bookshowcart.jsp -->
+  <managed-bean>
+    <managed-bean-name>showcart</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.ShowCartBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+ 
+  <!-- Backing Bean for bookstore.jsp -->
+  <managed-bean>
+    <managed-bean-name>store</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.backing.BookstoreBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+ 
+
+
+  <!-- ========== Managed Beans ============================================ -->
+
+
+  <managed-bean>
+    <description>
+      Create a shopping cart in session scope the first
+      time it is referenced.
+    </description>
+    <managed-bean-name>cart</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore.cart.ShoppingCart</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  
+ <managed-bean>
+    <description>
+      Create a BookDBAO in request scope the first
+      time it is referenced.
+    </description>
+    <managed-bean-name>dbao</managed-bean-name>
+    <managed-bean-class>com.sun.bookstore6.database.BookDBAO</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <managed-bean>
+    <description>
+      Create the set of available options for selecting newsletters
+      on the cashier page.  This approach is useful for quick-and-dirty
+      creation of selection item lists, before your development team
+      has had time to create the appropriate Data Access Objects to
+      create such lists from the database.  Note that each of the
+      individual newsletter beans has a managed-bean-scope setting of
+      "none", so that they will not themselves be placed into any scope.
+    </description>
+    <managed-bean-name>newsletters</managed-bean-name>
+    <managed-bean-class>java.util.ArrayList</managed-bean-class>
+    <managed-bean-scope>application</managed-bean-scope>
+    <list-entries>
+      <value-class>javax.faces.model.SelectItem</value-class>
+      <value>#{newsletter0}</value>
+      <value>#{newsletter1}</value>
+      <value>#{newsletter2}</value>
+      <value>#{newsletter3}</value>
+    </list-entries>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>newsletter0</managed-bean-name>
+    <managed-bean-class>javax.faces.model.SelectItem</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+    <managed-property>
+      <property-name>label</property-name>
+      <value>Duke's Quarterly</value>
+    </managed-property>
+    <managed-property>
+      <property-name>value</property-name>
+      <value>200</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>newsletter1</managed-bean-name>
+    <managed-bean-class>javax.faces.model.SelectItem</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+    <managed-property>
+      <property-name>label</property-name>
+      <value>Innovator's Almanac</value>
+    </managed-property>
+    <managed-property>
+      <property-name>value</property-name>
+      <value>201</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>newsletter2</managed-bean-name>
+    <managed-bean-class>javax.faces.model.SelectItem</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+    <managed-property>
+      <property-name>label</property-name>
+      <value>Duke's Diet and Exercise Journal</value>
+    </managed-property>
+    <managed-property>
+      <property-name>value</property-name>
+      <value>202</value>
+    </managed-property>
+<!-- Selection items can be initialized to being disabled like this
+    <managed-property>
+      <property-name>disabled</property-name>
+      <value>true</value>
+    </managed-property>
+-->
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>newsletter3</managed-bean-name>
+    <managed-bean-class>javax.faces.model.SelectItem</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+    <managed-property>
+      <property-name>label</property-name>
+      <value>Random Ramblings</value>
+    </managed-property>
+    <managed-property>
+      <property-name>value</property-name>
+      <value>203</value>
+    </managed-property>
+  </managed-bean>
+
+  <!-- ========== Components ========================================= -->
+
+
+  <component>
+    <component-type>DemoArea</component-type>
+    <component-class>com.sun.bookstore6.components.AreaComponent</component-class>
+    <property>
+      <description>
+        Alternate text if we synthesize an ImageArea bean.
+      </description>
+      <property-name>alt</property-name>
+      <property-class>java.lang.String</property-class>
+    </property>
+    <property>
+      <description>
+        Hotspot coordinates if we synthesize an ImageArea bean.
+      </description>
+      <property-name>coords</property-name>
+      <property-class>java.lang.String</property-class>
+    </property>
+    <property>
+      <description>
+        Shape (default, rect, circle, poly) if we synthesize an ImageArea bean.
+      </description>
+      <property-name>shape</property-name>
+      <property-class>java.lang.String</property-class>
+    </property>
+    
+    <component-extension>
+      <component-family>Area</component-family>
+      <renderer-type>DemoArea</renderer-type>
+    </component-extension>
+    
+  </component>
+  
+  
+  <component>
+    <component-type>DemoMap</component-type>
+    <component-class>com.sun.bookstore6.components.MapComponent</component-class>
+    <property>
+      <description>
+        Alternate text for the currently selected child AreaComponent.
+      </description>
+      <property-name>current</property-name>
+      <property-class>java.lang.String</property-class>
+    </property>
+    
+    <component-extension>
+      <component-family>Map</component-family>
+      <renderer-type>DemoMap</renderer-type>
+    </component-extension>
+    
+  </component>
+
+  
+      <!-- Custom Renderers -->
+
+  <render-kit>
+
+    <renderer>
+      <description>
+        Renderer for a components AreaComponent component.
+      </description>
+      <component-family>Area</component-family>
+      <renderer-type>DemoArea</renderer-type>
+      <renderer-class>com.sun.bookstore6.renderers.AreaRenderer</renderer-class>
+      
+      <attribute>
+        <description>
+          Context-relative path to an image to be displayed when the
+          mouse is not hovering over this hotspot.
+        </description>
+        <attribute-name>onmouseout</attribute-name>
+        <attribute-class>java.lang.String</attribute-class>
+      </attribute>
+      <attribute>
+        <description>
+          Context-relative path to an image to be displayed when the
+          mouse is hovering over this hotspot.
+        </description>
+        <attribute-name>onmouseover</attribute-name>
+        <attribute-class>java.lang.String</attribute-class>
+      </attribute>
+      <attribute>
+        <description>
+          CSS style class to use when rendering this component.
+        </description>
+        <attribute-name>styleClass</attribute-name>
+        <attribute-class>java.lang.String</attribute-class>
+      </attribute>
+    </renderer>
+
+    <renderer>
+      <description>
+        Renderer for a components.components.MapComponent component.
+      </description>
+      <component-family>Map</component-family>
+      <renderer-type>DemoMap</renderer-type>
+      <renderer-class>com.sun.bookstore6.renderers.MapRenderer</renderer-class>
+      
+      <attribute>
+        <description>
+          CSS style class to use when rendering this component.
+        </description>
+        <attribute-name>styleClass</attribute-name>
+        <attribute-class>java.lang.String</attribute-class>
+      </attribute>
+    </renderer>
+ </render-kit>
+
+  
+  <!-- ========== Navigation Rules ========================================= -->
+
+ <navigation-rule>
+    <from-view-id>/chooselocale.jsp</from-view-id>
+    <navigation-case>
+      <description>
+        Any action on chooselocale should cause navigation to bookstore.jsp
+      </description>
+      <from-outcome>bookstore</from-outcome>
+      <to-view-id>/bookstore.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+  
+    <navigation-case>
+      <description>
+        Any action that returns "bookstore" should go to the
+        bookstore page.
+      </description>
+      <from-outcome>bookstore</from-outcome>
+      <to-view-id>/bookstore.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <description>
+        Any action that returns "cart" should go to the
+        shopping cart page.
+      </description>
+      <from-outcome>cart</from-outcome>
+      <to-view-id>/bookshowcart.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <description>
+        Any action that returns "catalog" should go to the
+        main catalog page.
+      </description>
+      <from-outcome>catalog</from-outcome>
+      <to-view-id>/bookcatalog.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <description>
+        Any action that returns "details" should go to the
+        book details page.
+      </description>
+      <from-outcome>details</from-outcome>
+      <to-view-id>/bookdetails.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <description>
+        Any action that returns "purchase" should go to the
+        cashier page.
+      </description>
+      <from-outcome>purchase</from-outcome>
+      <to-view-id>/bookcashier.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <description>
+        Any action that returns "bookordererror" should go to the
+        error page.
+      </description>
+      <from-outcome>bookordererror</from-outcome>
+      <to-view-id>/bookordererror.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <description>
+        Any action that returns "receipt" should go to the
+        final page.
+      </description>
+      <from-outcome>receipt</from-outcome>
+      <to-view-id>/bookreceipt.jsp</to-view-id>
+    </navigation-case>
+
+  </navigation-rule>
+
+
+</faces-config>

@@ -1,0 +1,35 @@
+#!/bin/sh
+# Start up a simple Java USB viewer
+#
+# $Id: viewer,v 1.1 2008/10/15 09:28:09 huangmeng Exp $
+
+# In case folk haven't set paths, try the install points Sun's RPMs use
+PATH=$PATH:/usr/java/jdk1.3
+PATH=$PATH:/usr/java/jdk1.2.2
+
+# green threads interrupt our ioctls a lot
+THREADS=-native
+
+if java -version 2>&1 | fgrep 1.1 > /dev/null
+then
+    echo "Sorry, not set up yet for JDK 1.1 + separate Swing ..."
+    # ... plus, needs that old squirrely JDK 1.0 command syntax
+    # (CLASSPATH must be set to have "." and $JAVA_HOME/lib/classes.zip)
+    exit 1;
+
+# for 1.2, just be sure we force use of native threads
+elif java -version 2>&1 | fgrep 1.2 > /dev/null
+then
+    : "all's fine here ..."
+
+# the JDK 1.3 default (Hotspot, native) seems OK
+elif java -version 2>&1 | fgrep 1.3 > /dev/null
+then
+    THREADS=
+
+else
+    echo "Sorry, your 'java' command is too strange ..."
+    exit 1
+fi
+
+LD_LIBRARY_PATH=. java $THREADS -classpath jusb.jar usb.view.Foo

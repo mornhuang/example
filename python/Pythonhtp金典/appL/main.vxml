@@ -1,0 +1,116 @@
+<?xml version = "1.0"?>
+<vxml version = "1.0">
+
+<!-- Fig. L.5: main.vxml -->
+<!-- Voice page.         -->
+
+<link next = "#home">
+   <grammar>home</grammar>
+</link>
+
+<link next = "#end">
+   <grammar>exit</grammar>
+</link>
+
+<var name = "currentOption" expr = "'home'"/>
+
+<form>
+   <block>
+      <emp>Welcome</emp> to the voice page of Deitel and 
+      Associates. To exit any time say exit. 
+      To go to the home page any time say home.
+   </block>
+   <subdialog src = "#home"/>
+</form>
+
+<menu id = "home">
+   <prompt count = "1" timeout = "10s"> 
+      You have just entered the Deitel home page. 
+      Please make a selection by speaking one of the 
+      following options:
+      <break msecs = "1000 "/>
+      <enumerate/>
+   </prompt>
+
+   <prompt count = "2">
+      Please say one of the following.
+      <break msecs = "1000 "/>
+      <enumerate/>
+   </prompt>
+
+   <choice next = "#about">About us</choice>
+   <choice next = "#directions">Driving directions</choice>
+   <choice next = "publications.vxml">Publications</choice>
+</menu>
+
+<form id = "about">
+   <block>
+   About Deitel and Associates, Inc.
+   Deitel and Associates, Inc. is an internationally 
+   recognized corporate training and publishing organization, 
+   specializing in programming languages, Internet and World 
+   Wide Web technology and object technology education. 
+   Deitel and Associates, Inc. is a member of the World Wide 
+   Web Consortium. The company provides courses on Java, C++,
+   Visual Basic, C, Internet and World Wide Web programming
+   and Object Technology. 
+     <assign name = "currentOption" expr = "'about'"/>
+     <goto next = "#repeat"/>
+   </block>
+</form>
+
+<form id = "directions">
+  <block>
+     Directions to Deitel and Associates, Inc.
+     We are located on Route 20 in Sudbury, 
+     Massachusetts, equidistant from route 
+   <sayas class = "digits">128</sayas> and route 
+   <sayas class = "digits">495</sayas>.
+   <assign name = "currentOption" expr = "'directions'"/>
+   <goto next = "#repeat"/>
+  </block>
+</form>
+
+<form id = "repeat">
+   <field name = "confirm" type = "boolean">
+      <prompt>
+         To repeat say yes. To go back to home, say no.
+      </prompt>
+
+      <filled>
+         <if cond = "confirm == true">
+            <goto expr = "'#' + currentOption"/>
+         <else/>
+           <goto next = "#home"/>
+         </if>
+      </filled>
+
+   </field>
+</form>   
+
+<form id = "end">
+   <block>
+      Thank you for visiting Deitel and Associates voice page.
+      Have a nice day.
+      <exit/>
+   </block>
+</form>
+
+</vxml>
+
+<!-- 
+ ************************************************************************** 
+ * (C) Copyright 2002 by Deitel & Associates, Inc. and Prentice Hall.     *
+ * All Rights Reserved.                                                   *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************
+-->

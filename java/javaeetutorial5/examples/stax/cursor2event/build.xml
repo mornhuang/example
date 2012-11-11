@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cursor2event" default="default" basedir=".">
+    <description>Builds, tests, and runs the project cursor2event.</description>
+    <property name="is.java-client-module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-cursor2event" depends="compile"
+    description="Runs the cursor2event example. ">
+    <echo message="Running the cursor2event example."/>
+    <java classname="cursor2event.CursorApproachEventObject" fork="yes">
+      <arg value="BookCatalog.xml"/>
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

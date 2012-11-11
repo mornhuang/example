@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+version="2.5" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>bookstore1</display-name>
+
+  <filter>
+    <filter-name>OrderFilter</filter-name>
+    <filter-class>com.sun.bookstore1.filters.OrderFilter</filter-class>
+  </filter>
+
+  <filter>
+    <filter-name>HitCounterFilter</filter-name>
+    <filter-class>com.sun.bookstore1.filters.HitCounterFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>OrderFilter</filter-name>
+    <servlet-name>ReceiptServlet</servlet-name>
+  </filter-mapping>
+
+  <filter-mapping>
+    <filter-name>HitCounterFilter</filter-name>
+    <servlet-name>BookStoreServlet</servlet-name>
+  </filter-mapping>
+
+  <listener>
+    <listener-class>com.sun.bookstore1.listeners.ContextListener</listener-class>
+  </listener>
+
+  <servlet>
+    <display-name>ShowCartServlet</display-name>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.ShowCartServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <display-name>CatalogServlet</display-name>
+    <servlet-name>CatalogServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.CatalogServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <display-name>BookStoreServlet</display-name>
+    <servlet-name>BookStoreServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.BookStoreServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <display-name>CashierServlet</display-name>
+    <servlet-name>CashierServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.CashierServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <display-name>BannerServlet</display-name>
+    <servlet-name>BannerServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.BannerServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <display-name>BookDetailsServlet</display-name>
+    <servlet-name>BookDetailsServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.BookDetailsServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <display-name>ReceiptServlet</display-name>
+    <servlet-name>ReceiptServlet</servlet-name>
+    <servlet-class>com.sun.bookstore1.servlets.ReceiptServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <url-pattern>/bookshowcart</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CatalogServlet</servlet-name>
+    <url-pattern>/bookcatalog</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>BookStoreServlet</servlet-name>
+    <url-pattern>/bookstore</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>CashierServlet</servlet-name>
+    <url-pattern>/bookcashier</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>BannerServlet</servlet-name>
+    <url-pattern>/banner</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>BookDetailsServlet</servlet-name>
+    <url-pattern>/bookdetails</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ReceiptServlet</servlet-name>
+    <url-pattern>/bookreceipt</url-pattern>
+  </servlet-mapping>
+
+  <error-page>
+    <exception-type>com.sun.bookstore.exception.BookNotFoundException</exception-type>
+    <location>/errorpage.html</location>
+  </error-page>
+
+  <error-page>
+    <exception-type>javax.servlet.UnavailableException</exception-type>
+    <location>/errorpage.html</location>
+  </error-page>
+
+  <error-page>
+    <exception-type>com.sun.bookstore.exception.BooksNotFoundException</exception-type>
+    <location>/errorpage.html</location>
+  </error-page>
+  <jsp-config/>
+     
+  
+</web-app>
+

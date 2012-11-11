@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<!-- Fig. 3.10: list.html                -->
+<!-- Advanced Lists: nested and ordered -->
+
+<head>
+   <title>XML How to Program - Lists</title>
+</head>
+
+<body>
+
+   <h1>The Best Features of the Internet</h1>
+
+   <ul>
+      <li>You can meet new people from countries around 
+         the world.</li>
+      <li>You have access to new media as it becomes public:
+
+         <!-- This starts a nested list, which uses a modified  -->
+         <!-- bullet. The list ends when you close the <ul> tag -->
+         <ul>
+            <li>New games</li>
+            <li>New applications
+	
+               <!-- Another nested list -->
+               <ul>
+                  <li>For business</li>
+                  <li>For pleasure</li>
+               </ul> <!-- This ends the double nested list -->
+            </li> 
+
+            <li>Around the clock news</li>
+            <li>Search engines</li>
+            <li>Shopping</li>
+            <li>Programming
+
+               <ul>
+                  <li>XML</li>
+                  <li>Java</li>
+                  <li>HTML</li>
+                  <li>Scripts</li>
+                  <li>New languages</li>
+               </ul>
+
+            </li>
+
+         </ul> <!-- This ends the first level nested list -->
+      </li> 
+
+      <li>Links</li>
+      <li>Keeping in touch with old friends</li>
+      <li>It is the technology of the future!</li>
+
+   </ul>   <!-- This ends the primary unordered list -->
+
+   <h1>My 3 Favorite <em>CEO's</em></h1>
+
+   <!-- Ordered lists are constructed in the same way as   -->
+   <!-- unordered lists, except their starting tag is <ol> -->
+   <ol>
+      <li>Bill Gates</li>
+      <li>Steve Jobs</li>
+      <li>Michael Dell</li>
+   </ol>
+
+</body>
+</html>
+
+<!-- 
+ ************************************************************************** 
+ * (C) Copyright 2001 by Deitel & Associates, Inc. and Prentice Hall.     *
+ * All Rights Reserved.                                                   *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************
+-->

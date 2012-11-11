@@ -1,0 +1,558 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title> - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="idx-12.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="idx-14.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             <h4>V</h4>
+<div class="indexdiv">
+<dl>
+<dd><tt>validate</tt> method, <a href="bnann.html#indexterm-584">Attribute Validation</a></dd>
+</dl>
+<dl>
+<dd>validating input, <i>See </i>validation model</dd>
+</dl>
+<dl>
+<dd>validating XML documents, <a href="bnazg.html#indexterm-1698">More about Validation</a></dd>
+</dl>
+<dl>
+<dd>validation model<dl>
+<dd><a href="bnaqd.html#indexterm-690">User Interface Component Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-813">Validation Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-815">Validation Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-817">Validation Model</a></dd>
+</dl>
+<dl>
+<dd>referencing a method that performs validation, <a href="bnatn.html#indexterm-1256">Referencing a Method That Performs Validation</a></dd>
+<dd><tt>validator</tt> attribute<dl>
+<dd><a href="bnatn.html#indexterm-1225">Referencing a Backing Bean Method</a></dd>
+<dd><a href="bnavb.html#indexterm-1445">Writing a Method to Perform Validation</a></dd>
+</dl>
+<dl>
+<dd>and backing bean methods, <a href="bnatn.html#indexterm-1235">Referencing a Backing Bean Method</a></dd>
+<dd>referencing backing bean methods, <a href="bnatn.html#indexterm-1258">Referencing a Method That Performs Validation</a></dd>
+<dd>text components, <a href="bnarf.html#indexterm-1004">Using Text Components</a></dd>
+</dl>
+<tt>Validator</tt> class<dl>
+<dd><a href="bnauw.html#indexterm-1416">Writing the Tag Handler</a></dd>
+<dd><a href="bnavb.html#indexterm-1421">Writing Backing Bean Methods</a></dd>
+</dl>
+</dd>
+<dd><tt>Validator</tt> implementation, <a href="bnaqd.html#indexterm-819">Validation Model</a><dl>
+<dd>custom validators, <a href="bnatt.html#indexterm-1290">Using a Custom Validator</a></dd>
+</dl>
+<tt>Validator</tt> interface<dl>
+<dd><a href="bnaqd.html#indexterm-822">Validation Model</a></dd>
+<dd><a href="bnavb.html#indexterm-1441">Writing a Method to Perform Validation</a></dd>
+</dl>
+<dl>
+<dd>custom validator tags, <a href="bnauw.html#indexterm-1406">Creating a Custom Tag</a></dd>
+<dd>implementing, <a href="bnauw.html#indexterm-1394">Implementing the Validator Interface</a></dd>
+<dd>validator classes, <a href="bnatc.html#indexterm-1183">Using the Standard Validators</a></dd>
+</dl>
+<tt>validator</tt> tag<dl>
+<dd>custom objects, <a href="bnatt.html#indexterm-1275">Using Custom Objects</a></dd>
+</dl>
+validators<dl>
+<dd><i>See </i>validators</dd>
+</dl>
+writing a backing bean method to perform validation, <a href="bnavb.html#indexterm-1440">Writing a Method to Perform Validation</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>Validator</tt> implementation classes<dl>
+<dd><a href="bnaqd.html#indexterm-820">Validation Model</a></dd>
+<dd><a href="bnatc.html#indexterm-1173">Using the Standard Validators</a></dd>
+</dl>
+<dl>
+<dd><tt>DoubleRangeValidator</tt> class<dl>
+<dd><a href="bnarc.html#indexterm-931">Using the Core Tags</a></dd>
+<dd><a href="bnatc.html#indexterm-1174">Using the Standard Validators</a></dd>
+</dl>
+</dd>
+<dd><tt>LengthValidator</tt> class<dl>
+<dd><a href="bnarc.html#indexterm-933">Using the Core Tags</a></dd>
+<dd><a href="bnatc.html#indexterm-1177">Using the Standard Validators</a></dd>
+</dl>
+</dd>
+<dd><tt>LongRangeValidation</tt> implementation, <a href="bnapl.html#indexterm-674">Displaying Error Messages</a></dd>
+<dd><tt>LongRangeValidator</tt> class<dl>
+<dd><a href="bnarc.html#indexterm-935">Using the Core Tags</a></dd>
+<dd><a href="bnatc.html#indexterm-1180">Using the Standard Validators</a></dd>
+<dd><a href="bnatc.html#indexterm-1184">Using the LongRangeValidator</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>validator tags<dl>
+<dd><a href="bnarc.html#indexterm-927">Using the Core Tags</a></dd>
+<dd><a href="bnarc.html#indexterm-952">Using the Core Tags</a></dd>
+</dl>
+<dl>
+<dd><tt>validateDoubleRange</tt> tag, <a href="bnatc.html#indexterm-1176">Using the Standard Validators</a></dd>
+<dd><tt>validateLength</tt> tag, <a href="bnatc.html#indexterm-1179">Using the Standard Validators</a></dd>
+<dd><tt>validateLongRange</tt> tag<dl>
+<dd><a href="bnatc.html#indexterm-1182">Using the Standard Validators</a></dd>
+<dd><a href="bnatc.html#indexterm-1186">Using the LongRangeValidator</a></dd>
+</dl>
+</dd>
+<dd><tt>validator</tt> tag<dl>
+<dd><a href="bnaqd.html#indexterm-826">Validation Model</a></dd>
+<dd><a href="bnauw.html#indexterm-1408">Creating a Custom Tag</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>validators<dl>
+<dd><a href="gentextid-10866.html#indexterm-656">JavaServer Faces Technology User Interface</a></dd>
+<dd><a href="bnaqd.html#indexterm-691">User Interface Component Model</a></dd>
+<dd><a href="bnaqq.html#indexterm-859">Restore View Phase</a></dd>
+</dl>
+<dl>
+<dd>custom validators<dl>
+<dd><a href="bnarc.html#indexterm-937">Using the Core Tags</a></dd>
+<dd><a href="bnatt.html#indexterm-1289">Using a Custom Validator</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>value binding<dl>
+<dd><a href="bnatg.html#indexterm-1188">Binding Component Values and Instances to External Data Sources</a></dd>
+<dd><a href="bnaty.html#indexterm-1298">Writing Properties Bound to Component Values</a></dd>
+</dl>
+<dl>
+<dd>a component instance to a bean property<dl>
+<dd><i>See </i>component binding</dd>
+</dl>
+a component value to a backing-bean property, <a href="bnatg.html#indexterm-1199">Binding a Component Value to a Property</a></dd>
+<dd>a component value to an implicit object, <a href="bnatg.html#indexterm-1205">Binding a Component Value to an Implicit Object</a></dd>
+<dd>acceptable types of component values, <a href="bnaty.html#indexterm-1299">Writing Properties Bound to Component Values</a></dd>
+<dd>component values and instances to external data sources, <a href="bnatg.html#indexterm-1187">Binding Component Values and Instances to External Data Sources</a></dd>
+<dd><tt>value</tt> attribute<dl>
+<dd>backing beans, <a href="bnapl.html#indexterm-680">Developing the Beans</a></dd>
+<dd>binding to a backing-bean property<dl>
+<dd><a href="bnatg.html#indexterm-1201">Binding a Component Value to a Property</a></dd>
+<dd><a href="bnaty.html#indexterm-1296">Writing Bean Properties</a></dd>
+</dl>
+</dd>
+<dd><tt>commandButton</tt> tag, <a href="bnarf.html#indexterm-1044">Rendering a Button with the commandButton Tag</a></dd>
+<dd>external data sources, <a href="bnatg.html#indexterm-1193">Binding Component Values and Instances to External Data Sources</a></dd>
+<dd><tt>graphicImage</tt> tag, <a href="bnarf.html#indexterm-1054">Adding Graphics and Images with the graphicImage Tag</a></dd>
+<dd>model data, <a href="bnavm.html#indexterm-1483">Configuring Model Data</a></dd>
+<dd><tt>outputFormat</tt> tag, <a href="bnarf.html#indexterm-1026">Displaying a Formatted Message with the outputFormat Tag</a></dd>
+<dd><tt>outputLabel</tt> tag, <a href="bnarf.html#indexterm-1019">Rendering a Label with the outputLabel Tag</a></dd>
+<dd><tt>selectItems</tt> tag, <a href="bnarf.html#indexterm-1096">Using the selectItems Tag</a></dd>
+<dd>text fields, <a href="bnapl.html#indexterm-667">Adding a Text Field</a></dd>
+</dl>
+value-binding expressions, <a href="bnatg.html#indexterm-1198">Binding Component Values and Instances to External Data Sources</a></dd>
+<dd>value expressions<dl>
+<dd><a href="bnapl.html#indexterm-664">Adding a Label Component</a></dd>
+<dd><a href="bnatg.html#indexterm-1211">Binding a Component Instance to a Bean Property</a></dd>
+<dd><a href="bnaty.html#indexterm-1305">UIData Properties</a></dd>
+<dd><a href="bnavu.html#indexterm-1524">Enabling Component Properties to Accept Expressions</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>value-change events<dl>
+<dd><a href="bnaqd.html#indexterm-803">Event and Listener Model</a></dd>
+<dd><a href="bnaqd.html#indexterm-806">Event and Listener Model</a></dd>
+<dd><a href="bnasz.html#indexterm-1155">Registering a Value-Change Listener on a Component</a></dd>
+<dd><a href="bnaut.html#indexterm-1371">Implementing an Event Listener</a></dd>
+</dl>
+<dl>
+<dd><tt>processValueChange(ValueChangeEvent)</tt> method, <a href="bnaut.html#indexterm-1376">Implementing Value-Change Listeners</a></dd>
+<dd><tt>processValueChangeEvent(ValueChangeEvent)</tt> method, <a href="bnavb.html#indexterm-1454">Writing a Method to Handle a Value-Change Event</a></dd>
+<dd>referencing methods that handle value-change events, <a href="bnatn.html#indexterm-1260">Referencing a Method That Handles a Value-change Event</a></dd>
+<dd><tt>type</tt> attribute, <a href="bnasz.html#indexterm-1161">Registering a Value-Change Listener on a Component</a></dd>
+<dd><tt>ValueChangeEvent</tt> class<dl>
+<dd><a href="bnasz.html#indexterm-1162">Registering a Value-Change Listener on a Component</a></dd>
+<dd><a href="bnaut.html#indexterm-1372">Implementing an Event Listener</a></dd>
+<dd><a href="bnaut.html#indexterm-1377">Implementing Value-Change Listeners</a></dd>
+</dl>
+</dd>
+<dd><tt>valueChangeListener</tt> attribute<dl>
+<dd><a href="bnarf.html#indexterm-1008">Using Text Components</a></dd>
+<dd><a href="bnatn.html#indexterm-1227">Referencing a Backing Bean Method</a></dd>
+<dd><a href="bnatn.html#indexterm-1237">Referencing a Backing Bean Method</a></dd>
+<dd><a href="bnavb.html#indexterm-1452">Writing a Method to Handle a Value-Change Event</a></dd>
+</dl>
+</dd>
+<dd><tt>ValueChangeListener</tt> class<dl>
+<dd><a href="bnasz.html#indexterm-1157">Registering a Value-Change Listener on a Component</a></dd>
+<dd><a href="bnaut.html#indexterm-1373">Implementing an Event Listener</a></dd>
+<dd><a href="bnavb.html#indexterm-1453">Writing a Method to Handle a Value-Change Event</a></dd>
+</dl>
+</dd>
+<dd><tt>ValueChangeListener</tt> implementation, <a href="bnaut.html#indexterm-1375">Implementing Value-Change Listeners</a></dd>
+<dd><tt>valueChangeListener</tt> tag<dl>
+<dd><a href="bnarc.html#indexterm-907">Using the Core Tags</a></dd>
+<dd><a href="bnasz.html#indexterm-1159">Registering a Value-Change Listener on a Component</a></dd>
+<dd><a href="bnavh.html#indexterm-1463">When to Use a Custom Component</a></dd>
+</dl>
+</dd>
+<dd>writing a backing bean method to handle value-change events, <a href="bnavb.html#indexterm-1450">Writing a Method to Handle a Value-Change Event</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>value expressions, <a href="bnaqm.html#indexterm-843">Using the Unified EL to Reference Backing Beans</a><dl>
+<dd><tt>ValueExpression</tt> class, <a href="bnaqm.html#indexterm-850">Using the Unified EL to Reference Backing Beans</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>verifier</tt> tool, <a href="bnadf.html#indexterm-128">Tools</a></dd>
+</dl>
+<dl>
+<dd>VeriSign certificate authority, <a href="bnbxw.html#indexterm-2548">Working with Digital Certificates</a></dd>
+</dl>
+</div><h4>W</h4>
+<div class="indexdiv">
+<dl>
+<dd>W3C<dl>
+<dd><a href="bnayl.html#indexterm-1676">Building Web Services with JAX-WS</a></dd>
+<dd><a href="bnaze.html#indexterm-1686">Further Information about JAX-WS</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>WAR file, <a href="bnaxj.html#indexterm-1632">Basic Requirements of a JavaServer Faces Application</a></dd>
+</dl>
+<dl>
+<dd>WAR files, JavaBeans components in, <a href="bnadx.html#indexterm-177">Web Modules</a></dd>
+</dl>
+<dl>
+<dd>web applications, <a href="bnadx.html#indexterm-175">Web Modules</a><dl>
+<dd>accessing databases from<dl>
+<dd><a href="bnaez.html#indexterm-203">Accessing Databases from Web Applications</a></dd>
+<dd><a href="bnbrm.html#indexterm-2207">Accessing Databases from Web Applications</a></dd>
+</dl>
+</dd>
+<dd>accessing tag library implementations, <a href="bnaiy.html#indexterm-398">Including the Tag Library Implementation</a></dd>
+<dd>configuring<dl>
+<dd><a href="geysj.html#indexterm-167">Web Applications</a></dd>
+<dd><a href="bnaeo.html#indexterm-191">Configuring Web Applications</a></dd>
+<dd><a href="bncat.html#indexterm-2718">Overview of Web Application Security</a></dd>
+</dl>
+</dd>
+<dd>establishing the locale, <a href="bnaxw.html#indexterm-1651">Establishing the Locale</a></dd>
+<dd>internationalizing<dl>
+<dd>Java EE Blueprints, <a href="bnayh.html#indexterm-1670">Further Information about Internationalizing Web Applications</a></dd>
+</dl>
+internationalizing and localizing, <a href="bnaxu.html#indexterm-1647">Internationalizing and Localizing Web Applications</a></dd>
+<dd>maintaining state across requests, <a href="bnagm.html#indexterm-293">Maintaining Client State</a></dd>
+<dd>making tag handlers available to, <a href="bnann.html#indexterm-577">Including Tag Handlers in Web Applications</a></dd>
+<dd>parsing and formatting localized dates and numbers, <a href="bnaya.html#indexterm-1656">Date and Number Formatting</a></dd>
+<dd>presentation-oriented, <a href="bnadr.html#indexterm-163">Getting Started with Web Applications</a></dd>
+<dd>providing localized messages, <a href="bnaxw.html#indexterm-1649">Providing Localized Messages and Labels</a></dd>
+<dd>retrieving localized messages, <a href="bnaxw.html#indexterm-1653">Retrieving Localized Messages</a></dd>
+<dd>securing, <a href="bncas.html#indexterm-2703">Securing Web Applications</a></dd>
+<dd>security<dl>
+<dd>overview, <a href="bncat.html#indexterm-2717">Overview of Web Application Security</a></dd>
+</dl>
+service oriented, <a href="bnadr.html#indexterm-164">Getting Started with Web Applications</a></dd>
+<dd>setting the resource bundle, <a href="bnaxw.html#indexterm-1652">Setting the Resource Bundle</a></dd>
+<dd>specifying initialization parameters, <a href="bnaeo.html#indexterm-195">Setting Initialization Parameters</a></dd>
+<dd>specifying welcome files, <a href="bnaeo.html#indexterm-194">Declaring Welcome Files</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>web clients<dl>
+<dd><a href="bnaay.html#indexterm-9">Web Clients</a></dd>
+<dd><a href="bnadr.html#indexterm-161">Getting Started with Web Applications</a></dd>
+</dl>
+<dl>
+<dd>Duke&rsquo;s Bank<dl>
+<dd><a href="bncmt.html#indexterm-3175">Web Client</a></dd>
+<dd><a href="bncmt.html#indexterm-3182">Design Strategies</a></dd>
+</dl>
+<dl>
+<dd>custom tags, <a href="bncmt.html#indexterm-3185">Design Strategies</a></dd>
+<dd>JavaBeans components, <a href="bncmt.html#indexterm-3179">Design Strategies</a></dd>
+<dd>request processing, <a href="bncmt.html#indexterm-3188">Request Processing</a></dd>
+<dd>running, <a href="bncna.html#indexterm-3201">Running the Duke's Bank Web Client</a></dd>
+</dl>
+examples, <a href="bnbnp.html#indexterm-2079">Creating the converter Web Client</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>web components<dl>
+<dd><a href="bnaay.html#indexterm-17">Web Components</a></dd>
+<dd><a href="geysj.html#indexterm-166">Web Applications</a></dd>
+</dl>
+<dl>
+<dd><i>See also </i>Java EE components<dd>accessing databases from, <a href="bnafo.html#indexterm-224">Accessing Databases</a></dd>
+<dd>applets bundled with, <a href="bnaay.html#indexterm-20">Web Components</a></dd>
+<dd>concurrent access to shared resources, <a href="bnafo.html#indexterm-222">Controlling Concurrent Access to Shared Resources</a></dd>
+<dd>encoding of requests delivered to, <a href="bnayb.html#indexterm-1663">Request Encoding</a></dd>
+<dd>forwarding to other web components, <a href="bnagi.html#indexterm-287">Transferring Control to Another Web Component</a></dd>
+<dd>including other web resources, <a href="bnagi.html#indexterm-285">Including Other Resources in the Response</a></dd>
+<dd>invoking other web resources, <a href="bnagi.html#indexterm-282">Invoking Other Web Resources</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>Web components, JMS and, <a href="bncgl.html#indexterm-2965">Using the JMS API with Application Clients and Web Components</a></dd>
+</dl>
+<dl>
+<dd>web components<dl>
+<dd>mapping exceptions to error screens, <a href="bnaeo.html#indexterm-200">Mapping Errors to Error Screens</a></dd>
+<dd>mapping filters to, <a href="bnagb.html#indexterm-273">Specifying Filter Mappings</a></dd>
+<dd>response encoding, <a href="bnayb.html#indexterm-1667">Response Encoding</a></dd>
+<dd>scope objects, <a href="bnafo.html#indexterm-221">Using Scope Objects</a></dd>
+<dd>securing, <a href="bncas.html#indexterm-2704">Securing Web Applications</a></dd>
+<dd>setting the request encoding, <a href="bnayb.html#indexterm-1664">Request Encoding</a></dd>
+<dd>setting the response encoding, <a href="bnayb.html#indexterm-1669">Response Encoding</a></dd>
+<dd>sharing information, <a href="bnafo.html#indexterm-220">Sharing Information</a></dd>
+<dd>specifying aliases, <a href="bnaeo.html#indexterm-193">Setting the Component Alias</a></dd>
+<dd>specifying initialization parameters, <a href="bnaeo.html#indexterm-196">Setting Initialization Parameters</a></dd>
+<dd>transactions<dl>
+<dd><a href="bnafo.html#indexterm-225">Accessing Databases</a></dd>
+<dd><a href="bnbrm.html#indexterm-2212">Updating Data in the Database</a></dd>
+<dd><a href="bncjg.html#indexterm-3076">Transactions in Web Components</a></dd>
+</dl>
+</dd>
+<dd>types, <a href="bnaay.html#indexterm-18">Web Components</a></dd>
+<dd>utility classes bundled with, <a href="bnaay.html#indexterm-21">Web Components</a></dd>
+<dd>web context, <a href="bnagl.html#indexterm-289">Accessing the Web Context</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>web containers, <a href="bnabo.html#indexterm-38">Container Types</a><dl>
+<dd>loading and initializing servlets, <a href="bnafi.html#indexterm-214">Servlet Life Cycle</a></dd>
+<dd>mapping URLs to web components, <a href="bnaeo.html#indexterm-192">Mapping URLs to Web Components</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>web modules<dl>
+<dd><a href="bnaby.html#indexterm-53">Packaging Applications</a></dd>
+<dd><a href="bnadx.html#indexterm-174">Web Modules</a></dd>
+</dl>
+<dl>
+<dd>deploying, <a href="bnadx.html#indexterm-180">Deploying a WAR File</a><dl>
+<dd>packaged<dl>
+<dd><a href="bnadx.html#indexterm-182">Deploying a Packaged Web Module</a></dd>
+<dd><a href="bnadx.html#indexterm-183">Deploying a Packaged Web Module</a></dd>
+</dl>
+</dd>
+</dl>
+dynamic reloading<dl>
+<dd><a href="bnadx.html#indexterm-188">Dynamic Reloading</a></dd>
+<dd><a href="bnadx.html#indexterm-189">Dynamic Reloading</a></dd>
+</dl>
+</dd>
+<dd>undeploying, <a href="bnadx.html#indexterm-190">Undeploying Web Modules</a></dd>
+<dd>updating<dl>
+<dd><a href="bnadx.html#indexterm-185">Updating Web Modules</a></dd>
+<dd><a href="bnadx.html#indexterm-186">Updating Web Modules</a></dd>
+</dl>
+<dl>
+<dd>packaged, <a href="bnadx.html#indexterm-187">Updating a Packaged Web Module</a></dd>
+</dl>
+viewing deployed, <a href="bnadx.html#indexterm-184">Listing Deployed Web Modules</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>web resource collection, <a href="bnbxj.html#indexterm-2504">Setting Up Security Roles</a></dd>
+</dl>
+<dl>
+<dd><tt>web-resource-collection</tt> element, <a href="bnbxj.html#indexterm-2506">Setting Up Security Roles</a></dd>
+</dl>
+<dl>
+<dd>web resources, <a href="bnadx.html#indexterm-173">Web Modules</a><dl>
+<dd>Duke&rsquo;s Bank<dl>
+<dd>protecting, <a href="bncmt.html#indexterm-3190">Protecting the Web Client Resources</a></dd>
+</dl>
+mapping filters to<dl>
+<dd><a href="bnagb.html#indexterm-275">Specifying Filter Mappings</a></dd>
+<dd><a href="bnagb.html#indexterm-277">Specifying Filter Mappings</a></dd>
+<dd><a href="bnagb.html#indexterm-281">Specifying Filter Mappings</a></dd>
+</dl>
+</dd>
+<dd>unprotected, <a href="bncbe.html#indexterm-2750">Specifying Security Constraints</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>web services, <a href="bnabs.html#indexterm-41">Web Services Support</a><dl>
+<dd>EJB.<dl>
+<dd><i>See </i>enterprise beans, web services</dd>
+</dl>
+endpoint implementation classes, <a href="bnbor.html#indexterm-2115">The Web Service Endpoint Implementation Class</a></dd>
+<dd>example, <a href="bncko.html#indexterm-3127">The Coffee Break Application</a></dd>
+<dd>examples<dl>
+<dd><a href="bnayn.html#indexterm-1680">Creating a Simple Web Service and Client with JAX-WS</a></dd>
+<dd><a href="bnbor.html#indexterm-2114">A Web Service Example: helloservice</a></dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>web.xml</tt> file<dl>
+<dd><a href="bncbx.html#indexterm-2765">Example: Using Form-Based Authentication with a JSP Page</a></dd>
+<dd><a href="bncbx.html#indexterm-2768">Example: Basic Authentication with a Servlet</a></dd>
+<dd><a href="bncbx.html#indexterm-2772">Adding Security Elements to the Deployment Descriptor</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>work flows, <a href="bnbly.html#indexterm-2022">When to Use Session Beans</a></dd>
+</dl>
+<dl>
+<dd>Writer, StAX example, <a href="bnbfl.html#indexterm-1885">Writer Example</a></dd>
+</dl>
+<dl>
+<dd>writing backing bean methods, <a href="bnavb.html#indexterm-1419">Writing Backing Bean Methods</a><dl>
+<dd>for handling action events, <a href="bnavb.html#indexterm-1434">Writing a Method to Handle an Action Event</a></dd>
+<dd>for handling value-change events, <a href="bnavb.html#indexterm-1449">Writing a Method to Handle a Value-Change Event</a></dd>
+<dd>for performing navigation, <a href="bnavb.html#indexterm-1424">Writing a Method to Handle Navigation</a></dd>
+<dd>for performing validation, <a href="bnavb.html#indexterm-1439">Writing a Method to Perform Validation</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd>writing backing-bean methods, for performing validation, <a href="bnarf.html#indexterm-1006">Using Text Components</a></dd>
+</dl>
+<dl>
+<dd>WSDL<dl>
+<dd><a href="bnabs.html#indexterm-44">WSDL Standard Format</a></dd>
+<dd><a href="bnayl.html#indexterm-1679">Building Web Services with JAX-WS</a></dd>
+<dd><a href="bnaze.html#indexterm-1687">Further Information about JAX-WS</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>wsgen</tt> tool<dl>
+<dd><a href="bnadf.html#indexterm-132">Tools</a></dd>
+<dd><a href="bnayn.html#indexterm-1683">Creating a Simple Web Service and Client with JAX-WS</a></dd>
+</dl>
+</dd>
+</dl>
+<dl>
+<dd><tt>wsimport</tt> tool, <a href="bnadf.html#indexterm-131">Tools</a></dd>
+</dl>
+</div>
+         </div>
+         <div class="navigation">
+             <a href="idx-12.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="idx-14.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

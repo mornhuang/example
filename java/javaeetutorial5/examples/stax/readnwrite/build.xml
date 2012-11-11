@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="readnwrite" default="default" basedir=".">
+    <description>Builds, tests, and runs the project readnwrite.</description>
+    <property name="is.java-client-module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-readnwrite" depends="compile"
+    description="Runs the readnwrite example. ">
+    <echo message="Running the readnwrite example."/>
+    <java classname="readnwrite.EventProducerConsumer" fork="yes">
+      <arg value="BookCatalog.xml"/>
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

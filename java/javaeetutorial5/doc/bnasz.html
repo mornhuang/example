@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Registering Listeners on Components - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level3"><a href="bnara.html">The Example JavaServer Faces Application</a></p>
+<p class="toc level3"><a href="bnarb.html">Setting Up a Page</a></p>
+<p class="toc level3"><a href="bnarc.html">Using the Core Tags</a></p>
+<p class="toc level3"><a href="bnarf.html">Adding UI Components to a Page Using the HTML Component Tags</a></p>
+<p class="toc level4"><a href="bnarf.html#bnarg">UI Component Tag Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarh">The <tt>id</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnari">The <tt>immediate</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarj">The <tt>rendered</tt> Attribute</a></p>
+<p class="toc level5"><a href="bnarf.html#bnark">The <tt>style</tt> and <tt>styleClass</tt> Attributes</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarl">The <tt>value</tt> and <tt>binding</tt> Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarm">Adding a Form Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnaro">Using Text Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarr">Rendering a Text Field with the <tt>inputText</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnars">Rendering a Label with the <tt>outputLabel</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnart">Rendering a Hyperlink with the <tt>outputLink</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnaru">Displaying a Formatted Message with the <tt>outputFormat</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarv">Rendering a Password Field with the <tt>inputSecret</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarw">Using Command Components for Performing Actions and Navigation</a></p>
+<p class="toc level5"><a href="bnarf.html#bnarx">Rendering a Button with the <tt>commandButton</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnary">Rendering a Hyperlink with the <tt>commandLink</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnarz">Using Data-Bound Table Components</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasb">Adding Graphics and Images with the <tt>graphicImage</tt> Tag</a></p>
+<p class="toc level4"><a href="bnarf.html#bnasc">Laying Out Components with the <tt>UIPanel</tt> Component</a></p>
+<p class="toc level4"><a href="bnarf.html#bnase">Rendering Components for Selecting One Value</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasg">Displaying a Check Box Using the <tt>selectBooleanCheckbox</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnash">Displaying a Menu Using the <tt>selectOneMenu</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnasi">Rendering Components for Selecting Multiple Values</a></p>
+<p class="toc level4"><a href="bnarf.html#bnask">The <tt>UISelectItem</tt>, <tt>UISelectItems</tt>, and <tt>UISelectItemGroup</tt> Components</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasm">Using the <tt>selectItems</tt> Tag</a></p>
+<p class="toc level5"><a href="bnarf.html#bnasn">Using the <tt>selectItem</tt> Tag</a></p>
+<p class="toc level4 tocsp"><a href="bnarf.html#bnaso">Displaying Error Messages with the <tt>message</tt> and <tt>messages</tt> Tags</a></p>
+<p class="toc level3 tocsp"><a href="bnasp.html">Using Localized Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasq">Loading a Resource Bundle</a></p>
+<p class="toc level4"><a href="bnasp.html#bnasr">Referencing Localized Static Data</a></p>
+<p class="toc level4"><a href="bnasp.html#bnass">Referencing Error Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnast.html">Using the Standard Converters</a></p>
+<p class="toc level4"><a href="bnast.html#bnasu">Converting a Component's Value</a></p>
+<p class="toc level4"><a href="bnast.html#bnasv">Using <tt>DateTimeConverter</tt></a></p>
+<p class="toc level4"><a href="bnast.html#bnasx">Using <tt>NumberConverter</tt></a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Registering Listeners on Components</a></p>
+<p class="toc level4"><a href="#bnata">Registering a Value-Change Listener on a Component</a></p>
+<p class="toc level4"><a href="#bnatb">Registering an Action Listener on a Component</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnatc.html">Using the Standard Validators</a></p>
+<p class="toc level4"><a href="bnatc.html#bnate">Validating a Component's Value</a></p>
+<p class="toc level4"><a href="bnatc.html#bnatf">Using the <tt>LongRangeValidator</tt></a></p>
+<p class="toc level3 tocsp"><a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a></p>
+<p class="toc level4"><a href="bnatg.html#bnati">Binding a Component Value to a Property</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatj">Binding a Component Value to an Implicit Object</a></p>
+<p class="toc level4"><a href="bnatg.html#bnatl">Binding a Component Instance to a Bean Property</a></p>
+<p class="toc level3 tocsp"><a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a></p>
+<p class="toc level3"><a href="bnatn.html">Referencing a Backing Bean Method</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatp">Referencing a Method That Performs Navigation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a></p>
+<p class="toc level4"><a href="bnatn.html#bnatr">Referencing a Method That Performs Validation</a></p>
+<p class="toc level4"><a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a></p>
+<p class="toc level3 tocsp"><a href="bnatt.html">Using Custom Objects</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatu">Using a Custom Converter</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatv">Using a Custom Validator</a></p>
+<p class="toc level4"><a href="bnatt.html#bnatw">Using a Custom Component</a></p>
+<p class="toc level2 tocsp"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnast.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnatc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnasz"></a><h3>Registering Listeners on Components</h3>
+<p>An application developer can implement listeners as classes or as backing bean methods.
+If a listener is a backing bean method, the page author references the
+method from either the component&rsquo;s <tt>valueChangeListener</tt> attribute or its <tt>actionListener</tt> attribute. If the
+listener is a class, the page author can reference the listener from either
+a <tt>valueChangeListener</tt> tag or an <tt>actionListener</tt> tag and nest the tag inside the
+component tag in order to register the listener on the component.</p><p><a href="bnatn.html#bnatq">Referencing a Method That Handles an Action Event</a> and <a href="bnatn.html#bnats">Referencing a Method That Handles a Value-change Event</a> describe how a page author uses the <tt>valueChangeListener</tt> and
+<tt>actionListener</tt> attributes to reference backing bean methods that handle events.</p><p>The Duke&rsquo;s Bookstore application includes a <tt>ValueChangeListener</tt> implementation class but does not
+use an <tt>ActionListener</tt> implementation class. This section explains how to register the <tt>NameChanged</tt>
+value-change listener and a hypothetical <tt>LocaleChange</tt> action listener implementation on components. <a href="bnaut.html#bnauu">Implementing Value-Change Listeners</a> explains how
+to implement <tt>NameChanged</tt>. <a href="bnaut.html#bnauv">Implementing Action Listeners</a> explains how to implement the hypothetical <tt>LocaleChange</tt> listener.</p>
+
+<a name="bnata"></a><h4>Registering a Value-Change Listener on a Component</h4>
+<p><a name="indexterm-1155"></a><a name="indexterm-1156"></a><a name="indexterm-1157"></a><a name="indexterm-1158"></a><a name="indexterm-1159"></a>A page author can register a <tt>ValueChangeListener</tt> implementation on a component that
+implements <tt>EditableValueHolder</tt> by nesting a <tt>valueChangeListener</tt> tag within the component&rsquo;s tag on the
+page. The <tt>valueChangeListener</tt> tag supports two attributes:</p>
+<ul><li><p><tt>type</tt>: References the fully qualified class name of a <tt>ValueChangeListener</tt> implementation</p></li>
+<li><p><tt>binding</tt>: References an object that implements <tt>ValueChangeListener</tt></p></li></ul>
+<p>A page author must use one of these attributes to reference the
+value-change listener. The type attribute accepts a literal or a value expression. The binding
+attribute only accepts a value expression, which must point to a backing bean
+property that accepts and returns a <tt>ValueChangeListener</tt> implementation.</p><p>Following is the tag corresponding to the <tt>name</tt> component from the <tt>bookcashier.jsp</tt> page.
+It uses the <tt>type</tt> attribute to reference a value-change listener:</p><pre>&lt;h:inputText  id="name" size="50" value="#{cashier.name}"
+     required="true">    
+     &lt;f:valueChangeListener type="listeners.NameChanged" />
+&lt;/h:inputText></pre><p><a name="indexterm-1160"></a><a name="indexterm-1161"></a>The <tt>type</tt> attribute specifies the custom <tt>NameChanged</tt> listener as the <tt>ValueChangeListener</tt> implementation to
+register on the <tt>name</tt> component.</p><p><a name="indexterm-1162"></a>After this component tag is processed and local values have been validated, its
+corresponding component instance will queue the <tt>ValueChangeEvent</tt> associated with the specified <tt>ValueChangeListener</tt> to
+the component.</p><p>The <tt>binding</tt> attribute is used to bind a <tt>ValueChangeListener</tt> implementation to a
+backing bean property. It works in a similar way to the <tt>binding</tt> attribute
+supported by the standard converter tags. <a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a> explains more about binding listeners to backing
+bean properties.</p>
+
+<a name="bnatb"></a><h4>Registering an Action Listener on a Component</h4>
+<a name="indexterm-1163"></a><a name="indexterm-1164"></a><a name="indexterm-1165"></a><p><a name="indexterm-1166"></a><a name="indexterm-1167"></a>A page author can register an <tt>ActionListener</tt> implementation on a <tt>UICommand</tt> component by
+nesting an <tt>actionListener</tt> tag within the component&rsquo;s tag on the page. Similarly
+to the <tt>valueChangeListener</tt> tag, the <tt>actionListener</tt> tag supports both the <tt>type</tt> and <tt>binding</tt> attributes. A
+page author must use one of these attributes to reference the action
+listener.</p><p><a name="indexterm-1168"></a>Duke&rsquo;s Bookstore does not use any <tt>ActionListener</tt> implementations. Here is one of the
+<tt>commandLink</tt> tags on the <tt>chooselocale.jsp</tt> page, changed to reference an <tt>ActionListener</tt> implementation rather than
+a backing bean method:</p><pre>&lt;h:commandLink id="NAmerica" action="bookstore">
+     &lt;f:actionListener type="listeners.LocaleChange" />
+&lt;/h:commandLink></pre><p>The <tt>type</tt> attribute of the <tt>actionListener</tt> tag specifies the fully qualified class name
+of the <tt>ActionListener</tt> implementation. Similarly to the <tt>valueChangeListener</tt> tag, the <tt>actionListener</tt> tag also
+supports the <tt>binding</tt> attribute. <a href="bnatm.html">Binding Converters, Listeners, and Validators to Backing Bean Properties</a> explains more about how to bind listeners
+to backing bean properties.</p><p><a name="indexterm-1169"></a><a name="indexterm-1170"></a><a name="indexterm-1171"></a>When this tag&rsquo;s component is activated, the component&rsquo;s <tt>decode</tt> method (or its associated <tt>Renderer</tt>)
+automatically queues the <tt>ActionEvent</tt> implementation associated with the specified <tt>ActionListener</tt> implementation onto
+the component.</p><p>In addition to the <tt>actionListener</tt> tag that allows you register a custom listener
+onto a component, the core tag library includes the <tt>setPropertyActionListener</tt> tag. You use
+this tag to register a special action listener onto the <tt>ActionSource</tt> instance associated with
+a component. When the component is activated, the listener will store the object
+referenced by the tag&rsquo;s value attribute into the object referenced by the tag&rsquo;s
+<tt>target</tt> attribute.</p><p>The <tt>bookcatalog.jsp</tt> page uses <tt>setPropertyActionListener</tt> with two components: the <tt>commandLink</tt> component used to
+link to the <tt>bookdetails.jsp</tt> page and the <tt>commandButton</tt> component used to add
+a book to the cart:</p><pre>&lt;c:forEach items="#{bookDBAO.books}" var="book"
+     varStatus="stat">
+    &lt;c:set var="book" scope="request" value="${book}"/>
+        ...
+    &lt;h:commandLink action="#{catalog.details}"
+        value="#{book.title}">
+        &lt;f:setPropertyActionListener
+             target="#{requestScope.book}" value="#{book}"/>
+    &lt;/h:commandLink>
+    ...
+    &lt;h:commandButton id="add"
+        action="#{catalog.add}" value="#{bundle.CartAdd}">
+        &lt;f:setPropertyActionListener
+             target="#{requestScope.book}" value="#{book}"/>
+    &lt;/h:commandButton>
+    &lt;c:remove var="book" scope="request"/>
+&lt;/c:forEach></pre><p>As shown in the preceding code, the <tt>commandLink</tt> and <tt>commandButton</tt> components are
+within a <tt>forEach</tt> tag, which iterates over the list of books. The <tt>var</tt>
+attribute refers to a single book in the list of books.</p><p>The object referenced by the <tt>var</tt> attribute of a <tt>forEach</tt> tag is
+in page scope. However, in this case, you need to put this object
+into request scope so that when the user activates the <tt>commandLink</tt> component
+to go to <tt>bookdetails.jsp</tt> or activates the <tt>commandButton</tt> component to go to <tt>bookcatalog.jsp</tt>,
+the book data is available to those pages. Therefore, the <tt>setPropertyActionListener</tt> tag
+is used to set the current <tt>book</tt> object into request scope when the
+<tt>commandLink</tt> or <tt>commandButton</tt> component is activated.</p><p>In the preceding example, the <tt>setPropertyActionListener</tt> tag&rsquo;s <tt>value</tt> attribute references the <tt>book</tt>
+object. The <tt>setPropertyActionListener</tt> tag&rsquo;s <tt>target</tt> attribute references the value expression <tt>requestScope.book</tt>, which is where
+the <tt>book</tt> object referenced by the <tt>value</tt> attribute is stored when the <tt>commandLink</tt>
+or the <tt>commandButton</tt> component is activated.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnast.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnatc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Types of Tags - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level3"><a href="bnalk.html">What Is a Custom Tag?</a></p>
+<p class="toc level3"><a href="bnall.html">The Example JSP Pages</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Types of Tags</a></p>
+<p class="toc level4"><a href="#bnalo">Tags with Attributes</a></p>
+<p class="toc level5"><a href="#bnalp">Simple Attributes</a></p>
+<p class="toc level5"><a href="#bnalq">Fragment Attributes</a></p>
+<p class="toc level5"><a href="#bnalr">Dynamic Attributes</a></p>
+<p class="toc level5"><a href="#bnals">Deferred Value</a></p>
+<p class="toc level5"><a href="#bnalt">Deferred Method</a></p>
+<p class="toc level5"><a href="#bnalu">Dynamic Attribute or Deferred Expression</a></p>
+<p class="toc level5"><a href="#bnalv"><tt>jsp:attribute</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="#bnalw">Tags with Bodies</a></p>
+<p class="toc level5"><a href="#bnalx"><tt>jsp:body</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="#bnaly">Tags That Define Variables</a></p>
+<p class="toc level4"><a href="#bnalz">Communication between Tags</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnama.html">Encapsulating Reusable Content Using Tag Files</a></p>
+<p class="toc level4"><a href="bnama.html#bnamb">Tag File Location</a></p>
+<p class="toc level4"><a href="bnama.html#bnamc">Tag File Directives</a></p>
+<p class="toc level5"><a href="bnama.html#bname">Declaring Tags</a></p>
+<p class="toc level5"><a href="bnama.html#bnamg">body-content Attribute</a></p>
+<p class="toc level5"><a href="bnama.html#bnamh">Declaring Tag Attributes in Tag Files</a></p>
+<p class="toc level5"><a href="bnama.html#bnamj">Declaring Tag Variables in Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnama.html#bnamo">Evaluating Fragments Passed to Tag Files</a></p>
+<p class="toc level4"><a href="bnama.html#bnamp">Custom Tag Examples</a></p>
+<p class="toc level5"><a href="bnama.html#bnamq">Simple Attribute Example</a></p>
+<p class="toc level5"><a href="bnama.html#bnamr">Simple and Fragment Attribute and Variable Example</a></p>
+<p class="toc level5"><a href="bnama.html#bnams">Dynamic Attribute Example</a></p>
+<p class="toc level3 tocsp"><a href="bnamu.html">Tag Library Descriptors</a></p>
+<p class="toc level4"><a href="bnamu.html#bnamw">Top-Level Tag Library Descriptor Elements</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamx"><tt>validator</tt> Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnamz"><tt>listener</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnana">Declaring Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanb"><tt>tag-file</tt> TLD Element</a></p>
+<p class="toc level5"><a href="bnamu.html#bnand">Unpackaged Tag Files</a></p>
+<p class="toc level5"><a href="bnamu.html#bnane">Packaged Tag Files</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnanf">Declaring Tag Handlers</a></p>
+<p class="toc level5"><a href="bnamu.html#bnanh"><tt>body-content</tt> Element</a></p>
+<p class="toc level4 tocsp"><a href="bnamu.html#bnani">Declaring Tag Attributes for Tag Handlers</a></p>
+<p class="toc level4"><a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a></p>
+<p class="toc level3 tocsp"><a href="bnann.html">Programming Simple Tag Handlers</a></p>
+<p class="toc level4"><a href="bnann.html#bnano">Including Tag Handlers in Web Applications</a></p>
+<p class="toc level4"><a href="bnann.html#bnanp">How Is a Simple Tag Handler Invoked?</a></p>
+<p class="toc level4"><a href="bnann.html#bnanq">Tag Handlers for Basic Tags</a></p>
+<p class="toc level4"><a href="bnann.html#bnanr">Tag Handlers for Tags with Attributes</a></p>
+<p class="toc level5"><a href="bnann.html#bnans">Defining Attributes in a Tag Handler</a></p>
+<p class="toc level5"><a href="bnann.html#bnant">Attribute Validation</a></p>
+<p class="toc level5"><a href="bnann.html#bnanu">Setting Dynamic Attributes</a></p>
+<p class="toc level5"><a href="bnann.html#bnanv">Setting Deferred Value Attributes and Deferred Method Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnanw">Tag Handlers for Tags with Bodies</a></p>
+<p class="toc level5"><a href="bnann.html#bnanx">Tag Handler Does Not Manipulate the Body</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnanz">Tag Handlers for Tags That Define Variables</a></p>
+<p class="toc level5"><a href="bnann.html#bnaob"><tt>TagExtraInfo</tt> Class</a></p>
+<p class="toc level4 tocsp"><a href="bnann.html#bnaoc">Cooperating Tags</a></p>
+<p class="toc level4"><a href="bnann.html#bnaod">Tag Handler Examples</a></p>
+<p class="toc level5"><a href="bnann.html#bnaoe">An Iteration Tag</a></p>
+<p class="toc level5"><a href="bnann.html#bnaoh">A Template Tag Library</a></p>
+<p class="toc level2 tocsp"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnall.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnama.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaln"></a><h3>Types of Tags</h3>
+<p>Simple tags are invoked using XML syntax. They have a start tag
+and an end tag, and possibly a body:</p><pre>&lt;tt:tag>
+    <i>body</i>&lt;/tt:tag></pre><p>A custom tag with no body is expressed as follows:</p><pre>&lt;tt:tag /> or &lt;tt:tag>&lt;/tt:tag></pre>
+
+<a name="bnalo"></a><h4>Tags with Attributes</h4>
+<p>A simple tag can have attributes. Attributes customize the behavior of a custom
+tag just as parameters customize the behavior of a method. There are three
+types of attributes:</p>
+<ul><li><p>Simple attributes</p></li>
+<li><p>Fragment attributes</p></li>
+<li><p>Dynamic attributes</p></li></ul>
+
+
+<a name="bnalp"></a><h5>Simple Attributes</h5>
+<p><a name="indexterm-517"></a>Simple attributes are evaluated by the container before being passed to the tag
+handler. Simple attributes are listed in the start tag and have the syntax
+<tt>attr="value"</tt>. You can set a simple attribute value from a <tt>String</tt> constant, or an
+expression language (EL) expression, or by using a <tt>jsp:attribute</tt> element (see <a href="#bnalv"><tt>jsp:attribute</tt> Element</a>). The
+conversion process between the constants and expressions and attribute types follows the rules described
+for JavaBeans component properties in <a href="bnair.html#bnaiu">Setting JavaBeans Component Properties</a>.</p><p>The Duke&rsquo;s Bookstore page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/bookcatalog.jsp</tt> calls the <tt>catalog</tt> tag, which has two
+attributes. The first attribute, a reference to a book database object, is set
+by an EL expression. The second attribute, which sets the color of the
+rows in a table that represents the bookstore catalog, is set with a
+<tt>String</tt> constant.</p><pre>&lt;sc:catalog bookDB ="${bookDB}" color="#cccccc"></pre>
+
+<a name="bnalq"></a><h5>Fragment Attributes</h5>
+<p><a name="indexterm-518"></a>A <b>JSP fragment</b> is a portion of JSP code passed to a tag
+handler that can be invoked as many times as needed. You can think
+of a fragment as a template that is used by a tag handler
+to produce customized content. Thus, unlike a simple attribute which is evaluated by
+the container, a fragment attribute is evaluated by a tag handler during tag
+invocation.</p><p><a name="indexterm-519"></a>To declare a fragment attribute, you use the <tt>fragment</tt> attribute of the <tt>attribute</tt>
+directive (see <a href="bnama.html#bnamh">Declaring Tag Attributes in Tag Files</a>) or use the <tt>fragment</tt> subelement of the <tt>attribute</tt> TLD element (see <a href="bnamu.html#bnani">Declaring Tag Attributes for Tag Handlers</a>). You
+define the value of a fragment attribute by using a <tt>jsp:attribute</tt> element. When
+used to specify a fragment attribute, the body of the <tt>jsp:attribute</tt> element
+can contain only static text and standard and custom tags; it <b>cannot</b> contain
+scripting elements (see <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a>).</p><p>JSP fragments can be parameterized by means of expression language (EL) variables in
+the JSP code that composes the fragment. The EL variables are set by
+the tag handler, thus allowing the handler to customize the fragment each time
+it is invoked (see <a href="bnama.html#bnamj">Declaring Tag Variables in Tag Files</a>, and <a href="bnamu.html#bnank">Declaring Tag Variables for Tag Handlers</a>).</p><p>The <tt>catalog</tt> tag discussed earlier accepts two fragments: <tt>normalPrice</tt>, which is displayed
+for a product that&rsquo;s full price, and <tt>onSale</tt>, which is displayed for a
+product that&rsquo;s on sale.</p><pre>&lt;sc:catalog bookDB ="${bookDB}" color="#cccccc">
+    &lt;jsp:attribute name="normalPrice">
+        &lt;fmt:formatNumber value="${price}" type="currency"/>
+  &lt;/jsp:attribute>
+    &lt;jsp:attribute name="onSale">
+        &lt;strike>&lt;fmt:formatNumber value="${price}"
+            type="currency"/>&lt;/strike>&lt;br/>
+        &lt;font color="red">&lt;fmt:formatNumber value="${salePrice}"
+            type="currency"/>&lt;/font>
+    &lt;/jsp:attribute>
+&lt;/sc:catalog></pre><p>The tag executes the <tt>normalPrice</tt> fragment, using the values for the <tt>price</tt> EL
+variable, if the product is full price. If the product is on sale,
+the tag executes the <tt>onSale</tt> fragment using the <tt>price</tt> and <tt>salePrice</tt> variables.</p>
+
+<a name="bnalr"></a><h5>Dynamic Attributes</h5>
+<p><a name="indexterm-520"></a>A <b>dynamic attribute</b> is an attribute that is not specified in the definition of
+the tag. Dynamic attributes are used primarily by tags whose attributes are treated
+in a uniform manner but whose names are not necessarily known at development
+time.</p><p>For example, this tag accepts an arbitrary number of attributes whose values are
+colors and outputs a bulleted list of the attributes colored according to the
+values:</p><pre>&lt;colored:colored color1="red" color2="yellow" color3="blue"/></pre><p>You can also set the value of dynamic attributes using an EL
+expression or using the <tt>jsp:attribute</tt> element.</p>
+
+<a name="bnals"></a><h5>Deferred Value</h5>
+<p>A <b>deferred value attribute</b> is one that accepts deferred value expressions, which are described in
+<a href="bnahq.html#bnahv">Value Expressions</a>.</p>
+
+<a name="bnalt"></a><h5>Deferred Method</h5>
+<p>A <b>deferred method attribute</b> is one that accepts deferred method expressions, which are described in
+<a href="bnahq.html#bnahz">Method Expressions</a>.</p>
+
+<a name="bnalu"></a><h5>Dynamic Attribute or Deferred Expression</h5>
+<p>This kind of attribute can accept a String literal, a scriptlet expression, or
+an EL expression, including deferred expressions.</p>
+
+<a name="bnalv"></a><h5><tt>jsp:attribute</tt> Element</h5>
+<p><a name="indexterm-521"></a>The <tt>jsp:attribute</tt> element allows you to define the value of a tag attribute
+in the <b>body</b> of an XML element instead of in the value of
+an XML attribute.</p><p>For example, the Duke&rsquo;s Bookstore template page <tt>screendefinitions.jsp</tt> uses <tt>jsp:attribute</tt> to use
+the output of <tt>fmt:message</tt> to set the value of the <tt>value</tt> attribute
+of <tt>tt:parameter</tt>:</p><pre>...
+&lt;tt:screen id="/bookcatalog">
+    &lt;tt:parameter name="title" direct="true">
+        &lt;jsp:attribute name="value" >
+            &lt;fmt:message key="TitleBookCatalog"/>
+        &lt;/jsp:attribute>
+    &lt;/tt:parameter>
+    &lt;tt:parameter name="banner" value="/template/banner.jsp"
+        direct="false"/>
+    &lt;tt:parameter name="body" value="/bookcatalog.jsp"
+        direct="false"/>
+&lt;/tt:screen>
+...</pre><p><tt>jsp:attribute</tt> accepts a <tt>name</tt> attribute and a <tt>trim</tt> attribute. The <tt>name</tt> attribute identifies which
+tag attribute is being specified. The optional <tt>trim</tt> attribute determines whether or not
+white space appearing at the beginning and end of the element body should
+be discarded. By default, the leading and trailing white space is discarded. The
+white space is trimmed when the JSP page is translated. If a body
+contains a custom tag that produces leading or trailing white space, that white
+space is preserved regardless of the value of the <tt>trim</tt> attribute.</p><p>An empty body is equivalent to specifying <tt>""</tt> as the value of the
+attribute.</p><p><a name="indexterm-522"></a>The body of <tt>jsp:attribute</tt> is restricted according to the type of attribute being
+specified:</p>
+<ul><li><p>For simple attributes that accept an EL expression, the body can be any JSP content.</p></li>
+<li><p>For simple attributes that do not accept an EL expression, the body can contain only static text.</p></li>
+<li><p>For fragment attributes, the body must not contain any scripting elements (see <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a>).</p></li></ul>
+
+
+<a name="bnalw"></a><h4>Tags with Bodies</h4>
+<p><a name="indexterm-523"></a>A simple tag can contain custom and core tags, HTML text, and tag-dependent
+body content between the start tag and the end tag.</p><p>In the following example, the Duke&rsquo;s Bookstore application page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/bookshowcart.jsp</tt> uses the
+JSTL <tt>c:if</tt> tag to print the body if the request contains a parameter
+named <tt>Clear</tt>:</p><pre>&lt;c:if test="${param.Clear}">
+    &lt;font color="#ff0000" size="+2">&lt;strong>
+     You just cleared your shopping cart!
+     &lt;/strong>&lt;br>&amp;nbsp;&lt;br>&lt;/font>
+&lt;/c:if></pre>
+
+<a name="bnalx"></a><h5><tt>jsp:body</tt> Element</h5>
+<p><a name="indexterm-524"></a><a name="indexterm-525"></a>You can also explicitly specify the body of a simple tag by using
+the <tt>jsp:body</tt> element. If one or more attributes are specified with the <tt>jsp:attribute</tt>
+element, then <tt>jsp:body</tt> is the only way to specify the body of
+the tag. If one or more <tt>jsp:attribute</tt> elements appear in the body
+of a tag invocation but you don&rsquo;t include a <tt>jsp:body</tt> element, the tag
+has an empty body.</p>
+
+<a name="bnaly"></a><h4>Tags That Define Variables</h4>
+<p><a name="indexterm-526"></a>A simple tag can define an EL variable that can be used within
+the calling page. In the following example, the <tt>iterator</tt> tag sets the value
+of the EL variable <tt>departmentName</tt> as it iterates through a collection of department names.</p><pre>&lt;tlt:iterator var="departmentName" type="java.lang.String"
+        group="${myorg.departmentNames}">
+    &lt;tr>
+        &lt;td>&lt;a href="list.jsp?deptName=${departmentName}">
+            ${departmentName}&lt;/a>&lt;/td>
+    &lt;/tr>
+&lt;/tlt:iterator></pre>
+
+<a name="bnalz"></a><h4>Communication between Tags</h4>
+<p><a name="indexterm-527"></a>Custom tags communicate with each other through shared objects. There are two types
+of shared objects: public and private.</p><p>In the following example, the <tt>c:set</tt> tag creates a public EL variable called
+<tt>aVariable</tt>, which is then reused by <tt>anotherTag</tt>.</p><pre>&lt;c:set var="aVariable" value="aValue" />
+&lt;tt:anotherTag attr1="${aVariable}" /></pre><p>Nested tags can share private objects. In the next example, an object created
+by <tt>outerTag</tt> is available to <tt>innerTag</tt>. The inner tag retrieves its parent tag
+and then retrieves an object from the parent. Because the object is not
+named, the potential for naming conflicts is reduced.</p><pre>&lt;tt:outerTag>
+    &lt;tt:innerTag />
+&lt;/tt:outerTag></pre><p>The Duke&rsquo;s Bookstore page <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore3/web/template/template.jsp</tt> uses a set of cooperating tags that
+share public and private objects to define the screens of the application. These
+tags are described in <a href="bnann.html#bnaoh">A Template Tag Library</a>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnall.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnama.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Security Implementation Mechanisms - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level3"><a href="bnbwk.html">Overview of Java EE Security</a></p>
+<p class="toc level4"><a href="bnbwk.html#bnbwl">A Simple Security Example</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwm">Step 1: Initial Request</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwo">Step 2: Initial Authentication</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwq">Step 3: URL Authorization</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbws">Step 4: Fulfilling the Original Request</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwu">Step 5: Invoking Enterprise Bean Business Methods</a></p>
+<p class="toc level4 tocsp"><a href="bnbwk.html#bnbww">Security Functions</a></p>
+<p class="toc level4"><a href="bnbwk.html#bnbwx">Characteristics of Application Security</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Security Implementation Mechanisms</a></p>
+<p class="toc level4"><a href="#bnbwz">Java SE Security Implementation Mechanisms</a></p>
+<p class="toc level4"><a href="#bnbxa">Java EE Security Implementation Mechanisms</a></p>
+<p class="toc level5"><a href="#bnbxb">Application-Layer Security</a></p>
+<p class="toc level5"><a href="#bnbxc">Transport-Layer Security</a></p>
+<p class="toc level5"><a href="#bnbxd">Message-Layer Security</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbxe.html">Securing Containers</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxf">Using Deployment Descriptors for Declarative Security</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxg">Using Annotations</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxh">Using Programmatic Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxi.html">Securing the Application Server</a></p>
+<p class="toc level3"><a href="bnbxj.html">Working with Realms, Users, Groups, and Roles</a></p>
+<p class="toc level4"><a href="bnbxj.html#bnbxk">What Are Realms, Users, Groups, and Roles?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxm">What Is a Realm?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxn">What Is a User?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxo">What Is a Group?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxp">What Is a Role?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxq">Some Other Terminology</a></p>
+<p class="toc level4 tocsp"><a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxs">Adding Users to the Application Server</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxt">Adding Users to the Certificate Realm</a></p>
+<p class="toc level4 tocsp"><a href="bnbxj.html#bnbxu">Setting Up Security Roles</a></p>
+<p class="toc level4"><a href="bnbxj.html#bnbxv">Mapping Roles to Users and Groups</a></p>
+<p class="toc level3 tocsp"><a href="bnbxw.html">Establishing a Secure Connection Using SSL</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxx">Installing and Configuring SSL Support</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxy">Specifying a Secure Connection in Your Application Deployment Descriptor</a></p>
+<p class="toc level4"><a href="bnbxw.html#bnbxz">Verifying SSL Support</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbya">Tips on Running SSL</a></p>
+<p class="toc level4 tocsp"><a href="bnbxw.html#bnbyb">Working with Digital Certificates</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyc">Creating a Server Certificate</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyd">Signing Digital Certificates</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyf">Using a Different Server Certificate with the Application Server</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyg">Miscellaneous Commands for Certificates</a></p>
+<p class="toc level4 tocsp"><a href="bnbxw.html#bnbyh">Enabling Mutual Authentication over SSL</a></p>
+<p class="toc level5"><a href="bnbxw.html#bnbyi">Creating a Client Certificate for Mutual Authentication</a></p>
+<p class="toc level3 tocsp"><a href="bnbyj.html">Further Information about Security</a></p>
+<p class="toc level2 tocsp"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbwk.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbxe.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbwy"></a><h3>Security Implementation Mechanisms</h3>
+<a name="indexterm-2411"></a><p>The characteristics of an application should be considered when deciding the layer and
+type of security to be provided for applications. The following sections discuss the
+characteristics of the common mechanisms that can be used to secure Java EE
+applications. Each of these mechanisms can be used individually or with others to
+provide protection layers based on the specific needs of your implementation.</p>
+
+<a name="bnbwz"></a><h4>Java SE Security Implementation Mechanisms</h4>
+<a name="indexterm-2412"></a><p>Java SE provides support for a variety of security features and mechanisms, including:</p>
+<ul><li><p><a name="indexterm-2413"></a><a name="indexterm-2414"></a><b>Java Authentication and Authorization Service (JAAS)</b>: JAAS is a set of APIs that enable services to authenticate and enforce access controls upon users. JAAS provides a pluggable and extensible framework for programmatic user authentication and authorization. JAAS is a core Java SE API and is an underlying technology for Java EE security mechanisms.</p></li>
+<li><p><a name="indexterm-2415"></a><a name="indexterm-2416"></a><a name="indexterm-2417"></a><b>Java Generic Security Services (Java GSS-API)</b>: Java GSS-API is a token-based API used to securely exchange messages between communicating applications. The GSS-API offers application programmers uniform access to security services atop a variety of underlying security mechanisms, including Kerberos.</p></li>
+<li><p><a name="indexterm-2418"></a><a name="indexterm-2419"></a><b>Java Cryptography Extension (JCE)</b>: JCE provides a framework and implementations for encryption, key generation and key agreement, and Message Authentication Code (MAC) algorithms. Support for encryption includes symmetric, asymmetric, block, and stream ciphers. Block ciphers operate on groups of bytes while stream ciphers operate on one byte at a time. The software also supports secure streams and sealed objects.</p></li>
+<li><p><a name="indexterm-2420"></a><a name="indexterm-2421"></a><b>Java Secure Sockets Extension (JSSE)</b>: JSSE provides a framework and an implementation for a Java version of the SSL and TLS protocols and includes functionality for data encryption, server authentication, message integrity, and optional client authentication to enable secure Internet communications.</p></li>
+<li><p><a name="indexterm-2422"></a><a name="indexterm-2423"></a><b>Simple Authentication and Security Layer (SASL)</b>: SASL is an Internet standard (RFC 2222) that specifies a protocol for authentication and optional establishment of a security layer between client and server applications. SASL defines how authentication data is to be exchanged but does not itself specify the contents of that data. It is a framework into which specific authentication mechanisms that specify the contents and semantics of the authentication data can fit.</p></li></ul>
+<p><a name="indexterm-2424"></a><a name="indexterm-2425"></a><a name="indexterm-2426"></a><a name="indexterm-2427"></a><a name="indexterm-2428"></a>Java SE also provides a set of tools for managing keystores, certificates, and
+policy files; generating and verifying JAR signatures; and obtaining, listing, and managing Kerberos
+tickets.</p><p>For more information on Java SE security, visit its web page at
+<a href="http://java.sun.com/javase/6/docs/technotes/guides/security/">http://java.sun.com/javase/6/docs/technotes/guides/security/</a>.</p>
+
+<a name="bnbxa"></a><h4>Java EE Security Implementation Mechanisms</h4>
+<a name="indexterm-2429"></a><p>Java EE security services are provided by the component container and can be
+implemented using declarative or programmatic techniques (container security is discussed more in <a href="bnbxe.html">Securing Containers</a>). Java
+EE security services provide a robust and easily configured security mechanism for authenticating
+users and authorizing access to application functions and associated data at many different
+layers. Java EE security services are separate from the security mechanisms of the
+operating system.</p>
+
+<a name="bnbxb"></a><h5>Application-Layer Security</h5>
+<a name="indexterm-2430"></a><a name="indexterm-2431"></a><p>In Java EE, component containers are responsible for providing application-layer security. Application-layer security
+provides security services for a specific application type tailored to the needs of
+the application. At the application layer, application firewalls can be employed to enhance
+application protection by protecting the communication stream and all associated application resources from attacks.</p><p>Java EE security is easy to implement and configure, and can offer
+fine-grained access control to application functions and data. However, as is inherent to security
+applied at the application layer, security properties are not transferable to applications running
+in other environments and only protect data while it is residing in the
+application environment. In the context of a traditional application, this is not necessarily
+a problem, but when applied to a web services application, where data often
+travels across several intermediaries, you would need to use the Java EE security
+mechanisms along with transport-layer security and message-layer security for a complete security solution.</p><p>The advantages of using application-layer security include the following:</p>
+<ul><li><p>Security is uniquely suited to the needs of the application.</p></li>
+<li><p>Security is fine-grained, with application-specific settings.</p></li></ul>
+<p>The disadvantages of using application-layer security include the following:</p>
+<ul><li><p>The application is dependent on security attributes that are not transferable between application types.</p></li>
+<li><p>Support for multiple protocols makes this type of security vulnerable. </p></li>
+<li><p>Data is close to or contained within the point of vulnerability.</p></li></ul>
+<p>For more information on providing security at the application layer, read <a href="bnbxe.html">Securing Containers</a>.</p>
+
+<a name="bnbxc"></a><h5>Transport-Layer Security</h5>
+<a name="indexterm-2432"></a><a name="indexterm-2433"></a><p><a name="indexterm-2434"></a><a name="indexterm-2435"></a>Transport-layer security is provided by the transport mechanisms used to transmit information over
+the wire between clients and providers, thus transport-layer security relies on secure HTTP
+transport (HTTPS) using Secure Sockets Layer (SSL). Transport security is a point-to-point security mechanism
+that can be used for authentication, message integrity, and confidentiality. When running over
+an SSL-protected session, the server and client can authenticate one another and negotiate
+an encryption algorithm and cryptographic keys before the application protocol transmits or receives
+its first byte of data. Security is &ldquo;live&rdquo; from the time it leaves
+the consumer until it arrives at the provider, or vice versa, even across
+intermediaries. The problem is that it is not protected once it gets to
+its destination. One solution is to encrypt the message before sending.</p><p>Transport-layer security is performed in a series of phases, which are listed here:</p>
+<ul><li><p>The client and server agree on an appropriate algorithm.</p></li>
+<li><p>A key is exchanged using public-key encryption and certificate-based authentication.</p></li>
+<li><p>A symmetric cipher is used during the information exchange.</p></li></ul>
+<p><a name="indexterm-2436"></a>Digital certificates are necessary when running secure HTTP transport (HTTPS) using Secure Sockets
+Layer (SSL). The HTTPS service of most web servers will not run unless
+a digital certificate has been installed. Digital certificates have already been created for
+the Application Server. If you are using a different server, use the procedure
+outlined in <a href="bnbxw.html#bnbyb">Working with Digital Certificates</a> to set up a digital certificate that can be
+used by your web or application server to enable SSL.</p><p>The advantages of using transport-layer security include the following:</p>
+<ul><li><p>Relatively simple, well understood, standard technology.</p></li>
+<li><p>Applies to message body and attachments.</p></li></ul>
+<p>The disadvantages of using transport-layer security include the following:</p>
+<ul><li><p>Tightly-coupled with transport-layer protocol.</p></li>
+<li><p>All or nothing approach to security. This implies that the security mechanism is unaware of message contents, and as such, you cannot selectively apply security to portions of the message as you can with message-layer security.</p></li>
+<li><p>Protection is transient. The message is only protected while in transit. Protection is removed automatically by the endpoint when it receives the message.</p></li>
+<li><p>Not an end-to-end solution, simply point-to-point.</p></li></ul>
+<p>For more information on transport-layer security, read <a href="bnbxw.html">Establishing a Secure Connection Using SSL</a>.</p>
+
+<a name="bnbxd"></a><h5>Message-Layer Security</h5>
+<a name="indexterm-2437"></a><a name="indexterm-2438"></a><a name="indexterm-2439"></a><a name="indexterm-2440"></a><a name="indexterm-2441"></a><p>In message-layer security, security information is contained within the SOAP message and/or SOAP
+message attachment, which allows security information to travel along with the message or
+attachment. For example, a portion of the message may be signed by a
+sender and encrypted for a particular receiver. When the message is sent from
+the initial sender, it may pass through intermediate nodes before reaching its intended
+receiver. In this scenario, the encrypted portions continue to be opaque to any
+intermediate nodes and can only be decrypted by the intended receiver. For this
+reason, message-layer security is also sometimes referred to as <b>end-to-end security</b>.</p><p>The advantages of message-layer security include the following:</p>
+<ul><li><p>Security stays with the message over all hops and after the message arrives at its destination.</p></li>
+<li><p>Security can be selectively applied to different portions of a message (and to attachments if using XWSS).</p></li>
+<li><p>Message security can be used with intermediaries over multiple hops.</p></li>
+<li><p>Message security is independent of the application environment or transport protocol.</p></li></ul>
+<p>The disadvantage of using message-layer security is that it is relatively complex and
+adds some overhead to processing.</p><p>The Application Server supports message security. It uses Web Services Security (WSS) to
+secure messages. Because this message security is specific to the Application Server and
+not a part of the Java EE platform, this tutorial does not
+discuss using WSS to secure messages. See the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a> and <a href="http://docs.sun.com/doc/819-3672"><i>Sun Java System Application Server 9.1 Developer&rsquo;s Guide</i></a> for more
+information.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbwk.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbxe.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

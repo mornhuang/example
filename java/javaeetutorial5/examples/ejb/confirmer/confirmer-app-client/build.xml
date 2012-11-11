@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="confirmer-app-client" default="default" basedir=".">
+    <description>Builds, tests, and runs the project confirmer-app-client.</description>
+
+    <property name="is.app-client.module" value="true"/>
+    
+    <path id="common.jars">
+        <filelist dir="../confirmer-ejb" files="build.xml"/>
+    </path>
+
+    <macrodef name="iterate">
+        <attribute name="target"/>
+        <sequential>
+            <subant target="@{target}" failonerror="false">
+                <buildpath refid="common.jars"/>
+            </subant>
+        </sequential>
+    </macrodef>
+
+    <import file="../../../bp-project/main.xml"/>
+
+    <target name="-pre-init" if="debug">
+        <echo message="---------------------------------------------------"/>
+        <echo message="Classpath info"/>
+        <echo message="---------------------------------------------------"/>
+        <property name="cp" refid="classpath"/>
+        <echo message="Classpath is ${cp}"/>
+        <echo message="---------------------------------------------------"/>
+        <echo message="Project properties"/>
+        <echo message="---------------------------------------------------"/>
+        <echoproperties/>
+    </target>
+    
+     <target name="-pre-compile" unless="netbeans.home" depends="build-common"/>
+     
+     <target name="build-common" unless="netbeans.home" depends="init">
+         <iterate target="default"/>
+     </target>
+
+</project>

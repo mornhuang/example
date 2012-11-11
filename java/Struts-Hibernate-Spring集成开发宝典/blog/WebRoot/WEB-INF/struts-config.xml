@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="logonForm" type="cn.hxex.blog.struts.form.LogonForm" />
+		<form-bean name="registForm" type="cn.hxex.blog.struts.form.RegistForm" />
+		<form-bean name="messageForm" type="cn.hxex.blog.struts.form.MessageForm" />
+		<form-bean name="blogForm" type="cn.hxex.blog.struts.form.BlogForm" />
+		<form-bean name="idForm" type="cn.hxex.blog.struts.form.IdForm" />
+		<form-bean name="replyForm" type="cn.hxex.blog.struts.form.ReplyForm" />
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards>
+    <forward name="homepage" path="/homepage.do" />
+		
+		
+	</global-forwards>
+
+	<action-mappings>
+		<action attribute="logonForm" input="/index.jsp" name="logonForm" path="/logon" scope="request" type="cn.hxex.blog.struts.action.LogonAction" >
+      
+		</action>
+
+		<action
+      attribute="registForm"
+      input="/regist.jsp"
+      name="registForm"
+      path="/regist"
+      scope="request"
+      type="cn.hxex.blog.struts.action.RegistAction">
+      <exception
+        key="error.user.duplicate"
+        path="/regist.jsp"
+        type="cn.hxex.blog.exception.BlogDAOException" />
+      
+    </action>
+		<action
+      forward="/regist.jsp"
+      input="/index.jsp"
+      path="/registInput" />
+		<action
+      path="/homepage"
+      type="cn.hxex.blog.struts.action.HomepageAction"
+      validate="false" >
+      <forward name="homepage" path="/homepage.jsp" />
+		</action>
+
+		<action forward="/message_add.jsp" path="/messageAdd" />
+		<action attribute="messageForm" input="/message_add.jsp" name="messageForm" path="/messageSave" scope="request" type="cn.hxex.blog.struts.action.MessageSaveAction" />
+		<action
+      attribute="blogForm"
+      name="blogForm"
+      path="/blog"
+      scope="request"
+      type="cn.hxex.blog.struts.action.BlogAction" >
+      <forward name="blog" path="/blog.jsp" />
+		</action>
+
+		<action
+      attribute="idForm"
+      input="/blog.do"
+      name="idForm"
+      path="/replyAdd"
+      scope="request"
+      type="cn.hxex.blog.struts.action.ReplyAddAction" >
+      <forward name="reply" path="/reply.jsp" />
+		</action>
+
+		<action attribute="replyForm" input="/reply.jsp" name="replyForm" path="/replySave" scope="request" type="cn.hxex.blog.struts.action.ReplySaveAction" >
+      <forward name="blog" path="/blog.do" />
+		</action>
+
+		<action
+      attribute="idForm"
+      input="/homepage.do"
+      name="idForm"
+      path="/replyDelete"
+      scope="request"
+      type="cn.hxex.blog.struts.action.ReplyDeleteAction" />
+
+		<action
+      attribute="idForm"
+      input="/homepage.do"
+      name="idForm"
+      path="/messageUpdate"
+      scope="request"
+      type="cn.hxex.blog.struts.action.MessageUpdateAction" >
+      <forward name="messageupdate" path="/message_update.jsp" />
+		</action>
+
+		<action
+      attribute="messageForm"
+      input="/message_update.jsp"
+      name="messageForm"
+      path="/messageSaveUpdate"
+      scope="request"
+      type="cn.hxex.blog.struts.action.MessageSaveUpdateAction" />
+		<action
+      attribute="idForm"
+      input="/homepage.do"
+      name="idForm"
+      path="/messageDelete"
+      scope="request"
+      type="cn.hxex.blog.struts.action.MessageDeleteAction" />
+
+	</action-mappings>
+
+	<controller>
+		<set-property  property="processorClass"
+			value="cn.hxex.blog.struts.ext.BlogRequestProcessor"/>
+	</controller>
+
+	<message-resources parameter="cn.hxex.blog.struts.ApplicationResources" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>
+

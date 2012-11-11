@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# 设定 Java 解译器安装的路径
+JAVA="/usr/local/java/bin/java"
+# 使用 Sun 的 XML parser ：
+PARSER="com.sun.xml.parser.Parser"
+# 如要使用 IBM xml4j 2.x ：
+#PARSER="com.ibm.xml.parsers.SAXParser"
+# 您也可以在此设定 CLASSPATH ：
+# export CLASSPATH="$CLASSPATH:/path/to/xml.jar:/path/to/xt.jar"
+
+$JAVA -Dcom.jclark.xsl.sax.parser=$PARSER com.jclark.xsl.sax.Driver $*

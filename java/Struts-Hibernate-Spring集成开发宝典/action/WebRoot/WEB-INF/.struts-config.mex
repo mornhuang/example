@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/saveToken.do" location="52,49" dimension="310,84" />
+  <StrutsActivity path="/checkToken.do" location="55,250" dimension="316,84" />
+  <StrutsActivity path="/outputXML.do" location="57,491" dimension="310,84" />
+  <StrutsActivity path="/upload.do" location="480,112" dimension="292,84" />
+  <StrutsActivity path="/download.do" location="449,327" dimension="347,84" />
+  <StrutsActivity path="/open.do" location="448,450" dimension="349,84" />
+  <StrutsActivity path="/token.jsp" location="268,178" dimension="100,48" />
+  <StrutsActivity path="/tokenfailed.jsp" location="222,386" dimension="136,48" />
+  <StrutsActivity path="/tokensaved.jsp" location="67,385" dimension="130,48" />
+  <StrutsActivity path="/download.jsp" location="570,244" dimension="118,48" />
+  <StrutsActivity path="/upload.jsp" location="574,5" dimension="106,48" />
+  <StrutsTransition id="/upload.do,download,/download.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="626,196" />
+      <AbsolutePoint location="626,244" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/saveToken.do,display,/token.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="283,133" />
+      <AbsolutePoint location="283,178" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/upload.jsp,null,/upload.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="627,53" />
+      <AbsolutePoint location="627,112" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/saveToken.do,null,/checkToken.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="207,133" />
+      <AbsolutePoint location="207,250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/checkToken.do,success,/tokensaved.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="182,334" />
+      <AbsolutePoint location="182,385" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/checkToken.do,failed,/tokenfailed.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="237,334" />
+      <AbsolutePoint location="237,386" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

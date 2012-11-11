@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="anotherBean" class="cn.hxex.springcore.injection.AnotherBean"/>
+	<bean id="yetAnotherBean" class="cn.hxex.springcore.injection.YetAnotherBean"/>
+	
+	<!--  基于构造方法的依赖注入 -->
+	<bean id="constructInjectionBean" class="cn.hxex.springcore.injection.ConstructInjectionBean">
+		<!-- 使用ref标签来指定被注入的参数 -->
+		<constructor-arg><ref bean="anotherBean"/></constructor-arg>
+		<!-- 使用ref属性来指定被注入的参数 -->
+		<constructor-arg ref="yetAnotherBean"/>
+		<!-- 直接定义常量来作为被注入的参数 -->
+		<constructor-arg type="int" value="1"/>
+	</bean>
+
+	<!-- 基于Setter的依赖注入 -->
+	<bean id="setterInjectionBean" class="cn.hxex.springcore.injection.SetterInjectionBean">
+		<!-- 通过ref元素实现setter方式的依赖注入的配置 -->
+		<property name="anotherBean"><ref bean="anotherBean"/></property>
+		<!-- 通过ref属性来实现setter方式的依赖注入的配置 -->
+		<property name="yetAnotherBean" ref="yetAnotherBean"/>
+		<!-- 通过value属性来直接定义注入的值 -->
+		<property name="i" value="1"/>
+	</bean>
+	
+</beans>

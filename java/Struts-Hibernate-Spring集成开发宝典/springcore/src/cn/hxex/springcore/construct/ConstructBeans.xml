@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<!--  使用构造方法创建Bean的实例 -->
+	<bean id="constructBean" 
+		class="cn.hxex.springcore.construct.ConstructBean" />
+
+	<!--  使用静态工厂类创建Bean的实例 -->
+	<bean id="staticFactoryBean" 
+		class="cn.hxex.springcore.construct.StaticFactory" 
+		factory-method="getStaticFactoryBeanInstance" />
+
+	<!--  使用实例化工厂方法创建Bean的实例 -->
+	<bean id="dynamicFactory" 
+		class="cn.hxex.springcore.construct.DynamicFactory" />
+	<bean id="dynamicFactoryBean" 
+		factory-bean="dynamicFactory" 
+		factory-method="getDynamicFactoryBeanInstance"/>
+
+
+</beans>

@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Sharing Information - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level3"><a href="bnafe.html">What Is a Servlet?</a></p>
+<p class="toc level3"><a href="bnaff.html">The Example Servlets</a></p>
+<p class="toc level4"><a href="bnaff.html#bnafh">Troubleshooting Duke's Bookstore Database Problems</a></p>
+<p class="toc level3 tocsp"><a href="bnafi.html">Servlet Life Cycle</a></p>
+<p class="toc level4"><a href="bnafi.html#bnafj">Handling Servlet Life-Cycle Events</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafk">Defining the Listener Class</a></p>
+<p class="toc level5"><a href="bnafi.html#bnafm">Specifying Event Listener Classes</a></p>
+<p class="toc level4 tocsp"><a href="bnafi.html#bnafn">Handling Servlet Errors</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Sharing Information</a></p>
+<p class="toc level4"><a href="#bnafp">Using Scope Objects</a></p>
+<p class="toc level4"><a href="#bnafs">Controlling Concurrent Access to Shared Resources</a></p>
+<p class="toc level4"><a href="#bnaft">Accessing Databases</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnafu.html">Initializing a Servlet</a></p>
+<p class="toc level3"><a href="bnafv.html">Writing Service Methods</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafw">Getting Information from Requests</a></p>
+<p class="toc level4"><a href="bnafv.html#bnafz">Constructing Responses</a></p>
+<p class="toc level3 tocsp"><a href="bnagb.html">Filtering Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagc">Programming Filters</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagd">Programming Customized Requests and Responses</a></p>
+<p class="toc level4"><a href="bnagb.html#bnagf">Specifying Filter Mappings</a></p>
+<p class="toc level3 tocsp"><a href="bnagi.html">Invoking Other Web Resources</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagj">Including Other Resources in the Response</a></p>
+<p class="toc level4"><a href="bnagi.html#bnagk">Transferring Control to Another Web Component</a></p>
+<p class="toc level3 tocsp"><a href="bnagl.html">Accessing the Web Context</a></p>
+<p class="toc level3"><a href="bnagm.html">Maintaining Client State</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagn">Accessing a Session</a></p>
+<p class="toc level4"><a href="bnagm.html#bnago">Associating Objects with a Session</a></p>
+<p class="toc level5"><a href="bnagm.html#bnagp">Notifying Objects That Are Associated with a Session</a></p>
+<p class="toc level4 tocsp"><a href="bnagm.html#bnagq">Session Management</a></p>
+<p class="toc level4"><a href="bnagm.html#bnagr">Session Tracking</a></p>
+<p class="toc level3 tocsp"><a href="bnags.html">Finalizing a Servlet</a></p>
+<p class="toc level4"><a href="bnags.html#bnagt">Tracking Service Requests</a></p>
+<p class="toc level4"><a href="bnags.html#bnagu">Notifying Methods to Shut Down</a></p>
+<p class="toc level4"><a href="bnags.html#bnagv">Creating Polite Long-Running Methods</a></p>
+<p class="toc level3 tocsp"><a href="bnagw.html">Further Information about Java Servlet Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnafi.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnafu.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnafo"></a><h3>Sharing Information</h3>
+<p><a name="indexterm-220"></a>Web components, like most objects, usually work with other objects to accomplish their
+tasks. There are several ways they can do this. They can use private
+helper objects (for example, JavaBeans components), they can share objects that are attributes
+of a public scope, they can use a database, and they can invoke
+other web resources. The Java Servlet technology mechanisms that allow a web component
+to invoke other web resources are described in <a href="bnagi.html">Invoking Other Web Resources</a>.</p>
+
+<a name="bnafp"></a><h4>Using Scope Objects</h4>
+<p><a name="indexterm-221"></a>Collaborating web components share information by means of objects that are maintained as
+attributes of four scope objects. You access these attributes using the <tt>[get|set]Attribute</tt> methods
+of the class representing the scope. <a href="#bnafq">Table&nbsp;4-3</a> lists the scope objects.</p><a name="bnafq"></a><h6>Table&nbsp;4-3 Scope Objects</h6><table><col width="15%"><col width="29%"><col width="55%"><tr><th align="left" valign="top" scope="column"><p>Scope Object</p></th>
+<th align="left" valign="top" scope="column"><p>Class</p></th>
+<th align="left" valign="top" scope="column"><p>Accessible From</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Web context</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletContext.html">javax.servlet.ServletContext</a></p></td>
+<td align="left" valign="top" scope="row"><p>Web
+components within a web context. See <a href="bnagl.html">Accessing the Web Context</a>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Session</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/http/HttpSession.html">javax.servlet.http.HttpSession</a></p></td>
+<td align="left" valign="top" scope="row"><p>Web components handling a request that
+belongs to the session. See <a href="bnagm.html">Maintaining Client State</a>.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Request</p></td>
+<td align="left" valign="top" scope="row"><p>subtype of <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletRequest.html">javax.servlet.ServletRequest</a></p></td>
+<td align="left" valign="top" scope="row"><p>Web components handling the request.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Page</p></td>
+<td align="left" valign="top" scope="row"><p><a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/jsp/JspContext.html">javax.servlet.jsp.JspContext</a></p></td>
+<td align="left" valign="top" scope="row"><p>The
+JSP page that creates the object. See <a href="bnahl.html#bnahn">Using Implicit Objects</a>.</p></td>
+</tr>
+</table><p><a href="#bnafr">Figure&nbsp;4-1</a> shows the scoped attributes maintained by the Duke&rsquo;s Bookstore application.</p><a name="bnafr"></a><h6>Figure&nbsp;4-1 Duke&rsquo;s Bookstore Scoped Attributes</h6><img src="figures/web-scopedAttributes.gif" alt="Diagram of Duke's Bookstore scoped attributes. Session attributes are currency and cart, web context attributes are hitCounter, bookDB, orderCounter."></img>
+
+<a name="bnafs"></a><h4>Controlling Concurrent Access to Shared Resources</h4>
+<p><a name="indexterm-222"></a>In a multithreaded server, it is possible for shared resources to be accessed
+concurrently. In addition to scope object attributes, shared resources include in-memory data (such
+as instance or class variables) and external objects such as files, database connections, and
+network connections. </p><p>Concurrent access can arise in several situations:</p>
+<ul><li><p>Multiple web components accessing objects stored in the web context.</p></li>
+<li><p>Multiple web components accessing objects stored in a session.</p></li>
+<li><p><a name="indexterm-223"></a>Multiple threads within a web component accessing instance variables. A web container will typically create a thread to handle each request. If you want to ensure that a servlet instance handles only one request at a time, a servlet can implement the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/SingleThreadModel.html">SingleThreadModel</a> interface. If a servlet implements this interface, you are guaranteed that no two threads will execute concurrently in the servlet&rsquo;s service method. A web container can implement this guarantee by synchronizing access to a single instance of the servlet, or by maintaining a pool of web component instances and dispatching each new request to a free instance. This interface does not prevent synchronization problems that result from web components accessing shared resources such as static class variables or external objects. In addition, the Servlet 2.4 specification deprecates the <tt>SingleThreadModel</tt> interface.</p></li></ul>
+<p>When resources can be accessed concurrently, they can be used in an inconsistent
+fashion. To prevent this, you must control the access using the synchronization techniques
+described in the <a href="http://java.sun.com/docs/books/tutorial/essential/concurrency/index.html">Threads</a> lesson in <a href="http://java.sun.com/docs/books/tutorial/"><i>The Java Tutorial, Fourth Edition</i></a>, by Sharon Zakhour et al. (Addison-Wesley,
+2006).</p><p>The preceding section showed five scoped attributes shared by more than one servlet:
+<tt>bookDB</tt>, <tt>cart</tt>, <tt>currency</tt>, <tt>hitCounter</tt>, and <tt>orderCounter</tt>. The <tt>bookDB</tt> attribute is discussed in the
+next section. The cart, currency, and counters can be set and read by
+multiple multithreaded servlets. To prevent these objects from being used inconsistently, access is controlled
+by synchronized methods. For example, here is the <tt>Counter</tt> class, located at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/src/java/com/sun/bookstore1/util/</tt>:</p><pre>public class Counter {
+    private int counter;
+    public Counter() {
+        counter = 0;
+    }
+    public synchronized int getCounter() {
+        return counter;
+    }
+    public synchronized int setCounter(int c) {
+        counter = c;
+        return counter;
+    }
+    public synchronized int incCounter() {
+        return(++counter);
+    }
+}</pre>
+
+<a name="bnaft"></a><h4>Accessing Databases</h4>
+<p><a name="indexterm-224"></a>Data that is shared between web components and is persistent between invocations of
+a web application is usually maintained by a database. Web components use the
+Java Persistence API to access relational databases. The data for Duke&rsquo;s Bookstore is
+maintained in a database and is accessed through the database access class <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/bookstore1/src/java/com/sun/bookstore1/database/BookDBAO</tt>.
+For example, <tt>ReceiptServlet</tt> invokes the <tt>BookDBAO.buyBooks</tt> method to update the book inventory
+when a user makes a purchase. The <tt>buyBooks</tt> method invokes <tt>buyBook</tt> for each
+book contained in the shopping cart, as shown in the following code.</p><pre>public void buyBooks(ShoppingCart cart) throws OrderException{
+
+    Collection items = cart.getItems();
+    Iterator i = items.iterator();
+    
+    try {
+        while (i.hasNext()) {
+            ShoppingCartItem sci = (ShoppingCartItem)i.next();
+            Book bd = (Book)sci.getItem();
+            String id = bd.getBookId();
+            int quantity = sci.getQuantity();
+            buyBook(id, quantity);
+        }
+    } catch (Exception ex) {
+        throw new OrderException("Commit failed: " +
+            ex.getMessage());
+     }
+}
+
+public void buyBook(String bookId, int quantity)
+     throws OrderException {
+
+    try {
+        Book requestedBook = em.find(Book.class, bookId);
+        
+        if (requestedBook != null) {
+            int inventory = requestedBook.getInventory();
+            if ((inventory - quantity) >= 0) {
+                int newInventory = inventory - quantity;
+                requestedBook.setInventory(newInventory);
+            } else{
+                throw new OrderException("Not enough of "
+                     + bookId + " in stock to complete order.");
+            }
+        }
+    } catch (Exception ex) {
+        throw new OrderException("Couldn&rsquo;t purchase book: "
+             + bookId + ex.getMessage());
+    }
+}</pre><p><a name="indexterm-225"></a><a name="indexterm-226"></a>To ensure that the order is processed in its entirety, the call to
+<tt>buyBooks</tt> is wrapped in a single transaction. In the following code, the calls
+to the <tt>begin</tt> and <tt>commit</tt> methods of <tt>UserTransaction</tt> mark the boundaries of the
+transaction. The call to the <tt>rollback</tt> method of <tt>UserTransaction</tt> undoes the effects
+of all statements in the transaction so as to protect the integrity of
+the data.</p><pre>try {
+    utx.begin();
+    bookDB.buyBooks(cart);
+    utx.commit();
+} catch (Exception ex) {
+    try {
+        utx.rollback();
+    } catch(Exception e) {
+        System.out.println("Rollback failed: "+e.getMessage());
+    }
+    System.err.println(ex.getMessage());
+    orderCompleted = false;}
+}</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnafi.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnafu.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

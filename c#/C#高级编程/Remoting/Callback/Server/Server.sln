@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server.csproj", "{F218D3B3-FCB3-4BE8-87AF-791351851B64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteObject", "..\RemoteObject\RemoteObject.csproj", "{84EE7680-B062-47F5-83EC-9FCBE2A168FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F218D3B3-FCB3-4BE8-87AF-791351851B64}.Debug.ActiveCfg = Debug|.NET
+		{F218D3B3-FCB3-4BE8-87AF-791351851B64}.Debug.Build.0 = Debug|.NET
+		{F218D3B3-FCB3-4BE8-87AF-791351851B64}.Release.ActiveCfg = Release|.NET
+		{F218D3B3-FCB3-4BE8-87AF-791351851B64}.Release.Build.0 = Release|.NET
+		{84EE7680-B062-47F5-83EC-9FCBE2A168FB}.Debug.ActiveCfg = Debug|.NET
+		{84EE7680-B062-47F5-83EC-9FCBE2A168FB}.Debug.Build.0 = Debug|.NET
+		{84EE7680-B062-47F5-83EC-9FCBE2A168FB}.Release.ActiveCfg = Release|.NET
+		{84EE7680-B062-47F5-83EC-9FCBE2A168FB}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

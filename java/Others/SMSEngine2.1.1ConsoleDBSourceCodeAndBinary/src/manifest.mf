@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: net.sourceforge.smsengine.StartUp
+Class-Path: lib/swing-layout-1.0.jar lib/log4j-1.2.14.jar lib/napkinla
+ f.jar lib/RXTXcomm.jar lib/smslib-2.0.0-b1.jar lib/mysql-connector-ja
+ va-5.0.4-bin.jar lib/ojdbc14.jar
+X-COMMENT: Main-Class will be added automatically by build
+

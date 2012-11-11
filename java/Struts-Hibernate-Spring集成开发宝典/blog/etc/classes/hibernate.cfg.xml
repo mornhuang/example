@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- 数据库的URL -->
+		<!-- property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.10.121:1521:HiFinance</property-->
+		<property name="hibernate.connection.url">
+        	jdbc:mysql://localhost:3306/blog?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;autoReconnectForPools=true
+        </property>
+		
+		<!-- 数据库的驱动程序 -->
+		<!-- property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property-->
+		<property name="hibernate.connection.driver_class">
+        	com.mysql.jdbc.Driver
+        </property>
+		<!-- 数据库的用户名 -->
+		<property name="hibernate.connection.username">blog</property>
+		<!-- 数据库的密码 -->
+		<property name="hibernate.connection.password">blog</property>
+		<!-- 数据库的Dialet -->
+		<!-- property name="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</property -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 输出执行的SQL语句 -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- HBM文件列表 -->
+		<mapping resource="cn/hxex/blog/model/Message.hbm.xml" />
+		<mapping resource="cn/hxex/blog/model/ReplyMessage.hbm.xml" />
+		<mapping resource="cn/hxex/blog/model/User.hbm.xml" />
+
+	</session-factory>
+
+</hibernate-configuration>

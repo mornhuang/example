@@ -1,0 +1,41 @@
+# style <name> [= <name>]
+# {
+#   <option>
+# }
+#
+# widget <widget_set> style <style_name>
+# widget_class <widget_class_set> style <style_name>
+
+style "default"
+{
+  font = "-*-lucida-medium-r-normal-*-10-*-*-*-*-*-iso8859-1"
+
+bg_pixmap[NORMAL] = "cheese.xpm"
+bg_pixmap[INSENSITIVE] = "cheese.xpm"
+bg_pixmap[ACTIVE] = "cheese-dark.xpm"
+bg_pixmap[PRELIGHT] = "cheese-light.xpm" 
+
+# base, text, bg, fg are possible
+bg[NORMAL] = { 0.77, 0.77, 0.66 }
+bg[SELECTED] = { 0.67, 0.67, 0.56 }
+bg[INSENSITIVE] = { 0.77, 0.77, 0.66 }
+bg[ACTIVE] = { 0.67, 0.67, 0.56 }
+bg[PRELIGHT] = { 0.87, 0.87, 0.76 }
+
+fg[NORMAL] = { 0.0, 0.0, 0.0 }
+fg[SELECTED] = { 0.9, 0.9, 0.9 }
+fg[ACTIVE] = { 0.0, 0.0, 0.0 }
+fg[PRELIGHT] = { 0.5, 0.1, 0.0 }
+
+text[INSENSITIVE] = { 0.60, 0.65, 0.57 }
+
+}
+
+style "ruler" = "default"
+{
+  font = "-adobe-helvetica-medium-r-normal--*-80-*-*-*-*-*-*"
+}
+
+
+widget_class "*Ruler*" style "ruler"
+widget_class "*" style "default"

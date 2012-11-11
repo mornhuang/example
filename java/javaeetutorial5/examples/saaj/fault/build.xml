@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SOAPFaultTest" default="default" basedir=".">
+    <description>Builds, tests, and runs the project SOAPFaultTest.</description>
+    <property name="is.java-client.module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-fault" depends="compile"
+    description="Runs SOAPFaultTest to create a SOAPFault object and then
+     print out its values. Argument: -Dsoap=&lt;1.1|1.2&gt;">
+    <echo message="Runs SOAPFaultTest to create a SOAPFault object and then print out its values." />
+    <java classname="SOAPFaultTest" fork="yes">
+      <arg value="${soap}" />
+      <classpath refid="classpath" />
+    </java>
+  </target>
+
+</project>

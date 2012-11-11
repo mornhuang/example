@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Managing Entities - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level3"><a href="bnbqa.html">Entities</a></p>
+<p class="toc level4"><a href="bnbqa.html#bnbqb">Requirements for Entity Classes</a></p>
+<p class="toc level4"><a href="bnbqa.html#bnbqc">Persistent Fields and Properties in Entity Classes</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqd">Persistent Fields</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqe">Persistent Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnbqa.html#bnbqf">Primary Keys in Entities</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqg">Primary Key Classes</a></p>
+<p class="toc level4 tocsp"><a href="bnbqa.html#bnbqh">Multiplicity in Entity Relationships</a></p>
+<p class="toc level4"><a href="bnbqa.html#bnbqi">Direction in Entity Relationships</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqj">Bidirectional Relationships</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqk">Unidirectional Relationships</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbql">Queries and Relationship Direction</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqm">Cascade Deletes and Relationships</a></p>
+<p class="toc level4 tocsp"><a href="bnbqa.html#bnbqn">Entity Inheritance</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqo">Abstract Entities</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqp">Mapped Superclasses</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqq">Non-Entity Superclasses</a></p>
+<p class="toc level5"><a href="bnbqa.html#bnbqr">Entity Inheritance Mapping Strategies</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Managing Entities</a></p>
+<p class="toc level4"><a href="#bnbqx">The Persistence Context</a></p>
+<p class="toc level4"><a href="#bnbqy">The <tt>EntityManager</tt> Interface</a></p>
+<p class="toc level5"><a href="#bnbqz">Container-Managed Entity Managers</a></p>
+<p class="toc level5"><a href="#bnbra">Application-Managed Entity Managers</a></p>
+<p class="toc level5"><a href="#bnbrb">Finding Entities Using the <tt>EntityManager</tt></a></p>
+<p class="toc level5"><a href="#bnbrc">Managing an Entity Instance's Life Cycle</a></p>
+<p class="toc level5"><a href="#bnbrg">Creating Queries</a></p>
+<p class="toc level4 tocsp"><a href="#bnbrj">Persistence Units</a></p>
+<p class="toc level5"><a href="#bnbrk">The <tt>persistence.xml</tt> File</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbqa.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbrl.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbqw"></a><h3>Managing Entities</h3>
+<a name="indexterm-2189"></a><p>Entities are managed by the entity manager. The entity manager is represented by
+<tt>javax.persistence.EntityManager</tt> instances. Each <tt>EntityManager</tt> instance is associated with a persistence context. A persistence
+context defines the scope under which particular entity instances are created, persisted, and
+removed.</p>
+
+<a name="bnbqx"></a><h4>The Persistence Context</h4>
+<a name="indexterm-2190"></a><p>A persistence context is a set of managed entity instances that exist in
+a particular data store. The <tt>EntityManager</tt> interface defines the methods that are used
+to interact with the persistence context.</p>
+
+<a name="bnbqy"></a><h4>The <tt>EntityManager</tt> Interface</h4>
+<a name="indexterm-2191"></a><p>The <tt>EntityManager</tt> API creates and removes persistent entity instances, finds entities by the
+entity&rsquo;s primary key, and allows queries to be run on entities.</p>
+
+<a name="bnbqz"></a><h5>Container-Managed Entity Managers</h5>
+<p>With a <b>container-managed entity manager</b>, an <tt>EntityManager</tt> instance&rsquo;s persistence context is automatically propagated by the
+container to all application components that use the <tt>EntityManager</tt> instance within a
+single Java Transaction Architecture (JTA) transaction.</p><p><a name="indexterm-2192"></a>JTA transactions usually involve calls across application components. To complete a JTA transaction,
+these components usually need access to a single persistence context. This occurs when
+an <tt>EntityManager</tt> is injected into the application components by means of the <tt>javax.persistence.PersistenceContext</tt>
+annotation. The persistence context is automatically propagated with the current JTA transaction, and
+<tt>EntityManager</tt> references that are mapped to the same persistence unit provide access to
+the persistence context within that transaction. By automatically propagating the persistence context, application components
+don&rsquo;t need to pass references to <tt>EntityManager</tt> instances to each other in
+order to make changes within a single transaction. The Java EE container manages
+the life cycle of container-managed entity managers.</p><p>To obtain an <tt>EntityManager</tt> instance, inject the entity manager into the application component:</p><pre>@PersistenceContext
+EntityManager em;</pre>
+
+<a name="bnbra"></a><h5>Application-Managed Entity Managers</h5>
+<p>With <b>application-managed entity managers</b>, on the other hand, the persistence context is not propagated to
+application components, and the life cycle of <tt>EntityManager</tt> instances is managed by the application.</p><p>Application-managed entity managers are used when applications need to access a persistence context
+that is not propagated with the JTA transaction across <tt>EntityManager</tt> instances in a
+particular persistence unit. In this case, each <tt>EntityManager</tt> creates a new, isolated persistence context.
+The <tt>EntityManager</tt>, and its associated persistence context, is created and destroyed explicitly by the
+application.</p><p>Applications create <tt>EntityManager</tt> instances in this case by using the <tt>createEntityManager</tt> method of
+<tt>javax.persistence.EntityManagerFactory</tt>.</p><p><a name="indexterm-2193"></a>To obtain an <tt>EntityManager</tt> instance, you first must obtain an <tt>EntityManagerFactory</tt> instance by injecting
+it into the application component by means of the <tt>javax.persistence.PersistenceUnit</tt> annotation:</p><pre>@PersistenceUnit
+EntityManagerFactory emf;</pre><p>Then, obtain an <tt>EntityManager</tt> from the <tt>EntityManagerFactory</tt> instance:</p><pre>EntityManager em = emf.createEntityManager();</pre>
+
+<a name="bnbrb"></a><h5>Finding Entities Using the <tt>EntityManager</tt></h5>
+<a name="indexterm-2194"></a><p>The <tt>EntityManager.find</tt> method is used to look up entities in the data store
+by the entity&rsquo;s primary key.</p><pre>@PersistenceContext
+EntityManager em;
+public void enterOrder(int custID, Order newOrder) {
+    Customer cust = em.find(Customer.class, custID);
+    cust.getOrders().add(newOrder);
+    newOrder.setCustomer(cust);
+}</pre>
+
+<a name="bnbrc"></a><h5>Managing an Entity Instance&rsquo;s Life Cycle</h5>
+<a name="indexterm-2195"></a><p>You manage entity instances by invoking operations on the entity by means of
+an <tt>EntityManager</tt> instance. Entity instances are in one of four states: new, managed,
+detached, or removed.</p><p>New entity instances have no persistent identity and are not yet associated with
+a persistence context.</p><p>Managed entity instances have a persistent identity and are associated with a persistence
+context.</p><p>Detached entity instances have a persistent identify and are not currently associated with
+a persistence context.</p><p>Removed entity instances have a persistent identity, are associated with a persistent context,
+and are scheduled for removal from the data store.</p>
+
+<a name="bnbrd"></a><h5>Persisting Entity Instances</h5>
+<a name="indexterm-2196"></a><p>New entity instances become managed and persistent either by invoking the <tt>persist</tt> method,
+or by a cascading <tt>persist</tt> operation invoked from related entities that have the
+<tt>cascade=PERSIST</tt> or <tt>cascade=ALL</tt> elements set in the relationship annotation. This means the entity&rsquo;s
+data is stored to the database when the transaction associated with the <tt>persist</tt>
+operation is completed. If the entity is already managed, the <tt>persist</tt> operation is
+ignored, although the <tt>persist</tt> operation will cascade to related entities that have the <tt>cascade</tt>
+element set to <tt>PERSIST</tt> or <tt>ALL</tt> in the relationship annotation. If <tt>persist</tt>
+is called on a removed entity instance, it becomes managed. If the entity
+is detached, <tt>persist</tt> will throw an <tt>IllegalArgumentException</tt>, or the transaction commit will fail.</p><pre>@PersistenceContext
+EntityManager em;
+...
+public LineItem createLineItem(Order order, Product product,
+        int quantity) {
+    LineItem li = new LineItem(order, product, quantity);
+    order.getLineItems().add(li);
+    em.persist(li);
+    return li;
+}</pre><p>The <tt>persist</tt> operation is propagated to all entities related to the calling entity
+that have the <tt>cascade</tt> element set to <tt>ALL</tt> or <tt>PERSIST</tt> in the relationship annotation.</p><pre>@OneToMany(cascade=ALL, mappedBy="order")
+public Collection&lt;LineItem> getLineItems() {
+    return lineItems;
+}</pre>
+
+<a name="bnbre"></a><h5>Removing Entity Instances</h5>
+<a name="indexterm-2197"></a><p>Managed entity instances are removed by invoking the <tt>remove</tt> method, or by a
+cascading <tt>remove</tt> operation invoked from related entities that have the <tt>cascade=REMOVE</tt> or <tt>cascade=ALL</tt>
+elements set in the relationship annotation. If the <tt>remove</tt> method is invoked on a
+new entity, the <tt>remove</tt> operation is ignored, although <tt>remove</tt> will cascade to related
+entities that have the <tt>cascade</tt> element set to <tt>REMOVE</tt> or <tt>ALL</tt> in the
+relationship annotation. If <tt>remove</tt> is invoked on a detached entity it will throw
+an <tt>IllegalArgumentException</tt>, or the transaction commit will fail. If <tt>remove</tt> is invoked on
+an already removed entity, it will be ignored. The entity&rsquo;s data will be
+removed from the data store when the transaction is completed, or as a
+result of the <tt>flush</tt> operation.</p><pre>public void removeOrder(Integer orderId) {
+    try {
+        Order order = em.find(Order.class, orderId);
+        em.remove(order);
+    }...</pre><p>In this example, all <tt>LineItem</tt> entities associated with the order are also removed,
+as <tt>Order.getLineItems</tt> has <tt>cascade=ALL</tt> set in the relationship annotation.</p>
+
+<a name="bnbrf"></a><h5>Synchronizing Entity Data to the Database</h5>
+<a name="indexterm-2198"></a><p>The state of persistent entities is synchronized to the database when the transaction
+with which the entity is associated commits. If a managed entity is in
+a bidirectional relationship with another managed entity, the data will be persisted based
+on the owning side of the relationship.</p><p>To force synchronization of the managed entity to the data store, invoke the
+<tt>flush</tt> method of the entity. If the entity is related to another entity,
+and the relationship annotation has the <tt>cascade</tt> element set to <tt>PERSIST</tt> or <tt>ALL</tt>,
+the related entity&rsquo;s data will be synchronized with the data store when <tt>flush</tt>
+is called.</p><p>If the entity is removed, calling <tt>flush</tt> will remove the entity data from
+the data store.</p>
+
+<a name="bnbrg"></a><h5>Creating Queries</h5>
+<a name="indexterm-2199"></a><p>The <tt>EntityManager.createQuery</tt> and <tt>EntityManager.createNamedQuery</tt> methods are used to query the datastore using
+Java Persistence query language queries. See <a href="bnbtg.html">Chapter&nbsp;27, The Java Persistence Query Language</a> for more information on the query language.</p><p>The <tt>createQuery</tt> method is used to create <b>dynamic queries</b>, queries that are defined
+directly within an application&rsquo;s business logic.</p><pre>public List findWithName(String name) {
+return em.createQuery(
+    "SELECT c FROM Customer c WHERE c.name LIKE :custName")
+    .setParameter("custName", name)
+    .setMaxResults(10)
+    .getResultList();
+}</pre><p><a name="indexterm-2200"></a>The <tt>createNamedQuery</tt> method is used to create <b>static queries</b>, queries that are defined
+in metadata using the <tt>javax.persistence.NamedQuery</tt> annotation. The <tt>name</tt> element of <tt>@NamedQuery</tt> specifies the
+name of the query that will be used with the <tt>createNamedQuery</tt> method. The
+<tt>query</tt> element of <tt>@NamedQuery</tt> is the query.</p><pre>@NamedQuery(
+    name="findAllCustomersWithName",
+    query="SELECT c FROM Customer c WHERE c.name LIKE :custName"
+)</pre><p>Here&rsquo;s an example of <tt>createNamedQuery</tt>, which uses the <tt>@NamedQuery</tt> defined above.</p><pre>@PersistenceContext
+public EntityManager em;
+...
+customers = em.createNamedQuery("findAllCustomersWithName")
+    .setParameter("custName", "Smith")
+    .getResultList();</pre>
+
+<a name="bnbrh"></a><h5>Named Parameters in Queries</h5>
+<a name="indexterm-2201"></a><p>Named parameters are parameters in a query that are prefixed with a colon
+(<tt>:</tt>). Named parameters in a query are bound to an argument by the
+<tt>javax.persistence.Query.setParameter(String name, Object value)</tt> method. In the following example, the <tt>name</tt> argument to the <tt>findWithName</tt> business
+method is bound to the <tt>:custName</tt> named parameter in the query by
+calling <tt>Query.setParameter</tt>.</p><pre>public List findWithName(String name) {
+    return em.createQuery(
+        "SELECT c FROM Customer c WHERE c.name LIKE :custName")
+        .setParameter("custName", name)
+        .getResultList();
+}</pre><p>Named parameters are case-sensitive, and may be used by both dynamic and static
+queries.</p>
+
+<a name="bnbri"></a><h5>Positional Parameters in Queries</h5>
+<a name="indexterm-2202"></a><p>You may alternately use positional parameters in queries, instead of named parameters. Positional
+parameters are prefixed with a question mark (<tt>?</tt>) followed the numeric position of
+the parameter in the query. The <tt>Query.setParameter(integer position, Object value)</tt> method is used to set the parameter
+values.</p><p>In the following example, the <tt>findWithName</tt> business method is rewritten to use input
+parameters:</p><pre>public List findWithName(String name) {
+    return em.createQuery(
+        &ldquo;SELECT c FROM Customer c WHERE c.name LIKE ?1&rdquo;)
+        .setParameter(1, name)
+        .getResultList();
+}</pre><p>Input parameters are numbered starting from 1. Input parameters are case-sensitive, and may
+be used by both dynamic and static queries.</p>
+
+<a name="bnbrj"></a><h4>Persistence Units</h4>
+<a name="indexterm-2203"></a><a name="indexterm-2204"></a><p>A persistence unit defines a set of all entity classes that are
+managed by <tt>EntityManager</tt> instances in an application. This set of entity classes represents the
+data contained within a single data store.</p><p>Persistence units are defined by the <tt>persistence.xml</tt> configuration file. The JAR file or
+directory whose <tt>META-INF</tt> directory contains <tt>persistence.xml</tt> is called the root of the persistence unit.
+The scope of the persistence unit is determined by the persistence unit&rsquo;s root.</p><p>Each persistence unit must be identified with a name that is unique to
+the persistence unit&rsquo;s scope.</p><p>Persistent units can be packaged as part of a WAR or EJB
+JAR file, or can be packaged as a JAR file that can then
+be included in an WAR or EAR file.</p><p>If you package the persistent unit as a set of classes in
+an EJB JAR file, <tt>persistence.xml</tt> should be put in the EJB JAR&rsquo;s <tt>META-INF</tt>
+directory.</p><p>If you package the persistence unit as a set of classes in
+a WAR file, <tt>persistence.xml</tt> should be located in the WAR file&rsquo;s <tt>WEB-INF/classes/META-INF</tt>
+directory.</p><p>If you package the persistence unit in a JAR file that will
+be included in a WAR or EAR file, the JAR file should be
+located:</p>
+<ul><li><p>In the <tt>WEB-INF/lib</tt> directory of a WAR.</p></li>
+<li><p>In the top-level of an EAR file.</p></li>
+<li><p>In the EAR file&rsquo;s library directory.</p></li></ul>
+
+
+<a name="bnbrk"></a><h5>The <tt>persistence.xml</tt> File</h5>
+<a name="indexterm-2205"></a><p><tt>persistence.xml</tt> defines one or more persistence units. The following is an example <tt>persistence.xml</tt>
+file.</p><pre>&lt;persistence>
+    &lt;persistence-unit name="OrderManagement">
+        &lt;description>This unit manages orders and customers.
+            It does not rely on any vendor-specific features and can
+            therefore be deployed to any persistence provider.
+        &lt;/description>
+        &lt;jta-data-source>jdbc/MyOrderDB&lt;/jta-data-source>
+        &lt;jar-file>MyOrderApp.jar&lt;/jar-file>
+        &lt;class>com.widgets.Order&lt;/class>
+        &lt;class>com.widgets.Customer&lt;/class>
+    &lt;/persistence-unit>
+&lt;/persistence></pre><p>This file defines a persistence unit named <tt>OrderManagement</tt>, which uses a JTA-aware data
+source <tt>jdbc/MyOrderDB</tt>. The <tt>jar-file</tt> and <tt>class</tt> elements specify managed persistence classes: entity classes,
+embeddable classes, and mapped superclasses. The <tt>jar-file</tt> element specifies JAR files that
+are visible to the packaged persistence unit that contain managed persistence classes, while
+the class element explicitly names managed persistence classes.</p><p>The <tt>jta-data-source</tt> (for JTA-aware data sources) and <tt>non-jta-data-source</tt> (non-JTA-aware data sources) elements specify the
+global JNDI name of the data source to be used by the
+container.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbqa.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbrl.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

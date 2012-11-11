@@ -1,0 +1,643 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>SAAJ Coffee Supplier Service - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level3"><a href="gfqeu.html">Overview of the Coffee Break Application</a></p>
+<p class="toc level3"><a href="bnckp.html">Common Code</a></p>
+<p class="toc level3"><a href="bnckq.html">JAX-WS Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnckq.html#bnckr">Service Implementation</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">SAAJ Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="#bnckt">SAAJ Client</a></p>
+<p class="toc level5"><a href="#bncku">Sending the Request</a></p>
+<p class="toc level5"><a href="#bnckw">Ordering Coffee</a></p>
+<p class="toc level4 tocsp"><a href="#bnckz">SAAJ Service</a></p>
+<p class="toc level5"><a href="#bncla">Returning the Price List</a></p>
+<p class="toc level5"><a href="#bnclb">Returning the Order Confirmation</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnclc.html">Coffee Break Server</a></p>
+<p class="toc level4"><a href="bnclc.html#bncle">JSP Pages</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclf">The <tt>orderForm</tt> Page</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclg">The <tt>checkoutForm</tt> Page</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclh">The <tt>checkoutAck</tt> Page</a></p>
+<p class="toc level4 tocsp"><a href="bnclc.html#bncli">JavaBeans Components</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclj">The <tt>RetailPriceList</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclk">The <tt>ShoppingCart</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bncll">The <tt>OrderConfirmations</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bnclm">The <tt>CheckoutFormBean</tt> JavaBeans Component</a></p>
+<p class="toc level5"><a href="bnclc.html#bncln">The <tt>CoffeeBreakBean</tt> JavaBeans Component</a></p>
+<p class="toc level4 tocsp"><a href="bnclc.html#bnclo">The <tt>RetailPriceListServlet</tt> Servlet</a></p>
+<p class="toc level4"><a href="bnclc.html#bnclp">Resource Configuration</a></p>
+<p class="toc level3 tocsp"><a href="bnclq.html">Building, Packaging, Deploying, and Running the Coffee Break Application</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclr">Setting the Port</a></p>
+<p class="toc level4"><a href="bnclq.html#bncls">Building, Packaging, and Deploying the JAX-WS Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclt">Building, Packaging, and Deploying the SAAJ Coffee Supplier Service</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclu">Building, Packaging, and Deploying the Coffee Break Server</a></p>
+<p class="toc level4"><a href="bnclq.html#bnclv">Running the Coffee Break Client</a></p>
+<p class="toc level4"><a href="bnclq.html#bncly">Removing the Coffee Break Application</a></p>
+<p class="toc level2 tocsp"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnckq.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnclc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncks"></a><h3>SAAJ Coffee Supplier Service</h3>
+<a name="indexterm-3134"></a><p>The SAAJ supplier service implements the arrangements that the supplier and the Coffee
+Break have made regarding their exchange of XML documents. These arrangements include the
+kinds of messages they will send, the form of those messages, and the
+kind of messaging they will do. They have agreed to do request-response messaging
+using the SAAJ API (the <tt>javax.xml.soap</tt> package).</p><p>The Coffee Break servers send two kinds of messages:</p>
+<ul><li><p>Requests for current wholesale coffee prices</p></li>
+<li><p>Customer orders for coffee</p></li></ul>
+<p>The SAAJ coffee supplier responds with two kinds of messages:</p>
+<ul><li><p>Current price lists</p></li>
+<li><p>Order confirmations</p></li></ul>
+<p>All the messages they send conform to an agreed-upon XML structure, which is
+specified in a DTD for each kind of message. This allows them
+to exchange messages even though they use different document formats internally.</p><p>The four kinds of messages exchanged by the Coffee Break servers and the
+SAAJ supplier are specified by the following DTDs:</p>
+<ul><li><p><tt>request-prices.dtd</tt></p></li>
+<li><p><tt>price-list.dtd</tt></p></li>
+<li><p><tt>coffee-order.dtd</tt></p></li>
+<li><p><tt>confirm.dtd</tt></p></li></ul>
+<p>These DTDs can be found at <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb-saaj/dtds/.</tt> The <tt>dtds</tt> directory also contains
+a sample of what the XML documents specified in the DTDs might look
+like. </p><p>The corresponding XML files for the DTDs are as follows:</p>
+<ul><li><p><tt>request-prices.xml</tt></p></li>
+<li><p><tt>price-list.xml</tt></p></li>
+<li><p><tt>coffee-order.xml</tt></p></li>
+<li><p><tt>confirm.xml</tt></p></li></ul>
+<p>Because of the DTDs, both parties know ahead of time what to
+expect in a particular kind of message and can therefore extract its content
+using the SAAJ API.</p><p>Code for the client and server applications is in this directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/coffeebreak/cb-saaj/src/java</tt></pre>
+
+<a name="bnckt"></a><h4>SAAJ Client</h4>
+<a name="indexterm-3135"></a><p>The Coffee Break server, which is a SAAJ client in this scenario,
+sends requests to the SAAJ supplier. The SAAJ client application uses the <tt>SOAPConnection</tt>
+method <tt>call</tt> to send messages.</p><pre>SOAPMessage response = con.call(request, endpoint);</pre><p>Accordingly, the client code has two major tasks. The first is to
+create and send the request; the second is to extract the content from
+the response. These tasks are handled by the classes <tt>PriceListRequest</tt> and <tt>OrderRequest</tt>.</p>
+
+<a name="bncku"></a><h5>Sending the Request</h5>
+<p>This section covers the code for creating and sending the request for an
+updated price list. This is done in the <tt>getPriceList</tt> method of <tt>PriceListRequest</tt>, which
+follows the DTD <tt>price-list.dtd</tt>.</p><p>The <tt>getPriceList</tt> method begins by creating the connection that will be used to
+send the request. Then it gets the default <tt>MessageFactory</tt> object to be
+used for creating the <tt>SOAPMessage</tt> object <tt>msg</tt>.</p><pre>SOAPConnectionFactory scf = SOAPConnectionFactory.newInstance();
+SOAPConnection con = scf.createConnection();
+SOAPFactory soapFactory = SOAPFactory.newInstance();
+
+MessageFactory mf = MessageFactory.newInstance();
+SOAPMessage msg = mf.createMessage();</pre><p>The next step is to access the message&rsquo;s <tt>SOAPBody</tt> object, to which the
+message&rsquo;s content will be added.</p><pre>SOAPBody body = msg.getSOAPBody();</pre><p>The file <tt>price-list.dtd</tt> specifies that the topmost element inside the body is <tt>request-prices</tt>
+and that it contains the element <tt>request</tt>. The text node added to <tt>request</tt>
+is the text of the request being sent. Every new element that is
+added to the message must have a <tt>QName</tt> object to identify it. The
+following lines of code create the top-level element in the <tt>SOAPBody</tt> object <tt>body</tt>.
+The first element created in a <tt>SOAPBody</tt> object is always a <tt>SOAPBodyElement</tt> object.</p><pre>Name bodyName = new QName("http://sonata.coffeebreak.com",
+    "request-prices", "RequestPrices");
+SOAPBodyElement requestPrices =
+    body.addBodyElement(bodyName);</pre><p>In the next few lines, the code adds the element <tt>request</tt> to the
+element <tt>request-prices</tt> (represented by the <tt>SOAPBodyElement</tt> <tt>requestPrices</tt>). Then the code adds a
+text node containing the text of the request. Next, because there are no
+other elements in the request, the code calls the method <tt>saveChanges</tt> on the message
+to save what has been done.</p><pre>QName requestName = new QName("request");
+SOAPElement request = requestPrices.addChildElement(requestName);
+request.addTextNode("Send updated price list.");
+
+msg.saveChanges();</pre><p>With the creation of the request message completed, the code sends the message
+to the SAAJ coffee supplier. The message being sent is the <tt>SOAPMessage</tt>
+object <tt>msg</tt>, to which the elements created in the previous code snippets were
+added. The endpoint is the URI for the SAAJ coffee supplier, <tt>http://localhost:8080/saaj-coffee-supplier/getPriceList</tt>. The
+<tt>SOAPConnection</tt> object <tt>con</tt> is used to send the message, and because it is
+no longer needed, it is closed.</p><pre>URL endpoint = new URL(url);
+SOAPMessage response = con.call(msg, endpoint);
+con.close();</pre><p>When the <tt>call</tt> method is executed, the Application Server executes the servlet <tt>PriceListServlet</tt>.
+This servlet creates and returns a <tt>SOAPMessage</tt> object whose content is the SAAJ supplier&rsquo;s
+price list. (<tt>PriceListServlet</tt> is discussed in <a href="#bncla">Returning the Price List</a>.) The Application Server knows to execute <tt>PriceListServlet</tt>
+because the given endpoint is mapped to that servlet.</p>
+
+<a name="bnckv"></a><h5>Extracting the Price List</h5>
+<p>This section demonstrates (1) retrieving the price list that is contained in <tt>response</tt>,
+the <tt>SOAPMessage</tt> object returned by the method <tt>call</tt>, and (2) returning the price list
+as a <tt>PriceListBean</tt>.</p><p>The code creates an empty <tt>Vector</tt> object that will hold the <tt>coffee-name</tt> and
+<tt>price</tt> elements that are extracted from <tt>response</tt>. Then the code uses <tt>response</tt> to
+access its <tt>SOAPBody</tt> object, which holds the message&rsquo;s content.</p><pre>Vector&lt;String> list = new Vector&lt;String>();
+
+SOAPBody responseBody = response.getSOAPBody();</pre><p>The next step is to retrieve the <tt>SOAPBodyElement</tt> object. The method <tt>getChildElements</tt> returns
+an <tt>Iterator</tt> object that contains all the child elements of the element on
+which it is called, so in the following lines of code, <tt>it1</tt> contains
+the <tt>SOAPBodyElement</tt> object <tt>bodyEl</tt>, which represents the <tt>price-list</tt> element.</p><pre>Iterator it1 = responseBody.getChildElements();
+ while (it1.hasNext()) {
+     SOAPBodyElement bodyEl = (SOAPBodyElement)it1.next();</pre><p>The <tt>Iterator</tt> object <tt>it2</tt> holds the child elements of <tt>bodyEl</tt>, which represent <tt>coffee</tt>
+elements. Calling the method <tt>next</tt> on <tt>it2</tt> retrieves the first coffee element in <tt>bodyEl</tt>.
+As long as <tt>it2</tt> has another element, the method <tt>next</tt> will return the
+next <tt>coffee</tt> element.</p><pre>    Iterator it2 = bodyEl.getChildElements();
+    while (it2.hasNext()) {
+        SOAPElement child2 = (SOAPElement)it2.next();</pre><p>The next lines of code drill down another level to retrieve the
+<tt>coffee-name</tt> and <tt>price</tt> elements contained in <tt>it3</tt>. Then the message <tt>getValue</tt> retrieves the
+text (a coffee name or a price) that the SAAJ coffee supplier added
+to the <tt>coffee-name</tt> and <tt>price</tt> elements when it gave content to <tt>response</tt>. The
+final line in the following code fragment adds the coffee name or
+price to the <tt>Vector</tt> object <tt>list</tt>. Note that because of the nested <tt>while</tt> loops,
+for each <tt>coffee</tt> element that the code retrieves, both of its child elements
+(the <tt>coffee-name</tt> and <tt>price</tt> elements) are retrieved.</p><pre>        Iterator it3 = child2.getChildElements();
+        while (it3.hasNext()) {
+            SOAPElement child3 = (SOAPElement)it3.next();
+            String value = child3.getValue();
+            list.addElement(value);
+        }
+    }
+}</pre><p>The final code fragment adds the coffee names and their prices (as
+a <tt>PriceListItem</tt>) to the <tt>ArrayList</tt> <tt>priceItems</tt>, and prints each pair on a separate
+line. Finally it constructs and returns a <tt>PriceListBean</tt>.</p><pre>ArrayList&lt;PriceItemBean> items = new ArrayList&lt;PriceItemBean>();
+for (int i = 0; i &lt; list.size(); i = i + 2) {
+    PriceItemBean pib = new PriceItemBean();
+    pib.setCoffeeName(list.elementAt(i).toString());
+    pib.setPricePerPound(new BigDecimal(list.elementAt(i + 1).toString()));
+    items.add(pib);
+    System.out.print(list.elementAt(i) + "        ");
+    System.out.println(list.elementAt(i + 1));
+}
+
+Date today = new Date();
+Date endDate = DateHelper.addDays(today, 30);
+GregorianCalendar todayCal = new GregorianCalendar();
+todayCal.setTime(today);
+GregorianCalendar cal = new GregorianCalendar();
+cal.setTime(endDate);
+plb = new PriceListBean();
+plb.setStartDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(todayCal));
+
+List&lt;PriceItemBean> priceItems = new ArrayList&lt;PriceItemBean>();
+Iterator&lt;PriceItemBean> i = items.iterator();
+while (i.hasNext()) {
+    PriceItemBean pib = i.next();
+    plb.getPriceItems().add(pib);
+}
+
+plb.setEndDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(cal));</pre>
+
+<a name="bnckw"></a><h5>Ordering Coffee</h5>
+<p>The other kind of message that the Coffee Break servers can send
+to the SAAJ supplier is an order for coffee. This is done in
+the <tt>placeOrder</tt> method of <tt>OrderRequest</tt>, which follows the DTD <tt>coffee-order.dtd</tt>.</p>
+
+<a name="bnckx"></a><h5>Creating the Order</h5>
+<p>As with the client code for requesting a price list, the <tt>placeOrder</tt>
+method starts by creating a <tt>SOAPConnection</tt> object and a <tt>SOAPMessage</tt> object and accessing
+the message&rsquo;s <tt>SOAPBody</tt> object.</p><pre>SOAPConnectionFactory scf = SOAPConnectionFactory.newInstance();
+SOAPConnection con = scf.createConnection();
+
+MessageFactory mf = MessageFactory.newInstance();
+SOAPMessage msg = mf.createMessage();
+
+SOAPBody body = msg.getSOAPBody();</pre><p>Next, the code creates and adds XML elements to form the order.
+As is required, the first element is a <tt>SOAPBodyElement</tt>, which in this case is
+<tt>coffee-order</tt>.</p><pre>QName bodyName = new QName("http://sonata.coffeebreak.com",
+    "coffee-order", "PO");
+SOAPBodyElement order = body.addBodyElement(bodyName);</pre><p>The application then adds the next level of elements, the first of
+these being <tt>orderID</tt>. The value given to <tt>orderID</tt> is extracted from the <tt>OrderBean</tt> object
+passed to the <tt>OrderRequest</tt>.<tt>placeOrder</tt> method.</p><pre>QName orderIDName = new QName("orderID");
+SOAPElement orderID = order.addChildElement(orderIDName);
+orderID.addTextNode(orderBean.getId());</pre><p>The next element, <tt>customer</tt>, has several child elements that give information about the
+customer. This information is also extracted from the <tt>Customer</tt> component of <tt>OrderBean</tt>.</p><pre>QName childName = new QName("customer");
+SOAPElement customer = order.addChildElement(childName);
+
+childName = new QName("last-name");
+SOAPElement lastName = customer.addChildElement(childName);
+lastName.addTextNode(orderBean.getCustomer().getLastName());
+
+childName = new QName("first-name");
+SOAPElement firstName = customer.addChildElement(childName);
+firstName.addTextNode(orderBean.getCustomer().getFirstName());
+
+childName = new QName("phone-number");
+SOAPElement phoneNumber = customer.addChildElement(childName);
+phoneNumber.addTextNode(orderBean.getCustomer().getPhoneNumber());
+
+childName = new QName("email-address");
+SOAPElement emailAddress = customer.addChildElement(childName);
+emailAddress.addTextNode(orderBean.getCustomer().getEmailAddress());</pre><p>The <tt>address</tt> element, added next, has child elements for the street, city, state,
+and zip code. This information is extracted from the <tt>Address</tt> component of <tt>OrderBean</tt>.</p><pre>childName = new QName("address");
+SOAPElement address = order.addChildElement(childName);
+
+childName = new QName("street");
+SOAPElement street = address.addChildElement(childName);
+street.addTextNode(orderBean.getAddress().getStreet());
+
+childName = new QName("city");
+SOAPElement city = address.addChildElement(childName);
+city.addTextNode(orderBean.getAddress().getCity());
+
+childName = new QName("state");
+SOAPElement state = address.addChildElement(childName);
+state.addTextNode(orderBean.getAddress().getState());
+
+childName = new QName("zip");
+SOAPElement zip = address.addChildElement(childName);
+zip.addTextNode(orderBean.getAddress().getZip());</pre><p>The element <tt>line-item</tt> has three child elements: <tt>coffeeName</tt>, <tt>pounds</tt>, and <tt>price</tt>. This information
+is extracted from the <tt>LineItems</tt> list contained in <tt>OrderBean</tt>.</p><pre>List&lt;LineItemBean> lineItems = orderBean.getLineItems();
+Iterator&lt;LineItemBean> i = lineItems.iterator();
+while (i.hasNext()) {
+    LineItemBean lib = i.next();
+
+    childName = new QName("line-item");
+    SOAPElement lineItem = order.addChildElement(childName);
+
+    childName = new QName("coffeeName");
+    SOAPElement coffeeName = lineItem.addChildElement(childName);
+    coffeeName.addTextNode(lib.getCoffeeName());
+
+    childName = new QName("pounds");
+    SOAPElement pounds = lineItem.addChildElement(childName);
+    pounds.addTextNode(lib.getPounds().toString());
+
+    childName = new QName("price");
+    SOAPElement price = lineItem.addChildElement(childName);
+    price.addTextNode(lib.getPrice().toString());
+}
+
+// total
+childName = new QName("total");
+SOAPElement total = order.addChildElement(childName);
+total.addTextNode(orderBean.getTotal().toString());</pre><p>With the order complete, the application sends the message to the endpoint
+<tt>http://localhost:8080/saaj-coffee-supplier/orderCoffee</tt> and closes the connection.</p><pre>URL endpoint = new URL(url);
+SOAPMessage reply = con.call(msg, endpoint);
+con.close();</pre><p>Because the given endpoint is mapped to <tt>ConfirmationServlet</tt>, the Application Server executes that
+servlet (discussed in <a href="#bnclb">Returning the Order Confirmation</a>) to create and return the <tt>SOAPMessage</tt> object <tt>reply</tt>.</p>
+
+<a name="bncky"></a><h5>Retrieving the Order Confirmation</h5>
+<p>The rest of the <tt>placeOrder</tt> method retrieves the information returned in <tt>reply</tt>. The
+client knows what elements are in it because they are specified in <tt>confirm.dtd</tt>.
+After accessing the <tt>SOAPBody</tt> object, the code retrieves the <tt>confirmation</tt> element and gets
+the text of the <tt>orderID</tt> and <tt>ship-date</tt> elements. Finally, it constructs and
+returns a <tt>ConfirmationBean</tt> with this information.</p><pre>SOAPBody sBody = reply.getSOAPBody();
+Iterator bodyIt = sBody.getChildElements();
+SOAPBodyElement sbEl = (SOAPBodyElement)bodyIt.next();
+Iterator bodyIt2 = sbEl.getChildElements();
+
+SOAPElement ID = (SOAPElement)bodyIt2.next();
+String id = ID.getValue();
+
+SOAPElement sDate = (SOAPElement)bodyIt2.next();
+String shippingDate = sDate.getValue();
+
+SimpleDateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy");
+Date date = df.parse(shippingDate);
+GregorianCalendar cal = new GregorianCalendar();
+cal.setTime(date);
+cb = new ConfirmationBean();
+cb.setOrderId(id);
+cb.setShippingDate(DatatypeFactory.newInstance().newXMLGregorianCalendar(cal));</pre>
+
+<a name="bnckz"></a><h4>SAAJ Service</h4>
+<a name="indexterm-3136"></a><p>The SAAJ coffee supplier (the SAAJ server in this scenario) provides the response
+part of the request-response paradigm. When SAAJ messaging is being used, the server
+code is a servlet. The core part of each servlet is made up
+of three <tt>javax.servlet.HttpServlet</tt> methods: <tt>init</tt>, <tt>doPost</tt>, and <tt>onMessage</tt>. The <tt>init</tt> and <tt>doPost</tt>
+methods set up the response message, and the <tt>onMessage</tt> method gives the message
+its content.</p>
+
+<a name="bncla"></a><h5>Returning the Price List</h5>
+<p>This section takes you through the servlet <tt>PriceListServlet</tt>. This servlet creates the message
+containing the current price list that is returned to the method <tt>call</tt>, invoked
+in <tt>PriceListRequest</tt>.</p><p>Any servlet extends a <tt>javax.servlet</tt> class. Being part of a web application, this
+servlet extends <tt>HttpServlet</tt>. It first creates a static <tt>MessageFactory</tt> object that will be used
+later to create the <tt>SOAPMessage</tt> object that is returned.</p><pre>public class PriceListServlet extends HttpServlet {
+    static final Logger logger =
+        Logger.getLogger("com.sun.cb.saaj.PriceListServlet");
+    static MessageFactory messageFactory = null;
+
+    static {
+        try {
+            messageFactory = MessageFactory.newInstance();
+        } catch (Exception ex) {
+            logger.severe("Exception: " + ex.toString());
+        }
+     };</pre><p>Every servlet has an <tt>init</tt> method. This <tt>init</tt> method initializes the servlet with
+the configuration information that the Application Server passed to it.</p><pre>public void init(ServletConfig servletConfig)
+        throws ServletException {
+    super.init(servletConfig);
+}</pre><p>The next method defined in <tt>PriceListServlet</tt> is <tt>doPost</tt>, which does the real
+work of the servlet by calling the <tt>onMessage</tt> method. (The <tt>onMessage</tt> method
+is discussed later in this section.) The Application Server passes the <tt>doPost</tt> method two
+arguments. The first argument, the <tt>HttpServletRequest</tt> object <tt>req</tt>, holds the content of
+the message sent in <tt>PriceListRequest</tt>. The <tt>doPost</tt> method gets the content from
+<tt>req</tt> and puts it in the <tt>SOAPMessage</tt> object <tt>msg</tt> so that it can
+pass it to the <tt>onMessage</tt> method. The second argument, the <tt>HttpServletResponse</tt> object <tt>resp</tt>, will
+hold the message generated by executing the method <tt>onMessage</tt>.</p><p>In the following code fragment, <tt>doPost</tt> calls the methods <tt>getHeaders</tt> and <tt>putHeaders</tt>, defined immediately
+after <tt>doPost</tt>, to read and write the headers in <tt>req</tt>. It then gets
+the content of <tt>req</tt> as a stream and passes the headers and the
+input stream to the method <tt>MessageFactory.createMessage</tt>. The result is that the <tt>SOAPMessage</tt>
+object <tt>msg</tt> contains the request for a price list. Note that in
+this case, <tt>msg</tt> does not have any headers because the message sent
+in <tt>PriceListRequest</tt> did not have any headers.</p><pre>public void doPost(HttpServletRequest req, HttpServletResponse resp)
+        throws ServletException, IOException {
+    try {
+        // Get all the headers from the HTTP request
+        MimeHeaders headers = getHeaders(req);
+
+        // Get the body of the HTTP request
+        InputStream is = req.getInputStream();
+
+        // Now internalize the contents of the HTTP request
+        // and create a SOAPMessage
+        SOAPMessage msg = messageFactory.createMessage(headers, is);</pre><p>Next, the code declares the <tt>SOAPMessage</tt> object <tt>reply</tt> and populates it by
+calling the method <tt>onMessage</tt>.</p><pre>        SOAPMessage reply = null;
+        reply = onMessage(msg);</pre><p>If <tt>reply</tt> has anything in it, its contents are saved, the status of
+<tt>resp</tt> is set to <tt>OK</tt>, and the headers and content of <tt>reply</tt> are
+written to <tt>resp</tt>. If <tt>reply</tt> is empty, the status of <tt>resp</tt> is set to
+indicate that there is no content.</p><pre>        if (reply != null) {
+
+            /*
+             * Need to call saveChanges because we&rsquo;re
+             * going to use the MimeHeaders to set HTTP
+             * response information. These MimeHeaders
+             * are generated as part of the save.
+             */
+            if (reply.saveRequired()) {
+                reply.saveChanges();
+            }
+
+            resp.setStatus(HttpServletResponse.SC_OK);
+            putHeaders(reply.getMimeHeaders(), resp);
+
+            // Write out the message on the response stream
+            logger.info("Reply message:");
+            OutputStream os = resp.getOutputStream();
+            reply.writeTo(os);
+            os.flush();
+        } else {
+            resp.setStatus(HttpServletResponse.SC_NO_CONTENT);
+        }
+    } catch (Exception ex) {
+        throw new ServletException( "SAAJ POST failed: " + ex.getMessage());
+    }
+}</pre><p>The methods <tt>getHeaders</tt> and <tt>putHeaders</tt> are not standard methods in a servlet, as
+<tt>init</tt>, <tt>doPost</tt>, and <tt>onMessage</tt> are. The method <tt>doPost</tt> calls <tt>getHeaders</tt> and passes it
+the <tt>HttpServletRequest</tt> object <tt>req</tt> that the Application Server passed to it. It
+returns a <tt>MimeHeaders</tt> object populated with the headers from <tt>req</tt>.</p><pre>static MimeHeaders getHeaders(HttpServletRequest req) {
+
+    Enumeration headerNames = req.getHeaderNames();
+    MimeHeaders headers = new MimeHeaders();
+
+    while (headerNames.hasMoreElements()) {
+        String headerName = (String)headerNames.nextElement();
+        String headerValue = req.getHeader(headerName);
+
+        StringTokenizer values = new StringTokenizer(headerValue, ",");
+        while (values.hasMoreTokens()) {
+            headers.addHeader(headerName, values.nextToken().trim());
+        }
+    }
+    return headers;
+}</pre><p>The <tt>doPost</tt> method calls <tt>putHeaders</tt> and passes it the <tt>MimeHeaders</tt> object <tt>headers</tt>, which was
+returned by the method <tt>getHeaders</tt>. The method <tt>putHeaders</tt> writes the headers in
+<tt>headers</tt> to <tt>res</tt>, the second argument passed to it. The result is
+that <tt>res</tt>, the response that the Application Server will return to the method
+<tt>call</tt>, now contains the headers that were in the original request.</p><pre>static void putHeaders(MimeHeaders headers, HttpServletResponse res) {
+
+    Iterator it = headers.getAllHeaders();
+    while (it.hasNext()) {
+        MimeHeader header = (MimeHeader)it.next();
+
+        String[] values = headers.getHeader(header.getName());
+        if (values.length == 1)
+            res.setHeader(header.getName(), header.getValue());
+        else {
+            StringBuffer concat = new StringBuffer();
+            int i = 0;
+            while (i &lt; values.length) {
+                if (i != 0) {
+                    concat.append(&rsquo;,&rsquo;);
+                }
+                concat.append(values[i++]);
+            }
+            res.setHeader(header.getName(), concat.toString());
+        }
+    }
+}</pre><p>The method <tt>onMessage</tt> is the application code for responding to the message sent
+by <tt>PriceListRequest</tt> and internalized into <tt>msg</tt>. It uses the static <tt>MessageFactory</tt> object <tt>messageFactory</tt>
+to create the <tt>SOAPMessage</tt> object <tt>message</tt> and then populates it with the supplier&rsquo;s
+current coffee prices.</p><p>The method <tt>doPost</tt> invokes <tt>onMessage</tt> and passes it <tt>msg</tt>. In this case, <tt>onMessage</tt>
+does not need to use <tt>msg</tt> because it simply creates a message containing the
+supplier&rsquo;s price list. The <tt>onMessage</tt> method in <tt>ConfirmationServlet</tt> (see <a href="#bnclb">Returning the Order Confirmation</a>), on the other
+hand, uses the message passed to it to get the order ID.</p><pre>public SOAPMessage onMessage(SOAPMessage msg) {
+    SOAPMessage message = null;
+
+    try {
+        message = messageFactory.createMessage();
+
+        SOAPBody body = message.getSOAPBody();
+
+        QName bodyName =
+             new QName("http://sonata.coffeebreak.com", "price-list", "PriceList");
+        SOAPBodyElement list = body.addBodyElement(bodyName);
+
+        QName coffeeN = new QName("coffee");
+        SOAPElement coffee = list.addChildElement(coffeeN);
+
+        QName coffeeNm1 = new QName("coffee-name");
+        SOAPElement coffeeName = coffee.addChildElement(coffeeNm1);
+        coffeeName.addTextNode("Arabica");
+
+        QName priceName1 = new QName("price");
+        SOAPElement price1 = coffee.addChildElement(priceName1);
+        price1.addTextNode("4.50");
+
+        QName coffeeNm2 = new QName("coffee-name");
+        SOAPElement coffeeName2 = coffee.addChildElement(coffeeNm2);
+        coffeeName2.addTextNode("Espresso");
+
+        QName priceName2 = new QName("price");
+        SOAPElement price2 = coffee.addChildElement(priceName2);
+        price2.addTextNode("5.00");
+
+        QName coffeeNm3 = new QName("coffee-name");
+        SOAPElement coffeeName3 = coffee.addChildElement(coffeeNm3);
+        coffeeName3.addTextNode("Dorada");
+
+        QName priceName3 = new QName("price");
+        SOAPElement price3 = coffee.addChildElement(priceName3);
+        price3.addTextNode("6.00");
+
+        QName coffeeNm4 = snew QName("coffee-name");
+        SOAPElement coffeeName4 = coffee.addChildElement(coffeeNm4);
+        coffeeName4.addTextNode("House Blend");
+
+        QName priceName4 = new QName("price");
+        SOAPElement price4 = coffee.addChildElement(priceName4);
+        price4.addTextNode("5.00");
+
+        message.saveChanges();
+
+    } catch(Exception e) {
+        logger.severe("onMessage: Exception: " + e.toString());
+    }
+    return message;
+}</pre>
+
+<a name="bnclb"></a><h5>Returning the Order Confirmation</h5>
+<p><tt>ConfirmationServlet</tt> creates the confirmation message that is returned to the <tt>call</tt> method that
+is invoked in <tt>OrderRequest</tt>. It is very similar to the code in
+<tt>PriceListServlet</tt> except that instead of building a price list, its <tt>onMessage</tt> method builds
+a confirmation containing the order number and shipping date.</p><p>The <tt>onMessage</tt> method for this servlet uses the <tt>SOAPMessage</tt> object passed to
+it by the <tt>doPost</tt> method to get the order number sent in <tt>OrderRequest</tt>.
+Then it builds a confirmation message containing the order ID and shipping date.
+The shipping date is calculated as today&rsquo;s date plus two days.</p><pre>public SOAPMessage onMessage(SOAPMessage message) {
+    logger.info("onMessage");    
+    SOAPMessage confirmation = null;
+
+    try {
+
+        // Retrieve orderID from message received
+        SOAPBody sentSB = message.getSOAPBody();
+        Iterator sentIt = sentSB.getChildElements();
+        SOAPBodyElement sentSBE = (SOAPBodyElement)sentIt.next();
+        Iterator sentIt2 = sentSBE.getChildElements();
+        SOAPElement sentSE = (SOAPElement)sentIt2.next();
+
+        // Get the orderID test to put in confirmation
+        String sentID = sentSE.getValue();
+
+        // Create the confirmation message
+        confirmation = messageFactory.createMessage();
+        SOAPBody sb = message.getSOAPBody();
+
+        QName newBodyName =
+            new QName("http://sonata.coffeebreak.com", "confirmation", "Confirm");
+        SOAPBodyElement confirm = sb.addBodyElement(newBodyName);
+
+        // Create the orderID element for confirmation
+        QName newOrderIDName = new QName("orderId");
+        SOAPElement newOrderNo = confirm.addChildElement(newOrderIDName);
+        newOrderNo.addTextNode(sentID);
+
+        // Create ship-date element
+        QName shipDateName = new QName("ship-date");
+        SOAPElement shipDate = confirm.addChildElement(shipDateName);
+
+        // Create the shipping date
+        Date today = new Date();
+        long msPerDay = 1000 * 60 * 60 * 24;
+        long msTarget = today.getTime();
+        long msSum = msTarget + (msPerDay * 2);
+        Date result = new Date();
+        result.setTime(msSum);
+        String sd = result.toString();
+        shipDate.addTextNode(sd);
+
+        confirmation.saveChanges();
+
+    } catch (Exception ex) {
+        ex.printStackTrace();
+    }
+    return confirmation;
+}</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnckq.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnclc.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

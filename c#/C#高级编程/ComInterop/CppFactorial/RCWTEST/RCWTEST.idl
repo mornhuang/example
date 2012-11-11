@@ -1,0 +1,41 @@
+// RCWTEST.idl : IDL source for RCWTEST.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (RCWTEST.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	
+	[
+		object,
+		uuid(617C8372-022A-4605-8E0A-2E5F533331BE),
+		dual,
+		helpstring("IFactorial Interface"),
+		pointer_default(unique)
+	]
+	interface IFactorial : IDispatch
+	{
+		[id(1), helpstring("method GetFactorial")] HRESULT GetFactorial([in] int iValue, [out, retval] unsigned int* uFactorial);
+	};
+
+[
+	uuid(649CA963-EA19-4DA3-B0CF-BA16E8E222EE),
+	version(1.0),
+	helpstring("RCWTEST 1.0 Type Library")
+]
+library RCWTESTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	
+	[
+		uuid(8D3176FD-0C97-4481-8F66-EB78457417BB),
+		helpstring("Factorial Class")
+	]
+	coclass Factorial
+	{
+		[default] interface IFactorial;
+	};
+};

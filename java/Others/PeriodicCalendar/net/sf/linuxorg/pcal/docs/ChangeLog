@@ -1,0 +1,13 @@
+3.1
+1. Internationalization support improved.
+2. Ukrainian translation added.
+3. Password protection for the pcal files are now available.
+4. Possibility to record pregnancy interruption added.
+5. Disclaimer is displayed on the first application start that Periodic 
+   Calendar can only be used as a tracking utility, but not as a contraceptive tool. 
+6. Unit tests for the application core modules created.
+7. Some core methods were refactored to make the code support easier.
+
+3.0
+Project was rewritten in Java. Functionality generally kept the same. See the application online 
+help for more details.

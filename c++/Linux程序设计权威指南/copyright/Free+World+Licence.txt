@@ -1,0 +1,623 @@
+THE FREE WORLD LICENCE V1
+=========================
+Version   : 1.
+Date      : 12 August 2000.
+Author    : Ross N. Williams (ross@ross.net).
+Web       : http://www.freeworldlicence.org/
+Copyright : Copyright (c) Ross N. Williams 2000.
+            All rights reserved.
+Licence   : You are permitted to copy, distribute, and use
+            verbatim copies of this licence document, but
+            you may not modify it. However, you may copy
+            and modify clauses of this licence for use in
+            your own licence of a different name.
+Branding  : The author requests that the term
+            "Free World Licence" be used only to refer to
+            verbatim copies of this licence.
+Warning   : This licence does not constitute legal advice
+            by Ross N. Williams or any other party, and
+            accordingly it is not intended to be, nor
+            should it be relied upon as, a substitute for
+            legal or other professional advice. If you use
+            this Licence, you do so at your own risk.
+Note      : Because this licence permits use on free
+            platforms only, it does not satisfy the
+            requirements for use of the term "open source"
+            as it is informally defined on the web site
+            www.opensource.org. In order to avoid confusion,
+            this licence should not be referred to as an
+            "open source" licence and software released
+            under this licence should not be referred to
+            as "open source".
+Thanks    : Parts of this licence are based on parts of the
+            GNU GPL, with permission. Thanks also to Adrian
+            Tembel for insightful legal debugging, and to
+            Dan Shearer and Marc Leeuwen for helpful
+            comments.
+
+Abstract
+--------
+This is a free-software licence that provides all the
+conventional free-software freedoms, but restricts them to
+free platforms only (the "Free World"). This licence, which
+may be used by anyone, is suitable for commercial software
+vendors who want to contribute to the free software
+community and experiment with free-software business models
+without destroying their existing commercial-platform
+licensing revenue stream. It may also be suitable for
+free-software developers who do not want their software to
+enhance the functionality of non-free platforms.
+
+Form Of Invocation
+------------------
+The suggested form of invocation of this licence in your
+source code is:
+
+   Copyright (c) [YourName] [Year]. All rights reserved.
+   To the extent permitted by law, all liability is
+   excluded, including contractual, tort and other forms.
+   You are permitted to copy and distribute this module
+   on Free Platforms only, subject to the terms and
+   conditions of the Free World Licence V1 which can
+   be found at the website www.freeworldlicence.org.
+   [YourName] is the Original Licensor and can be
+   contacted at:
+      [Your name] ([Your email address])
+      [Your web address]
+      [Your postal address]
+
+If you are releasing a complete program, the suggested form
+of notice that the program should display to its user is:
+
+   Copyright (c) [YourName] [Year]. All rights reserved.
+   To the extent permitted by law, all liability is
+   excluded, including contractual, tort and other forms.
+   This program may be run on Free Platforms only.
+   By running this program twice, you agree to the terms
+   and conditions of The Free World Licence V1
+   (www.freeworldlicence.org).
+
+Definitions
+-----------
+1.1 CONTRACT: The terms "Licence" and "Contract" are used
+interchangeably to refer to this document and the
+relationship it defines.
+
+1.2 EXECUTABLE: A work, or derived work, capable of being
+executed on a Platform without further translation.
+
+1.3 FIRMWARE: Firmware is defined to be any software
+residing in computer chips (not mass storage devices) of one
+megabyte or less that is undamaged when the computer is
+disconnected from its power supply and which cannot be
+replaced or altered without having to disconnect the
+computer from its power supply, open the computer, and
+manually perform a physical hardware modification.
+
+1.4 FREE PLATFORM: A Free Platform is defined to be any
+Platform whose software component satisfies all of the
+following conditions technically, legally, and free of
+charge for all entities:
+a. complete Executables can be downloaded from the internet;
+b. complete Source Code can be downloaded from the internet;
+c. the software may be used for any purpose;
+d. the software may be modified, and modified versions used;
+e. modifications and modified versions may be publicly
+   shared under the same terms;
+f. these freedoms apply to both Executables and Source Code;
+g. these freedoms are granted irreversibly for the
+   particular version of the Platform in question; the
+   Platform's licence must not contain termination clauses
+   triggered by anything other than the wish of the licensee
+   or formally defined breaches of the licence's conditions
+   relating directly to the intellectual property of the
+   Platform software.
+
+Exception: The incorporation of non-free device drivers, and
+other directly hardware-related software does not in itself
+cause a Platform to be classified as non-free.
+
+The following is an informal categorization of some existing
+Platforms. This categorization is subordinate to the
+definition above:
+Free     : GNU/Linux (often called just "Linux"), FreeBSD,
+           NetBSD, OpenBSD, GNU/HURD, FreeDOS, MINIX.
+Non-Free : MS-DOS, Windows95, Windows98, WindowsNT,
+           Windows2000, MacOS, AIX, IRIX, Tru64 Unix,
+           SunOS, Solaris, OpenVMS, HP-UX, BSD/OS, Plan 9,
+           VMware and other non-free software that emulates
+           hardware and/or emulates free platforms.
+See also PLATFORM. Note: Many of these platform names are
+trademarks of their respective owners.
+
+1.5 LICENCE: The terms "Licence" and "Contract" are used
+interchangeably to refer to this document and the
+relationship it defines.
+
+1.6 LICENSOR: Licensor is the entity that is granting a
+licence under this Licence. The Licensor will usually also
+be the copyright holder. The Licensor may also be the
+Original Licensor.
+
+1.7 LICENSEE: Licensee is the entity that is being granted a
+licence under this Licence.
+
+1.8 MODULE: A component of a computer program, and the unit
+of licensing under this Licence. A module's source code
+consists of a single source file, or a small cluster of very
+closely related source files (e.g. in C, module.h and
+module.c). "The Module" means the module that is the subject
+of this licence, and includes any derivative work under
+copyright law: that is to say, a work containing the Module
+or a portion of it, either verbatim or with modifications
+and/or translated into another language. Hereinafter,
+translation (including compilation) is included without
+limitation in the term "modification". An executable or
+object code module is a derivative work of each Module from
+which it was derived.
+
+1.9 NOTICE: A message within a Module, or associated with a
+Module or Program containing the Module.
+
+1.10 ORIGINAL LICENSOR: The entity that first
+created/released the Module under this Licence. This is
+usually the copyright holder. If several entities contribute
+modifications to a Module, then each entity holds copyright
+over its modification, and licenses those modifications to
+the public under this Licence. All of those entities are
+Licensors of the Module, but only the original
+creator/releaser is the Original Licensor.
+
+1.11 OFFICIAL: Something is Official if it is provided or
+endorsed by the Original Licensor.
+
+1.12 PLATFORM: A collection of hardware, software and
+interfaces that together constitute a software execution
+environment. For the purposes of this Licence, the software
+component of a Platform is defined to be the minimum set of
+software required to enable the execution of the Module (or
+the derived work containing the Module) and does not include
+Firmware as defined above. See also FREE PLATFORM.
+
+1.13 PROGRAM: A collection of one or more Modules that
+together constitute an operational piece of software that
+can be run on at least one Platform.
+
+1.14 SOURCE CODE: The source code for a work means the
+preferred form of the work for making modifications to it.
+For an executable work, complete source code means all the
+source code for all modules it contains, plus any associated
+interface definition files, plus the scripts used to control
+compilation and installation of the executable. However, as
+a special exception, the source code distributed need not
+include anything that is normally distributed (in either
+source or binary form) with the major components (compiler,
+kernel, and so on) of the Platform on which the executable
+runs, unless that component itself accompanies the
+executable.
+
+1.15 THIRD PARTY WORK: A work that can reasonably be
+considered independent and separate to the Module.
+
+1.16 YOU: The Licensee.
+
+Framing
+-------
+2.1 CONTRACT: This Licence is a legal contract between you
+and the Original Licensor (and possibly between you and
+other contributing Licensors too). As you are not obliged to
+accept this Contract without becoming aware of its existence
+and then indicating your agreement to it, you are free to
+receive and store a copy of the Module on your computer for
+an undefined grace period. However, in the absence of some
+other licensing agreement with Original Licensor, this
+Licence forms the only basis for your continued use of the
+Module, and by performing any of the following actions, you
+indicate your formal acceptance of this Licence and you
+enter into a contract with Original Licensor (and possibly
+with other contributing Licensors too):
+
+(a) Executing the Module, or any Program incorporating the
+    Module, more than once (see clause 4.9);
+
+(b) Modifying the Module or creating a derived work of the
+    Module;
+
+(c) Passively or actively copying or distributing the
+    Module;
+
+(d) Failing to delete the Module from your computer within
+    three days of becoming specifically aware of the
+    Module's presence on your computer and its coverage by
+    this Licence.
+
+2.2 SUBJECT OF LICENCE: This Licence applies to any Module,
+or other work, that contains a notice placed by the work's
+copyright holder (or entity authorized by the copyright
+holder) saying that it may be distributed under the terms of
+this Licence. If no licence version number is provided in
+the notice, the version of this Licence is applicable that
+was most current at the time the Module was first released
+under this Licence.
+
+2.3 CONSIDERATION: In exchange for this Licence, you agree
+to accept the terms and conditions of this Licence,
+including agreement to license to Original Licensor any
+bugfixes and minor modifications that you release, as
+described in clause 5.8.
+
+2.4 SCOPE: This Licence covers only the activities of
+copying, executing, distributing, and modifying (creating
+derived works) the Module. All other activities are outside
+its scope. Module output is covered only if its contents
+constitute a work based on the Module (independent of having
+been made by running the Module). Whether that is true
+depends on what the Module does.
+
+2.5 LICENCE, NOT SALE: The Module is licensed, not sold, to
+you for use only under the terms and conditions of this
+Contract, and Licensor reserves all rights not expressly
+granted to you. This Contract does not grant you any rights
+to copyright, patents, trade secrets, trade names,
+trademarks (whether registered or unregistered), or any
+other rights, franchises, or licences (apart from the
+express licence granted by this Contract) in respect of the
+Module, or collection of Modules similarly licensed.
+
+2.6 WARRANT OF RIGHTS: Original Licensor warrants that it
+has sufficient copyright rights to the Module to license it
+to you under this Licence. However, due to the uncertainty
+associated with other forms of intellectual property,
+Original Licensor does not warrant that it has sufficient
+patent or other rights, apart from copyright, to license the
+Module.
+
+Own Use
+-------
+3.1 PLATFORM RESTRICTION ON EXECUTION: You may execute the
+Module on any Free Platform. You may not execute the Module
+on any non-Free Platform.
+
+3.2 PLATFORM RESTRICTION ON DERIVED WORKS: You may not
+generate, copy, distribute or endorse object code or an
+executable that incorporates the Module and which can run on
+one or more non-Free Platforms, unless the object code or
+executable was generated on a Free Platform, can run
+unmodified on at least one Free Platform, and has
+interoperability as a natural consequence of the
+relationship between the architectures of the Free and
+non-Free Platforms rather than as the result of an
+engineering effort (e.g. using two bodies of code in the
+same executable) designed to circumvent this clause.
+
+Distribution
+------------
+4.1 COPYING OF SOURCE: You may copy and distribute copies of
+the Module's source code, in any medium, provided that you
+conspicuously and appropriately publish (or retain) on each
+copy an appropriate copyright notice and disclaimer of
+warranty; keep intact all the notices that refer to this
+Licence and to the absence of any warranty; and give any
+other recipients of the Module a copy of this Licence along
+with the Module (or collection of Modules similarly
+licensed). You must also adhere to the other terms and
+conditions of this Contract.
+
+4.2 COPYING OF EXECUTABLES: You may copy and distribute
+copies of object code and executables (that incorporate the
+Module) for Free Platforms only, providing that you include
+a copy of this Licence, and that you either include the
+source code for the Module or instructions on how to
+download a publicly available copy of the source code for
+the Module (or Program or collection of modules containing
+the Module) from the internet free of charge and provided
+under this Licence. You must also adhere to the other terms
+and conditions of this Contract.
+
+4.3 CHARGING FOR DISTRIBUTION: You may charge a fee for the
+physical act of transferring a copy of the Module.
+
+4.4 CHARGING FOR WARRANTY PROTECTION: You may offer warranty
+protection on the Module in exchange for a fee.
+
+4.5 ORIGINAL LICENSOR CONTACT INFO: Original Licensor must
+provide, along with any notice indicating that this Licence
+applies, appropriate contact information so as to enable
+Licensees to send Original Licensor changes and to contact
+Original Licensor about issues relating to this Licence.
+Original Licensor should provide at least its name, postal
+address, email address, and website address.
+
+4.6 INTEGRATION: Where you distribute a Third Party Work as
+part of a whole that contains the Module, the distribution
+of the whole must be on the terms of this Licence, whose
+permissions for other Licensees extend to the entire whole,
+and thus to each and every part regardless of who wrote it.
+However, this restriction does not apply to such Third Party
+Works when they are distributed as separate works.
+
+4.7 AGGREGATION: Mere aggregation of another work not based
+on the Module with the Module on a volume of a storage or
+distribution medium does not bring the other work under the
+scope of this Licence.
+
+4.8 REPRESENTATION OF RIGHTS: In interacting with a third
+party in relation to the Module under this Contract, you may
+not explicitly or implicitly represent that they have more
+or less rights than are provided to them under this Licence.
+For example, you may not imply, when distributing the
+Module, that the Module is conventionally-commercial
+software (implication of less rights), and you may not imply
+that the Module is public domain (implication of more
+rights). Similarly, you may not imply that the Module may
+legally be run on a non-free Platform (e.g. by distributing
+it under the implicit or explicit representation that it is
+for use on one or more non-free Platforms).
+
+4.9 STARTUP NOTICES: If a work based on the Module is
+distributed as part of a whole that has an interactive
+interface, then that interface must display (in a startup
+notice, "about" box, or similar) a notice that includes:
+(a) an appropriate copyright notice;
+(b) a notice that there is no warranty (or else, saying
+    that you provide a warranty);
+(c) a notice that the software is covered by this Licence;
+(d) a notice telling the user how to view a copy of this
+    licence; and
+(e) a notice that by running the software twice, the user
+    is explicitly agreeing to this Licence (see clause 2.1).
+If the work does not have an interactive interface (e.g.
+traditionally "silent" Unix utilities) then you must
+configure the distribution so as to ensure that the user is
+made aware of these notices before the user runs the program
+for the second time.
+
+4.10 INTEGRITY: If, as a consequence of a court judgment or
+allegation of patent infringement or for any other reason
+(not limited to patent issues), conditions are imposed on
+you (whether by court order, agreement or otherwise) that
+contradict the conditions of this Licence, they do not
+excuse you from the conditions of this Licence. If you
+cannot distribute so as to satisfy simultaneously your
+obligations under this Licence and any other pertinent
+obligations, then as a consequence you may not distribute
+the Module at all. For example, if a patent licence would
+not permit royalty-free redistribution of the Module by all
+those who receive copies directly or indirectly through you,
+then the only way you could satisfy both it and this Licence
+would be to refrain entirely from distribution of the
+Module.
+
+4.11 ACKNOWLEDGMENT: The end-user documentation included
+with any distribution of this software must include the
+following acknowledgement:
+   "This product includes software developed by
+    Original-Licensor (Original-Licensor's-Web-Address)."
+where you should substitute the Original Licensor's name and
+web address as appropriate. Alternately, this acknowledgment
+may appear in the software itself, if and wherever such
+third-party acknowledgments normally appear.
+
+Modification
+------------
+5.1 GRANT OF MODIFICATION: You may modify your copy or
+copies of the Module or any portion of it, thus forming a
+work based on the Module, and copy and distribute such
+modifications or work in accordance with clauses 4.1 and
+4.2, providing that you conform to all the other terms and
+conditions of this Contract.
+
+5.2 LICENCE ENFORCEMENT: You must not remove or disable
+parts of the Module that notify, support or enforce the
+terms and conditions of this Licence.
+
+5.3 NOTICE PERMANENCE: You may not remove any notice of
+proprietary rights (e.g. notices of copyright, patent,
+trademark, trade name), or any other legal or other notice,
+from the Module.
+
+5.4 MODIFICATION NOTICES: If you modify the Module, you must
+cause the modified files to carry prominent notices,
+providing, for each change, your name, the date of the
+change, your email address, and a brief summary of each
+change.
+
+5.5 PROGRAM MODIFICATION NOTICES: If Original Licensor
+released the Module as part of a Program, and the Module has
+been modified since it was released by Original Licensor,
+and the Program has an interactive interface, then that
+interface must display (in a startup notice, "about" box, or
+similar) a notice stating that the Program has been modified
+since its Official release, a statement that an official
+version is available, and sufficient online contact
+information (e.g. official web address) for obtaining the
+Official version, as provided by Original Licensor.
+
+5.6 NAMING EXECUTABLES AND DISTRIBUTION FILES: If Original
+Licensor released the Module as part of a Program, and the
+Module has been modified since it was released by Original
+Licensor, then all modified executables and distribution
+archive files must be given a different name from the
+Official name. For example, if the Program is called
+Gnomovision, then you could name your executable and
+distribution file gnomovision-banana.exe and
+gnomovision-banana.zip. The different name must not imply
+that the variant is Official (e.g. "Gnomovision-Deluxe",
+"Gnomovision-Pro" or "Gnomovision-V5"). This clause is
+subordinate to the powers of trademarks wielded by Original
+Licensor.
+
+5.7 TRADEMARK: If Original Licensor released the Module,
+under this Licence, as part of a complete Program, and the
+Program's name is protected by trademark, Original Licensor
+should issue a licence for use of the trademark, and you
+must conform to its terms and conditions or rename your
+variation of the Program.
+
+5.8 MINOR MODIFICATION LICENSEBACK: If you apply a
+self-contained modification that adds or modifies at most
+twenty (possibly non-contiguous) lines of code in the
+Module, or apply a simple systematic transformation
+throughout the Module (e.g. correcting a systemic spelling
+error), then upon releasing such modification, you
+automatically grant to Original Licensor a non-exclusive
+royalty-free unrestricted worldwide licence to distribute
+and/or license the modification (and hence the modified
+Module) under terms of the Original Licensor's choosing. The
+purpose of this clause is to allow bugfixes and minor
+enhancements to be incorporated into commercial releases of
+the Module.
+
+5.9 ALL-PLATFORM CONVERSION: If you apply a modification to
+the Module, then upon releasing such modification you
+automatically grant a public licence to the modification
+under this Licence, and also under this Licence but with the
+definition of "Free Platform" relaxed to include all
+platforms. The purpose of this clause is to enable the
+Original Licensor (at a later date) to relax the platform
+restriction without having to obtain permission from each
+contributor/Licensor. However, until the Original Licensor
+releases the original Module under the relaxed licence, the
+modified Module does not fall under the relaxed licence.
+
+5.10 GNU CONVERSION: If you apply a modification to the
+Module, then upon releasing such modification you
+automatically grant a public licence to the modification
+under all versions (including future versions) of the GNU
+General Public Licence (as published by the Free Software
+Foundation (www.fsf.org)). The purpose of this clause is to
+enable the Original Licensor (at a later date) to convert
+the Module's licensing over to a GNU GPL without having to
+obtain GNU GPL permission from each contributor/Licensor.
+However, until the Original Licensor releases the original
+Module under a GNU GPL, the modified Module does not fall
+under the GNU GPL.
+
+5.11 IMMUTABILITY: You may not copy, modify, sublicense, or
+distribute the Module except as expressly provided under
+this Licence. Any attempt otherwise to copy, modify,
+sublicense or distribute the Module is void, and will
+automatically terminate your rights under this Licence.
+However, parties who have received copies, or rights, from
+you under this Licence will not have their licences
+terminated so long as such parties remain in full
+compliance.
+
+5.12 TRANSITIVITY: You must cause any work (and each Module
+in any work) that you distribute or publish, that in whole
+or in part contains or is derived from the Module or any
+part thereof, to be licensed at no charge to all third
+parties under the terms of this Licence. Each time you
+redistribute the Module, the recipient automatically
+receives an offer from Original Licensor and all subsequent
+Licensors to accept this Contract and thereby obtain the
+right to execute, copy, distribute or modify the Module
+subject to these terms and conditions. You may not impose
+any further restrictions on the recipients' exercise of the
+rights granted herein.
+
+5.13 PATENTS OWNED BY LICENSOR: Where Licensor owns (or has
+licensed) patents that relate to the Module, Licensor must
+prominently and appropriately list in the Module's source
+code and documentation (using the word "patent") formal
+references to each patent. Failure to do this constitutes
+(to the extent permitted by Licensor's powers in relation to
+the patent) an implicit free public licence to use the
+patent in the form of the Module and derived works of the
+Module under this Licence.
+
+5.14 PATENT GEOGRAPHICAL EXCLUSIONS: If the distribution
+and/or use of the Module is restricted in certain countries
+either by patents or by copyrighted interfaces, Licensor may
+add an explicit geographical distribution limitation
+excluding those countries, so that distribution is permitted
+only in or among countries not thus excluded. In such case,
+this Licence incorporates the limitation as if written in
+the body of this Licence.
+
+5.15 INTERACTION WITH OTHER LICENCES: If you wish to
+integrate parts of the Module with other modules whose
+distribution conditions are different, contact the
+Licensor(s) to ask for permission.
+
+No Warranty Or Liability
+------------------------
+6.1 NO WARRANTY: BECAUSE THE MODULE IS LICENSED FREE OF
+CHARGE, THERE IS NO WARRANTY FOR THE MODULE, TO THE EXTENT
+PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED
+IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
+PROVIDE THE MODULE "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND
+PERFORMANCE OF THE MODULE IS WITH YOU. SHOULD THE MODULE
+PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY
+SERVICING, REPAIR OR CORRECTION.
+
+6.2 NO LIABILITY: IN NO EVENT UNLESS REQUIRED BY APPLICABLE
+LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR
+ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE
+MODULE AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES,
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL
+DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
+MODULE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA
+BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR
+THIRD PARTIES OR A FAILURE OF THE MODULE TO OPERATE WITH ANY
+OTHER MODULES), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+6.3 INDEMNITY: IF YOU BREACH ANY PART OF THIS CONTRACT, YOU
+INDEMNIFY ORIGINAL LICENSOR (AND ALL SUBSEQUENT LICENSORS)
+AGAINST ANY CLAIMS THAT ARISE AS A DIRECT OR INDIRECT
+CONSEQUENCE OF SUCH BREACH.
+
+Additional Legalities
+---------------------
+7.1 NO RESPONSIBILITY FOR THIRD PARTY COMPLIANCE: You are
+not responsible for enforcing compliance by third parties to
+this Licence.
+
+7.2 SUGGESTIONS: By making a suggestion (in relation to the
+Module, a derived work of the Module, or a Third Party
+enclosing Work) to Original Licensor or its representatives,
+you thereby grant Original Licensor permission to use that
+suggestion, free of charge, in any way it chooses.
+
+7.3 USE OF LICENSOR'S NAME: Neither the name of the Original
+Licensor, nor the names of the Module's contributors may be
+used to endorse or promote products derived from this
+software without specific prior written permission.
+
+7.4 TERMINATION: You may terminate this Licence at any time
+by deleting all copies of the Module (and works derived from
+the module) in your possession. However, such deletion does
+not necessarily constitute a remedy for a prior breach. The
+No Warranty, No Liability, and Indemnity clauses survive
+termination. Termination does not extend to parties who have
+received copies, or rights, from you under this Licence so
+long as such parties remain in full compliance.
+
+7.5 SEVERANCE: If any section of this Licence is held
+invalid or unenforceable under any particular circumstance,
+the balance of the section is intended to apply and the
+section as a whole is intended to apply in other
+circumstances.
+
+7.6 ENTIRE AGREEMENT: This Contract contains the entire
+agreement between the parties hereto with respect to the
+specific licence granted under this Contract, and supersedes
+all such prior agreements and/or understandings (oral or
+written).
+
+7.7 WAIVERS NOT PRECEDENT: Failure or delay by Licensor in
+enforcing any right or provision hereof shall not be deemed
+a waiver of such provision or right with respect to the
+instance or any subsequent breach.
+
+7.8 LEGAL SYSTEM: This Contract will be construed under the
+laws of the state and country in which Licensor resides,
+except for that body of law dealing with conflict of law;
+Licensee consents to jurisdiction in the state and federal
+courts located in the state and country in which Licensor
+resides.
+

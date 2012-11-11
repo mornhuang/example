@@ -1,0 +1,898 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>SAAJ Tutorial - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level3"><a href="bnbhg.html">Overview of SAAJ</a></p>
+<p class="toc level4"><a href="bnbhg.html#bnbhh">SAAJ Messages</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbhi">The Structure of an XML Document</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbhj">What Is in a Message?</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbho">SAAJ and DOM</a></p>
+<p class="toc level4 tocsp"><a href="bnbhg.html#bnbhp">SAAJ Connections</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbhq"><tt>SOAPConnection</tt> Objects</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">SAAJ Tutorial</a></p>
+<p class="toc level4"><a href="#bnbhs">Creating and Sending a Simple Message</a></p>
+<p class="toc level5"><a href="#bnbht">Creating a Message</a></p>
+<p class="toc level5"><a href="#bnbhu">Parts of a Message</a></p>
+<p class="toc level5"><a href="#bnbhv">Accessing Elements of a Message</a></p>
+<p class="toc level5"><a href="#bnbhw">Adding Content to the Body</a></p>
+<p class="toc level5"><a href="#bnbhx">Getting a <tt>SOAPConnection</tt> Object</a></p>
+<p class="toc level5"><a href="#bnbhy">Sending a Message</a></p>
+<p class="toc level5"><a href="#bnbhz">Getting the Content of a Message</a></p>
+<p class="toc level4 tocsp"><a href="#bnbia">Adding Content to the Header</a></p>
+<p class="toc level4"><a href="#bnbib">Adding Content to the <tt>SOAPPart</tt> Object</a></p>
+<p class="toc level4"><a href="#bnbic">Adding a Document to the SOAP Body</a></p>
+<p class="toc level4"><a href="#bnbid">Manipulating Message Content Using SAAJ or DOM APIs</a></p>
+<p class="toc level4"><a href="#bnbie">Adding Attachments</a></p>
+<p class="toc level5"><a href="#bnbif">Creating an <tt>AttachmentPart</tt> Object and Adding Content</a></p>
+<p class="toc level5"><a href="#bnbig">Accessing an <tt>AttachmentPart</tt> Object</a></p>
+<p class="toc level4 tocsp"><a href="#bnbih">Adding Attributes</a></p>
+<p class="toc level5"><a href="#bnbii">Header Attributes</a></p>
+<p class="toc level4 tocsp"><a href="#bnbin">Using SOAP Faults</a></p>
+<p class="toc level5"><a href="#bnbio">Overview of SOAP Faults</a></p>
+<p class="toc level5"><a href="#bnbip">Creating and Populating a <tt>SOAPFault</tt> Object</a></p>
+<p class="toc level5"><a href="#bnbir">Retrieving Fault Information</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbis.html">Code Examples</a></p>
+<p class="toc level4"><a href="bnbis.html#bnbit">Request Example</a></p>
+<p class="toc level4"><a href="bnbis.html#bnbja">Header Example</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjb">Building and Running the Header Example</a></p>
+<p class="toc level4 tocsp"><a href="bnbis.html#bnbjc">DOM and DOMSource Examples</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjd">Examining the <tt>DOMExample</tt> Class</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbje">Examining the <tt>DOMSrcExample</tt> Class</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjf">Building and Running the DOM and DOMSource Examples</a></p>
+<p class="toc level4 tocsp"><a href="bnbis.html#bnbjg">Attachments Example</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjh">Building and Running the Attachments Example</a></p>
+<p class="toc level4 tocsp"><a href="bnbis.html#bnbji">SOAP Fault Example</a></p>
+<p class="toc level5"><a href="bnbis.html#bnbjj">Building and Running the SOAP Fault Example</a></p>
+<p class="toc level3 tocsp"><a href="bnbjk.html">Further Information about SAAJ</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbhg.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbis.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbhr"></a><h3>SAAJ Tutorial</h3>
+<a name="indexterm-1916"></a><p>This tutorial walks you through how to use the SAAJ API. First,
+it covers the basics of creating and sending a simple SOAP message. Then
+you will learn more details about adding content to messages, including how to
+create SOAP faults and attributes. Finally, you will learn how to send a
+message and retrieve the content of the response.</p><p>After going through this tutorial, you will know how to perform the following
+tasks:</p>
+<ul><li><p><a href="#bnbhs">Creating and Sending a Simple Message</a></p></li>
+<li><p><a href="#bnbia">Adding Content to the Header</a></p></li>
+<li><p><a href="#bnbib">Adding Content to the <tt>SOAPPart</tt> Object</a></p></li>
+<li><p><a href="#bnbic">Adding a Document to the SOAP Body</a></p></li>
+<li><p><a href="#bnbid">Manipulating Message Content Using SAAJ or DOM APIs</a></p></li>
+<li><p><a href="#bnbie">Adding Attachments</a></p></li>
+<li><p><a href="#bnbih">Adding Attributes</a></p></li>
+<li><p><a href="#bnbin">Using SOAP Faults</a></p></li></ul>
+<p>In the section <a href="bnbis.html">Code Examples</a>, you will see the code fragments from earlier parts
+of the tutorial in runnable applications, which you can test yourself. To see
+how the SAAJ API can be used in server code, see the SAAJ
+part of the Coffee Break case study (<a href="bncks.html">SAAJ Coffee Supplier Service</a>), which shows an example
+of both the client and the server code for a web service application.</p><p>A SAAJ client can send request-response messages to web services that are implemented
+to do request-response messaging. This section demonstrates how you can do this.</p>
+
+<a name="bnbhs"></a><h4>Creating and Sending a Simple Message</h4>
+<p>This section covers the basics of creating and sending a simple message and
+retrieving the content of the response. It includes the following topics:</p>
+<ul><li><p><a href="#bnbht">Creating a Message</a></p></li>
+<li><p><a href="#bnbhu">Parts of a Message</a></p></li>
+<li><p><a href="#bnbhv">Accessing Elements of a Message</a></p></li>
+<li><p><a href="#bnbhw">Adding Content to the Body</a></p></li>
+<li><p><a href="#bnbhx">Getting a <tt>SOAPConnection</tt> Object</a></p></li>
+<li><p><a href="#bnbhy">Sending a Message</a></p></li>
+<li><p><a href="#bnbhz">Getting the Content of a Message</a></p></li></ul>
+
+
+<a name="bnbht"></a><h5>Creating a Message</h5>
+<a name="indexterm-1917"></a><a name="indexterm-1918"></a><p>The first step is to create a message using a <tt>MessageFactory</tt> object. The
+SAAJ API provides a default implementation of the <tt>MessageFactory</tt> class, thus making it
+easy to get an instance. The following code fragment illustrates getting an instance
+of the default message factory and then using it to create a message.</p><pre>MessageFactory factory = MessageFactory.newInstance();
+SOAPMessage message = factory.createMessage();</pre><p>As is true of the <tt>newInstance</tt> method for <tt>SOAPConnectionFactory</tt>, the <tt>newInstance</tt> method
+for <tt>MessageFactory</tt> is static, so you invoke it by calling <tt>MessageFactory.newInstance</tt>.</p><p>If you specify no arguments to the <tt>newInstance</tt> method, it creates a message
+factory for SOAP 1.1 messages. To create a message factory that allows you
+to create and process SOAP 1.2 messages, use the following method call:</p><pre>MessageFactory factory = 
+    MessageFactory.newInstance(SOAPConstants.SOAP_1_2_PROTOCOL);</pre><p>To create a message factory that can create either SOAP 1.1 or
+SOAP 1.2 messages, use the following method call:</p><pre>MessageFactory factory =
+    MessageFactory.newInstance(SOAPConstants.DYNAMIC_SOAP_PROTOCOL);</pre><p>This kind of factory enables you to process an incoming message that might
+be of either type.</p>
+
+<a name="bnbhu"></a><h5>Parts of a Message</h5>
+<p>A <a name="indexterm-1919"></a><tt>SOAPMessage</tt> object is required to have certain elements, and, as stated previously,
+the SAAJ API simplifies things for you by returning a new <tt>SOAPMessage</tt> object
+that already contains these elements. When you call <tt>createMessage</tt> with no arguments, the message
+that is created automatically has the following:</p>I. A <tt>SOAPPart</tt> object that contains     A.  A <tt>SOAPEnvelope</tt> object that contains         1.  An empty <tt>SOAPHeader</tt> object         2.  An empty <tt>SOAPBody</tt> object<p>The <tt>SOAPHeader</tt> object is optional and can be deleted if it is not
+needed. However, if there is one, it must precede the <tt>SOAPBody</tt> object.
+The <tt>SOAPBody</tt> object can hold either the content of the message or a
+<b>fault</b> message that contains status information or details about a problem with the
+message. The section <a href="#bnbin">Using SOAP Faults</a> walks you through how to use <tt>SOAPFault</tt> objects.</p>
+
+<a name="bnbhv"></a><h5>Accessing Elements of a Message</h5>
+<a name="indexterm-1920"></a><a name="indexterm-1921"></a><p>The next step in creating a message is to access its parts
+so that content can be added. There are two ways to do this.
+The <tt>SOAPMessage</tt> object <tt>message</tt>, created in the preceding code fragment, is the
+place to start.</p><p><a name="indexterm-1922"></a>The first way to access the parts of the message is to
+work your way through the structure of the message. The message contains a
+<tt>SOAPPart</tt> object, so you use the <tt>getSOAPPart</tt> method of <tt>message</tt> to retrieve
+it:</p><pre>SOAPPart soapPart = message.getSOAPPart();</pre><p><a name="indexterm-1923"></a>Next you can use the <tt>getEnvelope</tt> method of <tt>soapPart</tt> to retrieve the
+<tt>SOAPEnvelope</tt> object that it contains.</p><pre>SOAPEnvelope envelope = soapPart.getEnvelope();</pre><p><a name="indexterm-1924"></a><a name="indexterm-1925"></a>You can now use the <tt>getHeader</tt> and <tt>getBody</tt> methods of <tt>envelope</tt> to
+retrieve its empty <tt>SOAPHeader</tt> and <tt>SOAPBody</tt> objects.</p><pre>SOAPHeader header = envelope.getHeader();
+SOAPBody body = envelope.getBody();</pre><p><a name="indexterm-1926"></a><a name="indexterm-1927"></a>The second way to access the parts of the message is to
+retrieve the message header and body directly, without retrieving the <tt>SOAPPart</tt> or <tt>SOAPEnvelope</tt>.
+To do so, use the <tt>getSOAPHeader</tt> and <tt>getSOAPBody</tt> methods of <tt>SOAPMessage</tt>:</p><pre>SOAPHeader header = message.getSOAPHeader();
+SOAPBody body = message.getSOAPBody();</pre><p><a name="indexterm-1928"></a>This example of a SAAJ client does not use a SOAP header,
+so you can delete it. (You will see more about headers later.) Because
+all <tt>SOAPElement</tt> objects, including <tt>SOAPHeader</tt> objects, are derived from the <tt>Node</tt> interface, you
+use the method <tt>Node.detachNode</tt> to delete <tt>header</tt>.</p><pre>header.detachNode();</pre>
+
+<a name="bnbhw"></a><h5>Adding Content to the Body</h5>
+<a name="indexterm-1929"></a><a name="indexterm-1930"></a><a name="indexterm-1931"></a><p>The <tt>SOAPBody</tt> object contains either content or a fault. To add content to
+the body, you normally create one or more <tt>SOAPBodyElement</tt> objects to hold
+the content. You can also add subelements to the <tt>SOAPBodyElement</tt> objects by
+using the <tt>addChildElement</tt> method. For each element or child element, you add content
+by using the <tt>addTextNode</tt> method.</p><p><a name="indexterm-1932"></a>When you create any new element, you also need to create an
+associated <tt>javax.xml.namespace.QName</tt> object so that it is uniquely identified.</p>
+<hr><p><b>Note - </b><a name="indexterm-1933"></a><a name="indexterm-1934"></a><a name="indexterm-1935"></a>You can use <tt>Name</tt> objects instead of <tt>QName</tt> objects. <tt>Name</tt> objects are
+specific to the SAAJ API, and you create them using either <tt>SOAPEnvelope</tt> methods or
+<tt>SOAPFactory</tt> methods. However, the <tt>Name</tt> interface may be deprecated at a future release.</p><p>The <tt>SOAPFactory</tt> class also lets you create XML elements when you are not
+creating an entire message or do not have access to a complete <tt>SOAPMessage</tt>
+object. For example, JAX-RPC implementations often work with XML fragments rather than complete <tt>SOAPMessage</tt>
+objects. Consequently, they do not have access to a <tt>SOAPEnvelope</tt> object, and this
+makes using a <tt>SOAPFactory</tt> object to create <tt>Name</tt> objects very useful. In addition to
+a method for creating <tt>Name</tt> objects, the <tt>SOAPFactory</tt> class provides methods for creating
+<tt>Detail</tt> objects and SOAP fragments. You will find an explanation of <tt>Detail</tt>
+objects in <a href="#bnbio">Overview of SOAP Faults</a> and <a href="#bnbip">Creating and Populating a <tt>SOAPFault</tt> Object</a>.</p>
+<hr>
+<p><a name="indexterm-1936"></a><a name="indexterm-1937"></a><a name="indexterm-1938"></a><a name="indexterm-1939"></a><tt>QName</tt> objects associated with <tt>SOAPBodyElement</tt> or <tt>SOAPHeaderElement</tt> objects must be fully qualified; that is,
+they must be created with a namespace URI, a local part, and a
+namespace prefix. Specifying a namespace for an element makes clear which one is
+meant if more than one element has the same local name.</p><p>The following code fragment retrieves the <tt>SOAPBody</tt> object <tt>body</tt> from <tt>message</tt>, constructs
+a <tt>QName</tt> object for the element to be added, and adds a new
+<tt>SOAPBodyElement</tt> object to <tt>body</tt>.</p><pre>SOAPBody body = message.getSOAPBody();
+QName bodyName = new QName("http://wombat.ztrade.com", "GetLastTradePrice", "m");
+SOAPBodyElement bodyElement = body.addBodyElement(bodyName);</pre><p><a name="indexterm-1940"></a><a name="indexterm-1941"></a><a name="indexterm-1942"></a>At this point, <tt>body</tt> contains a <tt>SOAPBodyElement</tt> object identified by the <tt>QName</tt>
+object <tt>bodyName</tt>, but there is still no content in <tt>bodyElement</tt>. Assuming that you
+want to get a quote for the stock of Sun Microsystems, Inc., you
+need to create a child element for the symbol using the <tt>addChildElement</tt>
+method. Then you need to give it the stock symbol using the
+<tt>addTextNode</tt> method. The <tt>QName</tt> object for the new <tt>SOAPElement</tt> object <tt>symbol</tt> is
+initialized with only a local name because child elements inherit the prefix and
+URI from the parent element.</p><pre>QName name = new QName("symbol");
+SOAPElement symbol = bodyElement.addChildElement(name);
+symbol.addTextNode("SUNW");</pre><p><a name="indexterm-1943"></a>You might recall that the headers and content in a <tt>SOAPPart</tt> object must
+be in XML format. The SAAJ API takes care of this for
+you, building the appropriate XML constructs automatically when you call methods such as
+<tt>addBodyElement</tt>, <tt>addChildElement</tt>, and <tt>addTextNode</tt>. Note that you can call the method <tt>addTextNode</tt> only
+on an element such as <tt>bodyElement</tt> or any child elements that are added to
+it. You cannot call <tt>addTextNode</tt> on a <tt>SOAPHeader</tt> or <tt>SOAPBody</tt> object because
+they contain elements and not text.</p><p>The content that you have just added to your <tt>SOAPBody</tt> object will look
+like the following when it is sent over the wire:</p><pre>&lt;SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  &lt;SOAP-ENV:Body>
+    &lt;m:GetLastTradePrice xmlns:m="http://wombat.ztrade.com">
+      &lt;symbol>SUNW&lt;/symbol>
+    &lt;/m:GetLastTradePrice>
+  &lt;/SOAP-ENV:Body>
+&lt;/SOAP-ENV:Envelope></pre><p>Let&rsquo;s examine this XML excerpt line by line to see how it
+relates to your SAAJ code. Note that an XML parser does not care
+about indentations, but they are generally used to indicate element levels and thereby
+make it easier for a human reader to understand.</p><p>Here is the SAAJ code:</p><pre>SOAPMessage message = messageFactory.createMessage();
+SOAPHeader header = message.getSOAPHeader();
+SOAPBody body = message.getSOAPBody();</pre><p>Here is the XML it produces:</p><pre>&lt;SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  &lt;SOAP-ENV:Header/>
+  &lt;SOAP-ENV:Body>
+    ...
+  &lt;/SOAP-ENV:Body>
+&lt;/SOAP-ENV:Envelope></pre><p><a name="indexterm-1944"></a><a name="indexterm-1945"></a>The outermost element in this XML example is the SOAP envelope element, indicated
+by <tt>SOAP-ENV:Envelope</tt>. Note that <tt>Envelope</tt> is the name of the element, and
+<tt>SOAP-ENV</tt> is the namespace prefix. The interface <tt>SOAPEnvelope</tt> represents a SOAP envelope.</p><p><a name="indexterm-1946"></a>The first line signals the beginning of the SOAP envelope element, and the
+last line signals the end of it; everything in between is part
+of the SOAP envelope. The second line is an example of an attribute
+for the SOAP envelope element. Because a SOAP envelope element always contains this
+attribute with this value, a <tt>SOAPMessage</tt> object comes with it automatically included. <tt>xmlns</tt> stands
+for &ldquo;XML namespace,&rdquo; and its value is the URI of the namespace associated
+with <tt>Envelope</tt>.</p><p>The next line is an empty SOAP header. You could remove it
+by calling <tt>header.detachNode</tt> after the <tt>getSOAPHeader</tt> call.</p><p><a name="indexterm-1947"></a><a name="indexterm-1948"></a>The next two lines mark the beginning and end of the SOAP body,
+represented in SAAJ by a <tt>SOAPBody</tt> object. The next step is to add
+content to the body.</p><p>Here is the SAAJ code:</p><pre>QName bodyName = new QName("http://wombat.ztrade.com",
+    "GetLastTradePrice", "m");
+SOAPBodyElement bodyElement = body.addBodyElement(bodyName);</pre><p>Here is the XML it produces:</p><pre>&lt;m:GetLastTradePrice
+ xmlns:m="http://wombat.ztrade.com">
+ ...
+&lt;/m:GetLastTradePrice></pre><p><a name="indexterm-1949"></a><a name="indexterm-1950"></a><a name="indexterm-1951"></a>These lines are what the <tt>SOAPBodyElement</tt> <tt>bodyElement</tt> in your code represents. <tt>GetLastTradePrice</tt> is its
+local name, <tt>m</tt> is its namespace prefix, and <tt>http://wombat.ztrade.com</tt> is its namespace URI.</p><p>Here is the SAAJ code:</p><pre>QName name = new QName("symbol");
+SOAPElement symbol = bodyElement.addChildElement(name);
+symbol.addTextNode("SUNW");</pre><p>Here is the XML it produces:</p><pre>&lt;symbol>SUNW&lt;/symbol></pre><p>The <tt>String</tt> <tt>"SUNW"</tt> is the text node for the element <tt>&lt;symbol></tt>. This <tt>String</tt>
+object is the message content that your recipient, the stock quote service, receives.</p><p>The following example shows how to add multiple <tt>SOAPElement</tt> objects and add text
+to each of them. The code first creates the <tt>SOAPBodyElement</tt> object <tt>purchaseLineItems</tt>,
+which has a fully qualified name associated with it. That is, the <tt>QName</tt>
+object for it has a namespace URI, a local name, and a namespace
+prefix. As you saw earlier, a <tt>SOAPBodyElement</tt> object is required to have a fully
+qualified name, but child elements added to it, such as <tt>SOAPElement</tt> objects,
+can have <tt>Name</tt> objects with only the local name.</p><pre>SOAPBody body = message.getSOAPBody();
+QName bodyName = 
+    new QName("http://sonata.fruitsgalore.com", "PurchaseLineItems", "PO");
+SOAPBodyElement purchaseLineItems =
+    body.addBodyElement(bodyName);
+
+QName childName = new QName("Order");
+SOAPElement order = purchaseLineItems.addChildElement(childName);
+
+childName = new QName("Product");
+SOAPElement product = order.addChildElement(childName);
+product.addTextNode("Apple");
+
+childName = new QName("Price");
+SOAPElement price = order.addChildElement(childName);
+price.addTextNode("1.56");
+
+childName = new QName("Order");
+SOAPElement order2 = purchaseLineItems.addChildElement(childName);
+
+childName = new QName("Product");
+SOAPElement product2 = order2.addChildElement(childName);
+product2.addTextNode("Peach");
+
+childName = soapFactory.new QName("Price");
+SOAPElement price2 = order2.addChildElement(childName);
+price2.addTextNode("1.48");</pre><p>The SAAJ code in the preceding example produces the following XML in the
+SOAP body:</p><pre>&lt;PO:PurchaseLineItems
+ xmlns:PO="http://sonata.fruitsgalore.com">
+  &lt;Order>
+    &lt;Product>Apple&lt;/Product>
+    &lt;Price>1.56&lt;/Price>
+  &lt;/Order>
+
+  &lt;Order>
+    &lt;Product>Peach&lt;/Product>
+    &lt;Price>1.48&lt;/Price>
+  &lt;/Order>
+&lt;/PO:PurchaseLineItems></pre>
+
+<a name="bnbhx"></a><h5>Getting a <tt>SOAPConnection</tt> Object</h5>
+<a name="indexterm-1952"></a><p>The SAAJ API is focused primarily on reading and writing messages. After you
+have written a message, you can send it using various mechanisms (such as
+JMS or JAXM). The SAAJ API does, however, provide a simple mechanism
+for request-response messaging.</p><p><a name="indexterm-1953"></a><a name="indexterm-1954"></a>To send a message, a SAAJ client can use a <tt>SOAPConnection</tt> object. A
+<tt>SOAPConnection</tt> object is a point-to-point connection, meaning that it goes directly from the
+sender to the destination (usually a URL) that the sender specifies.</p><p>The first step is to obtain a <tt>SOAPConnectionFactory</tt> object that you can use
+to create your connection. The SAAJ API makes this easy by providing the
+<tt>SOAPConnectionFactory</tt> class with a default implementation. You can get an instance of this
+implementation using the following line of code.</p><pre>SOAPConnectionFactory soapConnectionFactory =
+    SOAPConnectionFactory.newInstance();</pre><p>Now you can use <tt>soapConnectionFactory</tt> to create a <tt>SOAPConnection</tt> object.</p><pre>SOAPConnection connection = soapConnectionFactory.createConnection();</pre><p>You will use <tt>connection</tt> to send the message that you created.</p>
+
+<a name="bnbhy"></a><h5>Sending a Message</h5>
+<a name="indexterm-1955"></a><p>A SAAJ client calls the <tt>SOAPConnection</tt> method <tt>call</tt> on a <tt>SOAPConnection</tt> object
+to send a message. The <tt>call</tt> method takes two arguments: the message being sent
+and the destination to which the message should go. This message is
+going to the stock quote service indicated by the <tt>URL</tt> object <tt>endpoint</tt>.</p><pre>java.net.URL endpoint = new URL("http://wombat.ztrade.com/quotes");
+
+SOAPMessage response = connection.call(message, endpoint);</pre><p>The content of the message you sent is the stock symbol SUNW;
+the <tt>SOAPMessage</tt> object <tt>response</tt> should contain the last stock price for Sun Microsystems,
+which you will retrieve in the next section.</p><p><a name="indexterm-1956"></a><a name="indexterm-1957"></a>A connection uses a fair amount of resources, so it is a
+good idea to close a connection as soon as you are finished using
+it.</p><pre>connection.close();</pre>
+
+<a name="bnbhz"></a><h5>Getting the Content of a Message</h5>
+<a name="indexterm-1958"></a><p>The initial steps for retrieving a message&rsquo;s content are the same as those
+for giving content to a message: Either you use the <tt>Message</tt> object to
+get the <tt>SOAPBody</tt> object, or you access the <tt>SOAPBody</tt> object through the
+<tt>SOAPPart</tt> and <tt>SOAPEnvelope</tt> objects.</p><p>Then you access the <tt>SOAPBody</tt> object&rsquo;s <tt>SOAPBodyElement</tt> object, because that is the
+element to which content was added in the example. (In a later section
+you will see how to add content directly to the <tt>SOAPPart</tt> object, in
+which case you would not need to access the <tt>SOAPBodyElement</tt> object to add
+content or to retrieve it.)</p><p><a name="indexterm-1959"></a>To get the content, which was added with the method <tt>SOAPElement.addTextNode</tt>, you
+call the method <tt>Node.getValue</tt>. Note that <tt>getValue</tt> returns the value of the
+immediate child of the element that calls the method. Therefore, in the following
+code fragment, the <tt>getValue</tt> method is called on <tt>bodyElement</tt>, the element on which
+the <tt>addTextNode</tt> method was called.</p><p>To access <tt>bodyElement</tt>, you call the <tt>getChildElements</tt> method on <tt>soapBody</tt>. Passing <tt>bodyName</tt>
+to <tt>getChildElements</tt> returns a <tt>java.util.Iterator</tt> object that contains all the child elements identified
+by the <tt>Name</tt> object <tt>bodyName</tt>. You already know that there is only
+one, so calling the <tt>next</tt> method on it will return the <tt>SOAPBodyElement</tt>
+you want. Note that the <tt>Iterator.next</tt> method returns a Java <tt>Object</tt>, so you
+need to cast the <tt>Object</tt> it returns to a <tt>SOAPBodyElement</tt> object before assigning
+it to the variable <tt>bodyElement</tt>.</p><pre>SOAPBody soapBody = response.getSOAPBody();
+java.util.Iterator iterator = soapBody.getChildElements(bodyName);
+SOAPBodyElement bodyElement = (SOAPBodyElement)iterator.next();
+String lastPrice = bodyElement.getValue();
+System.out.print("The last price for SUNW is ");
+
+System.out.println(lastPrice);</pre><p>If more than one element had the name <tt>bodyName</tt>, you would have to
+use a <tt>while</tt> loop using the <tt>Iterator.hasNext</tt> method to make sure that
+you got all of them.</p><pre>while (iterator.hasNext()) {
+    SOAPBodyElement bodyElement = (SOAPBodyElement)iterator.next();
+    String lastPrice = bodyElement.getValue();
+    System.out.print("The last price for SUNW is ");
+    System.out.println(lastPrice);
+}</pre><p>At this point, you have seen how to send a very basic
+request-response message and get the content from the response. The next sections provide
+more detail on adding content to messages.</p>
+
+<a name="bnbia"></a><h4>Adding Content to the Header</h4>
+<a name="indexterm-1960"></a><a name="indexterm-1961"></a><p>To add content to the header, you create a <tt>SOAPHeaderElement</tt> object. As with
+all new elements, it must have an associated <tt>QName</tt> object.</p><p><a name="indexterm-1962"></a>For example, suppose you want to add a conformance claim header to the
+message to state that your message conforms to the WS-I Basic Profile. The
+following code fragment retrieves the <tt>SOAPHeader</tt> object from <tt>message</tt> and adds a new
+<tt>SOAPHeaderElement</tt> object to it. This <tt>SOAPHeaderElement</tt> object contains the correct qualified name and attribute
+for a WS-I conformance claim header.</p><pre>SOAPHeader header = message.getSOAPHeader();
+QName headerName = new QName("http://ws-i.org/schemas/conformanceClaim/",
+    "Claim", "wsi");
+SOAPHeaderElement headerElement =
+    header.addHeaderElement(headerName);
+headerElement.addAttribute(new QName("conformsTo"),
+    "http://ws-i.org/profiles/basic/1.1/");</pre><p>At this point, <tt>header</tt> contains the <tt>SOAPHeaderElement</tt> object <tt>headerElement</tt> identified by the
+<tt>QName</tt> object <tt>headerName</tt>. Note that the <tt>addHeaderElement</tt> method both creates <tt>headerElement</tt> and
+adds it to <tt>header</tt>.</p><p>A conformance claim header has no content. This code produces the following XML
+header:</p><pre>&lt;SOAP-ENV:Header>
+  &lt;wsi:Claim
+    xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+    conformsTo="http://ws-i.org/profiles/basic/1.1/"/>
+&lt;/SOAP-ENV:Header></pre><p>For more information about creating SOAP messages that conform to WS-I, see the
+Conformance Claim Attachment Mechanisms document described in the <a href="http://www.ws-i.org/Profiles/BasicProfile-1.1.html#conformance">Conformance section of the WS-I Basic Profile</a>.</p><p>For a different kind of header, you might want to add content
+to <tt>headerElement</tt>. The following line of code uses the method <tt>addTextNode</tt> to do
+this.</p><pre>headerElement.addTextNode("order");</pre><p>Now you have the <tt>SOAPHeader</tt> object <tt>header</tt> that contains a <tt>SOAPHeaderElement</tt> object whose
+content is <tt>"order"</tt>.</p>
+
+<a name="bnbib"></a><h4>Adding Content to the <tt>SOAPPart</tt> Object</h4>
+<a name="indexterm-1963"></a><p>If the content you want to send is in a file, SAAJ
+provides an easy way to add it directly to the <tt>SOAPPart</tt> object. This
+means that you do not access the <tt>SOAPBody</tt> object and build the XML content
+yourself, as you did in the preceding section.</p><p><a name="indexterm-1964"></a>To add a file directly to the <tt>SOAPPart</tt> object, you use a <tt>javax.xml.transform.Source</tt>
+object from JAXP (the Java API for XML Processing). There are three types
+of <tt>Source</tt> objects: <tt>SAXSource</tt>, <tt>DOMSource</tt>, and <tt>StreamSource</tt>. A <tt>StreamSource</tt> object holds an XML
+document in text form. <tt>SAXSource</tt> and <tt>DOMSource</tt> objects hold content along with the
+instructions for transforming the content into an XML document.</p><p><a name="indexterm-1965"></a>The following code fragment uses the JAXP API to build a <tt>DOMSource</tt>
+object that is passed to the <tt>SOAPPart.setContent</tt> method. The first three lines of
+code get a <tt>DocumentBuilderFactory</tt> object and use it to create the <tt>DocumentBuilder</tt> object
+<tt>builder</tt>. Because SOAP messages use namespaces, you should set the <tt>NamespaceAware</tt> property
+for the factory to true. Then <tt>builder</tt> parses the content file to produce
+a <tt>Document</tt> object.</p><pre>DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+dbFactory.setNamespaceAware(true);
+DocumentBuilder builder = dbFactory.newDocumentBuilder();
+Document document = builder.parse("file:///music/order/soap.xml");
+DOMSource domSource = new DOMSource(document);</pre><p>The following two lines of code access the <tt>SOAPPart</tt> object (using the <tt>SOAPMessage</tt>
+object <tt>message</tt>) and set the new <tt>Document</tt> object as its content. The <tt>SOAPPart.setContent</tt>
+method not only sets content for the <tt>SOAPBody</tt> object but also sets the
+appropriate header for the <tt>SOAPHeader</tt> object.</p><pre>SOAPPart soapPart = message.getSOAPPart();
+soapPart.setContent(domSource);</pre><p>The XML file you use to set the content of the <tt>SOAPPart</tt>
+object must include <tt>Envelope</tt> and <tt>Body</tt> elements:</p><pre>&lt;SOAP-ENV:Envelope
+ xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  &lt;SOAP-ENV:Body>
+  ...
+  &lt;/SOAP-ENV:Body>
+&lt;/SOAP-ENV:Envelope></pre><p>You will see other ways to add content to a message in
+the sections <a href="#bnbic">Adding a Document to the SOAP Body</a> and <a href="#bnbie">Adding Attachments</a>.</p>
+
+<a name="bnbic"></a><h4>Adding a Document to the SOAP Body</h4>
+<p>In addition to setting the content of the entire SOAP message to
+that of a <tt>DOMSource</tt> object, you can add a DOM document directly to the
+body of the message. This capability means that you do not have
+to create a <tt>javax.xml.transform.Source</tt> object. After you parse the document, you can add it
+directly to the message body:</p><pre>SOAPBody body = message.getSOAPBody();
+SOAPBodyElement docElement = body.addDocument(document);</pre>
+
+<a name="bnbid"></a><h4>Manipulating Message Content Using SAAJ or DOM APIs</h4>
+<a name="indexterm-1966"></a><p>Because SAAJ nodes and elements implement the DOM <tt>Node</tt> and <tt>Element</tt> interfaces,
+you have many options for adding or changing message content:</p>
+<ul><li><p>Use only DOM APIs.</p></li>
+<li><p>Use only SAAJ APIs.</p></li>
+<li><p>Use SAAJ APIs and then switch to using DOM APIs.</p></li>
+<li><p>Use DOM APIs and then switch to using SAAJ APIs.</p></li></ul>
+<p>The first three of these cause no problems. After you have created
+a message, whether or not you have imported its content from another document, you
+can start adding or changing nodes using either SAAJ or DOM APIs.</p><p>But if you use DOM APIs and then switch to using SAAJ
+APIs to manipulate the document, any references to objects within the tree that
+were obtained using DOM APIs are no longer valid. If you must use
+SAAJ APIs after using DOM APIs, you should set all your DOM typed
+references to null, because they can become invalid. For more information about the
+exact cases in which references become invalid, see the SAAJ API documentation.</p><p>The basic rule is that you can continue manipulating the message content using
+SAAJ APIs as long as you want to, but after you start
+manipulating it using DOM, you should no longer use SAAJ APIs.</p>
+
+<a name="bnbie"></a><h4>Adding Attachments</h4>
+<a name="indexterm-1967"></a><a name="indexterm-1968"></a><p>An <tt>AttachmentPart</tt> object can contain any type of content, including XML. And because
+the SOAP part can contain only XML content, you must use an <tt>AttachmentPart</tt>
+object for any content that is not in XML format.</p>
+
+<a name="bnbif"></a><h5>Creating an <tt>AttachmentPart</tt> Object and Adding Content</h5>
+<a name="indexterm-1969"></a><p>The <tt>SOAPMessage</tt> object creates an <tt>AttachmentPart</tt> object, and the message also must
+add the attachment to itself after content has been added. The <tt>SOAPMessage</tt> class
+has three methods for creating an <tt>AttachmentPart</tt> object.</p><p>The first method creates an attachment with no content. In this case, an
+<tt>AttachmentPart</tt> method is used later to add content to the attachment.</p><pre>AttachmentPart attachment = message.createAttachmentPart();</pre><p><a name="indexterm-1970"></a><a name="indexterm-1971"></a>You add content to <tt>attachment</tt> by using the <tt>AttachmentPart</tt> method <tt>setContent</tt>. This method
+takes two parameters: a Java <tt>Object</tt> for the content, and a <tt>String</tt> object for
+the MIME content type that is used to encode the object. Content
+in the <tt>SOAPBody</tt> part of a message automatically has a <tt>Content-Type</tt> header with
+the value <tt>"text/xml"</tt> because the content must be in XML. In contrast, the
+type of content in an <tt>AttachmentPart</tt> object must be specified because it can
+be any type.</p><p><a name="indexterm-1972"></a><a name="indexterm-1973"></a><a name="indexterm-1974"></a><a name="indexterm-1975"></a>Each <tt>AttachmentPart</tt> object has one or more MIME headers associated with it. When
+you specify a type to the <tt>setContent</tt> method, that type is used for
+the header <tt>Content-Type</tt>. Note that <tt>Content-Type</tt> is the only header that is required.
+You may set other optional headers, such as <tt>Content-Id</tt> and <tt>Content-Location</tt>. For
+convenience, SAAJ provides <tt>get</tt> and <tt>set</tt> methods for the headers <tt>Content-Type</tt>, <tt>Content-Id</tt>, and <tt>Content-Location</tt>.
+These headers can be helpful in accessing a particular attachment when a message
+has multiple attachments. For example, to access the attachments that have particular headers,
+you can call the <tt>SOAPMessage</tt> method <tt>getAttachments</tt> and pass it a <tt>MIMEHeaders</tt>
+object containing the MIME headers you are interested in.</p><p><a name="indexterm-1976"></a>The following code fragment shows one of the ways to use the
+method <tt>setContent</tt>. The Java <tt>Object</tt> in the first parameter can be a <tt>String</tt>,
+a stream, a <tt>javax.xml.transform.Source</tt> object, or a <tt>javax.activation.DataHandler</tt> object. The Java <tt>Object</tt> being
+added in the following code fragment is a <tt>String</tt>, which is plain text,
+so the second argument must be <tt>"text/plain"</tt>. The code also sets a content
+identifier, which can be used to identify this <tt>AttachmentPart</tt> object. After you have added
+content to <tt>attachment</tt>, you must add it to the <tt>SOAPMessage</tt> object, something that
+is done in the last line.</p><pre>String stringContent = "Update address for Sunny Skies " +
+    "Inc., to 10 Upbeat Street, Pleasant Grove, CA 95439";
+
+attachment.setContent(stringContent, "text/plain");
+attachment.setContentId("update_address");
+
+message.addAttachmentPart(attachment);</pre><p>The <tt>attachment</tt> variable now represents an <tt>AttachmentPart</tt> object that contains the string
+<tt>stringContent</tt> and has a header that contains the string <tt>text/plain</tt>. It also has a
+<tt>Content-Id</tt> header with <tt>update_address</tt> as its value. And <tt>attachment</tt> is now part of
+<tt>message</tt>.</p><p><a name="indexterm-1977"></a>The other two <tt>SOAPMessage.createAttachment</tt> methods create an <tt>AttachmentPart</tt> object complete with content. One is
+very similar to the <tt>AttachmentPart.setContent</tt> method in that it takes the same parameters
+and does essentially the same thing. It takes a Java <tt>Object</tt> containing the
+content and a <tt>String</tt> giving the content type. As with <tt>AttachmentPart.setContent</tt>, the <tt>Object</tt>
+can be a <tt>String</tt>, a stream, a <tt>javax.xml.transform.Source</tt> object, or a <tt>javax.activation.DataHandler</tt> object.</p><p>The other method for creating an <tt>AttachmentPart</tt> object with content takes a <tt>DataHandler</tt>
+object, which is part of the JavaBeans Activation Framework (JAF). Using a <tt>DataHandler</tt>
+object is fairly straightforward. First, you create a <tt>java.net.URL</tt> object for the file you
+want to add as content. Then you create a <tt>DataHandler</tt> object initialized with
+the <tt>URL</tt> object:</p><pre>URL url = new URL("http://greatproducts.com/gizmos/img.jpg");
+DataHandler dataHandler = new DataHandler(url);
+AttachmentPart attachment = message.createAttachmentPart(dataHandler);
+attachment.setContentId("attached_image");
+
+message.addAttachmentPart(attachment);</pre><p>You might note two things about this code fragment. First, it sets
+a header for <tt>Content-ID</tt> using the method <tt>setContentId</tt>. This method takes a <tt>String</tt> that
+can be whatever you like to identify the attachment. Second, unlike the other
+methods for setting content, this one does not take a <tt>String</tt> for <tt>Content-Type</tt>. This
+method takes care of setting the <tt>Content-Type</tt> header for you, something that is
+possible because one of the things a <tt>DataHandler</tt> object does is to
+determine the data type of the file it contains.</p>
+
+<a name="bnbig"></a><h5>Accessing an <tt>AttachmentPart</tt> Object</h5>
+<a name="indexterm-1978"></a><p>If you receive a message with attachments or want to change an
+attachment to a message you are building, you need to access the attachment.
+The <tt>SOAPMessage</tt> class provides two versions of the <tt>getAttachments</tt> method for retrieving its
+<tt>AttachmentPart</tt> objects. When it is given no argument, the method <tt>SOAPMessage.getAttachments</tt> returns a <tt>java.util.Iterator</tt>
+object over all the <tt>AttachmentPart</tt> objects in a message. When <tt>getAttachments</tt> is given
+a <tt>MimeHeaders</tt> object, which is a list of MIME headers, <tt>getAttachments</tt> returns
+an iterator over the <tt>AttachmentPart</tt> objects that have a header that matches one
+of the headers in the list. The following code uses the <tt>getAttachments</tt> method
+that takes no arguments and thus retrieves all the <tt>AttachmentPart</tt> objects in the
+<tt>SOAPMessage</tt> object <tt>message</tt>. Then it prints the content ID, the content type, and
+the content of each <tt>AttachmentPart</tt> object.</p><pre>java.util.Iterator iterator = message.getAttachments();
+while (iterator.hasNext()) {
+    AttachmentPart attachment = (AttachmentPart)iterator.next();
+    String id = attachment.getContentId();
+    String type = attachment.getContentType();
+    System.out.print("Attachment " + id + " has content type " + type);
+    if (type.equals("text/plain")) {
+        Object content = attachment.getContent();
+        System.out.println("Attachment contains:\n" + content);
+    }
+}</pre>
+
+<a name="bnbih"></a><h4>Adding Attributes</h4>
+<a name="indexterm-1979"></a><p>An XML element can have one or more attributes that give information about
+that element. An attribute consists of a name for the attribute followed immediately
+by an equal sign (<tt>=</tt>) and its value.</p><p>The <tt>SOAPElement</tt> interface provides methods for adding an attribute, for getting the value
+of an attribute, and for removing an attribute. For example, in the following
+code fragment, the attribute named <tt>id</tt> is added to the <tt>SOAPElement</tt> object <tt>person</tt>. Because
+<tt>person</tt> is a <tt>SOAPElement</tt> object rather than a <tt>SOAPBodyElement</tt> object or <tt>SOAPHeaderElement</tt> object,
+it is legal for its <tt>QName</tt> object to contain only a local name.</p><pre>QName attributeName = new QName("id");
+person.addAttribute(attributeName, "Person7");</pre><p>These lines of code will generate the first line in the following
+XML fragment.</p><pre>&lt;person id="Person7">
+  ...
+&lt;/person></pre><p>The following line of code retrieves the value of the attribute whose name
+is <tt>id</tt>.</p><pre>String attributeValue = person.getAttributeValue(attributeName);</pre><p>If you had added two or more attributes to <tt>person</tt>, the preceding line
+of code would have returned only the value for the attribute named <tt>id</tt>.
+If you wanted to retrieve the values for all the attributes for <tt>person</tt>,
+you would use the method <tt>getAllAttributes</tt>, which returns an iterator over all
+the values. The following lines of code retrieve and print each value on
+a separate line until there are no more attribute values. Note that the
+<tt>Iterator.next</tt> method returns a Java <tt>Object</tt>, which is cast to a <tt>QName</tt> object so
+that it can be assigned to the <tt>QName</tt> object <tt>attributeName</tt>. (The examples
+in <a href="bnbis.html#bnbjc">DOM and DOMSource Examples</a> use code similar to this.)</p><pre>Iterator iterator = person.getAllAttributesAsQNames();
+while (iterator.hasNext()){
+    QName attributeName = (QName) iterator.next();
+    System.out.println("Attribute name is " + attributeName.toString());
+    System.out.println("Attribute value is " + 
+        element.getAttributeValue(attributeName));
+}</pre><p>The following line of code removes the attribute named <tt>id</tt> from <tt>person</tt>.
+The variable <tt>successful</tt> will be <tt>true</tt> if the attribute was removed successfully.</p><pre>boolean successful = person.removeAttribute(attributeName);</pre><p>In this section you have seen how to add, retrieve, and remove
+attributes. This information is general in that it applies to any element. The
+next section discusses attributes that can be added only to header elements.</p>
+
+<a name="bnbii"></a><h5>Header Attributes</h5>
+<a name="indexterm-1980"></a><p>Attributes that appear in a <tt>SOAPHeaderElement</tt> object determine how a recipient processes a
+message. You can think of header attributes as offering a way to extend
+a message, giving information about such things as authentication, transaction management, payment, and
+so on. A header attribute refines the meaning of the header, whereas the
+header refines the meaning of the message contained in the SOAP body.</p><p>The SOAP 1.1 specification defines two attributes that can appear only in <tt>SOAPHeaderElement</tt>
+objects: <tt>actor</tt> and <tt>mustUnderstand</tt>.</p><p>The SOAP 1.2 specification defines three such attributes: <tt>role</tt> (a new name for
+<tt>actor</tt>), <tt>mustUnderstand</tt>, and <tt>relay</tt>.</p><p>The next sections discuss these attributes.</p><p>See <a href="bnbis.html#bnbja">Header Example</a> for an example that uses the code shown in this section.</p>
+
+<a name="bnbij"></a><h5>The <tt>actor</tt> Attribute</h5>
+<p>The <tt>actor</tt> attribute is optional, but if it is used, it must appear
+in a <tt>SOAPHeaderElement</tt> object. Its purpose is to indicate the recipient of a
+header element. The default actor is the message&rsquo;s ultimate recipient; that is, if
+no actor attribute is supplied, the message goes directly to the ultimate recipient.</p><p>An <b>actor</b> is an application that can both receive SOAP messages and forward
+them to the next actor. The ability to specify one or more actors
+as intermediate recipients makes it possible to route a message to multiple recipients
+and to supply header information that applies specifically to each of the recipients.</p><p>For example, suppose that a message is an incoming purchase order. Its
+<tt>SOAPHeader</tt> object might have <tt>SOAPHeaderElement</tt> objects with actor attributes that route the message
+to applications that function as the order desk, the shipping desk, the confirmation
+desk, and the billing department. Each of these applications will take the appropriate
+action, remove the <tt>SOAPHeaderElement</tt> objects relevant to it, and send the message on to
+the next actor.</p>
+<hr><p><b>Note - </b>Although the SAAJ API provides the API for adding these attributes, it does
+not supply the API for processing them. For example, the actor attribute requires
+that there be an implementation such as a messaging provider service to route
+the message from one actor to the next.</p>
+<hr>
+<p>An actor is identified by its URI. For example, the following line
+of code, in which <tt>orderHeader</tt> is a <tt>SOAPHeaderElement</tt> object, sets the actor to the
+given URI.</p><pre>orderHeader.setActor("http://gizmos.com/orders");</pre><p>Additional actors can be set in their own <tt>SOAPHeaderElement</tt> objects. The following code
+fragment first uses the <tt>SOAPMessage</tt> object <tt>message</tt> to get its <tt>SOAPHeader</tt> object
+<tt>header</tt>. Then <tt>header</tt> creates four <tt>SOAPHeaderElement</tt> objects, each of which sets its
+<tt>actor</tt> attribute.</p><pre>SOAPHeader header = message.getSOAPHeader();
+SOAPFactory soapFactory = SOAPFactory.newInstance();
+
+String nameSpace = "ns";
+String nameSpaceURI = "http://gizmos.com/NSURI";
+
+QName order = new QName(nameSpaceURI, "orderDesk", nameSpace);
+SOAPHeaderElement orderHeader = header.addHeaderElement(order);
+orderHeader.setActor("http://gizmos.com/orders");
+
+QName shipping = new QName(nameSpaceURI, "shippingDesk", nameSpace);
+SOAPHeaderElement shippingHeader = header.addHeaderElement(shipping);
+shippingHeader.setActor("http://gizmos.com/shipping");
+
+QName confirmation = new QName(nameSpaceURI, "confirmationDesk", nameSpace);
+SOAPHeaderElement confirmationHeader = header.addHeaderElement(confirmation);
+confirmationHeader.setActor("http://gizmos.com/confirmations");
+
+QName billing = new QName(nameSpaceURI, "billingDesk", nameSpace);
+SOAPHeaderElement billingHeader = header.addHeaderElement(billing);
+billingHeader.setActor("http://gizmos.com/billing");</pre><p>The <tt>SOAPHeader</tt> interface provides two methods that return a <tt>java.util.Iterator</tt> object over all
+the <tt>SOAPHeaderElement</tt> objects that have an actor that matches the specified actor.
+The first method, <tt>examineHeaderElements</tt>, returns an iterator over all the elements that have the
+specified actor.</p><pre>java.util.Iterator headerElements =
+    header.examineHeaderElements("http://gizmos.com/orders");</pre><p>The second method, <tt>extractHeaderElements</tt>, not only returns an iterator over all the <tt>SOAPHeaderElement</tt>
+objects that have the specified actor attribute but also detaches them from the
+<tt>SOAPHeader</tt> object. So, for example, after the order desk application did its work,
+it would call <tt>extractHeaderElements</tt> to remove all the <tt>SOAPHeaderElement</tt> objects that applied to
+it.</p><pre>java.util.Iterator headerElements =
+    header.extractHeaderElements("http://gizmos.com/orders");</pre><p>Each <tt>SOAPHeaderElement</tt> object can have only one actor attribute, but the same actor
+can be an attribute for multiple <tt>SOAPHeaderElement</tt> objects.</p><p>Two additional <tt>SOAPHeader</tt> methods, <tt>examineAllHeaderElements</tt> and <tt>extractAllHeaderElements</tt>, allow you to examine or extract
+all the header elements, whether or not they have an actor attribute. For
+example, you could use the following code to display the values of
+all the header elements:</p><pre>Iterator allHeaders = header.examineAllHeaderElements();
+while (allHeaders.hasNext()) {
+    SOAPHeaderElement headerElement = (SOAPHeaderElement)allHeaders.next();
+    QName headerName = headerElement.getElementQName();
+    System.out.println("\nHeader name is " + headerName.toString());
+    System.out.println("Actor is " + headerElement.getActor());
+}</pre>
+
+<a name="bnbik"></a><h5>The <tt>role</tt> Attribute</h5>
+<p>The <tt>role</tt> attribute is the name used by the SOAP 1.2 specification for
+the SOAP 1.2 <tt>actor</tt> attribute. The <tt>SOAPHeaderElement</tt> methods <tt>setRole</tt> and <tt>getRole</tt> perform the
+same functions as the <tt>setActor</tt> and <tt>getActor</tt> methods.</p>
+
+<a name="bnbil"></a><h5>The <tt>mustUnderstand</tt> Attribute</h5>
+<p>The other attribute that must be added only to a <tt>SOAPHeaderElement</tt> object
+is <tt>mustUnderstand</tt>. This attribute says whether or not the recipient (indicated by the
+<tt>actor</tt> attribute) is required to process a header entry. When the value of
+the <tt>mustUnderstand</tt> attribute is <tt>true</tt>, the actor must understand the semantics of the
+header entry and must process it correctly to those semantics. If the value
+is <tt>false</tt>, processing the header entry is optional. A <tt>SOAPHeaderElement</tt> object with no
+<tt>mustUnderstand</tt> attribute is equivalent to one with a <tt>mustUnderstand</tt> attribute whose value is <tt>false</tt>.</p><p>The <tt>mustUnderstand</tt> attribute is used to call attention to the fact that the
+semantics in an element are different from the semantics in its parent or
+peer elements. This allows for robust evolution, ensuring that a change in semantics
+will not be silently ignored by those who may not fully understand it.</p><p>If the actor for a header that has a <tt>mustUnderstand</tt> attribute set to
+<tt>true</tt> cannot process the header, it must send a SOAP fault back to
+the sender. (See <a href="#bnbin">Using SOAP Faults</a>.) The actor must not change state or cause any
+side effects, so that, to an outside observer, it appears that the fault
+was sent before any header processing was done.</p><p>For example, you could set the <tt>mustUnderstand</tt> attribute to <tt>true</tt> for the <tt>confirmationHeader</tt>
+in the code fragment in <a href="#bnbij">The <tt>actor</tt> Attribute</a>:</p><pre>QName confirmation = new QName(nameSpaceURI, "confirmationDesk", nameSpace);
+SOAPHeaderElement confirmationHeader = header.addHeaderElement(confirmation);
+confirmationHeader.setActor("http://gizmos.com/confirmations");
+confirmationHeader.setMustUnderstand(true);</pre><p>This fragment produces the following XML:</p><pre>&lt;ns:confirmationDesk
+  xmlns:ns="http://gizmos.com/NSURI"
+  SOAP-ENV:actor="http://gizmos.com/confirmations"
+  SOAP-ENV:mustUnderstand="1"/></pre><p>You can use the <tt>getMustUnderstand</tt> method to retrieve the value of the <tt>mustUnderstand</tt>
+attribute. For example, you could add the following to the code fragment at
+the end of the preceding section:</p><pre>System.out.println("mustUnderstand is " + headerElement.getMustUnderstand());</pre>
+
+<a name="bnbim"></a><h5>The <tt>relay</tt> Attribute</h5>
+<p>The SOAP 1.2 specification adds a third attribute to a <tt>SOAPHeaderElement</tt>, <tt>relay</tt>.
+This attribute, like <tt>mustUnderstand</tt>, is a boolean value. If it is set
+to <tt>true</tt>, it indicates that the SOAP header block must not be processed
+by any node that is targeted by the header block, but must only
+be passed on to the next targeted node. This attribute is ignored on
+header blocks whose <tt>mustUnderstand</tt> attribute is set to true or that are targeted
+at the ultimate receiver (which is the default). The default value of this
+attribute is <tt>false</tt>.</p><p>For example, you could set the <tt>relay</tt> element to <tt>true</tt> for the
+<tt>billingHeader</tt> in the code fragment in <a href="#bnbij">The <tt>actor</tt> Attribute</a> (also changing <tt>setActor</tt> to <tt>setRole</tt>):</p><pre>QName billing = new QName(nameSpaceURI, "billingDesk", nameSpace);
+SOAPHeaderElement billingHeader = header.addHeaderElement(billing);
+billingHeader.setRole("http://gizmos.com/billing");
+billingHeader.setRelay(true);</pre><p>This fragment produces the following XML:</p><pre>&lt;ns:billingDesk
+  xmlns:ns="http://gizmos.com/NSURI"
+  env:relay="true"
+  env:role="http://gizmos.com/billing"/></pre><p>To display the value of the attribute, call <tt>getRelay</tt>:</p><pre>System.out.println("relay is " + headerElement.getRelay());</pre>
+
+<a name="bnbin"></a><h4>Using SOAP Faults</h4>
+<a name="indexterm-1981"></a><p>In this section, you will see how to use the API for
+creating and accessing a SOAP fault element in an XML message.</p>
+
+<a name="bnbio"></a><h5>Overview of SOAP Faults</h5>
+<p>If you send a message that was not successful for some reason,
+you may get back a response containing a SOAP fault element, which gives
+you status information, error information, or both. There can be only one SOAP
+fault element in a message, and it must be an entry in the
+SOAP body. Furthermore, if there is a SOAP fault element in the SOAP
+body, there can be no other elements in the SOAP body. This means
+that when you add a SOAP fault element, you have effectively completed the
+construction of the SOAP body.</p><p><a name="indexterm-1982"></a>A <tt>SOAPFault</tt> object, the representation of a SOAP fault element in the SAAJ
+API, is similar to an <tt>Exception</tt> object in that it conveys information about
+a problem. However, a <tt>SOAPFault</tt> object is quite different in that it is
+an element in a message&rsquo;s <tt>SOAPBody</tt> object rather than part of the
+<tt>try</tt>/<tt>catch</tt> mechanism used for <tt>Exception</tt> objects. Also, as part of the <tt>SOAPBody</tt> object,
+which provides a simple means for sending mandatory information intended for the ultimate
+recipient, a <tt>SOAPFault</tt> object only reports status or error information. It does not
+halt the execution of an application, as an <tt>Exception</tt> object can.</p><p>If you are a client using the SAAJ API and are sending
+point-to-point messages, the recipient of your message may add a <tt>SOAPFault</tt> object to the
+response to alert you to a problem. For example, if you sent
+an order with an incomplete address for where to send the order, the
+service receiving the order might put a <tt>SOAPFault</tt> object in the return message telling
+you that part of the address was missing.</p><p>Another example of who might send a SOAP fault is an intermediate
+recipient, or actor. As stated in the section <a href="#bnbih">Adding Attributes</a>, an actor that cannot process
+a header that has a <tt>mustUnderstand</tt> attribute with a value of <tt>true</tt> must
+return a SOAP fault to the sender.</p><p>A <tt>SOAPFault</tt> object contains the following elements:</p>
+<ul><li><p><a name="indexterm-1983"></a><a name="indexterm-1984"></a><b>Fault code</b>: Always required. The fault code must be a fully qualified name: it must contain a prefix followed by a local name. The SOAP specifications define a set of fault code local name values, which a developer can extend to cover other problems. (These are defined in section 4.4.1 of the SOAP 1.1 specification and in section 5.4.6 of the SOAP 1.2 specification.) <a href="#bnbiq">Table&nbsp;19-1</a> lists and describes the default fault code local names defined in the specifications.</p><p>A SOAP 1.2 fault code can optionally have a hierarchy of one or more subcodes.</p></li>
+<li><p><a name="indexterm-1985"></a><a name="indexterm-1986"></a><b>Fault string</b>: Always required. A human-readable explanation of the fault.</p></li>
+<li><p><a name="indexterm-1987"></a><a name="indexterm-1988"></a><b>Fault actor</b>: Required if the <tt>SOAPHeader</tt> object contains one or more <tt>actor</tt> attributes; optional if no actors are specified, meaning that the only actor is the ultimate destination. The fault actor, which is specified as a URI, identifies who caused the fault. For an explanation of what an actor is, see <a href="#bnbij">The <tt>actor</tt> Attribute</a>.</p></li>
+<li><p><a name="indexterm-1989"></a><a name="indexterm-1990"></a><tt>Detail</tt> <b>object</b>: Required if the fault is an error related to the <tt>SOAPBody</tt> object. If, for example, the fault code is <tt>Client</tt>, indicating that the message could not be processed because of a problem in the <tt>SOAPBody</tt> object, the <tt>SOAPFault</tt> object must contain a <tt>Detail</tt> object that gives details about the problem. If a <tt>SOAPFault</tt> object does not contain a <tt>Detail</tt> object, it can be assumed that the <tt>SOAPBody</tt> object was processed successfully.</p></li></ul>
+
+
+<a name="bnbip"></a><h5>Creating and Populating a <tt>SOAPFault</tt> Object</h5>
+<a name="indexterm-1991"></a><p>You have seen how to add content to a <tt>SOAPBody</tt> object; this section
+walks you through adding a <tt>SOAPFault</tt> object to a <tt>SOAPBody</tt> object and then
+adding its constituent parts.</p><p>As with adding content, the first step is to access the <tt>SOAPBody</tt>
+object.</p><pre>SOAPBody body = message.getSOAPBody();</pre><p>With the <tt>SOAPBody</tt> object <tt>body</tt> in hand, you can use it to create
+a <tt>SOAPFault</tt> object. The following line of code creates a <tt>SOAPFault</tt> object and
+adds it to <tt>body</tt>.</p><pre>SOAPFault fault = body.addFault();</pre><p>The <tt>SOAPFault</tt> interface provides convenience methods that create an element, add the new
+element to the <tt>SOAPFault</tt> object, and add a text node, all in one
+operation. For example, in the following lines of SOAP 1.1 code, the method
+<tt>setFaultCode</tt> creates a <tt>faultcode</tt> element, adds it to <tt>fault</tt>, and adds a
+<tt>Text</tt> node with the value <tt>"SOAP-ENV:Server"</tt> by specifying a default prefix and the
+namespace URI for a SOAP envelope.</p><pre>QName faultName = new QName(SOAPConstants.URI_NS_SOAP_ENVELOPE, "Server");
+fault.setFaultCode(faultName);
+fault.setFaultActor("http://gizmos.com/orders");
+fault.setFaultString("Server not responding");</pre><p>The SOAP 1.2 code would look like this:</p><pre>QName faultName = new QName(SOAPConstants.URI_NS_SOAP_1_2_ENVELOPE, "Receiver");
+fault.setFaultCode(faultName);
+fault.setFaultRole("http://gizmos.com/order");
+fault.addFaultReasonText("Server not responding", Locale.US);</pre><p>To add one or more subcodes to the fault code, call the
+method <tt>fault.appendFaultSubcode</tt>, which takes a <tt>QName</tt> argument.</p><p><a name="indexterm-1992"></a>The <tt>SOAPFault</tt> object <tt>fault</tt>, created in the preceding lines of code, indicates that
+the cause of the problem is an unavailable server and that the actor
+at <tt>http://gizmos.com/orders</tt> is having the problem. If the message were being routed only
+to its ultimate destination, there would have been no need to set a
+fault actor. Also note that <tt>fault</tt> does not have a <tt>Detail</tt> object because it
+does not relate to the <tt>SOAPBody</tt> object. (If you use SOAP 1.2, you
+can use the <tt>setFaultRole</tt> method instead of <tt>setFaultActor</tt>.)</p><p><a name="indexterm-1993"></a>The following SOAP 1.1 code fragment creates a <tt>SOAPFault</tt> object that includes a
+<tt>Detail</tt> object. Note that a <tt>SOAPFault</tt> object can have only one <tt>Detail</tt> object,
+which is simply a container for <tt>DetailEntry</tt> objects, but the <tt>Detail</tt> object can have
+multiple <tt>DetailEntry</tt> objects. The <tt>Detail</tt> object in the following lines of code has
+two <tt>DetailEntry</tt> objects added to it.</p><pre>SOAPFault fault = body.addFault();
+
+QName faultName = new QName(SOAPConstants.URI_NS_SOAP_ENVELOPE, "Client");
+fault.setFaultCode(faultName);
+fault.setFaultString("Message does not have necessary info");
+
+Detail detail = fault.addDetail();
+
+QName entryName = new QName("http://gizmos.com/orders/", "order", "PO");
+DetailEntry entry = detail.addDetailEntry(entryName);
+entry.addTextNode("Quantity element does not have a value");
+
+QName entryName2 = new QName("http://gizmos.com/orders/", "order", "PO");
+DetailEntry entry2 = detail.addDetailEntry(entryName2);
+entry2.addTextNode("Incomplete address: no zip code");</pre><p>See <a href="bnbis.html#bnbji">SOAP Fault Example</a> for an example that uses code like that shown in this
+section.</p><p>The SOAP 1.1 and 1.2 specifications define slightly different values for a fault
+code. <a href="#bnbiq">Table&nbsp;19-1</a> lists and describes these values.</p><a name="bnbiq"></a><h6>Table&nbsp;19-1 SOAP Fault Code Values</h6><table><col width="21%"><col width="28%"><col width="50%"><tr><th align="left" valign="top" scope="column"><p>SOAP 1.1</p></th>
+<th align="left" valign="top" scope="column"><p>SOAP 1.2</p></th>
+<th align="left" valign="top" scope="column"><p>Description</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>VersionMismatch</p></td>
+<td align="left" valign="top" scope="row"><p>VersionMismatch</p></td>
+<td align="left" valign="top" scope="row"><p>The namespace or local name
+for a <tt>SOAPEnvelope</tt> object was invalid.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>MustUnderstand</p></td>
+<td align="left" valign="top" scope="row"><p>MustUnderstand</p></td>
+<td align="left" valign="top" scope="row"><p>An immediate child element of a <tt>SOAPHeader</tt> object had
+its <tt>mustUnderstand</tt> attribute set to <tt>true</tt>, and the processing party did not understand
+the element or did not obey it.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Client</p></td>
+<td align="left" valign="top" scope="row"><p>Sender</p></td>
+<td align="left" valign="top" scope="row"><p>The <tt>SOAPMessage</tt> object was not formed
+correctly or did not contain the information needed to succeed.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Server</p></td>
+<td align="left" valign="top" scope="row"><p>Receiver</p></td>
+<td align="left" valign="top" scope="row"><p>The <tt>SOAPMessage</tt> object could
+not be processed because of a processing error, not because of a problem
+with the message itself.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>N/A</p></td>
+<td align="left" valign="top" scope="row"><p>DataEncodingUnknown</p></td>
+<td align="left" valign="top" scope="row"><p>A SOAP header block or SOAP body child element
+information item targeted at the faulting SOAP node is scoped with a data
+encoding that the faulting node does not support.</p></td>
+</tr>
+</table>
+
+<a name="bnbir"></a><h5>Retrieving Fault Information</h5>
+<a name="indexterm-1994"></a><p>Just as the <tt>SOAPFault</tt> interface provides convenience methods for adding information, it also
+provides convenience methods for retrieving that information. The following code fragment shows what
+you might write to retrieve fault information from a message you received. In
+the code fragment, <tt>newMessage</tt> is the <tt>SOAPMessage</tt> object that has been sent to
+you. Because a <tt>SOAPFault</tt> object must be part of the <tt>SOAPBody</tt> object, the
+first step is to access the <tt>SOAPBody</tt> object. Then the code tests
+to see whether the <tt>SOAPBody</tt> object contains a <tt>SOAPFault</tt> object. If it
+does, the code retrieves the <tt>SOAPFault</tt> object and uses it to retrieve its contents.
+The convenience methods <tt>getFaultCode</tt>, <tt>getFaultString</tt>, and <tt>getFaultActor</tt> make retrieving the values very easy.</p><pre>SOAPBody body = newMessage.getSOAPBody();
+if ( body.hasFault() ) {
+    SOAPFault newFault = body.getFault();
+    QName code = newFault.getFaultCodeAsQName();
+    String string = newFault.getFaultString();
+    String actor = newFault.getFaultActor();</pre><p>To retrieve subcodes from a SOAP 1.2 fault, call the method <tt>newFault.getFaultSubcodes</tt>.</p><p>Next the code prints the values it has just retrieved. Not all
+messages are required to have a fault actor, so the code tests to
+see whether there is one. Testing whether the variable <tt>actor</tt> is <tt>null</tt> works because
+the method <tt>getFaultActor</tt> returns <tt>null</tt> if a fault actor has not been set.</p><pre>    System.out.println("SOAP fault contains: ");
+    System.out.println("  Fault code = " + code.toString());
+    System.out.println("  Local name = " + code.getLocalPart());
+    System.out.println("  Namespace prefix = " +
+        code.getPrefix() + ", bound to " + code.getNamespaceURI());
+    System.out.println("  Fault string = " + string);
+
+    if ( actor != null ) {
+        System.out.println("  Fault actor = " + actor);
+    }</pre><p>The final task is to retrieve the <tt>Detail</tt> object and get its <tt>DetailEntry</tt>
+objects. The code uses the <tt>SOAPFault</tt> object <tt>newFault</tt> to retrieve the <tt>Detail</tt>
+object <tt>newDetail</tt>, and then it uses <tt>newDetail</tt> to call the method <tt>getDetailEntries</tt>. This
+method returns the <tt>java.util.Iterator</tt> object <tt>entries</tt>, which contains all the <tt>DetailEntry</tt> objects in
+<tt>newDetail</tt>. Not all <tt>SOAPFault</tt> objects are required to have a <tt>Detail</tt> object, so
+the code tests to see whether <tt>newDetail</tt> is <tt>null</tt>. If it is
+not, the code prints the values of the <tt>DetailEntry</tt> objects as long
+as there are any.</p><pre>Detail newDetail = newFault.getDetail();
+if (newDetail != null) {
+    Iterator entries = newDetail.getDetailEntries();
+    while ( entries.hasNext() ) {
+        DetailEntry newEntry = (DetailEntry)entries.next();
+        String value = newEntry.getValue();
+        System.out.println("  Detail entry = " + value);
+    }
+}</pre><p>In summary, you have seen how to add a <tt>SOAPFault</tt> object and its
+contents to a message as well as how to retrieve the contents.
+A <tt>SOAPFault</tt> object, which is optional, is added to the <tt>SOAPBody</tt> object to
+convey status or error information. It must always have a fault code
+and a <tt>String</tt> explanation of the fault. A <tt>SOAPFault</tt> object must indicate the actor
+that is the source of the fault only when there are multiple actors;
+otherwise, it is optional. Similarly, the <tt>SOAPFault</tt> object must contain a <tt>Detail</tt> object
+with one or more <tt>DetailEntry</tt> objects only when the contents of the
+<tt>SOAPBody</tt> object could not be processed successfully.</p><p>See <a href="bnbis.html#bnbji">SOAP Fault Example</a> for an example that uses code like that shown in this
+section.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnbhg.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbis.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

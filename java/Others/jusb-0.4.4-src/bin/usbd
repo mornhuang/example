@@ -1,0 +1,125 @@
+#!/bin/sh
+# Start up a USB Daemon, supporting RMI and other services.
+#
+# See: http://jusb.sourceforge.net/
+#
+# $Id: usbd,v 1.1 2008/10/15 09:28:09 huangmeng Exp $
+
+# - standard system path (for root!)
+# PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# - try the install points Sun's RPMs use
+PATH=$PATH:/usr/java/jdk1.3/bin
+PATH=$PATH:/usr/java/jdk1.2.2/bin
+
+# - and some others common ones
+PATH=$PATH:/usr/java/java/bin
+PATH=$PATH:/usr/java/bin
+
+
+# FIXME -- figure this from $0 iff it's not set to start with
+INSTALLDIR=.
+
+LD_LIBRARY_PATH=$INSTALLDIR
+export LD_LIBRARY_PATH
+
+
+JAVA_HOME=
+JVM=""
+
+if java -version 2>&1 | egrep -q "1.1"
+then
+    JVM=jdk0
+    JAVA_HOME=`which java | sed -e 's#/bin/java$##'`
+elif java -version 2>&1 | egrep -q "1.2"
+then
+    JVM=jdk2
+elif java -version 2>&1 | egrep -q "1.3"
+then
+    JVM=jdk3
+else
+    echo "You need Java to run this; try JDK 1.2 or later."
+    exit 1
+fi
+
+MAIN=usb.remote.USBD
+PARAMS=""
+
+checkroot ()
+{
+    if [ `id -u` != 0 ]; then
+	echo "You must run this as root."
+	exit 1
+    fi
+}
+
+jdk0 ()
+{
+    CLASSPATH=$CLASSPATH:$INSTALLDIR/jusb.jar
+    export CLASSPATH
+    exec java -native $MAIN $PARAMS
+}
+
+j2 ()
+{
+    exec java $* -cp $INSTALLDIR/jusb.jar $MAIN $PARAMS
+}
+
+jdk2 ()
+{
+    j2 -native
+}
+
+jdk3 ()
+{
+    j2 -server
+}
+
+
+start_usbd ()
+{
+    # FIXME:  usbd should conditionally do this inside its JVM
+
+    echo "trying to start RMI registry ... "
+    CLASSPATH=$INSTALLDIR/jusb.jar 	rmiregistry & sleep 5
+
+    # NOTE:  While it's getting debugged, this is NOT backgrounding
+    # the RMI proxy daemon.
+
+    echo "trying to start USBD ... "
+    echo "(NOTE:  kill RMI registry by hand after you kill USBD)"
+
+    PARAMS="start"
+    $JVM
+
+    # FIXME: the daemon should get some access controls.
+}
+
+stop_usbd ()
+{
+    PARAMS="stop"
+    $JVM
+}
+
+case $1 in
+start)
+    # checkroot
+    start_usbd
+    ;;
+restart)
+    stop_usbd
+    start_usbd
+    ;;
+stop)
+    # checkroot
+    stop_usbd
+    ;;
+status)
+    echo "no status yet ..."
+    ;;
+help|*)
+    echo "usage: $0 [start|restart|stop|status|help]"
+    exit 1
+    ;;
+esac
+

@@ -1,0 +1,72 @@
+<?xml version = "1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- Fig. J.8: form.html    -->
+<!-- Form Design Example 1. -->
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Python How to Program - Forms</title>
+   </head>
+
+   <body>
+
+      <h1>Feedback Form</h1>
+
+      <p>Please fill out this form to help 
+         us improve our site.</p>
+
+      <!-- this tag starts the form, gives the   -->
+      <!-- method of sending information and the -->
+      <!-- location of form scripts              -->
+      <form method = "post" action = "/cgi-bin/formmail">
+
+         <p>
+            <!-- hidden inputs contain nonvisual  -->
+            <!-- information                      -->
+            <input type = "hidden" name = "recipient"
+               value = "deitel@deitel.com" />
+            <input type = "hidden" name = "subject" 
+               value = "Feedback Form" />
+            <input type = "hidden" name = "redirect" 
+               value = "main.html" /> 
+         </p>
+
+         <!-- <input type = "text"> inserts a text box -->
+         <p><label>Name:
+               <input name = "name" type = "text" size = "25"
+                  maxlength = "30" />
+            </label></p>
+  
+         <p>
+
+            <!-- input types "submit" and "reset" insert  -->
+            <!-- buttons for submitting and clearing the  -->
+            <!-- form's contents                          -->
+            <input type = "submit" value = 
+               "Submit Your Entries" />
+            <input type = "reset" value = 
+               "Clear Your Entries" />
+         </p>   
+
+      </form>
+
+</html>
+
+<!-- 
+ ************************************************************************** 
+ * (C) Copyright 2002 by Deitel & Associates, Inc. and Prentice Hall.     *
+ * All Rights Reserved.                                                   *
+ *                                                                        *
+ * DISCLAIMER: The authors and publisher of this book have used their     *
+ * best efforts in preparing the book. These efforts include the          *
+ * development, research, and testing of the theories and programs        *
+ * to determine their effectiveness. The authors and publisher make       *
+ * no warranty of any kind, expressed or implied, with regard to these    *
+ * programs or to the documentation contained in these books. The authors *
+ * and publisher shall not be liable in any event for incidental or       *
+ * consequential damages in connection with, or arising out of, the       *
+ * furnishing, performance, or use of these programs.                     *
+ **************************************************************************
+-->

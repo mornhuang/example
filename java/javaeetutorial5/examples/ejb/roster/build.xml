@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="roster" default="default" basedir="." xmlns:ear="http://www.netbeans.org/ns/j2ee-earproject/1">
+    <description>Builds, tests, and runs the project .</description>
+    <property name="is.ear.module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+    
+    <path id="ear-components">
+        <filelist dir="./roster-app-client" files="build.xml"/>
+        <filelist dir="./roster-ejb" files="build.xml"/>
+    </path>
+    
+    <target name="-pre-init" if="debug">
+        <echo message="---------------------------------------------------"/>
+        <echo message="Classpath info"/>
+        <echo message="---------------------------------------------------"/>
+        <property name="cp" refid="classpath"/>
+        <echo message="Classpath is ${cp}"/>
+        <echo message="---------------------------------------------------"/>
+        <echo message="Project properties"/>
+        <echo message="---------------------------------------------------"/>
+        <echoproperties/>
+    </target>
+    
+    <target name="-pre-deploy" unless="netbeans.home" depends="init">
+        <antcall target="start-db"/>
+    </target>
+
+    <target name="all" unless="netbeans.home" depends="clean,default,run"/>
+    
+    <target name="run-nb" if="netbeans.home">
+        <antcall target="run-ac"/>
+    </target>
+
+    <target name="run-ant" unless="netbeans.home">
+        <antcall target="client-jar"/>
+        <antcall target="bpp-run-app-client"/>
+    </target>
+    
+    <target name="run" depends="init,run-deploy,run-nb,run-ant"/>
+    
+</project>

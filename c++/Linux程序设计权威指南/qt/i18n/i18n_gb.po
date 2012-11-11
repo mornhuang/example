@@ -1,0 +1,31 @@
+# This is a Qt message file in .po format.  Each msgid starts with
+# a scope.  This scope should *NOT* be translated - eg. "Foo::Bar"
+# would be translated to "Pub", not "Foo::Pub".
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2000-08-20 12:10:45 CST\n"
+"PO-Revision-Date: YYYY-MM-DD\n"
+"Last-Translator: FULLNAME <EMAIL@ADDRESS>\n"
+"Content-Type: text/plain; charset=gb2312\n"
+
+#: i18n.cpp:34
+msgid "::&File"
+msgstr "文件(&F)"
+
+#: i18n.cpp:33
+msgid "::&Quit"
+msgstr "退出(&Q)"
+
+#: i18n.cpp:47
+msgid "::Button %1"
+msgstr "按钮 %1"
+
+#: i18n.cpp:64
+msgid "::Let's pretend this is a status bar"
+msgstr "类似于状态条的标签"
+
+#: i18n.cpp:56
+msgid "::This widget will get all the remaining space"
+msgstr "本组件将占用剩余的空间"
+

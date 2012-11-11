@@ -1,0 +1,520 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Creating a JSP Document - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level3"><a href="bnajp.html">The Example JSP Document</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Creating a JSP Document</a></p>
+<p class="toc level4"><a href="#bnajs">Declaring Tag Libraries</a></p>
+<p class="toc level4"><a href="#bnajt">Including Directives in a JSP Document</a></p>
+<p class="toc level4"><a href="#bnaju">Creating Static and Dynamic Content</a></p>
+<p class="toc level4"><a href="#bnajw">Using the <tt>jsp:root</tt> Element</a></p>
+<p class="toc level4"><a href="#bnajx">Using the <tt>jsp:output</tt> Element</a></p>
+<p class="toc level5"><a href="#bnajz">Generating XML Declarations</a></p>
+<p class="toc level5"><a href="#bnaka">Generating a Document Type Declaration</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnakb.html">Identifying the JSP Document to the Container</a></p>
+<p class="toc level2 tocsp"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnajp.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnakb.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnajq"></a><h3>Creating a JSP Document</h3>
+<a name="indexterm-422"></a><p>A JSP document is an XML document and therefore must comply with
+the XML standard. Fundamentally, this means that a JSP document must be well
+formed, meaning that each start tag must have a corresponding end tag and
+that the document must have only one root element. In addition, JSP elements
+included in the JSP document must comply with the XML syntax.</p><p>Much of the standard JSP syntax is already XML-compliant, including all the standard
+actions. Those elements that are not compliant are summarized in <a href="#bnajr">Table&nbsp;6-1</a> along with
+the equivalent elements in XML syntax. As you can see, JSP documents are
+not much different from JSP pages. If you know standard JSP syntax, you
+will find it easy to convert your current JSP pages to XML syntax
+and to create new JSP documents.</p><a name="bnajr"></a><h6>Table&nbsp;6-1 Standard Syntax Versus XML Syntax</h6><table><col width="16%"><col width="26%"><col width="57%"><tr><th align="left" valign="top" scope="column"><p>Syntax Elements</p></th>
+<th align="left" valign="top" scope="column"><p>Standard Syntax</p></th>
+<th align="left" valign="top" scope="column"><p>XML Syntax</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Comments</p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;%--.. --%></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;!-- .. --></tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Declarations</p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;%! ..%></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;jsp:declaration> .. &lt;/jsp:declaration></tt></p></td>
+</tr>
+<tr><td rowspan="3" align="left" valign="top" scope="row"><p>Directives</p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;%@ include .. %></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;jsp:directive.include .. /></tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&lt;%@ page .. %></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;jsp:directive.page .. /></tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&lt;%@ taglib .. %></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>xmlns:prefix="tag library URL"</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Expressions</p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;%= ..%></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;jsp:expression> .. &lt;/jsp:expression></tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Scriptlets</p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;% ..%></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>&lt;jsp:scriptlet> .. &lt;/jsp:scriptlet></tt></p></td>
+</tr>
+</table><p>To illustrate how simple it is to transition from standard syntax to XML
+syntax, let&rsquo;s convert a simple JSP page to a JSP document. The
+standard syntax version is as follows:</p><pre>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core"
+     prefix="c" %>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/functions"
+     prefix="fn" %>
+&lt;html>
+    &lt;head>&lt;title>Hello&lt;/title>&lt;/head>
+    &lt;body bgcolor="white">
+        &lt;img src="duke.waving.gif">
+         &lt;h2>My name is Duke. What is yours?&lt;/h2>
+         &lt;form method="get">
+            &lt;input type="text" name="username" size="25">
+            &lt;p>&lt;/p>
+            &lt;input type="submit" value="Submit">
+            &lt;input type="reset" value="Reset">
+        &lt;/form>
+        &lt;jsp:useBean id="userNameBean" class="hello.UserNameBean"
+                 scope="request"/>
+        &lt;jsp:setProperty name="userNameBean" property="name"
+                 value="${param.username}" />
+        &lt;c:if test="${fn:length(userNameBean.name) > 0}" >
+            &lt;%@include file="response.jsp" %>
+        &lt;/c:if>
+    &lt;/body>
+&lt;/html></pre><p>Here is the same page in XML syntax:</p><pre>&lt;html
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions" >
+    &lt;head>&lt;title>Hello&lt;/title>&lt;/head>
+    &lt;body bgcolor="white" />
+    &lt;img src="duke.waving.gif" />
+     &lt;h2>My name is Duke. What is yours?&lt;/h2>
+     &lt;form method="get">
+        &lt;input type="text" name="username" size="25" />
+        &lt;p>&lt;/p>
+        &lt;input type="submit" value="Submit" />
+        &lt;input type="reset" value="Reset" />
+    &lt;/form>
+    &lt;jsp:useBean id="userNameBean" class="hello.UserNameBean"
+         scope="request"/>
+    &lt;jsp:setProperty name="userNameBean" property="name"
+         value="${param.username}" />
+    &lt;c:if test="${fn:length(userNameBean.name) gt 0}" >
+        &lt;jsp:directive.include="response.jsp" />
+    &lt;/c:if>
+    &lt;/body>
+&lt;/html></pre><p>As you can see, a number of constructs that are legal in
+standard syntax have been changed to comply with XML syntax:</p>
+<ul><li><p><a name="indexterm-423"></a>The <tt>taglib</tt> directives have been removed. Tag libraries are now declared using XML namespaces, as shown in the <tt>html</tt> element.</p></li>
+<li><p>The <tt>img</tt> and <tt>input</tt> tags did not have matching end tags and have been made XML-compliant by the addition of a <tt>/</tt> to the start tag.</p></li>
+<li><p>The <tt>></tt> symbol in the EL expression has been replaced with <tt>gt</tt>.</p></li>
+<li><p>The <tt>include</tt> directive has been changed to the XML-compliant <tt>jsp:directive.include</tt> tag.</p></li></ul>
+<p>With only these few small changes, when you save the file with
+a <tt>.jspx</tt> extension, this page is a JSP document.</p><p>Using the example described in <a href="bnajp.html">The Example JSP Document</a>, the rest of this chapter gives
+you more details on how to transition from standard syntax to XML syntax.
+It explains how to use XML namespaces to declare tag libraries, include directives,
+and create static and dynamic content in your JSP documents. It also describes
+<tt>jsp:root</tt> and <tt>jsp:output</tt>, two elements that are used exclusively in JSP documents.</p>
+
+<a name="bnajs"></a><h4>Declaring Tag Libraries</h4>
+<a name="indexterm-424"></a><p>This section explains how to use XML namespaces to declare tag libraries.</p><p>In standard syntax, the <tt>taglib</tt> directive declares tag libraries used in a JSP
+page. Here is an example of a <tt>taglib</tt> directive:</p><pre>&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %></pre><p><a name="indexterm-425"></a>This syntax is not allowed in JSP documents. To declare a tag library
+in a JSP document, you use the <tt>xmlns</tt> attribute, which is used to
+declare namespaces according to the XML standard:</p><pre>...
+xmlns:c="http://java.sun.com/jsp/jstl/core"
+...</pre><p>The value that identifies the location of the tag library can take
+three forms:</p>
+<ul><li><p>A plain URI that is a unique identifier for the tag library. The container tries to match it against any <tt>&lt;taglib-uri></tt> elements in the application&rsquo;s <tt>web.xml</tt> file or the <tt>&lt;uri></tt> element of tag library descriptors (TLDs) in JAR files in <tt>/WEB-INF/lib/</tt> or TLDs under <tt>WEB-INF</tt>.</p></li>
+<li><p>A URN of the form <tt>urn:jsptld:path</tt>.</p></li>
+<li><p>A URN of the form <tt>urn:jsptagdir:path</tt>.</p></li></ul>
+<p>The URN of the form <tt>urn:jsptld:path</tt> points to one tag library packaged with
+the application:</p><pre>xmlns:u="urn:jsptld:/WEB-INF/tlds/my.tld"</pre><p>The URN of the form <tt>urn:jsptagdir:path</tt> must start with <tt>/WEB-INF/tags/</tt> and identifies tag
+extensions (implemented as tag files) installed in the <tt>/WEB-INF/tags/</tt> directory or a subdirectory of
+it:</p><pre>xmlns:u="urn:jsptagdir:/WEB-INF/tags/mytaglibs/"</pre><p>You can include the <tt>xmlns</tt> attribute in any element in your JSP document,
+just as you can in an XML document. This capability has many advantages:</p>
+<ul><li><p>It follows the XML standard, making it easier to use any XML document as a JSP document.</p></li>
+<li><p>It allows you to scope prefixes to an element and override them.</p></li>
+<li><p>It allows you to use <tt>xmlns</tt> to declare other namespaces and not just tag libraries.</p></li></ul>
+<p>The <tt>books.jspx</tt> page declares the tag libraries it uses with the <tt>xmlns</tt> attributes
+in the root element, <tt>books</tt>:</p><pre>&lt;books
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+></pre><p>In this way, all elements within the <tt>books</tt> element have access to these
+tag libraries.</p><p><a name="indexterm-426"></a>As an alternative, you can scope the namespaces:</p><pre>&lt;books>
+...
+    &lt;jsp:useBean xmlns:jsp="http://java.sun.com/JSP/Page"
+                        id="bookDB"
+                         class="database.BookDB"
+                         scope="page">
+         &lt;jsp:setProperty name="bookDB"
+                         property="database" value="${bookDBAO}" />
+    &lt;/jsp:useBean>
+    &lt;c:forEach xmlns:c="http://java.sun.com/jsp/jstl/core"
+                    var="book" begin="0" items="${bookDB.books}">
+                    ...
+    &lt;/c:forEach>
+&lt;/books></pre><p>In this way, the tag library referenced by the <tt>jsp</tt> prefix is available
+only to the <tt>jsp:useBean</tt> element and its subelements. Similarly, the tag library referenced
+by the <tt>c</tt> prefix is only available to the <tt>c:forEach</tt> element.</p><p>Scoping the namespaces also allows you to override the prefix. For example, in
+another part of the page, you could bind the <tt>c</tt> prefix to a
+different namespace or tag library. In contrast, the <tt>jsp</tt> prefix must always be
+bound to <tt>http://java.sun.com/JSP/Page</tt>, the JSP namespace.</p>
+
+<a name="bnajt"></a><h4>Including Directives in a JSP Document</h4>
+<p><a name="indexterm-427"></a><b>Directives</b> are elements that relay messages to the JSP container and affect how
+it compiles the JSP page. The directives themselves do not appear in the
+XML output.</p><p>There are three directives: <tt>include</tt>, <tt>page</tt>, and <tt>taglib</tt>. The <tt>taglib</tt> directive is covered in
+the preceding section.</p><p><a name="indexterm-428"></a>The <tt>jsp:directive.page</tt> element defines a number of page-dependent properties and communicates these to
+the JSP container. This element must be a child of the root element.
+Its syntax is</p><pre>&lt;jsp:directive.page <i>page-directive-attr-list</i> /></pre><p>The <i>page-directive-attr-list</i> is the same list of attributes that the <tt>&lt;@ page ...></tt> directive has. These
+are described in <a href="bnagx.html">Chapter&nbsp;5, JavaServer Pages Technology</a>. All the attributes are optional. Except for the
+<tt>import</tt> and <tt>pageEncoding</tt> attributes, there can be only one instance of each attribute
+in an element, but an element can contain more than one attribute.</p><p>An example of a page directive is one that tells the JSP
+container to load an error page when it throws an exception. You can
+add this error page directive to the <tt>books.jspx</tt> page:</p><pre>&lt;books xmlns:jsp="http://java.sun.com/JSP/Page">
+    &lt;jsp:directive.page errorPage="errorpage.jsp" />
+    ...
+&lt;/books></pre><p>If there is an error when you try to execute the page
+(perhaps when you want to see the XML output of <tt>books.jspx</tt>), the error page
+is accessed.</p><p><a name="indexterm-429"></a>The <tt>jsp:directive.include</tt> element is used to insert the text contained in another file
+(either static content or another JSP page) into the including JSP document. You
+can place this element anywhere in a document. Its syntax is:</p><pre>&lt;jsp:directive.include file="relativeURLspec" /></pre><p>The XML view of a JSP document does not contain <tt>jsp:directive.include</tt> elements;
+rather the included file is expanded in place. This is done to simplify
+validation.</p><p>Suppose that you want to use an <tt>include</tt> directive to add a JSP
+document containing magazine data inside the JSP document containing the books data. To
+do this, you can add the following <tt>include</tt> directive to <tt>books.jspx</tt>, assuming that
+<tt>magazines.jspx</tt> generates the magazine XML data.</p><pre>&lt;jsp:root version="2.0" >
+    &lt;books ...>
+    ...
+    &lt;/books>
+    &lt;jsp:directive.include file="magazine.jspx" />
+&lt;/jsp:root></pre><p>Note that <tt>jsp:root</tt> is required because otherwise <tt>books.jspx</tt> would have two root
+elements: <tt>&lt;books></tt> and <tt>&lt;magazines></tt>. The output generated from <tt>books.jspx</tt> will be a sequence
+of XML documents: one with <tt>&lt;books></tt> and the other with <tt>&lt;magazines></tt> as its
+root element.</p><p>The output of this example will not be well-formed XML because of
+the two root elements, so the client might refuse to process it. However,
+it is still a legal JSP document.</p><p><a name="indexterm-430"></a><a name="indexterm-431"></a>In addition to including JSP documents in JSP documents, you can also include
+JSP pages written in standard syntax in JSP documents, and you can include
+JSP documents in JSP pages written in standard syntax. The container detects the
+page you are including and parses it as either a standard syntax JSP
+page or a JSP document and then places it into the XML view
+for validation.</p>
+
+<a name="bnaju"></a><h4>Creating Static and Dynamic Content</h4>
+<p><a name="indexterm-432"></a><a name="indexterm-433"></a>This section explains how to represent static text and dynamic content in a
+JSP document. You can represent static text in a JSP document using uninterpreted
+XML tags or the <tt>jsp:text</tt> element. The <tt>jsp:text</tt> element passes its content through
+to the output.</p><p><a name="indexterm-434"></a>If you use <tt>jsp:text</tt>, all white space is preserved. For example, consider this example
+using XML tags:</p><pre>&lt;books>
+    &lt;book>
+        Web Servers for Fun and Profit
+    &lt;/book>
+&lt;/books></pre><p>The output generated from this XML has all white space removed:</p><pre>&lt;books>&lt;book>
+        Web Servers for Fun and Profit
+&lt;/book>&lt;/books></pre><p>If you wrap the example XML with a <tt>&lt;jsp:text></tt> tag, all white space
+is preserved. The white space characters are <tt>#x20</tt>, <tt>#x9</tt>, <tt>#xD</tt>, and <tt>#xA</tt>.</p><p>You can also use <tt>jsp:text</tt> to output static data that is not well
+formed. The <tt>${counter}</tt> expression in the following example would be illegal in a
+JSP document if it were not wrapped in a <tt>jsp:text</tt> tag.</p><pre>&lt;c:forEach var="counter" begin="1" end="${3}">
+    &lt;jsp:text>${counter}&lt;/jsp:text>
+&lt;/c:forEach></pre><p>This example will output</p><pre>123</pre><p>The <tt>jsp:text</tt> tag must not contain any other elements. Therefore, if you need
+to nest a tag inside <tt>jsp:text</tt>, you must wrap the tag inside <tt>CDATA</tt>.</p><p>You also need to use <tt>CDATA</tt> if you need to output some elements
+that are not well-formed. The following example requires <tt>CDATA</tt> wrappers around the
+<tt>blockquote</tt> start and end tags because the <tt>blockquote</tt> element is not well formed. This
+is because the <tt>blockquote</tt> element overlaps with other elements in the example.</p><pre>&lt;c:forEach var="i" begin="1" end="${x}">
+    &lt;![CDATA[&lt;blockquote>]]&gt;
+&lt;/c:forEach>
+...
+&lt;c:forEach var="i" begin="1" end="${x}">
+    &lt;![CDATA[&lt;/blockquote>]]&gt;
+&lt;/c:forEach></pre><p><a name="indexterm-435"></a>Just like JSP pages, JSP documents can generate dynamic content using expressions language
+(EL) expressions, scripting elements, standard actions, and custom tags. The <tt>books.jspx</tt> document uses EL
+expressions and custom tags to generate the XML book data.</p><p>As shown in this snippet from <tt>books.jspx</tt>, the <tt>c:forEach</tt> JSTL tag iterates
+through the list of books and generates the XML data stream. The EL
+expressions access the JavaBeans component, which in turn retrieves the data from the
+database:</p><pre>&lt;c:forEach var="book" begin="0" items="${bookDB.books}">
+    &lt;book id="${book.bookId}" >
+        &lt;surname>${book.surname}&lt;/surname>
+        &lt;firstname>${book.firstName}&lt;/firstname>
+        &lt;title>${book.title}&lt;/title>
+        &lt;price>${book.price}&lt;/price>
+        &lt;year>${book.year}&lt;/year>
+        &lt;description>${book.description}&lt;/description>
+        &lt;inventory>${book.inventory}&lt;/inventory>
+    &lt;/book>
+&lt;/c:forEach></pre><p><a name="indexterm-436"></a>When using the expression language in your JSP documents, you must substitute alternative
+notation for some of the operators so that they will not be interpreted
+as XML markup. <a href="#bnajv">Table&nbsp;6-2</a> enumerates the more common operators and their alternative syntax
+in JSP documents.</p><a name="bnajv"></a><h6>Table&nbsp;6-2 EL Operators and JSP Document-Compliant Alternative Notation</h6><table><col width="35%"><col width="64%"><tr><th align="left" valign="top" scope="column"><p>EL Operator</p></th>
+<th align="left" valign="top" scope="column"><p>JSP Document Notation</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&lt;</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>lt</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>></tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>gt</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>&lt;=</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>le</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>>=</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>ge</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>!=</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>ne</tt></p></td>
+</tr>
+</table><p><a name="indexterm-437"></a><a name="indexterm-438"></a>You can also use EL expressions with <tt>jsp:element</tt> to generate tags dynamically
+rather than hard code them. This example could be used to generate an
+HTML header tag with a <tt>lang</tt> attribute:</p><pre>&lt;jsp:element name="${content.headerName}"
+         xmlns:jsp="http://java.sun.com/JSP/Page">
+    &lt;jsp:attribute name="lang">${content.lang}&lt;/jsp:attribute>
+    &lt;jsp:body>${content.body}&lt;/jsp:body>
+&lt;/jsp:element></pre><p>The <tt>name</tt> attribute identifies the generated tag&rsquo;s name. The <tt>jsp:attribute</tt> tag generates the
+<tt>lang</tt> attribute. The body of the <tt>jsp:attribute</tt> tag identifies the value of the <tt>lang</tt>
+attribute. The <tt>jsp:body</tt> tag generates the body of the tag. The output of
+this example <tt>jsp:element</tt> could be</p><pre>&lt;h1 lang="fr">Heading in French&lt;/h1></pre><p><a name="indexterm-439"></a>As shown in <a href="#bnajr">Table&nbsp;6-1</a>, scripting elements (described in <a href="bnaon.html">Chapter&nbsp;9, Scripting in JSP Pages</a>) are represented as XML
+elements when they appear in a JSP document. The only exception is a
+scriptlet expression used to specify a request-time attribute value. Instead of using <tt>&lt;%=expr %></tt>,
+a JSP document uses <tt>%= expr %</tt> to represent a request-time attribute value.</p><p>The three scripting elements are declarations, scriptlets, and expressions.</p><p><a name="indexterm-440"></a>A <tt>jsp:declaration</tt> element declares a scripting language construct that is available to other
+scripting elements. A <tt>jsp:declaration</tt> element has no attributes and its body is
+the declaration itself. Its syntax is</p><pre>&lt;jsp:declaration> declaration goes here &lt;/jsp:declaration></pre><p><a name="indexterm-441"></a>A <tt>jsp:scriptlet</tt> element contains a Java program fragment called a scriptlet. This element
+has no attributes, and its body is the program fragment that constitutes the
+scriptlet. Its syntax is</p><pre>&lt;jsp:scriptlet> code fragment goes here &lt;/jsp:scriptlet></pre><p><a name="indexterm-442"></a>The <tt>jsp:expression</tt> element inserts the value of a scripting language expression, converted into
+a string, into the data stream returned to the client. A <tt>jsp:expression</tt> element has
+no attributes and its body is the expression. Its syntax is</p><pre>&lt;jsp:expression> expression goes here &lt;/jsp:expression></pre>
+
+<a name="bnajw"></a><h4>Using the <tt>jsp:root</tt> Element</h4>
+<p><a name="indexterm-443"></a>The <tt>jsp:root</tt> element represents the root element of a JSP document. A <tt>jsp:root</tt>
+element is not required for JSP documents. You can specify your own root
+element, enabling you to use any XML document as a JSP document. The
+root element of the <tt>books.jspx</tt> example JSP document is <tt>books</tt>.</p><p>Although the <tt>jsp:root</tt> element is not required, it is still useful in these
+cases:</p>
+<ul><li><p>When you want to identify the document as a JSP document to the JSP container without having to add any configuration attributes to the deployment descriptor or name the document with a <tt>.jspx</tt> extension</p></li>
+<li><p>When you want to generate, from a single JSP document, more than one XML document or XML content mixed with non-XML content</p></li></ul>
+<p>The <tt>version</tt> attribute is the only required attribute of the <tt>jsp:root</tt> element. It
+specifies the JSP specification version that the JSP document is using.</p><p>The <tt>jsp:root</tt> element can also include <tt>xmlns</tt> attributes for specifying tag libraries used
+by the other elements in the page.</p><p>The <tt>books.jspx</tt> page does not need a <tt>jsp:root</tt> element and therefore doesn&rsquo;t include
+one. However, suppose that you want to generate two XML documents from <tt>books.jspx</tt>:
+one that lists books and another that lists magazines (assuming magazines are in
+the database). This example is similar to the one in the section <a href="#bnajt">Including Directives in a JSP Document</a>.
+To do this, you can use this <tt>jsp:root</tt> element:</p><pre>&lt;jsp:root
+     xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" >
+    &lt;books>...&lt;/books>
+    &lt;magazines>...&lt;/magazines>
+&lt;/jsp:root></pre><p>Notice in this example that <tt>jsp:root</tt> defines the JSP namespace because both the
+<tt>books</tt> and the <tt>magazines</tt> elements use the elements defined in this namespace.</p>
+
+<a name="bnajx"></a><h4>Using the <tt>jsp:output</tt> Element</h4>
+<p><a name="indexterm-444"></a>The <tt>jsp:output</tt> element specifies the XML declaration or the document type declaration in
+the request output of the JSP document.</p><p>The XML declaration and document type declaration that are declared by the <tt>jsp:output</tt>
+element are not interpreted by the JSP container. Instead, the container simply directs
+them to the request output.</p><p>To illustrate this, here is an example of specifying a document type declaration
+with <tt>jsp:output</tt>:</p><pre>&lt;jsp:output doctype-root-element="books"
+                    doctype-system="books.dtd" /></pre><p>The resulting output is:</p><pre>&lt;!DOCTYPE books SYSTEM "books.dtd" ></pre><p>Specifying the document type declaration in the <tt>jsp:output</tt> element will not cause the
+JSP container to validate the JSP document against the <tt>books.dtd</tt>.</p><p><a name="indexterm-445"></a>If you want the JSP document to be validated against the DTD, you
+must manually include the document type declaration within the JSP document, just as
+you would with any XML document.</p><p><a href="#bnajy">Table&nbsp;6-3</a> shows all the <tt>jsp:output</tt> attributes. They are all optional, but some
+attributes depend on other attributes occurring in the same <tt>jsp:output</tt> element, as shown in
+the table. The rest of this section explains more about using <tt>jsp:output</tt>
+to generate an XML declaration and a document type declaration.</p><a name="bnajy"></a><h6>Table&nbsp;6-3 <tt>jsp:output</tt> Attributes</h6><table><col width="25%"><col width="74%"><tr><th align="left" valign="top" scope="column"><p>Attribute</p></th>
+<th align="left" valign="top" scope="column"><p>What It Specifies</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>omit-xml-declaration</tt></p></td>
+<td align="left" valign="top" scope="row"><p>A
+value of <tt>true</tt> or <tt>yes</tt> omits the XML declaration. A value of <tt>false</tt>
+or <tt>no</tt> generates an XML declaration.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>doctype-root-element</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Indicates the root element of the XML document
+in the <tt>DOCTYPE</tt>. Can be specified only if <tt>doctype-system</tt> is specified.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>doctype-system</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Specifies that a
+<tt>DOCTYPE</tt> is generated in output and gives the <tt>SYSTEM</tt> literal.</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>doctype-public</tt></p></td>
+<td align="left" valign="top" scope="row"><p>Specifies the value for
+the Public ID of the generated <tt>DOCTYPE</tt>. Can be specified only if <tt>doctype-system</tt>
+is specified.</p></td>
+</tr>
+</table>
+
+<a name="bnajz"></a><h5>Generating XML Declarations</h5>
+<a name="indexterm-446"></a><p>Here is an example of an XML declaration:</p><pre>&lt;?xml version="1.0" encoding="UTF-8" ?></pre><p>This declaration is the default XML declaration. It means that if the JSP
+container is generating an XML declaration, this is what the JSP container will
+include in the output of your JSP document.</p><p>Neither a JSP document nor its request output is required to have
+an XML declaration. In fact, if the JSP document is not producing XML
+output then it shouldn&rsquo;t have an XML declaration.</p><p>The JSP container will <b>not</b> include the XML declaration in the output when
+either of the following is true:</p>
+<ul><li><p>You set the <tt>omit-xml-declaration</tt> attribute of the <tt>jsp:output</tt> element to either <tt>true</tt> or <tt>yes</tt>.</p></li>
+<li><p>You have a <tt>jsp:root</tt> element in your JSP document, and you do not specify <tt>omit-xml-declaration="false"</tt> in <tt>jsp:output</tt>.</p></li></ul>
+<p>The JSP container will include the XML declaration in the output when either
+of the following is true:</p>
+<ul><li><p>You set the <tt>omit-xml-declaration</tt> attribute of the <tt>jsp:output</tt> element to either <tt>false</tt> or <tt>no</tt>.</p></li>
+<li><p>You do not have a <tt>jsp:root</tt> action in your JSP document, and you do not specify the <tt>omit-xml-declaration</tt> attribute in <tt>jsp:output</tt>.</p></li></ul>
+<p>The <tt>books.jspx</tt> JSP document does not include a <tt>jsp:root</tt> action nor a
+<tt>jsp:output</tt>. Therefore, the default XML declaration is generated in the output.</p>
+
+<a name="bnaka"></a><h5>Generating a Document Type Declaration</h5>
+<a name="indexterm-447"></a><p>A document type declaration (DTD) defines the structural rules for the XML document
+in which the document type declaration occurs. XML documents are not required to
+have a DTD associated with them. In fact, the <tt>books</tt> example does not
+include one.</p><p>This section shows you how to use the <tt>jsp:output</tt> element to add a
+document type declaration to the XML output of <tt>books.jspx</tt>. It also shows you
+how to enter the document type declaration manually into <tt>books.jspx</tt> so that
+the JSP container will interpret it and validate the document against the DTD.</p><p>As shown in <a href="#bnajy">Table&nbsp;6-3</a>, the <tt>jsp:output</tt> element has three attributes that you
+use to generate the document type declaration:</p>
+<ul><li><p><tt>doctype-root-element</tt>: Indicates the root element of the XML document.</p></li>
+<li><p><tt>doctype-system</tt>: Indicates the URI reference to the DTD.</p></li>
+<li><p><tt>doctype-public</tt>: A more flexible way to reference the DTD. This identifier gives more information about the DTD without giving a specific location. A public identifier resolves to the same actual document on any system even though the location of that document on each system may vary. See the <a href="http://www.w3.org/XML/">XML 1.0 specification </a> for more information.</p></li></ul>
+<p>The rules for using the attributes are as follows:</p>
+<ul><li><p>The doctype attributes can appear in any order.</p></li>
+<li><p>The <tt>doctype-root</tt> attribute must be specified if the <tt>doctype-system</tt> attribute is specified.</p></li>
+<li><p>The <tt>doctype-public</tt> attribute must not be specified unless <tt>doctype-system</tt> is specified.</p></li></ul>
+<p>This syntax notation summarizes these rules:</p><pre>&lt;jsp:output (omit-xmldeclaration=
+    "yes"|"no"|"true"|"false"){doctypeDecl} />
+doctypeDecl:=    (doctype-root-element="<i>rootElement</i>"
+        doctype-public="<i>PublicLiteral</i>"
+    doctype-system="<i>SystemLiteral</i>")
+    | (doctype-root-element="<i>rootElement</i>"
+    doctype-system="<i>SystemLiteral</i>")</pre><p>Suppose that you want to reference a DTD, called <tt>books.DTD</tt>, from the output
+of the <tt>books.jspx</tt> page. The DTD would look like this:</p><pre>&lt;!ELEMENT books (book+) >
+&lt;!ELEMENT book (surname, firstname, title, price, year,
+                         description, inventory) >
+&lt;!ATTLIST book id CDATA #REQUIRED >
+&lt;!ELEMENT surname (#PCDATA) >
+&lt;!ELEMENT firstname (#PCDATA) >
+&lt;!ELEMENT title (#PCDATA) >
+&lt;!ELEMENT price (#PCDATA) >
+&lt;!ELEMENT year (#PCDATA) >
+&lt;!ELEMENT description (#PCDATA) >
+&lt;!ELEMENT inventory (#PCDATA) ></pre><p>To add a document type declaration that references the DTD to the
+XML request output generated from <tt>books.jspx</tt>, include this <tt>jsp:output</tt> element in <tt>books.jspx</tt>:</p><pre>&lt;jsp:output doctype-root-element="books"
+         doctype-system="books.DTD" /></pre><p>With this <tt>jsp:output</tt> action, the JSP container generates this document type declaration in
+the request output:</p><pre>&lt;!DOCTYPE books SYSTEM "books.DTD" /></pre><p>The <tt>jsp:output</tt> need not be located before the root element of the document.
+The JSP container will automatically place the resulting document type declaration before the
+start of the output of the JSP document.</p><p>Note that the JSP container will not interpret anything provided by <tt>jsp:output</tt>.
+This means that the JSP container will not validate the XML document against
+the DTD. It only generates the document type declaration in the XML request
+output. To see the XML output, run <tt>http://localhost:8080/books/books.jspx</tt> in your browser after
+you have updated <tt>books.WAR</tt> with <tt>books.DTD</tt> and the <tt>jsp:output</tt> element. When using some
+browsers, you might need to view the source of the page to
+actually see the output.</p><p>Directing the document type declaration to output without interpreting it is useful in
+situations when another system receiving the output expects to see it. For example,
+two companies that do business by means of a web service might use
+a standard DTD, against which any XML content exchanged between the companies is
+validated by the consumer of the content. The document type declaration tells the
+consumer what DTD to use to validate the XML data that it receives.</p><p>For the JSP container to validate <tt>books.jspx</tt> against <tt>book.DTD</tt>, you must manually
+include the document type declaration in the <tt>books.jspx</tt> file rather than use <tt>jsp:output</tt>. However,
+you must add definitions for all tags in your DTD, including definitions for
+standard elements and custom tags, such as <tt>jsp:useBean</tt> and <tt>c:forEach</tt>. You also
+must ensure that the DTD is located in the <tt></tt><i>domain-dir</i><tt>/config/</tt> directory so
+that the JSP container will validate the JSP document against the DTD.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnajp.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnakb.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

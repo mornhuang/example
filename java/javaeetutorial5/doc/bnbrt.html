@@ -1,0 +1,637 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>The <tt>order</tt> Application - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">The <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbru">Entity Relationships in the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="#bnbrv">Self-Referential Relationships</a></p>
+<p class="toc level5"><a href="#bnbrw">One-to-One Relationships</a></p>
+<p class="toc level5"><a href="#bnbrx">One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</a></p>
+<p class="toc level5"><a href="#bnbry">Unidirectional Relationships</a></p>
+<p class="toc level4 tocsp"><a href="#bnbrz">Primary Keys in the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="#bnbsa">Generated Primary Keys</a></p>
+<p class="toc level5"><a href="#bnbsb">Compound Primary Keys</a></p>
+<p class="toc level4 tocsp"><a href="#bnbsc">Entity Mapped to More Than One Database Table</a></p>
+<p class="toc level4"><a href="#bnbsd">Cascade Operations in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbse">BLOB and CLOB Database Types in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbsf">Temporal Types in the <tt>order</tt> Application</a></p>
+<p class="toc level4"><a href="#bnbsg">Managing the <tt>order</tt> Application's Entities</a></p>
+<p class="toc level5"><a href="#bnbsh">Creating Entities</a></p>
+<p class="toc level5"><a href="#bnbsi">Finding Entities</a></p>
+<p class="toc level5"><a href="#bnbsj">Setting Entity Relationships</a></p>
+<p class="toc level5"><a href="#bnbsk">Using Queries</a></p>
+<p class="toc level5"><a href="#bnbsl">Removing Entities</a></p>
+<p class="toc level4 tocsp"><a href="#bnbsm">Building and Running the <tt>order</tt> Application</a></p>
+<p class="toc level5"><a href="#bnbsn">Creating the Database Tables in NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnbsr">Creating the Database Tables Using Ant</a></p>
+<p class="toc level5"><a href="#bnbss">Building, Packaging, Deploying, and Running <tt>order</tt> In NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnbst">Building, Packaging, Deploying, and Running <tt>order</tt> Using Ant</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbsw.html">The <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="bnbsw.html#bnbsx">Relationships in the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="bnbsw.html#bnbsy">The Many-To-Many Relationship in <tt>roster</tt></a></p>
+<p class="toc level4 tocsp"><a href="bnbsw.html#bnbsz">Entity Inheritance in the <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="bnbsw.html#bnbta">Automatic Table Generation in the <tt>roster</tt> Application</a></p>
+<p class="toc level4"><a href="bnbsw.html#bnbtb">Building and Running the <tt>roster</tt> Application</a></p>
+<p class="toc level5"><a href="bnbsw.html#bnbtc">Building, Packaging, Deploying, and Running <tt>roster</tt> in NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbsw.html#bnbtd">Building, Packaging, Deploying, and Running <tt>roster</tt> Using Ant</a></p>
+<p class="toc level2 tocsp"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbrs.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbsw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbrt"></a><h3>The <tt>order</tt> Application</h3>
+<p>The <tt>order</tt> application is a simple inventory and ordering application for maintaining a
+catalog of parts and placing an itemized order of those parts. It has
+entities that represent parts, vendors, orders, and line items. These entities are accessed
+using a stateful session bean that holds the business logic of the application.
+A simple command-line client adds data to the entities, manipulates the data, and
+displays data from the catalog.</p><p>The information contained in an order can be divided into different elements. What
+is the order number? What parts are included in the order? What parts
+make up that part? Who makes the part? What are the specifications for
+the part? Are there any schematics for the part? <tt>order</tt> is a simplified
+version of an ordering system that has all these elements.</p><p>The <tt>order</tt> application consists of two modules: <tt>order-ejb</tt>, an enterprise bean JAR
+file containing the entities, the support classes, and a stateful session bean that
+accesses the data in the entities; and <tt>order-app-client</tt>, the application client that populates the
+entities with data and manipulates the data, displaying the results in a terminal.</p>
+
+<a name="bnbru"></a><h4>Entity Relationships in the <tt>order</tt> Application</h4>
+<a name="indexterm-2216"></a><p>The <tt>order</tt> application demonstrates several types of entity relationships: one-to-many, many-to-one, one-to-one, unidirectional, and
+self-referential relationships.</p>
+
+<a name="bnbrv"></a><h5>Self-Referential Relationships</h5>
+<a name="indexterm-2217"></a><p>A <b>self-referential</b> relationship is a relationship between relationship fields in the same entity.
+<tt>Part</tt> has a field <tt>bomPart</tt> that has a one-to-many relationship with the field <tt>parts</tt>,
+which is also in <tt>Part</tt>. That is, a part can be made up
+of many parts, and each of those parts has exactly one bill-of-material part.</p><p>The primary key for <tt>Part</tt> is a compound primary key, a combination of
+the <tt>partNumber</tt> and <tt>revision</tt> fields. It is mapped to the <tt>PARTNUMBER</tt> and <tt>REVISION</tt>
+columns in the <tt>EJB_ORDER_PART</tt> table.</p><pre>...
+@ManyToOne
+@JoinColumns({
+    @JoinColumn(name="BOMPARTNUMBER",
+        referencedColumnName="PARTNUMBER"),
+    @JoinColumn(name="BOMREVISION",
+        referencedColumnName="REVISION")
+})
+public Part getBomPart() {
+    return bomPart;
+}
+...
+@OneToMany(mappedBy="bomPart")
+public Collection&lt;Part> getParts() {
+    return parts;
+}
+...</pre>
+
+<a name="bnbrw"></a><h5>One-to-One Relationships</h5>
+<a name="indexterm-2218"></a><p><tt>Part</tt> has a field, <tt>vendorPart</tt>, that has a one-to-one relationship with <tt>VendorPart</tt>&rsquo;s <tt>part</tt>
+field. That is, each part has exactly one vendor part, and vice versa.</p><p>Here is the relationship mapping in <tt>Part</tt>:</p><pre>@OneToOne(mappedBy="part")
+public VendorPart getVendorPart() {
+    return vendorPart;
+}</pre><p>Here is the relationship mapping in <tt>VendorPart</tt>:</p><pre>@OneToOne
+@JoinColumns({
+    @JoinColumn(name="PARTNUMBER",
+        referencedColumnName="PARTNUMBER"),
+    @JoinColumn(name="PARTREVISION",
+        referencedColumnName="REVISION")
+})
+public Part getPart() {
+    return part;
+}</pre><p>Note that, because <tt>Part</tt> uses a compound primary key, the <tt>@JoinColumns</tt> annotation is
+used to map the columns in the <tt>EJB_ORDER_VENDOR_PART</tt> table to the columns in <tt>EJB_ORDER_PART</tt>.
+<tt>EJB_ORDER_VENDOR_PART</tt>&rsquo;s <tt>PARTREVISION</tt> column refers to <tt>EJB_ORDER_PART</tt>&rsquo;s <tt>REVISION</tt> column.</p>
+
+<a name="bnbrx"></a><h5>One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</h5>
+<a name="indexterm-2219"></a><a name="indexterm-2220"></a><a name="indexterm-2221"></a><p><tt>Order</tt> has a field, <tt>lineItems</tt>, that has a one-to-many relationship with <tt>LineItem</tt>&rsquo;s field <tt>order</tt>.
+That is, each order has one or more line item.</p><p><tt>LineItem</tt> uses a compound primary key that is made up of the <tt>orderId</tt>
+and <tt>itemId</tt> fields. This compound primary key maps to the <tt>ORDERID</tt> and <tt>ITEMID</tt>
+columns in the <tt>EJB_ORDER_LINEITEM</tt> database table. <tt>ORDERID</tt> is a foreign key to
+the <tt>ORDERID</tt> column in the <tt>EJB_ORDER_ORDER</tt> table. This means that the <tt>ORDERID</tt> column
+is mapped twice: once as a primary key field, <tt>orderId</tt>; and again as
+a relationship field, <tt>order</tt>.</p><p>Here&rsquo;s the relationship mapping in <tt>Order</tt>:</p><pre>@OneToMany(cascade=ALL, mappedBy="order")
+    public Collection&lt;LineItem> getLineItems() {
+    return lineItems;
+}</pre><p>Here is the relationship mapping in <tt>LineItem</tt>:</p><pre>@ManyToOne
+    public Order getOrder() {
+    return order;
+}</pre>
+
+<a name="bnbry"></a><h5>Unidirectional Relationships</h5>
+<a name="indexterm-2222"></a><p><tt>LineItem</tt> has a field, <tt>vendorPart</tt>, that has a unidirectional many-to-one relationship with <tt>VendorPart</tt>. That
+is, there is no field in the target entity in this relationship.</p><pre>@ManyToOne
+    public VendorPart getVendorPart() {
+    return vendorPart;
+}</pre>
+
+<a name="bnbrz"></a><h4>Primary Keys in the <tt>order</tt> Application</h4>
+<p>The <tt>order</tt> application uses several types of primary keys: single-valued primary keys, compound
+primary keys, and generated primary keys.</p>
+
+<a name="bnbsa"></a><h5>Generated Primary Keys</h5>
+<p><tt>VendorPart</tt> uses a generated primary key value. That is, the application does not
+assign primary key values for the entities, but instead relies on the persistence
+provider to generate the primary key values. The <tt>@GeneratedValue</tt> annotation is used to
+specify that an entity will use a generated primary key.</p><p>In <tt>VendorPart</tt>, the following code specifies the settings for generating primary key values:</p><pre>@TableGenerator(
+    name="vendorPartGen",
+    table="EJB_ORDER_SEQUENCE_GENERATOR",
+    pkColumnName="GEN_KEY",
+    valueColumnName="GEN_VALUE",
+    pkColumnValue="VENDOR_PART_ID",
+    allocationSize=10)
+@Id
+@GeneratedValue(strategy=GenerationType.TABLE,
+    generator="vendorPartGen")
+public Long getVendorPartNumber() {
+    return vendorPartNumber;
+}</pre><p>The <tt>@TableGenerator</tt> annotation is used in conjunction with <tt>@GeneratedValue</tt>&rsquo;s <tt>strategy=TABLE</tt> element. That is, the
+strategy used to generate the primary keys is use a table in the
+database. <tt>@TableGenerator</tt> is used to configure the settings for the generator table. The
+name element sets the name of the generator, which is <tt>vendorPartGen</tt> in <tt>VendorPart</tt>.</p><p>The <tt>EJB_ORDER_SEQUENCE_GENERATOR</tt> table, which has two columns <tt>GEN_KEY</tt> and <tt>GEN_VALUE</tt>, will store the generated
+primary key values. This table could be used to generate other entity&rsquo;s primary
+keys, so the <tt>pkColumnValue</tt> element is set to <tt>VENDOR_PART_ID</tt> to distinguish this entity&rsquo;s generated
+primary keys from other entity&rsquo;s generated primary keys. The <tt>allocationSize</tt> element specifies
+the amount to increment when allocating primary key values In this case, each
+<tt>VendorPart</tt>&rsquo;s primary key will increment by 10.</p><p>The primary key field <tt>vendorPartNumber</tt> is of type <tt>Long</tt>, as the generated primary
+key&rsquo;s field must be an integral type.</p>
+
+<a name="bnbsb"></a><h5>Compound Primary Keys</h5>
+<a name="indexterm-2223"></a><a name="indexterm-2224"></a><p>A compound primary key is made up of multiple fields and follows
+the requirements described in <a href="bnbqa.html#bnbqg">Primary Key Classes</a>. To use a compound primary key, you must create
+a wrapper class.</p><p>In <tt>order</tt>, two entities use compound primary keys: <tt>Part</tt> and <tt>LineItem</tt>.</p><p><tt>Part</tt> uses the <tt>PartKey</tt> wrapper class. <tt>Part</tt>&rsquo;s primary key is a combination of the
+part number and the revision number. <tt>PartKey</tt> encapsulates this primary key.</p><p><tt>LineItem</tt> uses the <tt>LineItemKey</tt> class. <tt>LineItem</tt>&rsquo;s primary key is a combination of
+the order number and the item number. <tt>LineItemKey</tt> encapsulates this primary key. This is
+the <tt>LineItemKey</tt> compound primary key wrapper class:</p><pre>package order.entity;
+
+public final class LineItemKey implements
+             java.io.Serializable {
+
+    private Integer orderId;
+    private int itemId;
+
+    public int hashCode() {
+        return ((this.getOrderId()==null
+                        ?0:this.getOrderId().hashCode())
+                 ^ ((int) this.getItemId()));
+    }
+
+    public boolean equals(Object otherOb) {
+        if (this == otherOb) {
+            return true;
+        }
+        if (!(otherOb instanceof LineItemKey)) {
+            return false;
+        }
+        LineItemKey other = (LineItemKey) otherOb;
+        return ((this.getOrderId()==null
+                        ?other.orderId==null:this.getOrderId().equals
+                (other.orderId)) &amp;&amp; (this.getItemId ==
+                    other.itemId));
+    }
+
+    public String toString() {
+        return "" + orderId + "-" + itemId;
+    }
+}</pre><p>The <tt>@IdClass</tt> annotation is used to specify the primary key class in the
+entity class. In <tt>LineItem</tt>, <tt>@IdClass</tt> is used as follows:</p><pre>@IdClass(order.entity.LineItemKey.class)
+@Entity
+...
+public class LineItem {
+...
+}</pre><p>The two fields in <tt>LineItem</tt> are tagged with the <tt>@Id</tt> annotation to
+mark those fields as part of the compound primary key:</p><pre>@Id
+public int getItemId() {
+    return itemId;
+}
+...
+@Id
+@Column(name="ORDERID", nullable=false,
+    insertable=false, updatable=false)
+public Integer getOrderId() {
+    return orderId;
+}</pre><p>For <tt>orderId</tt>, you also use the <tt>@Column</tt> annotation to specify the column name
+in the table, and that this column should not be inserted or updated,
+as it is an overlapping foreign key pointing at the <tt>EJB_ORDER_ORDER</tt> table&rsquo;s
+<tt>ORDERID</tt> column (see <a href="#bnbrx">One-to-Many Relationship Mapped to Overlapping Primary and Foreign Keys</a>). That is, <tt>orderId</tt> will be set by the <tt>Order</tt> entity.</p><p>In <tt>LineItem</tt>&rsquo;s constructor, the line item number (<tt>LineItem.itemId</tt>) is set using the <tt>Order.getNextId</tt>
+method.</p><pre>public LineItem(Order order, int quantity, VendorPart
+        vendorPart) {
+    this.order = order;
+    this.itemId = order.getNextId();
+    this.orderId = order.getOrderId();
+    this.quantity = quantity;
+    this.vendorPart = vendorPart;
+}</pre><p><tt>Order.getNextId</tt> counts the number of current line items, adds one, and returns that
+number.</p><pre>public int getNextId() {
+    return this.lineItems.size() + 1;
+}</pre><p><tt>Part</tt> doesn&rsquo;t require the <tt>@Column</tt> annotation on the two fields that comprise <tt>Part</tt>&rsquo;s
+compound primary key. This is because <tt>Part</tt>&rsquo;s compound primary key is not an overlapping
+primary key/foreign key.</p><pre>@IdClass(order.entity.PartKey.class)
+@Entity
+...
+public class Part {
+...
+    @Id
+    public String getPartNumber() {
+        return partNumber;
+    }
+...
+    @Id
+    public int getRevision() {
+        return revision;
+    }
+...
+}</pre>
+
+<a name="bnbsc"></a><h4>Entity Mapped to More Than One Database Table</h4>
+<p><tt>Part</tt>&rsquo;s fields map to more than one database table: <tt>EJB_ORDER_PART</tt> and <tt>EJB_ORDER_PART_DETAIL</tt>. The <tt>EJB_ORDER_PART_DETAIL</tt>
+table holds the specification and schematics for the part. The <tt>@SecondaryTable</tt> annotation is used
+to specify the secondary table.</p><pre>...
+@Entity
+@Table(name="EJB_ORDER_PART")
+@SecondaryTable(name="EJB_ORDER_PART_DETAIL", pkJoinColumns={
+    @PrimaryKeyJoinColumn(name="PARTNUMBER",
+        referencedColumnName="PARTNUMBER"),
+    @PrimaryKeyJoinColumn(name="REVISION",
+        referencedColumnName="REVISION")
+})
+public class Part {
+...
+}</pre><p><tt>EJB_ORDER_PART_DETAIL</tt> shares the same primary key values as <tt>EJB_ORDER_PART</tt>. The <tt>pkJoinColumns</tt> element of <tt>@SecondaryTable</tt>
+is used to specify that <tt>EJB_ORDER_PART_DETAIL</tt>&rsquo;s primary key columns are foreign keys
+to <tt>EJB_ORDER_PART</tt>. The <tt>@PrimaryKeyJoinColumn</tt> annotation sets the primary key column names and specifies
+which column in the primary table the column refers to. In this case,
+the primary key column names for both <tt>EJB_ORDER_PART_DETAIL</tt> and <tt>EJB_ORDER_PART</tt> are the same:
+<tt>PARTNUMBER</tt> and <tt>REVISION</tt>, respectively.</p>
+
+<a name="bnbsd"></a><h4>Cascade Operations in the <tt>order</tt> Application</h4>
+<a name="indexterm-2225"></a><p>Entities that have relationships to other entities often have dependencies on the existence
+of the other entity in the relationship. For example, a line item is
+part of an order, and if the order is deleted, then the
+line item should also be deleted. This is called a cascade delete relationship.</p><p>In <tt>order</tt>, there are two cascade delete dependencies in the entity relationships. If
+the <tt>Order</tt> to which a <tt>LineItem</tt> is related is deleted, then the <tt>LineItem</tt>
+should also be deleted. If the <tt>Vendor</tt> to which a <tt>VendorPart</tt> is related
+is deleted, then the <tt>VendorPart</tt> should also be deleted.</p><p>You specify the cascade operations for entity relationships by setting the <tt>cascade</tt> element
+in the inverse (non-owning) side of the relationship. The cascade element is set
+to <tt>ALL</tt> in the case of <tt>Order.lineItems</tt>. This means that all persistence operations (deletes,
+updates, and so on) are cascaded from orders to line items.</p><p>Here is the relationship mapping in <tt>Order</tt>:</p><pre>@OneToMany(cascade=ALL, mappedBy="order")
+public Collection&lt;LineItem> getLineItems() {
+    return lineItems;
+}</pre><p>Here is the relationship mapping in <tt>LineItem</tt>:</p><pre>@ManyToOne
+    public Order getOrder() {
+    return order;
+}</pre>
+
+<a name="bnbse"></a><h4>BLOB and CLOB Database Types in the <tt>order</tt> Application</h4>
+<a name="indexterm-2226"></a><a name="indexterm-2227"></a><a name="indexterm-2228"></a><a name="indexterm-2229"></a><p>The <tt>PARTDETAIL</tt> table in the database has a column, <tt>DRAWING</tt>, of type
+<tt>BLOB</tt>. <tt>BLOB</tt> stands for binary large objects, which are used for storing binary
+data such as an image. The <tt>DRAWING</tt> column is mapped to the field
+<tt>Part</tt>. <tt>drawing</tt> of type <tt>java.io.Serializable</tt>. The <tt>@Lob</tt> annotation is used to denote that
+the field is large object.</p><pre>@Column(table="EJB_ORDER_PART_DETAIL")
+@Lob
+public Serializable getDrawing() {
+    return drawing;
+}</pre><p><tt>PARTDETAIL</tt> also has a column, <tt>SPECIFICATION</tt>, of type <tt>CLOB</tt>. <tt>CLOB</tt> stands for character large
+objects, which are used to store string data too large to be
+stored in a <tt>VARCHAR</tt> column. <tt>SPECIFICATION</tt> is mapped to the field <tt>Part.specification</tt> of type
+<tt>java.lang.String</tt>. The <tt>@Lob</tt> annotation is also used here to denote that the field
+is a large object.</p><pre>@Column(table="EJB_ORDER_PART_DETAIL")
+@Lob
+public String getSpecification() {
+    return specification;
+}</pre><p>Both of these fields use the <tt>@Column</tt> annotation and set the <tt>table</tt> element
+to the secondary table.</p>
+
+<a name="bnbsf"></a><h4>Temporal Types in the <tt>order</tt> Application</h4>
+<a name="indexterm-2230"></a><p>The <tt>Order.lastUpdate</tt> persistent property, which is of type <tt>java.util.Date</tt>, is mapped to the
+<tt>EJB_ORDER_ORDER.LASTUPDATE</tt> database field, which is of the SQL type <tt>TIMESTAMP</tt>. To ensure the
+proper mapping between these types, you must use the <tt>@Temporal</tt> annotation with
+the proper temporal type specified in <tt>@Temporal</tt>&rsquo;s element. <tt>@Temporal</tt>&rsquo;s elements are of type
+<tt>javax.persistence.TemporalType</tt>. The possible values are:</p>
+<ul><li><p><tt>DATE</tt>, which maps to <tt>java.sql.Date</tt></p></li>
+<li><p><tt>TIME</tt>, which maps to <tt>java.sql.Time</tt></p></li>
+<li><p><tt>TIMESTAMP</tt>, which maps to <tt>java.sql.Timestamp</tt></p></li></ul>
+<p>Here is the relevant section of <tt>Order</tt>:</p><pre>@Temporal(TIMESTAMP)
+public Date getLastUpdate() {
+    return lastUpdate;
+}</pre>
+
+<a name="bnbsg"></a><h4>Managing the <tt>order</tt> Application&rsquo;s Entities</h4>
+<p>The <tt>RequestBean</tt> stateful session bean contains the business logic and manages the entities
+of <tt>order</tt>.</p><p><tt>RequestBean</tt> uses the <tt>@PersistenceContext</tt> annotation to retrieve an entity manager instance which is
+used to manage <tt>order</tt>&rsquo;s entities in <tt>RequestBean</tt>&rsquo;s business methods.</p><pre>@PersistenceContext
+private EntityManager em;</pre><p>This <tt>EntityManager</tt> instance is a container-managed entity manager, so the container takes care
+of all the transactions involved in the managing <tt>order</tt>&rsquo;s entities.</p>
+
+<a name="bnbsh"></a><h5>Creating Entities</h5>
+<p>The <tt>RequestBean.createPart</tt> business method creates a new <tt>Part</tt> entity. The <tt>EntityManager.persist</tt> method is used
+to persist the newly created entity to the database.</p><pre>Part part = new Part(partNumber,
+    revision,
+    description,
+    revisionDate,
+    specification,
+    drawing);
+em.persist(part);</pre>
+
+<a name="bnbsi"></a><h5>Finding Entities</h5>
+<a name="indexterm-2231"></a><p>The <tt>RequestBean.getOrderPrice</tt> business method returns the price of a given order, based on
+the <tt>orderId</tt>. The <tt>EntityManager.find</tt> method is used to retrieve the entity from
+the database.</p><pre>Order order = em.find(Order.class, orderId);</pre><p>The first argument of <tt>EntityManager.find</tt> is the entity class, and the second is
+the primary key.</p>
+
+<a name="bnbsj"></a><h5>Setting Entity Relationships</h5>
+<a name="indexterm-2232"></a><p>The <tt>RequestBean.createVendorPart</tt> business method creates a <tt>VendorPart</tt> associated with a particular <tt>Vendor</tt>. The
+<tt>EntityManager.persist</tt> method is used to persist the newly created <tt>VendorPart</tt> entity to the database,
+and the <tt>VendorPart.setVendor</tt> and <tt>Vendor.setVendorPart</tt> methods are used to associate the <tt>VendorPart</tt>
+with the <tt>Vendor</tt>.</p><pre>PartKey pkey = new PartKey();
+pkey.partNumber = partNumber;
+pkey.revision = revision;
+
+Part part = em.find(Part.class, pkey);
+VendorPart vendorPart = new VendorPart(description, price,
+    part);
+em.persist(vendorPart);
+
+Vendor vendor = em.find(Vendor.class, vendorId);
+vendor.addVendorPart(vendorPart);
+vendorPart.setVendor(vendor);</pre>
+
+<a name="bnbsk"></a><h5>Using Queries</h5>
+<a name="indexterm-2233"></a><p>The <tt>RequestBean.adjustOrderDiscount</tt> business method updates the discount applied to all orders. It uses
+the <tt>findAllOrders</tt> named query, defined in <tt>Order</tt>:</p><pre>@NamedQuery(
+    name="findAllOrders",
+    query="SELECT o FROM Order o"
+)</pre><p>The <tt>EntityManager.createNamedQuery</tt> method is used to run the query. Because the query returns
+a <tt>List</tt> of all the orders, the <tt>Query.getResultList</tt> method is used.</p><pre>List orders = em.createNamedQuery(
+    "findAllOrders")
+    .getResultList();</pre><p>The <tt>RequestBean.getTotalPricePerVendor</tt> business method returns the total price of all the parts for
+a particular vendor. It uses a named parameter, <tt>id</tt>, defined in the named
+query <tt>findTotalVendorPartPricePerVendor</tt> defined in <tt>VendorPart</tt>.</p><pre>@NamedQuery(
+    name="findTotalVendorPartPricePerVendor",
+    query="SELECT SUM(vp.price) " +
+    "FROM VendorPart vp " +
+    "WHERE vp.vendor.vendorId = :id"
+)</pre><p>When running the query, the <tt>Query.setParameter</tt> method is used to set the named
+parameter <tt>id</tt> to the value of <tt>vendorId</tt>, the parameter to <tt>RequestBean.getTotalPricePerVendor</tt>.</p><pre>return (Double) em.createNamedQuery(
+    "findTotalVendorPartPricePerVendor")
+    .setParameter("id", vendorId)
+    .getSingleResult();</pre><p>The <tt>Query.getSingleResult</tt> method is used for this query because the query returns a
+single value.</p>
+
+<a name="bnbsl"></a><h5>Removing Entities</h5>
+<a name="indexterm-2234"></a><p>The <tt>RequestBean.removeOrder</tt> business method deletes a given order from the database. It uses
+the <tt>EntityManager.remove</tt> method to delete the entity from the database.</p><pre>Order order = em.find(Order.class, orderId);
+em.remove(order);</pre>
+
+<a name="bnbsm"></a><h4>Building and Running the <tt>order</tt> Application</h4>
+<p>This section describes how to build, package, deploy, and run the <tt>order</tt>
+application. To do this, you will create the database tables in the Java
+DB server, then build, deploy, and run the example.</p>
+
+<a name="bnbsn"></a><h5>Creating the Database Tables in NetBeans IDE</h5>
+<p>To create the database tables in Java DB, the database server included with
+Application Server, you need to create the database connection and execute the SQL
+commands in <tt></tt><i>tut-install</i><tt>/examples/common/sql/javadb/tutorial.sql</tt>.</p>
+
+<a name="bnbso"></a><h5>Creating the Database Connection</h5>
+<a name="indexterm-2235"></a><p>To create the database connection do the following:</p>
+<ol><li><p>Click the Services tab.</p></li>
+<li><p>Right-click the Databases node and select New Connection to open the New Connection dialog.</p></li>
+<li><p>Under Name, select Java DB (Network).</p></li>
+<li><p>Set Database URL to the following:</p><pre>jdbc:derby://localhost:1527/sun-appserv-samples</pre></li>
+<li><p>Set User Name to <tt>APP</tt>.</p></li>
+<li><p>Set Password to <tt>APP</tt>.</p></li>
+<li><p>Select the Remember Password during this Session box.</p></li>
+<li><p>Click OK.</p></li></ol>
+
+
+<a name="bnbsp"></a><h5>Creating the Tables</h5>
+<p>To create the tutorial tables, do the following:</p>
+<ol><li><p>Select File&rarr;Open File.</p></li>
+<li><p>Navigate to <tt></tt><i>tut-install</i><tt>/examples/common/sql/javadb/</tt> and open <tt>tutorial.sql</tt>.</p></li>
+<li><p>In the editor pane, select the connection URL to Java DB:</p><pre>jdbc:derby://localhost:1527/sun-appserv-samples</pre></li>
+<li><p>Click the Run SQL button at the top of the editor pane.</p><p>You will see the output from the SQL commands in the Output tab.</p></li></ol>
+
+
+<a name="bnbsq"></a><h5>Deleting the Tables</h5>
+<p>To delete the tutorial tables, do the following:</p>
+<ol><li><p>Select File&rarr;Open File.</p></li>
+<li><p>Navigate to <tt></tt><i>tut-install</i><tt>/examples/common/sql/javadb/</tt> and open <tt>delete.sql</tt>.</p></li>
+<li><p>In the editor pane, select the connection URL to Java DB:</p><pre>jdbc:derby://localhost:1527/sun-appserv-samples</pre></li>
+<li><p>Click the Run SQL button at the top of the editor pane.</p><p>You will see the output from the SQL commands in the Output tab.</p></li></ol>
+
+
+<a name="bnbsr"></a><h5>Creating the Database Tables Using Ant</h5>
+<p>The database tables are automatically created by the <tt>create-tables</tt> task, which is
+called before you deploy the application with the <tt>ant deploy</tt> task. To manually
+create the tables, do the following:</p>
+<ol><li><p>In a terminal window, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/order/</tt>.</p></li>
+<li><p>Type the following command:</p><pre><tt><b>ant create-tables</b></tt></pre>
+<hr><p><b>Note - </b>The first time the <tt>create-tables</tt> task is run, you will see error messages when the task attempts to remove tables that don&rsquo;t exist. Ignore these error messages. Subsequent calls to <tt>create-tables</tt> will run with no errors and will reset the database tables.</p>
+<hr>
+</li></ol>
+
+
+<a name="bnbss"></a><h5>Building, Packaging, Deploying, and Running <tt>order</tt> In NetBeans IDE</h5>
+<p>Follow these instructions to build, package, deploy, and run the <tt>order</tt> example
+to your Application Server instance using NetBeans IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/</tt>.</p></li>
+<li><p>Select the <tt>order</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>order</tt> project and select Run.</p></li></ol>
+<p>You will see the following output from the application client in the Output
+tab:</p><pre>...
+Cost of Bill of Material for PN SDFG-ERTY-BN Rev: 7:  $241.86
+Cost of Order 1111:  $664.68
+Cost of Order 4312:  $2,011.44
+
+Adding 5% discount
+Cost of Order 1111:  $627.75
+Cost of Order 4312:  $1,910.87
+
+Removing 7% discount
+Cost of Order 1111:  $679.45
+Cost of Order 4312:  $2,011.44
+
+Average price of all parts:  $117.55
+
+Total price of parts for Vendor 100:  $501.06
+
+Ordered list of vendors for order 1111
+200 Gadget, Inc. Mrs. Smith
+100 WidgetCorp Mr. Jones
+
+Counting all line items
+Found 6 line items
+
+Removing Order 4312
+Counting all line items
+Found 3 line items
+
+Found 1 out of 2 vendors with &rsquo;I&rsquo; in the name:
+Gadget, Inc.
+run-order-app-client:
+run-ant:
+run:
+BUILD SUCCESSFUL (total time: 22 seconds)</pre>
+
+<a name="bnbst"></a><h5>Building, Packaging, Deploying, and Running <tt>order</tt> Using Ant</h5>
+<p>To build the application components of <tt>order</tt>, enter the following command:</p><pre><tt><b>ant</b></tt></pre><p>This runs the <tt>default</tt> task, which compiles the source files and packages the
+application into an EAR file located at <tt></tt><i>tut-install</i><tt>/examples/ejb/order/dist/order.ear</tt>.</p><p>To deploy the EAR, make sure the Application Server is started, then enter
+the following command:</p><pre><tt><b>ant deploy</b></tt></pre><p>After <tt>order.ear</tt> is deployed, a client JAR, <tt>orderClient.jar</tt>, is retrieved. This contains
+the application client.</p><p>To run the application client, enter the following command:</p><pre><tt><b>ant run</b></tt></pre><p>You will see the following output:</p><pre>...
+run:
+    [echo] Running appclient for Order.
+
+appclient-command-common:
+    [exec] Cost of Bill of Material for PN SDFG-ERTY-BN Rev: 7:
+         $241.86
+    [exec] Cost of Order 1111:  $664.68
+    [exec] Cost of Order 4312:  $2,011.44
+
+    [exec] Adding 5% discount
+    [exec] Cost of Order 1111:  $627.75
+    [exec] Cost of Order 4312:  $1,910.87
+
+    [exec] Removing 7% discount
+    [exec] Cost of Order 1111:  $679.45
+    [exec] Cost of Order 4312:  $2,011.44
+
+    [exec] Average price of all parts:  $117.55
+
+    [exec] Total price of parts for Vendor 100:  $501.06
+
+    [exec] Ordered list of vendors for order 1111
+    [exec] 200 Gadget, Inc. Mrs. Smith
+    [exec] 100 WidgetCorp Mr. Jones
+
+    [exec] Counting all line items
+    [exec] Found 6 line items
+
+    [exec] Removing Order 4312
+    [exec] Counting all line items
+    [exec] Found 3 line items
+
+    [exec] Found 1 out of 2 vendors with &rsquo;I&rsquo; in the name:
+    [exec] Gadget, Inc.
+
+BUILD SUCCESSFUL</pre>
+<hr><p><b>Note - </b>Before re-running the application client, you must reset the database by running the
+<tt>create-tables</tt> task.</p>
+<hr>
+
+
+<a name="bnbsu"></a><h5>The <tt>all</tt> Task</h5>
+<p>As a convenience, the <tt>all</tt> task will build, package, deploy, and run the
+application. To do this, enter the following command:</p><pre><tt><b>ant all</b></tt></pre>
+
+<a name="bnbsv"></a><h5>Undeploying <tt>order</tt></h5>
+<p>To undeploy <tt>order.ear</tt>, enter the following command:</p><pre><tt><b>ant undeploy</b></tt></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbrs.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbsw.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

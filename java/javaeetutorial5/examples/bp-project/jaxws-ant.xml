@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="jaxws-ant-tasks" default="default">
+    <import file="${ant.file.command-line-ant-tasks}/../common-properties.xml"/>
+    <import file="${ant.file.command-line-ant-tasks}/../app-server-ant.xml"/>
+    
+    <target name="check-jdk6-environment">
+        <condition property="is.clean.jdk6">
+            <and>
+                <contains string="${java.version}" substring="1.6"/>
+                <not>
+                    <available classname="javax.xml.ws.EndpointReference">
+                        <classpath>
+                            <fileset dir="${java.home}/lib">
+                                <include name="*.jar"/>
+                            </fileset>
+                        </classpath>
+                    </available>
+                </not>
+            </and>
+        </condition>
+        <condition property="is.jaxws.20">
+            <and>
+                <not>
+                    <available classname="javax.xml.ws.EndpointReference">
+                        <classpath>
+                            <fileset dir="${javaee.home}/lib">
+                                <include name="*.jar"/>
+                            </fileset>
+                        </classpath>
+                    </available>
+                </not>
+            </and>
+        </condition>
+        <condition property="is.jaxws.21">
+            <available classname="javax.xml.ws.EndpointReference">
+                <classpath>
+                    <fileset dir="${javaee.home}/lib">
+                        <include name="*.jar"/>
+                    </fileset>
+                </classpath>
+            </available>
+        </condition>
+        
+    </target>
+    
+    <target name="update-endorsed" 
+            if="is.clean.jdk6"
+            depends="check-jdk6-environment">
+        <echo message="Updating ${java.home} with JAX-WS and JAXB 2.1 JAR files"/>
+        <mkdir dir="${java.home}/lib/endorsed"/>
+        <copy file="${javaee.home}/lib/endorsed/webservices-api.jar" 
+              todir="${java.home}/lib/endorsed"/>
+    </target>
+    
+    <target name="wsimport-init" depends="init,check-jdk6-environment">
+        <mkdir dir="${build.generated.dir}/wsimport/client"/>
+        <mkdir dir="${build.classes.dir}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport" onerror="ignore">
+            <classpath path="${java.home}/../lib/tools.jar:${javac.classpath}"/>
+            <classpath refid="javaee.classpath"/>
+        </taskdef>
+        <condition property="wsimport.secure">
+            <isset property="wsimport.jvm.args"/>
+        </condition>
+        <echo message="is.jaxws.20 is ${is.jaxws.20}"/>
+        <echo message="is.jaxws.21 is ${is.jaxws.21}"/>
+    </target>
+    
+    <!--target name="wsimport-client-check" depends="wsimport-init">
+        <condition property="wsimport-client-notRequired">
+            
+        </condition>
+    </target-->
+    
+    <target name="wsimport-client-generate" depends="wsimport-init,wsimport-client-generate-secure,wsimport-client-generate-nosecure"/>
+    
+    <target name="wsimport-client-generate-secure" if="wsimport.secure">
+        <antcall target="wsimport-client-generate-jvmargs"/>
+    </target>
+    
+    <target name="wsimport-client-generate-nosecure" unless="wsimport.secure">
+        <antcall target="wsimport-client-generate-nojvmargs"/>
+    </target>
+    
+    <target name="wsimport-client-generate-jvmargs">
+        <antcall target="wsimport-client-generate-jvmargs-20"/>
+        <antcall target="wsimport-client-generate-jvmargs-21"/>
+    </target>
+    
+    <target name="wsimport-client-generate-nojvmargs">
+        <antcall target="wsimport-client-generate-nojvmargs-20"/>
+        <antcall target="wsimport-client-generate-nojvmargs-21"/>
+    </target>
+    
+    <target name="wsimport-client-generate-nojvmargs-21" if="is.jaxws.21">
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" 
+                  package="${wsimport.package}" 
+                  destdir="${build.classes.dir}"
+                  wsdl="${wsimport.wsdl.location}"
+                  verbose="${verbose}"
+                  fork="true"
+                  xendorsed="true">
+            <jvmarg line="-Djava.endorsed.dirs=${javaee.home}/lib/endorsed"/>
+        </wsimport>
+    </target>
+    
+    <target name="wsimport-client-generate-nojvmargs-20" if="is.jaxws.20">
+        <wsimport sourcedestdir="${build.generated.dir}/wsimport/client" 
+                  package="${wsimport.package}" 
+                  destdir="${build.classes.dir}"
+                  wsdl="${wsimport.wsdl.location}"
+                  verbose="${verbose}"
+                  fork="true">
+        </wsimport>
+    </target>
+    
+    <target name="wsimport-client-generate-jvmargs-21" if="is.jaxws.21">
+        <wsimport fork="true"
+                  verbose="${verbose}"
+                  debug="${debug}"
+                  keep="${keep}"
+                  sourcedestdir="${build.generated.dir}/wsimport/client" 
+                  package="${wsimport.package}" 
+                  destdir="${build.classes.dir}"
+                  target="${jaxws.version}"
+                  wsdl="${wsimport.wsdl.location}"
+                  xendorsed="true">
+            <jvmarg line="${wsimport.jvm.args}"/>
+            <jvmarg line="-Djava.endorsed.dirs=${javaee.home}/lib/endorsed"/>
+        </wsimport>
+    </target>
+    
+    <target name="wsimport-client-generate-jvmargs-20" if="is.jaxws.20">
+        <wsimport fork="true"
+                  verbose="${verbose}"
+                  debug="${debug}"
+                  keep="${keep}"
+                  sourcedestdir="${build.generated.dir}/wsimport/client" 
+                  package="${wsimport.package}" 
+                  destdir="${build.classes.dir}"
+                  target="${jaxws.version}"
+                  wsdl="${wsimport.wsdl.location}">
+            <jvmarg line="${wsimport.jvm.args}"/>
+        </wsimport>
+    </target>
+</project>

@@ -1,0 +1,589 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Code Examples - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level3"><a href="bnbhg.html">Overview of SAAJ</a></p>
+<p class="toc level4"><a href="bnbhg.html#bnbhh">SAAJ Messages</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbhi">The Structure of an XML Document</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbhj">What Is in a Message?</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbho">SAAJ and DOM</a></p>
+<p class="toc level4 tocsp"><a href="bnbhg.html#bnbhp">SAAJ Connections</a></p>
+<p class="toc level5"><a href="bnbhg.html#bnbhq"><tt>SOAPConnection</tt> Objects</a></p>
+<p class="toc level3 tocsp"><a href="bnbhr.html">SAAJ Tutorial</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbhs">Creating and Sending a Simple Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbht">Creating a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhu">Parts of a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhv">Accessing Elements of a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhw">Adding Content to the Body</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhx">Getting a <tt>SOAPConnection</tt> Object</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhy">Sending a Message</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbhz">Getting the Content of a Message</a></p>
+<p class="toc level4 tocsp"><a href="bnbhr.html#bnbia">Adding Content to the Header</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbib">Adding Content to the <tt>SOAPPart</tt> Object</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbic">Adding a Document to the SOAP Body</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbid">Manipulating Message Content Using SAAJ or DOM APIs</a></p>
+<p class="toc level4"><a href="bnbhr.html#bnbie">Adding Attachments</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbif">Creating an <tt>AttachmentPart</tt> Object and Adding Content</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbig">Accessing an <tt>AttachmentPart</tt> Object</a></p>
+<p class="toc level4 tocsp"><a href="bnbhr.html#bnbih">Adding Attributes</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbii">Header Attributes</a></p>
+<p class="toc level4 tocsp"><a href="bnbhr.html#bnbin">Using SOAP Faults</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbio">Overview of SOAP Faults</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbip">Creating and Populating a <tt>SOAPFault</tt> Object</a></p>
+<p class="toc level5"><a href="bnbhr.html#bnbir">Retrieving Fault Information</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Code Examples</a></p>
+<p class="toc level4"><a href="#bnbit">Request Example</a></p>
+<p class="toc level4"><a href="#bnbja">Header Example</a></p>
+<p class="toc level5"><a href="#bnbjb">Building and Running the Header Example</a></p>
+<p class="toc level4 tocsp"><a href="#bnbjc">DOM and DOMSource Examples</a></p>
+<p class="toc level5"><a href="#bnbjd">Examining the <tt>DOMExample</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbje">Examining the <tt>DOMSrcExample</tt> Class</a></p>
+<p class="toc level5"><a href="#bnbjf">Building and Running the DOM and DOMSource Examples</a></p>
+<p class="toc level4 tocsp"><a href="#bnbjg">Attachments Example</a></p>
+<p class="toc level5"><a href="#bnbjh">Building and Running the Attachments Example</a></p>
+<p class="toc level4 tocsp"><a href="#bnbji">SOAP Fault Example</a></p>
+<p class="toc level5"><a href="#bnbjj">Building and Running the SOAP Fault Example</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbjk.html">Further Information about SAAJ</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbhr.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbjk.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbis"></a><h3>Code Examples</h3>
+<a name="indexterm-1995"></a><p>The first part of this tutorial uses code fragments to walk you
+through the fundamentals of using the SAAJ API. In this section, you will
+use some of those code fragments to create applications. First, you will see
+the program <tt>Request.java</tt>. Then you will see how to run the programs
+<tt>HeaderExample.java</tt>, <tt>DOMExample.java</tt>, <tt>DOMSrcExample.java</tt>, <tt>Attachments.java</tt>, and <tt>SOAPFaultTest.java</tt>.</p>
+<hr><p><b>Note - </b>Before you run any of the examples, follow the preliminary setup instructions in
+<a href="bnaan.html">Building the Examples</a>.</p>
+<hr>
+
+
+<a name="bnbit"></a><h4>Request Example</h4>
+<p>The class <tt>Request</tt> puts together the code fragments used in the section <a href="bnbhr.html">SAAJ Tutorial</a>
+and adds what is needed to make it a complete example of a
+client sending a request-response message. In addition to putting all the code together,
+it adds <tt>import</tt> statements, a <tt>main</tt> method, and a <tt>try</tt>/<tt>catch</tt> block with exception handling.</p><pre>import javax.xml.soap.*;
+import javax.xml.namespace.QName;
+import java.util.Iterator;
+import java.net.URL;
+
+public class Request {
+    public static void main(String[] args)    {
+        try {
+            SOAPConnectionFactory soapConnectionFactory =
+                SOAPConnectionFactory.newInstance();
+            SOAPConnection connection =
+                soapConnectionFactory.createConnection();
+
+            MessageFactory factory = MessageFactory.newInstance();
+            SOAPMessage message = factory.createMessage();
+
+            SOAPHeader header = message.getSOAPHeader();
+            SOAPBody body = message.getSOAPBody();
+            header.detachNode();
+
+            QName bodyName = new QName("http://wombat.ztrade.com",
+                "GetLastTradePrice", "m");
+            SOAPBodyElement bodyElement = body.addBodyElement(bodyName);
+
+            QName name = new QName("symbol");
+            SOAPElement symbol = bodyElement.addChildElement(name);
+            symbol.addTextNode("SUNW");
+
+            URL endpoint = new URL("http://wombat.ztrade.com/quotes");
+            SOAPMessage response = connection.call(message, endpoint);
+
+            connection.close();
+
+            SOAPBody soapBody = response.getSOAPBody();
+
+            Iterator iterator = soapBody.getChildElements(bodyName);
+            bodyElement = (SOAPBodyElement)iterator.next();
+            String lastPrice = bodyElement.getValue();
+
+            System.out.print("The last price for SUNW is ");
+            System.out.println(lastPrice);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}</pre><p>For the <tt>Request</tt> class to be runnable, the second argument supplied to the
+<tt>call</tt> method would have to be a valid existing URI, and this is
+not true in this case.</p>
+
+<a name="bnbja"></a><h4>Header Example</h4>
+<a name="indexterm-1996"></a><a name="indexterm-1997"></a><p>The example <tt>HeaderExample.java</tt>, based on the code fragments in the section <a href="bnbhr.html#bnbih">Adding Attributes</a>, creates a
+message that has several headers. It then retrieves the contents of the headers
+and prints them. The example generates either a SOAP 1.1 message or a
+SOAP 1.2 message, depending on arguments you specify. You will find the code
+for <tt>HeaderExample</tt> in the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/headers/src/</tt></pre>
+
+<a name="bnbjb"></a><h5>Building and Running the Header Example</h5>
+<p>To build the program using NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/</tt>.</p></li>
+<li><p>Select the <tt>headers</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p><p>A Reference Problems dialog appears. Click Close.</p></li>
+<li><p>Right-click the <tt>headers</tt> project and choose Resolve Reference Problems.</p></li>
+<li><p>In the Resolve Reference Problems dialog, select the first of the missing JAR files and click Resolve.</p><p>The missing files are <tt>activation.jar</tt>, <tt>javaee.jar</tt>, and <tt>appserv-ws.jar</tt>.</p></li>
+<li><p>Navigate to the <tt></tt><i>as-install</i><tt>/lib/</tt> directory.</p></li>
+<li><p>Select the missing JAR file (<tt>activation.jar</tt>, for example) and click Open.</p><p>In the Resolve Reference Problems dialog, all the files have green check marks to the left of their names.</p></li>
+<li><p>Click Close.</p></li>
+<li><p>Right-click the project and choose Build.</p></li></ol>
+<p>To run the program using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Right-click the <tt>headers</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>In the Arguments field, type the following:</p><pre><tt><b>1.1</b></tt></pre><p>This argument specifies the version of SOAP to be used in generating the message.</p></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li>
+<li><p>Right-click the project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>In the Arguments field, type the following:</p><pre><tt><b>1.2</b></tt></pre></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li></ol>
+<p>To build and run HeaderExample using Ant, go to the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/headers/</tt>.
+Use one of the following commands:</p><pre><tt><b>ant run-headers -Dsoap=1.1</b></tt></pre><pre><tt><b>ant run-headers -Dsoap=1.2</b></tt></pre><p>When you run HeaderExample to generate a SOAP 1.1 message, you will see
+output similar to the following:</p><pre>----- Request Message ----
+
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+&lt;SOAP-ENV:Header>
+&lt;ns:orderDesk xmlns:ns="http://gizmos.com/NSURI"
+ SOAP-ENV:actor="http://gizmos.com/orders"/>
+&lt;ns:shippingDesk xmlns:ns="http://gizmos.com/NSURI"
+ SOAP-ENV:actor="http://gizmos.com/shipping"/>
+&lt;ns:confirmationDesk xmlns:ns="http://gizmos.com/NSURI"
+ SOAP-ENV:actor="http://gizmos.com/confirmations" SOAP-ENV:mustUnderstand="1"/>
+&lt;ns:billingDesk xmlns:ns="http://gizmos.com/NSURI"
+ SOAP-ENV:actor="http://gizmos.com/billing"/>
+&lt;/SOAP-ENV:Header>&lt;SOAP-ENV:Body/>&lt;/SOAP-ENV:Envelope>
+
+Header name is {http://gizmos.com/NSURI}orderDesk
+Actor is http://gizmos.com/orders
+mustUnderstand is false
+
+Header name is {http://gizmos.com/NSURI}shippingDesk
+Actor is http://gizmos.com/shipping
+mustUnderstand is false
+
+Header name is {http://gizmos.com/NSURI}confirmationDesk
+Actor is http://gizmos.com/confirmations
+mustUnderstand is true
+
+Header name is {http://gizmos.com/NSURI}billingDesk
+Actor is http://gizmos.com/billing
+mustUnderstand is false</pre><p>When you run HeaderExample to generate a SOAP 1.2 message, you will see
+output similar to the following:</p><pre>----- Request Message ----
+
+&lt;env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+&lt;env:Header>
+&lt;ns:orderDesk xmlns:ns="http://gizmos.com/NSURI" 
+ env:role="http://gizmos.com/orders"/>
+&lt;ns:shippingDesk xmlns:ns="http://gizmos.com/NSURI"
+ env:role="http://gizmos.com/shipping"/>
+&lt;ns:confirmationDesk xmlns:ns="http://gizmos.com/NSURI"
+ env:mustUnderstand="true" env:role="http://gizmos.com/confirmations"/>
+&lt;ns:billingDesk xmlns:ns="http://gizmos.com/NSURI"
+ env:relay="true" env:role="http://gizmos.com/billing"/>
+&lt;/env:Header>&lt;env:Body/>&lt;/env:Envelope>
+
+Header name is {http://gizmos.com/NSURI}orderDesk
+Role is http://gizmos.com/orders
+mustUnderstand is false
+relay is false
+
+Header name is {http://gizmos.com/NSURI}shippingDesk
+Role is http://gizmos.com/shipping
+mustUnderstand is false
+relay is false
+
+Header name is {http://gizmos.com/NSURI}confirmationDesk
+Role is http://gizmos.com/confirmations
+mustUnderstand is true
+relay is false
+
+Header name is {http://gizmos.com/NSURI}billingDesk
+Role is http://gizmos.com/billing
+mustUnderstand is false
+relay is true</pre>
+
+<a name="bnbjc"></a><h4>DOM and DOMSource Examples</h4>
+<a name="indexterm-1998"></a><a name="indexterm-1999"></a><p>The examples <tt>DOMExample.java</tt> and <tt>DOMSrcExample.java</tt> show how to add a DOM document
+to a message and then traverse its contents. They show two ways to
+do this:</p>
+<ul><li><p><tt>DOMExample.java</tt> creates a DOM document and adds it to the body of a message.</p></li>
+<li><p><tt>DOMSrcExample.java</tt> creates the document, uses it to create a <tt>DOMSource</tt> object, and then sets the <tt>DOMSource</tt> object as the content of the message&rsquo;s SOAP part.</p></li></ul>
+<p>You will find the code for <tt>DOMExample</tt> and <tt>DOMSrcExample</tt> in the following
+directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/dom/src/</tt></pre>
+
+<a name="bnbjd"></a><h5>Examining the <tt>DOMExample</tt> Class</h5>
+<p><tt>DOMExample</tt> first creates a DOM document by parsing an XML document. The file
+it parses is one that you specify on the command line.</p><pre>static Document document;
+...
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    factory.setNamespaceAware(true);
+    try {
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        document = builder.parse( new File(args[0]) );
+        ...</pre><p>Next, the example creates a SOAP message in the usual way. Then
+it adds the document to the message body:</p><pre>        SOAPBodyElement docElement = body.addDocument(document);</pre><p>This example does not change the content of the message. Instead, it displays
+the message content and then uses a recursive method, <tt>getContents</tt>, to traverse
+the element tree using SAAJ APIs and display the message contents in a
+readable form.</p><pre>public void getContents(Iterator iterator, String indent) {
+
+    while (iterator.hasNext()) {
+        Node node = (Node) iterator.next();
+        SOAPElement element = null;
+        Text text = null;
+        if (node instanceof SOAPElement) {
+            element = (SOAPElement)node;
+            QName name = element.getElementQName();
+            System.out.println(indent + "Name is " + name.toString());
+            Iterator attrs = element.getAllAttributesAsQNames();
+            while (attrs.hasNext()){
+                QName attrName = (QName)attrs.next();
+                System.out.println(indent + " Attribute name is " +
+                     attrName.toString());
+                System.out.println(indent + " Attribute value is " +
+                     element.getAttributeValue(attrName));
+            }
+            Iterator iter2 = element.getChildElements();
+            getContents(iter2, indent + " ");
+        } else {
+            text = (Text) node;
+            String content = text.getValue();
+            System.out.println(indent + "Content is: " + content);
+            }
+        }
+    }</pre>
+
+<a name="bnbje"></a><h5>Examining the <tt>DOMSrcExample</tt> Class</h5>
+<p><tt>DOMSrcExample</tt> differs from <tt>DOMExample</tt> in only a few ways. First, after it parses
+the document, <tt>DOMSrcExample</tt> uses the document to create a <tt>DOMSource</tt> object. This code
+is the same as that of <tt>DOMExample</tt> except for the last line:</p><pre>    static DOMSource domSource;
+    ...
+    try {
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse(new File(args[0]));
+        domSource = new DOMSource(document);
+        ...</pre><p>Then, after <tt>DOMSrcExample</tt> creates the message, it does not get the header and
+body and add the document to the body, as <tt>DOMExample</tt> does. Instead,
+<tt>DOMSrcExample</tt> gets the SOAP part and sets the <tt>DOMSource</tt> object as its content:</p><pre>// Create a message
+SOAPMessage message = messageFactory.createMessage();
+
+// Get the SOAP part and set its content to domSource
+SOAPPart soapPart = message.getSOAPPart();
+soapPart.setContent(domSource);</pre><p>The example then uses the <tt>getContents</tt> method to obtain the contents of both
+the header (if it exists) and the body of the message.</p><p>The most important difference between these two examples is the kind of document
+you can use to create the message. Because <tt>DOMExample</tt> adds the document to
+the body of the SOAP message, you can use any valid XML
+file to create the document. But because <tt>DOMSrcExample</tt> makes the document the entire content
+of the message, the document must already be in the form of a
+valid SOAP message, and not just any XML document.</p>
+
+<a name="bnbjf"></a><h5>Building and Running the DOM and DOMSource Examples</h5>
+<p>When you run <tt>DOMExample</tt> and <tt>DOMSrcExample</tt>, you can specify one of two
+sample XML files in the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/dom/</tt>:</p>
+<ul><li><p><tt>slide.xml</tt>, a file that consists only of a message body</p></li>
+<li><p><tt>domsrc.xml</tt>, an example that has a SOAP header (the contents of the <tt>HeaderExample</tt> SOAP 1.1 output) and the same message body as <tt>slide.xml</tt></p></li></ul>
+<p>You can use either of these files when you run <tt>DOMExample</tt>. You can
+use <tt>domsrc.xml</tt> to run <tt>DOMSrcExample</tt>.</p><p>To build the programs using NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/</tt>.</p></li>
+<li><p>Select the <tt>dom</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p><p>A Reference Problems dialog appears. Click Close.</p></li>
+<li><p>Right-click the <tt>dom</tt> project and choose Resolve Reference Problems.</p></li>
+<li><p>In the Resolve Reference Problems dialog, select the first of the missing JAR files and click Resolve.</p><p>The missing files are <tt>activation.jar</tt>, <tt>javaee.jar</tt>, and <tt>appserv-ws.jar</tt>.</p></li>
+<li><p>Navigate to the <tt></tt><i>as-install</i><tt>/lib/</tt> directory.</p></li>
+<li><p>Select the missing JAR file (<tt>activation.jar</tt>, for example) and click Open.</p><p>In the Resolve Reference Problems dialog, all the files have green check marks to the left of their names.</p></li>
+<li><p>Click Close.</p></li>
+<li><p>Right-click the project and choose Build.</p></li></ol>
+<p>To run <tt>DOMExample</tt> using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Right-click the <tt>dom</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>Click Browse next to the Main Class field.</p></li>
+<li><p>In the Browse Main Classes dialog, select <tt>DomExample</tt>.</p></li>
+<li><p>Click Select Main Class.</p></li>
+<li><p>In the Arguments field, type the following:</p><pre><tt><b>slide.xml</b></tt></pre></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li></ol>
+<p>To run <tt>DOMSrcExample</tt> using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Right-click the <tt>dom</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>Click Browse next to the Main Class field.</p></li>
+<li><p>In the Browse Main Classes dialog, select <tt>DomSrcExample</tt>.</p></li>
+<li><p>Click Select Main Class.</p></li>
+<li><p>In the Arguments field, type the following:</p><pre><tt><b>domsrc.xml</b></tt></pre></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li></ol>
+<p>To run the examples using Ant, go to the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/dom/</tt>.</p><p>To run <tt>DOMExample</tt> using Ant, use the following command:</p><pre><tt><b>ant run-dom -Dxml-file=slide.xml</b></tt></pre><p>To run <tt>DOMSrcExample</tt> using Ant, use the following command:</p><pre><tt><b>ant run-domsrc -Dxml-file=domsrc.xml</b></tt></pre><p>When you run <tt>DOMExample</tt> using the file <tt>slide.xml</tt>, you will see output
+that begins like the following:</p><pre>     Running DOMExample.
+     Name is slideshow
+      Attribute name is author
+      Attribute value is Yours Truly
+      Attribute name is date
+      Attribute value is Date of publication
+      Attribute name is title
+      Attribute value is Sample Slide Show
+      Content is: 
+...</pre><p>When you run <tt>DOMSrcExample</tt> using the file <tt>domsrc.xml</tt>, you will see output
+that begins like the following:</p><pre>     Running DOMSrcExample.
+     Header contents:
+     Content is: 
+
+     Name is {http://gizmos.com/NSURI}orderDesk
+      Attribute name is SOAP-ENV:actor
+      Attribute value is http://gizmos.com/orders
+     Content is: 
+    ...</pre><p>If you run <tt>DOMSrcExample</tt> with the file <tt>slide.xml</tt>, you will see runtime
+errors.</p>
+
+<a name="bnbjg"></a><h4>Attachments Example</h4>
+<a name="indexterm-2000"></a><a name="indexterm-2001"></a><p>The example <tt>Attachments.java</tt>, based on the code fragments in the sections <a href="bnbhr.html#bnbif">Creating an <tt>AttachmentPart</tt> Object and Adding Content</a> and
+<a href="bnbhr.html#bnbig">Accessing an <tt>AttachmentPart</tt> Object</a>, creates a message that has a text attachment and an image attachment.
+It then retrieves the contents of the attachments and prints the contents of
+the text attachment. You will find the code for the <tt>Attachments</tt> class in
+the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/attachments/src/</tt></pre><p><tt>Attachments</tt> first creates a message in the usual way. It then creates an
+<tt>AttachmentPart</tt> for the text attachment:</p><pre>AttachmentPart attachment1 = message.createAttachmentPart();</pre><p>After it reads input from a file into a string named <tt>stringContent</tt>,
+it sets the content of the attachment to the value of the
+string and the type to <tt>text/plain</tt> and also sets a content ID.</p><pre>attachment1.setContent(stringContent, "text/plain");
+attachment1.setContentId("attached_text");</pre><p>It then adds the attachment to the message:</p><pre>message.addAttachmentPart(attachment1);</pre><p>The example uses a <tt>javax.activation.DataHandler</tt> object to hold a reference to the graphic
+that constitutes the second attachment. It creates this attachment using the form of
+the <tt>createAttachmentPart</tt> method that takes a <tt>DataHandler</tt> argument.</p><pre>// Create attachment part for image
+URL url = new URL("file:///../xml-pic.jpg");
+DataHandler dataHandler = new DataHandler(url);
+AttachmentPart attachment2 = message.createAttachmentPart(dataHandler);
+attachment2.setContentId("attached_image");
+
+message.addAttachmentPart(attachment2);</pre><p>The example then retrieves the attachments from the message. It displays the <tt>contentId</tt>
+and <tt>contentType</tt> attributes of each attachment and the contents of the text attachment.</p>
+
+<a name="bnbjh"></a><h5>Building and Running the Attachments Example</h5>
+<p>The <tt>Attachments</tt> class takes a text file as an argument. You can specify
+any text file. The <tt>attachments</tt> directory contains a file named <tt>addr.txt</tt> that you
+can use.</p><p>To build the program using NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/</tt>.</p></li>
+<li><p>Select the <tt>attachments</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p><p>A Reference Problems dialog appears. Click Close.</p></li>
+<li><p>Right-click the <tt>attachments</tt> project and choose Resolve Reference Problems.</p></li>
+<li><p>In the Resolve Reference Problems dialog, select the first of the missing JAR files and click Resolve.</p><p>The missing files are <tt>activation.jar</tt>, <tt>javaee.jar</tt>, and <tt>appserv-ws.jar</tt>.</p></li>
+<li><p>Navigate to the <tt></tt><i>as-install</i><tt>/lib/</tt> directory.</p></li>
+<li><p>Select the missing JAR file (<tt>activation.jar</tt>, for example) and click Open.</p><p>In the Resolve Reference Problems dialog, all the files have green check marks to the left of their names.</p></li>
+<li><p>Click Close.</p></li>
+<li><p>Right-click the project and choose Build.</p></li></ol>
+<p>To run the program using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Right-click the <tt>attachments</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>In the Arguments field, type the name of a text file:</p><pre><tt><b>addr.txt</b></tt></pre></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li></ol>
+<p>To run <tt>Attachments</tt> using Ant, go to the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/attachments/</tt>. Use the
+following command:</p><pre><tt><b>ant run-att -Dfile=</tt><i>path-name</i><tt></b></tt></pre><p>Specify a text file as the <i>path-name</i> argument:</p><pre><tt><b>ant run-att -Dfile=addr.txt</b></tt></pre><p>When you run <tt>Attachments</tt> using this file, you will see output like the
+following:</p><pre>Running Attachments.
+Attachment attached_text has content type text/plain
+Attachment contains:
+Update address for Sunny Skies, Inc., to
+10 Upbeat Street
+Pleasant Grove, CA 95439
+USA
+
+Attachment attached_image has content type image/jpeg</pre>
+
+<a name="bnbji"></a><h4>SOAP Fault Example</h4>
+<a name="indexterm-2002"></a><a name="indexterm-2003"></a><p>The example <tt>SOAPFaultTest.java</tt>, based on the code fragments in the sections <a href="bnbhr.html#bnbip">Creating and Populating a <tt>SOAPFault</tt> Object</a> and
+<a href="bnbhr.html#bnbir">Retrieving Fault Information</a>, creates a message that has a <tt>SOAPFault</tt> object. It then retrieves the
+contents of the <tt>SOAPFault</tt> object and prints them. You will find the code
+for <tt>SOAPFaultTest</tt> in the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/fault/src/</tt></pre><p>Like <tt>HeaderExample</tt>, the <tt>SOAPFaultTest</tt> class contains code that allows you to generate either
+a SOAP 1.1 or a SOAP 1.2 message.</p>
+
+<a name="bnbjj"></a><h5>Building and Running the SOAP Fault Example</h5>
+<p>To build the program using NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/</tt>.</p></li>
+<li><p>Select the <tt>fault</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p><p>A Reference Problems dialog appears. Click Close.</p></li>
+<li><p>Right-click the <tt>fault</tt> project and choose Resolve Reference Problems.</p></li>
+<li><p>In the Resolve Reference Problems dialog, select the first of the missing JAR files and click Resolve.</p><p>The missing files are <tt>activation.jar</tt>, <tt>javaee.jar</tt>, and <tt>appserv-ws.jar</tt>.</p></li>
+<li><p>Navigate to the <tt></tt><i>as-install</i><tt>/lib/</tt> directory.</p></li>
+<li><p>Select the missing JAR file (<tt>activation.jar</tt>, for example) and click Open.</p><p>In the Resolve Reference Problems dialog, all the files have green check marks to the left of their names.</p></li>
+<li><p>Click Close.</p></li>
+<li><p>Right-click the project and choose Build.</p></li></ol>
+<p>To run the program using NetBeans IDE, follow these steps:</p>
+<ol><li><p>Right-click the <tt>fault</tt> project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>In the Arguments field, type the following:</p><pre><tt><b>1.1</b></tt></pre><p>This argument specifies the version of SOAP to be used in generating the message.</p></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li>
+<li><p>Right-click the project and choose Properties.</p></li>
+<li><p>Select Run from the Categories tree.</p></li>
+<li><p>In the Arguments field, type the following:</p><pre><tt><b>1.2</b></tt></pre></li>
+<li><p>Click OK.</p></li>
+<li><p>Right-click the project and choose Run.</p></li></ol>
+<p>To build and run <tt>SOAPFaultTest</tt> using Ant, go to the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/saaj/fault/</tt>. Use one
+of the following commands:</p><pre><tt><b>ant run-fault -Dsoap=1.1</b></tt></pre><pre><tt><b>ant run-fault -Dsoap=1.2</b></tt></pre><p>When you run <tt>SOAPFaultTest</tt> to generate a SOAP 1.1 message, you will see
+output like the following (line breaks have been inserted in the message for
+readability):</p><pre>Here is what the XML message looks like:
+
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+&lt;SOAP-ENV:Header/>&lt;SOAP-ENV:Body>
+&lt;SOAP-ENV:Fault>&lt;faultcode>SOAP-ENV:Client&lt;/faultcode>
+&lt;faultstring>Message does not have necessary info&lt;/faultstring>
+&lt;faultactor>http://gizmos.com/order&lt;/faultactor>
+&lt;detail>
+&lt;PO:order xmlns:PO="http://gizmos.com/orders/">
+Quantity element does not have a value&lt;/PO:order>
+&lt;PO:confirmation xmlns:PO="http://gizmos.com/confirm">
+Incomplete address: no zip code&lt;/PO:confirmation>
+&lt;/detail>&lt;/SOAP-ENV:Fault>
+&lt;/SOAP-ENV:Body>&lt;/SOAP-ENV:Envelope>
+
+SOAP fault contains:
+ Fault code = {http://schemas.xmlsoap.org/soap/envelope/}Client
+ Local name = Client
+ Namespace prefix = SOAP-ENV, bound to http://schemas.xmlsoap.org/soap/envelope/
+ Fault string = Message does not have necessary info
+ Fault actor = http://gizmos.com/order
+ Detail entry = Quantity element does not have a value
+ Detail entry = Incomplete address: no zip code</pre><p>When you run SOAPFaultTest to generate a SOAP 1.2 message, the output looks
+like this:</p><pre>Here is what the XML message looks like:
+
+&lt;env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+&lt;env:Header/>&lt;env:Body>
+&lt;env:Fault>
+&lt;env:Code>&lt;env:Value>env:Sender&lt;/env:Value>&lt;/env:Code>
+&lt;env:Reason>&lt;env:Text xml:lang="en-US">
+Message does not have necessary info
+&lt;/env:Text>&lt;/env:Reason>
+&lt;env:Role>http://gizmos.com/order&lt;/env:Role>
+&lt;env:Detail>
+&lt;PO:order xmlns:PO="http://gizmos.com/orders/">
+Quantity element does not have a value&lt;/PO:order>
+&lt;PO:confirmation xmlns:PO="http://gizmos.com/confirm">
+Incomplete address: no zip code&lt;/PO:confirmation>
+&lt;/env:Detail>&lt;/env:Fault>
+&lt;/env:Body>&lt;/env:Envelope>
+
+SOAP fault contains:
+ Fault code = {http://www.w3.org/2003/05/soap-envelope}Sender
+ Local name = Sender
+ Namespace prefix = env, bound to http://www.w3.org/2003/05/soap-envelope
+ Fault reason text = Message does not have necessary info
+ Fault role = http://gizmos.com/order
+ Detail entry = Quantity element does not have a value
+ Detail entry = Incomplete address: no zip code</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbhr.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbjk.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

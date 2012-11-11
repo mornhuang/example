@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>An Application Example That Consumes Messages from a Remote Server - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level3"><a href="bncgw.html">A Java EE Application That Uses the JMS API with a Session Bean</a></p>
+<p class="toc level4"><a href="bncgw.html#bncgx">Writing the Application Components for the <tt>clientsessionmdb</tt> Example</a></p>
+<p class="toc level5"><a href="bncgw.html#bncgz">Coding the Application Client: <tt>MyAppClient.java</tt></a></p>
+<p class="toc level5"><a href="bncgw.html#bncha">Coding the Publisher Session Bean</a></p>
+<p class="toc level5"><a href="bncgw.html#bnchb">Coding the Message-Driven Bean: <tt>MessageBean.java</tt></a></p>
+<p class="toc level4 tocsp"><a href="bncgw.html#bnchc">Creating Resources for the <tt>clientsessionmdb</tt> Example</a></p>
+<p class="toc level4"><a href="bncgw.html#bnchd">Building, Deploying, and Running the <tt>clientsessionmdb</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bncgw.html#bnche">Building, Deploying, and Running the <tt>clientsessionmdb</tt> Example Using Ant</a></p>
+<p class="toc level3 tocsp"><a href="bnchf.html">A Java EE Application That Uses the JMS API with an Entity</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchg">Overview of the <tt>clientmdbentity</tt> Example Application</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchi">Writing the Application Components for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level5"><a href="bnchf.html#bnchj">Coding the Application Client: <tt>HumanResourceClient.java</tt></a></p>
+<p class="toc level5"><a href="bnchf.html#bnchk">Coding the Message-Driven Beans for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level5"><a href="bnchf.html#bnchl">Coding the Entity Class for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level4 tocsp"><a href="bnchf.html#bnchm">Creating Resources for the <tt>clientmdbentity</tt> Example</a></p>
+<p class="toc level4"><a href="bnchf.html#bnchn">Building, Deploying, and Running the <tt>clientmdbentity</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchf.html#bncho">Building, Deploying, and Running the <tt>clientmdbentity</tt> Example Using Ant</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">An Application Example That Consumes Messages from a Remote Server</a></p>
+<p class="toc level4"><a href="#bnchq">Overview of the <tt>consumeremote</tt> Example Modules</a></p>
+<p class="toc level4"><a href="#bnchs">Writing the Module Components for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="#bncht">Creating Resources for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="#bnchu">Using Two Application Servers for the <tt>consumeremote</tt> Example</a></p>
+<p class="toc level4"><a href="#bnchv">Building, Deploying, and Running the <tt>consumeremote</tt>Modules Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="#bnchw">Building, Deploying, and Running the <tt>consumeremote</tt> Modules Using Ant</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnchx.html">An Application Example That Deploys a Message-Driven Bean on Two Servers</a></p>
+<p class="toc level4"><a href="bnchx.html#bnchy">Overview of the <tt>sendremote</tt> Example Modules</a></p>
+<p class="toc level4"><a href="bnchx.html#bnchz">Writing the Module Components for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level5"><a href="bnchx.html#bncib">Coding the Application Client: <tt>MultiAppServerClient.java</tt></a></p>
+<p class="toc level5"><a href="bnchx.html#bncic">Coding the Message-Driven Bean: <tt>ReplyMsgBean.java</tt></a></p>
+<p class="toc level4 tocsp"><a href="bnchx.html#bncid">Creating Resources for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchx.html#bncie">Using Two Application Servers for the <tt>sendremote</tt> Example</a></p>
+<p class="toc level4"><a href="bnchx.html#bncif">Building, Deploying, and Running the <tt>sendremote</tt> Modules Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="bnchx.html#bncig">Building, Deploying, and Running the <tt>sendremote</tt> Modules Using Ant</a></p>
+<p class="toc level2 tocsp"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnchf.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnchx.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnchp"></a><h3>An Application Example That Consumes Messages from a Remote Server</h3>
+<a name="indexterm-2987"></a><a name="indexterm-2988"></a><a name="indexterm-2989"></a><a name="indexterm-2990"></a><a name="indexterm-2991"></a><a name="indexterm-2992"></a><p>This section and the following section explain how to write, compile, package, deploy,
+and run a pair of Java EE modules that run on two
+Java EE servers and that use the JMS API to interchange messages with
+each other. It is a common practice to deploy different components of an
+enterprise application on different systems within a company, and these examples illustrate on
+a small scale how to do this for an application that uses the
+JMS API.</p><p>However, the two examples work in slightly different ways. In this first example,
+the deployment information for a message-driven bean specifies the remote server from which
+it will <b>consume</b> messages. In the next example, the same bean is deployed
+on two different servers, so it is the client module that specifies the
+servers (one local, one remote) to which it is <b>sending</b> messages.</p><p>This first example divides the example in <a href="bnbpk.html">Chapter&nbsp;23, A Message-Driven Bean Example</a> into two modules (not
+applications): one containing the application client, and the other containing the message-driven bean.</p><p>This section covers the following topics:</p>
+<ul><li><p><a href="#bnchq">Overview of the <tt>consumeremote</tt> Example Modules</a></p></li>
+<li><p><a href="#bnchs">Writing the Module Components for the <tt>consumeremote</tt> Example</a></p></li>
+<li><p><a href="#bncht">Creating Resources for the <tt>consumeremote</tt> Example</a></p></li>
+<li><p><a href="#bnchu">Using Two Application Servers for the <tt>consumeremote</tt> Example</a></p></li>
+<li><p><a href="#bnchv">Building, Deploying, and Running the <tt>consumeremote</tt>Modules Using NetBeans IDE</a></p></li>
+<li><p><a href="#bnchw">Building, Deploying, and Running the <tt>consumeremote</tt> Modules Using Ant</a></p></li></ul>
+<p>You will find the source files for this section in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/consumeremote/</tt>. Path
+names in this section are relative to this directory.</p>
+
+<a name="bnchq"></a><h4>Overview of the <tt>consumeremote</tt> Example Modules</h4>
+<p>Except for the fact that it is packaged as two separate modules,
+this example is very similar to the one in <a href="bnbpk.html">Chapter&nbsp;23, A Message-Driven Bean Example</a>:</p>
+<ul><li><p>One module contains the application client, which runs on the remote system and sends three messages to a queue.</p></li>
+<li><p>The other module contains the message-driven bean, which is deployed on the local server and consumes the messages from the queue on the remote server.</p></li></ul>
+<p>The basic steps of the modules are as follows.</p>
+<ol><li><p>The administrator starts two Java EE servers, one on each system.</p></li>
+<li><p>On the local server, the administrator deploys the message-driven bean module, which uses a connection factory that specifies the remote server where the client is deployed.</p></li>
+<li><p>On the remote server, the administrator places the client JAR file.</p></li>
+<li><p>The client module sends three messages to a queue.</p></li>
+<li><p>The message-driven bean consumes the messages.</p></li></ol>
+<p><a href="#bnchr">Figure&nbsp;32-3</a> illustrates the structure of this application. You can see that it is
+almost identical to <a href="bnbpl.html#bnbpm">Figure&nbsp;23-1</a> except that there are two Java EE servers. The queue
+used is the one on the remote server; the queue must also exist
+on the local server for resource injection to succeed.</p><a name="bnchr"></a><h6>Figure&nbsp;32-3 A Java EE Application That Consumes Messages from a Remote Server</h6><img src="figures/jmsj2ee-consumeRemote.gif" alt="Diagram of application showing a message-driven bean that consumes messages from an application client on a remote server"></img>
+
+<a name="bnchs"></a><h4>Writing the Module Components for the <tt>consumeremote</tt> Example</h4>
+<p>Writing the components of the modules involves</p>
+<ul><li><p>Coding the application client</p></li>
+<li><p>Coding the message-driven bean</p></li></ul>
+<p>The application client, <tt>jupiterclient/src/java/SimpleClient.java</tt>, is almost identical to the one in <a href="bnbpn.html">The <tt>simplemessage</tt> Application Client</a>.</p><p>Similarly, the message-driven bean, <tt>earthmdb/src/java/MessageBean.java</tt>, is almost identical to the one in
+<a href="bnbpo.html">The Message-Driven Bean Class</a>.</p><p>The only major difference is that the client and the bean are
+packaged in two separate modules.</p>
+
+<a name="bncht"></a><h4>Creating Resources for the <tt>consumeremote</tt> Example</h4>
+<p>For this example, the message-driven bean uses the connection factory named <tt>jms/JupiterConnectionFactory</tt>, which
+you created in <a href="bncfa.html#bncfq">Creating Administered Objects for Multiple Systems</a>. Use the Admin Console to verify that the connection
+factory still exists and that its <tt>AddressList</tt> property is set to the name
+of the remote system. Because this bean must use a specific connection factory,
+the connection factory is specified in the <tt>mdb-connection-factory</tt> element of the <tt>sun-ejb-jar.xml</tt> file.</p><p>If you deleted the connection factory, you can recreate it as follows:</p>
+<ol><li><p>Go to the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/consumeremote/earthmdb/</tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant create-remote-factory -Dsys=</tt><i>remote-system-name</i><tt></b></tt></pre><p>Replace <i>remote-system-name</i> with the actual name of the remote system.</p></li></ol>
+<p>The application client can use any connection factory that exists on the remote
+server; it uses <tt>jms/ConnectionFactory</tt>. Both components use the queue named <tt>jms/Queue</tt>, which you
+created in <a href="bncfa.html#bncfe">Creating JMS Administered Objects for the Synchronous Receive Example</a>.</p>
+
+<a name="bnchu"></a><h4>Using Two Application Servers for the <tt>consumeremote</tt> Example</h4>
+<p>As in <a href="bncfa.html#bncfp">Running JMS Client Programs on Multiple Systems</a>, the two servers are named <tt>earth</tt> and <tt>jupiter</tt>.</p><p>The Application Server must be running on both systems.</p><p>Which system you use to package and deploy the modules and which
+system you use to run the client depend on your network configuration (which
+file system you can access remotely). These instructions assume that you can access the
+file system of <tt>jupiter</tt> from <tt>earth</tt> but cannot access the file system of
+<tt>earth</tt> from <tt>jupiter</tt>. (You can use the same systems for <tt>jupiter</tt> and <tt>earth</tt>
+that you used in <a href="bncfa.html#bncfp">Running JMS Client Programs on Multiple Systems</a>.)</p><p>You can package both modules on <tt>earth</tt> and deploy the message-driven bean there.
+The only action you perform on <tt>jupiter</tt> is running the client module.</p>
+
+<a name="bnchv"></a><h4>Building, Deploying, and Running the <tt>consumeremote</tt>Modules Using NetBeans IDE</h4>
+<p>To package the modules using NetBeans IDE, perform these steps:</p>
+<ol><li><p>In NetBeans IDE, choose Open Project from the File menu.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/consumeremote/</tt>.</p></li>
+<li><p>Select the <tt>earthmdb</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>earthmdb</tt> project and choose Build.</p><p>This command creates a JAR file that contains the bean class file and the <tt>sun-ejb-jar.xml</tt> deployment descriptor file.</p></li>
+<li><p>Choose Open Project from the File menu.</p></li>
+<li><p>Select the <tt>jupiterclient</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Right-click the <tt>jupiterclient</tt> project and choose Build.</p><p>This target creates a JAR file that contains the client class file and a manifest file.</p></li></ol>
+<p>To deploy the <tt>earthmdb</tt> module and run the application client, perform these steps:</p>
+<ol><li><p>Right-click the <tt>earthmdb</tt> project and choose Set as Main Project.</p></li>
+<li><p>Right-click the <tt>earthmdb</tt> project and choose Undeploy and Deploy.</p></li>
+<li><p>Copy the <tt>jupiterclient</tt> module to the remote system (<tt>jupiter</tt>):</p>
+<ol><li><p>In a terminal window, change to the directory <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/consumeremote/jupiterclient/dist/</tt>.</p></li>
+<li><p>Type a command like the following:</p><pre><tt><b>cp jupiterclient.jar F:/</b></tt></pre><p>That is, copy the client JAR file to a location on the remote filesystem.</p></li></ol>
+</li>
+<li><p>Go to the directory on the remote system where you copied the client JAR file.</p></li>
+<li><p>Use the following command:</p><pre><tt><b>appclient -client jupiterclient.jar</b></tt></pre></li></ol>
+<p>On <tt>jupiter</tt>, the output of the <tt>appclient</tt> command looks like this:</p><pre>Sending message: This is message 1
+Sending message: This is message 2
+Sending message: This is message 3</pre><p>On <tt>earth</tt>, the output in the server log looks something like this (wrapped
+in logging information):</p><pre>MESSAGE BEAN: Message received: This is message 1
+MESSAGE BEAN: Message received: This is message 2
+MESSAGE BEAN: Message received: This is message 3</pre><p>Undeploy the message-driven bean after you finish running the client. To undeploy the
+<tt>earthmdb</tt> module, perform these steps:</p>
+<ol><li><p>Click the Services tab.</p></li>
+<li><p>Expand the Servers node.</p></li>
+<li><p>Expand the Sun Java System Application Server node.</p></li>
+<li><p>Expand the Applications node.</p></li>
+<li><p>Expand the EJB Modules node.</p></li>
+<li><p>Right-click <tt>earthmdb</tt> and choose Undeploy.</p></li></ol>
+<p>To remove the generated files, follow these steps:</p>
+<ol><li><p>Right-click the <tt>earthmdb</tt> project and choose Clean.</p></li>
+<li><p>In the command line window from which you copied the client JAR file, go to a directory other than the <tt>jupiterclient/dist</tt> directory.</p></li>
+<li><p>Right-click the <tt>jupiterclient</tt> project and choose Clean.</p></li></ol>
+<p>You can also delete the <tt>jupiterclient.jar</tt> file from the remote filesystem.</p>
+
+<a name="bnchw"></a><h4>Building, Deploying, and Running the <tt>consumeremote</tt> Modules Using Ant</h4>
+<p>To package the modules using Ant, perform these steps:</p>
+<ol><li><p>Go to the following directory:</p><pre><tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/jms/consumeremote/earthmdb/</tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant</b></tt></pre><p>This command creates a JAR file that contains the bean class file and the <tt>sun-ejb-jar.xml</tt> deployment descriptor file.</p></li>
+<li><p>Go to the <tt>jupiterclient</tt> directory:</p><pre><tt><b>cd ../jupiterclient</b></tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant</b></tt></pre><p>This target creates a JAR file that contains the client class file and a manifest file.</p></li></ol>
+<p>To deploy the <tt>earthmdb</tt> module, perform these steps:</p>
+<ol><li><p>Change to the directory <tt>earthmdb</tt>:</p><pre><tt><b>cd ../earthmdb</b></tt></pre></li>
+<li><p>Type the following command:</p><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+<p>To copy the <tt>jupiterclient</tt> module to the remote system, perform these steps:</p>
+<ol><li><p>Change to the directory <tt>jupiterclient/dist</tt>:</p><pre><tt><b>cd ../jupiterclient/dist</b></tt></pre></li>
+<li><p>Type a command like the following:</p><pre><tt><b>cp jupiterclient.jar F:/</b></tt></pre><p>That is, copy the client JAR file to a location on the remote filesystem.</p></li></ol>
+<p>To run the client, perform the following steps:</p>
+<ol><li><p>Go to the directory on the remote system (<tt>jupiter</tt>) where you copied the client JAR file.</p></li>
+<li><p>Use the following command:</p><pre><tt><b>appclient -client jupiterclient.jar</b></tt></pre></li></ol>
+<p>On <tt>jupiter</tt>, the output of the <tt>appclient</tt> command looks like this:</p><pre>Sending message: This is message 1
+Sending message: This is message 2
+Sending message: This is message 3</pre><p>On <tt>earth</tt>, the output in the server log looks something like this (wrapped
+in logging information):</p><pre>MESSAGE BEAN: Message received: This is message 1
+MESSAGE BEAN: Message received: This is message 2
+MESSAGE BEAN: Message received: This is message 3</pre><p>Undeploy the message-driven bean after you finish running the client. To undeploy the
+<tt>earthmdb</tt> module, perform these steps:</p>
+<ol><li><p>Change to the directory <tt>earthmdb</tt>.</p></li>
+<li><p>Type the following command:</p><pre><tt><b>ant undeploy</b></tt></pre></li></ol>
+<p>You can also delete the <tt>jupiterclient.jar</tt> file from the remote filesystem.</p><p>To remove the generated files, use the following command in both the
+<tt>earthmdb</tt> and <tt>jupiterclient</tt> directories:</p><pre><tt><b>ant clean</b></tt></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnchf.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnchx.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Character Sets and Encodings - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level3"><a href="bnaxv.html">Java Platform Localization Classes</a></p>
+<p class="toc level3"><a href="bnaxw.html">Providing Localized Messages and Labels</a></p>
+<p class="toc level4"><a href="bnaxw.html#bnaxx">Establishing the Locale</a></p>
+<p class="toc level4"><a href="bnaxw.html#bnaxy">Setting the Resource Bundle</a></p>
+<p class="toc level4"><a href="bnaxw.html#bnaxz">Retrieving Localized Messages</a></p>
+<p class="toc level3 tocsp"><a href="bnaya.html">Date and Number Formatting</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Character Sets and Encodings</a></p>
+<p class="toc level4"><a href="#bnayc">Character Sets</a></p>
+<p class="toc level4"><a href="#bnayd">Character Encoding</a></p>
+<p class="toc level5"><a href="#bnaye">Request Encoding</a></p>
+<p class="toc level5"><a href="#bnayf">Page Encoding</a></p>
+<p class="toc level5"><a href="#bnayg">Response Encoding</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnayh.html">Further Information about Internationalizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaya.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnayh.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnayb"></a><h3>Character Sets and Encodings</h3>
+<p>The following sections describe character sets and character encodings.</p>
+
+<a name="bnayc"></a><h4>Character Sets</h4>
+<p><a name="indexterm-1657"></a><a name="indexterm-1658"></a>A <b>character set</b> is a set of textual and graphic symbols, each of which
+is mapped to a set of nonnegative integers.</p><p>The first character set used in computing was US-ASCII. It is limited in
+that it can represent only American English. US-ASCII contains uppercase and lowercase Latin
+alphabets, numerals, punctuation, a set of control codes, and a few miscellaneous symbols.</p><p><a name="indexterm-1659"></a>Unicode defines a standardized, universal character set that can be extended to accommodate
+additions. When the Java program source file encoding doesn&rsquo;t support Unicode, you can
+represent Unicode characters as escape sequences by using the notation <tt>\u</tt><i>XXXX</i>, where <i>XXXX</i> is
+the character&rsquo;s 16-bit representation in hexadecimal. For example, the Spanish version of the
+Duke&rsquo;s Bookstore message file uses Unicode for non-ASCII characters:</p><pre>{"TitleCashier", "Cajero"},
+{"TitleBookDescription", "Descripci" + "\u00f3" + "n del
+ Libro"},
+{"Visitor", "El visitante" + "\u00fa" + "mero "},
+{"What", "Qu" + "\u00e9" + " libros leemos"},
+{"Talk", " describe c&oacute;mo los componentes de software de web
+ pueden transformar la manera en que desarrollamos las
+ aplicaciones para la web. Este libro es obligatorio para
+ cualquier programador de respeto!"},
+{"Start", "Empezar a Comprar"},</pre>
+
+<a name="bnayd"></a><h4>Character Encoding</h4>
+<p><a name="indexterm-1660"></a>A <b>character encoding</b> maps a character set to units of a specific width
+and defines byte serialization and ordering rules. Many character sets have more than one
+encoding. For example, Java programs can represent Japanese character sets using the <tt>EUC-JP</tt>
+or <tt>Shift-JIS</tt> encodings, among others. Each encoding has rules for representing and serializing
+a character set.</p><p><a name="indexterm-1661"></a>The ISO 8859 series defines 13 character encodings that can represent texts in
+dozens of languages. Each ISO 8859 character encoding can have up to 256
+characters. ISO-8859-1 (Latin-1) comprises the ASCII character set, characters with diacritics (accents, diaereses,
+cedillas, circumflexes, and so on), and additional symbols.</p><p><a name="indexterm-1662"></a>UTF-8 (Unicode Transformation Format, 8-bit form) is a variable-width character encoding that encodes
+16-bit Unicode characters as one to four bytes. A byte in UTF-8 is
+equivalent to 7-bit ASCII if its high-order bit is zero; otherwise, the character
+comprises a variable number of bytes.</p><p>UTF-8 is compatible with the majority of existing web content and provides access
+to the Unicode character set. Current versions of browsers and email clients support
+UTF-8. In addition, many new web standards specify UTF-8 as their character encoding.
+For example, UTF-8 is one of the two required encodings for XML documents
+(the other is UTF-16).</p><p>See Appendix <a href="bncna.html#bncnn">Figure&nbsp;37-6</a> for more information on character encodings in the Java 2
+platform.</p><p>Web components usually use <tt>PrintWriter</tt> to produce responses; <tt>PrintWriter</tt> automatically encodes using ISO-8859-1. Servlets
+can also output binary data using <tt>OutputStream</tt> classes, which perform no encoding. An
+application that uses a character set that cannot use the default encoding must
+explicitly set a different encoding.</p><p>For web components, three encodings must be considered:</p>
+<ul><li><p>Request</p></li>
+<li><p>Page (JSP pages)</p></li>
+<li><p>Response</p></li></ul>
+
+
+<a name="bnaye"></a><h5>Request Encoding</h5>
+<p><a name="indexterm-1663"></a>The <b>request encoding</b> is the character encoding in which parameters in an incoming request
+are interpreted. Currently, many browsers do not send a request encoding qualifier with
+the <tt>Content-Type</tt> header. In such cases, a web container will use the default
+encoding, ISO-8859-1, to parse request data.</p><p><a name="indexterm-1664"></a><a name="indexterm-1665"></a>If the client hasn&rsquo;t set character encoding and the request data is encoded
+with a different encoding from the default, the data won&rsquo;t be interpreted correctly. To
+remedy this situation, you can use the <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletRequest.html#setCharacterEncoding(java.lang.String)">ServletRequest.setCharacterEncoding(String enc)</a> method to override the character
+encoding supplied by the container. To control the request encoding from JSP pages,
+you can use the JSTL <tt>fmt:requestEncoding</tt> tag. You must call the method
+or tag before parsing any request parameters or reading any input from the
+request. Calling the method or tag once data has been read will not
+affect the encoding.</p>
+
+<a name="bnayf"></a><h5>Page Encoding</h5>
+<p><a name="indexterm-1666"></a>For JSP pages, the <b>page encoding</b> is the character encoding in which the file
+is encoded.</p><p>For JSP pages in standard syntax, the page encoding is determined from the
+following sources:</p>
+<ul><li><p>The page encoding value of a JSP property group (see <a href="bnajg.html">Setting Properties for Groups of JSP Pages</a>) whose URL pattern matches the page.</p></li>
+<li><p>The <tt>pageEncoding</tt> attribute of the <tt>page</tt> directive of the page. It is a translation-time error to name different encodings in the <tt>pageEncoding</tt> attribute of the page directive of a JSP page and in a JSP property group.</p></li>
+<li><p>The <tt>CHARSET</tt> value of the <tt>contentType</tt> attribute of the <tt>page</tt> directive.</p></li></ul>
+<p>If none of these is provided, ISO-8859-1 is used as the default
+page encoding.</p><p>For JSP pages in XML syntax (JSP documents), the page encoding is
+determined as described in section 4.3.3 and appendix F.1 of the XML specification.</p><p>The <tt>pageEncoding</tt> and <tt>contentType</tt> attributes determine the page character encoding of only the
+file that physically contains the <tt>page</tt> directive. A web container raises a translation-time error
+if an unsupported page encoding is specified.</p>
+
+<a name="bnayg"></a><h5>Response Encoding</h5>
+<p><a name="indexterm-1667"></a><a name="indexterm-1668"></a>The <b>response encoding</b> is the character encoding of the textual response generated by a
+web component. The response encoding must be set appropriately so that the characters
+are rendered correctly for a given locale. A web container sets an initial
+response encoding for a JSP page from the following sources:</p>
+<ul><li><p>The <tt>CHARSET</tt> value of the <tt>contentType</tt> attribute of the <tt>page</tt> directive</p></li>
+<li><p>The encoding specified by the <tt>pageEncoding</tt> attribute of the <tt>page</tt> directive</p></li>
+<li><p>The page encoding value of a JSP property group whose URL pattern matches the page</p></li></ul>
+<p>If none of these is provided, ISO-8859-1 is used as the default
+response encoding.</p><p><a name="indexterm-1669"></a>The <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletResponse.html#setCharacterEncoding(java.lang.String)">setCharacterEncoding</a>, <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletResponse.html#setContentType(java.lang.String)">setContentType</a>, and <a href="http://java.sun.com/javaee/5/docs/api/javax/servlet/ServletResponse.html#setLocale(java.util.Locale)">setLocale</a> methods can be called repeatedly to change
+the character encoding. Calls made after the servlet response&rsquo;s <tt>getWriter</tt> method has been
+called or after the response is committed have no effect on the character
+encoding. Data is sent to the response stream on buffer flushes (for buffered
+pages) or on encountering the first content on unbuffered pages.</p><p>Calls to <tt>setContentType</tt> set the character encoding only if the given content type
+string provides a value for the <tt>charset</tt> attribute. Calls to <tt>setLocale</tt> set the
+character encoding only if neither <tt>setCharacterEncoding</tt> nor <tt>setContentType</tt> has set the character encoding
+before. To control the response encoding from JSP pages, you can use the
+JSTL <tt>fmt.setLocale</tt> tag.</p><p>To obtain the character encoding for a locale, the <tt>setLocale</tt> method checks the
+locale encoding mapping for the web application. For example, to map Japanese to
+the Japanese-specific encoding <tt>Shift_JIS</tt>, follow these steps:</p>
+<ol><li><p>Select the WAR.</p></li>
+<li><p>Click the Advanced Settings button.</p></li>
+<li><p>In the Locale Character Encoding table, Click the Add button.</p></li>
+<li><p>Enter <tt>ja</tt> in the Extension column.</p></li>
+<li><p>Enter <tt>Shift_JIS</tt> in the Character Encoding column.</p></li></ol>
+<p>If a mapping is not set for the web application, <tt>setLocale</tt> uses a
+Application Server mapping.</p><p>The first application in <a href="bnagx.html">Chapter&nbsp;5, JavaServer Pages Technology</a> allows a user to choose an English
+string representation of a locale from all the locales available to the Java
+2 platform and then outputs a date localized for that locale. To ensure
+that the characters in the date can be rendered correctly for a wide
+variety of character sets, the JSP page that generates the date sets the
+response encoding to UTF-8 by using the following directive:</p><pre>&lt;%@ page contentType="text/html; charset=UTF-8" %></pre>
+         </div>
+         <div class="navigation">
+             <a href="bnaya.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnayh.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

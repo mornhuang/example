@@ -1,0 +1,8 @@
+
+#resource file for helloworld
+
+#I18N.pushbutton.background:	red
+#I18N.pushbutton.foreground:	blue
+I18N*pushbutton*labelString:	ƒ„∫√ ¿ΩÁ!
+I18N*pushbutton*fontList:	8x16;-*-song-medium-r-*--16-*-gbk-0:
+

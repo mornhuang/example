@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" 
+	"http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<!-- Data Sources -->
+	<data-sources>
+	</data-sources>
+
+	<!-- Form Beans -->
+	<form-beans>
+		<form-bean name="OrderForm" type="cn.hxex.order.forms.OrderForm"/>
+	</form-beans>
+
+	<!-- Global Exceptions -->
+	<global-exceptions>
+		<exception key="global.data.access.exception"
+			path="/QueryOrder.jsp"
+			scope="request"
+			type="org.springframework.dao.DataAccessException"/>
+	</global-exceptions>
+
+	<!-- Global Forwards -->
+	<global-forwards>
+	</global-forwards>
+
+	<!-- Action Mappings -->
+	<action-mappings>
+	
+		<action path="/Index" 
+				type="org.apache.struts.actions.ForwardAction" 
+				parameter="/Index.jsp">		
+		</action>
+		<action path="/PlaceOrder" 
+				type="org.apache.struts.actions.ForwardAction" 
+				parameter="/NewOrder.jsp">		
+		</action>
+		<action path="/QueryOrder" 
+				type="org.apache.struts.actions.ForwardAction" 
+				parameter="/QueryOrder.jsp">		
+		</action>				
+	
+		<action path="/SaveNewOrder"
+			type="cn.hxex.order.action.SaveOrderAction"
+			name="OrderForm"
+			scope="request"
+			validate="true"
+			input="/NewOrder.jsp">				
+			<display-name>Save New Order</display-name>			
+			<exception key="error.order.save"
+				path="/NewOrder.jsp"
+				scope="request"
+				type="cn.hxex.order.exception.OrderException"/>
+			<exception key="error.order.not.enough.money"
+				path="/NewOrder.jsp"
+				scope="request"
+				type="cn.hxex.order.exception.OrderMinimumAmountException"/>					
+			<forward name="success" path="/ViewOrder.jsp"/>
+			<forward name="failure" path="/NewOrder.jsp"/>
+		</action>
+		
+		
+		<action path="/FindOrderID"
+			type="cn.hxex.order.action.FindOrderAction"
+			name="OrderForm"
+			scope="request"
+			validate="true"
+			input="/QueryOrder.jsp">				
+			<display-name>Find Existing Order</display-name>			
+			<exception key="error.order.find"
+				path="/QueryOrder.jsp"
+				scope="request"
+				type="cn.hxex.order.exception.OrderException"/>
+			<forward name="success" path="/ViewOrder.jsp"/>
+		</action>	
+			
+	</action-mappings>
+
+  	<controller>
+		<set-property 
+			property="processorClass" 
+			value="cn.hxex.order.struts.HxexRequestProcessor" />
+		<set-property property="contentType" value="text/html; charset=utf-8" />
+    	<set-property property="nocache" value="true"/>
+	</controller>
+
+	<!-- Message Resources -->
+	<message-resources parameter="cn.hxex.order.resources.ApplicationResources"/>
+		
+</struts-config>

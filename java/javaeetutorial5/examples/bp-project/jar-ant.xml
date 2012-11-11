@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright 2005-2006 Sun Microsystems, Inc.  All rights reserved.  You may not modify, use, reproduce, or distribute this software except in compliance with the terms of the License at: 
+ http://developer.sun.com/berkeley_license.html
+ $Id: jar-ant.xml,v 1.2 2006/04/26 23:39:58 ie139813 Exp $ -->
+
+
+<!-- jar-ant.xml: contains targets for projects that produce 
+     jar files. This file is not meant to be included in a 
+     project directly.
+     This file should only be included if this project is defining 
+     is.jar.module property.
+     @Author: Inderjeet Singh -->
+
+<project name="jar-ant" default="dummy-default">
+    
+    <patternset id="all.nonjava.files">
+        <!-- All conf files (including test files) -->
+        <include name="**/*.txt"/>
+        <include name="**/*.xml"/>
+        <include name="**/*.properties"/>
+    </patternset>
+
+    <property name="app.module" value="${build.dir}/${module.name}.jar"/>
+    <property name="jar.build.dir" value="${build.dir}/jar"/>
+
+    <target name="-pre-clean">
+    </target>
+
+    <target name="package" depends="-post-compile"
+        description="packages the archive">
+        <mkdir dir="${jar.build.dir}"/>
+
+        <!-- copy in the compiled classes and non-Java files -->
+        <copy todir="${jar.build.dir}">
+            <fileset dir="${build.classes.dir}"/>
+            <fileset dir="${src.dir}">
+                <patternset refid="all.nonjava.files"/>
+            </fileset>
+        </copy>
+
+        <delete file="${app.module}"/>
+        <jar jarfile="${app.module}" basedir="${jar.build.dir}"/>
+        <delete dir="${jar.build.dir}"/>
+    </target>
+
+    <target name="dummy-default"/>
+
+</project>

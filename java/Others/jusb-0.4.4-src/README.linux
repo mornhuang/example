@@ -1,0 +1,86 @@
+GNU/LINUX BASE DISTRIBUTION
+
+For your GNU/Linux distribution, your GLIBC version is important.  You
+need threading patches found in /lib/libc-2.1.3.so and later releases
+to use native threading reliably.  (Called "libc6"; libc5 is very old.)
+
+RedHat 6.2 (and later), and similarly recent distributions, are generally
+ok to use ... though you need to upgrade modutils before you use any
+recent-enough (for USB) kernel.
+
+
+LINUX KERNEL
+
+For your OS kernel, use Linux 2.4.0 or later.  There's USB support in
+the 2.2.18 kernel, but you may run into the need for a patch to handle
+timer interrupts safely (ignoring them till usbdevfs requests finish).
+
+
+SECURITY:  USBDEVFS, RMI
+
+The Linux implementation of jUSB builds on APIs exposed by the "Prototype
+USB Device File System" (as it's called in the kernel configuration).
+You can look at the files in /proc/bus/usb.  There are two text files
+used in basic troubleshooting, but the numerically named files are the
+ones which jUSB uses, and which you need to be able to read and write.
+
+On a single-user machine consider "devmode=0666" in your usbdevfs entry
+in /etc/fstab (or where ever you set that up), so you won't need to
+work as root.  On a multi user system, consider the "devuid" or "devgid"
+options (same goal).
+
+You can run an RMI version of the Java USB Daemon so that you can use USB
+devices without being root all the time, even if you don't set "devmode=0666".
+Be careful; there's no access control with the current RMI support, and
+people from other machines (that may be less trustworthy) can do it too.
+
+
+INSTALLING (Sun JVMs only)
+
+If you like, you can install the object code as an extension, though you
+probably need root permission to do this.  It will fail politely if you
+need to rebuild, but will normally look something like this:
+
+    # sh bin/install
+    Java distribution found at /usr/java/jdk1.3
+    Uses i386 native code.
+    1) yes
+    2) no
+    Really install jUSB extension into /usr/java/jdk1.3? 1
+    Java USB (for Linux) is now installed as an extension!
+    #
+
+That just made jUSB APIs (usb.*) available to any Java program you
+run on that computer, so you won't need to play with your classpath
+and LD_LIBRARY_PATH just to use the APIs.
+
+You may re-install the extension at any time, though if you're actively
+modifying the package you probably won't want it to be installed (you'd
+often be using the wrong version).  There's also "make install".
+
+
+GCJ SUPPORT
+
+If you have "GCJ 2.96" or later (maybe from Redhat 7 or from Debian),
+you should be able to use it with this library.  That means you can
+link it in conventional executables, and also use it from C or C++
+following the CNI calling convention.  With CNI, Java methods calls
+look like C++ method calls, and the invocation cost is comparable.
+Program startup times can also be significantly better.
+
+Make includes (include-cni) and a static library (libjusb-gcj.a) by:
+
+    $ make gcj-native
+
+The makefile shows one way to build a native executable using this
+Java library code:
+
+    $ make showtree
+
+The resulting "showtree" executable will be dependant on shared
+libraries that implement the "libgcj" Java Virtual Machine, soon
+to be part of the GNU Compiler Collection.  You can use GDB as
+your debugger; check the GCJ site for more information.
+
+
+$Id: README.linux,v 1.1 2008/10/15 09:28:08 huangmeng Exp $

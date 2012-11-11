@@ -1,0 +1,41 @@
+style "default"
+{
+  font = "-b&h-lucida-bold-r-normal-sans-12-*-*-*-p-*-iso8859-1"
+  bg[NORMAL]      = { 0.80, 0.80, 0.80 }
+  fg[NORMAL]      = { 0.40, 0.40, 0.60 }
+  bg[PRELIGHT]    = { 0.80, 0.80, 1.00 }
+  fg[PRELIGHT]    = { 0.40, 0.40, 0.60 }
+  bg[ACTIVE]      = { 0.80, 0.80, 0.80 }
+  fg[ACTIVE]      = { 0.40, 0.40, 0.60 }
+  bg[SELECTED]    = { 0.60, 0.60, 0.80 }
+  fg[SELECTED]    = { 0.00, 0.00, 0.00 }
+  engine "metal" 
+  {
+  }
+}
+
+style "black_fg"
+{
+  fg[NORMAL]      = { 0.00, 0.00, 0.00 }
+  fg[PRELIGHT]    = { 0.00, 0.00, 0.00 }
+  fg[ACTIVE]      = { 0.00, 0.00, 0.00 }
+  fg[SELECTED]    = { 0.00, 0.00, 0.00 }
+}
+
+style "scrollbar"
+{
+  engine "metal" 
+  {
+    thickness = 1
+  }
+}
+
+# common default
+class "GtkWidget" style "default"
+class "GtkRange" style "scrollbar"
+
+widget_class "*.GtkMenuItem.*" style "black_fg"
+widget_class "*.GtkCheckButton.*" style "black_fg"
+widget_class "*.GtkRadioButton.*" style "black_fg"
+widget_class "*.GtkButton.*" style "black_fg"
+

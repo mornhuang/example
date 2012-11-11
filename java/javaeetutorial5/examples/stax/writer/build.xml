@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="writer" default="default" basedir=".">
+    <description>Builds, tests, and runs the project writer.</description>
+    <property name="is.java-client-module" value="true"/>
+    <import file="../../bp-project/main.xml"/>
+
+  <target name="run-writer" depends="compile"
+    description="Runs the writer example. ">
+    <echo message="Running the writer example."/>
+    <echo message="Output is written to the writer/dist/CursorWriter-Output file."/>
+    <mkdir dir="dist" />
+    <java classname="writer.CursorWriter" fork="yes">
+      <arg value="-f"/>
+      <arg value="dist/CursorWriter-Output"/>
+      <classpath refid="classpath" />
+      </java>
+  </target>
+
+</project>

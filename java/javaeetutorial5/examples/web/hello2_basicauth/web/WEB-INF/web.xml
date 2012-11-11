@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <display-name>hello2_basicauth</display-name>
+
+  <servlet>
+
+    <display-name>GreetingServlet</display-name>
+
+    <servlet-name>GreetingServlet</servlet-name>
+
+    <servlet-class>servlets.GreetingServlet</servlet-class>
+
+  </servlet>
+
+  <servlet>
+
+    <display-name>ResponseServlet</display-name>
+
+    <servlet-name>ResponseServlet</servlet-name>
+
+    <servlet-class>servlets.ResponseServlet</servlet-class>
+
+  </servlet>
+
+  <servlet-mapping>
+
+    <servlet-name>GreetingServlet</servlet-name>
+
+    <url-pattern>/greeting</url-pattern>
+
+  </servlet-mapping>
+
+  <servlet-mapping>
+
+    <servlet-name>ResponseServlet</servlet-name>
+
+    <url-pattern>/response</url-pattern>
+
+  </servlet-mapping>
+  
+  	<security-constraint>
+  		<display-name>SecurityConstraint</display-name>
+  		<web-resource-collection>
+  		 	<web-resource-name>WRCollection</web-resource-name>
+  			<url-pattern>/greeting</url-pattern>
+  		</web-resource-collection>
+  		<auth-constraint>
+  			<role-name>helloUser</role-name>
+  		</auth-constraint>
+  		<user-data-constraint>
+  		 	<transport-guarantee>NONE</transport-guarantee>
+  		</user-data-constraint>
+  	</security-constraint>
+  	<login-config>
+  		<auth-method>BASIC</auth-method>
+  		<realm-name>file</realm-name>
+  	</login-config> 
+
+
+</web-app>
+

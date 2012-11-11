@@ -1,0 +1,20 @@
+!include <ntwin32.mak>
+
+INCLUDE=.;$(INCLUDE)
+
+
+all: aptsur.exe
+
+# note: SP2 SDK patch did not contain a definition of IID_ISurrogate
+#      The library surruuid.lib included in this directory contains
+#      this GUID. When UUID.LIB is updated, remove surruuid.lib from 
+#      the arguments to link
+
+aptsur.exe: CSTA.obj CustomSurrogate.obj CCOW.obj CSurrogate.obj 
+  $(link) $(linkdebug) $(guiflags) -machine:$(CPU) -out:$*.exe $** surruuid.lib $(olelibs)
+
+.cpp.obj:
+    $(cc) -GX $(cdebug) -W3 -c -D_WIN32_WINNT=0x402 -D_$(CPU)_=1 $(cvars) $*.cpp
+
+clean:
+	del *.obj aptsur.exe

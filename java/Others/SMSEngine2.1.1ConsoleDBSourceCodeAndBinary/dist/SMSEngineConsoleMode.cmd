@@ -1,0 +1,1 @@
+java -jar "SMSEngine2-1-1+Console+DB.jar" -c -m hellowwww -r 00447772863346,+447772863346

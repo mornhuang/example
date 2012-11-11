@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Periodic Calendar User Manual - Periodic Calendar Application</title>
+  <meta name="GENERATOR" content="Quanta Plus">
+</head>
+<body>
+<!-- Navigation -->
+<div>
+<table summary="Navigation header" width="100%">
+  <tbody>
+    <tr>
+      <th colspan="3" align="center"><em>Periodic Calendar User Manual</em></th>
+    </tr>
+    <tr>
+      <td align="left" width="20%"><a href="care.html">Prev</a></td>
+      <th align="center" width="60%"><br>
+      </th>
+      <td align="right" width="20%"><!-- A href="s.html">Next</A--> <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<hr>
+<h3>Periodic Calendar Application</h3>
+<h4>Table of Contents</h4>
+<a href="#main">Main Window</a><br>
+<a href="#per">Recording Periods</a><br>
+<a href="#nav">Dates Navigation</a><br>
+<a href="#preg">Recording Pregnancy</a><br>
+<a href="#notes">Notes</a><br>
+<a href="#stats">Statistics Dialog</a><br>
+<a href="#prefs">Preferences</a><br>
+<a href="#importexport">Import/Export</a><br>
+<a href="#cmdline">Command Line Parameters</a>
+<p></p>
+<a name="main"></a>
+<h4>Main Window <br>
+</h4>
+<p>The Periodic Calendar main window provides calendar-centric information 
+related to the menstrual periods tracking and prediction (see Figure 1).</p>
+<img src="mainwindow.png" alt="Main Window screenshot" border="0">
+<p><strong>Figure 1. Main Window</strong></p>
+<p> The calendar pane is the core of the application. It shows the
+colored monthly calendar having the menstruation first day highlighted
+in red and fertile days highlighted in green (these are the default
+color schema). Recorded pregnancy and children birth days are highlighted as well.
+The predicted days are shown in a lighter color. The
+color swatches to the right shows what does each color mean. The colors
+can be changed in the <a href="#prefs">preferences dialog</a>. </p>
+<p>The Selected Day Summary provides the general information for the
+day which is currently selected in the calendar. It contains the
+selected date, days since the cycle start, fertility and if you might
+feel uncomfortable. Some women feel uncomfortable near the beginning of each
+cycle. The uncomfortable days range can be selected in the <a
+ href="#prefs">preferences dialog</a>. According to these settings,
+Periodic Calendar shows if any uncomfortable feelings may appear on the day
+selected in the calendar.</p>
+<a name="per"></a>
+<h4>Recording Periods</h4>
+<p>The new menstruation can be recorded either using the calendar
+context menu which is shown on right mouse click, or using the main
+menu item <em>Calendar-&gt;Add Menstruation Record</em>. If the record
+was entered by mistake, it can be removed from the calendar context
+menu or using the main menu item <em>Calendar-&gt;Delete Record</em>.</p>
+<p>While adding the new records to the calendar, you will notice that
+the predicted fertile period is shown wider than the past fertile
+periods. This happens because the fertile period starting and ending
+dates depend on the cycle length. The prediction is made in "safer" way
+from the contraception view point highlighting all probably fertile
+days.</p>
+<p>Main window status bar area shows the summary information about all
+recorded periods. This includes the recorded periods count, and
+minimum, average and maximum period length. Basing on the periods
+length deviation from the medium value, the general calendar method
+accuracy is evaluated and shown in the status bar as well.</p>
+<a name="nav"></a>
+<h4>Dates Navigation</h4>
+<p>Calendar dates can be navigated using the tool bar month and year
+navigation buttons or the <em>Navigation</em> main menu items.</p>
+<p>The following shortcut keys can also be used for quick calendar navigation:</p>
+	<ul>
+		<li><strong>Left, Right</strong> - jump to the previous or next day</li>
+		<li><strong>Up, Down</strong> - jump to the previous or next week</li>
+		<li><strong>PageUp, PageDown</strong> - jump to the previous or next month</li>
+		<li><strong>Ctrl+M, Ctrl+Shift+M</strong> - jump to the previous or next month</li>
+		<li><strong>Ctrl+Y, Ctrl+Shift+Y</strong> - jump to the previous or next year</li>
+		<li><strong>Ctrl+Shift+T</strong> - jump to today</li>
+	</ul>
+
+<a name="preg"></a>
+<h4>Recording Pregnancy</h4>
+<p>The pregnancy can be recorded using the main menu item <em>Calendar-&gt;Record
+Pregnancy</em></p>
+<p>The pregnancy start is calculated as the first day of the last
+menstruation cycle. If there are reasonable menstruation records in the past, 
+the <em>Record Pregnancy</em> dialog might appear proposing to chose either the last
+menstruation date or current date as the pregnancy selection date.</p>
+<p>During the pregnancy, slightly different information is presented by the application
+(see Figure 2.).</p>
+<img src="mainwindow_preg.png" alt="Main Window - pregnancy screenshot"
+ border="0">
+<p><strong>Figure 2. Main Window - Pregnancy Period</strong></p>
+<p>If the selected day is within the recorded pregnancy period, the
+Selected Day Summary is changed to show the pregnancy week number and
+the predicted baby birth date.</p>
+<p>To make the records complete, the baby birth date can also be
+recorded (using <em>Calendar-&gt;Record Birth</em> main menu item).</p>
+<p>The pregnancy period is shown from the pregnancy start date to the
+birth record date or to the pregnancy interuption date which also can be recorded. If there is no birth or interruption records - the pregnancy is shown till the estimated birth date (9 month).</p>
+<p>If the menstruation is recorded before the 9-month period end, the
+pregnancy is shown to the first menstruation date.</p>
+<a name="notes"></a>
+<h4>Notes</h4>
+<p>The main window section below the calendar allows entering and
+viewing the notes which can be added for any day.</p>
+<p>New note for the current day can be added using the plus button near
+the notes list or from the main menu.</p>
+<p>If the current day already has a note, this note is automatically
+shown in the notes area.</p>
+<p>The note for the current day can be deleted using the minus button
+or the corresponding main menu item (<em>Notes-&gt;Remove Note</em>).</p>
+<a name="stats"></a>
+<h4>Statistics Dialog</h4>
+<p>Statistics dialog provides the general statistics for the recorded
+periods as well as the periods length histogram which shows the period length
+distribution (see Figure 3).</p>
+<img src="statistics.png" alt="Statistics Popup screenshot" border="0">
+<p><strong>Figure 3. Statistics Dialog</strong></p>
+<a name="prefs"></a>
+<h4>Preferences</h4>
+<p>Periodic Calendar settings can be changed in the preferences window
+which can be shown using the <em>File-&gt;Preferences...</em> main
+menu item.</p>
+<p>The <em>General</em> section of the preferences dialog allows to choose which 
+file will be loaded on startup. This can be overridden by the <A HREF="#cmdline">command line
+parameters</A> (see Figure 4).</p>
+<img src="pref1.png" alt="Preferences 1 screenshot" border="0">
+<p><strong>Figure 4. Preferences - General</strong></p>
+<p><em>Calendar</em> preferences section allows changing the calendar
+colors (see Figure 5.).</p>
+<img src="pref2.png" alt="Preferences 2 screenshot" border="0">
+<p><strong>Figure 5. Preferences - Calendar</strong></p>
+<p><em>Calculations</em> preferences section allows changing the
+periods prediction and other calculations parameters (see Figure 6.).</p>
+<img src="pref3.png" alt="Preferences 3 screenshot" border="0">
+<p><strong>Figure 6. Preferences - Calculations</strong></p>
+<p><em>Add XX buffer days the start and after the end of the fertile
+period</em> can be used to add the "buffer" days to the fertile period,
+to be more safe about the contraception, or to make the fertile period
+narrower (entering the negative values), showing the most probable
+fertile days if conception is the goal.</p>
+<p><em>Bad feelings start XX days before and end YY days after 
+menstruation</em> line specifies the range of days which may have the
+uncomfortable feelings. This does not impact any calculations - it is
+used just for the user convenience.</p>
+<p><em>Regular cycles are between XX and YY days long</em> option defines
+which cycles should be taken into account during the next cycle length
+prediction. It might happen that some cycles can last longer or shorter
+than usually. If these cases are rather exceptions, their influence on
+the calculations can be eliminated. Hoverer having such "unusual"
+cycles makes the calendar method almost useless for the natural family
+planning.</p>
+<a name="importexport"></a>
+<h4>Import/Export</h4>
+<p>Import/Export functionality is available from the <em>File</em> main menu.</p>
+<p>At this point only one format is available for the import and
+export. This is the Periodic Calendar 1.x version file format which
+contains only the menstruation periods starting dates.</p>
+<p>Imported dates will be appended to the current data file preserving all
+current records.</p>
+<p>Please keep in mind, that old version of the Periodic Calendar did
+not use the pregnancy records and notes. This information will not be
+included in the export file.</p>
+<a name="cmdline"></a>
+<h4>Command Line Parameters</h4>
+<p>Periodic Calendar accepts single command line parameter which is supposed to be 
+a name of the file to open on startup. </p>
+<p>Usage example:</p>
+<pre>java -jar pcal.jar c:\docs\myfile.pcal</pre>
+<!-- Navigation -->
+<hr>
+<div>
+<table summary="Navigation footer" width="100%">
+  <tbody>
+    <tr>
+      <td align="left" width="20%"><a href="care.html">Prev</a></td>
+      <td align="center" width="60%"><a href="index.html">Home</a></td>
+      <td align="right" width="20%"><!--A href=".html">Next</A --> <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

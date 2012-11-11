@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Backing Beans - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level3"><a href="gentextid-10866.html">JavaServer Faces Technology User Interface</a></p>
+<p class="toc level3"><a href="bnapj.html">JavaServer Faces Technology Benefits</a></p>
+<p class="toc level3"><a href="bnapk.html">What Is a JavaServer Faces Application?</a></p>
+<p class="toc level3"><a href="bnapl.html">A Simple JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapm">Steps in the Development Process</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapo">Mapping the <tt>FacesServlet</tt> Instance</a></p>
+<p class="toc level4"><a href="bnapl.html#bnapp">Creating the Pages</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapq">Declaring the Tag Libraries</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapr">Adding the <tt>view</tt> and <tt>form</tt> Tags</a></p>
+<p class="toc level5"><a href="bnapl.html#bnaps">Adding a Label Component</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapt">Adding an Image</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapu">Adding a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapv">Registering a Validator on a Text Field</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapw">Adding a Custom Message</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapx">Adding a Button</a></p>
+<p class="toc level5"><a href="bnapl.html#bnapy">Displaying Error Messages</a></p>
+<p class="toc level4 tocsp"><a href="bnapl.html#bnapz">Defining Page Navigation</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqa">Configuring Error Messages</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqb">Developing the Beans</a></p>
+<p class="toc level4"><a href="bnapl.html#bnaqc">Adding Managed Bean Declarations</a></p>
+<p class="toc level3 tocsp"><a href="bnaqd.html">User Interface Component Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqe">User Interface Component Classes</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqf">Component Rendering Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqi">Conversion Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqj">Event and Listener Model</a></p>
+<p class="toc level4"><a href="bnaqd.html#bnaqk">Validation Model</a></p>
+<p class="toc level3 tocsp"><a href="bnaql.html">Navigation Model</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Backing Beans</a></p>
+<p class="toc level4"><a href="#bnaqn">Creating a Backing Bean Class</a></p>
+<p class="toc level5"><a href="#bnaqo">Configuring a Bean</a></p>
+<p class="toc level5"><a href="#bnaqp">Using the Unified EL to Reference Backing Beans</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaqq.html">The Life Cycle of a JavaServer Faces Page</a></p>
+<p class="toc level4"><a href="bnaqq.html#bnaqs">Restore View Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqt">Apply Request Values Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqu">Process Validations Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqv">Update Model Values Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqw">Invoke Application Phase</a></p>
+<p class="toc level5"><a href="bnaqq.html#bnaqx">Render Response Phase</a></p>
+<p class="toc level3 tocsp"><a href="bnaqy.html">Further Information about JavaServer Faces Technology</a></p>
+<p class="toc level2 tocsp"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaql.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaqq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaqm"></a><h3>Backing Beans</h3>
+<a name="indexterm-836"></a><p>A typical JavaServer Faces application includes one or more backing beans, each of
+which is a JavaServer Faces managed bean that is associated with the UI
+components used in a particular page. Managed beans are JavaBeans components (see <a href="bnair.html">JavaBeans Components</a>)
+that you can configure using the managed bean facility, which is described in
+<a href="bnawq.html">Configuring Beans</a>. This section introduces the basic concepts on creating, configuring, and using backing
+beans in an application.</p>
+
+<a name="bnaqn"></a><h4>Creating a Backing Bean Class</h4>
+<p><a name="indexterm-837"></a><a name="indexterm-838"></a>In addition to defining a no-arg constructor, as all JavaBeans components must do,
+a backing bean class also defines a set of UI component properties and
+possibly a set of methods that perform functions for a component.</p><p>Each of the component properties can be bound to one of the
+following:</p>
+<ul><li><p>A component&rsquo;s value</p></li>
+<li><p>A component instance</p></li>
+<li><p>A converter instance</p></li>
+<li><p>A listener instance</p></li>
+<li><p>A validator instance</p></li></ul>
+<p>The most common functions that backing bean methods perform include the following:</p>
+<ul><li><p>Validating a component&rsquo;s data</p></li>
+<li><p>Handling an event fired by a component</p></li>
+<li><p>Performing processing to determine the next page to which the application must navigate</p></li></ul>
+<p>As with all JavaBeans components, a property consists of a private data field
+and a set of accessor methods, as shown by this code from
+the Guess Number example:</p><pre>Integer userNumber = null;
+...
+public void setUserNumber(Integer user_number) {
+    userNumber = user_number;
+ }
+public Integer getUserNumber() {
+    return userNumber;
+}
+public String getResponse() {
+    ...
+}</pre><p>Because backing beans follow JavaBeans component conventions, you can reference beans you&rsquo;ve already
+written from your JavaServer Faces pages.</p><p>When a bean property is bound to a component&rsquo;s value, it can
+be any of the basic primitive and numeric types or any Java object
+type for which the application has access to an appropriate converter. For example,
+a property can be of type <tt>Date</tt> if the application has access to
+a converter that can convert the <tt>Date</tt> type to a String and back again.
+See <a href="bnaty.html">Writing Bean Properties</a> for information on which types are accepted by which component tags.</p><p>When a bean property is bound to a component instance, the property&rsquo;s type
+must be the same as the component object. For example, if a
+<tt>UISelectBoolean</tt> is bound to the property, the property must accept and return
+a <tt>UISelectBoolean</tt> object.</p><p>Likewise, if the property is bound to a converter, validator, or listener instance
+then the property must be of the appropriate converter, validator, or listener type.</p><p>For more information on writing beans and their properties, see <a href="bnaty.html">Writing Bean Properties</a>.</p>
+
+<a name="bnaqo"></a><h5>Configuring a Bean</h5>
+<p>JavaServer Faces technology supports a sophisticated managed bean creation facility, which allows application
+architects to do the following:</p>
+<ul><li><p>Configure simple beans and more complex trees of beans</p></li>
+<li><p>Initialize bean properties with values</p></li>
+<li><p>Place beans in a particular scope</p></li>
+<li><p>Expose the beans to the unified EL so that page authors can access them</p></li></ul>
+<p>An application architect configures the beans in the application configuration resource file. To
+learn how to configure a managed bean, see <a href="bnawq.html">Configuring Beans</a>. The managed bean
+configuration used by the Guess Number example is the following:</p><pre>&lt;managed-bean>
+    &lt;managed-bean-name>UserNumberBean&lt;/managed-bean-name>
+    &lt;managed-bean-class>
+        guessNumber.UserNumberBean
+    &lt;/managed-bean-class>
+    &lt;managed-bean-scope>session&lt;/managed-bean-scope>
+    &lt;managed-property>
+        &lt;property-name>minimum&lt;/property-name>
+        &lt;property-class>long&lt;/property-class>
+        &lt;value>0&lt;/value>
+    &lt;/managed-property>
+    &lt;managed-property>
+        &lt;property-name>maximum&lt;/property-name>
+        &lt;property-class>long&lt;/property-class>
+        &lt;value>10&lt;/value>
+    &lt;/managed-property>
+&lt;/managed-bean></pre><p>The JavaServer Faces implementation processes this element on application startup time. When <tt>UserNumberBean</tt>
+is first referenced from the page, the JavaServer Faces implementation initializes it and
+sets the values of the properties, <tt>maximum</tt> and <tt>minimum</tt>. The bean is then stored
+in session scope if no instance exists. As such, the bean is available
+for all pages in the application.</p><p>A page author can then access the bean properties from the component tags
+on the page using the unified EL, as shown here:</p><pre>&lt;h:outputText value="#{UserNumberBean.minimum}"/></pre><p><a name="indexterm-839"></a><a name="indexterm-840"></a>The part of the expression before the <tt>.</tt> matches the name defined by
+the <tt>managed-bean-name</tt> element. The part of the expression after the <tt>.</tt> matches the
+name defined by the <tt>property-name</tt> element corresponding to the same <tt>managed-bean</tt> declaration.</p><p>Notice that the application configuration resource file does not configure the <tt>userNumber</tt> property.
+Any property that does not have a corresponding <tt>managed-property</tt> element will be initialized to
+whatever the constructor of the bean class has the instance variable set to.
+The next section explains more about using the unified EL to reference backing
+beans.</p><p>For more information on configuring beans using the managed bean creation Facility, see
+<a href="bnawq.html">Configuring Beans</a>.</p>
+
+<a name="bnaqp"></a><h5>Using the Unified EL to Reference Backing Beans</h5>
+<p><a name="indexterm-841"></a>To bind UI component values and objects to backing bean properties or to
+reference backing bean methods from UI component tags, page authors use the unified expression
+language (EL) syntax defined by JSP 2.1. As explained in <a href="bnahq.html">Unified Expression Language</a>, some
+of the features this language offers are:</p>
+<ul><li><p>Deferred evaluation of expressions</p></li>
+<li><p>The ability to use a value expression to both read and write data</p></li>
+<li><p>Method expressions</p></li></ul>
+<p>These features are all especially important for supporting the sophisticated UI component model
+offered by JavaServer Faces technology.</p><p>Deferred evaluation of expressions is important because the JavaServer Faces life cycle is
+split into separate phases so that component event handling, data conversion and validation,
+and data propagation to external objects are all performed in an orderly fashion.
+The implementation must be able to delay the evaluation of expressions until the
+proper phase of the life cycle has been reached. Therefore, its tag attributes
+always use deferred evaluation syntax, which is distinguished by the <tt>#{}</tt> delimiters. <a href="bnaqq.html">The Life Cycle of a JavaServer Faces Page</a>
+describes the life cycle in detail.</p><p><a name="indexterm-842"></a>In order to store data in external objects, almost all JavaServer Faces tag
+attributes use lvalue value expressions, which are expressions that allow both getting and
+setting data on external objects.</p><p>Finally, some component tag attributes accept method expressions that reference methods that handle
+component events, or validate or convert component data.</p><p>To illustrate a JavaServer Faces tag using the unified EL, let&rsquo;s suppose that
+the <tt>userNo</tt> tag of the <tt>guessNumber</tt> application referenced a method rather than using
+<tt>LongRangeValidator</tt> to perform the validation of user input :</p><pre>&lt;h:inputText id="userNo"
+     value="#{UserNumberBean.userNumber}"
+     validator="#{UserNumberBean.validate}" /></pre><p>This tag binds the <tt>userNo</tt> component&rsquo;s value to the <tt>UserNumberBean.userNumber</tt> backing bean property using
+an lvalue expression. It uses a method expression to refer to the
+<tt>UserNumberBean.validate</tt> method, which performs validation of the component&rsquo;s local value. The local value
+is whatever the user enters into the field corresponding to this tag. This
+method is invoked when the expression is evaluated, which is during the process
+validation phase of the life cycle.</p><p><a name="indexterm-843"></a>Nearly all JavaServer Faces tag attributes accept value expressions. In addition to referencing bean
+properties, value expressions can also reference lists, maps, arrays, implicit objects, and resource
+bundles.</p><p><a name="indexterm-844"></a><a name="indexterm-845"></a><a name="indexterm-846"></a><a name="indexterm-847"></a><a name="indexterm-848"></a><a name="indexterm-849"></a>Another use of value expressions is binding a component instance to a backing
+bean property. A page author does this by referencing the property from the
+<tt>binding</tt> attribute:</p><pre>&lt;inputText binding="#{UserNumberBean.userNoComponent}" /></pre><p>Those component tags that use method expressions are <tt>UIInput</tt> component tags and <tt>UICommand</tt>
+component tags. See sections <a href="bnarf.html#bnaro">Using Text Components</a> and <a href="bnarf.html#bnarw">Using Command Components for Performing Actions and Navigation</a> for more information on how these
+component tags use method expressions.</p><p><a name="indexterm-850"></a>In addition to using expressions with the standard component tags, you can also
+configure your custom component properties to accept expressions by creating <tt>ValueExpression</tt> or <tt>MethodExpression</tt>
+instances for them. See <a href="bnavu.html">Creating Custom Component Classes</a> and <a href="bnavu.html#bnavy">Enabling Component Properties to Accept Expressions</a> for more information on enabling your
+component&rsquo;s attributes to support expressions.</p><p>To learn more about using expressions to bind to backing bean properties, see
+<a href="bnatg.html">Binding Component Values and Instances to External Data Sources</a>.</p><p>For information on referencing backing bean methods from component tags, see <a href="bnatn.html">Referencing a Backing Bean Method</a>.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaql.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaqq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

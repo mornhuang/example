@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="multiclient" default="default" basedir=".">
+    <description>Builds, tests, and runs the project multiclient.</description>
+    <property name="is.app-client.module" value="true"/>
+    <import file="../../../bp-project/main.xml"/>
+
+    <target name="run-nb" if="netbeans.home" depends="init">
+        <antcall target="run-tool"/>
+    </target>
+
+    <target name="run-ant" unless="netbeans.home" depends="init">
+        <antcall target="client-jar"/>
+        <antcall target="bpp-run-app-client"/>
+    </target>
+
+    <target name="run" depends="init, run-deploy">
+        <antcall target="run-ant"/>
+        <antcall target="run-nb"/>
+    </target>
+
+  <target name="create-topic"
+    description="create JMS topic">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Topic" />
+        <param name="jms.resource.property" value="Name=PhysicalTopic" />
+        <param name="jms.resource.name" value="jms/Topic" />
+    </antcall>
+  </target>
+
+  <target name="create-cf"
+    description="create JMS connection factory">
+    <antcall target="create-jms-connection-factory">
+        <param name="jms.restype" value="javax.jms.ConnectionFactory" />
+        <param name="jms.resource.name" value="jms/ConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="create-remote-factory" 
+    description="creates JMS connection factory for remote server. Argument: -Dsys=&lt;remote_system&gt;">
+    <antcall target="create-jms-connection-factory-prop">
+        <param name="jms.restype" value="javax.jms.ConnectionFactory" />
+        <param name="jms.resource.property" value="AddressList=${sys}" />
+        <param name="jms.resource.name" value="jms/JupiterConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="delete-topic"
+    description="delete jms/Topic">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/Topic" />
+    </antcall>
+  </target>
+
+  <target name="delete-cf"
+    description="delete jms/ConnectionFactory">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/ConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="delete-remote-factory"
+    description="delete jms/JupiterConnectionFactory">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/JupiterConnectionFactory" />
+    </antcall>
+  </target>
+
+</project>

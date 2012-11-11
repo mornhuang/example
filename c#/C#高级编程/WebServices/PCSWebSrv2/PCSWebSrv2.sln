@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCSWebSrv2", "http://localhost/PCSWebSrv2/PCSWebSrv2.csproj", "{F2875A2A-FD1C-49DB-8917-67FA102F260A}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{F2875A2A-FD1C-49DB-8917-67FA102F260A}.Debug.ActiveCfg = Debug|.NET
+		{F2875A2A-FD1C-49DB-8917-67FA102F260A}.Debug.Build.0 = Debug|.NET
+		{F2875A2A-FD1C-49DB-8917-67FA102F260A}.Release.ActiveCfg = Release|.NET
+		{F2875A2A-FD1C-49DB-8917-67FA102F260A}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

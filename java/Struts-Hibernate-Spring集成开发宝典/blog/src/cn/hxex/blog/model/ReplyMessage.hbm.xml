@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.hxex.blog.model"> 
+
+	<class name="ReplyMessage" table="REPLYMESSAGE">
+	
+		<id name="id" column="ID" type="string">
+           <generator class="uuid.hex"/>
+		</id>
+		
+		<property name="username" column="USERNAME"/>
+		
+		<property name="title" column="TITLE"/>
+		
+		<property name="content" column="CONTENT" />
+		
+		<property name="pubdate" column="PUBDATE" />
+
+		<many-to-one name="message"   column="MESSAGE_ID"/>
+		
+	</class>
+	
+</hibernate-mapping>

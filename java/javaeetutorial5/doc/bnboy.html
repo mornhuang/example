@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Using the Timer Service - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level3"><a href="bnbod.html">The <tt>cart</tt> Example</a></p>
+<p class="toc level4"><a href="bnbod.html#bnboe">The Business Interface</a></p>
+<p class="toc level4"><a href="bnbod.html#bnbof">Session Bean Class</a></p>
+<p class="toc level5"><a href="bnbod.html#bnbog">Life-Cycle Callback Methods</a></p>
+<p class="toc level5"><a href="bnbod.html#bnboh">Business Methods</a></p>
+<p class="toc level4 tocsp"><a href="bnbod.html#bnboi">The Remove Method</a></p>
+<p class="toc level4"><a href="bnbod.html#bnboj">Helper Classes</a></p>
+<p class="toc level4"><a href="bnbod.html#bnbok">Building, Packaging, Deploying, and Running the <tt>cart</tt> Example</a></p>
+<p class="toc level5"><a href="bnbod.html#bnbol">Building, Packaging, and Deploying the <tt>cart</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbod.html#bnbom">Running the <tt>cart</tt> Application Client Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbod.html#bnbon">Building, Packaging, and Deploying the <tt>cart</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="bnbod.html#bnboo">Running the <tt>cart</tt> Application Client Using Ant</a></p>
+<p class="toc level5"><a href="bnbod.html#bnbop">The <tt>all</tt> Task</a></p>
+<p class="toc level4 tocsp"><a href="bnbod.html#bnboq">Undeploying the <tt>cart</tt> Example</a></p>
+<p class="toc level3 tocsp"><a href="bnbor.html">A Web Service Example: <tt>helloservice</tt></a></p>
+<p class="toc level4"><a href="bnbor.html#bnbos">The Web Service Endpoint Implementation Class</a></p>
+<p class="toc level4"><a href="bnbor.html#bnbot">Stateless Session Bean Implementation Class</a></p>
+<p class="toc level4"><a href="bnbor.html#bnbou">Building, Packaging, Deploying, and Testing the <tt>helloservice</tt> Example</a></p>
+<p class="toc level5"><a href="bnbor.html#bnbov">Building, Packaging, and Deploying the <tt>helloservice</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="bnbor.html#bnbow">Building, Packaging, and Deploying the <tt>helloservice</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="bnbor.html#bnbox">Testing the Service without a Client</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Using the Timer Service</a></p>
+<p class="toc level4"><a href="#bnboz">The <tt>Timeout</tt> Method</a></p>
+<p class="toc level4"><a href="#bnbpa">Creating Timers</a></p>
+<p class="toc level4"><a href="#bnbpb">Canceling and Saving Timers</a></p>
+<p class="toc level4"><a href="#bnbpc">Getting Timer Information</a></p>
+<p class="toc level4"><a href="#bnbpd">Transactions and Timers</a></p>
+<p class="toc level4"><a href="#bnbpe">The <tt>timersession</tt> Example</a></p>
+<p class="toc level4"><a href="#bnbpf">Building, Packaging, Deploying, and Running the <tt>timersession</tt> Example</a></p>
+<p class="toc level5"><a href="#bnbpg">Building, Packaging, Deploying, and Running the <tt>timersession</tt> Example Using NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bnbph">Building, Packaging, and Deploying the <tt>timersession</tt> Example Using Ant</a></p>
+<p class="toc level5"><a href="#bnbpi">Running the <tt>timersession</tt> Application Client Using Ant</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbpj.html">Handling Exceptions</a></p>
+<p class="toc level2 tocsp"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbor.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbpj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnboy"></a><h3>Using the Timer Service</h3>
+<a name="indexterm-2117"></a><a name="indexterm-2118"></a><p>Applications that model business work flows often rely on timed notifications. The timer
+service of the enterprise bean container enables you to schedule timed notifications for
+all types of enterprise beans except for stateful session beans. You can schedule
+a timed notification to occur at a specific time, after a duration of
+time, or at timed intervals. For example, you could set timers to go
+off at 10:30 AM on May 23, in 30 days, or every
+12 hours.</p><p><a name="indexterm-2119"></a>When a timer expires (goes off), the container calls the method annotated <tt>@Timeout</tt>
+in the bean&rsquo;s implementation class. The <tt>@Timeout</tt> method contains the business logic that handles
+the timed event.</p>
+
+<a name="bnboz"></a><h4>The <tt>Timeout</tt> Method</h4>
+<p>Methods annotated <tt>@Timeout</tt> in the enterprise bean class must return <tt>void</tt> and take
+a <tt>javax.ejb.Timer</tt> object as the only parameter. They may not throw application exceptions.</p><pre>@Timeout
+public void timeout(Timer timer) {
+    System.out.println("TimerBean: timeout occurred");
+}</pre>
+
+<a name="bnbpa"></a><h4>Creating Timers</h4>
+<a name="indexterm-2120"></a><p><a name="indexterm-2121"></a>To create a timer, the bean invokes one of the <tt>createTimer</tt> methods of
+the <tt>TimerService</tt> interface. (For details on the method signatures, see the <tt>TimerService</tt> API
+documentation at <a href="http://java.sun.com/javaee/5/docs/api/javax/ejb/TimerService.html">http://java.sun.com/javaee/5/docs/api/javax/ejb/TimerService.html</a>.) When the bean invokes <tt>createTimer</tt>, the timer service begins to count
+down the timer duration.</p><p>The bean described in <a href="#bnbpe">The <tt>timersession</tt> Example</a> creates a timer as follows:</p><pre>Timer timer = timerService.createTimer(intervalDuration,
+        "Created new timer");</pre><p>In the <tt>timersession</tt> example, <tt>createTimer</tt> is invoked in a business method, which is
+called by a client.</p><p>Timers are persistent. If the server is shut down (or even crashes), timers
+are saved and will become active again when the server is restarted. If
+a timer expires while the server is down, the container will call
+the <tt>@Timeout</tt> method when the server is restarted.</p><p>The <tt>Date</tt> and <tt>long</tt> parameters of the <tt>createTimer</tt> methods represent time with the
+resolution of milliseconds. However, because the timer service is not intended for real-time applications,
+a callback to the <tt>@Timeout</tt> method might not occur with millisecond precision. The
+timer service is for business applications, which typically measure time in hours, days,
+or longer durations.</p>
+
+<a name="bnbpb"></a><h4>Canceling and Saving Timers</h4>
+<a name="indexterm-2122"></a><a name="indexterm-2123"></a><p>Timers can be canceled by the following events:</p>
+<ul><li><p><a name="indexterm-2124"></a>When a single-event timer expires, the EJB container calls the <tt>@Timeout</tt> method and then cancels the timer.</p></li>
+<li><p>When the bean invokes the <tt>cancel</tt> method of the <tt>Timer</tt> interface, the container cancels the timer.</p></li></ul>
+<p><a name="indexterm-2125"></a>If a method is invoked on a canceled timer, the container throws the
+<tt>javax.ejb.NoSuchObjectLocalException</tt>.</p><p>To save a <tt>Timer</tt> object for future reference, invoke its <tt>getHandle</tt> method and
+store the <tt>TimerHandle</tt> object in a database. (A <tt>TimerHandle</tt> object is serializable.) To
+re-instantiate the <tt>Timer</tt> object, retrieve the handle from the database and invoke <tt>getTimer</tt>
+on the handle. A <tt>TimerHandle</tt> object cannot be passed as an argument of a
+method defined in a remote or web service interface. In other words, remote
+clients and web service clients cannot access a bean&rsquo;s <tt>TimerHandle</tt> object. Local
+clients, however, do not have this restriction.</p>
+
+<a name="bnbpc"></a><h4>Getting Timer Information</h4>
+<a name="indexterm-2126"></a><p><a name="indexterm-2127"></a><a name="indexterm-2128"></a><a name="indexterm-2129"></a>In addition to defining the <tt>cancel</tt> and <tt>getHandle</tt> methods, the <tt>Timer</tt> interface
+defines methods for obtaining information about timers:</p><pre>public long getTimeRemaining();
+public java.util.Date getNextTimeout();
+public java.io.Serializable getInfo();</pre><p>The <tt>getInfo</tt> method returns the object that was the last parameter of the
+<tt>createTimer</tt> invocation. For example, in the <tt>createTimer</tt> code snippet of the preceding section, this
+information parameter is a <tt>String</tt> object with the value <tt>created timer</tt>.</p><p>To retrieve all of a bean&rsquo;s active timers, call the <tt>getTimers</tt> method
+of the <tt>TimerService</tt> interface. The <tt>getTimers</tt> method returns a collection of <tt>Timer</tt>
+objects.</p>
+
+<a name="bnbpd"></a><h4>Transactions and Timers</h4>
+<a name="indexterm-2130"></a><a name="indexterm-2131"></a><p>An enterprise bean usually creates a timer within a transaction. If this transaction
+is rolled back, the timer creation is also rolled back. Similarly, if a
+bean cancels a timer within a transaction that gets rolled back, the timer
+cancellation is rolled back. In this case, the timer&rsquo;s duration is reset as
+if the cancellation had never occurred.</p><p>In beans that use container-managed transactions, the <tt>@Timeout</tt> method usually has the <tt>Required</tt>
+or <tt>RequiresNew</tt> transaction attribute to preserve transaction integrity. With these attributes, the EJB container
+begins the new transaction before calling the <tt>@Timeout</tt> method. If the transaction is
+rolled back, the container will call the <tt>@Timeout</tt> method at least one
+more time.</p>
+
+<a name="bnbpe"></a><h4>The <tt>timersession</tt> Example</h4>
+<a name="indexterm-2132"></a><a name="indexterm-2133"></a><p>The source code for this example is in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/timersession/timersession-ejb/src/java/</tt> directory.</p><p><tt>TimerSessionBean</tt> is a stateless session bean that shows how to set a timer.
+In the source code listing of <tt>TimerSessionBean</tt> that follows, note the <tt>createTimer</tt>
+and <tt>@Timeout</tt> methods. Because it&rsquo;s a business method, <tt>createTimer</tt> is defined in
+the bean&rsquo;s remote business interface (<tt>TimerSession</tt>) and can be invoked by the
+client. In this example, the client invokes <tt>createTimer</tt> with an interval duration of
+30,000 milliseconds. The <tt>createTimer</tt> method creates a new timer by invoking the <tt>createTimer</tt> method
+of <tt>TimerService</tt>. A <tt>TimerService</tt> instance is injected by the container when the bean is
+created. Now that the timer is set, the EJB container will invoke the
+<tt>timeout</tt> method of <tt>TimerSessionBean</tt> when the timer expires, in about 30 seconds. Here&rsquo;s
+the source code for the <tt>TimerSessionBean</tt> class:</p><pre>package com.sun.tutorial.javaee.ejb;
+
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import javax.ejb.Stateless;
+import javax.ejb.Timeout;
+import javax.ejb.Timer;
+import javax.ejb.TimerService;
+@Stateless
+public class TimerSessionBean implements TimerSession {
+    @Resource
+    TimerService timerService;
+
+private static final Logger logger = Logger
+        .getLogger("com.sun.tutorial.javaee.ejb.
+                timersession.TimerSessionBean");
+
+    public void createTimer(long intervalDuration) {
+        Timer timer = timerService.createTimer(intervalDuration,
+                "Created new timer");
+    }
+
+    @Timeout
+    public void timeout(Timer timer) {
+        logger.info("Timeout occurred");
+    }
+}</pre>
+<hr><p><b>Note - </b>Application Server has a default minimum timeout value of 7000 milliseconds, or 7
+seconds. If you need to set the timeout value lower than 7000
+milliseconds, change the value of the <tt>minimum-delivery-interval-in-millis</tt> element in <tt></tt><i>domain-dir</i><tt>/config/domain.xml</tt>. Due to virtual machine constraints,
+the lowest practical value for <tt>minimum-delivery-interval-in-millis</tt> is around 10 milliseconds.</p>
+<hr>
+
+
+<a name="bnbpf"></a><h4>Building, Packaging, Deploying, and Running the <tt>timersession</tt> Example</h4>
+<p>You can build, package, deploy, and run the <tt>timersession</tt> example using either NetBeans
+IDE or Ant.</p>
+
+<a name="bnbpg"></a><h5>Building, Packaging, Deploying, and Running the <tt>timersession</tt> Example Using NetBeans IDE</h5>
+<p>Follow these instructions to build, package, and deploy the <tt>timersession</tt> example to
+your Application Server instance using the NetBeans IDE IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/</tt>.</p></li>
+<li><p>Select the <tt>timersession</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Select Run&rarr;Run Main Project.</p></li></ol>
+<p>This builds and packages the application into <tt>timersession.ear</tt>, located in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/timersession/dist/</tt>, deploys this
+EAR file to your Application Server instance, and then runs the application client.</p><p>You will see the output from the application client in the Output
+tab:</p><pre>...
+Creating a timer with an interval duration of 3000 ms.
+run-timersession-app-client:
+run-nb:
+BUILD SUCCESSFUL (total time: 16 seconds)</pre><p>The output from the timer is sent to the <tt>server.log</tt> file located in
+the <tt></tt><i>domain-dir</i><tt>/server/logs/</tt> directory. To view this file:</p>
+<ol><li><p>Click the Services tab.</p></li>
+<li><p>Right-click your Application Server instance and select View Server Log.</p></li></ol>
+<p>Look for the following line at the bottom of <tt>server.log</tt>:</p><pre>Timeout occurred</pre>
+
+<a name="bnbph"></a><h5>Building, Packaging, and Deploying the <tt>timersession</tt> Example Using Ant</h5>
+<p>Follow these instructions to build, package, and deploy the <tt>timersession</tt> example to
+your Application Server instance using Ant.</p>
+<ol><li><p>In a terminal window, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/timersession/</tt> directory.</p></li>
+<li><p>To build <tt>TimerSessionBean</tt>, type the following command:</p><pre><tt><b>ant build</b></tt></pre><p>This runs the <tt>default</tt> task, which compiles the source files and packages the application into an EAR file located at <tt></tt><i>tut-install</i><tt>/examples/ejb/timersession/dist/timersession.ear</tt>.</p></li>
+<li><p>To deploy the application, type the following command:</p><pre><tt><b>ant deploy</b></tt></pre></li></ol>
+
+
+<a name="bnbpi"></a><h5>Running the <tt>timersession</tt> Application Client Using Ant</h5>
+<p>To run the application client, perform the following steps.</p>
+<ol><li><p>In a terminal window, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/ejb/timersession/</tt> directory.</p></li>
+<li><p>Type the following command:</p><pre><tt><b>ant run</b></tt></pre><p>This task first retrieves the client JAR, <tt>timersessionClient.jar</tt> to the <tt>dist</tt> directory, and then runs the client. This is the equivalent of running:</p><pre><tt><b>appclient -client TimerSessionAppClient.jar</b></tt></pre></li>
+<li><p>In the terminal window, the client displays these lines:</p><pre>Creating a timer with an interval duration of 30000 ms.</pre></li></ol>
+<p>The output from the timer is sent to the <tt>server.log</tt> file located in
+the <tt></tt><i>domain-dir</i><tt>/server/logs/</tt> directory.</p><p>View the output in the Admin Console:</p>
+<ol><li><p>Open the Admin Console by opening the following URL in a web browser:</p><pre>http://localhost:4848/</pre></li>
+<li><p>Enter the <tt>admin</tt> username and password to log in to the Admin Console.</p></li>
+<li><p>Click Application Server in the navigation pane.</p></li>
+<li><p>Click View Log Files.</p></li>
+<li><p>At the top of the page, you&rsquo;ll see this line in the Message column:</p><pre>Timeout occurred</pre></li></ol>
+<p>Alternatively, you can look at the log file directly. After about 30 seconds,
+open <tt>server.log</tt> in a text editor and you will see the following lines:</p><pre>TimerSessionBean: Timeout occurred</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnbor.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbpj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

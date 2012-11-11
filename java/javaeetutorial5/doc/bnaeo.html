@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Configuring Web Applications - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level3"><a href="geysj.html">Web Applications</a></p>
+<p class="toc level3"><a href="bnadu.html">Web Application Life Cycle</a></p>
+<p class="toc level3"><a href="bnadx.html">Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnadz">Packaging Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnaea">Deploying a WAR File</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaeb">Setting the Context Root</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaec">Deploying a Packaged Web Module</a></p>
+<p class="toc level4 tocsp"><a href="bnadx.html#bnaeh">Testing Deployed Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnaei">Listing Deployed Web Modules</a></p>
+<p class="toc level4"><a href="bnadx.html#bnaej">Updating Web Modules</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaek">Updating a Packaged Web Module</a></p>
+<p class="toc level5"><a href="bnadx.html#bnaem">Dynamic Reloading</a></p>
+<p class="toc level4 tocsp"><a href="bnadx.html#bnaen">Undeploying Web Modules</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Configuring Web Applications</a></p>
+<p class="toc level4"><a href="#bnaep">Mapping URLs to Web Components</a></p>
+<p class="toc level5"><a href="#bnaeq">Setting the Component Alias</a></p>
+<p class="toc level4 tocsp"><a href="#bnaer">Declaring Welcome Files</a></p>
+<p class="toc level4"><a href="#bnaes">Setting Initialization Parameters</a></p>
+<p class="toc level4"><a href="#bnaet">Mapping Errors to Error Screens</a></p>
+<p class="toc level4"><a href="#bnaeu">Declaring Resource References</a></p>
+<p class="toc level5"><a href="#bnaew">Declaring a Reference to a Resource</a></p>
+<p class="toc level5"><a href="#bnaex">Declaring a Reference to a Web Service</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnaey.html">Duke's Bookstore Examples</a></p>
+<p class="toc level3"><a href="bnaez.html">Accessing Databases from Web Applications</a></p>
+<p class="toc level4"><a href="bnaez.html#bnafa">Populating the Example Database</a></p>
+<p class="toc level4"><a href="bnaez.html#bnafb">Creating a Data Source in the Application Server</a></p>
+<p class="toc level3 tocsp"><a href="bnafc.html">Further Information about Web Applications</a></p>
+<p class="toc level2 tocsp"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnadx.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaey.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaeo"></a><h3>Configuring Web Applications</h3>
+<p><a name="indexterm-191"></a>Web applications are configured by means of elements contained in the web application
+deployment descriptor.</p><p>The following sections give a brief introduction to the web application features you
+will usually want to configure. A number of security parameters can be specified;
+these are covered in <a href="bncas.html">Chapter&nbsp;30, Securing Web Applications</a>.</p><p>In the following sections, examples demonstrate procedures for configuring the Hello, World application.
+If Hello, World does not use a specific configuration feature, the section gives
+references to other examples that illustrate how to specify the deployment descriptor element.</p>
+
+<a name="bnaep"></a><h4>Mapping URLs to Web Components</h4>
+<p><a name="indexterm-192"></a>When a request is received by the web container it must determine which
+web component should handle the request. It does so by mapping the URL
+path contained in the request to a web application and a web component.
+A URL path contains the context root and an alias:</p><pre>http://<i>host</i>:<i>port</i>/<i>context-root</i>/<i>alias</i></pre>
+
+<a name="bnaeq"></a><h5>Setting the Component Alias</h5>
+<p><a name="indexterm-193"></a>The <b>alias</b> identifies the web component that should handle a request. The alias
+path must start with a forward slash (<tt>/</tt>) and end with a
+string or a wildcard expression with an extension (for example, <tt>*.jsp</tt>). Since web
+containers automatically map an alias that ends with <tt>*.jsp</tt>, you do not have
+to specify an alias for a JSP page unless you wish to refer
+to the page by a name other than its file name.</p><p>The <tt>hello2</tt> application has two servlets that need to be mapped in the
+<tt>web.xml</tt> file. You can edit a web application&rsquo;s <tt>web.xml</tt> file in NetBeans IDE
+by doing the following:</p>
+<ol><li><p>Select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><i>tut-install</i>/javaeetutorial5/examples/web/</pre></li>
+<li><p>Select the <tt>hello2</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>Expand the project tree in the Projects pane.</p></li>
+<li><p>Expand the Web pages node and then the WEB-INF node in the project tree.</p></li>
+<li><p>Double-click the <tt>web.xml</tt> file inside the WEB-INF node.</p></li></ol>
+<p>The following steps describe how to make the necessary edits to the
+<tt>web.xml</tt> file, including how to set the display name and how to map
+the servlet components. Because the edits are already in the file, you can
+just use the steps to view the settings.</p><p>To set the display name:</p>
+<ol><li><p>Click General at the top of the editor to open the general view.</p></li>
+<li><p>Enter <tt>hello2</tt> in the Display Name field.</p></li></ol>
+<p>To perform the servlet mappings:</p>
+<ol><li><p>Click Servlets at the top of the editor to open the servlets view.</p></li>
+<li><p>Click Add Servlet.</p></li>
+<li><p>In the Add Servlet dialog, enter <tt>GreetingServlet</tt> in the Servlet Name field.</p></li>
+<li><p>Enter <tt>servlets.GreetingServlet</tt> in the Servlet Class field.</p></li>
+<li><p>Enter <tt>/greeting</tt> in the URL Pattern field.</p></li>
+<li><p>Click OK.</p></li>
+<li><p>Repeat the preceding steps, except enter <tt>ResponseServlet</tt> as the servlet name, <tt>servlets.ResponseServlet</tt> as the servlet class, and <tt>/response</tt> as the URL pattern.</p></li></ol>
+<p>If you are not using NetBeans IDE, you can add these settings
+using a text editor.</p><p>To package the example with NetBeans IDE, do the following:</p>
+<ol><li><p>Select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to:</p><pre><i>tut-install</i>/javaeetutorial5/examples/web/</pre></li>
+<li><p>Select the <tt>hello2</tt> folder.</p></li>
+<li><p>Select the Open as Main Project check box.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>hello2</tt> project and select Build.</p></li></ol>
+<p>To package the example with the Ant utility, do the following:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2/</tt>.</p></li>
+<li><p>Type <tt><b>ant</b></tt>. This target will build the WAR file and copy it to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/web/hello2/dist/</tt> directory.</p></li></ol>
+<p>To deploy the example using NetBeans IDE, right-click on the project in the
+Projects pane and select Undeploy and Deploy.</p><p>To deploy the example using Ant, type <tt><b>ant deploy</b></tt>. The deploy target in this
+case gives you an incorrect URL to run the application. To run the
+application, please use the URL shown at the end of this section.</p><p>To run the application, first deploy the web module, and then open
+the URL <tt>http://localhost:8080/hello2/greeting</tt> in a browser.</p>
+
+<a name="bnaer"></a><h4>Declaring Welcome Files</h4>
+<p><a name="indexterm-194"></a>The <b>welcome files</b> mechanism allows you to specify a list of files that the
+web container will use for appending to a request for a URL (called
+a <b>valid partial request</b>) that is not mapped to a web component.</p><p>For example, suppose you define a welcome file <tt>welcome.html</tt>. When a client requests
+a URL such as <tt><i>host</i>:<i>port</i>/<i>webapp</i>/<i>directory</i></tt>, where <i>directory</i> is not mapped to a servlet
+or JSP page, the file <tt></tt><i>host</i><tt>:</tt><i>port</i><tt>/</tt><i>webapp</i><tt>/</tt><i>directory</i><tt>/welcome.html</tt> is returned to the client.</p><p>If a web container receives a valid partial request, the web container examines
+the welcome file list and appends to the partial request each welcome file
+in the order specified and checks whether a static resource or servlet in
+the WAR is mapped to that request URL. The web container then
+sends the request to the first resource in the WAR that matches.</p><p>If no welcome file is specified, the Application Server will use a
+file named <tt>index.</tt><i>XXX</i><tt></tt>, where <i>XXX</i> can be <tt>html</tt> or <tt>jsp</tt>, as the default welcome
+file. If there is no welcome file and no file named <tt>index.</tt><i>XXX</i><tt></tt>,
+the Application Server returns a directory listing.</p><p>To specify a welcome file in the web application deployment descriptor using NetBeans
+IDE, do the following:</p>
+<ol><li><p>Open the project if you haven&rsquo;t already.</p></li>
+<li><p>Expand the project&rsquo;s node in the Projects pane.</p></li>
+<li><p>Expand the Web Pages node and then the WEB-INF node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>Do one of the following, making sure that the JSP pages you specify are actually included in the WAR file:</p>
+<ol><li><p>Click Pages at the top of the editor pane and enter the names of the JSP pages that act as welcome files in the Welcome Files field.</p></li>
+<li><p>Click XML at the top of the editor pane, specify the JSP pages using <tt>welcome-file</tt> elements and include these elements inside a <tt>welcome-file-list</tt> element. The <tt>welcome-file</tt> element defines the JSP page to be used as the welcome page.</p><p>The example discussed in <a href="bnama.html">Encapsulating Reusable Content Using Tag Files</a> has a welcome file.</p></li></ol>
+</li></ol>
+
+
+<a name="bnaes"></a><h4>Setting Initialization Parameters</h4>
+<a name="indexterm-195"></a><p>The web components in a web module share an object that represents
+their application context (see <a href="bnagl.html">Accessing the Web Context</a>). You can pass initialization parameters to the context or
+to a web component.</p><p>To add a context parameter using NetBeans IDE, do the following:</p>
+<ol><li><p>Open the project if you haven&rsquo;t already.</p></li>
+<li><p>Expand the project&rsquo;s node in the Projects pane.</p></li>
+<li><p>Expand the Web Pages node and then the WEB-INF node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>Click General at the top of the editor pane.</p></li>
+<li><p>Select the Context Parameters node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Context Parameter dialog, do the following:</p>
+<ol><li><p>Enter the name that specifies the context object in the Param Name field.</p></li>
+<li><p>Enter the parameter to pass to the context object in the Param Value field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>Alternatively, you can edit the XML of the <tt>web.xml</tt> file directly by clicking
+XML at the top of the editor pane and using the following elements
+to add a context parameter:</p>
+<ul><li><p>A <tt>param-name</tt> element that specifies the context object</p></li>
+<li><p>A <tt>param-value</tt> element that specifies the parameter to pass to the context object</p></li>
+<li><p>A <tt>context-param</tt> element that encloses the previous two elements</p></li></ul>
+<p>For a sample context parameter, see the example discussed in <a href="bnahb.html">The Example JSP Pages</a>.</p><p><a name="indexterm-196"></a>To add a web component initialization parameter using NetBeans IDE, do the following:</p>
+<ol><li><p>Open the project if you haven&rsquo;t already.</p></li>
+<li><p>Expand the project&rsquo;s node in the Projects pane.</p></li>
+<li><p>Expand the Web Pages node and then the WEB-INF node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>Click Servlets at the top of the editor pane.</p></li>
+<li><p>After entering the servlet&rsquo;s name, class, and URL pattern, click the Add button under the Initialization Parameters table.</p></li>
+<li><p>In the Add Initialization Parameter dialog:</p>
+<ol><li><p>Enter the name of the parameter in the Param Name field.</p></li>
+<li><p>Enter the parameter&rsquo;s value in the Param Value Field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>Alternatively, you can edit the XML of the <tt>web.xml</tt> file directly by clicking
+XML at the top of the editor pane and using the following elements
+to add a context parameter:</p>
+<ul><li><p>A <tt>param-name</tt> element that specifies the name of the initialization parameter</p></li>
+<li><p>A <tt>param-value</tt> element that specifies the value of the initialization parameter</p></li>
+<li><p>An <tt>init-param</tt> element that encloses the previous two elements</p></li></ul>
+
+
+<a name="bnaet"></a><h4>Mapping Errors to Error Screens</h4>
+<p><a name="indexterm-197"></a><a name="indexterm-198"></a><a name="indexterm-199"></a><a name="indexterm-200"></a>When an error occurs during execution of a web application, you can have
+the application display a specific error screen according to the type of error.
+In particular, you can specify a mapping between the status code returned in
+an HTTP response or a Java programming language exception returned by any web
+component (see <a href="bnafi.html#bnafn">Handling Servlet Errors</a>) and any type of error screen.</p><p>To set up error mappings using NetBeans IDE, do the following:</p>
+<ol><li><p>Open the project if you haven&rsquo;t already.</p></li>
+<li><p>Expand the project&rsquo;s node in the Projects pane.</p></li>
+<li><p>Expand the Web Pages node and then the WEB-INF node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>Click Pages at the top of the editor pane.</p></li>
+<li><p>Expand the Error Pages node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Error Page dialog:</p>
+<ol><li><p>Click Browse to locate the page that you want to act as the error page.</p></li>
+<li><p>Enter the HTTP status code that will cause the error page to be opened in the Error Code field.</p></li>
+<li><p>Enter the exception that will cause the error page to load in the Exception Type field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>Alternatively, you can click XML at the top of the editor pane
+and enter the error page mapping by hand using the following elements:</p>
+<ul><li><p>An <tt>exception-type</tt> element specifying either the exception or the HTTP status code that will cause the error page to be opened.</p></li>
+<li><p>A <tt>location</tt> element that specifies the name of a web resource to be invoked when the status code or exception is returned. The name should have a leading forward slash (<tt>/</tt>).</p></li>
+<li><p>An <tt>error-page</tt> element that encloses the previous two elements.</p></li></ul>
+<p>You can have multiple <tt>error-page</tt> elements in your deployment descriptor. Each one of
+the elements identifies a different error that causes an error page to open.
+This error page can be the same for any number of <tt>error-page</tt> elements.</p>
+<hr><p><b>Note - </b>You can also define error screens for a JSP page contained in a
+WAR. If error screens are defined for both the WAR and a
+JSP page, the JSP page&rsquo;s error page takes precedence. See <a href="bnahe.html#bnahi">Handling JSP Page Errors</a>.</p>
+<hr>
+<p>For a sample error page mapping, see the example discussed in <a href="bnaff.html">The Example Servlets</a>.</p>
+
+<a name="bnaeu"></a><h4>Declaring Resource References</h4>
+<p>If your web component uses objects such as enterprise beans, data sources, or
+web services, you use Java EE annotations to inject these resources into your
+application. Annotations eliminate a lot of the boilerplate lookup code and configuration elements
+that previous versions of Java EE required.</p><p>Although resource injection using annotations can be more convenient for the developer, there
+are some restrictions from using it in web applications. First, you can only
+inject resources into container-managed objects. This is because a container must have control
+over the creation of a component so that it can perform the injection
+into a component. As a result, you cannot inject resources into objects such
+as simple JavaBeans components. However, JavaServer Faces managed beans are managed by the
+container; therefore, they can accept resource injections.</p><p>Additionally, JSP pages cannot accept resource injections. This is because the information represented
+by annotations must be available at deployment time, but the JSP page is
+compiled after that; therefore, the annotation will not be seen when it is
+needed. Those components that can accept resource injections are listed in <a href="#bnaev">Table&nbsp;3-1</a>.</p><p>This section describes how to use a couple of the annotations supported by
+a servlet container to inject resources. <a href="bnbrl.html">Chapter&nbsp;25, Persistence in the Web Tier</a> describes how web applications use
+annotations supported by the Java Persistence API. <a href="bncas.html">Chapter&nbsp;30, Securing Web Applications</a> describes how to use annotations
+to specify information about securing web applications.</p><a name="bnaev"></a><h6>Table&nbsp;3-1 Web Components That Accept Resource Injections</h6><table><col width="22%"><col width="77%"><tr><th align="left" valign="top" scope="column"><p>Component</p></th>
+<th align="left" valign="top" scope="column"><p>Interface/Class</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Servlets</p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.servlet.Servlet</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Servlet Filters</p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.servlet.ServletFilter</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Event Listeners</p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.servlet.ServletContextListener</tt></p><p><tt>javax.servlet.ServletContextAttributeListener</tt></p><p><tt>javax.servlet.ServletRequestListener</tt></p><p><tt>javax.servlet.ServletRequestAttributeListener</tt></p><p><tt>javax.servlet.http.HttpSessionListener</tt></p><p><tt>javax.servlet.http.HttpSessionAttributeListener</tt></p><p><tt>javax.servlet.http.HttpSessionBindingListener</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Taglib Listeners</p></td>
+<td align="left" valign="top" scope="row"><p>Same as above</p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Taglib Tag
+Handlers</p></td>
+<td align="left" valign="top" scope="row"><p><tt>javax.servlet.jsp.tagext.JspTag</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p>Managed Beans</p></td>
+<td align="left" valign="top" scope="row"><p>Plain Old Java Objects</p></td>
+</tr>
+</table>
+
+<a name="bnaew"></a><h5>Declaring a Reference to a Resource</h5>
+<p>The <tt>@Resource</tt> annotation is used to declare a reference to a resource such
+as a data source, an enterprise bean, or an environment entry. This annotation
+is equivalent to declaring a <tt>resource-ref</tt> element in the deployment descriptor.</p><p>The <tt>@Resource</tt> annotation is specified on a class, method or field. The container
+is responsible for injecting references to resources declared by the <tt>@Resource</tt> annotation and
+mapping it to the proper JNDI resources. In the following example, the <tt>@Resource</tt>
+annotation is used to inject a data source into a component that needs
+to make a connection to the data source, as is done when
+using JDBC technology to access a relational database:</p><pre>@Resource javax.sql.DataSource catalogDS;
+public getProductsByCategory() {
+    // get a connection and execute the query
+    Connection conn = catalogDS.getConnection();
+    ..
+}</pre><p>The container injects this data source prior to the component being made available
+to the application. The data source JNDI mapping is inferred from the field
+name <tt>catalogDS</tt> and the type, <tt>javax.sql.DataSource</tt>.</p><p>If you have multiple resources that you need to inject into one
+component, you need to use the <tt>@Resources</tt> annotation to contain them, as shown by
+the following example:</p><pre>@Resources ({
+    @Resource (name="myDB" type=java.sql.DataSource),
+    @Resource(name="myMQ" type=javax.jms.ConnectionFactory)
+})</pre><p>The web application examples in this tutorial use the Java Persistence API to
+access relational databases. This API does not require you to explicitly create a
+connection to a data source. Therefore, the examples do not use the
+<tt>@Resource</tt> annotation to inject a data source. However, this API supports the <tt>@PersistenceUnit</tt>
+and <tt>@PersistenceContext</tt> annotations for injecting <tt>EntityManagerFactory</tt> and <tt>EntityManager</tt> instances, respectively. <a href="bnbrl.html">Chapter&nbsp;25, Persistence in the Web Tier</a> describes
+these annotations and the use of the Java Persistence API in web applications.</p>
+
+<a name="bnaex"></a><h5>Declaring a Reference to a Web Service</h5>
+<p>The <tt>@WebServiceRef</tt> annotation provides a reference to a web service. The following example
+shows uses the <tt>@WebServiceRef</tt> annotation to declare a reference to a web service.
+<tt>WebServiceRef</tt> uses the <tt>wsdlLocation</tt> element to specify the URI of the deployed service&rsquo;s WSDL
+file:</p><pre>...
+import javax.xml.ws.WebServiceRef;
+...
+public class ResponseServlet extends HTTPServlet {
+@WebServiceRef(wsdlLocation=
+    "http://localhost:8080/helloservice/hello?wsdl")
+static HelloService service;</pre>
+         </div>
+         <div class="navigation">
+             <a href="bnadx.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaey.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

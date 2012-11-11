@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Building, Packaging, Deploying, and Running the Duke's Bank Application - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level3"><a href="bncma.html">Overview of the Duke's Bank Application</a></p>
+<p class="toc level3"><a href="bncmb.html">Enterprise Beans</a></p>
+<p class="toc level4"><a href="bncmb.html#bncmc">Session Beans</a></p>
+<p class="toc level5"><a href="bncmb.html#bncmd">The <tt>AccountControllerBean</tt> Session Bean</a></p>
+<p class="toc level5"><a href="bncmb.html#bncme">The <tt>CustomerControllerBean</tt> Session Bean</a></p>
+<p class="toc level5"><a href="bncmb.html#bncmf">The <tt>TxControllerBean</tt> Session Bean</a></p>
+<p class="toc level4 tocsp"><a href="bncmb.html#bncmg">Java Persistence Entities</a></p>
+<p class="toc level4"><a href="bncmb.html#bncmh">Helper Classes</a></p>
+<p class="toc level4"><a href="bncmb.html#bncmj">Database Tables</a></p>
+<p class="toc level5"><a href="bncmb.html#bncmk">Tables Representing Business Entities</a></p>
+<p class="toc level4 tocsp"><a href="bncmb.html#bncmm">Protecting the Enterprise Beans</a></p>
+<p class="toc level3 tocsp"><a href="bncmn.html">Application Client</a></p>
+<p class="toc level4"><a href="bncmn.html#bncmp">The Classes and Their Relationships</a></p>
+<p class="toc level4"><a href="bncmn.html#bncmq"><tt>BankAdmin</tt> Class</a></p>
+<p class="toc level5"><a href="bncmn.html#bncmr">The <tt>BankAdmin</tt> Constructor</a></p>
+<p class="toc level5"><a href="bncmn.html#bncms">Class Methods</a></p>
+<p class="toc level3 tocsp"><a href="bncmt.html">Web Client</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmw">Design Strategies</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmx">Client Components</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmy">Request Processing</a></p>
+<p class="toc level4"><a href="bncmt.html#bncmz">Protecting the Web Client Resources</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Building, Packaging, Deploying, and Running the Duke's Bank Application</a></p>
+<p class="toc level4"><a href="#bncnb">Setting Up the Servers</a></p>
+<p class="toc level5"><a href="#bncnc">Starting the Application Server</a></p>
+<p class="toc level5"><a href="#bncnd">Creating the Bank Database in NetBeans IDE</a></p>
+<p class="toc level5"><a href="#bncne">Creating the Bank Database Using Ant</a></p>
+<p class="toc level5"><a href="#bncnf">Adding Users and Groups to the File Realm</a></p>
+<p class="toc level4 tocsp"><a href="#bncnh">Building, Packaging, and Deploying Duke's Bank Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="#bncni">Building, Packaging, and Deploying Duke's Bank Using Ant</a></p>
+<p class="toc level4"><a href="#bncnj">Running the Duke's Bank Application Client Using NetBeans IDE</a></p>
+<p class="toc level4"><a href="#bncnk">Running the Duke's Bank Application Client Using Ant</a></p>
+<p class="toc level4"><a href="#bncnm">Running the Duke's Bank Web Client</a></p>
+</div>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bncmt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="gexbq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bncna"></a><h3>Building, Packaging, Deploying, and Running the Duke's Bank Application</h3>
+<p><a name="indexterm-3194"></a>To build the Duke&rsquo;s Bank application, you must have installed the tutorial bundle
+as described in . When you install the bundle, the Duke&rsquo;s Bank application
+files are located in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/</tt> directory. This directory contains the configuration
+files for creating the EAR, <tt>dukesbank.ear</tt>. The EAR consists of the following three modules:</p>
+<ul><li><p><tt>dukesbank-appclient</tt>: The application client</p></li>
+<li><p><tt>dukesbank-ejb</tt>: The enterprise beans and persistence entities</p></li>
+<li><p><tt>dukesbank-war</tt>: The web client</p></li></ul>
+<p>After you build the source code, all the sub-modules will be built
+into their respective module packages, and the resulting EAR file will reside in the
+<tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/dist/</tt> directory.</p>
+
+<a name="bncnb"></a><h4>Setting Up the Servers</h4>
+<p>Before you can package, deploy, and run the example, you must first set
+up the Java DB database server with customer and account data, and
+you must add some resources to the Application Server.</p>
+
+<a name="bncnc"></a><h5>Starting the Application Server</h5>
+<p>Before you can start this tutorial, the Application Server must be running. For
+information on starting the Application Server, see <a href="bnadi.html">Starting and Stopping the Application Server</a>.</p>
+
+<a name="bncnd"></a><h5>Creating the Bank Database in NetBeans IDE</h5>
+<p>To create the database tables used in Duke&rsquo;s Bank, follow the instructions in
+<a href="bnbrt.html#bnbsn">Creating the Database Tables in NetBeans IDE</a>.</p>
+
+<a name="bncne"></a><h5>Creating the Bank Database Using Ant</h5>
+<p><a name="indexterm-3195"></a>In Duke&rsquo;s Bank, the database tables will be created and populated before deploying
+the application. This happens automatically when you run the <tt>deploy</tt> task. You can
+manually reset the database to its original state by following these steps:</p>
+<ol><li><p>In a terminal window or command prompt, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/</tt> directory.</p></li>
+<li><p>Execute the following command:</p><pre><tt><b>ant create-tables</b></tt></pre></li></ol>
+<p>This task executes the SQL commands contained in <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/common/sql/javadb/tutorial.sql</tt>. The SQL commands
+delete any existing tables, create new tables, and insert the initial data in
+the tables.</p>
+
+<a name="bncnf"></a><h5>Adding Users and Groups to the File Realm</h5>
+<p><a name="indexterm-3196"></a>To enable the Application Server to determine which users can access enterprise bean
+methods and resources in the web client, add users and groups to the
+server&rsquo;s file security realm using the Admin Console following the procedures described in
+<a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a>. Add the users and groups listed in <a href="#bncng">Table&nbsp;37-3</a>.</p><a name="bncng"></a><h6>Table&nbsp;37-3 Duke&rsquo;s Bank Users and Groups</h6><table><col width="29%"><col width="29%"><col width="41%"><tr><th align="left" valign="top" scope="column"><p>User</p></th>
+<th align="left" valign="top" scope="column"><p>Password</p></th>
+<th align="left" valign="top" scope="column"><p>Group</p></th>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>200</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javaee</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>bankCustomer</tt></p></td>
+</tr>
+<tr><td align="left" valign="top" scope="row"><p><tt>bankadmin</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>javaee</tt></p></td>
+<td align="left" valign="top" scope="row"><p><tt>bankAdmin</tt></p></td>
+</tr>
+</table>
+
+<a name="bncnh"></a><h4>Building, Packaging, and Deploying Duke&rsquo;s Bank Using NetBeans IDE</h4>
+<p>Follow these instructions to build, package, deploy, and run the Duke&rsquo;s Bank example
+application to your Application Server instance using NetBeans IDE.</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;Open Project.</p></li>
+<li><p>In the Open Project dialog, navigate to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/</tt>.</p></li>
+<li><p>Select the <tt>dukesbank</tt> folder.</p></li>
+<li><p>Select the Open as Main Project and Open Required Projects check boxes.</p></li>
+<li><p>Click Open Project.</p></li>
+<li><p>In the Projects tab, right-click the <tt>dukesbank</tt> project and select Undeploy and Deploy.</p><p>You will see the output in the Output tab.</p></li></ol>
+
+
+<a name="bncni"></a><h4>Building, Packaging, and Deploying Duke&rsquo;s Bank Using Ant</h4>
+<p><a name="indexterm-3197"></a><a name="indexterm-3198"></a>To compile and package the enterprise beans, application client, and web client into
+<tt>dukesbank.ear</tt>, go to the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/</tt> directory of the tutorial distribution and execute
+the command:</p><pre><tt><b>ant</b></tt></pre><p>Run the following command to deploy <tt>dukesbank.ear</tt>:</p><pre><tt><b>ant deploy</b></tt></pre><p>This task calls the <tt>create-tables</tt> task to initialize the database tables.</p>
+
+<a name="bncnj"></a><h4>Running the Duke's Bank Application Client Using NetBeans IDE</h4>
+<p>To run the application client in NetBeans IDE, follow these steps:</p>
+<ol><li><p>In NetBeans IDE, select the <tt>dukesbank</tt> project in the Projects pane.</p></li>
+<li><p>Right-click <tt>dukesbank</tt> and select Run.</p></li>
+<li><p>At the login prompts, type <tt><b>bankadmin</b></tt> for the user name and <tt><b>javaee</b></tt> for the password. You should see the application client, as shown in <a href="#bncnl">Figure&nbsp;37-5</a>.</p><p>You can now create customers and accounts using the application client.</p></li></ol>
+
+
+<a name="bncnk"></a><h4>Running the Duke's Bank Application Client Using Ant</h4>
+<p><a name="indexterm-3199"></a><a name="indexterm-3200"></a>To run the application client, follow these steps:</p>
+<ol><li><p>In a terminal window, go to <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/dukesbank/</tt>.</p></li>
+<li><p>Enter the following command:</p><pre><tt><b>ant run</b></tt></pre></li>
+<li><p>At the login prompts, type <tt><b>bankadmin</b></tt> for the user name and <tt><b>javaee</b></tt> for the password. You should see the application client, as shown in <a href="#bncnl">Figure&nbsp;37-5</a>.</p><p>You can now create customers and accounts using the application client.</p></li></ol>
+<a name="bncnl"></a><h6>Figure&nbsp;37-5 <tt>BankAdmin</tt> Application Client</h6><img src="figures/dukesbank-appClient.gif" alt="A screenshot of the Duke's Bank application client." width="551" height="642"></img>
+
+<a name="bncnm"></a><h4>Running the Duke's Bank Web Client</h4>
+<p><a name="indexterm-3201"></a><a name="indexterm-3202"></a>To run the web client, follow these steps:</p>
+<ol><li><p>Open the bank URL, <tt>http://localhost:8080/bank/main.faces</tt>, in a web browser.</p></li>
+<li><p>The application displays the login page. Enter <tt><b>200</b></tt> for the customer ID and <tt><b>javaee</b></tt> for the password. Click Submit.</p></li>
+<li><p>Select an application function: Account List, Transfer Funds, ATM, or Logoff. When you have a list of accounts, you can get an account history by selecting an account link.</p>
+<hr><p><b>Note - </b>The first time you select a new page, particularly a complicated page such as an account history, it takes some time to display because the Application Server must translate the page into a servlet class and compile and load the class.</p>
+<hr>
+</li></ol>
+<p>If you select Account List, you will see the screen shown in
+<a href="#bncnn">Figure&nbsp;37-6</a>.</p><a name="bncnn"></a><h6>Figure&nbsp;37-6 Account List</h6><img src="figures/bank-accountList.gif" alt="Screenshot of the account list in a page of the Duke's Bank web client." width="667" height="311"></img>
+         </div>
+         <div class="navigation">
+             <a href="bncmt.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="gexbq.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

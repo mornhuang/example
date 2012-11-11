@@ -1,0 +1,4 @@
+The software (or a license for the software) must be purchased before the
+software may be obtained and used. The source code is not available, the
+software can be obtained in binary form only.
+

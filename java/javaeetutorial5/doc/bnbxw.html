@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Establishing a Secure Connection Using SSL - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level2"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level3"><a href="bnbwk.html">Overview of Java EE Security</a></p>
+<p class="toc level4"><a href="bnbwk.html#bnbwl">A Simple Security Example</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwm">Step 1: Initial Request</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwo">Step 2: Initial Authentication</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwq">Step 3: URL Authorization</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbws">Step 4: Fulfilling the Original Request</a></p>
+<p class="toc level5"><a href="bnbwk.html#bnbwu">Step 5: Invoking Enterprise Bean Business Methods</a></p>
+<p class="toc level4 tocsp"><a href="bnbwk.html#bnbww">Security Functions</a></p>
+<p class="toc level4"><a href="bnbwk.html#bnbwx">Characteristics of Application Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbwy.html">Security Implementation Mechanisms</a></p>
+<p class="toc level4"><a href="bnbwy.html#bnbwz">Java SE Security Implementation Mechanisms</a></p>
+<p class="toc level4"><a href="bnbwy.html#bnbxa">Java EE Security Implementation Mechanisms</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxb">Application-Layer Security</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxc">Transport-Layer Security</a></p>
+<p class="toc level5"><a href="bnbwy.html#bnbxd">Message-Layer Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxe.html">Securing Containers</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxf">Using Deployment Descriptors for Declarative Security</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxg">Using Annotations</a></p>
+<p class="toc level4"><a href="bnbxe.html#bnbxh">Using Programmatic Security</a></p>
+<p class="toc level3 tocsp"><a href="bnbxi.html">Securing the Application Server</a></p>
+<p class="toc level3"><a href="bnbxj.html">Working with Realms, Users, Groups, and Roles</a></p>
+<p class="toc level4"><a href="bnbxj.html#bnbxk">What Are Realms, Users, Groups, and Roles?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxm">What Is a Realm?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxn">What Is a User?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxo">What Is a Group?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxp">What Is a Role?</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxq">Some Other Terminology</a></p>
+<p class="toc level4 tocsp"><a href="bnbxj.html#bnbxr">Managing Users and Groups on the Application Server</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxs">Adding Users to the Application Server</a></p>
+<p class="toc level5"><a href="bnbxj.html#bnbxt">Adding Users to the Certificate Realm</a></p>
+<p class="toc level4 tocsp"><a href="bnbxj.html#bnbxu">Setting Up Security Roles</a></p>
+<p class="toc level4"><a href="bnbxj.html#bnbxv">Mapping Roles to Users and Groups</a></p>
+<div class="onpage">
+<p class="toc level3 tocsp"><a href="">Establishing a Secure Connection Using SSL</a></p>
+<p class="toc level4"><a href="#bnbxx">Installing and Configuring SSL Support</a></p>
+<p class="toc level4"><a href="#bnbxy">Specifying a Secure Connection in Your Application Deployment Descriptor</a></p>
+<p class="toc level4"><a href="#bnbxz">Verifying SSL Support</a></p>
+<p class="toc level5"><a href="#bnbya">Tips on Running SSL</a></p>
+<p class="toc level4 tocsp"><a href="#bnbyb">Working with Digital Certificates</a></p>
+<p class="toc level5"><a href="#bnbyc">Creating a Server Certificate</a></p>
+<p class="toc level5"><a href="#bnbyd">Signing Digital Certificates</a></p>
+<p class="toc level5"><a href="#bnbyf">Using a Different Server Certificate with the Application Server</a></p>
+<p class="toc level5"><a href="#bnbyg">Miscellaneous Commands for Certificates</a></p>
+<p class="toc level4 tocsp"><a href="#bnbyh">Enabling Mutual Authentication over SSL</a></p>
+<p class="toc level5"><a href="#bnbyi">Creating a Client Certificate for Mutual Authentication</a></p>
+</div>
+<p class="toc level3 tocsp"><a href="bnbyj.html">Further Information about Security</a></p>
+<p class="toc level2 tocsp"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnbxj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnbyj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnbxw"></a><h3>Establishing a Secure Connection Using SSL</h3>
+<a name="indexterm-2523"></a><a name="indexterm-2524"></a><a name="indexterm-2525"></a><a name="indexterm-2526"></a><a name="indexterm-2527"></a><a name="indexterm-2528"></a><p><b>Secure Socket Layer</b> (SSL) technology is security that is implemented at the transport layer (see
+<a href="bnbwy.html#bnbxc">Transport-Layer Security</a>, for more information about transport layer security). SSL allows web browsers and
+web servers to communicate over a secure connection. In this secure connection, the
+data that is being sent is encrypted before being sent and then is
+decrypted upon receipt and before processing. Both the browser and the server encrypt
+all traffic before sending any data. SSL addresses the following important security considerations.</p>
+<ul><li><p><a name="indexterm-2529"></a><b>Authentication</b>: During your initial attempt to communicate with a web server over a secure connection, that server will present your web browser with a set of credentials in the form of a server certificate. The purpose of the certificate is to verify that the site is who and what it claims to be. In some cases, the server may request a certificate that the client is who and what it claims to be (which is known as client authentication).</p></li>
+<li><p><a name="indexterm-2530"></a><b>Confidentiality</b>: When data is being passed between the client and the server on a network, third parties can view and intercept this data. SSL responses are encrypted so that the data cannot be deciphered by the third party and the data remains confidential.</p></li>
+<li><p><a name="indexterm-2531"></a><b>Integrity</b>: When data is being passed between the client and the server on a network, third parties can view and intercept this data. SSL helps guarantee that the data will not be modified in transit by that third party.</p></li></ul>
+
+
+<a name="bnbxx"></a><h4>Installing and Configuring SSL Support</h4>
+<a name="indexterm-2532"></a><a name="indexterm-2533"></a><a name="indexterm-2534"></a><p><a name="indexterm-2535"></a><a name="indexterm-2536"></a><a name="indexterm-2537"></a><a name="indexterm-2538"></a>An SSL HTTPS connector is already enabled in the Application Server. For more
+information on configuring SSL for the Application Server, refer to the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p><p>If you are using a different application server or web server, an
+SSL HTTPS connector might or might not be enabled. If you are using
+a server that needs its SSL connector to be configured, consult the documentation
+for that server.</p><p>As a general rule, to enable SSL for a server, you must
+address the following issues:</p>
+<ul><li><p>There must be a <tt>Connector</tt> element for an SSL connector in the server deployment descriptor.</p></li>
+<li><p>There must be valid keystore and certificate files.</p></li>
+<li><p>The location of the keystore file and its password must be specified in the server deployment descriptor.</p></li></ul>
+<p>You can verify whether or not SSL is enabled by following the
+steps in <a href="#bnbxz">Verifying SSL Support</a>.</p>
+
+<a name="bnbxy"></a><h4>Specifying a Secure Connection in Your Application Deployment Descriptor</h4>
+<a name="indexterm-2539"></a><p>To specify a requirement that protected resources be received over a protected transport
+layer connection (SSL), specify a user data constraint in the application deployment descriptor.
+The following is an example of a <tt>web.xml</tt> application deployment descriptor that
+specifies that SSL be used:</p><pre>&lt;security-constraint>
+    &lt;web-resource-collection>
+        &lt;web-resource-name>view dept data&lt;/web-resource-name>
+        &lt;url-pattern>/hr/employee/*&lt;/url-pattern>
+        &lt;http-method>GET&lt;/http-method>
+        &lt;http-method>POST&lt;/http-method>
+    &lt;/web-resource-collection>
+    &lt;auth-constraint>
+        &lt;role-name>DEPT_ADMIN&lt;/role-name>
+    &lt;/auth-constraint>
+    &lt;user-data-constraint>
+        &lt;transport-guarantee>CONFIDENTIAL&lt;/transport-guarantee>
+    &lt;/user-data-constraint>
+&lt;/security-constraint></pre><p>A user data constraint (<tt>&lt;user-data-constraint></tt> in the deployment descriptor) requires that all constrained
+URL patterns and HTTP methods specified in the security constraint are received over
+a protected transport layer connection such as HTTPS (HTTP over SSL). A user
+data constraint specifies a transport guarantee (<tt>&lt;transport-guarantee></tt> in the deployment descriptor). The choices for
+transport guarantee include <tt>CONFIDENTIAL</tt>, <tt>INTEGRAL</tt>, or <tt>NONE</tt>. If you specify <tt>CONFIDENTIAL</tt> or <tt>INTEGRAL</tt>
+as a security constraint, that type of security constraint applies to all requests that
+match the URL patterns in the web resource collection and not just
+to the login dialog box.</p><p>The strength of the required protection is defined by the value of
+the transport guarantee.</p>
+<ul><li><p>Specify <tt>CONFIDENTIAL</tt> when the application requires that data be transmitted so as to prevent other entities from observing the contents of the transmission.</p></li>
+<li><p>Specify <tt>INTEGRAL</tt> when the application requires that the data be sent between client and server in such a way that it cannot be changed in transit.</p></li>
+<li><p>Specify <tt>NONE</tt> to indicate that the container must accept the constrained requests on any connection, including an unprotected one.</p></li></ul>
+<p>The user data constraint is handy to use with basic and form-based
+user authentication. When the login authentication method is set to <tt>BASIC</tt> or <tt>FORM</tt>,
+passwords are not protected, meaning that passwords sent between a client and a
+server on an unprotected session can be viewed and intercepted by third parties.
+Using a user data constraint with the user authentication mechanism can alleviate this
+concern. Configuring a user authentication mechanism is described in <a href="bncbe.html#bncbn">Specifying an Authentication Mechanism</a>.</p>
+
+<a name="bnbxz"></a><h4>Verifying SSL Support</h4>
+<a name="indexterm-2540"></a><a name="indexterm-2541"></a><p>For testing purposes, and to verify that SSL support has been correctly installed,
+load the default introduction page with a URL that connects to the port
+defined in the server deployment descriptor:</p><pre>https://localhost:8181/</pre><p>The <tt>https</tt> in this URL indicates that the browser should be using the
+SSL protocol. The <tt>localhost</tt> in this example assumes that you are running the
+example on your local machine as part of the development process. The <tt>8181</tt>
+in this example is the secure port that was specified where the SSL
+connector was created. If you are using a different server or port, modify
+this value accordingly.</p><p>The first time that you load this application, the New Site Certificate or
+Security Alert dialog box displays. Select Next to move through the series of
+dialog boxes, and select Finish when you reach the last dialog box.
+The certificates will display only the first time. When you accept the certificates, subsequent
+hits to this site assume that you still trust the content.</p>
+
+<a name="bnbya"></a><h5>Tips on Running SSL</h5>
+<a name="indexterm-2542"></a><p>The SSL protocol is designed to be as efficient as securely possible. However,
+encryption and decryption are computationally expensive processes from a performance standpoint. It is
+not strictly necessary to run an entire web application over SSL, and it
+is customary for a developer to decide which pages require a secure connection
+and which do not. Pages that might require a secure connection include login
+pages, personal information pages, shopping cart checkouts, or any pages where credit card
+information could possibly be transmitted. Any page within an application can be requested
+over a secure socket by simply prefixing the address with <tt>https:</tt> instead of <tt>http:</tt>.
+Any pages that absolutely require a secure connection should check the protocol type
+associated with the page request and take the appropriate action if <tt>https</tt> is
+not specified.</p><p>Using name-based virtual hosts on a secured connection can be problematic. This is
+a design limitation of the SSL protocol itself. The SSL <b>handshake</b>, where
+the client browser accepts the server certificate, must occur before the HTTP request
+is accessed. As a result, the request information containing the virtual host name
+cannot be determined before authentication, and it is therefore not possible to assign
+multiple certificates to a single IP address. If all virtual hosts on a
+single IP address need to authenticate against the same certificate, the addition of
+multiple virtual hosts should not interfere with normal SSL operations on the server.
+Be aware, however, that most client browsers will compare the server&rsquo;s domain name
+against the domain name listed in the certificate, if any (this is applicable
+primarily to official, CA-signed certificates). If the domain names do not match, these browsers
+will display a warning to the client. In general, only address-based virtual hosts
+are commonly used with SSL in a production environment.</p>
+
+<a name="bnbyb"></a><h4>Working with Digital Certificates</h4>
+<a name="indexterm-2543"></a><a name="indexterm-2544"></a><a name="indexterm-2545"></a><a name="indexterm-2546"></a><p>Digital certificates for the Application Server have already been generated and can be
+found in the directory  <tt></tt><i>domain-dir</i><tt>/config/</tt>. These digital certificates are self-signed and are
+intended for use in a development environment; they are not intended for production
+purposes. For production purposes, generate your own certificates and have them signed by
+a CA.</p><p>The instructions in this section apply to the developer and cluster profiles of
+the Application Server. In the enterprise profile, the  <tt>certutil</tt> utility is used
+to create digital certificates. For more information, see the <a href="http://docs.sun.com/doc/819-3671"><i>Sun Java System Application Server 9.1 Administration Guide</i></a>.</p><p>To use SSL, an application or web server must have an associated
+certificate for each external interface, or IP address, that accepts secure connections. The theory
+behind this design is that a server should provide some kind of reasonable
+assurance that its owner is who you think it is, particularly before receiving
+any sensitive information. It may be useful to think of a certificate as
+a &ldquo;digital driver&rsquo;s license&rdquo; for an Internet address. It states with which company
+the site is associated, along with some basic contact information about the site
+owner or administrator.</p><p><a name="indexterm-2547"></a><a name="indexterm-2548"></a><a name="indexterm-2549"></a>The digital certificate is cryptographically signed by its owner and is difficult for
+anyone else to forge. For sites involved in e-commerce or in any other
+business transaction in which authentication of identity is important, a certificate can be
+purchased from a well-known certificate authority (CA) such as VeriSign or Thawte. If your
+server certificate is self-signed, you must install it in the Application Server keystore
+file (<tt>keystore.jks</tt>). If your client certificate is self-signed, you should install it in
+the Application Server truststore file (<tt>cacerts.jks</tt>).</p><p>Sometimes authentication is not really a concern. For example, an administrator might simply
+want to ensure that data being transmitted and received by the server is
+private and cannot be snooped by anyone eavesdropping on the connection. In such
+cases, you can save the time and expense involved in obtaining a
+CA certificate and simply use a self-signed certificate.</p><p><a name="indexterm-2550"></a><a name="indexterm-2551"></a><a name="indexterm-2552"></a><a name="indexterm-2553"></a>SSL uses <b>public key cryptography</b>, which is based on <b>key pairs</b>. Key pairs contain one public
+key and one private key. If data is encrypted with one key, it
+can be decrypted only with the other key of the pair. This property
+is fundamental to establishing trust and privacy in transactions. For example, using SSL,
+the server computes a value and encrypts the value using its private key.
+The encrypted value is called a <b>digital signature</b>. The client decrypts the encrypted value using
+the server&rsquo;s public key and compares the value to its own computed value.
+If the two values match, the client can trust that the signature is
+authentic, because only the private key could have been used to produce such
+a signature.</p><p><a name="indexterm-2554"></a>Digital certificates are used with the HTTPS protocol to authenticate web clients. The
+HTTPS service of most web servers will not run unless a digital certificate
+has been installed. Use the procedure outlined in the next section, <a href="#bnbyc">Creating a Server Certificate</a>, to
+set up a digital certificate that can be used by your application or
+web server to enable SSL.</p><p><a name="indexterm-2555"></a><a name="indexterm-2556"></a><a name="indexterm-2557"></a><a name="indexterm-2558"></a>One tool that can be used to set up a digital certificate is
+<tt>keytool</tt>, a key and certificate management utility that ships with the Java SE
+SDK. It enables users to administer their own public/private key pairs and associated
+certificates for use in self-authentication (where the user authenticates himself or herself to
+other users or services) or data integrity and authentication services, using digital signatures. It
+also allows users to cache the public keys (in the form of certificates)
+of their communicating peers. For a better understanding of <tt>keytool</tt> and public
+key cryptography, read the <tt>keytool</tt> documentation at <a href="http://java.sun.com/javase/6/docs/technotes/tools/solaris/keytool.html">http://java.sun.com/javase/6/docs/technotes/tools/solaris/keytool.html</a>.</p>
+
+<a name="bnbyc"></a><h5>Creating a Server Certificate</h5>
+<a name="indexterm-2559"></a><p>A server certificate has already been created for the Application Server. The certificate
+can be found in the <tt></tt><i>domain-dir</i><tt>/config/</tt> directory. The server certificate is in <tt>keystore.jks</tt>.
+The <tt>cacerts.jks</tt> file contains all the trusted certificates, including client certificates.</p><p><a name="indexterm-2560"></a>If necessary, you can use <tt>keytool</tt> to generate certificates. The <tt>keytool</tt> utility stores
+the keys and certificates in a file termed a <b>keystore</b>, a repository
+of certificates used for identifying a client or a server. Typically, a keystore
+is a file that contains one client or one server&rsquo;s identity. It protects
+private keys by using a password.</p><p>If you don&rsquo;t specify a directory when specifying the keystore file name, the
+keystores are created in the directory from which the <tt>keytool</tt> command is
+run. This can be the directory where the application resides, or it can
+be a directory common to many applications.</p><p>To create a server certificate, follow these steps:</p>
+<ol><li><p>Create the keystore.</p></li>
+<li><p>Export the certificate from the keystore.</p></li>
+<li><p>Sign the certificate.</p></li>
+<li><p>Import the certificate into a <b>truststore</b>: a repository of certificates used for verifying the certificates. A truststore typically contains more than one certificate.</p></li></ol>
+<p>Run <tt>keytool</tt> to generate the server keystore, <tt>keystore.jks</tt>. This step uses the
+alias <tt>server-alias</tt> to generate a new public/private key pair and wrap the public
+key into a self-signed certificate inside <tt>keystore.jks</tt>. The key pair is generated using an
+algorithm of type RSA, with a default password of <tt>changeit</tt>. For more information
+on <tt>keytool</tt> options, see its online help at <a href="http://java.sun.com/javase/6/docs/technotes/tools/solaris/keytool.html">http://java.sun.com/javase/6/docs/technotes/tools/solaris/keytool.html</a>.</p>
+<hr><p><b>Note - </b>RSA is public-key encryption technology developed by RSA Data Security, Inc. The acronym
+stands for Rivest, Shamir, and Adelman, the inventors of the technology.</p>
+<hr>
+<p>From the directory in which you want to create the keystore, run
+<tt>keytool</tt> with the following parameters.</p>
+<ol><li><p>Generate the server certificate. (Type the <tt>keytool</tt> command all on one line.)</p><pre><tt><b></tt><i>java-home</i><tt>\bin\keytool -genkey -alias server-alias-keyalg RSA -keypass changeit -storepass changeit -keystore keystore.jks</b></tt></pre><p>When you press Enter, <tt>keytool</tt> prompts you to enter the server name, organizational unit, organization, locality, state, and country code.</p><p>You must enter the server name in response to <tt>keytool</tt>&rsquo;s first prompt, in which it asks for first and last names. For testing purposes, this can be <tt>localhost</tt>.</p><p>When you run the example applications, the host specified in the keystore must match the host identified in the <tt>javaee.server.name</tt> property specified in the file <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/bp-project/build.properties</tt>.</p></li>
+<li><p>Export the generated server certificate in <tt>keystore.jks</tt> into the file <tt>server.cer</tt>. (Type the <tt>keytool</tt> all on one line.)</p><pre><tt><b></tt><i>java-home</i><tt>\bin\keytool -export -alias server-alias -storepass changeit -file server.cer -keystore keystore.jks</b></tt></pre></li>
+<li><p>If you want to have the certificate signed by a CA, read <a href="#bnbyd">Signing Digital Certificates</a> for more information.</p></li>
+<li><p>To create the truststore file <tt>cacerts.jks</tt> and add the server certificate to the truststore, run <tt>keytool</tt> from the directory where you created the keystore and server certificate. Use the following parameters:</p><pre><tt><b></tt><i>java-home</i><tt>\bin\keytool -import -v -trustcacerts -alias server-alias -file server.cer -keystore cacerts.jks -keypass changeit -storepass changeit</b></tt></pre><p>Information on the certificate, such as that shown next, will display.</p><pre>% <tt><b>keytool -import -v -trustcacerts -alias server-alias -file server.cer -keystore cacerts.jks -keypass changeit -storepass changeit</b></tt>
+Owner: CN=localhost, OU=Sun Micro, O=Docs, L=Santa Clara, ST=CA, 
+C=USIssuer: CN=localhost, OU=Sun Micro, O=Docs, L=Santa Clara, ST=CA, 
+C=USSerial number: 3e932169Valid from: Tue Apr 08Certificate 
+fingerprints:MD5: 52:9F:49:68:ED:78:6F:39:87:F3:98:B3:6A:6B:0F:90 SHA1: 
+EE:2E:2A:A6:9E:03:9A:3A:1C:17:4A:28:5E:97:20:78:3F:
+Trust this certificate? [no]:</pre></li>
+<li><p>Enter <tt>yes</tt>, and then press the <tt>Enter</tt> or <tt>Return</tt> key. The following information displays:</p><pre>Certificate was added to keystore[Saving cacerts.jks]</pre></li></ol>
+
+
+<a name="bnbyd"></a><h5>Signing Digital Certificates</h5>
+<a name="indexterm-2561"></a><p>After you&rsquo;ve created a digital certificate, you will want to have it signed
+by its owner. After the digital certificate has been cryptographically signed by its
+owner, it is difficult for anyone else to forge. For sites involved in
+e-commerce or any other business transaction in which authentication of identity is important,
+a certificate can be purchased from a well-known certificate authority such as VeriSign
+or Thawte.</p><p>As mentioned earlier, if authentication is not really a concern, you can save
+the time and expense involved in obtaining a CA certificate and simply use
+the self-signed certificate.</p>
+
+<a name="bnbye"></a><h5>Obtaining a Digitally Signed Certificate</h5>
+<p>This example assumes that the keystore is named <tt>keystore.jks</tt>, the certificate file is
+<tt>server.cer</tt>, and the CA file is <tt>cacerts.jks</tt>. To get your certificate digitally
+signed by a CA:</p>
+<ol><li><p>Generate a <a name="indexterm-2562"></a><a name="indexterm-2563"></a>Certificate Signing Request (CSR).</p><pre><tt><b>keytool -certreq -alias server-alias -keyalg RSA -file </tt><i>csr-filename</i><tt> -keystore cacerts.jks</b></tt></pre></li>
+<li><p>Send the contents of the <i>csr-filename</i> for signing.</p></li>
+<li><p>If you are using Verisign CA, go to <a href="http://digitalid.verisign.com/">http://digitalid.verisign.com/</a>. Verisign will send the signed certificate in email. Store this certificate in a file.</p></li></ol>
+
+
+<a name="bnbyf"></a><h5>Using a Different Server Certificate with the Application Server</h5>
+<a name="indexterm-2564"></a><p>Follow the steps in <a href="#bnbyc">Creating a Server Certificate</a>, to create your own server certificate, have it
+signed by a CA, and import the certificate into <tt>keystore.jks</tt>.</p><p>Make sure that when you create the certificate, you follow these rules:</p>
+<ul><li><p>When you create the server certificate, <tt>keytool</tt> prompts you to enter your first and last name. In response to this prompt, you must enter the name of your server. For testing purposes, this can be <tt>localhost</tt>.</p></li>
+<li><p>The server/host specified in the keystore must match the host identified in the <tt>javaee.server.name</tt> property specified in the <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/bp-project/build.properties</tt> file for running the example applications.</p></li>
+<li><p>Your key/certificate password in <tt>keystore.jks</tt> should match the password of your keystore, <tt>keystore.jks</tt>. This is a bug. If there is a mismatch, the Java SDK cannot read the certificate and you get a &ldquo;tampered&rdquo; message.</p></li>
+<li><p>If you want to replace the existing <tt>keystore.jks</tt>, you must either change your keystore&rsquo;s password to the default password (<tt>changeit</tt>) or change the default password to your keystore&rsquo;s password.</p></li></ul>
+<p>To specify that the Application Server should use the new keystore for
+authentication and authorization decisions, you must set the JVM options for the Application
+Server so that they recognize the new keystore. To use a different keystore
+than the one provided for development purposes, follow these steps.</p>
+<ol><li><p>Start the Application Server if you haven&rsquo;t already done so. Information on starting the Application Server can be found in <a href="bnadi.html">Starting and Stopping the Application Server</a>.</p></li>
+<li><p>Start the Admin Console. Information on starting the Admin Console can be found in <a href="bnadj.html">Starting the Admin Console</a>.</p></li>
+<li><p>Select Application Server in the Admin Console tree.</p></li>
+<li><p>Select the JVM Settings tab.</p></li>
+<li><p>Select the JVM Options tab.</p></li>
+<li><p>Change the following JVM options so that they point to the location and name of the new keystore. There current settings are shown below:</p><pre><tt><b>-Djavax.net.ssl.keyStore=${com.sun.aas.instanceRoot}/config/keystore.jks -Djavax.net.ssl.trustStore=${com.sun.aas.instanceRoot}/config/cacerts.jks</b></tt></pre></li>
+<li><p>If you&rsquo;ve changed the keystore password from its default value, you need to add the password option as well:</p><pre><tt><b>-Djavax.net.ssl.keyStorePassword=</tt><i>your-new-password</i><tt></b></tt></pre></li>
+<li><p>Log out of the Admin Console and restart the Application Server.</p></li></ol>
+
+
+<a name="bnbyg"></a><h5>Miscellaneous Commands for Certificates</h5>
+<p>To check the contents of a keystore that contains a certificate with an
+alias <tt>server-alias</tt>, use this command:</p><pre><tt><b>keytool -list -keystore keystore.jks -alias server-alias -v</b></tt></pre><p>To check the contents of the <tt>cacerts</tt> file, use this command:</p><pre><tt><b>keytool -list -keystore cacerts.jks</b></tt></pre>
+
+<a name="bnbyh"></a><h4>Enabling Mutual Authentication over SSL</h4>
+<a name="indexterm-2565"></a><a name="indexterm-2566"></a><a name="indexterm-2567"></a><a name="indexterm-2568"></a><p>This section discusses setting up client-side authentication. When both server-side and client-side authentication
+are enabled, it is called mutual, or two-way, authentication. In client authentication, clients
+are required to submit certificates that are issued by a certificate authority that
+you choose to accept.</p><p>There are at least two ways to enable mutual authentication over SSL:</p>
+<ul><li><p>The preferred method is to set the method of authentication in the <tt>web.xml</tt> application deployment descriptor to <tt>CLIENT-CERT</tt>. This enforces mutual authentication by modifying the deployment descriptor of the given application. By enabling client authentication in this way, client authentication is enabled only for a specific resource controlled by the security constraint, and the check is only performed when the application requires client authentication.</p></li>
+<li><p>A less commonly used method is to set the <tt>clientAuth</tt> property in the <tt>certificate</tt> realm to <tt>true</tt> if you want the SSL stack to require a valid certificate chain from the client before accepting a connection. A <tt>false</tt> value (which is the default) will not require a certificate chain unless the client requests a resource protected by a security constraint that uses <tt>CLIENT-CERT</tt> authentication. When you enable client authentication by setting the <tt>clientAuth</tt> property to <tt>true</tt>, client authentication will be required for all the requests going through the specified SSL port. If you turn <tt>clientAuth</tt> on, it is on all of the time, which can severely degrade performance.</p></li></ul>
+<p>When client authentication is enabled in both of these ways, client authentication will
+be performed twice.</p>
+
+<a name="bnbyi"></a><h5>Creating a Client Certificate for Mutual Authentication</h5>
+<a name="indexterm-2569"></a><a name="indexterm-2570"></a><p>If you have a certificate signed by a trusted Certificate Authority (CA) such
+as Verisign, and the Application Server <tt>cacerts.jks</tt> file already contains a certificate verified
+by that CA, you do not need to complete this step. You only
+need to install your certificate in the Application Server certificate file when your
+certificate is self-signed.</p><p>From the directory where you want to create the client certificate, run <tt>keytool</tt>
+as outlined here. When you press Enter, <tt>keytool</tt> prompts you to enter
+the server name, organizational unit, organization, locality, state, and country code.</p><p>You must enter the <b>server name</b> in response to <tt>keytool</tt>&rsquo;s first prompt, in
+which it asks for first and last names. For testing purposes, this can
+be <tt>localhost</tt>. The host specified in the keystore must match the host identified
+in the <tt>javee.server.host</tt> variable specified in your <tt></tt><i>tut-install</i><tt>/javaeetutorial5/examples/bp-project/build.properties</tt> file. If this example
+is to verify mutual authentication and you receive a runtime error stating that
+the HTTPS host name is wrong, re-create the client certificate, being sure to
+use the same host name that you will use when running the example.
+For example, if your machine name is <tt>duke</tt>, then enter <tt>duke</tt> as the
+certificate CN or when prompted for first and last names. When accessing the
+application, enter a URL that points to the same location (for example, <tt>https://duke:8181/mutualauth/hello</tt>).
+This is necessary because during SSL handshake, the server verifies the client certificate
+by comparing the certificate name and the host name from which it originates.</p><p>To create a keystore named <tt>client_keystore.jks</tt> that contains a client certificate named <tt>client.cer</tt>,
+follow these steps:</p>
+<ol><li><p>Create a backup copy of the server truststore file. To do this,</p>
+<ol><li><p>Change to the directory containing the server&rsquo;s keystore and truststore files, <tt></tt><i>as-install</i><tt>\domains\domain1\config</tt>.</p></li>
+<li><p>Copy <tt>cacerts.jks</tt> to <tt>cacerts.backup.jks</tt>.</p></li>
+<li><p>Copy <tt>keystore.jks</tt> to <tt>keystore.backup.jks</tt>.</p><p>Do not put client certificates in the <tt>cacerts.jks</tt> file. Any certificate you add to the <tt>cacerts</tt> file effectively means it can be a trusted root for any and all certificate chains. After you have completed development, delete the development version of the <tt>cacerts</tt> file and replace it with the original copy.</p></li></ol>
+</li>
+<li><p>Generate the client certificate. Enter the following command from the directory where you want to generate the client certificate:</p><pre><tt><b></tt><i>java-home</i><tt>\bin\keytool -genkey -alias client-alias -keyalg RSA -keypass changeit -storepass changeit -keystore client_keystore.jks</b></tt></pre></li>
+<li><p>Export the generated client certificate into the file <tt>client.cer</tt>.</p><pre><tt><b></tt><i>java-home</i><tt>\bin\keytool -export -alias client-alias -storepass changeit -file client.cer -keystore client_keystore.jks</b></tt></pre></li>
+<li><p>Add the certificate to the truststore file <tt></tt><i>domain-dir</i><tt>/config/cacerts.jks</tt>. Run <tt>keytool</tt> from the directory where you created the keystore and client certificate. Use the following parameters:</p><pre><tt><b></tt><i>java-home</i><tt>\bin\keytool -import -v -trustcacerts -alias client-alias -file client.cer -keystore </tt><i>domain-dir</i><tt>/config/cacerts.jks -keypass changeit -storepass changeit</b></tt></pre><p>The <tt>keytool</tt> utility returns a message like this one:</p><pre>Owner: CN=localhost, OU=Java EE, O=Sun, L=Santa Clara, ST=CA, C=US
+Issuer: CN=localhost, OU=Java EE, O=Sun, L=Santa Clara, ST=CA, C=US
+Serial number: 3e39e66a
+Valid from: Thu Jan 30 18:58:50 PST 2005 until: Wed Apr 3019:58:50 PDT 2005
+Certificate fingerprints:
+    MD5: 5A:B0:4C:88:4E:F8:EF:E9:E5:8B:53:BD:D0:AA:8E:5A
+    SHA1:90:00:36:5B:E0:A7:A2:BD:67:DB:EA:37:B9:61:3E:26:B3:89:46:32
+Trust this certificate? [no]: yes
+Certificate was added to keystore</pre></li>
+<li><p>Restart the Application Server.</p></li></ol>
+
+         </div>
+         <div class="navigation">
+             <a href="bnbxj.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnbyj.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--  - Application context definition for "springapp" DispatcherServlet.  -->
+
+<beans>
+	<bean id="springappController" class="cn.hxex.springapp.spring.controller.SpringappController">
+		<property name="productManager">
+            <ref bean="prodMan"/>
+        </property>
+	</bean>
+	
+	<bean id="prodMan" class="cn.hxex.springapp.bus.ProductManager">
+        <property name="products">
+            <list>
+                <ref bean="product1"/>
+                <ref bean="product2"/>
+                <ref bean="product3"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="product1" class="cn.hxex.springapp.bus.Product">
+        <property name="description"><value>Lamp</value></property>
+        <property name="price"><value>5.75</value></property>
+    </bean>
+        
+    <bean id="product2" class="cn.hxex.springapp.bus.Product">
+        <property name="description"><value>Table</value></property>
+        <property name="price"><value>75.25</value></property>
+    </bean>
+
+    <bean id="product3" class="cn.hxex.springapp.bus.Product">
+        <property name="description"><value>Chair</value></property>
+        <property name="price"><value>22.79</value></property>
+    </bean>
+
+</beans>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="producer" default="default" basedir=".">
+    <description>Builds, tests, and runs the project producer.</description>
+    <property name="is.app-client.module" value="true"/>
+    <import file="../../../bp-project/main.xml"/>
+        
+  <target name="create-queue"
+    description="create JMS queue">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Queue" />
+        <param name="jms.resource.property" value="Name=PhysicalQueue" />
+        <param name="jms.resource.name" value="jms/Queue" />
+    </antcall>
+  </target>
+
+  <target name="create-topic"
+    description="create JMS topic">
+    <antcall target="create-jms-resource">
+        <param name="jms.restype" value="javax.jms.Topic" />
+        <param name="jms.resource.property" value="Name=PhysicalTopic" />
+        <param name="jms.resource.name" value="jms/Topic" />
+    </antcall>
+  </target>
+
+  <target name="create-cf"
+    description="create JMS connection factory">
+    <antcall target="create-jms-connection-factory">
+        <param name="jms.restype" value="javax.jms.ConnectionFactory" />
+        <param name="jms.resource.name" value="jms/ConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="create-resources"
+    description="create queue, topic, and connection factory"
+    depends="create-queue,create-topic,create-cf">
+  </target>
+
+  <!-- Targets for running JMS programs on multiple systems -->
+  <target name="create-remote-factory" 
+    description="creates JMS connection factory for remote server. Argument: -Dsys=&lt;remote_system&gt;">
+    <antcall target="create-jms-connection-factory-prop">
+        <param name="jms.restype" value="javax.jms.ConnectionFactory" />
+        <param name="jms.resource.property" value="AddressList=${sys}" />
+        <param name="jms.resource.name" value="jms/JupiterConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="create-local-factory" 
+    description="Creates local connection factory.">
+    <antcall target="create-jms-connection-factory">
+        <param name="jms.restype" value="javax.jms.ConnectionFactory" />
+        <param name="jms.resource.name" value="jms/JupiterConnectionFactory" />
+    </antcall>
+  </target>
+
+  <!-- Targets for deleting JMS resources -->
+
+  <target name="delete-queue"
+    description="delete jms/Queue">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/Queue" />
+    </antcall>
+  </target>
+
+  <target name="delete-topic"
+    description="delete jms/Topic">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/Topic" />
+    </antcall>
+  </target>
+
+  <target name="delete-cf"
+    description="delete jms/ConnectionFactory">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/ConnectionFactory" />
+    </antcall>
+  </target>
+
+  <target name="delete-resources"
+    description="delete queue, topic, and connection factory"
+    depends="delete-queue,delete-topic,delete-cf">
+  </target>
+
+  <target name="delete-remote-factory"
+    description="delete jms/JupiterConnectionFactory">
+    <antcall target="delete-jms-resource">
+        <param name="jms.resource.name" value="jms/JupiterConnectionFactory" />
+    </antcall>
+  </target>
+
+</project>

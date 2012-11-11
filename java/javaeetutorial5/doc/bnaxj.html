@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<title>Basic Requirements of a JavaServer Faces Application - The Java EE 5 Tutorial</title>
+<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2008-10-01">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+<link rel="stylesheet" type="text/css" href="css/ipg.css">
+<link rel="stylesheet" type="text/css" href="css/j5eetutorial.css">
+</head>
+
+<body>
+
+<table border="0" cellpadding="5" cellspacing="0" width="100%">
+<tbody>
+   <tr valign="top">
+      <td><p class="toc level1"><a href="docinfo.html">Document Information</a></p>
+<p class="toc level1 tocsp"><a href="gexaf.html">Preface</a></p>
+<p class="toc level1 tocsp"><a href="gfirp.html">Part&nbsp;I&nbsp;Introduction</a></p>
+<p class="toc level2"><a href="bnaaw.html">1.&nbsp;&nbsp;Overview</a></p>
+<p class="toc level2"><a href="gfiud.html">2.&nbsp;&nbsp;Using the Tutorial Examples</a></p>
+<p class="toc level1 tocsp"><a href="bnadp.html">Part&nbsp;II&nbsp;The Web Tier</a></p>
+<p class="toc level2"><a href="bnadr.html">3.&nbsp;&nbsp;Getting Started with Web Applications</a></p>
+<p class="toc level2"><a href="bnafd.html">4.&nbsp;&nbsp;Java Servlet Technology</a></p>
+<p class="toc level2"><a href="bnagx.html">5.&nbsp;&nbsp;JavaServer Pages Technology</a></p>
+<p class="toc level2"><a href="bnajo.html">6.&nbsp;&nbsp;JavaServer Pages Documents</a></p>
+<p class="toc level2"><a href="bnakc.html">7.&nbsp;&nbsp;JavaServer Pages Standard Tag Library</a></p>
+<p class="toc level2"><a href="bnalj.html">8.&nbsp;&nbsp;Custom Tags in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaon.html">9.&nbsp;&nbsp;Scripting in JSP Pages</a></p>
+<p class="toc level2"><a href="bnaph.html">10.&nbsp;&nbsp;JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnaqz.html">11.&nbsp;&nbsp;Using JavaServer Faces Technology in JSP Pages</a></p>
+<p class="toc level2"><a href="bnatx.html">12.&nbsp;&nbsp;Developing with JavaServer Faces Technology</a></p>
+<p class="toc level2"><a href="bnavg.html">13.&nbsp;&nbsp;Creating Custom UI Components</a></p>
+<p class="toc level2"><a href="bnawo.html">14.&nbsp;&nbsp;Configuring JavaServer Faces Applications</a></p>
+<p class="toc level3"><a href="bnawp.html">Application Configuration Resource File</a></p>
+<p class="toc level3"><a href="bnawq.html">Configuring Beans</a></p>
+<p class="toc level4"><a href="bnawq.html#bnawr">Using the <tt>managed-bean</tt> Element</a></p>
+<p class="toc level4"><a href="bnawq.html#bnaws">Initializing Properties Using the <tt>managed-property</tt> Element</a></p>
+<p class="toc level5"><a href="bnawq.html#bnawu">Referencing a Java <tt>Enum</tt> Type</a></p>
+<p class="toc level5"><a href="bnawq.html#bnawv">Referencing an Initialization Parameter</a></p>
+<p class="toc level5"><a href="bnawq.html#bnaww">Initializing Map Properties</a></p>
+<p class="toc level5"><a href="bnawq.html#bnawx">Initializing Array and List Properties</a></p>
+<p class="toc level5"><a href="bnawq.html#bnawy">Initializing Managed Bean Properties</a></p>
+<p class="toc level4 tocsp"><a href="bnawq.html#bnaxa">Initializing Maps and Lists</a></p>
+<p class="toc level3 tocsp"><a href="bnaxb.html">Registering Custom Error Messages</a></p>
+<p class="toc level3"><a href="bnaxc.html">Registering Custom Localized Static Text</a></p>
+<p class="toc level3"><a href="bnaxd.html">Registering a Custom Validator</a></p>
+<p class="toc level3"><a href="bnaxe.html">Registering a Custom Converter</a></p>
+<p class="toc level3"><a href="bnaxf.html">Configuring Navigation Rules</a></p>
+<p class="toc level3"><a href="bnaxh.html">Registering a Custom Renderer with a Render Kit</a></p>
+<p class="toc level3"><a href="bnaxi.html">Registering a Custom Component</a></p>
+<div class="onpage">
+<p class="toc level3"><a href="">Basic Requirements of a JavaServer Faces Application</a></p>
+<p class="toc level4"><a href="#bnaxk">Configuring an Application with a Deployment Descriptor</a></p>
+<p class="toc level5"><a href="#bnaxl">Identifying the Servlet for Life Cycle Processing</a></p>
+<p class="toc level5"><a href="#bnaxm">Specifying a Path to an Application Configuration Resource File</a></p>
+<p class="toc level5"><a href="#bnaxn">Specifying Where State Is Saved</a></p>
+<p class="toc level5"><a href="#bnaxo">Encrypting Client State</a></p>
+<p class="toc level5"><a href="#bnaxp">Restricting Access to JavaServer Faces Components</a></p>
+<p class="toc level5"><a href="#bnaxq">Turning On Validation of XML Files</a></p>
+<p class="toc level5"><a href="#bnaxr">Verifying Custom Objects</a></p>
+<p class="toc level4 tocsp"><a href="#bnaxs">Including the Required JAR Files</a></p>
+<p class="toc level4"><a href="#bnaxt">Including the Classes, Pages, and Other Resources</a></p>
+</div>
+<p class="toc level2 tocsp"><a href="bnaxu.html">15.&nbsp;&nbsp;Internationalizing and Localizing Web Applications</a></p>
+<p class="toc level1 tocsp"><a href="bnayk.html">Part&nbsp;III&nbsp;Web Services</a></p>
+<p class="toc level2"><a href="bnayl.html">16.&nbsp;&nbsp;Building Web Services with JAX-WS</a></p>
+<p class="toc level2"><a href="bnazf.html">17.&nbsp;&nbsp;Binding between XML Schema and Java Classes</a></p>
+<p class="toc level2"><a href="bnbdv.html">18.&nbsp;&nbsp;Streaming API for XML</a></p>
+<p class="toc level2"><a href="bnbhf.html">19.&nbsp;&nbsp;SOAP with Attachments API for Java</a></p>
+<p class="toc level1 tocsp"><a href="bnblr.html">Part&nbsp;IV&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbls.html">20.&nbsp;&nbsp;Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnbnb.html">21.&nbsp;&nbsp;Getting Started with Enterprise Beans</a></p>
+<p class="toc level2"><a href="bnboc.html">22.&nbsp;&nbsp;Session Bean Examples</a></p>
+<p class="toc level2"><a href="bnbpk.html">23.&nbsp;&nbsp;A Message-Driven Bean Example</a></p>
+<p class="toc level1 tocsp"><a href="bnbpy.html">Part&nbsp;V&nbsp;Persistence</a></p>
+<p class="toc level2"><a href="bnbpz.html">24.&nbsp;&nbsp;Introduction to the Java Persistence API</a></p>
+<p class="toc level2"><a href="bnbrl.html">25.&nbsp;&nbsp;Persistence in the Web Tier</a></p>
+<p class="toc level2"><a href="bnbrs.html">26.&nbsp;&nbsp;Persistence in the EJB Tier</a></p>
+<p class="toc level2"><a href="bnbtg.html">27.&nbsp;&nbsp;The Java Persistence Query Language</a></p>
+<p class="toc level1 tocsp"><a href="bnbwi.html">Part&nbsp;VI&nbsp;Services</a></p>
+<p class="toc level2"><a href="bnbwj.html">28.&nbsp;&nbsp;Introduction to Security in the Java EE Platform</a></p>
+<p class="toc level2"><a href="bnbyk.html">29.&nbsp;&nbsp;Securing Java EE Applications</a></p>
+<p class="toc level2"><a href="bncas.html">30.&nbsp;&nbsp;Securing Web Applications</a></p>
+<p class="toc level2"><a href="bncdq.html">31.&nbsp;&nbsp;The Java Message Service API</a></p>
+<p class="toc level2"><a href="bncgv.html">32.&nbsp;&nbsp;Java EE Examples Using the JMS API</a></p>
+<p class="toc level2"><a href="bncih.html">33.&nbsp;&nbsp;Transactions</a></p>
+<p class="toc level2"><a href="bncjh.html">34.&nbsp;&nbsp;Resource Connections</a></p>
+<p class="toc level2"><a href="bncjx.html">35.&nbsp;&nbsp;Connector Architecture</a></p>
+<p class="toc level1 tocsp"><a href="bnckn.html">Part&nbsp;VII&nbsp;Case Studies</a></p>
+<p class="toc level2"><a href="bncko.html">36.&nbsp;&nbsp;The Coffee Break Application</a></p>
+<p class="toc level2"><a href="bnclz.html">37.&nbsp;&nbsp;The Duke's Bank Application</a></p>
+<p class="toc level1 tocsp"><a href="gexbq.html">Part&nbsp;VIII&nbsp;Appendixes</a></p>
+<p class="toc level2"><a href="bncno.html">A.&nbsp;&nbsp;Java Encoding Schemes</a></p>
+<p class="toc level2"><a href="bncnq.html">B.&nbsp;&nbsp;Preparation for Java EE Certification Exams</a></p>
+<p class="toc level2"><a href="bncnt.html">C.&nbsp;&nbsp;About the Authors</a></p>
+<p class="toc level1 tocsp"><a href="idx-1.html">Index</a></p>
+</td>
+      <td width="10px">&nbsp;</td>
+      <td width="705px">
+         <div class="header">
+             <div class="header-links-top">
+                 <a href="http://java.sun.com">java.sun.com</a> |
+                 <a href="http://docs.sun.com/">docs.sun.com</a><br>
+             </div> 
+             <img src="graphics/tutorialBanner.gif" width="704" height="120" alt="The Java&trade; EE 5 Tutorial"/>
+             <div class="header-links">
+	         <a href="index.html">Home</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/download.html">Download</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/doc/JavaEETutorial.pdf">PDF</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/api/index.html">API</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/faq.html">FAQ</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/search.html">Search</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/sendusmail.html">Feedback</a> |
+                 <a href="http://java.sun.com/javaee/5/docs/tutorial/information/history.html">History</a>
+             </div>
+             <div class="navigation">
+                 <a href="bnaxi.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+                 <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+                 <a href="bnaxu.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+             </div>
+         </div>
+
+	 <div class="maincontent">      	 
+             
+
+<a name="bnaxj"></a><h3>Basic Requirements of a JavaServer Faces Application</h3>
+<p>In addition to configuring your application, you must satisfy other requirements of JavaServer
+Faces applications, including properly packaging all the necessary files and providing a deployment
+descriptor. This section describes how to perform these administrative tasks.</p><p>JavaServer Faces applications must be compliant with the Servlet specification, version 2.3 (or
+later) and the JavaServer Pages specification, version 1.2 (or later). All applications compliant
+with these specifications are packaged in a WAR file, which must conform to
+specific requirements in order to execute across different containers. At a minimum, a
+WAR file for a JavaServer Faces application must contain the following:</p>
+<ul><li><p><a name="indexterm-1631"></a>A web application deployment descriptor, called <tt>web.xml</tt>, to configure resources required by a web application</p></li>
+<li><p>A specific set of JAR files containing essential classes</p></li>
+<li><p>A set of application classes, JavaServer Faces pages, and other required resources, such as image files</p></li>
+<li><p>An application configuration resource file, which configures application resources</p></li></ul>
+<p><a name="indexterm-1632"></a>The WAR file typically has this directory structure:</p><pre>index.html
+JSP pages
+WEB-INF/
+   web.xml
+   faces-config.xml
+   tag library descriptors (optional)
+   classes/
+      class files
+         Properties files
+   lib/
+      JAR files</pre><p>The <tt>web.xml</tt> file (or deployment descriptor), the set of JAR files, and the
+set of application files must be contained in the <tt>WEB-INF</tt> directory of
+the WAR file.</p>
+
+<a name="bnaxk"></a><h4>Configuring an Application with a Deployment Descriptor</h4>
+<p>Web applications are configured using elements contained in the web application deployment descriptor.
+The deployment descriptor for a JavaServer Faces application must specify certain configurations, which
+include the following:</p>
+<ul><li><p>The servlet used to process JavaServer Faces requests</p></li>
+<li><p>The servlet mapping for the processing servlet</p></li>
+<li><p>The path to the configuration resource file if it is not located in a default location</p></li></ul>
+<p>The deployment descriptor can also specify other, optional configurations, including:</p>
+<ul><li><p>Specifying where component state is saved</p></li>
+<li><p>Encrypting state saved on the client</p></li>
+<li><p>Compressing state saved on the client</p></li>
+<li><p>Restricting access to pages containing JavaServer Faces tags</p></li>
+<li><p>Turning on XML validation</p></li>
+<li><p>Verifying custom objects</p></li></ul>
+<p>This section gives more details on these configurations. Where appropriate, it also describes
+how you can make these configurations using NetBeans IDE.</p>
+
+<a name="bnaxl"></a><h5>Identifying the Servlet for Life Cycle Processing</h5>
+<p><a name="indexterm-1633"></a>One requirement of a JavaServer Faces application is that all requests to the
+application that reference previously saved JavaServer Faces components must go through <tt>FacesServlet</tt>. A <tt>FacesServlet</tt>
+instance manages the request processing life cycle for web applications and initializes the
+resources required by JavaServer Faces technology.</p><p>Before a JavaServer Faces application can launch the first JSP page, the web
+container must invoke the <tt>FacesServlet</tt> instance in order for the application life cycle
+process to start. The application life cycle is described in the section <a href="bnaqq.html">The Life Cycle of a JavaServer Faces Page</a>.</p><p>To make sure that the <tt>FacesServlet</tt> instance is invoked, you provide a mapping
+to it. The mapping to <tt>FacesServlet</tt> can be a prefix mapping, such as
+<tt>/guess/*</tt>, or an extension mapping, such as <tt>*.faces</tt>. The mapping is used to
+identify a JSP page as having JavaServer Faces content. Because of this, the
+URL to the first JSP page of the application must include the mapping.</p><p>In the case of prefix mapping, there are two ways to accomplish
+this:</p>
+<ul><li><p>The page author can include an HTML page in the application that has the URL to the first JSP page. This URL must include the path to <tt>FacesServlet</tt>, as shown by this tag, which uses the mapping defined in the <tt>guessNumber</tt> application:</p><pre>&lt;a href="guess/greeting.jsp"></pre></li>
+<li><p>Users of the application can include the path to <tt>FacesServlet</tt> in the URL to the first page when they enter it in their browser, as shown by this URL that accesses the <tt>guessNumber</tt> application:</p><pre>http://localhost:8080/guessNumber/guess/greeting.jsp</pre></li></ul>
+<p>The second method allows users to start the application from the first JSP
+page, rather than start it from an HTML page. However, the second
+method requires users to identify the first JSP page. When you use the
+first method, users need only enter</p><pre>http://localhost:8080/guessNumber</pre><p>In the case of extension mapping, if a request comes to the
+server for a JSP page with a <tt>.faces</tt> extension, the container will send the
+request to the <tt>FacesServlet</tt> instance, which will expect a corresponding JSP page of
+the same name to exist containing the content. For example, if the request
+URL is <tt>http://localhost/bookstore6/bookstore.faces</tt>, <tt>FacesServlet</tt> will map it to the <tt>bookstore.jsp</tt> page.</p><p>If you are using NetBeans IDE, the time to map the <tt>FacesServlet</tt>
+instance is when you create your JavaServer Faces project with NetBeans IDE:</p>
+<ol><li><p>In NetBeans IDE, select File&rarr;New Project.</p></li>
+<li><p>In the New Project dialog, select Web from the Categories tree.</p></li>
+<li><p>Select Web Application from the Projects panel.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Fill out the information in the Name and Location screen of the wizard.</p></li>
+<li><p>Click Next.</p></li>
+<li><p>Select the JavaServer Faces check box in the Framewoks screen.</p></li>
+<li><p>Enter the mapping, such as <tt>*.faces</tt>, to the <tt>FacesServlet</tt> instance in the Servlet URL Mapping field.</p></li>
+<li><p>Click Finish.</p></li></ol>
+<p>After your project is open in NetBeans IDE, you can change the mapping
+to the <tt>FacesServlet</tt> instance by doing the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click Servlets at the top of the editor pane. The <tt>FacesServlet</tt> configuration appears in the editor pane.</p></li></ol>
+<p>If you prefer to edit the <tt>web.xml</tt> file directly, perform the following steps
+to configure a mapping to the <tt>FacesServlet</tt> instance:</p>
+<ol><li><p>Include a <tt>servlet</tt> element in the deployment descriptor.</p></li>
+<li><p>Inside the <tt>servlet</tt> element, include a <tt>display-name</tt> element and set it to <tt>FacesServlet</tt>.</p></li>
+<li><p>Also inside the <tt>servlet</tt> element, add a <tt>servlet-name</tt> element and set it to <tt>FacesServlet</tt>.</p></li>
+<li><p>Add a third element, called <tt>servlet-class</tt>, inside the <tt>servlet</tt> element and set it to <tt>javax.faces.webapp.FacesServlet</tt>. This is the fully-qualified class name of the <tt>FacesServlet</tt> class.</p></li>
+<li><p>After the <tt>servlet</tt> element, add a <tt>servlet-mapping</tt> element.</p></li>
+<li><p>Inside the <tt>servlet-mapping</tt> element, add a <tt>servlet-name</tt> element and set it to <tt>FacesServlet</tt>. This must match the name identified by the <tt>servlet-name</tt> element described in step 3.</p></li>
+<li><p>Also inside the <tt>servlet-mapping</tt> element, add a <tt>url-pattern</tt> element and set it to whatever mapping you prefer. This will be the path to <tt>FacesServlet</tt>. Users of the application will include this path in the URL when they access the application. For the <tt>guessNumber</tt> application, the path is <tt>/guess/*</tt>.</p></li></ol>
+
+
+<a name="bnaxm"></a><h5>Specifying a Path to an Application Configuration Resource File</h5>
+<a name="indexterm-1634"></a><p>As explained in <a href="bnawp.html">Application Configuration Resource File</a>, an application can have multiple application configuration resource files.
+If these files are not located in the directories that the implementation searches
+by default or the files are not named <tt>faces-config.xml</tt>, you need to specify
+paths to these files.</p><p>To specify these paths using NetBeans IDE, do the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click General at the top of the editor pane.</p></li>
+<li><p>Expand the Context Parameters node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Context Parameter dialog:</p>
+<ol><li><p>Enter <tt>javax.faces.CONFIG_FILES</tt> in the Param Name field.</p></li>
+<li><p>Enter the path to your configuration file in the Param Value field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li>
+<li><p>Repeat steps 1 through 7 for each configuration file.</p></li></ol>
+<p>To specify paths to the files by editing the deployment descriptor directly follow
+these steps:</p>
+<ol><li><p>Add a <tt>context-param</tt> element to the deployment descriptor.</p></li>
+<li><p>Add a <tt>param-value</tt> element inside the <tt>context-param</tt> element and call it <tt>javax.faces.CONFIG_FILES</tt>.</p></li>
+<li><p>Add a <tt>param-value</tt> element inside the <tt>context-param</tt> element and give it the path to your configuration file. For example, the path to the <tt>guessNumber</tt> application&rsquo;s application configuration resource file is <tt>/WEB-INF/faces-config.xml</tt>.</p></li>
+<li><p>Repeat steps 2 and 3 for each application configuration resource file that your application contains.</p></li></ol>
+
+
+<a name="bnaxn"></a><h5>Specifying Where State Is Saved</h5>
+<a name="indexterm-1635"></a><a name="indexterm-1636"></a><p>When implementing the state-holder methods (described in <a href="bnavu.html#bnavz">Saving and Restoring State</a>), you specify in your deployment
+descriptor where you want the state to be saved, either client or server.
+You do this by setting a context parameter in your deployment descriptor.</p><p>To specify where state is saved using NetBeans IDE, do the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click General at the top of the editor pane.</p></li>
+<li><p>Expand the Context Parameters node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Context Parameter dialog:</p>
+<ol><li><p>Enter <tt>javax.faces.STATE_SAVING_METHOD</tt> in the Param Name field.</p></li>
+<li><p>Enter <tt>client</tt> or <tt>server</tt> in the Param Value field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>To specify where state is saved by editing the deployment descriptor directly follow
+these steps:</p>
+<ol><li><p>Add a <tt>context-param</tt> element to the deployment descriptor.</p></li>
+<li><p>Add a <tt>param-name</tt> element inside the <tt>context-param</tt> element and give it the name <tt>javax.faces.STATE_SAVING_METHOD</tt>.</p></li>
+<li><p>Add a <tt>param-value</tt> element to the <tt>context-param</tt> element and give it the value <tt>client</tt> or <tt>server</tt>, depending on whether you want state saved in the client or the server.</p></li></ol>
+<p>If state is saved on the client, the state of the entire
+view is rendered to a hidden field on the page. The JavaServer Faces
+implementation saves the state on the client by default. Duke&rsquo;s Bookstore saves its
+state in the client.</p>
+
+<a name="bnaxo"></a><h5>Encrypting Client State</h5>
+<p>When you are choosing to save state on the client, you are
+essentially saying that you want state to be sent over the wire and
+saved on the client in a hidden field. Clearly, this opens the door
+to potential tampering with the state information. To prevent this from happening, you
+can specify that the state must be encrypted before it is transmitted to
+the client.</p><p>To specify that state must be encrypted using NetBeans IDE, do the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click References at the top of the editor pane.</p></li>
+<li><p>Expand the Environment Entries node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Environment Entry dialog:</p>
+<ol><li><p>Enter <tt>com.sun.faces.ClientStateSavingPassword</tt> in the Entry Name field.</p></li>
+<li><p>Select <tt>java.lang.String</tt> from the Entry Type menu.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>To specify that state must be encrypted by editing the deployment descriptor directly,
+do the following:</p>
+<ol><li><p>Add an <tt>env-entry</tt> element to your deployment descriptor.</p></li>
+<li><p>Add an <tt>env-entry-name</tt> element to the <tt>env-entry</tt> element and give it the name <tt>com.sun.faces.ClientStateSavingPassword</tt>.</p></li>
+<li><p>Add an <tt>env-entry-value</tt> element to the <tt>env-entry</tt> element, and give it your password. The password that you provide is used to generate keys and ciphers for encryption.</p></li>
+<li><p>Add an <tt>env-entry-type</tt> element and give it the type of your password, which must be <tt>java.lang.String</tt>.</p></li></ol>
+<p>If your deployment descriptor does not contain this environment entry then no encryption
+of client-side state will occur.</p>
+
+<a name="bnaxp"></a><h5>Restricting Access to JavaServer Faces Components</h5>
+<a name="indexterm-1637"></a><p>In addition to identifying the <tt>FacesServlet</tt> instance and providing a mapping to it,
+you should also ensure that all applications use <tt>FacesServlet</tt> to process JavaServer Faces
+components. You do this by setting a security constraint.</p><p>To set a security constraint using NetBeans IDE, do the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click Security at the top of the editor pane.</p></li>
+<li><p>Click Add Security Constraint.</p></li>
+<li><p>Enter a name for the constraint in the Display Name field.</p></li>
+<li><p>Click Add to add a web resource collection.</p></li>
+<li><p>In the Add Web Resource dialog:</p>
+<ol><li><p>Enter a name for the web resource collection in the Resource Name field.</p></li>
+<li><p>In the URL pattern field, enter the path to a JSP page to which you want to restrict access, such as <tt>/response.jsp</tt>. Use commas to separate multiple patterns.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>To set a security constraint by editing the deployment descriptor directly, add a
+<tt>security-constraint</tt> element, and inside the <tt>security-constraint</tt> element, add the following:</p>
+<ol><li><p>Add a <tt>display-name</tt> element to identify the name of the constraint.</p></li>
+<li><p>Add a <tt>web-resource-collection</tt> element.</p></li>
+<li><p>Inside the <tt>web-resource-collection</tt> element, add a <tt>web-resource-name</tt> element that identifies the purpose of the collection.</p></li>
+<li><p>Add a <tt>url-pattern</tt> element inside the <tt>web-resource-collection</tt> element and enter the path to a JSP page to which you want to restrict access, such as <tt>/response.jsp</tt>.</p></li>
+<li><p>Continue to add URL patterns for all the JSP pages to which you want to restrict access.</p></li></ol>
+
+
+<a name="bnaxq"></a><h5>Turning On Validation of XML Files</h5>
+<a name="indexterm-1638"></a><p><a name="indexterm-1639"></a>Your application contains one or more application configuration resource files written in XML.
+You can force the JavaServer Faces implementation to validate the XML of these
+files by setting the <tt>validateXML</tt> flag to <tt>true</tt>.</p><p>To set the flag using NetBeans IDE, do the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click General at the top of the editor pane.</p></li>
+<li><p>Expand the Context Parameters node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Context Parameter dialog:</p>
+<ol><li><p>Enter <tt>com.sun.faces.validateXml</tt> in the Param Name field.</p></li>
+<li><p>Enter <tt>true</tt> in the Param Value field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>To set the flag in the deployment descriptor directly, do the following:</p>
+<ol><li><p>Add a <tt>context-param</tt> element to the deployment descriptor.</p></li>
+<li><p>Add a <tt>param-name</tt> element inside the <tt>context-param</tt> element and give it the name <tt>com.sun.faces.validateXml</tt>.</p></li>
+<li><p>Add a <tt>param-value</tt> element to the <tt>context-param</tt> element and give it the value <tt>true</tt>. The default value is <tt>false</tt>.</p></li></ol>
+
+
+<a name="bnaxr"></a><h5>Verifying Custom Objects</h5>
+<a name="indexterm-1640"></a><p>If your application includes custom objects, such as custom components, converters, validators, and
+renderers, you can verify when the application starts that they can be created.
+To do this, you set the <tt>verifyObjects</tt> flag to <tt>true</tt>.</p><p>To set the flag using NetBeans IDE, do the following:</p>
+<ol><li><p>Expand the node of your project in the Projects pane.</p></li>
+<li><p>Expand the Web Pages and WEB-INF nodes that are under the project node.</p></li>
+<li><p>Double-click <tt>web.xml</tt>.</p></li>
+<li><p>After the <tt>web.xml</tt> file appears in the editor pane, click General at the top of the editor pane.</p></li>
+<li><p>Expand the Context Parameters node.</p></li>
+<li><p>Click Add.</p></li>
+<li><p>In the Add Context Parameter dialog:</p>
+<ol><li><p>Enter <tt>com.sun.faces.verifyObjects</tt> in the Param Name field.</p></li>
+<li><p>Enter <tt>true</tt> in the Param Value field.</p></li>
+<li><p>Click OK.</p></li></ol>
+</li></ol>
+<p>To set the flag in the deployment descriptor directly, do the following:</p>
+<ol><li><p>Add a <tt>context-param</tt> element to the deployment descriptor.</p></li>
+<li><p>Add a <tt>param-name</tt> element inside the <tt>context-param</tt> element and give it the name <tt>com.sun.faces.verifyObjects</tt>.</p></li>
+<li><p>Add a <tt>param-value</tt> element to the <tt>context-param</tt> element and give it the value <tt>true</tt>. The default value is <tt>false</tt>.</p></li></ol>
+<p>Normally, this flag should be set to <tt>false</tt> during development because it takes
+extra time to check the objects.</p>
+
+<a name="bnaxs"></a><h4>Including the Required JAR Files</h4>
+<a name="indexterm-1641"></a><p>JavaServer Faces applications require several JAR files to run properly. These JAR files
+are as follows:</p>
+<ul><li><p><a name="indexterm-1642"></a><tt>jsf-api.jar</tt> (contains the <tt>javax.faces.*</tt> API classes)</p></li>
+<li><p><a name="indexterm-1643"></a><tt>jsf-impl.jar</tt> (contains the implementation classes of the JavaServer Faces implementation)</p></li>
+<li><p><tt>jstl.jar</tt> (required to use JSTL tags and referenced by JavaServer Faces implementation classes)</p></li>
+<li><p><tt>standard.jar</tt> (required to use JSTL tags and referenced by JavaServer Faces reference implementation classes)</p></li>
+<li><p><tt>commons-beanutils.jar</tt> (utilities for defining and accessing JavaBeans component properties)</p></li>
+<li><p><tt>commons-digester.jar</tt> (for processing XML documents)</p></li>
+<li><p><tt>commons-collections.jar</tt> (extensions of the Java 2 SDK Collections Framework)</p></li>
+<li><p><tt>commons-logging.jar</tt> (a general-purpose, flexible logging facility to allow developers to instrument their code with logging statements)</p></li></ul>
+<p>The <tt>jsf-api.jar</tt> and the <tt>jsf-impl.jar</tt> files are located in <tt></tt><i>as-install</i><tt>/lib</tt>. The <tt>jstl.jar</tt> file is
+bundled in <tt>appserv-jstl.jar</tt>. The other JAR files are bundled in the <tt>appserv-rt.jar</tt>, also
+located in <tt></tt><i>as-install</i><tt>/lib/</tt>.</p><p>When packaging and deploying your JavaServer Faces application, you do not need to
+explicitly package any of the JAR files.</p>
+
+<a name="bnaxt"></a><h4>Including the Classes, Pages, and Other Resources</h4>
+<a name="indexterm-1644"></a><p>When packaging web applications using the included build scripts, you&rsquo;ll notice that the
+scripts package resources as described here:</p>
+<ul><li><p>All JSP pages are placed at the top level of the WAR file.</p></li>
+<li><p>The TLD files, the <tt>faces-config.xml</tt> file, and the <tt>web.xml</tt> file are packaged in the <tt>WEB-INF</tt> directory.</p></li>
+<li><p>All packages are stored in the <tt>WEB-INF/classes/</tt> directory.</p></li>
+<li><p>All JAR files are packaged in the <tt>WEB-INF/lib/</tt> directory.</p></li></ul>
+<p>When packaging your own applications, you can use NetBeans IDE or you can
+use the build scripts included with the tutorial examples, as explained throughout the
+preceding chapters. You can modify the build scripts to fit your situation. However,
+it is recommended that you continue to package your WAR files as described
+in this section because this technique complies with commonly-accepted practice for packaging web
+applications.</p>
+         </div>
+         <div class="navigation">
+             <a href="bnaxi.html"><img style="padding-right: 3px" src="graphics/leftButton.gif" border="0"></a>
+             <a href="sjsaseej2eet.html"><img style="padding-right: 3px" src="graphics/upButton.gif" border="0"></a>
+             <a href="bnaxu.html"><img style="padding-left: 3px" src="graphics/rightButton.gif" border="0"></a>
+         </div>
+
+         <div class="copyright">
+      	    <p>The material in The Java&trade; EE 5 Tutorial is <a href='docinfo.html'>copyright</a>-protected and may not be published in other works without express written permission from Sun Microsystems.</p>
+      	 </div>
+
+      </td>
+   </tr>
+</tbody>
+</table>
+</body>
+</html>
+

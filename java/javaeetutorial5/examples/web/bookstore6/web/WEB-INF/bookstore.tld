@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+* Copyright (c) 2004 Sun Microsystems, Inc.  All rights reserved.  U.S. 
+ * Government Rights - Commercial software.  Government users are subject 
+ * to the Sun Microsystems, Inc. standard license agreement and 
+ * applicable provisions of the FAR and its supplements.  Use is subject 
+ * to license terms.  
+ * 
+ * This distribution may include materials developed by third parties. 
+ * Sun, Sun Microsystems, the Sun logo, Java and J2EE are trademarks 
+ * or registered trademarks of Sun Microsystems, Inc. in the U.S. and 
+ * other countries.  
+ * 
+ * Copyright (c) 2004 Sun Microsystems, Inc. Tous droits reserves.
+ * 
+ * Droits du gouvernement americain, utilisateurs gouvernementaux - logiciel
+ * commercial. Les utilisateurs gouvernementaux sont soumis au contrat de 
+ * licence standard de Sun Microsystems, Inc., ainsi qu'aux dispositions 
+ * en vigueur de la FAR (Federal Acquisition Regulations) et des 
+ * supplements a celles-ci.  Distribue par des licences qui en 
+ * restreignent l'utilisation.
+ * 
+ * Cette distribution peut comprendre des composants developpes par des 
+ * tierces parties. Sun, Sun Microsystems, le logo Sun, Java et J2EE 
+ * sont des marques de fabrique ou des marques deposees de Sun 
+ * Microsystems, Inc. aux Etats-Unis et dans d'autres pays.
+-->
+
+<taglib
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee web-jsptaglibrary_2_1.xsd" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1">
+
+  <!-- ============== Tag Library Description Elements ============= -->
+  <tlib-version>0.03</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>JavaServerFaces Framework Tag Library</short-name>
+  <uri>bookstoretaglibrary_1.1</uri>
+    <display-name>bookstore</display-name>
+  <description>
+    This tag library contains tags used by the bookstore application.
+  </description>
+
+  <!-- ===================== tags for image map component ============================ -->
+  <tag>
+
+    <name>area</name>
+    <tag-class>com.sun.bookstore6.taglib.AreaTag</tag-class>
+    <body-content>empty</body-content>
+    <description>
+      Description of a single hotspot in a client side image map.  This
+      tag MUST be nested inside a &lt;map> tag.  To specify the hotspot
+      characteristics, you must specify EITHER a value OR the
+      alt, coords, and shape attributes.
+    </description>
+
+    <attribute>
+      <name>binding</name>
+      <required>false</required>
+            <deferred-value>
+                <type>
+                    javax.faces.component.UIComponent
+                </type>
+            </deferred-value>
+
+    </attribute>
+
+    <attribute>
+      <name>alt</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>coords</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+            <type>String</type>
+    </attribute>
+
+    <attribute>
+      <name>onmouseout</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>    
+
+    <attribute>
+      <name>onmouseover</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+      
+    <attribute>
+      <name>targetImage</name>
+      <required>true</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>shape</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>styleClass</name>
+      <required>false</required>
+       <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>value</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.Object</type>
+      </deferred-value>
+    </attribute>
+
+  </tag>
+
+
+  <tag>
+
+    <name>map</name>
+    <tag-class>com.sun.bookstore6.taglib.MapTag</tag-class>
+        <body-content>JSP</body-content>
+    <description>
+      Component representing a client-side image map, with which the user
+      can click on hotspots to activate selections, and see changes in the
+      displayed image when the mouse is hovered over hotspots.  Only
+      &lt;area> components may be nested inside this component.
+    </description>
+
+    <attribute>
+      <name>binding</name>
+      <required>false</required>
+            <deferred-value>
+                <type>
+                    javax.faces.component.UIComponent
+                </type>
+            </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>current</name>
+      <required>false</required>
+      <deferred-value>
+            <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>id</name>
+      <required>false</required>
+      <rtexprvalue>false</rtexprvalue>
+            <type>String</type>
+    </attribute>
+
+    <attribute>
+      <name>styleClass</name>
+      <required>false</required>
+            <deferred-value>
+                <type>
+                    java.lang.String
+                </type>
+            </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>actionListener</name>
+      <required>false</required>
+      <deferred-method>
+         <method-signature>void actionListener(javax.faces.event.ActionEvent)</method-signature>
+      </deferred-method>
+    </attribute>
+
+    <attribute>
+      <name>immediate</name>
+      <required>false</required>
+            <deferred-value>
+                <type>
+                    boolean
+                </type>
+            </deferred-value>
+    </attribute>
+
+    <attribute>
+      <name>action</name>
+      <required>false</required>
+      <deferred-method>
+         <method-signature>java.lang.String action()</method-signature>
+      </deferred-method>
+    </attribute>
+
+  </tag>
+
+   <!-- ===================== FormatValidatorTag ============================ -->
+ 
+   <tag>
+
+    <name>formatValidator</name>
+    <tag-class>com.sun.bookstore6.taglib.FormatValidatorTag</tag-class>
+    <body-content>JSP</body-content>
+    <description>
+      Defines the format-validator tag, with the 
+      tag-handler class, carstore.FormatValidatorTag.  This tag
+      must be nested inside a UI component tag.  The value of the 
+      UI component whose tag encloses the format_validator tag
+      is validated against the format patterns defined by the
+      formatPatterns attribute.
+    </description>
+    <attribute>
+      <name>formatPatterns</name>
+      <required>true</required>
+      <deferred-value>
+          <type>
+             java.lang.String
+          </type>
+      </deferred-value> 
+    </attribute>
+
+  </tag>
+
+</taglib>
