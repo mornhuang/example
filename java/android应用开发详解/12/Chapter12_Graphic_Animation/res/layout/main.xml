@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+	<ImageView 
+		android:id="@+id/ImageView01"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:src="@drawable/girl"
+		></ImageView>
+
+	<Button 
+		android:text="Test Scale..." 
+		android:id="@+id/Button01"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"></Button>
+
+	<Button 
+		android:text="Test Alpha..." 
+		android:id="@+id/Button02"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"></Button>
+
+	<Button android:text="Test Translate..." 
+			android:id="@+id/Button03"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"></Button>
+
+	<Button android:text="Test Rotate..." 
+			android:id="@+id/Button04"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"></Button>
+
+</LinearLayout>

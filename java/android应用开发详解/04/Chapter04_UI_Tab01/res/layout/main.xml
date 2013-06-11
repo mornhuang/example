@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/FrameLayout01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+	
+	<TextView 
+	android:id="@+id/TextView01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content" 
+	android:text="所有通话记录"></TextView>
+	
+	<TextView 
+	android:id="@+id/TextView02" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content" 
+	android:text="已接来电"></TextView>
+	
+	<TextView 
+	android:id="@+id/TextView03" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content" 
+	android:text="未接来电"></TextView>
+	
+</FrameLayout>
+
+

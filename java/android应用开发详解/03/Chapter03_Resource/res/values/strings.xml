@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Test Resources</string>
+    <string name="test_str1">从代码中引用！</string>
+    <string name="test_str2">从资源文件引用！</string>
+    
+    <string name="test_dimen">测试尺寸资源！</string>
+    <string name="test_dimen1">Test Dimension</string>
+</resources>

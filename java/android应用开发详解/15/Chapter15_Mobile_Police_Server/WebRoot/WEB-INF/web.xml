@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+
+
+
+
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.amaker.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/servlet/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>PeopleServlet</servlet-name>
+		<servlet-class>com.amaker.servlet.PeopleServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PeopleServlet</servlet-name>
+		<url-pattern>/servlet/PeopleServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>PeopleImgServlet</servlet-name>
+		<servlet-class>
+			com.amaker.servlet.PeopleImgServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>VehicleFaultInfoServlet</servlet-name>
+		<servlet-class>
+			com.amaker.servlet.VehicleFaultInfoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<servlet-class>
+			com.amaker.servlet.UploadFileServlet
+		</servlet-class>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>PeopleImgServlet</servlet-name>
+		<url-pattern>/servlet/PeopleImgServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>VehicleFaultInfoServlet</servlet-name>
+		<url-pattern>/servlet/VehicleFaultInfoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UploadFileServlet</servlet-name>
+		<url-pattern>/servlet/UploadFileServlet</url-pattern>
+	</servlet-mapping>
+
+
+	<filter>
+		<filter-name>EF</filter-name>
+		<filter-class>com.amaker.filter.EncodingFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>EF</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+</web-app>

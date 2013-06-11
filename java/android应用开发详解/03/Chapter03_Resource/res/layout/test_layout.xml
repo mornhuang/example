@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<!-- 以上四个属性分别是：命名空间、 组件布局方向(这里是垂直)、布局的宽(充满屏幕)和高(充满屏幕)-->
+	
+	<!--  以下嵌套一个TableLayout -->
+	<TableLayout 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	android:stretchColumns="1">
+		<TableRow>
+			<TextView 
+			android:text="测试Layout：" 
+			android:id="@+id/layoutTextView01" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:textColor="@color/red_bg"/>
+			
+			<!-- 以上五个属性分别是：文本内容、引用组件的ID、该组件的宽(内容的宽)、该组件的高(内容的高)、文件颜色 -->
+		
+			<EditText 
+			android:text="" 
+			android:id="@+id/layoutEditText01" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"/>
+		</TableRow>
+		
+		<TableRow android:gravity="right">
+			<Button 
+			android:text="Test" 
+			android:id="@+id/layoutButton01" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			/>
+		</TableRow>
+	</TableLayout>
+</LinearLayout>

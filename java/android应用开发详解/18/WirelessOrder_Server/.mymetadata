@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="WirelessOrder_Server"
+  id="myeclipse.1261715124265"
+  context-root="/WirelessOrder_Server"
+  j2ee-spec="1.4"
+  archive="WirelessOrder_Server.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

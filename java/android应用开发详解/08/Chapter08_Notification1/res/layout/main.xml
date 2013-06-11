@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="测试Notification"
+    />
+    
+<Button 
+	android:text="发出通知" 
+	android:id="@+id/sendButton01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"></Button>
+
+<Button 
+	android:text="取消通知" 
+	android:id="@+id/cancelButton02" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"></Button>
+
+</LinearLayout>

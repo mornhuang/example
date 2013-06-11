@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainlayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+<TableLayout 
+android:layout_width="fill_parent" 
+android:layout_height="wrap_content" 
+android:stretchColumns="1">
+		<TableRow>
+			<TextView 
+			android:text="桌号:" 
+			android:id="@+id/TextView01" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+			
+			<Spinner 
+			android:id="@+id/tableNoSpinner" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"/>
+		</TableRow>
+
+
+		<TableRow>
+			<TextView 
+			android:text="人数:" 
+			android:id="@+id/TextView02" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"></TextView>
+			
+			<EditText android:text="" 
+			android:id="@+id/personNumEditText02" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"></EditText>
+		</TableRow>
+		
+		<TableRow android:gravity="right">
+		
+			<Button 
+			android:text="开桌" 
+			android:id="@+id/startButton02" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+			
+			<Button 
+			android:text="添菜" 
+			android:id="@+id/addMealButton01" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+			
+			<Button 
+			android:text="下单" 
+			android:id="@+id/orderButton02" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" />
+	
+		</TableRow>
+
+	</TableLayout>
+
+	<ListView 
+	android:id="@+id/orderDetailListView01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"/>
+
+</LinearLayout>
+
+
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:layout_gravity="center_vertical">
+		
+	<TextView 
+	android:text="网站名称" 
+	android:id="@+id/TextView01"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"></TextView>
+		
+	<EditText 
+	android:text="" 
+	android:id="@+id/EditTextName"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"></EditText>
+		
+	<TextView 
+	android:text="URL" android:id="@+id/TextView02"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"></TextView>
+		
+	<EditText 
+	android:text="" 
+	android:id="@+id/EditTextUrl"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"></EditText>
+		
+		
+	<TextView 
+	android:text="网站描述" 
+	android:id="@+id/TextView03"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"></TextView>
+		
+	<EditText 
+	android:text="" 
+	android:id="@+id/EditTextDesc"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content" 
+	android:height="100px"></EditText>
+		
+	<Button 
+	android:text="添加" 
+	android:id="@+id/ButtonAdd"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"></Button>
+	
+</LinearLayout>

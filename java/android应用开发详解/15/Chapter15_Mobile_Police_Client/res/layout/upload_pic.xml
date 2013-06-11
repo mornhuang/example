@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:stretchColumns="1">
+		<TableRow>
+			<TextView android:text="图片路径：" android:id="@+id/TextView"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+			<EditText android:text="" android:id="@+id/picPathEditText"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+
+		<TableRow android:gravity="right">
+			<Button android:text="选择图片" android:id="@+id/selectButton"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+			<Button android:text="提交" android:id="@+id/submitPicButton"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+		</TableRow>
+	</TableLayout>
+	
+</LinearLayout>

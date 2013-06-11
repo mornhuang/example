@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+
+
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:stretchColumns="1">
+		<TableRow>
+			<TextView android:text="姓名：" android:id="@+id/TextView"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+			<EditText android:text="" android:id="@+id/nameEditText"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+
+
+		<TableRow>
+			<TextView android:text="身份证号：" android:id="@+id/TextView"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+			<EditText android:text="" android:id="@+id/idnoEditText"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+
+
+		<TableRow>
+			<TextView android:text="驾驶证号：" android:id="@+id/TextView"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+			<EditText android:text="" android:id="@+id/licenseEditText"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+
+		<TableRow>
+			<TextView android:text="违章类型：" android:id="@+id/TextView"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+			
+			<Spinner android:id="@+id/faultRecordSpinner" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:entries="@array/faultRecords"></Spinner>
+
+
+		</TableRow>
+
+		<TableRow>
+			<TextView android:text="罚金：" android:id="@+id/TextView"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+			<EditText android:text="" android:id="@+id/penaltyEditText"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+		</TableRow>
+
+
+
+		<TableRow android:gravity="right">
+			<Button android:text="取消" android:id="@+id/cancelButton"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+			<Button android:text="提交" android:id="@+id/submitButton"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+		</TableRow>
+
+
+	</TableLayout>
+
+
+
+</LinearLayout>

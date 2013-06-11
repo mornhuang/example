@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView 
+		android:text="天气预报" 
+		android:id="@+id/titleTextView01"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"></TextView>
+		
+	<LinearLayout 
+		android:orientation="horizontal"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content">
+
+		<TextView 
+			android:text="请选择城市：" 
+			android:id="@+id/cityTextView02"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"></TextView>
+
+		<Spinner 
+			android:id="@+id/citySpinner01" 
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"></Spinner>
+	</LinearLayout>
+
+	<ScrollView 
+		android:id="@+id/ScrollView01"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+		
+		<TextView 
+		android:text="@+id/displayTextView03" 
+		android:id="@+id/displayTextView03"
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"></TextView>
+		
+	</ScrollView>
+</LinearLayout>

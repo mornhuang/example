@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+<AbsoluteLayout 
+	android:id="@+id/AbsoluteLayout01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content">
+
+	<Button 
+	android:text="A" 
+	android:id="@+id/Button01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:layout_x="20px"
+	android:layout_y="20px"
+	></Button>
+	
+	<Button 
+	android:text="B" 
+	android:id="@+id/Button02" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:layout_x="60px"
+	android:layout_y="20px"
+	></Button>
+	
+	<Button 
+	android:text="C" 
+	android:id="@+id/Button03" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:layout_x="20px"
+	android:layout_y="80px"
+	></Button>
+	
+	<Button 
+	android:text="D" 
+	android:id="@+id/Button04" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:layout_x="60px"
+	android:layout_y="80px"
+	></Button>
+	
+	
+	
+</AbsoluteLayout>
+
+
+</LinearLayout>

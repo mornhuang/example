@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	>
+	
+	<TableLayout 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	android:stretchColumns="1">
+	
+		<TableRow>
+			<TextView 
+			android:text="被并桌位：" 
+			android:id="@+id/TextView"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+			
+		<Spinner 
+			android:id="@+id/union_table_Spinner1" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"/>
+		</TableRow>
+
+
+		<TableRow>
+			<TextView 
+			android:text="目标桌位：" 
+			android:id="@+id/TextView"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+			
+		<Spinner 
+			android:id="@+id/union_table_Spinner2" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"/>
+			
+		</TableRow>
+
+	</TableLayout>
+</LinearLayout>

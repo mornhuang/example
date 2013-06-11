@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+
+<TextView 
+android:text="按钮演示" 
+android:id="@+id/TextView01" 
+android:layout_width="fill_parent" 
+android:layout_height="wrap_content"
+android:height="100px"
+></TextView>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+<Button 
+android:text="RED" 
+android:id="@+id/red" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content"></Button>
+
+<Button 
+android:text="GREEN" 
+android:id="@+id/green" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content"></Button>
+
+<Button 
+android:text="BLUE" 
+android:id="@+id/blue" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content"></Button>
+</LinearLayout>
+
+</LinearLayout>

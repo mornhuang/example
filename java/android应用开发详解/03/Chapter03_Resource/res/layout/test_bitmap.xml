@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+	<TextView 
+		android:text="测试位图资源" 
+		android:id="@+id/bitmapTextView01" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"></TextView>
+
+	<ImageView 
+		android:id="@+id/bitmapImageView01" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:src="@drawable/g1"
+		></ImageView>
+	
+	<ImageView 
+		android:id="@+id/bitmapImageView02" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"></ImageView>
+		
+</LinearLayout>

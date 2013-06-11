@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+<TextView 
+	android:text="测试颜色资源，红色背景，蓝色文字" 
+	android:id="@+id/TextView01" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:textColor="@color/blue_text"
+	/>
+</LinearLayout>

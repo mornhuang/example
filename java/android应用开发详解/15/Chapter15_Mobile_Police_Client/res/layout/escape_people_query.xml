@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView android:text="请输入身份证号：" android:id="@+id/TextView01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+
+	<EditText android:text="" android:id="@+id/EditText01"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+
+	<TableLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<TableRow android:gravity="right">
+			<Button android:text="查询信息" android:id="@+id/Button01"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_gravity="right"></Button>
+			<Button android:text="查询照片" android:id="@+id/Button02"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+		</TableRow>
+		<TextView android:text="查询结果" android:id="@+id/TextView02"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		<TextView android:text="" android:id="@+id/resultTextView"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+
+		<ImageView android:id="@+id/ImageView01"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+
+
+	</TableLayout>
+</LinearLayout>
