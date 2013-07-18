@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<Button android:id="@+id/button1" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Android"
+		/>
+	<Button android:id="@+id/button2" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="安卓"
+		 android:layout_marginLeft="6dp" />
+	<Button android:id="@+id/button3" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Google"
+		 android:layout_marginLeft="6dp" />
+	<Button android:id="@+id/button4" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="谷歌"
+		android:layout_marginLeft="6dp" />
+	<Button android:id="@+id/btnHide" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Hide"
+		android:layout_marginLeft="6dp" />
+</LinearLayout>
+  

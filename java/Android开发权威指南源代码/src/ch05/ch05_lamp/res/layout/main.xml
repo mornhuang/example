@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:id="@+id/textview3" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="维基百科的目标是建立拥有人类全部知识的百科全书。"
+		android:singleLine="true" android:ellipsize="marquee"
+		android:marqueeRepeatLimit="marquee_forever"  android:focusable="true" android:background="#FFF"
+		android:textColor="#000" android:textSize="20dp"
+		android:layout_margin="10dp" android:padding="10dp" />
+</LinearLayout>

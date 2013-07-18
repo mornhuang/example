@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<QuickContactBadge android:id="@+id/badge1"
+		android:layout_marginLeft="2dip" android:layout_marginRight="14dip" 
+		android:layout_marginTop="4dip" android:layout_marginBottom="3dip"
+		android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:src="@drawable/ic_contact_picture" style="?android:attr/quickContactBadgeStyleWindowSmall" />
+
+	<QuickContactBadge android:id="@+id/badge2"
+		android:layout_marginLeft="2dip" android:layout_marginRight="14dip" 
+		android:layout_marginTop="4dip" android:layout_marginBottom="3dip"
+		android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+		android:layout_height="wrap_content" android:layout_width="wrap_content"
+		android:src="@drawable/ic_contact_picture" style="?android:attr/quickContactBadgeStyleWindowLarge" />
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" android:layout_width="fill_parent"
+	android:layout_height="wrap_content" android:gravity="bottom">
+	<LinearLayout android:id="@+id/home" android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:background="@drawable/button_normal_translucent"
+		android:layout_weight="1">
+		<ImageView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:src="@drawable/home"
+			android:paddingTop="5dp" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="首页"
+			android:gravity="center" />
+	</LinearLayout>
+
+
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:background="@drawable/button_normal" android:layout_weight="1"
+		android:gravity="center">
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:src="@drawable/mine" />
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="我的" />
+	</LinearLayout>
+
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" android:background="@drawable/button_normal"
+		android:layout_weight="1">
+		<ImageView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:src="@drawable/more"
+			android:paddingTop="18dp" />
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="更多"
+			android:gravity="center" android:paddingTop="5dp"/>
+
+	</LinearLayout>
+
+
+</LinearLayout>
+

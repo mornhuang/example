@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="在顶端显示对话框"
+		android:onClick="onClick_TopDialog" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="在底端显示对话框"
+		android:onClick="onClick_BottomDialog" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="在任意位置显示对话框"
+		android:onClick="onClick_CustomPositionDialog" />
+
+</LinearLayout>

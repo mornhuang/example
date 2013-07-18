@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="mobile.android.ch04.show.activity" android:versionCode="1"
+	android:versionName="1.0">
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+		<activity android:name=".Main" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name=".MyActivity1" android:label="MyActivity1">
+		</activity>
+		<activity android:name=".MyActivity2" android:label="MyActivity2" android:icon="@drawable/icon1">
+			<intent-filter>
+				<action android:name="myaction1" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="myaction2" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="mycategory" />
+
+			</intent-filter>
+		</activity>
+		<activity android:name=".MyActivity3" android:label="MyActivity3" android:icon="@drawable/icon2">
+			<intent-filter>
+				<action android:name="myaction2" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="mycategory" />
+
+			</intent-filter>
+		</activity>
+
+	</application>
+	<uses-sdk android:minSdkVersion="7" />
+
+</manifest> 

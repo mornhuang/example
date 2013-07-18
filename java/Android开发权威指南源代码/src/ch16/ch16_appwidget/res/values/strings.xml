@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">App Widget</string>
+    <string name="appwidget_configure_instructions">下面的文本将被显示在AppWidget上.</string>
+    <string name="appwidget_prefix_default">你好</string>
+    
+</resources>

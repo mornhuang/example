@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:gravity="center">
+	<Button android:id="@+id/button1" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="16dp"
+		android:text="Button1" />
+	<Button android:id="@+id/button2" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="16dp"
+		android:text="Button2" android:layout_toRightOf="@id/button1"
+		android:layout_below="@id/button1" />
+	<Button android:id="@+id/button3" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="16dp"
+		android:text="Button3" android:layout_toLeftOf="@id/button2"
+		android:layout_below="@id/button2" />
+	<Button android:id="@+id/button4" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="16dp"
+		android:text="Button4" android:layout_toRightOf="@id/button2"
+		android:layout_above="@id/button2" />
+	<Button android:id="@+id/button5" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="16dp"
+		android:text="Button5" android:layout_toRightOf="@id/button2"
+		android:layout_below="@id/button2" />
+</RelativeLayout>

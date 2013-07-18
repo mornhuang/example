@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="我的按钮"
+		android:onClick="onClick_Button" />
+	<!-- <include layout="@layout/custom" /> -->
+	<ViewStub android:id="@+id/viewstub" android:inflatedId="@+id/button_layout"
+		android:layout="@layout/custom" android:layout_width="fill_parent"
+		android:layout_height="wrap_content"  />
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<label>没有边框的Canvas</label>
+<p />
+<canvas id="one_line" height="50" width="50"></canvas>
+<p />
+<label>带边框的Canvas</label>
+<p />
+<canvas id="two_line" style="border: 1px solid;" width="200"
+	height="200"> </canvas>
+
+<script>
+	function draw()
+	{
+		var canvas = document.getElementById('one_line');
+		var context = canvas.getContext('2d');
+		
+		context.beginPath();
+		context.moveTo(1, 1);
+		context.lineTo(40, 40);
+		context.stroke();
+		
+		canvas = document.getElementById('two_line');
+		context = canvas.getContext('2d');
+		context.beginPath();
+		context.moveTo(70, 140);
+		context.lineTo(140, 70);
+		context.moveTo(70, 70);
+		context.lineTo(140, 140);
+		
+		context.stroke();
+	}
+	window.addEventListener("load", draw, true);
+</script>

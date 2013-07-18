@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:mobile="http://mobile.blogjava.net" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="将XML文件转换成对象" android:onClick="onClick_XMLToObject"/>
+</LinearLayout> 
+    

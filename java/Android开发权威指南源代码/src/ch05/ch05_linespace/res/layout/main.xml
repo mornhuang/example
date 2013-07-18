@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#FFF"
+		android:textColor="#000" android:text="第一行的文本\n第二行的文本（行间距为20dp）"
+		android:lineSpacingExtra="20dp" android:layout_margin="10dp" />
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#FFF"
+		android:textColor="#000" android:text="第一行的文本\n第二行的文本（行间距是默认行间距的1.8倍）"
+		android:lineSpacingMultiplier="1.8" android:layout_margin="10dp" />
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#FFF"
+		android:textColor="#000" android:text="第一行的文本\n第二行的文本（行间距是标准行间距的1.5倍）"
+		style="@style/line_space" android:layout_margin="10dp" />
+	<TextView android:id="@+id/textview" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#FFF"
+		android:textColor="#000" android:text="第一行的文本\n第二行的文本（用代码设置行间距）"
+		android:layout_margin="10dp" />
+</LinearLayout>

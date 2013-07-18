@@ -1,0 +1,44 @@
+
+<canvas id="tree" width="200" height="200"> </canvas>
+
+<script>
+	function createPath(context)
+	{
+		context.beginPath();
+		
+		context.lineWidth = 6;
+		
+		context.lineJoin = 'round';
+		
+		context.strokeStyle = '#669900';
+		
+		context.moveTo(-25, -50);
+		context.lineTo(-10, -80);
+		context.lineTo(-20, -80);
+		context.lineTo(-5, -110);
+		context.lineTo(-15, -110);
+		
+		context.lineTo(0, -140);
+		context.lineTo(15, -110);
+		context.lineTo(5, -110);
+		context.lineTo(20, -80);
+		context.lineTo(10, -80);
+		context.lineTo(25, -50);
+		
+		context.closePath();
+	}
+	function drawTree()
+	{
+		var canvas = document.getElementById('tree');
+		var context = canvas.getContext('2d');
+		context.save();
+		context.translate(60, 140);
+		
+		createPath(context);
+		
+		context.stroke();
+		context.restore();
+		
+	}
+	window.addEventListener("load", drawTree, true);
+</script>

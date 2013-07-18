@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<TextView android:id="@+id/textview" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:singleLine="false"
+		android:maxLines="8" android:background="#FFF" android:textColor="#000"
+		android:textSize="20dp" android:layout_margin="10dp"
+		android:scrollbars="vertical" android:text="@string/big_text"
+		android:scrollbarStyle="outsideOverlay" android:padding="10dp" android:scrollbarFadeDuration="2000"  />
+</LinearLayout>

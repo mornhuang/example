@@ -1,0 +1,64 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+<canvas id="tree" width="500" height="800"> </canvas>
+
+<script>
+	function createPath(context)
+	{		
+		context.beginPath();
+		
+		
+		context.lineWidth = 6;
+		
+		context.lineJoin = 'round';
+		 
+		context.strokeStyle = '#669900';
+		
+
+		context.moveTo(-25, -50);      
+		context.lineTo(-10, -80);
+		context.lineTo(-20, -80);
+		context.lineTo(-5, -110);
+		context.lineTo(-15, -110);
+		
+		context.lineTo(0, -140);
+		context.lineTo(15, -110);
+		context.lineTo(5, -110);
+		context.lineTo(20, -80);
+		context.lineTo(10, -80);
+		context.lineTo(25, -50);
+		context.fillStyle = '#996600';
+		context.fill();
+		
+	
+		
+		var trunkGradient = context.createLinearGradient(-5, -50, 5, -50);
+		trunkGradient.addColorStop(0, '#663300');
+		trunkGradient.addColorStop(0.4, '#996600');
+		trunkGradient.addColorStop(1, '#552200');
+		context.fillStyle = trunkGradient;
+		context.fillRect(-5, -50, 10, 50);
+
+		context.font = "30px impact";
+		
+		context.fillStyle = '#FF0000';
+		
+		context.textAlign = 'center';
+
+		context.fillText('圣诞树', 10, 30, 400);
+
+		context.closePath();
+	}
+	function drawTree()
+	{
+		var canvas = document.getElementById('tree');
+		var context = canvas.getContext('2d');
+		context.save();
+		context.translate(120, 300);
+		context.scale(2, 2);
+	
+		createPath(context);			
+		context.stroke();
+		context.restore();
+	}
+	window.addEventListener("load", drawTree, true);
+</script>

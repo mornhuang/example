@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="获得已注册的广播接收器"
+		android:onClick="onClick_Registered_Receivers" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="查询Activity"
+		android:onClick="onClick_Query_Activity" />
+
+	<TextView android:id="@+id/textview" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" />
+</LinearLayout>

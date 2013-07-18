@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:text="操作APK中的数据库" android:onClick="onClick_APK_Database" />
+<Button android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:text="操作APK中的大数据库" android:onClick="onClick_APK_Large_Database" />
+	
+</LinearLayout>

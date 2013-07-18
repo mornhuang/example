@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent" >
+    <TableRow android:paddingTop="20dp" >
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background1_small" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background2_small" android:paddingLeft="20dp"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background3_small" android:paddingLeft="20dp"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background4_small" android:paddingLeft="20dp"/>
+    </TableRow>
+    <TableRow android:paddingTop="20dp">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background5_small" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background6_small" android:paddingLeft="20dp"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background7_small" android:paddingLeft="20dp"/>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/christmas_background8_small" android:paddingLeft="20dp"/>
+    </TableRow>
+</TableLayout>

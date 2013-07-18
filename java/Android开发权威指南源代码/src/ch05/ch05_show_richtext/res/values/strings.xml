@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Main!</string>
+	<string name="app_name">显示富文本</string>
+	<color name="green">#00FF00</color>
+
+	<string name="link_text">
+	   
+		<a href="tel:12345678">打电话</a>
+
+		
+
+	</string>
+
+</resources>

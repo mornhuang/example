@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<Button android:id="@+id/button1" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="使用Intent传递数据" />
+	<Button android:id="@+id/button2" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="使用静态变量传递数据" />
+	<Button android:id="@+id/button3" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="使用剪切板传递数据" />
+	<Button android:id="@+id/button4" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="使用全局对象传递数据" />
+	<Button android:id="@+id/button5" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="返回数据到前一个Activity" />
+</LinearLayout>

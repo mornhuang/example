@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent">
+		<Button android:id="@+id/btnCall" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="直接拨号" />
+		<Button android:id="@+id/btnDial" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="将电话号传入拨号程序" />
+		<Button android:id="@+id/btnTouchDialer" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="调用拨号程序" />
+		<Button android:id="@+id/btnWeb" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="浏览网页" />
+		<Button android:id="@+id/btnSendToEmail" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="向Email客户端传递Email地址" />
+		<Button android:id="@+id/btnSendEmail" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="发送Email" />
+		<Button android:id="@+id/btnContactList" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="查看联系人" />
+		<Button android:id="@+id/btnSettings" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="系统设置" />
+		<Button android:id="@+id/btnWifiSettings" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="Wifi设置" />
+
+		<Button android:id="@+id/btnAudio" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="选择音频程序" />
+	</LinearLayout>
+</ScrollView>
