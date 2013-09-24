@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 配置工厂Bean,该Bean负责产生其他Bean实例 -->
+	<bean id="personFactory"
+		class="org.crazyit.app.factory.PersonFactory"/>
+	<!-- 采用实例工厂创建Bean实例，factory-bean指定工厂Bean的id属性
+		factory-method属性指定工厂Bean的实例工厂方法 -->
+	<bean id="chinese" factory-bean="personFactory" 
+		factory-method="getPerson">
+		<!-- 调用工厂方法时，传入的参数通过constructor-arg元素指定 -->
+		<constructor-arg value="chin"/>
+	</bean>
+	<bean id="american" factory-bean="personFactory"
+		factory-method="getPerson">
+		<constructor-arg value="ame"/>
+	</bean>
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 配置chinese实例，其实现类是lee.Chinese -->
+	<bean id="chinese" class="org.crazyit.app.service.impl.Chinese">
+		<!-- 将stoneAxe注入给axe属性 -->
+		<property name="axe" ref="stoneAxe"/>
+		<property name="name" value="孙悟空"/>
+	</bean>
+	<!-- 配置stoneAxe实例，其实现类是StoneAxe -->
+	<bean id="stoneAxe" class="org.crazyit.app.service.impl.StoneAxe"/>
+	<!-- 配置steelAxe实例，其实现类是SteelAxe -->
+	<bean id="steelAxe" class="org.crazyit.app.service.impl.SteelAxe"/>
+</beans>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 配置Web应用配置文件的根元素，并指定配置文件的Schema信息 -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+
+	<!-- 配置JSF的核心控制器：FacesServlet  -->
+	<servlet>
+		<servlet-name>addNews</servlet-name>
+		<servlet-class>lee.AddNewsServlet</servlet-class>
+	</servlet>
+	<!-- 配置JSF核心FacesServlet的映射 -->
+	<servlet-mapping>
+		<servlet-name>addNews</servlet-name>
+		<url-pattern>/addNews</url-pattern>
+	</servlet-mapping>
+
+	<!-- 配置持久化单元的引用 -->
+	<persistence-context-ref>
+		<!-- 配置持久化单元引用的引用名 -->
+		<persistence-context-ref-name>newsUnit
+			</persistence-context-ref-name>
+		<!-- 指定引用persistence.xml文件中配置的PersistenceUnit名 -->
+		<persistence-unit-name>newsUnit
+			</persistence-unit-name>
+	</persistence-context-ref>
+
+
+</web-app>

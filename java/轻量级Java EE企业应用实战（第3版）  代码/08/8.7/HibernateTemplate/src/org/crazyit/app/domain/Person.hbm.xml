@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="person_id"
+			type="int">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="name" type="string"/>
+		<property name="age" type="int"/>
+	</class>
+</hibernate-mapping>

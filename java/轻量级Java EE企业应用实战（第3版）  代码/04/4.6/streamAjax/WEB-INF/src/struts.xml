@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<package name="lee"  extends="struts-default">
+<action name="loginPro" class="org.crazyit.app.action.LoginAction">
+	<result name="success" type="stream">
+		<!-- 指定下载文件的文件类型 -->
+		<param name="contentType">text/html</param>
+		<!-- 指定由getResult()方法返回输出结果的InputStream -->
+		<param name="inputName">result</param>
+	</result>
+	<!-- 定义一个名为login的结果 -->
+	 <result name="login">/WEB-INF/content/login.jsp</result>
+</action>
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

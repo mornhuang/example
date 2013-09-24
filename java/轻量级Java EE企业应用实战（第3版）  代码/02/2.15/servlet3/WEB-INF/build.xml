@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 定义生成文件的project根元素，默认的target为空 -->
+<project name="web" basedir="." default="">
+	<!-- 定义简单属性 -->
+	<property name="src" value="src"/>
+	<property name="classes" value="classes"/>
+
+	<!-- 定义一组文件和目录集 -->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="${classes}"/>
+	</path>
+	<!-- 定义compile target，用于编译Java源文件 -->
+	<target name="compile" description="编译Java源文件">
+		<!-- 先删除classes属性所代表的文件夹 -->
+		<delete dir="${classes}"/>
+		<!-- 创建classes属性所代表的文件夹 -->
+		<mkdir dir="${classes}"/>
+		<copy todir="${classes}">
+			<fileset dir="${src}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		<!-- 编译Java文件，编译后的class文件放到classes属性所代表的文件夹内 -->
+		<javac destdir="${classes}" debug="true" includeantruntime="yes"
+			deprecation="false" optimize="false" failonerror="true">
+			<!-- 指定需要编译的Java文件所在的位置 -->
+			<src path="${src}"/>
+			<!-- 指定编译Java文件所需要第三方类库所在的位置 -->
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+
+</project>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 定义目标Bean，后面将会获取该Bean的方法返回值 -->
+	<bean id="valueGnerator" class="org.crazyit.app.util.ValueGenerator"/>
+	<!-- 定义名为son1的Bean -->
+	<bean id="son1" class="org.crazyit.app.service.Son">
+		<property name="age">
+			<!-- 获取方法返回值 -->
+			<bean class=
+				"org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+				<!-- targetObject确定目标Bean，指定调用哪个Bean -->
+				<property name="targetObject" ref="valueGnerator"/>
+				<!-- targetMethod确定目标方法，指定调用目标Bean的哪个方法 -->
+				<property name="targetMethod" value="getValue"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 定义名为son2的Bean -->
+	<bean id="son2" class="org.crazyit.app.service.Son">
+		<property name="age">
+			<bean class=
+				"org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+				<!-- targetClass确定目标类，指定调用哪个类 -->
+				<property name="targetClass" value="org.crazyit.app.util.ValueGenerator"/>
+				<!-- targetMethod确定目标方法，指定调用目标class的哪个方法。 
+					该方法必须是静态方法-->
+				<property name="targetMethod" value="getStaticValue"/>
+			</bean>
+		</property>
+	</bean>
+	<!--  将静态方法返回值直接定义成Bean -->
+	<bean id="sysProps" class=
+		"org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<!-- targetClass确定目标类，确定调用哪个类 -->
+		<property name="targetClass" value="java.lang.System"/>
+		<!-- targetMethod确定目标方法，确定调用目标class的哪个方法 
+			该方法必须是静态方法-->
+		<property name="targetMethod" value="getProperties"/>
+	</bean>
+	<!-- 将实例方法返回值直接定义成Bean -->
+	<bean id="javaVersion" class=
+		"org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<!-- targetObject确定目标Bean，确定调用哪个Bean -->
+		<property name="targetObject" ref="sysProps"/>
+		<!-- targetMethod确定目标方法，确定调用目标Bean的哪个方法 -->
+		<property name="targetMethod" value="getProperty"/>
+		<!-- 确定调用目标方法的参数 -->
+		<property name="arguments">
+			<!-- list元素列出调用方法多个参数值 -->
+			<list>
+				<value>java.version</value>
+			</list>
+		</property>
+	</bean>
+</beans>

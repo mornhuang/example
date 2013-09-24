@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\mystudio\\java\\android2.3_book\\ch12\\ch12_call_aidl\\src\\com\\android\\internal\\telephony\\ITelephony.aidl
+ * Original file: E:\\person\\coding\\example\\java\\Android开发权威指南源代码\\src\\ch12\\ch12_call_aidl\\src\\com\\android\\internal\\telephony\\ITelephony.aidl
  */
 package com.android.internal.telephony;
 public interface ITelephony extends android.os.IInterface
@@ -23,13 +23,13 @@ public static com.android.internal.telephony.ITelephony asInterface(android.os.I
 if ((obj==null)) {
 return null;
 }
-android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
+android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
 if (((iin!=null)&&(iin instanceof com.android.internal.telephony.ITelephony))) {
 return ((com.android.internal.telephony.ITelephony)iin);
 }
 return new com.android.internal.telephony.ITelephony.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -369,7 +369,7 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return mRemote;
 }
@@ -383,7 +383,7 @@ return DESCRIPTOR;
      * @param number the number to be dialed. If null, this
      * would display the Dialer screen with no number pre-filled.
      */
-public void dial(java.lang.String number) throws android.os.RemoteException
+@Override public void dial(java.lang.String number) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -402,7 +402,7 @@ _data.recycle();
      * Place a call to the specified number.
      * @param number the number to be called.
      */
-public void call(java.lang.String number) throws android.os.RemoteException
+@Override public void call(java.lang.String number) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -424,7 +424,7 @@ _data.recycle();
      *
      * @return true if the call screen was shown.
      */
-public boolean showCallScreen() throws android.os.RemoteException
+@Override public boolean showCallScreen() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -452,7 +452,7 @@ return _result;
      *
      * @see showCallScreen
      */
-public boolean showCallScreenWithDialpad(boolean showDialpad) throws android.os.RemoteException
+@Override public boolean showCallScreenWithDialpad(boolean showDialpad) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -475,7 +475,7 @@ return _result;
      *
      * @return whether it hung up
      */
-public boolean endCall() throws android.os.RemoteException
+@Override public boolean endCall() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -507,7 +507,7 @@ return _result;
      * TODO: this should be a oneway call (especially since it's called
      * directly from the key queue thread).
      */
-public void answerRingingCall() throws android.os.RemoteException
+@Override public void answerRingingCall() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -532,7 +532,7 @@ _data.recycle();
      *       (Actually *all* the methods here that return void can
      *       probably be oneway.)
      */
-public void silenceRinger() throws android.os.RemoteException
+@Override public void silenceRinger() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -550,7 +550,7 @@ _data.recycle();
      * Check if we are in either an active or holding call
      * @return true if the phone state is OFFHOOK.
      */
-public boolean isOffhook() throws android.os.RemoteException
+@Override public boolean isOffhook() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -571,7 +571,7 @@ return _result;
      * Check if an incoming phone call is ringing or call waiting.
      * @return true if the phone state is RINGING.
      */
-public boolean isRinging() throws android.os.RemoteException
+@Override public boolean isRinging() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -592,7 +592,7 @@ return _result;
      * Check if the phone is idle.
      * @return true if the phone state is IDLE.
      */
-public boolean isIdle() throws android.os.RemoteException
+@Override public boolean isIdle() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -613,7 +613,7 @@ return _result;
      * Check to see if the radio is on or not.
      * @return returns true if the radio is on.
      */
-public boolean isRadioOn() throws android.os.RemoteException
+@Override public boolean isRadioOn() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -634,7 +634,7 @@ return _result;
      * Check if the SIM pin lock is enabled.
      * @return true if the SIM pin lock is enabled.
      */
-public boolean isSimPinEnabled() throws android.os.RemoteException
+@Override public boolean isSimPinEnabled() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -654,7 +654,7 @@ return _result;
 /**
      * Cancels the missed calls notification.
      */
-public void cancelMissedCallsNotification() throws android.os.RemoteException
+@Override public void cancelMissedCallsNotification() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -673,7 +673,7 @@ _data.recycle();
      * @param pin The pin to check.
      * @return whether the operation was a success.
      */
-public boolean supplyPin(java.lang.String pin) throws android.os.RemoteException
+@Override public boolean supplyPin(java.lang.String pin) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -698,7 +698,7 @@ return _result;
      * @param dialString the MMI command to be executed.
      * @return true if MMI command is executed.
      */
-public boolean handlePinMmi(java.lang.String dialString) throws android.os.RemoteException
+@Override public boolean handlePinMmi(java.lang.String dialString) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -719,7 +719,7 @@ return _result;
 /**
      * Toggles the radio on or off.
      */
-public void toggleRadioOnOff() throws android.os.RemoteException
+@Override public void toggleRadioOnOff() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -736,7 +736,7 @@ _data.recycle();
 /**
      * Set the radio to on or off
      */
-public boolean setRadio(boolean turnOn) throws android.os.RemoteException
+@Override public boolean setRadio(boolean turnOn) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -757,7 +757,7 @@ return _result;
 /**
      * Request to update location information in service state
      */
-public void updateServiceLocation() throws android.os.RemoteException
+@Override public void updateServiceLocation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -774,7 +774,7 @@ _data.recycle();
 /**
      * Enable location update notifications.
      */
-public void enableLocationUpdates() throws android.os.RemoteException
+@Override public void enableLocationUpdates() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -791,7 +791,7 @@ _data.recycle();
 /**
      * Disable location update notifications.
      */
-public void disableLocationUpdates() throws android.os.RemoteException
+@Override public void disableLocationUpdates() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -808,7 +808,7 @@ _data.recycle();
 /**
      * Enable a specific APN type.
      */
-public int enableApnType(java.lang.String type) throws android.os.RemoteException
+@Override public int enableApnType(java.lang.String type) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -829,7 +829,7 @@ return _result;
 /**
      * Disable a specific APN type.
      */
-public int disableApnType(java.lang.String type) throws android.os.RemoteException
+@Override public int disableApnType(java.lang.String type) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -850,7 +850,7 @@ return _result;
 /**
      * Allow mobile data connections.
      */
-public boolean enableDataConnectivity() throws android.os.RemoteException
+@Override public boolean enableDataConnectivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -870,7 +870,7 @@ return _result;
 /**
      * Disallow mobile data connections.
      */
-public boolean disableDataConnectivity() throws android.os.RemoteException
+@Override public boolean disableDataConnectivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -890,7 +890,7 @@ return _result;
 /**
      * Report whether data connectivity is possible.
      */
-public boolean isDataConnectivityPossible() throws android.os.RemoteException
+@Override public boolean isDataConnectivityPossible() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -907,7 +907,7 @@ _data.recycle();
 }
 return _result;
 }
-public android.os.Bundle getCellLocation() throws android.os.RemoteException
+@Override public android.os.Bundle getCellLocation() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -932,7 +932,7 @@ return _result;
 /**
      * Returns the neighboring cell information of the device.
      */
-public java.util.List<android.telephony.NeighboringCellInfo> getNeighboringCellInfo() throws android.os.RemoteException
+@Override public java.util.List<android.telephony.NeighboringCellInfo> getNeighboringCellInfo() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -949,7 +949,7 @@ _data.recycle();
 }
 return _result;
 }
-public int getCallState() throws android.os.RemoteException
+@Override public int getCallState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -966,7 +966,7 @@ _data.recycle();
 }
 return _result;
 }
-public int getDataActivity() throws android.os.RemoteException
+@Override public int getDataActivity() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -983,7 +983,7 @@ _data.recycle();
 }
 return _result;
 }
-public int getDataState() throws android.os.RemoteException
+@Override public int getDataState() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1005,7 +1005,7 @@ return _result;
      * Returns TelephonyManager.PHONE_TYPE_CDMA if RILConstants.CDMA_PHONE
      * and TelephonyManager.PHONE_TYPE_GSM if RILConstants.GSM_PHONE
      */
-public int getActivePhoneType() throws android.os.RemoteException
+@Override public int getActivePhoneType() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1025,7 +1025,7 @@ return _result;
 /**
      * Returns the CDMA ERI icon index to display
      */
-public int getCdmaEriIconIndex() throws android.os.RemoteException
+@Override public int getCdmaEriIconIndex() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1047,7 +1047,7 @@ return _result;
      * 0 - ON
      * 1 - FLASHING
      */
-public int getCdmaEriIconMode() throws android.os.RemoteException
+@Override public int getCdmaEriIconMode() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1067,7 +1067,7 @@ return _result;
 /**
      * Returns the CDMA ERI text,
      */
-public java.lang.String getCdmaEriText() throws android.os.RemoteException
+@Override public java.lang.String getCdmaEriText() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1087,7 +1087,7 @@ return _result;
 /**
      * Returns true if CDMA provisioning needs to run.
      */
-public boolean getCdmaNeedsProvisioning() throws android.os.RemoteException
+@Override public boolean getCdmaNeedsProvisioning() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1107,7 +1107,7 @@ return _result;
 /**
       * Returns the unread count of voicemails
       */
-public int getVoiceMessageCount() throws android.os.RemoteException
+@Override public int getVoiceMessageCount() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1127,7 +1127,7 @@ return _result;
 /**
       * Returns the network type
       */
-public int getNetworkType() throws android.os.RemoteException
+@Override public int getNetworkType() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();
@@ -1147,7 +1147,7 @@ return _result;
 /**
      * Return true if an ICC card is present
      */
-public boolean hasIccCard() throws android.os.RemoteException
+@Override public boolean hasIccCard() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

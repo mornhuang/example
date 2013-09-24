@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- 定义该应用的登录配置。 -->
+	<login-config>
+		<!-- 指定使用自定义表单页来登录 -->
+		<auth-method>FORM</auth-method>
+		<realm-name>myrealm</realm-name>
+		<form-login-config>
+			<!-- 指定登录的表单页，登录失败的提示页 -->
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/login_fail.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+	<welcome-file-list>
+		<welcome-file>bookList.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

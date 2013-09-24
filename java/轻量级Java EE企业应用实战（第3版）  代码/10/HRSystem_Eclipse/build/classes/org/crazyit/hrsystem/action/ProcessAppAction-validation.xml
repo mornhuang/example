@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="attId">
+		<field-validator type="required">
+			<message>出勤ID必填！</message>
+		</field-validator>
+	</field>
+	<field name="typeId">
+		<field-validator type="required">
+			<message>希望申请的出勤类型必填！</message>
+		</field-validator>
+	</field>
+	<field name="reason">
+		<field-validator type="requiredstring">
+			<message>申请理由必填！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{6,})]]></param>
+			<message>申请理由的长度必须在大于6个字符</message>
+		</field-validator>
+	</field>
+</validators>

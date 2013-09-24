@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<tlib-version>1.0</tlib-version>
+	<short-name>mytaglib</short-name>
+	<!-- 定义该标签库的URI -->
+	<uri>http://www.crazyit.org/mytaglib</uri>
+
+	<!-- 定义第一个标签 -->
+	<tag>
+		<!-- 定义标签名 -->
+		<name>helloWorld</name>
+		<!-- 定义标签处理类 -->
+		<tag-class>lee.HelloWorldTag</tag-class>
+		<!-- 定义标签体为空 -->
+		<body-content>empty</body-content>
+	</tag>
+
+	<!-- 定义第二个标签 -->
+	<tag>
+		<!-- 定义标签名 -->
+		<name>query</name>
+		<!-- 定义标签处理类 -->
+		<tag-class>lee.QueryTag</tag-class>
+		<!-- 定义标签体为空 -->
+		<body-content>empty</body-content>
+		<!-- 配置标签属性:driver -->
+		<attribute>
+			<name>driver</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+		<!-- 配置标签属性:url -->
+		<attribute>
+			<name>url</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+		<!-- 配置标签属性:user -->
+		<attribute>
+			<name>user</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+		<!-- 配置标签属性:pass -->
+		<attribute>
+			<name>pass</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+		<!-- 配置标签属性:sql -->
+		<attribute>
+			<name>sql</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+	</tag>
+
+	<!-- 定义第三个标签 -->
+	<tag>
+		<!-- 定义标签名 -->
+		<name>iterator</name>
+		<!-- 定义标签处理类 -->
+		<tag-class>lee.IteratorTag</tag-class>
+		<!-- 定义标签体不允许出现JSP脚本 -->
+		<body-content>scriptless</body-content>
+		<!-- 配置标签属性:collection -->
+		<attribute>
+			<name>collection</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+		<!-- 配置标签属性:item -->
+		<attribute>
+			<name>item</name> 
+			<required>true</required>
+			<fragment>true</fragment>
+		</attribute>
+	</tag>
+	<!-- 定义接受动态属性的标签 -->
+    <tag>
+        <name>dynaAttr</name>
+        <tag-class>lee.DynaAttributesTag</tag-class>
+        <body-content>empty</body-content>
+		<!-- 指定支持动态属性 -->
+        <dynamic-attributes>true</dynamic-attributes>
+    </tag>
+    <tag>
+        <name>fragment</name>
+        <tag-class>lee.FragmentTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>fragment</name>
+            <required>true</required>
+            <fragment>true</fragment>
+        </attribute>
+    </tag>
+</taglib>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!--以下定义了将要被引用的目标bean-->
+	<bean id="person" class="org.crazyit.app.service.Person">
+		<!-- 为age属性指定值 -->
+		<property name="age" value="30"/>
+		<property name="son">
+			<!-- 使用嵌套Bean定义属性值 -->
+			<bean class="org.crazyit.app.service.Son">
+				<property name="age" value="11" />
+			</bean>
+		</property>
+	</bean>
+
+	<!-- 将指定Bean实例的属性值定义成指定Bean实例 -->
+	<bean id="son1"
+	class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<!-- 确定目标Bean，表明son1 Bean来自哪个Bean的属性 -->
+		<property name="targetBeanName" value="person"/>
+		<!-- 确定属性表达式，表明son1 Bean来自目标bean的哪个属性 -->
+		<property name="propertyPath" value="son"/>
+	</bean>
+
+	<!-- 如下定义son2的 Bean，该Bean的age属性不是直接注入
+		，而是依赖于其他Bean的属性值 -->
+	<bean id="son2" class="org.crazyit.app.service.Son">
+		<property name="age">
+			<!-- 以下是访问Bean属性的简单方式,这样可以将person Bean的son属性的、
+				age属性赋值给son2这个bean的age属性-->
+			<bean id="person.son.age" class=
+				"org.springframework.beans.factory.config.PropertyPathFactoryBean"/>
+		</property>
+	</bean>
+
+	<!-- 将基本数据类型的属性值定义成Bean实例 -->
+	<bean id="theAge" class=
+		"org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<!-- 确定目标Bean，表明theAge Bean来自哪个Bean的属性 -->
+		<property name="targetBeanName" value="person"/>
+		<!-- 确定属性名，表明theAge Bean来自目标Bean的哪个属性，
+			此处的属性采用复合属性的形式 -->
+		<property name="propertyPath" value="son.age"/>
+	</bean>
+
+	<!-- 将基本数据类型的属性值定义成Bean实例 -->
+	<bean id="theAge2" class=
+		"org.springframework.beans.factory.config.PropertyPathFactoryBean">
+		<!-- 确定目标Bean，表明theAge2 Bean来自哪个Bean的属性。
+			此处采用嵌套Bean定义目标Bean -->
+		<property name="targetObject">
+			<!-- 目标Bean不是容器中已经存在的Bean, 而是如下的嵌套Bean-->
+			<bean class="org.crazyit.app.service.Person">
+				<property name="age" value="30"/>
+			</bean>
+		</property>
+		<!-- 确定属性表达式，表明theAge2 Bean来自目标bean的哪个属性 -->
+		<property name="propertyPath" value="age"/>
+	</bean>
+</beans>

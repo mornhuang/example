@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/application_5.xsd"
+	version="5">
+	<module>
+		<web>
+			<web-uri>auction-war.war</web-uri>
+			<context-root>auction</context-root>
+		</web>
+	</module>
+	<module>
+		<ejb>auction-ejb.jar</ejb>
+	</module>
+</application>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="lee" extends="struts-default">
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+
+			<!-- 下面配置片段指定使用dispatcher结果类型，
+			当返回success结果时使用welcome.jsp页面作为视图资源 -->
+			<result>/welcome.jsp</result >
+
+		</action>
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

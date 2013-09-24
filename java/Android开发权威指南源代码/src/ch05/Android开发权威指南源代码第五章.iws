@@ -1,0 +1,1732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidConfiguredLogFilters">
+    <filters>
+      <filter>
+        <option name="logLevel" value="debug" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="" />
+        <option name="name" value="mobile.android.ch05.color.bar" />
+        <option name="pid" value="" />
+      </filter>
+    </filters>
+  </component>
+  <component name="AndroidDesignerProfile">
+    <option name="fullProfile">
+      <profile>
+        <option name="device" value="2.7in QVGA" />
+        <option name="deviceConfiguration" value="Portrait" />
+        <option name="targetHashString" value="android-9" />
+        <option name="theme" value="Theme" />
+      </profile>
+    </option>
+    <option name="selection" value="[Full]" />
+  </component>
+  <component name="AndroidLayoutPreviewToolWindow">
+    <option name="state">
+      <GlobalState>
+        <option name="device" value="2.7in QVGA" />
+        <option name="dockMode" value="" />
+        <option name="nightMode" value="notnight" />
+        <option name="targetHashString" value="android-9" />
+        <option name="theme" value="Theme" />
+        <option name="visible" value="false" />
+      </GlobalState>
+    </option>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="mobile.android.ch05.color.bar" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="10f2385b-7401-494a-ade0-08bf99143ac7" name="Default" comment="">
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch02\ch02_FirstAndroidApplication\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_activitycycle\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_framelayout\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_linearlayout\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_merge\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_middle_right\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_relativelayout\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_reusablelayout\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_show_activity\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_tablelayout\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch04\ch04_transmit_data\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_AutoCompleteTextView\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_bordertextview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_bothscrollview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_button\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_choicelistview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_clock\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_colorbar\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_colorlistview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_datetimepicker\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_dynamiccheckbox\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_dynamiclistview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_edittext_face\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_edittext_special_character\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_expandableListview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_gallery\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_gridview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_horizontalscrollview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_ignore_text\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imagebutton\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageswitcher\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imagetextbutton\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\.classpath" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\.project" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\drawable-hdpi\icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\drawable-ldpi\icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\drawable-mdpi\icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\drawable\background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\drawable\icon.png" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\layout\main.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\res\values\strings.xml" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_imageview\ch05_imageview\src\mobile\android\ch05\imageview\Main.java" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_lamp\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_linespace\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_link_activity\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_listview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_progressbar\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_radiobutton\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_ratingbar\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_rectimageview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_resize_round_image\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_scrollview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_seekbar\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_show_richtext\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_spinner\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_tab\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_text_background\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_text_image\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_togglebutton\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_vertical_scroll_text\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch05\ch05_viewstub\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch06\QuickContactBadge\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch06\ch06_QuickContactBadge\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch06\ch06_custom_menu\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch06\ch06_menu\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch06\ch06_ucweb_menu\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_activity_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_control_toast\bin\android\app\ITransientNotification.aidl" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_control_toast\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_custom_notification\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_login_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_multi_choice_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_notification\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_permanent_notification\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_popupwindow_toast\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_position_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_prevent_close_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_progressbar_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_remove_notification\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_simple_list_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_single_choice_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_text_image_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_three_button_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_toast\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_transparency_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch07\ch07_two_button_dialog\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_apk_database\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_fileoutputinput\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_jar_zip\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_memory_database\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_permission\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_preferences\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_sdcard_database\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_sdcard_fileoutputinput\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_sharedpreferences\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_sharedpreferences_complex_data\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_simplecursoradapter\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch08\ch08_xml_object\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch09\ch09_activity_animation\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch09\ch09_activitygroup\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch09\ch09_client_action\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch09\ch09_custom_action\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch09\ch09_invokeotherapp\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch09\ch09_translucence_window\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_battery_changed_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_boot_complete_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_call_in_out_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_custom_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_receiver_priority\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_register_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_screen_on_off_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_send_broadcast\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_sms_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch10\ch10_validate_receiver\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch11\ch11_contact_content_provider\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch11\ch11_invoke_content_provider\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch11\ch11_permission_invoke_content_provider\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch11\ch11_permission_region_content_provider\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch11\ch11_region_content_provider\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch11\ch11_sms_content_provider\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_aidl\bin\mobile\android\ch12\aidl\IMyService.aidl" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_aidl\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_aidlclient\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_call_aidl\bin\android\telephony\NeighboringCellInfo.aidl" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_call_aidl\bin\com\android\internal\telephony\ITelephony.aidl" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_call_aidl\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_complextypeaidl\bin\mobile\android\ch12\complex\type\aidl\IMyService.aidl" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_complextypeaidl\bin\mobile\android\ch12\complex\type\aidl\Product.aidl" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_complextypeaidl\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_complextypeaidlclient\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_query_service\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_service_state\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_serviceactivity\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_servicelifecycle\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch12\ch12_startupservice\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_bluetooth_socket\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_browser\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_control_bluetooth_device\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_data_client\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_data_server\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_httpgetpost\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_ip_address\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_loadhtml\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_scan_server_ports\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_search_bluetooth_device\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_serversocket\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_socket_data_transmit\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch13\ch13_uploadfile\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_customcamera\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_mediaplayer\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_record_video\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_recorder\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_ringtone\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_surfaceview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_systemcamera\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch14\ch14_videoview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_alpha\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_alpha_tween\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_draw\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_drawbitmap\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_frame\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_game_surfaceview\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_game_view\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_image_path\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_play_gif\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_rotate_image\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_rotate_tween\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_scale_tween\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_shader\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch15\ch15_translate_tween\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_appwidget\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_gesture\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_google_map\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_gps\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_live_wallpaper\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_livefolder\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_sensor\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_shortcut\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_tts\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch16\ch16_voice_recognizer\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_canvas\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_debug\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_detect_html5\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_fill\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_fill_rect\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_gradient\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_html5_demo\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_path\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_scale\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_shadow\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_stroke\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch17\ch17_text\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch18\ch18_simple_inputmethod\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch19\ch19_color\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch19\ch19_polygon\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch19\ch19_rotate_cube\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch19\ch19_rotate_triangle\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_combination_rotate\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_rotate_sky\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_sprite_text\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_sway_robot\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_touch_rotate_cube\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_translucent_rotate_two_cube\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch20\ch20_two_rotate_cube\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch21\ch21_jni_helloworld\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch21\ch21_jni_native_activity\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch21\ch21_jni_native_audio\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch21\ch21_jni_opengl_es\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch21\ch21_jni_san_angeles\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch22\ch22_contentprovider_test\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch22\ch22_helloworld\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch22\ch22_helloworld_test\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch22\ch22_service_test\default.properties" afterPath="" />
+      <change type="DELETED" beforePath="E:\person\coding\example\java\Android开发权威指南源代码\src\ch22\ch22_testclass\default.properties" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch02/ch02_FirstAndroidApplication/.classpath" afterPath="$PROJECT_DIR$/../ch02/ch02_FirstAndroidApplication/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_activitycycle/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_activitycycle/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_framelayout/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_framelayout/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_linearlayout/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_linearlayout/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_merge/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_merge/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_middle_right/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_middle_right/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_relativelayout/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_relativelayout/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_reusablelayout/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_reusablelayout/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_show_activity/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_show_activity/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_tablelayout/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_tablelayout/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch04/ch04_transmit_data/.classpath" afterPath="$PROJECT_DIR$/../ch04/ch04_transmit_data/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_AutoCompleteTextView/.classpath" afterPath="$PROJECT_DIR$/ch05_AutoCompleteTextView/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_bordertextview/.classpath" afterPath="$PROJECT_DIR$/ch05_bordertextview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_bothscrollview/.classpath" afterPath="$PROJECT_DIR$/ch05_bothscrollview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_button/.classpath" afterPath="$PROJECT_DIR$/ch05_button/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_choicelistview/.classpath" afterPath="$PROJECT_DIR$/ch05_choicelistview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_clock/.classpath" afterPath="$PROJECT_DIR$/ch05_clock/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_colorbar/.classpath" afterPath="$PROJECT_DIR$/ch05_colorbar/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_colorlistview/.classpath" afterPath="$PROJECT_DIR$/ch05_colorlistview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_datetimepicker/.classpath" afterPath="$PROJECT_DIR$/ch05_datetimepicker/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_dynamiccheckbox/.classpath" afterPath="$PROJECT_DIR$/ch05_dynamiccheckbox/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_dynamiclistview/.classpath" afterPath="$PROJECT_DIR$/ch05_dynamiclistview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_edittext_face/.classpath" afterPath="$PROJECT_DIR$/ch05_edittext_face/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_edittext_special_character/.classpath" afterPath="$PROJECT_DIR$/ch05_edittext_special_character/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_expandableListview/.classpath" afterPath="$PROJECT_DIR$/ch05_expandableListview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_gallery/.classpath" afterPath="$PROJECT_DIR$/ch05_gallery/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_gridview/.classpath" afterPath="$PROJECT_DIR$/ch05_gridview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_horizontalscrollview/.classpath" afterPath="$PROJECT_DIR$/ch05_horizontalscrollview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_ignore_text/.classpath" afterPath="$PROJECT_DIR$/ch05_ignore_text/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_imagebutton/.classpath" afterPath="$PROJECT_DIR$/ch05_imagebutton/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_imageswitcher/.classpath" afterPath="$PROJECT_DIR$/ch05_imageswitcher/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_imagetextbutton/.classpath" afterPath="$PROJECT_DIR$/ch05_imagetextbutton/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_lamp/.classpath" afterPath="$PROJECT_DIR$/ch05_lamp/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_linespace/.classpath" afterPath="$PROJECT_DIR$/ch05_linespace/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_link_activity/.classpath" afterPath="$PROJECT_DIR$/ch05_link_activity/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_listview/.classpath" afterPath="$PROJECT_DIR$/ch05_listview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_progressbar/.classpath" afterPath="$PROJECT_DIR$/ch05_progressbar/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_radiobutton/.classpath" afterPath="$PROJECT_DIR$/ch05_radiobutton/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_ratingbar/.classpath" afterPath="$PROJECT_DIR$/ch05_ratingbar/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_rectimageview/.classpath" afterPath="$PROJECT_DIR$/ch05_rectimageview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_resize_round_image/.classpath" afterPath="$PROJECT_DIR$/ch05_resize_round_image/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_scrollview/.classpath" afterPath="$PROJECT_DIR$/ch05_scrollview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_seekbar/.classpath" afterPath="$PROJECT_DIR$/ch05_seekbar/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_show_richtext/.classpath" afterPath="$PROJECT_DIR$/ch05_show_richtext/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_spinner/.classpath" afterPath="$PROJECT_DIR$/ch05_spinner/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_tab/.classpath" afterPath="$PROJECT_DIR$/ch05_tab/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_text_background/.classpath" afterPath="$PROJECT_DIR$/ch05_text_background/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_text_image/.classpath" afterPath="$PROJECT_DIR$/ch05_text_image/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_togglebutton/.classpath" afterPath="$PROJECT_DIR$/ch05_togglebutton/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_vertical_scroll_text/.classpath" afterPath="$PROJECT_DIR$/ch05_vertical_scroll_text/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_viewstub/.classpath" afterPath="$PROJECT_DIR$/ch05_viewstub/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch06/QuickContactBadge/.classpath" afterPath="$PROJECT_DIR$/../ch06/QuickContactBadge/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch06/ch06_QuickContactBadge/.classpath" afterPath="$PROJECT_DIR$/../ch06/ch06_QuickContactBadge/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch06/ch06_custom_menu/.classpath" afterPath="$PROJECT_DIR$/../ch06/ch06_custom_menu/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch06/ch06_menu/.classpath" afterPath="$PROJECT_DIR$/../ch06/ch06_menu/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch06/ch06_ucweb_menu/.classpath" afterPath="$PROJECT_DIR$/../ch06/ch06_ucweb_menu/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_activity_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_activity_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_control_toast/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_control_toast/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_custom_notification/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_custom_notification/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_login_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_login_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_multi_choice_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_multi_choice_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_notification/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_notification/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_permanent_notification/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_permanent_notification/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_popupwindow_toast/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_popupwindow_toast/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_position_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_position_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_prevent_close_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_prevent_close_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_progressbar_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_progressbar_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_remove_notification/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_remove_notification/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_simple_list_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_simple_list_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_single_choice_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_single_choice_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_text_image_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_text_image_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_three_button_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_three_button_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_toast/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_toast/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_transparency_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_transparency_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_two_button_dialog/.classpath" afterPath="$PROJECT_DIR$/../ch07/ch07_two_button_dialog/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_apk_database/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_apk_database/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_fileoutputinput/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_fileoutputinput/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_jar_zip/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_jar_zip/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_memory_database/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_memory_database/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_permission/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_permission/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_preferences/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_preferences/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_sdcard_database/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_sdcard_database/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_sdcard_fileoutputinput/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_sdcard_fileoutputinput/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_sharedpreferences/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_sharedpreferences/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_sharedpreferences_complex_data/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_sharedpreferences_complex_data/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_simplecursoradapter/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_simplecursoradapter/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch08/ch08_xml_object/.classpath" afterPath="$PROJECT_DIR$/../ch08/ch08_xml_object/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch09/ch09_activity_animation/.classpath" afterPath="$PROJECT_DIR$/../ch09/ch09_activity_animation/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch09/ch09_activitygroup/.classpath" afterPath="$PROJECT_DIR$/../ch09/ch09_activitygroup/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch09/ch09_client_action/.classpath" afterPath="$PROJECT_DIR$/../ch09/ch09_client_action/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch09/ch09_custom_action/.classpath" afterPath="$PROJECT_DIR$/../ch09/ch09_custom_action/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch09/ch09_invokeotherapp/.classpath" afterPath="$PROJECT_DIR$/../ch09/ch09_invokeotherapp/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch09/ch09_translucence_window/.classpath" afterPath="$PROJECT_DIR$/../ch09/ch09_translucence_window/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_battery_changed_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_battery_changed_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_boot_complete_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_boot_complete_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_call_in_out_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_call_in_out_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_custom_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_custom_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_receiver_priority/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_receiver_priority/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_register_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_register_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_screen_on_off_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_screen_on_off_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_send_broadcast/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_send_broadcast/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_sms_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_sms_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch10/ch10_validate_receiver/.classpath" afterPath="$PROJECT_DIR$/../ch10/ch10_validate_receiver/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch11/ch11_contact_content_provider/.classpath" afterPath="$PROJECT_DIR$/../ch11/ch11_contact_content_provider/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch11/ch11_invoke_content_provider/.classpath" afterPath="$PROJECT_DIR$/../ch11/ch11_invoke_content_provider/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch11/ch11_permission_invoke_content_provider/.classpath" afterPath="$PROJECT_DIR$/../ch11/ch11_permission_invoke_content_provider/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch11/ch11_permission_region_content_provider/.classpath" afterPath="$PROJECT_DIR$/../ch11/ch11_permission_region_content_provider/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch11/ch11_region_content_provider/.classpath" afterPath="$PROJECT_DIR$/../ch11/ch11_region_content_provider/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch11/ch11_sms_content_provider/.classpath" afterPath="$PROJECT_DIR$/../ch11/ch11_sms_content_provider/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_aidl/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_aidl/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_aidlclient/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_aidlclient/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_call_aidl/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_call_aidl/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_complextypeaidl/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_complextypeaidl/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_complextypeaidlclient/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_complextypeaidlclient/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_query_service/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_query_service/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_service_state/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_service_state/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_serviceactivity/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_serviceactivity/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_servicelifecycle/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_servicelifecycle/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_startupservice/.classpath" afterPath="$PROJECT_DIR$/../ch12/ch12_startupservice/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_bluetooth_socket/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_bluetooth_socket/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_browser/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_browser/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_control_bluetooth_device/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_control_bluetooth_device/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_data_client/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_data_client/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_data_server/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_data_server/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_httpgetpost/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_httpgetpost/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_ip_address/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_ip_address/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_loadhtml/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_loadhtml/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_scan_server_ports/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_scan_server_ports/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_search_bluetooth_device/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_search_bluetooth_device/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_serversocket/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_serversocket/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_socket_data_transmit/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_socket_data_transmit/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch13/ch13_uploadfile/.classpath" afterPath="$PROJECT_DIR$/../ch13/ch13_uploadfile/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_customcamera/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_customcamera/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_mediaplayer/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_mediaplayer/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_record_video/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_record_video/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_recorder/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_recorder/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_ringtone/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_ringtone/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_surfaceview/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_surfaceview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_systemcamera/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_systemcamera/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch14/ch14_videoview/.classpath" afterPath="$PROJECT_DIR$/../ch14/ch14_videoview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_alpha/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_alpha/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_alpha_tween/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_alpha_tween/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_draw/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_draw/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_drawbitmap/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_drawbitmap/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_frame/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_frame/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_game_surfaceview/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_game_surfaceview/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_game_view/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_game_view/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_image_path/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_image_path/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_play_gif/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_play_gif/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_rotate_image/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_rotate_image/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_rotate_tween/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_rotate_tween/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_scale_tween/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_scale_tween/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_shader/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_shader/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch15/ch15_translate_tween/.classpath" afterPath="$PROJECT_DIR$/../ch15/ch15_translate_tween/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_appwidget/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_appwidget/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_gesture/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_gesture/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_google_map/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_google_map/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_gps/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_gps/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_live_wallpaper/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_live_wallpaper/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_livefolder/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_livefolder/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_sensor/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_sensor/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_shortcut/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_shortcut/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_tts/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_tts/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch16/ch16_voice_recognizer/.classpath" afterPath="$PROJECT_DIR$/../ch16/ch16_voice_recognizer/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_canvas/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_canvas/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_debug/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_debug/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_detect_html5/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_detect_html5/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_fill/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_fill/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_fill_rect/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_fill_rect/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_gradient/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_gradient/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_html5_demo/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_html5_demo/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_path/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_path/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_scale/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_scale/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_shadow/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_shadow/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_stroke/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_stroke/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch17/ch17_text/.classpath" afterPath="$PROJECT_DIR$/../ch17/ch17_text/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch18/ch18_simple_inputmethod/.classpath" afterPath="$PROJECT_DIR$/../ch18/ch18_simple_inputmethod/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch19/ch19_color/.classpath" afterPath="$PROJECT_DIR$/../ch19/ch19_color/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch19/ch19_polygon/.classpath" afterPath="$PROJECT_DIR$/../ch19/ch19_polygon/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch19/ch19_rotate_cube/.classpath" afterPath="$PROJECT_DIR$/../ch19/ch19_rotate_cube/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch19/ch19_rotate_triangle/.classpath" afterPath="$PROJECT_DIR$/../ch19/ch19_rotate_triangle/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_combination_rotate/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_combination_rotate/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_rotate_sky/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_rotate_sky/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_sprite_text/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_sprite_text/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_sway_robot/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_sway_robot/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_touch_rotate_cube/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_touch_rotate_cube/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_translucent_rotate_two_cube/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_translucent_rotate_two_cube/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch20/ch20_two_rotate_cube/.classpath" afterPath="$PROJECT_DIR$/../ch20/ch20_two_rotate_cube/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch21/ch21_jni_helloworld/.classpath" afterPath="$PROJECT_DIR$/../ch21/ch21_jni_helloworld/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch21/ch21_jni_native_activity/.classpath" afterPath="$PROJECT_DIR$/../ch21/ch21_jni_native_activity/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch21/ch21_jni_native_audio/.classpath" afterPath="$PROJECT_DIR$/../ch21/ch21_jni_native_audio/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch21/ch21_jni_opengl_es/.classpath" afterPath="$PROJECT_DIR$/../ch21/ch21_jni_opengl_es/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch21/ch21_jni_san_angeles/.classpath" afterPath="$PROJECT_DIR$/../ch21/ch21_jni_san_angeles/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch22/ch22_contentprovider_test/.classpath" afterPath="$PROJECT_DIR$/../ch22/ch22_contentprovider_test/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch22/ch22_helloworld/.classpath" afterPath="$PROJECT_DIR$/../ch22/ch22_helloworld/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch22/ch22_helloworld_test/.classpath" afterPath="$PROJECT_DIR$/../ch22/ch22_helloworld_test/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch22/ch22_service_test/.classpath" afterPath="$PROJECT_DIR$/../ch22/ch22_service_test/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch22/ch22_testclass/.classpath" afterPath="$PROJECT_DIR$/../ch22/ch22_testclass/.classpath" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ch05_radiobutton/.project" afterPath="$PROJECT_DIR$/ch05_radiobutton/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_aidl/gen/mobile/android/ch12/aidl/IMyService.java" afterPath="$PROJECT_DIR$/../ch12/ch12_aidl/gen/mobile/android/ch12/aidl/IMyService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_complextypeaidl/gen/mobile/android/ch12/complex/type/aidl/IMyService.java" afterPath="$PROJECT_DIR$/../ch12/ch12_complextypeaidl/gen/mobile/android/ch12/complex/type/aidl/IMyService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch12/ch12_call_aidl/gen/com/android/internal/telephony/ITelephony.java" afterPath="$PROJECT_DIR$/../ch12/ch12_call_aidl/gen/com/android/internal/telephony/ITelephony.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ch07/ch07_control_toast/gen/android/app/ITransientNotification.java" afterPath="$PROJECT_DIR$/../ch07/ch07_control_toast/gen/android/app/ITransientNotification.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_Creation/gen/com/amaker/test/R.java" afterPath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_Creation/gen/com/amaker/test/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_LifeCycle/gen/com/amaker/test/R.java" afterPath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_LifeCycle/gen/com/amaker/test/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_StartActivityForResult/gen/com/amaker/test/R.java" afterPath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_StartActivityForResult/gen/com/amaker/test/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_StartActivity/gen/com/amaker/test/R.java" afterPath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_StartActivity/gen/com/amaker/test/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_TransData/gen/com/amaker/test/R.java" afterPath="$PROJECT_DIR$/../../../android应用开发详解/05/Chapter05_Activity_TransData/gen/com/amaker/test/R.java" />
+    </list>
+    <ignored path="Android开发权威指南源代码第五章.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="$PROJECT_DIR$/ch05_tab/gen/mobile/android/ch05/tab/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_gridview/gen/mobile/android/ch05/gridview/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_vertical_scroll_text/gen/mobile/android/ch05/vertical/scroll/text/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_imageswitcher/gen/mobile/android/ch05/imageswitcher/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_clock/gen/mobile/android/ch05/clock/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_ratingbar/gen/mobile/android/ch05/ratingbar/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_bordertextview/gen/mobile/android/ch05/border/textview/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652318" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_imageview/gen/mobile/android/ch05/imageview/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_linespace/gen/mobile/android/ch05/line/space/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_edittext_face/gen/mobile/android/ch05/edittext/face/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_ignore_text/gen/mobile/android/ch05/ignore/text/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853658730" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_imagetextbutton/gen/mobile/android/ch05/image/text/button/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_resize_round_image/gen/mobile/android/ch05/resize/round/image/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_rectimageview/gen/mobile/android/ch05/rect/imageview/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="$PROJECT_DIR$/ch05_colorlistview/gen/mobile/android/ch05/color/listview/R.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1374853652319" ignored="false" />
+    <file path="/Dummy.txt" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1375667495487" ignored="false" />
+    <file path="/fragment.java" changelist="10f2385b-7401-494a-ade0-08bf99143ac7" time="1375437371213" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Android开发权威指南源代码第五章" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ch05_choicelistview/src/mobile/android/ch05/choice/listview/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="66" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.5431472">
+              <folding>
+                <element signature="e#831#839#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ch05_choicelistview/res/layout/main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="734" selection-end="853" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ch05_imagetextbutton/src/mobile/android/ch05/image/text/button/Main.java" />
+        <option value="$PROJECT_DIR$/ch05_text_image/src/mobile/android/ch05/text/image/Main.java" />
+        <option value="$PROJECT_DIR$/ch05_resize_round_image/src/mobile/android/ch05/resize/round/image/Main.java" />
+        <option value="$PROJECT_DIR$/ch05_progressbar/src/mobile/android/ch05/progressbar/Main.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1296" />
+    <option name="height" value="776" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RunManager" selected="Android Application.ch05_choicelistview">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_colorbar" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_colorbar" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="WVGA_2.3.3" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="-scale 0.9" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_bothscrollview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_bothscrollview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_seekbar" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_seekbar" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_dynamiccheckbox" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_dynamiccheckbox" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_listview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_listview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_scrollview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_scrollview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_text_image" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_text_image" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_expandableListview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_expandableListview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_progressbar" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_progressbar" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="WVGA_2.3.3" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="-scale 0.9" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_horizontalscrollview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_horizontalscrollview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_imagebutton" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_imagebutton" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_choicelistview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_choicelistview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="WVGA_2.3.3" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="-scale 0.9" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_button" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_button" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_show_richtext" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_show_richtext" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_datetimepicker" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_datetimepicker" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_gallery" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_gallery" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_imageview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_imageview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_text_background" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_text_background" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_togglebutton" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_togglebutton" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_AutoCompleteTextView" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_AutoCompleteTextView" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_viewstub" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_viewstub" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_dynamiclistview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_dynamiclistview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_link_activity" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_link_activity" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_lamp" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_lamp" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_spinner" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_spinner" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_edittext_special_character" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_edittext_special_character" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_rectimageview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_rectimageview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_colorlistview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_colorlistview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_imageswitcher" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_imageswitcher" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_edittext_face" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_edittext_face" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_clock" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_clock" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_linespace" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_linespace" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_gridview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_gridview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_ignore_text" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_ignore_text" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_ratingbar" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_ratingbar" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_tab" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_tab" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_resize_round_image" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_resize_round_image" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_vertical_scroll_text" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_vertical_scroll_text" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_bordertextview" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_bordertextview" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_imageview1" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_imageview1" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_radiobutton" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_radiobutton" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ch05_imagetextbutton" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="ch05_imagetextbutton" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="WVGA_2.3.3" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="-scale 0.9" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <list size="42">
+      <item index="0" class="java.lang.String" itemvalue="Android Application.ch05_colorbar" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.ch05_bothscrollview" />
+      <item index="2" class="java.lang.String" itemvalue="Android Application.ch05_seekbar" />
+      <item index="3" class="java.lang.String" itemvalue="Android Application.ch05_dynamiccheckbox" />
+      <item index="4" class="java.lang.String" itemvalue="Android Application.ch05_listview" />
+      <item index="5" class="java.lang.String" itemvalue="Android Application.ch05_scrollview" />
+      <item index="6" class="java.lang.String" itemvalue="Android Application.ch05_text_image" />
+      <item index="7" class="java.lang.String" itemvalue="Android Application.ch05_expandableListview" />
+      <item index="8" class="java.lang.String" itemvalue="Android Application.ch05_progressbar" />
+      <item index="9" class="java.lang.String" itemvalue="Android Application.ch05_horizontalscrollview" />
+      <item index="10" class="java.lang.String" itemvalue="Android Application.ch05_imagebutton" />
+      <item index="11" class="java.lang.String" itemvalue="Android Application.ch05_choicelistview" />
+      <item index="12" class="java.lang.String" itemvalue="Android Application.ch05_button" />
+      <item index="13" class="java.lang.String" itemvalue="Android Application.ch05_show_richtext" />
+      <item index="14" class="java.lang.String" itemvalue="Android Application.ch05_datetimepicker" />
+      <item index="15" class="java.lang.String" itemvalue="Android Application.ch05_gallery" />
+      <item index="16" class="java.lang.String" itemvalue="Android Application.ch05_imageview" />
+      <item index="17" class="java.lang.String" itemvalue="Android Application.ch05_text_background" />
+      <item index="18" class="java.lang.String" itemvalue="Android Application.ch05_togglebutton" />
+      <item index="19" class="java.lang.String" itemvalue="Android Application.ch05_AutoCompleteTextView" />
+      <item index="20" class="java.lang.String" itemvalue="Android Application.ch05_viewstub" />
+      <item index="21" class="java.lang.String" itemvalue="Android Application.ch05_dynamiclistview" />
+      <item index="22" class="java.lang.String" itemvalue="Android Application.ch05_link_activity" />
+      <item index="23" class="java.lang.String" itemvalue="Android Application.ch05_lamp" />
+      <item index="24" class="java.lang.String" itemvalue="Android Application.ch05_spinner" />
+      <item index="25" class="java.lang.String" itemvalue="Android Application.ch05_edittext_special_character" />
+      <item index="26" class="java.lang.String" itemvalue="Android Application.ch05_rectimageview" />
+      <item index="27" class="java.lang.String" itemvalue="Android Application.ch05_colorlistview" />
+      <item index="28" class="java.lang.String" itemvalue="Android Application.ch05_imageswitcher" />
+      <item index="29" class="java.lang.String" itemvalue="Android Application.ch05_edittext_face" />
+      <item index="30" class="java.lang.String" itemvalue="Android Application.ch05_clock" />
+      <item index="31" class="java.lang.String" itemvalue="Android Application.ch05_linespace" />
+      <item index="32" class="java.lang.String" itemvalue="Android Application.ch05_gridview" />
+      <item index="33" class="java.lang.String" itemvalue="Android Application.ch05_ignore_text" />
+      <item index="34" class="java.lang.String" itemvalue="Android Application.ch05_ratingbar" />
+      <item index="35" class="java.lang.String" itemvalue="Android Application.ch05_tab" />
+      <item index="36" class="java.lang.String" itemvalue="Android Application.ch05_resize_round_image" />
+      <item index="37" class="java.lang.String" itemvalue="Android Application.ch05_vertical_scroll_text" />
+      <item index="38" class="java.lang.String" itemvalue="Android Application.ch05_bordertextview" />
+      <item index="39" class="java.lang.String" itemvalue="Android Application.ch05_imageview1" />
+      <item index="40" class="java.lang.String" itemvalue="Android Application.ch05_radiobutton" />
+      <item index="41" class="java.lang.String" itemvalue="Android Application.ch05_imagetextbutton" />
+    </list>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="true">C:\Users\Morn\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10f2385b-7401-494a-ade0-08bf99143ac7" name="Default" comment="" />
+      <created>1374853629970</created>
+      <updated>1374853629970</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28084415" sideWeight="0.6009693" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41033927" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40872374" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2353896" sideWeight="0.6009693" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25811687" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22664501" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ch05_button/src/mobile/android/ch05/button/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_text_image/src/mobile/android/ch05/text/image/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_lamp/src/mobile/android/ch05/lamp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_resize_round_image/src/mobile/android/ch05/resize/round/image/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="63" selection-start="787" selection-end="787" vertical-scroll-proportion="0.030456852" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_resize_round_image/res/layout/main.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_progressbar/src/mobile/android/ch05/progressbar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="27" selection-start="460" selection-end="460" vertical-scroll-proportion="0.21694915" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_progressbar/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="86" selection-start="460" selection-end="460" vertical-scroll-proportion="0.13701068" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/res/drawable/face.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/res/drawable/bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/res/drawable/barcolor1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="80" selection-start="404" selection-end="404" vertical-scroll-proportion="0.2741117" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="48" selection-start="1111" selection-end="1111" vertical-scroll-proportion="0.03197158" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/res/drawable/barcolor2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="70" selection-start="374" selection-end="374" vertical-scroll-proportion="0.055837564" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/res/drawable/barface.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="69" selection-start="179" selection-end="179" vertical-scroll-proportion="0.12182741" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_colorbar/src/mobile/android/ch05/color/bar/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="32" selection-start="695" selection-end="712" vertical-scroll-proportion="0.5482234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_choicelistview/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="734" selection-end="853" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ch05_choicelistview/src/mobile/android/ch05/choice/listview/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="66" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.5431472">
+          <folding>
+            <element signature="e#831#839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

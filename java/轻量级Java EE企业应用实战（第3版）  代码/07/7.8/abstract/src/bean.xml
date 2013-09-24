@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 定义两个Axe实例 -->
+	<bean id="steelAxe" class="org.crazyit.app.service.impl.SteelAxe"/>
+	<bean id="stoneAxe" class="org.crazyit.app.service.impl.StoneAxe"/>
+	<!-- 通过abstract属性定义该Bean 是抽象Bean -->
+	<bean id="chineseTemplate" class="org.crazyit.app.service.impl.Chinese"
+		abstract="true">
+		<property name="axe" ref="steelAxe"/>
+	</bean>
+	<!-- 通过parent属性定义子bean -->
+	<bean id="chinese" parent="chineseTemplate">
+		<!-- 覆盖父Bean中依赖关系的配置 -->
+		<property name="axe" ref="stoneAxe"/>
+	</bean>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">	
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+	<!-- 设置该应用使用的解码集 -->
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<package name="lee" extends="struts-default">
+<!-- 配置处理文件上传的Action -->
+<action name="uploadPro" class="org.crazyit.app.action.UploadAction">
+	<!-- 动态设置Action的属性值 -->
+	<param name="savePath">/uploadFiles</param>
+	<!-- 设置允许上传的文件类型 -->
+	<param name="allowTypes">image/png,image/gif,image/jpeg</param>
+	<result name="input">/WEB-INF/content/upload.jsp</result>	
+	<!-- 配置Struts 2默认的视图页面 -->
+	<result>/WEB-INF/content/succ.jsp</result>	
+</action>
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>	
+		</action>
+	</package>
+</struts>

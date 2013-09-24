@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<!-- 下面配置名为lee的包，该包继承了Struts 2的默认包
+		没有指定命名空间，将使用默认命名空间 -->
+	<package name="lee" extends="struts-default">
+		<!-- 配置一个名为login的Action -->
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+	<!--下面配置名为get的包，该包继承了Struts 2的默认包。指定该包的命名空间为/book-->
+	<package name="get" extends="struts-default" namespace="/book">
+		<!-- 配置一个名为getBooks的Action -->
+		<action name="getBooks" class="org.crazyit.app.action.GetBooksAction">
+			<result name="login">/login.jsp</result>
+			<result name="success">/showBook.jsp</result>
+		</action>
+	</package>
+</struts>

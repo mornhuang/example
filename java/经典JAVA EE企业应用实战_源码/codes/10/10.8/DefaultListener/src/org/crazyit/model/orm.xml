@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+	http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" version="1.0">
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<!-- 配置默认监听器 -->
+			<entity-listeners>
+				<!-- class属性指定监听器类  -->
+				<entity-listener class=
+					"org.crazyit.listener.DefaultPersistListener">
+					<!-- 下面4个子元素指定监听器类中哪个方法作为监听方法 -->
+					<pre-persist method-name="prePersist"/>
+					<pre-update method-name="preUpdate"/>
+					<post-update method-name="postUpdate"/>
+					<post-load method-name="postLoad"/>
+				</entity-listener>			
+			</entity-listeners>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+</entity-mappings>

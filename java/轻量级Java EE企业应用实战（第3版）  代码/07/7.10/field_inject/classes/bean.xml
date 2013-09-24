@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 将java.sql.Connection的TRANSACTION_SERIALIZABLE
+		的值赋给son的age属性-->
+	<bean id="son" class="org.crazyit.app.service.Son">
+		<property name="age">
+			<bean id="java.sql.Connection.TRANSACTION_SERIALIZABLE" 
+				class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean"/>
+		</property>
+	</bean>
+	<!-- 将Field 值定义成Bean 实例-->
+	<bean id="theAge1" class=
+		"org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+		<!-- targetClass指定Field所在的目标类 -->
+		<property name="targetClass" value="java.sql.Connection"/>
+		<!-- targetField指定Field名 -->
+		<property name="targetField" value="TRANSACTION_SERIALIZABLE"/>
+	</bean>
+
+<!-- 将Field 值定义成Bean实例 -->
+<bean id="theAge2" class=
+	"org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+	<!-- value指定采用哪个类的哪个静态域值 -->
+	<property name="staticField" 
+		value="java.sql.Connection.TRANSACTION_SERIALIZABLE"/>
+</bean>
+</beans>

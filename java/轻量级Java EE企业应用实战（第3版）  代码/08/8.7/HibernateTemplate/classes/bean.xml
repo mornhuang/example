@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<!-- 指定连接数据库的URL -->
+		<property name="jdbcUrl" value="jdbc:mysql://localhost/hibernate"/>
+		<!-- 指定连接数据库的用户名 -->
+		<property name="user" value="root"/>
+		<!-- 指定连接数据库的密码 -->
+		<property name="password" value="32147"/>
+		<!-- 指定连接数据库连接池的最大连接数 -->
+		<property name="maxPoolSize" value="40"/>
+		<!-- 指定连接数据库连接池的最小连接数 -->
+		<property name="minPoolSize" value="1"/>
+		<!-- 指定连接数据库连接池的初始化连接数 -->
+		<property name="initialPoolSize" value="1"/>
+		<!-- 指定连接数据库连接池的连接的最大空闲时间 -->
+		<property name="maxIdleTime" value="20"/>
+	</bean>
+	<!-- 定义Hibernate的SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 依赖注入数据源，注入正是上面定义的dataSource -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- mappingResouces属性用来列出全部映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<!-- 以下用来列出Hibernate映射文件 -->
+				<value>org/crazyit/app/domain/Person.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 配置Hibernate属性 -->
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+			hibernate.hbm2ddl.auto=update
+			hibernate.show_sql=true
+			hibernate.format_sql=true;
+			</value>
+		</property>
+	</bean>
+	<!-- 定义DAO Bean-->
+	<bean id="personDao"
+		class="org.crazyit.app.dao.impl.PersonDaoImpl">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+</beans>

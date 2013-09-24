@@ -1,0 +1,15 @@
+部署Web应用请按如下步骤进行:
+1. 进入HRSystem_Eclipse路径下，将mysql.sql脚本中的语句导入MySql数据库。
+2. 修改HRSystem_Eclipse\WebRoot\WEB-INF路径下的applicationContext.xml
+   文件，将其中的数据库连接信息修改为你的数据库连接信息。
+3. 将该项目导入Eclipse即可，部署到指定Web服务器即可。
+4. 普通员工的用户名和密码有：
+   mysql mysql
+   tomcat tomcat
+5. 经理的用户名和密码有：
+   weblogic weblogic
+
+注意：
+
+1. 本章案例的打卡、工资结算都需要由系统时间来驱动，
+   读者可通过改变系统时间来驱动它们。

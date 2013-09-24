@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="GBK"?>
+<project name="javaee" basedir="." default="">
+	<!-- 下面两行往往要修改 -->
+	<property name="app_name" value="lookup"/>
+	<property name="ejb_name" value="UserService"/>
+	<property name="ejb_src" value="ejb_src"/>
+	<property name="ejb_dest" value="ejb_classes"/>
+	<property name="web_src" value="${app_name}.war/WEB-INF/src"/>
+	<property name="web_dest" value="${app_name}.war/WEB-INF/classes"/>
+	<property name="app_dest" value="build"/>
+
+	<path id="classpath">
+		<fileset dir="${app_name}.war/WEB-INF/lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<pathelement path="."/>
+		<pathelement path="${app_name}.war/WEB-INF/classes"/>
+		<pathelement path="ejb_classes"/>
+	</path>
+
+	<target name="compileEJB" description="编译所有EJB的类文件">
+		<delete dir="${ejb_dest}"/>
+		<mkdir dir="${ejb_dest}"/>
+		<copy todir="${ejb_dest}">
+			<fileset dir="${ejb_src}">
+				<exclude name="**/*.java"/>
+			</fileset>		
+		</copy>
+		<javac destdir="${ejb_dest}" debug="true"
+			deprecation="false" optimize="false" failonerror="true">
+			<src path="${ejb_src}"/>
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+
+	<target name="buildEJB" description="生成EJB的JAR包" depends="compileEJB">
+		<delete dir="${app_dest}"/>
+		<mkdir dir="${app_dest}"/>
+		<jar destfile="${app_dest}/${ejb_name}.jar"
+			basedir="${ejb_dest}"
+			excludes="**/*.java"/>
+	</target>
+
+	<target name="compile" description="编译整个企业应用" depends="buildEJB">
+		<delete dir="${web_dest}"/>
+		<mkdir dir="${web_dest}"/>
+		<copy todir="${web_dest}">
+			<fileset dir="${web_src}">
+				<exclude name="**/*.java"/>
+			</fileset>		
+		</copy>
+		<javac destdir="${web_dest}" debug="true"
+			deprecation="false" optimize="false" failonerror="true">
+			<src path="${web_src}"/>
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+	<target name="build" description="生成整个项目的EAR包" depends="compile">
+		<!-- 生成Web应用的WAR包 -->
+		<jar destfile="${app_dest}/${app_name}.war"
+			basedir="${app_name}.war"
+			excludes="**/*.java"/>
+		<mkdir dir="${app_dest}/META-INF"/>
+		<copy todir="${app_dest}/META-INF">
+			<fileset dir="META-INF">
+				<include name="**/*"/>
+			</fileset>		
+		</copy>
+		<jar destfile="${app_dest}/${app_name}.ear"
+			basedir="${app_dest}"/>
+		<!-- 删除build目录下的Web应用的WAR包 -->
+		<delete file="${app_dest}/${app_name}.war"/>
+		<delete dir="${app_dest}/META-INF"/>
+	</target>
+</project>

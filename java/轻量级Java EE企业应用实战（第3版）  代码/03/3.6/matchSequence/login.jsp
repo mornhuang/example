@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=GBK"%>
+<script>
+	function regist()
+	{
+		targetForm = document.forms[0];
+		targetForm.action = "RegistAction.action";
+		targetForm.submit();
+	}
+</script>
+<html>
+<head>
+<title>µÇÂ¼Ò³Ãæ</title>
+</head>
+<body>
+<table width="300" align="center">
+<form action="LoginAction.action" method="post">
+<tr>
+<td>ÓÃ»§Ãû:</td>
+<td><input type="text" name="username"/></td>
+</tr>
+<tr>
+<td>ÃÜ&nbsp;&nbsp;Âë:</td>
+<td><input type="text" name="password"/></td>
+</tr>
+<tr>
+<td><input type="submit" value="µÇÂ¼"/></td>
+<td><input type="button" value="×¢²á" onClick="regist();"/></td>
+</tr>
+</form>
+<table>
+</body>
+</html>

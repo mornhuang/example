@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+
+	<package name="lee" extends="struts-default">
+		<!-- 用户注册的Action -->
+		<action name="registPro" class="org.crazyit.app.action.RegistAction">
+			<!-- 类型转换失败、输入校验失败，转入该页面 -->
+			<result name="input">/WEB-INF/content/regist.jsp</result>
+			<result>/WEB-INF/content/show.jsp</result>
+		</action>
+		<!-- 可以匹配任何请求，直接转向对应的页面
+			例如abc请求，那么就会跳转到/WEB-INF/content/abc.jsp -->
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

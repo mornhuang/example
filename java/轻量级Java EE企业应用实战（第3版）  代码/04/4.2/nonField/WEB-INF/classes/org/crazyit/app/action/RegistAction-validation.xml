@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Struts 2数据校验的规则文件的DTD信息 -->
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<!-- Struts 2校验文件的根元素 -->
+<validators>
+	<!-- 配置指定必填字符串的校验器 -->
+	<validator type="requiredstring">
+		<!-- 使用该校验器校验name属性 -->
+		<param name="fieldName">name</param>
+		<param name="trim">true</param>
+		<!-- 指定校验失败后输出name.required对应的国际化信息 -->
+		<message key="name.requried"/>
+	</validator>
+	<!-- 配置指定正则表达式的校验器 -->
+	<validator type="regex">
+		<!-- 使用该校验器校验name属性 -->
+		<param name="fieldName">name</param>
+		<param name="trim">true</param>
+		<param name="expression"><![CDATA[(\w{4,25})]]></param>
+		<!-- 指定校验失败后输出name.required对应的国际化信息 -->
+		<message key="name.regex"/>
+	</validator>
+	<!-- 配置指定必填字符串的校验器 -->
+	<validator type="requiredstring">
+		<!-- 使用该校验器校验pass属性 -->
+		<param name="fieldName">pass</param>
+		<param name="trim">true</param>
+		<!-- 指定校验失败后输出pass.required对应的国际化信息 -->
+		<message key="pass.requried"/>
+	</validator>
+	<!-- 配置指定正则表达式的校验器 -->
+	<validator type="regex">
+		<!-- 使用该校验器校验pass属性 -->
+		<param name="fieldName">pass</param>
+		<param name="trim">true</param>
+		<param name="expression"><![CDATA[(\w{4,25})]]></param>
+		<!-- 指定校验失败后输出pass.required对应的国际化信息 -->
+		<message key="pass.regex"/>
+	</validator>
+	<!-- 配置指定整数校验器 -->
+	<validator type="int">
+		<!-- 使用该校验器校验age属性 -->
+		<param name="fieldName">age</param>
+		<!-- 指定整数校验器的范围-->
+		<param name="min">1</param>
+		<param name="max">150</param>
+		<!-- 指定校验失败后输出age.range对应的国际化信息 -->
+		<message key="age.range"/>
+	</validator>
+	<!-- 配置指定日期校验器 -->
+	<validator type="date">
+		<!-- 使用该校验器校验birth属性 -->
+		<param name="fieldName">birth</param>
+		<!-- 指定日期校验器的范围-->
+		<param name="min">1900-01-01</param>
+		<param name="max">2050-02-21</param>
+		<!-- 指定校验失败后输出birth.range对应的国际化信息 -->
+		<message key="birth.range"/>
+	</validator>
+</validators>

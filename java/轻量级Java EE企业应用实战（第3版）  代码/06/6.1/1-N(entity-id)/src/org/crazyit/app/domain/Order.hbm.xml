@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Order" table="order_inf">
+		<!-- 映射主键 -->
+		<id name="orderId" column="order_id">
+			<!-- 指定主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<property name="orderDate" />		
+		<set name="items" table="order_item_inf"
+			inverse="true" >
+			<key column="order_id" />
+			<one-to-many class="OrderItem"/>
+		</set>
+	</class>
+</hibernate-mapping>

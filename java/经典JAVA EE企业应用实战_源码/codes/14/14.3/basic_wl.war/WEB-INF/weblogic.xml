@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="gbk"?>
+<weblogic-web-app>
+	<!-- 将安全角色映射到服务器上的用户组 -->
+	<security-role-assignment>
+		<role-name>crazyit</role-name>
+		<principal-name>crazyitGp</principal-name>
+	</security-role-assignment>
+</weblogic-web-app>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- JSF配置文件的根元素,并指定Schema信息 -->
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>registBean</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.jsf.RegistBean</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<!-- 导航规则的输入页面 -->
+		<from-view-id>/add.jsp</from-view-id>
+		<!-- 如果Action方法的处理结果是success
+			, 则跳转到视图页show.jsp -->
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/show.jsp</to-view-id>
+		</navigation-case>
+		<!-- 如果Action方法的处理结果是failure
+			, 则跳转到视图页add.jsp -->
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/add.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

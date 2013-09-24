@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="manager.name">
+		<field-validator type="requiredstring">
+			<message>用户名必填！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message>您输入的用户名只能是字母和数字，且长度必须在4到25之间</message>
+		</field-validator>
+	</field>
+	<field name="manager.pass">
+		<field-validator type="requiredstring">
+			<message>密码必填！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message>您输入的密码只能是字母和数字，且长度必须在4到25之间</message>
+		</field-validator>
+	</field>
+	<field name="vercode">
+		<field-validator type="requiredstring">
+			<message>验证码必填！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{6,6})]]></param>
+			<message>您输入的验证码只能是字母和数字，且长度必须在6位</message>
+		</field-validator>
+	</field>
+</validators>

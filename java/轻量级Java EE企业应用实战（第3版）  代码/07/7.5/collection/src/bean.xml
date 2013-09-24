@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 定义一个普通Axe Bean -->
+	<bean id="stoneAxe" class="org.crazyit.app.service.impl.StoneAxe"/>
+	<bean id="steelAxe" class="org.crazyit.app.service.impl.SteelAxe"/>
+	<!-- 定义chinese Bean -->
+	<bean id="chinese" class="org.crazyit.app.service.impl.Chinese">
+		<property name="schools">
+			<!-- 为List属性配置属性值 -->
+			<list>
+				<!-- 每个value、ref、bean都配置一个List元素 -->
+				<value>小学</value>
+				<value>中学</value>
+				<value>大学</value>
+			</list>
+		</property>
+		<property name="scores">
+			<!-- 为Map属性配置属性值 -->
+			<map>
+				<!-- 每个entry配置一个key-value对 -->
+				<entry key="数学" value="87"/>
+				<entry key="英语" value="89"/>
+				<entry key="语文" value="82"/>
+			</map>
+		</property>
+		<property name="phaseAxes">
+			<!-- 为Map属性配置属性值 -->
+			<map>
+				<!-- 每个entry配置一个key-value对 -->
+				<entry key="原始社会" value-ref="stoneAxe"/>
+				<entry key="农业社会" value-ref="steelAxe"/>
+			</map>
+		</property>
+		<property name="health">
+			<!-- 为Properties属性配置属性值 -->
+			<!-- 每个prop元素配置一个属性项，
+				其中key指定属性名 -->
+			<!-- props>
+				<prop key="血压">正常</prop>
+				<prop key="身高">175</prop>
+			</props -->
+			<value>
+				pressure=normal
+				height=175
+			</value>
+		</property>
+		<property name="axes">
+			<!-- 为Set属性配置属性值 -->
+			<set>
+				<!-- 每个value、ref、bean都配置一个Set元素 -->
+				<value>普通的字符串</value>
+				<bean class="org.crazyit.app.service.impl.SteelAxe"/>
+				<ref local="stoneAxe"/>
+			</set>
+		</property>
+		<property name="books">
+			<!-- 为数组属性配置属性值 -->
+			<list>
+				<!-- 每个value、ref、bean都配置一个数组元素 -->
+				<value>Struts 2权威指南</value>
+				<value>轻量级Java EE企业应用实战</value>
+				<value>疯狂Java讲义</value>
+			</list>
+		</property>
+	</bean>
+</beans>

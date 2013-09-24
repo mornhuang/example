@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Person" table="person_inf">
+		<!-- 直接使用composite-id映射多列联合主键 -->
+		<composite-id>
+			<!-- 映射组件主键里的各属性 -->
+			<key-property name="first" type="string"/>
+			<key-property name="last" type="string"/>
+		</composite-id>
+		<!-- 映射普通属性 -->
+		<property name="age" type="int"/>
+		<!-- 映射关联实体 -->
+		<set name="addresses" inverse="true"
+			cascade="all">
+			<key>
+				<!-- 映射两个外键列 -->
+				<column name="first"/>
+				<column name="last"/>
+			</key>
+			<one-to-many class="Address"/>
+		</set>
+	</class>
+</hibernate-mapping>

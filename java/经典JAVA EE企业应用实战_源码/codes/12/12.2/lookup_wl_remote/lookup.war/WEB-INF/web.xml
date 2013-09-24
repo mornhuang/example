@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 配置Web应用配置文件的根元素，并指定配置文件的Schema信息 -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+	<!-- 配置JSF程序状态的保存位置 -->
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<!-- 将程序状态保存在客户端 -->
+		<param-value>client</param-value>
+	</context-param>
+	<context-param>
+		<param-name>com.sun.faces.validateXml</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- 配置JSF的核心控制器：FacesServlet  -->
+	<servlet>
+		<servlet-name>FacesServlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- 配置JSF核心FacesServlet的映射 -->
+	<servlet-mapping>
+		<servlet-name>FacesServlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	<!-- 配置EJB引用 -->
+	<ejb-ref>
+		<!-- 指定EJB引用的引用名 -->
+		<ejb-ref-name>userService</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<!-- 指定EJB引用所引用的EJB的业务接口 -->
+		<remote>org.crazyit.service.UserService</remote>
+	</ejb-ref>
+</web-app>

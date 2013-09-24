@@ -1,0 +1,22 @@
+部署Java EE应用请按如下步骤进行:
+    1. 将mysql.sql脚本中的语句导入MySQL数据库。
+       可以修改tomcat、mysql两个账户的邮件地址，这样可使用自己的邮件地址来收取系统发送的邮件通知。
+
+    2. 推荐使用JBoss 5.1 GA系列作为应用服务器。
+
+    3. 将auction-ds.xml复制到%JBOSS_HOME%\server\default\deploy目录下，该文件在JBoss服务器上配置数据源
+       将AuctionQueue-service.xml文件复制到%JBOSS_HOME%\server\default\deploy目录下，该文件在JBoss服务器上配置消息目的
+
+    4. 启动Dos或shell窗口，进入auction\WEB-INF路径下，输入
+       ant build 
+       该命令用于编译、生成应用，在build目录下生成的Auction.ear包就是项目文件。
+       对于Auction_NetBeans项目，直接导入NetBeans工具中，NetBeans将负责在dist目录上生成Auction.ear文件。
+
+    5. 将项目生成的auction.ear（位于build目录下）复制到%JBOSS_HOME%\server\default\deploy目录下
+       启动JBoss服务器。
+
+    6. 系统内置了两个用户：tomcat（密码是tomcat）和mysql（密码是mysql）
+
+    因为系统的特殊要求，故没有提供注册新用户的功能！
+
+    注意：因为本系统使用了smtp.sina.com作为发送邮件的服务器，因此读者应保证主机可正常接入互联网（注意关闭防火墙）。

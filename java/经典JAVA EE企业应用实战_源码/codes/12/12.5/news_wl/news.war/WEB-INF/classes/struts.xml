@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<!-- struts是Struts 2配置文件的根元素 -->
+<struts>
+	<!-- 通过常量配置Struts 2的国际化资源信息 -->
+	<constant name="struts.custom.i18n.resources" value="messages"/>
+	<!-- 通过常量配置Struts 2所使用的解码集-->
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<!-- Struts 2的Action必须放在指定的包空间下定义 -->
+	<package name="news" extends="struts-default">
+		<!-- 定义名为addNews的Action -->
+		<action name="addNews" class="org.crazyit.controller.AddNewsAction">
+			<!-- 定义处理结果和视图资源之间映射关系 -->
+			<result name="success">/succ.jsp</result>
+		</action>
+		<!-- 定义名为viewAll的Action -->
+		<action name="viewAll" class="org.crazyit.controller.ViewAllNewsAction">
+			<!-- 如果处理结果返回success，进入viewAll.jsp页面 -->
+			<result name="success">/viewAll.jsp</result> 
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	<absolute-ordering>
+		<!-- 指定Web模块按如下顺序加载  -->
+		<name>leegang</name>
+		<name>crazyit</name>
+	</absolute-ordering>
+
+<servlet> 
+	<servlet-name>async</servlet-name> 
+	<servlet-class>lee.AsyncServlet</servlet-class> 
+	<!-- 开启异步调用支持 -->
+	<async-supported>true</async-supported> 
+</servlet> 
+<servlet-mapping> 
+	<servlet-name>async</servlet-name> 
+	<url-pattern>/async</url-pattern> 
+</servlet-mapping>
+	
+</web-app>

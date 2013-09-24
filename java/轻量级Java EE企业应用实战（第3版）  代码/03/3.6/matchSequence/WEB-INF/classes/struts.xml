@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="lee" extends="struts-default">
+
+		<!-- 配置name="*Action"的第二个Action -->
+		<action name="*Action" class="org.crazyit.app.action.TwoAction">
+			<result name="success">/welcome.jsp</result>
+		</action>
+		<!-- 配置name="*"的第一个Action -->
+		<action name="*" class="org.crazyit.app.action.FirstAction">
+			<result name="success">/welcome.jsp</result>
+		</action>
+		<!-- 配置name为LoginAction的第三个Action -->
+		<action name="LoginAction" class="org.crazyit.app.action.LoginAction">
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+</struts>

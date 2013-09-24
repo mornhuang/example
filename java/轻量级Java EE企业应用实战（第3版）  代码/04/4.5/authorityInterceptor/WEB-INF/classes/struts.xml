@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+
+	<package name="lee" extends="struts-default">
+		<!-- 用户拦截器定义在该元素下 -->
+		<interceptors>
+			<!-- 定义了一个名为authority的拦截器 -->
+			<interceptor name="authority" 
+			class="org.crazyit.app.interceptor.AuthorityInterceptor"/>
+		</interceptors>
+
+		<!-- 定义全局Result -->
+		<global-results>
+			<!-- 当返回login视图名时，转入login.jsp页面 -->
+			<result name="login">/WEB-INF/content/login.jsp</result>
+		</global-results>
+
+		<action name="loginPro" class="org.crazyit.app.action.LoginAction">
+			<result name="error">/WEB-INF/content//error.jsp</result>
+			<result name="success">/WEB-INF/content/welcome.jsp</result>
+		</action>
+		<!-- 定义一个名为viewBook的Action，其实现类为ActionSupport -->
+		<action name="viewBook">
+			<!-- 返回success视图名时，
+				转入/WEB-INF/content/viewBook.jsp页面 -->
+			<result>/WEB-INF/content/viewBook.jsp</result>
+			<interceptor-ref name="defaultStack"/>
+			<!-- 应用自定义拦截器 -->
+			<interceptor-ref name="authority"/>
+		</action>
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

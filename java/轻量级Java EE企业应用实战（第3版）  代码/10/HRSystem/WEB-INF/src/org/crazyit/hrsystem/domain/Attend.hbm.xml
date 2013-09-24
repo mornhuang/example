@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="org.crazyit.hrsystem.domain">
+	<class	name="Attend"	table="attend_table">
+		<!-- 使用只读缓存 -->
+		<cache usage="read-only"/>
+		<!-- 映射标识属性 -->
+		<id	name="id" type="integer" column="attend_id">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="dutyDay" column="duty_day"
+			type="string" not-null="true" length="50"/>
+		<property name="punchTime" column="punch_time"
+			type="java.util.Date" />
+		<property name="isCome" column="is_come"
+			type="boolean" not-null="true"/>
+		<!-- 映射和AttendType之间的关联关系 -->
+		<many-to-one name="type" column="type_id" 
+			class="AttendType" not-null="true" lazy="false"/>
+		<!-- 映射和Employee之间的关联关系 -->
+		<many-to-one name="employee" column="emp_id" 
+			class="Employee" not-null="true" lazy="false"/>
+	</class>
+</hibernate-mapping>

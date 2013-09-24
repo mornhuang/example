@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-fragment xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  
+	http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd" version="3.0">
+	<!-- 指定该Web模块的唯一标识 -->
+	<name>crazyit</name>
+	<listener>
+		<listener-class>lee.CrazyitListener</listener-class>
+	</listener>
+	<ordering>
+		<!-- 用配置该Web模块必须位于哪些模块之前加载 -->
+		<before>
+			<!-- 用于指定位于其他所有模块之前加载 -->
+			<others/>
+		</before>
+	</ordering>
+</web-fragment>

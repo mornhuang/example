@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Person持久化类-->
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性id -->
+		<id name="id" column="person_id">
+			<!-- 定义主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 用于映射普通属性 -->
+		<property name="name" type="string"/>
+		<property name="age" type="int"/>
+		<!-- 映射集合属性，集合元素是其他持久化实体
+			指定连接表的表名-->
+		<set name="addresses" table="person_address">
+			<!-- 指定连接表中参照本表记录的外键列名 -->
+			<key column="person_id" />
+			<!-- 使用many-to-many来映射N－N关联 -->
+			<many-to-many class="Address" column="address_id"/>
+		</set>
+	</class>
+</hibernate-mapping>

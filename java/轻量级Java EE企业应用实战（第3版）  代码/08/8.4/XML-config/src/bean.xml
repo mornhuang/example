@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<aop:config>
+		<!-- 将fourAdviceBean转换成切面Bean
+			切面Bean的新名称为：fourAdviceAspect
+			指定该切面的优先级为2 -->
+		<aop:aspect id="fourAdviceAspect" ref="fourAdviceBean"
+			order="2">
+			<!-- 定义一个After增强处理，
+				直接指定切入点表达式
+				以切面Bean中的release()方法作为增强处理方法 -->
+			<aop:after pointcut="execution(* org.crazyit.app.service.impl.*.*(..))" 
+				method="release"/>
+			<!-- 定义一个Before增强处理，
+				直接指定切入点表达式
+				以切面Bean中的authority()方法作为增强处理方法 -->
+			<aop:before pointcut="execution(* org.crazyit.app.service.impl.*.*(..))" 
+				method="authority"/>
+			<!-- 定义一个AfterReturning增强处理，
+				直接指定切入点表达式
+				以切面Bean中的log()方法作为增强处理方法 -->
+			<aop:after-returning pointcut="execution(* org.crazyit.app.service.impl.*.*(..))" 
+				method="log" returning="rvt"/>
+			<!-- 定义一个Around增强处理，
+				直接指定切入点表达式
+				以切面Bean中的processTx()方法作为增强处理方法 -->
+			<aop:around pointcut="execution(* org.crazyit.app.service.impl.*.*(..))" 
+				method="processTx"/>
+		</aop:aspect>
+
+		<!-- 将secondAdviceBean转换成切面Bean
+			切面Bean的新名称为：secondAdviceAspect
+			指定该切面的优先级为1，该切面里的增强处理将被优先织入 -->
+		<aop:aspect id="secondAdviceAspect" ref="secondAdviceBean"
+			order="1">
+			<!-- 定义一个Before增强处理，
+				直接指定切入点表达式
+				以切面Bean中的authority()方法作为增强处理方法 
+				且该参数必须为String类型（由authority方法声明中msg参数的类型决定） -->
+			<aop:before pointcut="execution(* org.crazyit.app.service.impl.*.*(..)) and args(aa)" 
+				method="authority"/>
+		</aop:aspect>
+	</aop:config>
+	<!-- 定义一个普通组件Bean -->
+	<bean id="chinese" 
+	class="org.crazyit.app.service.impl.Chinese"/>
+	<!-- 定义一个普通Bean实例，该Bean实例将被作为Aspect Bean -->
+	<bean id="fourAdviceBean"
+	class="org.crazyit.app.advice.FourAdviceTest"/>
+	<!-- 再定义一个普通Bean实例，该Bean实例将被作为Aspect Bean -->
+	<bean id="secondAdviceBean"
+	class="org.crazyit.app.advice.SecondAdviceTest"/>
+</beans>

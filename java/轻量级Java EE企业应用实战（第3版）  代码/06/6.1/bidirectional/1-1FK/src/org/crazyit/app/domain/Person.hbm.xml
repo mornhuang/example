@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Person持久化类-->
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性id -->
+		<id name="id" column="person_id">
+			<!-- 定义主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 用于映射普通属性 -->
+		<property name="name" type="string"/>
+		<property name="age" type="int"/>
+		<!-- one-to-one元素映射关联属性，外键列在对方的表内
+			property-ref指定引用关联类的属性。
+			即：在address属性所属的Address类内，
+			必须有person属性的setter和getter方法 -->
+		<one-to-one name="address" property-ref="person"/>
+	</class>
+</hibernate-mapping>

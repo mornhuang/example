@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- JSF配置文件的根元素,并指定Schema信息 -->
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>viewSuccess</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.ViewSuAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>viewBid</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.ViewBidAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>viewFail</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.ViewFailAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>mgrKind</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.MgrKindAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>addKind</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.AddKindAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>viewItem</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.ViewItemAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>viewDetail</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.ViewDetailAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>mgrItem</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.MgrItemAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>loginPro</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.LoginAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>addBid</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.AddBidAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<!-- 配置托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>addItem</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>org.crazyit.auction.jsf.AddItemAction</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<!-- 导航规则的输入页面 -->
+		<from-view-id>/login.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/main.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<!-- 导航规则的输入页面 -->
+		<from-view-id>/mgrKind.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/mgrKind.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/mgrKind.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<!-- 导航规则的输入页面 -->
+		<from-view-id>/viewDetail.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/viewDetail.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>input</from-outcome>
+			<to-view-id>/viewDetail.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<!-- 导航规则的输入页面 -->
+		<from-view-id>/mgrItem.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/mgrItem.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>input</from-outcome>
+			<to-view-id>/mgrItem.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<!-- 从任何视图页面开始 -->
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<!-- 定义logout导航到/login.jsp页面 -->
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<!-- 从任何视图页面开始 -->
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<!-- 定义error导航到/login.jsp页面 -->
+			<from-outcome>error</from-outcome>
+			<to-view-id>/error.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<lifecycle>
+		<!-- 配置生命周期事件监听器 -->
+		<phase-listener>org.crazyit.auction.jsf.listener.LoggedInCheck</phase-listener>  
+	</lifecycle>
+</faces-config>

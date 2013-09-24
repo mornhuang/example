@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm
+	http://java.sun.com/xml/ns/persistence/orm_1_0.xsd" version="1.0">
+	<persistence-unit-metadata>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<!-- 指定实体默认所在的包 -->
+	<package>org.crazyit.model</package>
+	<entity class="News">
+		<!-- 指定将该实体类映射到表 -->
+		<table name="news_table"/>
+		<attributes>
+			<!-- 配置主键映射 -->
+			<id name="id">
+				<!-- 指定主键生成策略 -->
+				<generated-value strategy="IDENTITY"/>
+			</id>
+			<basic name="title">
+				<column name="news_title" length="50"/>
+			</basic>
+			<basic name="content"/>
+		</attributes>
+	</entity>
+</entity-mappings>

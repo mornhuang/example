@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- 在应用服务器中使用JTA全局事务 -->
+	<persistence-unit name="newsUnit" transaction-type="JTA">
+		<jta-data-source>javaee</jta-data-source>
+		<!-- 列出该应用需要访问的所有的Entity类 -->
+		<class>org.crazyit.model.News</class>
+		<properties>
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+
+	<!-- 定义Filter -->
+	<filter>
+		<!-- Filter的名字，相当于指定@WebFilter
+			的filterName属性 -->
+		<filter-name>log</filter-name>
+		<!-- Filter的实现类 -->
+		<filter-class>lee.LogFilter</filter-class> 
+	</filter>
+	<!-- 定义Filter拦截的URL地址 -->
+	<filter-mapping>
+		<!-- Filter的名字 -->
+		<filter-name>log</filter-name>
+		<!-- Filter负责拦截的URL，相当于指定@WebFilter
+			的urlPatterns属性 -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 定义Filter -->
+	<filter>
+		<!-- Filter的名字 -->
+		<filter-name>authority</filter-name>
+		<!-- Filter的实现类 -->
+		<filter-class>lee.AuthorityFilter</filter-class>
+		<!-- 下面三个init-param元素配置了三个参数 -->
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>GBK</param-value>
+		</init-param>
+		<init-param>
+			<param-name>loginPage</param-name>
+			<param-value>/login.jsp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>proLogin</param-name>
+			<param-value>/proLogin.jsp</param-value>
+		</init-param>
+	</filter>
+	<!-- 定义Filter拦截的URL地址 -->
+	<filter-mapping>
+		<!-- Filter的名字 -->
+		<filter-name>authority</filter-name>
+		<!-- Filter负责拦截的URL -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+</web-app>

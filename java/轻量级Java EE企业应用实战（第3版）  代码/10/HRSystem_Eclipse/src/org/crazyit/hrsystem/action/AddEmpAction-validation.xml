@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<field name="emp.name">
+		<field-validator type="requiredstring">
+			<message>员工用户名必填！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message>您输入的用户名只能是字母和数字，且长度必须在4到25之间</message>
+		</field-validator>
+	</field>
+	<field name="emp.pass">
+		<field-validator type="requiredstring">
+			<message>员工密码必填！</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message>您输入的密码只能是字母和数字，且长度必须在4到25之间</message>
+		</field-validator>
+	</field>
+	<field name="emp.salary">
+		<field-validator type="required">
+			<message>员工月薪必填！</message>
+		</field-validator>
+		<field-validator type="double">
+			<param name="minInclusive">1500</param>
+			<param name="maxInclusive">4500</param>
+			<message>您输入的员工月薪必须在${minInclusive}和${maxInclusive}之间</message>
+		</field-validator>
+	</field>
+</validators>

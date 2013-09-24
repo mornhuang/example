@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- JSF配置文件的根元素,并指定Schema信息 -->
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+<!-- 配置托管Bean -->
+<managed-bean>
+	<!-- 设置托管Bean的名字 -->
+	<managed-bean-name>bookBean</managed-bean-name>
+	<!-- 设置托管Bean的实现类 -->
+	<managed-bean-class>org.crazyit.jsf.BookBean</managed-bean-class>
+	<!-- 设置托管Bean实例的有效范围 -->
+	<managed-bean-scope>request</managed-bean-scope>
+	<managed-property>
+		<property-name>name</property-name>
+		<value>疯狂Java讲义</value>
+	</managed-property>
+	<managed-property>
+		<property-name>price</property-name>
+		<value>99</value>
+	</managed-property>
+</managed-bean>
+</faces-config>

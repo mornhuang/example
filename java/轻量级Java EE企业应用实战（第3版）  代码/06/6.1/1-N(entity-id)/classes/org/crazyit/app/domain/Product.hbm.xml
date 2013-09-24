@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Product实体类 -->
+	<class name="Product" table="product_inf">
+		<!-- 映射主键 -->
+		<id name="productId" column="product_id">
+			<!-- 指定主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<property name="name" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="lee">
+	<!-- Shop持久化类-->
+	<class name="School" table="school_inf">
+		<!-- 映射标识属性id -->
+		<id name="id" column="school_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性name -->
+		<property name="name" type="string"/>
+	</class>
+</hibernate-mapping>

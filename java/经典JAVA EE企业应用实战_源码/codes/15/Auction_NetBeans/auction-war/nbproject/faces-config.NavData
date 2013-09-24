@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="mgrKind.jsp" x="630" y="229" zoom="true"/>
+        <Node id="main.jsp" x="717" y="528" zoom="true"/>
+        <Node id="index.jsp" x="400" y="600" zoom="true"/>
+        <Node id="viewBid.jsp" x="634" y="287" zoom="true"/>
+        <Node id="*" x="511" y="535" zoom="true"/>
+        <Node id="viewDetail.jsp" x="400" y="300" zoom="true"/>
+        <Node id="error.jsp" x="869" y="290" zoom="true"/>
+        <Node id="viewFail.jsp" x="150" y="450" zoom="true"/>
+        <Node id="decorators/main.jsp" x="1150" y="150" zoom="true"/>
+        <Node id="viewKind.jsp" x="900" y="150" zoom="true"/>
+        <Node id="viewItem.jsp" x="150" y="150" zoom="true"/>
+        <Node id="viewSuccess.jsp" x="400" y="150" zoom="true"/>
+        <Node id="login.jsp" x="594" y="396" zoom="true"/>
+        <Node id="mgrItem.jsp" x="150" y="300" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

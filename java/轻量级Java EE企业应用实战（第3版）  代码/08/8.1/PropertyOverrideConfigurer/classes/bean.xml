@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- PropertyOverrideConfigurer是一个Bean后处理器，它会读取
+		属性文件信息，并将这些信息设置成Spring配置文件的元数据。 -->
+	<bean class=
+		"org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+		<property name="locations">
+			<list>
+				<value>dbconn.properties</value>
+				<!--如果有多个属性文件,依次在下面列出来-->
+				<!--value>wawa.properties</value-->
+			</list>
+		</property>
+	</bean>
+	<!-- 定义数据源Bean，使用C3P0数据源实现
+		，但此处不配置任何属性-->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close"/>
+</beans>

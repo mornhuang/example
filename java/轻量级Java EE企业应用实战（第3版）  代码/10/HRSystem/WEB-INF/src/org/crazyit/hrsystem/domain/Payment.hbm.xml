@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="org.crazyit.hrsystem.domain">
+	<class	name="Payment"	table="pay_table">
+		<!-- 使用只读缓存 -->
+		<cache usage="read-only"/>
+		<!-- 映射标识属性 -->
+		<id	name="id" type="integer" column="pay_id">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="payMonth" column="pay_month"
+			type="string" not-null="true" length="50"/>
+		<property name="amount" column="pay_amount"
+			type="double" not-null="true"/>
+		<!-- 映射和Employee的关联关系 -->
+		<many-to-one name="employee" column="emp_id"
+			class="Employee" not-null="true" lazy="false"/>
+	</class>
+</hibernate-mapping>

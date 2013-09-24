@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="conststruts.devMode" value="true"/>
+	<!-- Struts2的所有Action都需位于package下 -->
+	<package name="lee" extends="struts-default">
+		<!-- 定义名为login的Action，其实现类为LoginAction类 -->
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+			<!-- 如果处理结果返回error，对应/error.jsp视图资源 -->
+			<result name="error">/error.jsp</result>
+			<!-- 如果处理结果返回success，对应/welcome.jsp视图资源 -->
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+</struts>

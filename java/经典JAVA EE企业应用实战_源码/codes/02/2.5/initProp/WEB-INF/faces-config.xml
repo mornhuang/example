@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='GBK'?>
+
+
+<faces-config version="1.2" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>test</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>lee.TestBean</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+		<!-- 初始化String类型的name属性 -->
+		<managed-property>
+			<property-name>name</property-name>
+			<!-- 指定该属性的数据类型 -->
+			<property-class>java.lang.String</property-class>
+			<!-- 使用表达式初始化托管Bean的属性 -->
+			<value>crazyit.org</value>
+		</managed-property>
+		<!-- 初始化Map类型的属性 -->
+		<managed-property>
+			<property-name>books</property-name>
+			<map-entries>
+				<key-class>java.lang.String</key-class>
+				<value-class>java.lang.Double</value-class>
+				<!-- 每个map-entry配置一个key-value对 -->
+				<map-entry>
+					<key>疯狂Java讲义</key>
+					<value>99.0</value>
+				</map-entry>
+				<map-entry>
+					<key>疯狂Ajax讲义</key>
+					<value>69.0</value>
+				</map-entry>
+				<map-entry>
+					<key>疯狂XML讲义</key>
+					<value>65.0</value>
+				</map-entry>
+			</map-entries>
+		</managed-property>
+		<!-- 初始化List类型的属性 -->
+		<managed-property>
+			<property-name>schools</property-name>
+			<!-- 列出List的多个集合元素 -->
+			<list-entries>
+				<!-- 每个value子元素配置一个List集合元素 -->
+				<value>小学</value>
+				<value>中学</value>
+				<value>疯狂Java实训营</value>
+			</list-entries>
+		</managed-property>
+	</managed-bean>
+
+
+	<!-- 直接配置一个类型为List的托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>trainings</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>java.util.ArrayList</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+		<!-- 初始化托管Bean里的集合元素 -->
+		<list-entries>
+			<!-- 每个value子元素配置一个List集合元素 -->
+			<value>疯狂Java实训营</value>
+			<value>www.crazyit.org</value>
+			<value>广州为学教育</value>
+		</list-entries>
+	</managed-bean>
+	<!-- 直接配置一个类型为Map的托管Bean -->
+	<managed-bean>
+		<!-- 设置托管Bean的名字 -->
+		<managed-bean-name>scores</managed-bean-name>
+		<!-- 设置托管Bean的实现类 -->
+		<managed-bean-class>java.util.HashMap</managed-bean-class>
+		<!-- 设置托管Bean实例的有效范围 -->
+		<managed-bean-scope>request</managed-bean-scope>
+		<map-entries>
+			<!-- 每个map-entry配置一个key-value对 -->
+			<map-entry>
+				<key>语文</key>
+				<value>79.5</value>
+			</map-entry>
+			<map-entry>
+				<key>数学</key>
+				<value>89.5</value>
+			</map-entry>
+			<map-entry>
+				<key>Java</key>
+				<value>92.0</value>
+			</map-entry>
+		</map-entries>
+	</managed-bean>
+
+</faces-config>
+

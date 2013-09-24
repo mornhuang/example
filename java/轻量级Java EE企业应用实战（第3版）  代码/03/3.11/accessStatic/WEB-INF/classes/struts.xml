@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<!-- 设置允许OGNL允许访问静态方法 -->
+	<constant name="struts.ognl.allowStaticMethodAccess"
+		value="true"/>
+	<package name="lee" extends="struts-default">
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Category" table="category_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="category_id">
+			<!-- 指定identity的主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- property映射普通属性 -->
+		<property name="name" type="string"/>
+		<property name="effectiveStartDate"
+			column="eff_start_date" type="java.util.Date"/>
+		<property name="effectiveEndDate"
+			column="eff_end_date" type="java.util.Date"/>
+		<!-- 映射Category和Product的关联关系 -->
+		<set inverse="true" name="products" table="product_category">
+			<key column="category_id"/>
+			<many-to-many column="product_id" class="Product"/>
+		</set>
+		<!-- 对Category应用数据过滤 -->
+		<filter name="effectiveDate" 
+			condition=":asOfDate BETWEEN eff_start_date and eff_end_date"/>
+	</class>
+</hibernate-mapping>

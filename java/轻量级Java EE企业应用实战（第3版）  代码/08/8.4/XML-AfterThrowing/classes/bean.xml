@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<aop:config>
+		<!-- 定义一个切入点：myPointcut
+			直接指定它对应的切入点表达式 -->
+		<aop:pointcut id="myPointcut" 
+			expression="execution(* org.crazyit.app.service.impl.*.*(..))"/>
+		<aop:aspect id="afterThrowingAdviceAspect"
+			ref="afterThrowingAdviceBean" order="1">
+			<!-- 定义一个AfterThrowing增强处理，指定切入点
+				以切面Bean中的doRecoveryActions()方法作为增强处理方法 
+				且该参数必须为String类型（由authority方法声明中msg参数的类型决定） -->
+			<aop:after-throwing pointcut-ref="myPointcut" 
+				method="doRecoveryActions" throwing="ex"/>
+		</aop:aspect>
+	</aop:config>
+	<!-- 定义一个普通组件Bean -->
+	<bean id="chinese"
+	class="org.crazyit.app.service.impl.Chinese"/>
+	<!-- 再定义一个普通Bean实例，该Bean实例将被作为Aspect Bean -->
+	<bean id="afterThrowingAdviceBean"
+	class="org.crazyit.app.advice.AfterThrowingAdviceTest"/>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<Context docBase="G:/publish/codes/01/aa" privileged="true">
+	<!-- 其中name指定数据源在容器中的JNDI名
+	driverClassName指定连接数据库的驱动
+	url指定数据库服务的URL
+	username指定连接数据库的用户名
+	password指定连接数据库的密码
+	maxActive指定数据源最大活动连接数
+	maxIdle指定数据池中最大的空闲连接数
+	maxWait指定数据池中最大等待获取连接的客户端
+	-->
+	<Resource name="jdbc/dstest" auth="Container"
+		type="javax.sql.DataSource" 
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/javaee"
+		username="root" password="32147" maxActive="5"
+		maxIdle="2" maxWait="10000"/>
+</Context>

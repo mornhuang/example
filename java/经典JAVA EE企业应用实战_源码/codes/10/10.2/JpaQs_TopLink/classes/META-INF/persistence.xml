@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GBK"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- 为持久化单元指定名称，并通过transaction-type指定事务类型
+	transaction-type属性合法的属性值有JTA、RESOURCE_LOCAL两个-->
+	<persistence-unit name="qs" transaction-type="RESOURCE_LOCAL">
+		<!-- 指定javax.persistence.spi.PersistenceProvider实现类 -->
+		<provider>oracle.toplink.essentials.ejb.cmp3.EntityManagerFactoryProvider</provider>
+		<!-- 列出该应用需要访问的所有的Entity类, 
+		也可以用 <mapping-file> 或<jar-file>元素来定义 -->
+		<class>org.crazyit.model.News</class>
+		<!-- properties元素用于为特定JPA实现包配置属性 -->  
+		<!-- 下面列举的是toplink实现包中可以配置的部分属性 -->
+		<properties>			
+			<!-- 连接数据库的JDBC驱动 -->
+			<property name="toplink.jdbc.driver" 
+				value="com.mysql.jdbc.Driver"/>  
+			<!-- 设置连接数据库的URL -->
+			<property name="toplink.jdbc.url"
+				value="jdbc:mysql://localhost:3306/javaee"/>
+			<!-- 连接数据库的用户名 -->
+			<property name="toplink.jdbc.user"
+				value="root"/>
+			<!-- 数据库连接配置, 密码 -->
+			<property name="toplink.jdbc.password"
+				value="32147"/>  
+			<!-- 设置连接池中可写的最大连接数 -->
+			<property name="toplink.jdbc.write-connections.max"
+				value="10"/>
+			<!-- 设置连接池中可写的最小连接数 -->
+			<property name="toplink.jdbc.write-connections.min"
+				value="5"/>
+			<!-- 设置连接池中只读的最大连接数 -->
+			<property name="toplink.jdbc.read-connections.max" 
+				value="2"/>
+			<!-- 设置连接池中只读的最小连接数 -->
+			<property name="toplink.jdbc.read-connections.min"
+				value="2"/>
+			<!-- 设置连接池中只读连接是否共享 -->
+			<property name="toplink.jdbc.read-connections.shared" 
+				value="false"/>
+			<!-- 指定操作的目标数据库类型，可指定为auto，让JPA自动识别
+				该属性相当于指定数据库方言，该属性值默认就是Auto(区分大小写) -->
+			<property name="toplink.target-database"
+				value="Auto"/>
+			<!-- 指定是否生成数据表 -->
+			<property name="toplink.ddl-generation" 
+				value="create-tables"/>
+		</properties>
+	</persistence-unit>
+</persistence>

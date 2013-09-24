@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.2//EN"
+	"http://tuckey.org/res/dtds/urlrewrite3.2.dtd">
+<urlrewrite>
+	<rule>
+		<!-- 所有配置如下正则表达式的请求 -->
+		<from>/userinf-(\w*).html</from>
+		<!-- 将被forward到如下JSP页面，其中$1代表
+			上面第一个正则表达式所匹配的字符串 -->
+		<to type="forward">/userinf.jsp?username=$1</to>
+	</rule>
+</urlrewrite>
+

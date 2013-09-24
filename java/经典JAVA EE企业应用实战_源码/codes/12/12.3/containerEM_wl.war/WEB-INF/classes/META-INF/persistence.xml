@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- 在应用服务器中使用JTA全局事务 -->
+	<persistence-unit name="newsUnit" transaction-type="JTA">
+		<!-- 直接使用应用服务器管理的数据源 -->
+		<jta-data-source>javaee</jta-data-source>
+		<!-- 列出该应用所需要的所有Entity类 -->
+		<class>org.crazyit.model.News</class>
+		<!-- properties元素用于为特定JPA实现包配置属性 -->  
+		<!-- 下面列举的是OpenJPA实现中可以配置的属性 -->
+		<properties>
+		</properties>
+	</persistence-unit>
+</persistence>

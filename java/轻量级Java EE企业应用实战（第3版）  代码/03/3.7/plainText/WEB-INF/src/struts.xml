@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="lee" extends="struts-default">
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+			<!-- 指定Result的类型为plainText类型 -->
+			<result type="plainText">
+				<!-- 指定实际的视图资源 -->
+				<param name="location">/welcome.jsp</param>
+				<!-- 指定使用指定的字符集来处理页面代码-->
+				<param name="charSet">GBK</param>
+			</result>
+
+		</action>
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

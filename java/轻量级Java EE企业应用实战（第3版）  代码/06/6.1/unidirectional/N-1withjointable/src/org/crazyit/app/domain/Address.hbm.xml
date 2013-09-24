@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- Address持久化类-->
+	<class name="Address" table="address_inf">
+		<!-- 映射标识属性addressid -->
+		<id name="addressId" column="address_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性addressDetail -->
+		<property name="addressDetail"/>
+	</class>
+</hibernate-mapping>

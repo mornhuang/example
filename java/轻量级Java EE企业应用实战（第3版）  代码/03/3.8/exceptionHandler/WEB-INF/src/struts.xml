@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="lee" extends="struts-default">
+		<!-- 定义全局结果映射 -->
+		<global-results>
+			<!-- 定义当sql、root两个逻辑异常都对应exception.jsp页 -->
+			<result name="sql">/exception.jsp</result>
+			<result name="root">/exception.jsp</result>
+		</global-results>
+
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 当Action中遇到SQLException异常时，
+				系统将转入name为sql的结果中-->
+			<exception-mapping exception="java.sql.SQLException" result="sql"/>
+			<!-- 当Action中遇到Exception异常时，
+				系统将转入name为root的结果中-->
+			<exception-mapping exception="java.lang.Exception" result="root"/>
+		</global-exception-mappings>
+
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+			<!-- 定义局部异常映射， 当Action中遇到MyException异常时，
+				系统将转入name为my的结果中-->
+			<exception-mapping exception="org.crazyit.app.exception.MyException"
+				result="my"/>
+			<!-- 定义三个结果映射 -->
+			<result name="my">/exception.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

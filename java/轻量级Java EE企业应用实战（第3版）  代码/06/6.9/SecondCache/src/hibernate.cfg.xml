@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate配置文件的DTD信息 -->
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!-- hibernate- configuration是连接配置文件的根元素 -->
+<hibernate-configuration>
+	<session-factory>
+		<!-- 指定连接数据库所用的驱动 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 指定连接数据库的url，hibernate连接的数据库名 -->
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+		<!-- 指定连接数据库的用户名 -->
+		<property name="connection.username">root</property>
+		<!-- 指定连接数据库的密码 -->
+		<property name="connection.password">32147</property>
+		<!-- 指定数据库方言 -->
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<!-- 根据需要自动创建数据库 -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<!-- 指定连接池里最大连接数 -->
+		<property name="hibernate.c3p0.max_size">20</property>
+		<!-- 指定连接池里最小连接数 -->
+		<property name="hibernate.c3p0.min_size">1</property>
+		<!-- 指定连接池里连接的超时时长 -->
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<!-- 指定连接池里最大缓存多少个Statement对象 -->
+		<property name="hibernate.c3p0.max_statements">100</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.c3p0.acquire_increment">2</property>
+		<property name="hibernate.c3p0.validate">true</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- 开启二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!-- 设置缓存提供者 -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+		<!-- 开启二级缓存的统计功能 -->
+		<property name="hibernate.generate_statistics">true</property>
+		<!-- 设置使用结构化方式来维护缓存项 -->
+		<property name="hibernate.cache.use_structured_entries">true</property>
+	
+		<!-- 指定根据当前线程来界定上下文相关Session -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- 罗列所有的映射文件 -->
+		<mapping resource="org/crazyit/app/domain/News.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

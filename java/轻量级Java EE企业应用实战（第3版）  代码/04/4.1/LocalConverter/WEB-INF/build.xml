@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<project name="struts" basedir="." default="">
+	<property name="dist" value="classes"/>
+	<property name="src" value="src"/>
+	
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement path="${dist}"/>
+	</path>
+
+	<target name="compile" description="Compile all source code">
+		<delete dir="${dist}"/>
+		<mkdir dir="${dist}"/>
+		<copy todir="${dist}">
+			<fileset dir="${src}">
+				<exclude name="**/*.java"/>
+			</fileset>		
+		</copy>
+		<javac destdir="classes" debug="true" includeantruntime="yes"
+			deprecation="false" optimize="false" failonerror="true">
+			<src path="${src}"/>
+			<classpath refid="classpath"/>
+		</javac>
+	</target>
+
+</project>

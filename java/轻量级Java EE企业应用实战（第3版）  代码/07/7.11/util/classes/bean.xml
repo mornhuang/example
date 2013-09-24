@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<!-- 配置chinese实例，其实现类是Chinese -->
+	<bean id="chinese" class="org.crazyit.app.service.impl.Chinese"
+		p:age-ref="chin.age" p:axe-ref="stoneAxe"
+		p:schools-ref="chin.schools"
+		p:axes-ref="chin.axes"
+		p:scores-ref="chin.scores"/>
+
+	<!-- 使用util:constant将指定类的静态Field暴露出来 -->
+	<util:constant id="chin.age" static-field=
+		"java.sql.Connection.TRANSACTION_SERIALIZABLE"/>
+
+	<!-- 使用util:property-path将指定Bean的指定属性暴露出来 -->	
+	<util:property-path id="test" path="chinese.age"/>
+	
+	<!-- 使用util.properties加载指定资源文件 -->
+	<util:properties id="confTest"
+		location="classpath:test_zh_CN.properties"/>
+
+	<!-- 使用util:list定义一个List对象 -->
+	<util:list id="chin.schools" list-class="java.util.LinkedList">
+		<!-- 每个value、ref、bean都配置一个List元素 -->
+		<value>小学</value>
+		<value>中学</value>
+		<value>大学</value>
+	</util:list>
+	<!-- 使用util:set定义一个Set对象 -->
+	<util:set id="chin.axes" set-class="java.util.HashSet">
+		<!-- 每个value、ref、bean都配置一个Set元素 -->
+		<value>字符串斧子</value>
+		<bean class="org.crazyit.app.service.impl.SteelAxe"/>
+		<ref local="stoneAxe"/>
+	</util:set>
+	<!-- 使用util:map定义一个Map对象 -->
+	<util:map id="chin.scores" map-class="java.util.TreeMap">
+		<entry key="数学" value="87"/>
+		<entry key="英语" value="89"/>
+		<entry key="语文" value="82"/>
+	</util:map>
+
+	<!-- 配置steelAxe实例，其实现类是SteelAxe -->
+	<bean id="steelAxe" class="org.crazyit.app.service.impl.SteelAxe"/>
+	<!-- 配置stoneAxee实例，其实现类是StoneAxe -->
+	<bean id="stoneAxe" class="org.crazyit.app.service.impl.StoneAxe"/>
+</beans>

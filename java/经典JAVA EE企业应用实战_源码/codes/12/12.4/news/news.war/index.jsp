@@ -1,0 +1,1 @@
+<jsp:forward page="/faces/addNews.jsp"/>

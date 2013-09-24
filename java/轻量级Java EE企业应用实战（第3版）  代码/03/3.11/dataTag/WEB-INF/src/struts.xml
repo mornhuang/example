@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+
+	<package name="lee" extends="struts-default">
+		<!-- 定义第一个Action，使用TagAction的
+			execute方法作为控制处理逻辑 -->
+		<action name="tag1" class="org.crazyit.app.action.TagAction">
+			<result name="done">succ.jsp</result>
+		</action>
+		<!-- 定义第二个Action，使用TagAction的
+			login方法作为控制处理逻辑 -->
+		<action name="tag2" class="org.crazyit.app.action.TagAction"
+			method="login">
+			<result name="done">loginSucc.jsp</result>
+		</action>
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

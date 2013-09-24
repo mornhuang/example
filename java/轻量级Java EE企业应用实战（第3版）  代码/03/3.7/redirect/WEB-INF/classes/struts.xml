@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="lee" extends="struts-default">
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+			<!-- 指定结果的类型为redirect，
+				这意味着系统该Action将重定向到welcome.jsp页面-->
+			<result type="redirect">/welcome.jsp</result>
+		</action>
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

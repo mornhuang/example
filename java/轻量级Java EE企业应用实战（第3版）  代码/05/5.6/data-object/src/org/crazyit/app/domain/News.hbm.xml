@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping>
+	<!-- 使用data-object元素定义数据库对象 -->
+	<database-object>
+		<!-- 定义创建数据库对象的语句 -->
+		<create>create table test(t_name varchar(255));</create>
+		<!-- 让drop元素为空，不删除任何对象 -->
+		<drop></drop>
+		<!-- 指定仅对MySQL数据库有效 -->
+		<dialect-scope name="org.hibernate.dialect.MySQLDialect"/>
+		<dialect-scope name="org.hibernate.dialect.MySQLInnoDBDialect"/>
+	</database-object>	
+</hibernate-mapping>

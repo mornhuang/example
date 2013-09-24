@@ -1,0 +1,58 @@
+
+                      《经典Java EE企业应用开发实战》
+ 
+                               配书光盘
+
+                          版权所有，侵权必究
+
+                              2010年5月
+
+_______________________________________________________________________
+
+
+一、光盘内容
+
+    本光盘是《经典Java EE企业应用实战——基于WebLogic/JBoss的JSF+EJB 3+JPA整合开发》一书的配书光盘，书中的代码按章、按节存放，即第2章第3节所使用的代码放在codes目录的02\2.3文件夹下，依此类推。
+    另：书中每份源代码也给出了与光盘源文件的对应关系，方便读者查找。
+    
+    本光盘codes目录下有14个文件夹，其内容和含义说明如下：
+    （1）02～15文件夹名对应于《经典Java EE企业应用实战——基于WebLogic/JBoss的JSF+EJB 3+JPA整合开发》中的章名，即第2章所使用的代码放在codes目录的02文件夹下，依此类推。
+    （2）15文件夹下有Auction和Auction_NetBeans两个文件夹，它们是同一个项目的源文件，其中Auction是IDE平台无关的项目，使用Ant来编译即可；而Auction_NetBeans是该项目在NetBeans IDE工具中的项目文件。
+
+二、运行环境
+
+    本书中的程序在以下环境中调试通过。
+    （1）安装jdk-6u18-windows-i586-p.exe，安装完成后，添加CLASSPATH环境变量，该环境变量的值为“.;%JAVA_HOME%/lib/tools.jar;%JAVA_HOME%/lib/dt.jar”。如果为了可以编译和运行Java程序，还应该在PATH环境变量中增加“%JAVA_HOME%/bin”。其中JAVA_HOME代表JDK（不是JRE）的安装路径。   
+    （2）安装java_ee_sdk-5_08-windows-ml-nojdk.exe，安装完成后，修改CLASSPATH环境变量，修改后该环境变量的值为：.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;D:\Sun\SDK\lib\javaee.jar。
+    （3）安装JBoss 5.1.0.GA，直接采用解压缩的安装方式。安装JBoss请参看第1章。
+    （4）安装WebLogic 11g（10.3.2）。安装WebLogic请参看第1章。
+    （5）安装apache-ant-1.7.1。将下载的Ant压缩文件解压缩到任意路径，然后增加ANT_HOME环境变量，让变量的值为Ant的解压缩路径。并在PATH环境变量中增加
+“%ANT_HOME%/bin”环境变量。
+    （6）安装MySQL5.1或更高版本，安装MysSQL时选择GBK编码方式。
+    （7）安装NetBeans 6.8。
+     关于如何安装上面工具，请参考本书的第1章。
+
+三、注意事项
+
+    （1）独立应用程序的代码中都包括build.xml文件，在Dos或Shell下进入build.xml文件所在路径，执行如下命令：
+        ant compile -- 编译程序
+        ant run --运行程序
+        ant build -- 生成EJB的JAR包或Java EE应用的EAR包
+    （2）对于Web应用，将该应用复制到“%JBoss_HOME%/server/defaultdeploy”路径下，然后进入build.xml所在路径，执行如下命令：
+        ant compile -- 编译应用
+    启动JBoss服务器，使用浏览器即可访问该应用。
+    （3）对于EJB项目，进入项目中build.xml所在的目录下，执行如下命令：
+        ant build -- 生成EJB的JAR包
+    将项目根目录下build目录下的JAR包复制到应用服务器的自动部署目录下即可。
+    （4）对于Java EE项目，进入项目中build.xml所在的目录下，执行如下命令：
+        ant build -- 生成Java EE应用的EAR包
+    将项目根目录下build目录下的EAR包复制到应用服务器的自动部署目录下即可。
+    （5）对于NetBeans项目文件，导入NetBeans开发工具中即可。
+    （6）第15章的案例，请参看项目下的install.txt文件。
+    （7）代码中有大量代码需要连接数据库，读者应修改数据库URL以及用户名、密码，     让这些代码与读者运行环境一致。如果项目下有SQL脚本，导入SQL脚本即可；如果没有SQL脚本，系统将在运行时自动建表，读者只需创建对应数据库即可。
+    （8）在使用本光盘中的程序时，请将程序拷贝到硬盘上，并去除文件的只读属性。
+
+四、技术支持
+
+    如果您使用本光盘中遇到不懂的技术问题，您可以登录如下网站与作者联系：
+    网站：http://www.crazyit.org

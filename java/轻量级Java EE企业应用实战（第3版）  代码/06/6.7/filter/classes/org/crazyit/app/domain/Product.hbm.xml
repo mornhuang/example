@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Course实体 -->
+	<class name="Product" table="product_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="product_id">
+			<!-- 指定identity的主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- property映射普通属性 -->
+		<property name="name" column="product_name"
+			type="string"/>
+		<property name="stockNumber" column="stock_number"
+			type="int"/>
+		<property name="effectiveStartDate" 
+			column="eff_start_date" type="java.util.Date"/>
+		<property name="effectiveEndDate"
+			column="eff_end_date" type="java.util.Date"/>
+		<!-- 映射Product和Category的关联关系 -->
+		<set name="categories" fetch="join" table="product_category" >
+			<key column="product_id"/>
+			<many-to-many column="category_id" 
+				class="Category" fetch="join">
+				<!-- 对该关联实体的抓取使用数据过滤 -->
+				<filter name="effectiveDate" 
+					condition=":asOfDate BETWEEN 
+					eff_start_date and eff_end_date"/>
+				<filter name="category"
+					condition="category_id = :catId"/> 
+			</many-to-many>
+		</set>
+		<!-- 对Product实体使用数据过滤 -->
+		<filter name="effectiveDate" 
+			condition=":asOfDate BETWEEN eff_start_date AND eff_end_date"/>
+	</class>
+	<!-- 下面定义2个Filter -->
+	<filter-def name="effectiveDate">
+		<filter-param name="asOfDate" type="date"/>
+	</filter-def>
+	<filter-def name="category">
+		<filter-param name="catId" type="long"/>
+	</filter-def>
+</hibernate-mapping>

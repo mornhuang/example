@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="person_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="age" type="int"/>
+		<!-- 映射nicks集合属性，集合属性对应的数据表为nick_inf -->
+		<map name="nicks" table="nick_inf">
+			<!-- 映射集合属性数据表的外键列 -->
+			<key column="person_id" not-null="true"/>
+			<!-- 映射集合属性数据表的Map key列 -->
+			<map-key column="phase" type="string"/>
+			<!-- 映射保存集合里的组件元素 -->
+			<composite-element class="Name">
+				<!-- 指定owner属性代表容器实体 -->
+				<parent name="owner"/>
+				<!-- 映射组件属性的first属性 -->
+				<property name="first"/>
+				<!-- 映射组件属性的last属性 -->
+				<property name="last"/>
+			</composite-element>
+		</map>
+	</class>
+</hibernate-mapping>

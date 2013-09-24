@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="GBK"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- 在应用服务器中使用JTA全局事务 -->
+	<persistence-unit name="newsUnit" transaction-type="JTA">
+		<!-- 直接使用应用服务器管理的数据源 -->
+		<jta-data-source>java:/firstds</jta-data-source>
+		<!-- 列出该应用所需要的所有Entity类 -->
+		<class>org.crazyit.model.News</class>
+		<!-- properties元素用于为特定JPA实现包配置属性 -->  
+		<!-- 下面列举的是Hibernate JPA实现中可以配置的部分属性 -->
+		<properties>
+			<!-- 指定连接数据库的方言 -->
+			<property name="hibernate.dialect" 
+				value="org.hibernate.dialect.MySQLInnoDBDialect"/>
+			<property name="hibernate.show_sql" value="true"/>
+			<!-- 设置是否格式化SQL语句 -->
+			<property name="hibernate.format_sql"
+				value="true"/>
+			<!-- 设置是否根据要求自动建表 -->
+			<property name="hibernate.hbm2ddl.auto"
+				value="update"/>
+		</properties>
+	</persistence-unit>
+</persistence>

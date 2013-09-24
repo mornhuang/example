@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定校验规则文件的DTD信息 -->
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<!-- 校验规则文件的根元素 -->
+<validators>
+	<!-- 指定校验user字段 -->
+	<field name="user">
+		<!-- 使用Visitor校验器 -->
+		<field-validator type="visitor">
+			<!-- 指定校验规则文件的context -->
+			<param name="context">userContext</param>
+			<!-- 指定校验失败后提示信息是否添加下面前缀 -->
+			<param name="appendPrefix">true</param>
+			<!-- 指定校验失败的提示信息前缀 -->
+			<message>用户的：</message>
+		</field-validator>
+	</field>
+</validators>

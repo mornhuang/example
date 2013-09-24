@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 配置BeingFactory的getBeing方法产生dog Bean -->
+	<bean id="dog" class="org.crazyit.app.factory.BeingFactory"
+		factory-method="getBeing">
+		<!-- 配置静态工厂方法的参数 -->
+		<constructor-arg value="dog"/>
+		<!-- property配置普通依赖注入属性 -->
+		<property name="msg" value="我是狗"/>
+	</bean>
+	<!-- 配置BeingFactory的getBeing方法产生dog Bean -->
+	<bean id="cat" class="org.crazyit.app.factory.BeingFactory"
+		factory-method="getBeing">
+		<!-- 配置静态工厂方法的参数 -->
+		<constructor-arg value="cat"/>
+		<!-- property配置普通依赖注入属性 -->
+		<property name="msg" value="我是猫"/>
+	</bean>
+</beans>

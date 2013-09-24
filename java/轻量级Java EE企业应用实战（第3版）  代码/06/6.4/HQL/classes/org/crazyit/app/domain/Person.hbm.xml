@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的根元素 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Person持久化类 -->
+	<class name="Person" table="person">
+		<!-- 映射标识属性 -->
+		<id name="id" column="person_id">
+			<!-- 指定identity的主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="name" type="string"/>
+		<property name="age" type="int"/>
+		<!-- 映射和MyEvent实体的关联关系 -->
+		<set name="myEvents" table="person_event">
+			<!-- 映射连接表中参照此表主键的外键列的列名 -->
+			<key column="person_id"/>
+			<!-- 映射和Person的多对多关联 -->
+			<many-to-many column="event_id" class="MyEvent"/>
+		</set>
+		<!-- 映射集合属性 -->
+		<set name="emails" table="person_email">
+			<!-- 映射集合属性表中的外键列 -->
+			<key column="person_id"/>
+			<!-- 映射集合元素，集合元素是字符串 -->
+			<element type="string" column="email"/>
+		</set>
+	</class>
+</hibernate-mapping>

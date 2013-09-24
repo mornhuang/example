@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+	<!-- 配置第一个参数：driver -->
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	<!-- 配置第二个参数：url -->
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/javaee</param-value>
+	</context-param>
+	<!-- 配置第三个参数：user -->
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<!-- 配置第四个参数：pass -->
+	<context-param>
+		<param-name>pass</param-name>
+		<param-value>32147</param-value>
+	</context-param>
+
+	<listener>
+		<!-- 指定Listener的实现类 -->
+		<listener-class>lee.GetConnListener</listener-class>
+	</listener>
+
+</web-app>

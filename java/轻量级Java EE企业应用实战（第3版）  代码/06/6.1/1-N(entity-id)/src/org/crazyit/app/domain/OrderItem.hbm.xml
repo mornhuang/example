@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="OrderItem" table="order_item_inf">
+		<!-- 映射复合主键 -->
+		<composite-id>
+			<key-many-to-one name="product" 
+				class="Product" column="product_id" />
+			<key-many-to-one name="order"
+				class="Order" column="order_id" />
+			<key-property name="count" type="int"/>
+		</composite-id>
+	</class>
+</hibernate-mapping>

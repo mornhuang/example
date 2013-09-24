@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="person_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="age" type="int"/>
+		<!-- 映射nickPower集合属性，集合属性对应的数据表为nick_power -->
+		<map name="nickPower" table="nick_power">
+			<!-- 映射集合属性数据表的外键列 -->
+			<key column="person_id" not-null="true"/>
+			<!-- 映射集合属性数据表的Map key列 ，
+				因为Map key的数据类型是复合类型，所以使用如下元素-->
+			<composite-map-key class="Name">
+				<!-- 映射复合组件的属性 -->
+				<key-property name="first" type="string"/>
+				<key-property name="last" type="string"/>
+			</composite-map-key>
+			<!-- 映射集合元素的数据列 -->
+			<element column="nick_power" type="int"/>
+		</map>
+	</class>
+</hibernate-mapping>

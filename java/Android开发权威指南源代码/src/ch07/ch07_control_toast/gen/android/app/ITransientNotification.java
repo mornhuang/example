@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\mystudio\\java\\android2.3_book\\ch07\\ch07_control_toast\\src\\android\\app\\ITransientNotification.aidl
+ * Original file: E:\\person\\coding\\example\\java\\Android开发权威指南源代码\\src\\ch07\\ch07_control_toast\\src\\android\\app\\ITransientNotification.aidl
  */
 package android.app;
 /** @hide */
@@ -24,13 +24,13 @@ public static android.app.ITransientNotification asInterface(android.os.IBinder 
 if ((obj==null)) {
 return null;
 }
-android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
+android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
 if (((iin!=null)&&(iin instanceof android.app.ITransientNotification))) {
 return ((android.app.ITransientNotification)iin);
 }
 return new android.app.ITransientNotification.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -65,7 +65,7 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return mRemote;
 }
@@ -73,7 +73,7 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public void show() throws android.os.RemoteException
+@Override public void show() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {
@@ -84,7 +84,7 @@ finally {
 _data.recycle();
 }
 }
-public void hide() throws android.os.RemoteException
+@Override public void hide() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 try {

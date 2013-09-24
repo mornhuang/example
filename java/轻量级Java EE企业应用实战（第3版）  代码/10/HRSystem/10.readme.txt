@@ -1,0 +1,16 @@
+部署Web应用请按如下步骤进行:
+1. 进入HRSystem路径下，将mysql.sql脚本中的语句导入MySql数据库。
+2. 修改HRSystem\WEB-INF路径下的applicationContext.xml文件，
+   将其中的数据库连接信息修改为你的数据库连接信息。
+3. 进入HRSystem\WEB-INF路径下，启动Dos或shell窗口，输入
+   ant compile -- 该命令用于编译应用。
+4. 将整个应用复制到%TOMCAT_HOME%/webapps路径下，启动Tomcat服务器即可。
+5. 普通员工的用户名和密码有：
+   mysql mysql
+   tomcat tomcat
+6. 经理的用户名和密码有：
+   weblogic weblogic
+
+注意：
+1. 本章案例的打卡、工资结算都需要由系统时间来驱动，
+   读者可通过改变系统时间来驱动它们。

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="gbk"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+	version="3.0">
+	<enterprise-beans>
+		<session>
+			<!-- 指定该EJB的名称 -->
+			<ejb-name>catService</ejb-name>
+			<!-- 指定该EJB的mappedName -->
+			<mapped-name>cs</mapped-name>
+			<!-- 指定该EJB的本地访问的业务接口 -->
+			<business-local>org.crazyit.service.CatService</business-local>
+			<!-- 指定该EJB的Bean实现类 -->
+			<ejb-class>org.crazyit.service.CatServiceBean</ejb-class>
+			<!-- 指定该EJB是无状态的Session Bean -->
+			<session-type>Stateless</session-type>
+		</session>
+	</enterprise-beans>
+</ejb-jar>

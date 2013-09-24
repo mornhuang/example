@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<taglib	xmlns="http://java.sun.com/xml/ns/javaee" version="2.1"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+		web-jsptaglibrary_2_1.xsd">
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>crazyitTaglib</short-name>
+	<!-- 指定标签库的URI -->
+	<uri>http://www.crazyit.org/taglib</uri>
+	<tag>
+		<!-- 指定该标签的名称 -->
+		<name>regexValidator</name>
+		<!-- 指定该标签的实现类 -->
+		<tag-class>org.crazyit.taglib.RegexValidatorTag</tag-class>
+		<body-content>JSP</body-content>
+		<!-- 配置该标签的pattern属性 -->
+		<attribute>
+			<name>pattern</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>

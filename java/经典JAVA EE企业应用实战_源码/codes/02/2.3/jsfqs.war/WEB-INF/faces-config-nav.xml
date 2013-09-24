@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- JSF配置文件的根元素,并指定Schema信息 -->
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+	<navigation-rule>
+		<!-- 导航规则的输入页面 -->
+		<from-view-id>/login.jsp</from-view-id>
+		<!-- 如果login.jsp中Action方法的处理结果是success
+			, 则跳转到视图页greeting.jsp -->
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/greeting.jsp</to-view-id>
+		</navigation-case>
+		<!-- 如果login.jsp中Action方法的处理结果是failure
+			, 则跳转到视图页login.jsp -->
+		<navigation-case>
+			<from-outcome>failure</from-outcome>
+			<to-view-id>/login.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

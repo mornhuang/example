@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: D:\\mystudio\\java\\android2.3_book\\ch12\\ch12_aidl\\src\\mobile\\android\\ch12\\aidl\\IMyService.aidl
+ * Original file: E:\\person\\coding\\example\\java\\Android开发权威指南源代码\\src\\ch12\\ch12_aidl\\src\\mobile\\android\\ch12\\aidl\\IMyService.aidl
  */
 package mobile.android.ch12.aidl;
 public interface IMyService extends android.os.IInterface
@@ -23,13 +23,13 @@ public static mobile.android.ch12.aidl.IMyService asInterface(android.os.IBinder
 if ((obj==null)) {
 return null;
 }
-android.os.IInterface iin = (android.os.IInterface)obj.queryLocalInterface(DESCRIPTOR);
+android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
 if (((iin!=null)&&(iin instanceof mobile.android.ch12.aidl.IMyService))) {
 return ((mobile.android.ch12.aidl.IMyService)iin);
 }
 return new mobile.android.ch12.aidl.IMyService.Stub.Proxy(obj);
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return this;
 }
@@ -60,7 +60,7 @@ Proxy(android.os.IBinder remote)
 {
 mRemote = remote;
 }
-public android.os.IBinder asBinder()
+@Override public android.os.IBinder asBinder()
 {
 return mRemote;
 }
@@ -68,7 +68,7 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-public java.lang.String getValue() throws android.os.RemoteException
+@Override public java.lang.String getValue() throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
 android.os.Parcel _reply = android.os.Parcel.obtain();

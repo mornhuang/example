@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<!-- 关于JSP的配置信息 -->
+	<jsp-config>
+		<jsp-property-group>
+			<!-- 对哪些文件应用配置 -->
+			<url-pattern>/noscript/*</url-pattern>
+			<!-- 忽略表达式语言 -->
+			<el-ignored>true</el-ignored>
+			<!-- 页面编码的字符集 -->
+			<page-encoding>GBK</page-encoding>
+			<!-- 不允许使用Java脚本 -->
+			<scripting-invalid>true</scripting-invalid>
+			<!-- 隐式导入页面头  -->
+			<include-prelude>/inc/top.jspf</include-prelude>
+			<!-- 隐式导入页面尾 -->
+			<include-coda>/inc/bottom.jspf</include-coda>
+		</jsp-property-group>
+		<jsp-property-group>
+			<!-- 对哪些文件应用配置 -->
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>false</el-ignored>
+			<!-- 页面编码字符集 -->
+			<page-encoding>GBK</page-encoding>
+			<!-- 允许使用Java脚本 -->			
+			<scripting-invalid>false</scripting-invalid>
+		</jsp-property-group>
+		<jsp-property-group>
+			<!-- 对哪些文件应用配置 -->
+			<url-pattern>/inc/*</url-pattern>
+			<el-ignored>false</el-ignored>
+			<!-- 页面编码字符集 -->
+			<page-encoding>GBK</page-encoding>
+			<!-- 不允许使用Java脚本 -->			
+			<scripting-invalid>true</scripting-invalid>
+		</jsp-property-group>
+	</jsp-config>
+
+	<context-param>
+		<param-name>author</param-name>
+		<param-value>yeeku</param-value>
+	</context-param>
+
+</web-app>

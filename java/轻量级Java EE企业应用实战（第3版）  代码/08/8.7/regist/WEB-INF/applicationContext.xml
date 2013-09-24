@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<!-- 定义数据源Bean，使用C3P0数据源实现 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<!-- 指定连接数据库的驱动 -->
+		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+		<!-- 指定连接数据库的URL -->
+		<property name="jdbcUrl" value="jdbc:mysql://localhost/javaee"/>
+		<!-- 指定连接数据库的用户名 -->
+		<property name="user" value="root"/>
+		<!-- 指定连接数据库的密码 -->
+		<property name="password" value="32147"/>
+		<!-- 指定连接数据库连接池的最大连接数 -->
+		<property name="maxPoolSize" value="40"/>
+		<!-- 指定连接数据库连接池的最小连接数 -->
+		<property name="minPoolSize" value="1"/>
+		<!-- 指定连接数据库连接池的初始化连接数 -->
+		<property name="initialPoolSize" value="1"/>
+		<!-- 指定连接数据库连接池的连接的最大空闲时间 -->
+		<property name="maxIdleTime" value="20"/>
+	</bean>
+	<!-- 定义Hibernate的SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 依赖注入数据源，注入正是上面定义的dataSource -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- mappingResouces属性用来列出全部映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<!-- 以下用来列出Hibernate映射文件 -->
+				<value>org/crazyit/app/domain/Person.hbm.xml</value>
+			</list>
+		</property>
+		<!-- 定义Hibernate的SessionFactory的属性 -->
+		<property name="hibernateProperties">
+			<!-- 配置Hibernate属性 -->
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+			hibernate.hbm2ddl.auto=update
+			hibernate.show_sql=true
+			hibernate.format_sql=true;
+			</value>
+		</property>
+	</bean>
+	<!-- 定义DAO Bean-->
+	<bean id="personDao" class=
+	"org.crazyit.app.dao.impl.PersonDaoHibernate">
+		<!-- 注入持久化操作所需的SessionFactory -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 配置一个业务逻辑组件 -->
+	<bean id="leeService" class=
+	"org.crazyit.app.service.impl.LeeServiceImpl">
+		<!-- 注入持久化访问所需的DAO组件 -->
+		<property name="personDao" ref="personDao"/>
+	</bean>
+
+
+	<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 -->
+	<!-- 该类实现PlatformTransactionManager接口，是针对Hibernate的特定实现-->
+	<bean id="transactionManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<!-- 配置HibernateTransactionManager时需要依注入SessionFactory的引用 -->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<!-- 配置事务增强处理,指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 -->
+			<tx:method name="get*" read-only="true"/>
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<!-- 配置一个切入点 -->
+		<aop:pointcut id="leePointcut"
+			expression="bean(leeService)"/>
+		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
+		<aop:advisor advice-ref="txAdvice" 
+			pointcut-ref="leePointcut"/>
+	</aop:config>
+
+</beans>
+

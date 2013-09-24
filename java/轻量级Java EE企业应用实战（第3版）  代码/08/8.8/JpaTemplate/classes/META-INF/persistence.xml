@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+	<!-- 为持久化单元指定名称，并通过transaction-type指定事务类型
+	transaction-type属性合法的属性值有JTA、RESOURCE_LOCAL两个-->
+	<persistence-unit name="qs" transaction-type="RESOURCE_LOCAL">
+		<!-- 列出该应用需要访问的所有的Entity类, 
+		也可以用 <mapping-file> 或<jar-file>元素来定义 -->
+		<class>org.crazyit.app.domain.Person</class>
+		<!-- properties元素用于为特定JPA实现包配置属性 -->  
+		<!-- 下面列举的是Hibernate JPA实现中可以配置的部分属性 -->
+		<properties>  
+			<!-- 设置是否格式化SQL语句 -->
+			<property name="hibernate.format_sql"
+				value="true"/>
+			<!-- 设置是否根据要求自动建表 -->
+			<property name="hibernate.hbm2ddl.auto"
+				value="update"/>
+		</properties>
+	</persistence-unit>
+</persistence>

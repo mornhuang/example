@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Student实体 -->
+	<class name="Student" table="student_inf">
+		<!-- 映射标识属性 -->
+		<id name="studentNumber" column="student_id">
+			<!-- 指定assigned的主键生成器策略 -->
+			<generator class="assigned"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="name" not-null="true"/>
+		<!-- 映射学生和选课记录的1－N关联 -->
+		<set name="enrolments" inverse="true" 
+			cascade="delete">
+			<!-- 映射外键 -->
+			<key column="student_id"/>
+			<!-- 映射关联的Enrolment实体 -->
+			<one-to-many class="Enrolment"/>
+		</set>
+	</class>
+</hibernate-mapping>

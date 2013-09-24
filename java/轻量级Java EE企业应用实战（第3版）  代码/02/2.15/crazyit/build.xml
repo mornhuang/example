@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 定义生成文件的project根元素，默认的target为空 -->
+<project name="web" basedir="." default="">
+
+	<!-- 定义简单属性 -->
+	<property name="src" value="src"/>
+	<property name="classes" value="classes"/>
+	<property name="dist" value="dist"/>
+	<property name="module" value="crazyit"/>
+
+	<!-- 定义一组文件和目录集 -->
+	<path id="classpath">
+		<pathelement path="${classes}"/>
+	</path>
+
+	<!-- 定义build target，用于编译、并生成Web模块 -->
+	<target name="compile" description="编译Java源文件">
+		<!-- 先删除classes属性所代表的文件夹 -->
+		<delete dir="${classes}"/>
+		<!-- 创建classes属性所代表的文件夹 -->
+		<mkdir dir="${classes}"/>
+		<!-- 编译Java文件，编译后的class文件放到classes属性所代表的文件夹内 -->
+		<javac destdir="${classes}" debug="true" includeantruntime="yes"
+			deprecation="classes" optimize="false" failonerror="true">
+			<!-- 指定需要编译的Java文件所在的位置 -->
+			<src path="${src}"/>
+			<!-- 指定编译Java文件所需要第三方类库所在的位置 -->
+			<classpath refid="classpath"/>
+		</javac>
+		<!-- 复制文件 -->
+		<copy todir="${classes}">
+			<fileset dir="${src}">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- 定义build target，用于编译、并生成Web模块 -->
+	<target name="build" depends="compile" description="打包Web模块">
+		<!-- 先删除dist属性所代表的文件夹 -->
+		<delete dir="${dist}"/>
+		<!-- 创建classes属性所代表的文件夹 -->
+		<mkdir dir="${dist}"/>
+		<!-- 打包第一个Web模块 -->
+		<jar destfile="${dist}/${module}.jar"
+			basedir="${classes}"
+			excludes="**/*.java"/>			
+	</target>
+</project>

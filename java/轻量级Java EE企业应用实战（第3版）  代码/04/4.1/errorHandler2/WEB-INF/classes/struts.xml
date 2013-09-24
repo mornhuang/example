@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<package name="lee" extends="struts-default">
+
+		<!-- 定义处理用户请求的Action -->
+		<action name="login" class="org.crazyit.app.action.LoginAction">
+			<!-- 配置名为input的逻辑视图，当转换失败后转入该逻辑视图 -->
+			<result name="input">/input.jsp</result>
+			<!-- 配置名为success的逻辑视图 -->
+			<result name="success">/welcome.jsp</result> 
+			<result name="error">/welcome.jsp</result> 
+		</action>
+
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

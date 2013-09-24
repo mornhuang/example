@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="show.jsp" x="19" y="150" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="228" y="154" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="show.jsp" x="400" y="150" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="150" y="150" zoom="false"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="show.jsp" x="19" y="150" zoom="true"/>
+        <Node id="welcomeJSF.jsp" x="228" y="154" zoom="true"/>
+    </Scope>
+</Scene>

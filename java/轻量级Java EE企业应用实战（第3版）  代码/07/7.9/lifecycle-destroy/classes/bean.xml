@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="steelAxe" class="org.crazyit.app.service.impl.SteelAxe"/>
+	<!--  配置chinese Bean，使用destroy-method="close"
+		指定该Bean实例被销毁，Spring自动执行close方法 -->
+	<bean id="chinese" class="org.crazyit.app.service.impl.Chinese"
+		destroy-method="close">
+		<property name="axe" ref="steelAxe"/>
+	</bean>
+</beans>

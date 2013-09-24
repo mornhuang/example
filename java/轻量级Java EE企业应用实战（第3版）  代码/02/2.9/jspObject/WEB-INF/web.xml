@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<!-- 配置第一个参数：driver -->
+	<context-param>
+		<param-name>driver</param-name>
+		<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	<!-- 配置第二个参数：url -->
+	<context-param>
+		<param-name>url</param-name>
+		<param-value>jdbc:mysql://localhost:3306/javaee</param-value>
+	</context-param>
+	<!-- 配置第三个参数：user -->
+	<context-param>
+		<param-name>user</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<!-- 配置第四个参数：pass -->
+	<context-param>
+		<param-name>pass</param-name>
+		<param-value>32147</param-value>
+	</context-param>
+
+
+	<servlet>
+		<!-- 指定Servlet名字 -->
+		<servlet-name>config</servlet-name>
+		<!-- 指定将哪个JSP页面配置成Servlet -->
+		<jsp-file>/configTest2.jsp</jsp-file>
+		<!-- 配置名为name的参数，值为yeeku -->
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>yeeku</param-value>
+		</init-param>
+		<!-- 配置名为age的参数，值为30 -->
+		<init-param>
+			<param-name>age</param-name>
+			<param-value>30</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<!-- 指定将config Servlet配置到/config URL-->
+		<servlet-name>config</servlet-name>
+		<url-pattern>/config</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

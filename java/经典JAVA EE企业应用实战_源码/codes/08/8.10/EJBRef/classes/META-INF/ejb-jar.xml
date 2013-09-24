@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312"?>
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+	version="3.0">
+	<enterprise-beans>
+		<session>
+			<!-- 指定该EJB的名称 -->
+			<ejb-name>EJBRef</ejb-name>
+			<ejb-local-ref>
+				<!-- 指定EJB引用的名称 -->
+				<ejb-ref-name>ejb3/Hello</ejb-ref-name>
+				<ejb-ref-type>Session</ejb-ref-type>
+				<!-- 指定所引用EJB所实现的业务接口 -->
+				<local>org.crazyit.service.Hello</local>
+			</ejb-local-ref>
+		</session>
+	</enterprise-beans>
+</ejb-jar>

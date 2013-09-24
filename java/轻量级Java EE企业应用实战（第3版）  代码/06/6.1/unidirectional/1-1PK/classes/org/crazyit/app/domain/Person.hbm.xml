@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Person持久化类-->
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性person_id -->
+		<id name="id" column="person_id">
+			<!--  基于主键关联时，主键生成策略是foreign，
+			表明根据关联类的主键来生成该实体的主键 -->
+			<generator class="foreign">
+				<!-- 指定引用关联实体的属性名 -->
+				<param name="property">address</param>
+			</generator>
+		</id>
+		<!-- 用于映射普通属性 -->
+		<property name="name" type="string"/>
+		<property name="age" type="int"/>
+		<!-- 下面映射基于主键的1－1关联 -->
+		<one-to-one name="address"/>
+	</class>
+</hibernate-mapping>

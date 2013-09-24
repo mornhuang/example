@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<!-- 配置Servlet的名字 -->
+	<servlet>
+		<!-- 指定Servlet的名字，
+			相当于指定@WebServlet的name属性 -->
+		<servlet-name>firstServlet</servlet-name>
+		<!-- 指定Servlet的实现类 -->
+		<servlet-class>lee.FirstServlet</servlet-class>
+	</servlet>
+	<!-- 配置Servlet的URL -->
+	<servlet-mapping>
+		<!-- 指定Servlet的名字 -->
+		<servlet-name>firstServlet</servlet-name>
+		<!-- 指定Servlet映射的URL地址，
+			相当于指定@WebServlet的urlPatterns属性-->
+		<url-pattern>/aa</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<!-- Servlet名 -->
+		<servlet-name>timerServlet</servlet-name>
+		<!-- Servlet的实现类 -->
+		<servlet-class>lee.TimerServlet</servlet-class>
+		<!-- 配置应用启动时，创建Servlet实例
+			，相当于指定@WebServlet的loadOnStartup属性-->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet>
+		<!-- 配置Servlet名 -->
+		<servlet-name>testServlet</servlet-name>
+		<!-- 指定Servlet的实现类 -->
+		<servlet-class>lee.TestServlet</servlet-class>
+		<!-- 配置Servlet的初始化参数：driver -->
+		<init-param>
+			<param-name>driver</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+		</init-param>
+		<!-- 配置Servlet的初始化参数：url -->
+		<init-param>
+			<param-name>url</param-name>
+			<param-value>jdbc:mysql://localhost:3306/javaee</param-value>
+		</init-param>
+		<!-- 配置Servlet的初始化参数：user -->
+		<init-param>
+			<param-name>user</param-name>
+			<param-value>root</param-value>
+		</init-param>
+		<!-- 配置Servlet的初始化参数：pass -->
+		<init-param>
+			<param-name>pass</param-name>
+			<param-value>32147</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<!-- 确定Servlet名 -->
+		<servlet-name>testServlet</servlet-name>
+		<!-- 配置Servlet映射的URL -->
+		<url-pattern>/testServlet</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

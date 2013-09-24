@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- Spring配置文件的根元素，使用spring-beans-3.0.xsd语义约束 -->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 定义第一个Bean，id是chinese, class指定实现类 -->
+	<bean id="chinese" class="org.crazyit.app.service.impl.Chinese">
+		<!--  property元素用来指定需要容器注入的属性，axe属性需要容器注入
+			此处是设值注入，因此Chinese类必须拥有setAxe方法 -->
+		<property name="axe" ref="steelAxe"/>
+	</bean>
+	<!-- 定义steelAxe bean -->
+	<bean id="steelAxe" class="org.crazyit.app.service.impl.SteelAxe"/>
+</beans>

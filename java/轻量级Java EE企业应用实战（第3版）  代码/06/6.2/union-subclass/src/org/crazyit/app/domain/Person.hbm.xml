@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate的映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Person类 -->	
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="person_id">
+			<!-- 不能使用identity的主键生成器策略
+				，所以使用hilo主键生成器策略-->
+			<generator class="hilo"/>
+		</id>
+		<!-- 如下映射两个基本属性 -->
+		<property name="name" length="80"/>
+		<property name="gender"/>
+		<!-- 下面映射了一个组件属性 -->
+		<component name="address">
+			<!-- 映射组件属性的三个成员属性 -->
+			<property name="detail"/>
+			<property name="zip"/>
+			<property name="country"/>
+		</component>
+		<!-- 使用union-subclass元素映射Person类的Employee子类 -->
+		<union-subclass name="Employee" table="employee_inf">
+			<!-- 映射Employee类的两个普通属性 -->
+			<property name="title" not-null="true"/>
+			<property name="salary" not-null="true"/>
+			<!-- 映射Employee类与Manager类之间的N－1关联-->
+			<many-to-one name="manager" column="manager_id"/>
+			<!-- 映射Employee类与Customer类之间的1－N关联-->
+			<set name="customers" inverse="true">
+				<key column="empoyee_id"/>
+				<one-to-many class="Customer"/>
+			</set>
+			<!-- 使用union-subclass元素映射Employee类的Manager子类 -->
+			<union-subclass name="Manager" table="manager_inf">
+				<!-- 映射Manager类的department属性 -->
+				<property name="department"/>
+				<!-- 映射Employee类与Manager类之间的1－N关联-->
+				<set name="employees" inverse="true">
+					<key column="manager_id"/>
+					<one-to-many class="Employee"/>
+				</set>
+			</union-subclass>
+		</union-subclass>
+		<!-- 使用union-subclass元素映射Person类的Customer子类 -->
+		<union-subclass name="Customer" table="customer_inf">
+			<property name="comments" not-null="true"/>
+			<!-- 映射Employee类与Customer类之间的1－N关联-->
+			<many-to-one name="employee" column="empoyee_id"
+				not-null="true"/>
+		</union-subclass>
+	</class>
+</hibernate-mapping>

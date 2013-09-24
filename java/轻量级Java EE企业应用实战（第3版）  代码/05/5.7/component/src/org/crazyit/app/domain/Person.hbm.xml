@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<class name="Person" table="person_inf">
+		<!-- 映射标识属性 -->
+		<id name="id" column="person_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="age" type="int"/>
+		<!-- 映射组件属性name，组件属性的类型为Name -->
+		<component name="name" 
+			class="Name" unique="true">
+			<!-- 指定owner属性代表容器实体 -->
+			<parent name="owner"/>
+			<!-- 映射组件属性的first属性 -->
+			<property name="first"/>
+			<!-- 映射组件属性的last属性 -->
+			<property name="last"/>
+		</component>
+	</class>
+</hibernate-mapping>

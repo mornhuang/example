@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定校验配置文件的DTD信息 -->
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<!-- 校验文件的根元素 -->
+<validators>
+	<!-- 校验Action的name属性 -->
+	<field name="name">
+		<!-- 指定name属性必须满足必填规则 -->
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="name.requried"/>
+		</field-validator>
+		<!-- 指定name属性必须匹配正则表达式 -->
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message key="name.regex"/>
+		</field-validator>
+	</field>
+	<!-- 校验Action的pass属性 -->
+	<field name="pass">
+		<!-- 指定pass属性必须满足必填规则 -->
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message key="pass.requried"/>
+		</field-validator>
+		<!-- 指定pass属性必须满足匹配指定的正则表达式 -->
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message key="pass.regex"/>
+		</field-validator>
+	</field>
+	<!-- 指定age属性必须在指定范围内-->
+	<field name="age">
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">150</param>
+			<message key="age.range"/>
+		</field-validator>
+	</field>
+	<!-- 指定birth属性必须在指定范围内-->
+	<field name="birth">
+		<field-validator type="date">
+			<!-- 下面指定日期字符串时，必须使用本Locale的日期格式 -->
+			<param name="min">1900-01-01</param>
+			<param name="max">2050-02-21</param>
+			<message key="birth.range"/>
+		</field-validator>
+	</field>
+</validators>

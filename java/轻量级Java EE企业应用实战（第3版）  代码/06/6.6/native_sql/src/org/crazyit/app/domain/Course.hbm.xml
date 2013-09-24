@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Course实体 -->
+	<class name="Course" table="course_inf">
+		<!-- 映射标识属性 -->
+		<id name="courseCode" column="course_code">
+			<!-- 指定assigned的主键生成器策略 -->
+			<generator class="assigned"/>
+		</id>
+		<!-- 映射普通属性name -->
+		<property name="name"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="org.crazyit.hrsystem.domain">
+	<class name="Employee" table="emp_table"
+		discriminator-value="1">
+		<!-- 使用只读缓存 -->
+		<cache usage="read-only"/>
+		<!-- 映射标识属性 -->
+		<id	name="id" type="integer" column="emp_id">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<discriminator column="emp_type" type="int"/>
+		<!-- 映射普通属性 -->
+		<property name="name" column="emp_name"	type="string"
+			not-null="true" length="50" unique="true"/>
+		<property name="pass" column="emp_pass"	type="string"
+			not-null="true" length="50"/>
+		<property name="salary" column="emp_salary" type="double"
+			not-null="true" />
+		<!-- 映射和Manager的关联关系 -->
+		<many-to-one name="manager" column="mgr_id"
+			class="Manager" lazy="false"/>
+		<!-- 映射和Attend之间的关联关系 -->
+		<set name="attends" inverse="true">
+			<key column="emp_id" />
+			<one-to-many class="Attend"/>
+		</set>
+		<!-- 映射和Payment之间的关联关系 -->
+		<set name="payments" inverse="true">
+			<key column="emp_id" />
+			<one-to-many class="Payment"/>
+		</set>
+		<!-- 映射Employee的子类Manager -->
+		<subclass name="Manager" discriminator-value="2">
+			<!-- 映射Manager的普通属性 -->
+			<property name="dept" column="dept_name"
+				type="string" length="50"/>
+			<!-- 映射和Employee之间的关联关系 -->
+			<set name="employees" inverse="true">
+				<key column="mgr_id" />
+				<one-to-many class="Employee"/>
+			</set>
+			<!-- 映射和CheckBack之间的关联关系 -->
+			<set name="checks" inverse="true">
+				<key column="mgr_id" />
+				<one-to-many class="CheckBack"/>
+			</set>
+		</subclass>
+	</class>
+</hibernate-mapping>

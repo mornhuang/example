@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="GBK"?>
+<weblogic-ejb-jar>
+	<!-- 完成一个角色到用户组的映射 -->
+	<security-role-assignment>
+		<role-name>customer</role-name>
+		<principal-name>customerGp</principal-name>
+	</security-role-assignment>
+	<!-- 完成一个角色到用户组的映射 -->
+	<security-role-assignment>
+		<role-name>admin</role-name>
+		<principal-name>adminGp</principal-name>
+	</security-role-assignment>
+</weblogic-ejb-jar>

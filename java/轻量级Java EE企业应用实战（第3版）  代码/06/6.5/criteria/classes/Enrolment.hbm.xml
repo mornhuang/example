@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="lee">
+	<!-- 映射Enrolment实体 -->
+	<class name="Enrolment">
+		<!-- 映射标识属性 -->
+		<id name="enrolmentId" column="enrolment_id">
+			<!-- 指定identity的主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射两个普通属性 -->
+		<property name="semester" not-null="true"/>
+		<property name="year" not-null="true"/>
+		<!-- 映射Enrolment和Student的N－1关联 -->
+		<many-to-one name="student"
+			column="student_id"/>
+		<!-- 映射Enrolment和Course的N－1关联 -->
+		<many-to-one name="course" 
+			column="course_code"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="mobile.android.ch17.html5.demo" android:versionCode="1"
+	android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="7" />
+
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+		<activity android:name=".Main" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".DemoActivity1" android:label="Demo1" />
+		<activity android:name=".DemoActivity2" android:label="Demo2" />
+		<activity android:name=".DemoActivity3" android:label="Demo3" />
+		<activity android:name=".DemoActivity4" android:label="Demo4" />
+		<activity android:name=".DemoActivity5" android:label="Demo5" />
+		<activity android:name=".DemoActivity6" android:label="Demo6" />
+
+	</application>
+	<uses-permission android:name="android.permission.INTERNET" />
+</manifest>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="lee" extends="struts-default">
+		<!-- 配置login Action，处理类为LoginRegistAction
+			默认使用execute方法处理请求-->
+		<action name="login" class="org.crazyit.app.action.LoginRegistAction">
+			<!-- 定义逻辑视图和物理视图之间的映射关系 -->
+			<result name="input">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+		<!-- 配置regist Action，处理类为LoginRegistAction
+			指定使用regist方法处理请求-->
+		<action name="regist" class="org.crazyit.app.action.LoginRegistAction"
+			method="regist">
+			<!-- 定义逻辑视图和物理视图之间的映射关系 -->
+			<result name="input">/login.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+</struts>

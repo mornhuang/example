@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 映射Student实体 -->
+	<class name="Student" table="student_inf">
+		<!-- 映射标识属性 -->
+		<id name="studentNumber" column="student_id">
+			<!-- 指定assigned的主键生成器策略 -->
+			<generator class="assigned"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="name" not-null="true"/>
+		<!-- 映射学生和选课记录的1－N关联 -->
+		<set name="enrolments" inverse="true" 
+			cascade="delete">
+			<!-- 映射外键 -->
+			<key column="student_id"/>
+			<!-- 映射关联的Enrolment实体 -->
+			<one-to-many class="Enrolment"/>
+		</set>
+	</class>
+	<!-- 指定SQL查询的名称为queryTest -->
+	<sql-query name="queryTest">
+		<!-- 将s别名转换成Student实体 -->
+		<return alias="s" class="Student"/>
+		<!-- 将e别名转换成Enrolment实体 -->
+		<return alias="e" class="Enrolment"/>
+		<!-- 预初始化e的course属性（关联实体） -->
+		<return-join alias="c" property="e.course"/>
+		<!-- 指定将student表的name列作为标量值返回 -->
+		<return-scalar column="s.name" type="string"/>
+		select s.*,e.*,c.* 
+		from student_inf s,enrolment_inf e,course_inf c 
+		where s.student_id = e.student_id 
+		and e.course_code = c.course_code
+		and e.year=:targetYear
+	</sql-query>
+
+	<sql-query name="simpleQuery">
+		<!-- 将s别名转换成Student实体 -->
+		<return alias="s" class="Student"/>
+		select s.student_id , s.name 
+		from student_inf s 
+	</sql-query>
+
+	<!-- 定义一个调用存储过程的命名SQL查询 -->
+	<sql-query name="callProcedure" callable="true">
+		<!-- 将查询结果转换成Student实体 -->
+		<return class="Student">
+			<!-- 将查询的数据列转换成实体的属性 -->
+			<return-property name="studentNumber"
+				column="student_id"/>
+			<return-property name="name" column="name"/>
+		</return>
+		{call select_all_student()}
+	</sql-query>
+</hibernate-mapping>

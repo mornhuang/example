@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Struts 2配置文件的DTD信息 -->
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<!-- 校验规则文件的根元素 -->
+<validators>
+	<!-- 校验name属性 -->
+	<field name="name">
+		<!-- 使用表达式校验器校验name属性 -->
+		<field-validator type="fieldexpression">
+			<!-- 指定name属性和pass属性必须相等 -->
+			<param name="expression"><![CDATA[(user == pass)]]></param>
+			<message key="nameexp"/>
+		</field-validator>
+	</field>
+</validators>

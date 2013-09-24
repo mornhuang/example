@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="org.crazyit.app.domain">	
+	<!-- 映射User持久化类 -->
+	<class name="User" table="user_inf">
+		<!-- id元素定义持久化类的标识属性 -->
+		<id name="id" column="user_id">
+			<generator class="identity"/>
+		</id>
+		<!-- property元素定义常规属性 -->
+		<property name="name"/>
+		<property name="age"/>
+		<property name="nationality"/>
+	</class>
+</hibernate-mapping>

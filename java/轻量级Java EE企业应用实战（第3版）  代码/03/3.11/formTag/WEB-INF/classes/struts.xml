@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess"/>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<package name="lee" extends="struts-default">
+
+		<!-- 定义名为pro的Action，其实现类为lee.ProAction -->
+		<action name="pro" class="org.crazyit.app.action.ProAction">
+			<!-- 使用系统默认的拦截器栈 -->
+			<interceptor-ref name="defaultStack"/>
+			<!-- 使用防刷新的token拦截器 -->
+			<interceptor-ref name="token"/>
+			<!-- 定义重复提交转向的视图，该逻辑视图名必须是invalid.token -->
+			<result name="invalid.token">/refresh.jsp</result>
+			<!-- 如果处理结果返回success，对应/show.jsp视图资源 -->
+			<result name="success">/show.jsp</result>
+		</action>
+		<action name="">
+			<result>.</result>
+		</action>
+	</package>
+</struts>

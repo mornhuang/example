@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--上面四行对所有的hibernate映射文件都相同 -->
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="org.crazyit.app.domain">
+	<!-- 每个class元素对应一个持久化对象 -->
+	<class name="News" table="news_inf">
+		<!-- id元素定义持久化类的标识属性 -->
+		<id name="id">
+			<generator class="identity"/>
+		</id>
+		<!-- property元素定义常规属性 -->
+		<property name="title"/>
+		<property name="content"/>
+		<loader query-ref="new_loader"/>
+		<sql-insert>insert into news_inf
+			(title, content) values(upper(?), ?)</sql-insert>
+		<sql-update>update news_inf 
+			set title=upper(?),content=? where id=?</sql-update>
+		<sql-delete>delete from news_table where id=?</sql-delete>
+	</class>
+
+	<!-- 定义一个命名SQL查询 -->
+	<sql-query name="new_loader">
+		<!-- 指定将n别名转换成News实体 -->
+		<return alias="n" class="News"/>
+		select
+		id as {n.id},
+		concat('===' , concat(title , '===')) as {n.title}, 
+		content as {n.content}
+		from news_inf
+		where id=?
+	</sql-query>
+</hibernate-mapping>

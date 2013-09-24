@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC 
+	"-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+	"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="pass">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="pass.requried"/>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(\w{4,25})]]></param>
+			<message key="pass.regex"/>
+		</field-validator>
+	</field>
+	<field name="age">
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">150</param>
+			<message key="age.range"/>
+		</field-validator>
+	</field>
+	<field name="birth">
+		<field-validator type="date">
+			<param name="min">1900-01-01</param>
+			<param name="max">2050-02-21</param>
+			<message key="birth.range"/>
+		</field-validator>
+	</field>
+</validators>

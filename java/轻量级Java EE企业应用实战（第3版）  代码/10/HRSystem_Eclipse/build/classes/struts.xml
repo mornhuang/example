@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- Struts2配置文件的根元素 -->
+<struts>
+	<!-- 配置了系列常量 -->
+	<constant name="struts.custom.i18n.resources" value="resource"/>
+	<constant name="struts.i18n.encoding" value="GBK"/>
+	<constant name="struts.devMode" value="true"/>
+	<package name="default" extends="struts-default">
+		<interceptors>
+			<!-- 配置普通员工角色的权限检查拦截器 -->
+			<interceptor name="empAuth"	class=
+			"org.crazyit.hrsystem.action.authority.EmpAuthorityInterceptor"/>
+			<!-- 配置经理角色的权限检查拦截器 -->
+			<interceptor name="mgrAuth"	class=
+			"org.crazyit.hrsystem.action.authority.MgrAuthorityInterceptor"/>
+			<!-- 配置普通员工的默认的拦截器栈 -->
+			<interceptor-stack name="empStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="empAuth"/>
+			</interceptor-stack>
+			<!-- 配置经理的默认的拦截器栈 -->
+			<interceptor-stack name="mgrStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="mgrAuth"/>
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 定义全局Result映射 -->
+		<global-results>
+			<!-- 定义sql、root两个异常对应的视图页 -->
+			<result name="business">/WEB-INF/content/error.jsp</result>
+			<result name="root">/WEB-INF/content/error.jsp</result>
+			<!-- 定义login逻辑视图对应的视图资源 -->
+			<result name="login">/WEB-INF/content/login.jsp</result>
+		</global-results>
+
+		<!-- 定义全局异常映射 -->
+		<global-exception-mappings>
+			<!-- 当Action中遇到HrException异常时，
+				系统将转入name为business的结果中 -->
+			<exception-mapping 
+				exception="org.crazyit.hrsystem.exception.HrException"
+				result="business"/>
+			<!-- 当Action中遇到Exception异常时，
+				系统将转入name为root的结果中 -->
+			<exception-mapping exception="java.lang.Exception" 
+				result="root"/>
+		</global-exception-mappings>
+
+<!--============================下面是员工角色的Action========================-->
+		<!-- 定义处理登出请求的Action -->
+		<action name="logout" 
+			class="org.crazyit.hrsystem.action.LogoutAction">
+			<result>/WEB-INF/content/main.jsp</result>
+		</action>
+<!-- 定义处理登录系统的的Action -->
+<action name="processLogin"
+	class="org.crazyit.hrsystem.action.LoginAction">
+	<result name="input">/WEB-INF/content/login.jsp</result>
+	<result name="mgr">/WEB-INF/content/manager/index.jsp</result>
+	<result name="emp">/WEB-INF/content/employee/index.jsp</result>
+	<result name="error">/WEB-INF/content/login.jsp</result>
+</action>
+		<!-- 进入打卡 -->
+		<action name="*Punch" 
+			class="org.crazyit.hrsystem.action.PunchAction">
+			<interceptor-ref name="empStack"/>
+		   <result>/WEB-INF/content/{1}/punch.jsp</result>
+		</action>
+
+		<!-- 处理上班打卡 -->
+		<action name="*Come" method="come"
+			class="org.crazyit.hrsystem.action.ProcessPunchAction">
+			<interceptor-ref name="empStack"/>
+			<result>/WEB-INF/content/{1}/index.jsp</result>
+		</action>
+		<!-- 处理下班打卡 -->
+		<action name="*Leave"  method="leave"
+			class="org.crazyit.hrsystem.action.ProcessPunchAction">
+			<interceptor-ref name="empStack"/>
+			<result>/WEB-INF/content/{1}/index.jsp</result>
+ 	   </action>
+	
+		<!-- 查看自己的非正常出勤 -->	
+		<action name="viewUnPunch" 
+			class="org.crazyit.hrsystem.action.ViewUnAttendAction">
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="empAuth"/>
+			<result>/WEB-INF/content/employee/viewUnAttend.jsp</result>
+		</action>
+
+		<!-- 进入异动申请 -->
+		<action name="appChange" 
+			class="org.crazyit.hrsystem.action.AppChangeAction">
+			<interceptor-ref name="store">
+				<param name="operationMode">RETRIEVE</param>
+			</interceptor-ref>
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="empAuth"/>
+			<result>/WEB-INF/content/employee/appChange.jsp</result>
+		</action>
+
+<!-- 提交异动申请 -->
+<action name="processApp"
+	class="org.crazyit.hrsystem.action.ProcessAppAction">
+	<interceptor-ref name="store">
+		<param name="operationMode">STORE</param>
+	</interceptor-ref>
+	<interceptor-ref name="empStack"/>
+	<result name="input" type="redirect">
+		/appChange.action?attid=${attId}</result>
+	<result>/WEB-INF/content/employee/index.jsp</result>
+</action>
+
+		<!-- 查看本人工资的Action -->
+		<action name="view*Salary"
+			class="org.crazyit.hrsystem.action.ViewSalaryAction">
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="empAuth"/>
+			<result>/WEB-INF/content/{1}/viewSalary.jsp</result>
+		 </action>
+
+<!--============================下面是经理角色的Action========================-->
+		<action name="viewDeptSal"
+			class="org.crazyit.hrsystem.action.ViewDeptAction">
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="mgrAuth"/>
+			<result>/WEB-INF/content/manager/viewDeptSal.jsp</result>
+		</action>
+
+		<!-- 经理查看员工 -->
+		<action name="viewEmp"
+			class="org.crazyit.hrsystem.action.ViewEmpAction">
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="mgrAuth"/>
+			<result>/WEB-INF/content/manager/viewEmp.jsp</result>
+		</action>
+
+		<!-- 经理查看申请 -->
+		<action name="viewApp"
+			class="org.crazyit.hrsystem.action.ViewAppAction">
+			<interceptor-ref name="basicStack"/>
+			<interceptor-ref name="mgrAuth"/>
+			<result>/WEB-INF/content/manager/viewApps.jsp</result>
+		</action>
+
+		<!-- 进入添加员工 -->
+		<action name="addEmp">
+			<interceptor-ref name="mgrStack"/>
+			<result>/WEB-INF/content/manager/addEmp.jsp</result>
+		</action>
+
+		<!-- 经理增加员工 -->
+		<action name="processAdd" 
+			class="org.crazyit.hrsystem.action.AddEmpAction">
+			<!-- 使用系统默认的拦截器栈 -->
+			<interceptor-ref name="mgrStack"/>
+			<!-- 使用防刷新的token拦截器 -->
+			<interceptor-ref name="token"/>
+			<!-- 定义重复提交转向的视图，该逻辑视图名必须是invalid.token -->
+			<result name="invalid.token">/WEB-INF/content/manager/addEmp.jsp</result>
+			<result name="input">/WEB-INF/content/manager/addEmp.jsp</result>
+			<result name="failure">/WEB-INF/content/manager/addEmp.jsp</result>
+			<result>/WEB-INF/content/manager/index.jsp</result>
+		</action>
+
+		<!-- 经理处理申请 -->
+		<action name="check"
+			class="org.crazyit.hrsystem.action.CheckAppAction">
+			<interceptor-ref name="mgrStack"/>
+			<result type="chain">viewApp</result>
+		</action>
+
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+</struts>
