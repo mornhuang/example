@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 访问表单域控件 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+
+<body>
+<form id="d" action="" method="get">
+	<input name="user" type="text" /><br />
+	<input name="pass" type="text" /><br />
+	<select id="color">
+		<option value="red">红色</option>
+		<option value="blue">蓝色</option>
+	</select><br />
+	<input type="button" value="第一个"
+		onclick="alert(document.getElementById('d').elements[0].value);" />
+	<input type="button" value="第二个"
+		onclick="alert(document.getElementById('d').elements['pass'].value);" />
+	<input type="button" value="第三个"
+		onclick="alert(document.getElementById('d').color.value);" />
+</form>
+</body>
+</html>

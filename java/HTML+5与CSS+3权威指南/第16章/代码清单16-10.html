@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>CSS3中完整表格的构成示例</title>
+<style type="text/css">
+.table{
+        display: table;
+        border: solid 3px #00aaff;
+}
+.caption{
+        display: table-caption;
+        text-align: center;
+}
+.tr{
+        display: table-row
+}
+.td {
+        display: table-cell;
+        border: solid 2px #aaff00;
+        padding: 10px;
+}
+.thead{
+        display: table-header-group;
+        background-color: #ffffaa;
+}
+</style>
+</head>
+<body>
+<div class="table">
+    <div class="caption">字母表</div>
+    <div class="thead">
+        <div class="tr">
+            <div class="td">1st</div>
+            <div class="td">2nd</div>
+            <div class="td">3rd</div>
+            <div class="td">4th</div>
+            <div class="td">5th</div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">A</div>
+        <div class="td">B</div>
+        <div class="td">C</div>
+        <div class="td">D</div>
+        <div class="td">E</div>
+    </div>
+    <div class="tr">
+        <div class="td">F</div>
+        <div class="td">G</div>
+        <div class="td">H</div>
+        <div class="td">I</div>
+        <div class="td">J</div>
+    </div>
+</div>
+</body>
+</html>

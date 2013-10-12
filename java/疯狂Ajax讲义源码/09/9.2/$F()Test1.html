@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> $F()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<form id="form1" name="form1" action="#">
+	<input type="text" id="text1" name="text1" />
+</form>
+<form id="form2" name="form2" action="#">
+	<input type="text" id="text2" name="text2"/><br />
+	<textarea cols="40" rows="2" id="text3" ></textarea>
+</form>
+<div id="show"></div>
+<input type="button" onclick="show()" value="显示"/>
+<script src="../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//事件处理函数，用于输出三个表单控件的值
+function show()
+{
+	$("show").innerHTML = $F("text1")  + 
+		"<br />" +  $F("text2") + 
+		"<br />"  + $F("text3");
+}
+</script>
+</body>
+</html>

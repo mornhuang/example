@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 导航菜单 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+	/* 设置菜单条的CSS样式 */
+	#menubar {
+		width: 780px;
+		height: 32px;
+		background-color: menu;
+		padding-top: 3px;
+	}
+	/* 设置菜单条里菜单的CSS样式 */
+	#menubar div {
+		height: 22px;
+		width: 60px;
+		font-size: 10pt;
+		background-color: menu;
+		text-align: center;
+		vertical-align: middle;
+		padding-top: 6px;
+		cursor: default;
+		/* 控制div元素不换行 */
+		float:left;
+	}
+	/* 当鼠标在菜单条上悬停时的立体“凸出”效果 */
+	.menuhover {
+		border : solid 1px;
+		border-color:#ffffff #333333 #333333 #ffffff;
+	}
+	/* 当鼠标在菜单条上悬停时的立体“凹下”效果 */
+	.menuclick {
+		border : solid 1px;
+		border-color: #333333 #ffffff  #ffffff #333333;
+	}
+	/* 菜单的CSS样式 */
+	.menu {
+		z-index:100;
+		border : solid 1px;
+		border-color:#ffffff #333333 #333333 #ffffff;
+		position:absolute;
+		width:182px;
+		background-color:menu;
+		font-size:10pt;
+		cursor:default;
+	}
+	/* 鼠标悬停在菜单项时的菜单项的高亮效果 */
+	.menuitemhover {
+		width:180px;
+		height:22px;
+		background-color:#000055;
+		color:#ffffff;
+		padding-top: 6px;
+		padding-left: 2px;
+	}
+	/* 普通菜单项的效果 */
+	.menuitem {
+		width:180px;
+		height:22px;
+		padding-top: 6px;
+		padding-left: 2px;
+	}
+	</style>
+	<script>
+	//用于保存上次出现的菜单
+	var lastMenu;
+	//用于保存上次单击的的菜单标题
+	var lastMenuTitle;
+	//菜单悬停时的立体效果
+	function menuHover(event)
+	{
+		var targetMenu;
+		if (event.srcElement != null)
+		{
+			targetMenu = event.srcElement;
+		}
+		else
+		{
+			targetMenu = event.target;
+		}
+		//设置鼠标悬停菜单上时的效果
+		targetMenu.className = "menuhover";
+	}
+	//鼠标移出菜单时的恢复效果
+	function menuGotOut(event)
+	{
+		var targetMenu;
+		if (event.srcElement != null)
+		{
+			targetMenu = event.srcElement;
+		}
+		else
+		{
+			targetMenu = event.target;
+		}
+		//设置鼠标移出菜单时的恢复效果,
+		//如果该菜单已经处于打开状态，则保持菜单标题的下凹效果
+		if (targetMenu.className != "menuclick")
+		{
+			targetMenu.className = "";
+		}
+	}
+	//菜单项悬停时的高亮
+	function itemHover(event)
+	{
+		//获得需要出现高亮的菜单项
+		var targetMenu;
+		if (event.srcElement != null)
+		{
+			targetMenu = event.srcElement;
+		}
+		else
+		{
+			targetMenu = event.target;
+		}
+		//让菜单项出现高亮效果
+		targetMenu.className = "menuitemhover";
+	}
+	//菜单项移出时的恢复，取消高亮
+	function itemGotOut(event)
+	{
+		//获取鼠标移出的菜单项
+		var targetMenu;
+		if (event.srcElement != null)
+		{
+			targetMenu = event.srcElement;
+		}
+		else
+		{
+			targetMenu = event.target;
+		}
+		//取消菜单项上的高亮效果
+		targetMenu.className = "menuitem";
+	}
+	//当菜单条上的菜单标题被单击时的事件处理函数
+	function showMenu(name,obj)
+	{
+		//将上次单击的菜单标题的凹下效果取消
+		if ( lastMenuTitle != null ) lastMenuTitle.className = "";
+		//将当前单击的菜单标题设置为凹下效果
+		obj.className="menuclick";
+		//关闭上次出现的菜单的显示
+		if ( lastMenu != null ) lastMenu.style.display = "none"
+		//获取当前需要显示的菜单
+		var mu = document.getElementById(name);
+		//显示该菜单标题对应的菜单
+		mu.style.display="";
+		//将当前对象赋为上次菜单标题
+		lastMenuTitle = obj;
+		//将当前显示的菜单赋为上次菜单
+		lastMenu = mu;
+	}
+</script>
+</head>
+<body>
+<div id="menubar">
+	<!-- 菜单条上的"文件"菜单 -->
+	<div onMouseOver="menuHover(event);" onMouseOut="menuGotOut(event);"
+	onClick="showMenu('file' , this);">文件</div>
+	<!-- 菜单条上的编辑菜单 -->
+	<div onMouseOver="menuHover(event);" onMouseOut="menuGotOut(event);"
+	onClick="showMenu('edit' , this);">编辑</div>
+	<!-- 菜单条上的查看菜单 -->
+	<div onMouseOver="menuHover(event);" onMouseOut="menuGotOut(event);"
+	onClick="showMenu('view' , this);" >查看</div>
+</div>
+<!-- "文件"菜单 -->
+<div id="file" style="display:none;left:9px;" class="menu" name="menu">
+	<!-- 下面是"文件"菜单的三个菜单项 -->
+	<div class="menuitem" onMouseOver="itemHover(event);"
+	onMouseOut="itemGotOut(event);" onClick="">新建</div>
+	<div class="menuitem" onMouseOver="itemHover(event);"
+	onMouseOut="itemGotOut(event);" onClick="">打开</div>
+	<div class="menuitem" onMouseOver="itemHover(event);" 
+		onMouseOut="itemGotOut(event);" onClick="">保存</div>
+</div>
+<!-- "编辑"菜单 -->
+<div id="edit" style="display:none;left:69px;" class="menu" name="menu">
+	<!-- 下面是"编辑"菜单的三个菜单项 -->
+	<div class="menuitem" onMouseOver="itemHover(event);"
+	onMouseOut="itemGotOut(event);"	onClick="">复制</div>
+	<div class="menuitem" onMouseOver="itemHover(event);"
+	onMouseOut="itemGotOut(event);"	onClick="">剪切</div>
+	<div class="menuitem" onMouseOver="itemHover(event);"
+	onMouseOut="itemGotOut(event);"	onClick="">粘贴</div>
+</div>
+<!-- "查看"菜单 -->
+<div id="view" style="display:none;left:129px;" class="menu" name="menu">
+	<!-- 下面是"查看"菜单的三个菜单项 -->
+	<div class="menuitem" onMouseOver="itemHover(event);" 
+		onMouseOut="itemGotOut(event);"	onClick="">放大</div>
+	<div class="menuitem" onMouseOver="itemHover(event);"
+		onMouseOut="itemGotOut(event);"	onClick="">缩小</div>
+	<div class="menuitem" onMouseOver="itemHover(event);"
+		onMouseOut="itemGotOut(event);"	onClick="">全屏</div>
+</div>
+</body>
+</html>

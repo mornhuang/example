@@ -1,0 +1,12 @@
+<script>
+	//定义字符串变量a
+	var a = "abc中国";
+	//获取a的长度
+	var b = a.length;
+	//将系列的UNICODE值转换成字符串
+	var c = String.fromCharCode(97,98,99);
+	//输出a的长度，以及字符串a在索引4处的字符和
+	//对应的UNICODE值，以及c字符串变量的值
+	alert(b + "---" + a.charAt(4) + "---"
+		+ a.charCodeAt(4) + "---" + c);
+</script>

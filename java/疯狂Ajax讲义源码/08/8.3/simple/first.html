@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 发送简单请求 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+mysql的虚拟股票价格：<div id="mysql" style="color:red;font-weight:bold;"></div>
+tomcat的虚拟股票价格：<div id="tomcat" style="color:red;font-weight:bold;"></div>
+jetty的虚拟股票价格：<div id="jetty" style="color:red;font-weight:bold;"></div>
+<script type="text/javascript">
+//XMLHttpRequest对象
+var xmlrequest;
+//创建XMLHttpRequest对象的初始化函数
+function createXMLHttpRequest()
+{
+	if(window.XMLHttpRequest)
+	{ 
+		//DOM 2浏览器
+		xmlrequest = new XMLHttpRequest();
+	}
+	else if (window.ActiveXObject)
+	{
+		// IE浏览器
+		try
+		{
+			xmlrequest = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				xmlrequest = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e){}
+		}
+	}
+}
+//用于发送简单请求的函数
+function getPrice()
+{
+	//初始化XMLHttpRequest对象
+	createXMLHttpRequest(); 
+	var uri = "second.jsp";
+	//打开与服务器的连接
+	xmlrequest.open("POST", uri, true); 
+	//指定当XMLHttpRequest状态改变时的事件处理函数
+	xmlrequest.onreadystatechange = processResponse;
+	//发送请求
+	xmlrequest.send(null);
+}
+//当XMLHttpRequest状态改变时，该函数将被触发
+function processResponse()
+{
+	if(xmlrequest.readyState == 4)
+	{
+		if(xmlrequest.status == 200)
+		{
+			//将服务器响应以$符号分割成一个字符串数组
+			var prices = xmlrequest.responseText.split("$");
+			//将服务器的响应通过页面显示。
+			document.getElementById("mysql").innerHTML=prices[0];
+			document.getElementById("tomcat").innerHTML=prices[1];
+			document.getElementById("jetty").innerHTML=prices[2];
+			//设置1秒钟后再次发送请求
+			setTimeout("getPrice()", 1000);
+		}
+	}
+}
+//指定页面加载完成后指定getPrice()函数
+document.body.onload = getPrice;
+</script>
+</body>
+</html>

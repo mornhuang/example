@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- 定义了一个bean -->
+	<bean id="hello" class="lee.HelloSpring" />
+</beans>

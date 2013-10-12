@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 带脚本的服务器响应 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<h3>请单击下面按钮</h3>
+<!-- 下面按钮将发送Ajax请求 -->
+<input type="button" value="发送" onclick="send();"/> 
+<div id="show"></div>
+<script src="prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+function send()
+{
+	var url = 'b.jsp';
+	var myAjax = new Ajax.Updater(
+	//服务器响应在show元素中显示
+	'show',
+	url,
+	{
+		method: 'post',
+		//请求参数为空
+		parameters: null,
+		//执行服务器响应中的脚本
+		evalScripts:true
+	});
+}
+</script>
+</body>
+</html>

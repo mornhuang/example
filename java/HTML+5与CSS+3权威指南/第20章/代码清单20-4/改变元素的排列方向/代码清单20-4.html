@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title>使用float属性进行布局的示例</title>
+<style type="text/css">
+#container{
+	display: -moz-box;
+	display: -webkit-box;
+        -moz-box-orient: vertical;
+	-webkit-box-orient: vertical;
+}
+#left-sidebar{
+        -moz-box-ordinal-group: 3;
+        -webkit-box-ordinal-group: 3;
+	width: 200px;
+	padding: 20px;
+	background-color: orange;
+}
+#contents{
+        -moz-box-ordinal-group: 1;
+        -webkit-box-ordinal-group: 1;    
+	-moz-box-flex:1;
+        -webkit-box-flex:1;
+	padding: 20px;
+	background-color: yellow;
+}
+#right-sidebar{
+        -moz-box-ordinal-group: 2;
+        -webkit-box-ordinal-group: 2;
+	width: 200px;
+	padding: 20px;
+	background-color: limegreen;
+}
+#left-sidebar, #contents, #right-sidebar{
+        -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+<div id="container">
+<div id="left-sidebar">
+<h2>左侧边栏</h2>
+<ul>
+<li><a href="">超链接</a></li>
+<li><a href="">超链接</a></li>
+<li><a href="">超链接</a></li>
+<li><a href="">超链接</a></li>
+<li><a href="">超链接</a></li>
+</ul>
+</div>
+<div id="contents">
+<h2>内容</h2>
+<p>示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字。示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字。示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字。示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字。</p>
+</div>
+<div id="right-sidebar">
+<h2>右侧边栏</h2>
+<ul>
+<li><a href="">超链接</a></li>
+<li><a href="">超链接</a></li>
+<li><a href="">超链接</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>

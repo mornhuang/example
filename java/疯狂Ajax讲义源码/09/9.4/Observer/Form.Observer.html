@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Form.Observer </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<form id="test" method="post" action="#">
+用户名：<input type="text" id="user" name="user" />
+密码：<input type="text" id="pass" name="pass" />
+</form>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//为test表单绑定事件监听器
+new Form.Observer("test", 1, function()
+{
+	//此处的this.getValue()将返回目标表单的serialize()
+	alert(this.getValue());
+});
+</script>
+</body>
+</html>

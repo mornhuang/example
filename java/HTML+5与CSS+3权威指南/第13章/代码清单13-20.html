@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title> E: read-only伪类选择器与E:read-write伪类选择器结合使用示例
+</title>
+<style type="text/css">
+input[type="text"]:read-only{
+        background-color: gray;
+}
+input[type="text"]:read-write{
+        background-color: greenyellow;
+}
+input[type="text"]:-moz-read-only{
+        background-color: gray;
+}
+input[type="text"]:-moz-read-write{
+        background-color: greenyellow;
+}
+</style>
+</head>
+<body>
+<form>
+<p>名前：<input type="text" name="name" />
+<p>地址：<input type="text" name="address" value="江苏省常州市"
+ readonly="readonly" />
+</p>
+</form>
+</body>
+</html>

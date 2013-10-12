@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 插入HTML节点 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div id="test1" style="border:1px dotted black;">id为test1的元素</div><br />
+<div id="test2" style="border:1px solid black;">id为test2的元素</div>
+<hr />
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	//直接将一段HTML字符串插入到id为test1的元素的的前面
+	$("#test1").before("<b>疯狂Ajax讲义</b>");
+	//直接将一段HTML字符串插入到id为test1的元素的的后面
+	$("#test1").after("<b>疯狂XML讲义</b>");
+	//将id为test2的元素插入hr元素之后
+	$("#test2").insertAfter("hr");
+</script>
+</body>
+</html>

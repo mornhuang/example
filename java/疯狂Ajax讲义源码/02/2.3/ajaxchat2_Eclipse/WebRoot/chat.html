@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+	<title>聊天页面</title>
+</head>
+<body onload ="sendEmptyRequest();">
+<table width="780" border="1" align="center">
+<tr>
+<td><p align="center">聊天页面</p>
+<p align="center">
+<textarea id="chatArea" name="chatArea" cols="100"
+	rows="30" readonly="readonly"></textarea>
+</p>
+<div align="center">
+    <input id="chatMsg" name="chatMsg" type="text"
+	size="90" onkeypress="enterHandler(event);"/>
+    <input type="button" name="button" value="提交"
+	onclick="sendRequest();"/>
+</div>
+</td>
+</tr>
+</table>
+<script>
+var input = document.getElementById("chatMsg");
+input.focus();
+var XMLHttpReq;
+//创建XMLHttpRequest对象       
+function createXMLHttpRequest()
+{
+	if(window.XMLHttpRequest)
+	{ 
+		//DOM 2浏览器
+		XMLHttpReq = new XMLHttpRequest();
+	}
+	else if (window.ActiveXObject)
+	{
+		// Internet Explorer浏览器
+		try
+		{
+			XMLHttpReq = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				XMLHttpReq = new 
+					ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e)
+			{
+			}
+		}
+	}
+}
+//发送请求函数
+function sendRequest()
+{
+	//input是个全局变量，就是用户输入聊天信息的单行文本框
+	var chatMsg = input.value;
+	//完成XMLHttpRequest对象的初始化
+	createXMLHttpRequest();
+	//定义发送请求的目标URL
+	var url = "chat.do";
+	//通过open方法取得与服务器的连接
+	//发送POST请求
+	XMLHttpReq.open("POST", url, true);
+	//设置请求头-发送POST请求时需要该请求头
+	XMLHttpReq.setRequestHeader("Content-Type",
+		"application/x-www-form-urlencoded");
+	//指定XMLHttpRequest状态改变时的处理函数
+	XMLHttpReq.onreadystatechange = processResponse;
+	//清空输入框的内容
+	input.value = "";
+	//发送请求，send的参数包含许多的key-value对。
+	//即以：请求参数名=请求参数值 的形式发送请求参数。
+	XMLHttpReq.send("chatMsg=" + chatMsg); 
+}
+
+function sendEmptyRequest()
+{
+	//完成XMLHttpRequest对象的初始化
+	createXMLHttpRequest();
+	//定义发送请求的目标URL
+	var url = "chat.do";
+	//发送POST请求
+	XMLHttpReq.open("POST", url, true);
+	//设置请求头-发送POST请求时需要该请求头
+	XMLHttpReq.setRequestHeader("Content-Type",
+		"application/x-www-form-urlencoded");
+	//指定XMLHttpRequest状态改变时的处理函数
+	XMLHttpReq.onreadystatechange = processResponse;
+	//发送请求,，不发送任何参数
+	XMLHttpReq.send(null);
+	//指定0.8s之后再次发送请求
+	setTimeout("sendEmptyRequest()" , 800);
+}
+
+// 处理返回信息函数
+function processResponse()
+{
+	//当XMLHttpRequest读取服务器响应完成
+	if (XMLHttpReq.readyState == 4)
+	{
+		//服务器响应正确（当服务器响应正确时，返回值为200的状态码）
+		if (XMLHttpReq.status == 200)
+		{
+			//使用chatArea多行文本域显示服务器响应的文本
+			document.getElementById("chatArea").value 
+				= XMLHttpReq.responseText;
+		}
+		else
+		{
+			//提示页面不正常
+			window.alert("您所请求的页面有异常。");
+		}
+	}
+}
+//键盘处理函数
+function enterHandler(event)
+{
+	//获取用户单击键盘的“键值”
+	var keyCode = event.keyCode ? event.keyCode 
+		: event.which ? event.which : event.charCode;
+	//如果是回车键
+	if (keyCode == 13)
+	{
+		sendRequest();
+	}
+}
+</script>
+</body>
+</html>

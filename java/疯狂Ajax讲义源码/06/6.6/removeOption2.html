@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 删除列表项 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+	<input id="opValue" type="text"/>
+	<input id="add" type="button" value="增加" onclick="add();"/>
+	<input id="del" type="button" value="删除" onclick="del();"/><br />
+	<select id="show" size="8" style="width:120px;">
+	</select>
+<script>
+	var show = document.getElementById("show");
+	//增加下拉列表的函数
+	function add()
+	{
+		//以文本框的值创建一个<option.../>元素
+		var op = new Option(document.getElementById('opValue').value);
+		//增加选项
+		show.options[show.options.length] = op;
+	}
+	function del()
+	{
+		//如果有选项
+		if (show.options.length > 0)
+		{
+			//删除最后的一个选项
+			show.options(show.options.length - 1 ) = null;
+		}
+	}
+</script>
+</body>
+</html>

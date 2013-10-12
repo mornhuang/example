@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="GBK"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+	<!-- 配置Spring配置文件的位置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<!-- 使用ContextLoaderListener初始化Spring容器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+
+	<!-- 定义getBrands Servlet -->
+	<servlet>
+		<servlet-name>getBrands</servlet-name>
+		<servlet-class>org.crazyjava.inputtip.servlet.GetBrandsServlet</servlet-class>
+	</servlet>
+	<!-- 为该Servlet配置URL -->
+	<servlet-mapping>
+		<servlet-name>getBrands</servlet-name>
+		<url-pattern>/getBrands.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 定义getModels Servlet -->
+	<servlet>
+		<servlet-name>getModels</servlet-name>
+		<servlet-class>org.crazyjava.inputtip.servlet.GetModelsServlet</servlet-class>
+	</servlet>
+	<!-- 为该Servlet配置URL -->
+	<servlet-mapping>
+		<servlet-name>getModels</servlet-name>
+		<url-pattern>/getModels.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 定义getDetail Servlet -->
+	<servlet>
+		<servlet-name>getDetail</servlet-name>
+		<servlet-class>org.crazyjava.inputtip.servlet.GetDetailServlet</servlet-class>
+	</servlet>
+	<!-- 为该Servlet配置URL -->
+	<servlet-mapping>
+		<servlet-name>getDetail</servlet-name>
+		<url-pattern>/getDetail.do</url-pattern>
+	</servlet-mapping>
+
+</web-app>

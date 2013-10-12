@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 添加选项 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body id="test">
+<script type="text/javascript">
+	//创建<select.../>对象
+	var a = document.createElement("select");
+	//为<select.../>对象增加10个选项
+	for (var i = 0 ; i < 10 ; i++)
+	{
+		//创建一个<option.../>元素
+		var op = new Option('新增的选项' + i , i);
+		a.options[i] = op;
+	}
+	//设置列表框高度为5.
+	a.size = 5;
+	//将列表框增加成body元素的子节点
+	document.getElementById("test").appendChild(a);
+	</script>
+</body>
+</html>
+

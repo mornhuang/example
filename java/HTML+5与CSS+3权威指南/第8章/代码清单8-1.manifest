@@ -1,0 +1,17 @@
+﻿CACHE MANIFEST
+#文件的开头必须要书写CACHE MANIFEST
+#这个manifest文件的版本号
+#version 7
+CACHE：
+other.html
+hello.js
+images/myphoto.jpg
+NETWORK：
+http://Lulingniu/NotOffline
+NotOffline.asp
+*
+FALLBACK：
+online.js locale.js
+CACHE：
+newhello.html
+newhello.js  

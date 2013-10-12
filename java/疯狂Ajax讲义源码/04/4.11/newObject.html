@@ -1,0 +1,18 @@
+<script>
+	//定义一个函数，同时也定义了一个Person类
+	function Person(name , age)
+	{
+		//将name、age形参赋值给name、age实例属性
+		this.name = name;
+		this.age = age;
+	}
+	//分别以两种方式创建Person实例
+	var p1 = new Person();
+	var p2 = new Person('yeeku' , 29);
+	//输出p1的属性
+	document.writeln("p1的属性如下:"
+		+ p1.name + p1.age + "<br />");    
+	//输出p2的属性
+	document.writeln("p2的属性如下:" 
+		+ p2.name + p2.age);
+</script>

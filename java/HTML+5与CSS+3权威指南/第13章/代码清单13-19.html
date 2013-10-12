@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title>E: disabled伪类选择器与E:enabled伪类选择器结合使用示例</title>
+<script>
+function radio_onchange()
+{    
+    var radio=document.getElementById("radio1");
+    var text=document.getElementById("text1");
+    if(radio.checked)
+        text.disabled="";
+    else
+    {
+        text.value="";
+        text.disabled="disabled";
+    }
+}
+</script>
+<style>
+input[type="text"]:enabled{
+    background-color:yellow; 
+}
+input[type="text"]:disabled{
+    background-color:purple;
+}
+</style>
+</head>
+<body>
+<form>
+<input type="radio" id="radio1" name="radio" 
+ onchange="radio_onchange();">可用</radio>
+<input type="radio" id="radio2" name="radio" 
+onchange="radio_onchange();">不可用</radio><br/>
+<input type=text id="text1" disabled />
+</form>
+</body>
+</html>

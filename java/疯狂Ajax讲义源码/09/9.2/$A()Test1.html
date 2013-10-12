@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> $$()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div id="menuBar">
+	<div>文件</div>
+	<div>编辑</div>
+	<div>查看</div>
+</div>
+<script src="../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//获得id为menuBar的元素，再获取该元素的所有div子元素，返回一个HTMLCollection
+var fileList = $("menuBar").getElementsByTagName("div");
+document.writeln(fileList + "<br />");
+//将fileList转换为一个数组
+var fileArray = $A(fileList);
+//依次输出数组的每个元素
+for (var i = 0 ; i < fileArray.length ; i++)
+{
+	document.writeln(fileArray[i].innerHTML + "<br />");
+}
+</script>
+</body>
+</html>

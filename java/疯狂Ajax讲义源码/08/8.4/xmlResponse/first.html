@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 发送XML请求 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<select name="first" id="first" size="3"
+	onchange="change(this.value);">
+	<option value="1" selected="selected">中国</option>
+	<option value="2">美国</option>
+	<option value="3">日本</option>
+</select>
+<select id="second" size="3"></select>
+<script type="text/javascript">
+//保存XMLHttpRequest对象的变量
+var xmlrequest;
+function createXMLHttpRequest()
+{
+	if(window.XMLHttpRequest)
+	{
+		//DOM 2浏览器
+		xmlrequest = new XMLHttpRequest();
+	}
+	// IE浏览器
+	else if (window.ActiveXObject)
+	{
+		try
+		{
+			xmlrequest = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				xmlrequest = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e){}
+		}
+	}
+}
+//事件处理函数，当下拉列表选择改变时，触发该函数
+function change(id)
+{
+	//初始化XMLHttpRequest对象
+	createXMLHttpRequest();
+	//确定需要发送的URL
+	var uri = "second.jsp";
+	//设置以POST方法发送请求，并打开连接
+	xmlrequest.open("POST", uri, true); 
+	//设置POST请求的请求头
+	xmlrequest.setRequestHeader("Content-Type"
+		, "application/x-www-form-urlencoded");
+	//确定XMLHttpRequest对象的状态改变时的回调函数
+	xmlrequest.onreadystatechange = processResponse;
+	//发送请求，在发送请求时发送请求参数
+	xmlrequest.send("id="+id);
+}
+//处理服务器响应
+function processResponse()
+{
+	//判断服务器响应是否完成
+	if(xmlrequest.readyState == 4)
+	{
+		//判断服务器的响应是否成功
+		if(xmlrequest.status == 200)
+		{
+			//获取服务器的XML响应
+			var xmldoc = xmlrequest.responseXML
+			//获取XML文档的city节点列表
+			var cityList = xmldoc.getElementsByTagName("city");
+			//获取用于显示下拉菜单的下拉框
+			var displaySelect = document.getElementById("second");
+			//清空列表框原有的选项
+			displaySelect.innerHTML = null;
+			//依次遍历多个city节点
+			for (var i = 0 ; i < cityList.length ; i++)
+			{
+				//创建一个option节点
+				option = document.createElement("option");
+				//对于IE浏览器，DOM节点内的文本内容直接使用text访问
+				if (cityList[i].text)
+				{
+					option.innerHTML = cityList[i].text;
+				}
+				//对于DOM 2浏览器，DOM节点内的文本内容又是一个Text节点
+				else
+				{
+					option.innerHTML = cityList[i].firstChild.data;
+				}
+				//依次将多个option添加到select中
+				displaySelect.appendChild(option);
+			}
+		}
+	}
+}
+
+</script>
+</body>
+</html>

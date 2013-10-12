@@ -1,0 +1,75 @@
+<script>
+	//构造2个数组
+	var detail_show = new Array();
+	var detail_value = new Array();
+	detail_show[0]=new Array();
+	detail_value[0]=new Array();
+	detail_show[0][0]='上海';
+	detail_value[0][0]='0101';
+	detail_show[0][1]='北京';
+	detail_value[0][1]='0102';
+	detail_show[0][2]='广州';
+	detail_value[0][2]='0103';
+	detail_show[1]=new Array();
+	detail_value[1]=new Array();
+	detail_show[1][0]='纽约';
+	detail_value[1][0]='0201';
+	detail_show[1][1]='华盛顿';
+	detail_value[1][1]='0202';
+	detail_show[1][2]='加州';
+	detail_value[1][2]='0203';
+	detail_show[2]=new Array();
+	detail_value[2]=new Array();
+	detail_show[2][0]='伦敦';
+	detail_value[2][0]='0301';
+	detail_show[2][1]='利物浦';
+	detail_value[2][1]='0302';
+	detail_show[2][2]='伯明翰';
+	detail_value[2][2]='0303';  
+  
+	function change(target)
+	{
+		//获取级联的下拉列表
+		var deselect = document.getElementById("deselect");
+		//清空第二个下拉列表的选项
+		deselect.innerHTML = null;
+		var m = target.selectedIndex;
+		if ( m >= 0 ) 
+		{
+			for(i = 0; i < detail_show[m].length; i++)
+			{
+				//循环构造很多option,然后放在指定的option中
+				//new Option(show,value)可以构造一个一个的option
+				 deselect.options[i] = new Option(detail_show[m][i], 
+					detail_value[m][i]);
+			}
+			//设置默认选中第一个列表项
+			deselect.options[0].selected = true;
+		}
+	}
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 级联菜单 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+	<link href="css/css.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div align="center">
+<h2>级联菜单</h2>
+<form id="flyform">
+      <select name="caselect" id="caselect" style="width:80"
+		onchange="change(this)";>
+        <option value="01">中国</option>
+        <option value="02">美国</option>
+        <option value="03">英国</option>
+      </select>
+      <select name="deselect" id="deselect" style="width:150 ">
+      </select>
+</form>
+</div>
+</body>
+</html>

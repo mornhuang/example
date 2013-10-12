@@ -1,0 +1,11 @@
+<script>
+	var myObj = new Object();
+	myObj.name = 'yeeku';
+	myObj.age = 29;
+	//为对象增加方法
+	myObj.info = new Function("document.writeln('对象的name属性:' + this.name);"
+		+ "document.writeln('<br />');"
+		+ "document.writeln('对象的age属性:' + this.age)");
+	document.writeln("<hr / >");
+	myObj.info();
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用定时器 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<span id="tm"></span>
+<script type="text/javascript">
+	//定义定时器变量
+	var timer;
+	//保存页面运行的起始时间
+	var cur = new Date().getTime(); 
+	function setTime()
+	{
+		//在tm元素中显示当前时间
+		document.getElementById("tm").innerHTML = 
+			new Date().toLocaleString();
+		//如果当前时间比起始时间大于60秒，停止定时器的调度
+		if (new Date().getTime() - cur > 60 * 1000)
+		{
+			//清除timer定时器
+			clearInterval(timer);
+		}
+	}
+	//指定每隔1000毫秒执行setTime()函数一次
+	timer = window.setInterval("setTime();" , 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<title>属性选择器测试</title>
+	<style type="text/css">
+	/* 对所有div元素都起作用的CSS定义 */
+	div {
+		width:200px;
+		height:30px;
+		background-color:#dddddd;
+		border:1px solid black;
+	}
+	/* 对有id属性的div元素起作用的CSS定义 */
+	div[id] {
+		background-color:#aaaaaa;
+	}
+	/* 对有id属性值为xx的div元素起作用的CSS定义 */
+	div[id=xx] {
+		background-color:#888888;
+	}
+	</style>
+</head>
+<body>
+<div>没有任何属性的div元素</div>
+<div id="a">带id属性的div元素</div>
+<div id="xx">id属性值为xx的div元素</div>
+</body>
+</html>

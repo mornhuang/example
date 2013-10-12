@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 操作HTML内容的工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div></div><div></div>
+<input id="book" name="book" type="text" /><br />
+<input id="desc" name="desc" type="text" /><br />
+<select id="gender">
+	<option value="male">男人</option>
+	<option value="female">女人</option>
+</select><br />
+<select id="publish" multiple="multiple">
+	<option value="phei">电子工业出版社</option>
+	<option value="tsinghua">清华大学出版社</option>
+</select><br />
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//设置body下的div元素的内容
+$("body>div").html("疯狂Ajax讲义");
+//设置所有input、select和textarea的值
+$(":input").val("疯狂XML讲义");
+//为所有的<select.../>元素设置value值
+$("select").val(["female" , "tsinghua" , "phei"]);
+//仅获取jQuery元素的text部分，下面将输出java:疯狂Java讲义
+alert($("<div>java:<span>疯狂Java讲义</span></div>").text());
+</script>
+</body>
+</html>

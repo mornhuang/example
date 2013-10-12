@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 扩展Function </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//定义一个JavaScript对象
+var person = {
+	name: 'yeeku', 
+	//虽然info()函数定义在person对象里，它依然是一个独立的函数
+	info: function()
+	{     
+		alert(this.name);
+	} 
+}; 
+//看到输出'yeeku'
+person.info();
+//再顶一个runFn函数，该函数专门用于运行指定函数
+function runFn(f) 
+{
+	f();
+} 
+window.name = '疯狂Java讲义';
+//该函数所在范围是window,所以this.name为'疯狂Java讲义'
+runFn(person.info);
+//下面代码先将person.info函数绑定给person。
+//这样无论以何种方式执行该函数，person.info函数的this总是引用person。
+runFn(person.info.bind(person));
+function test(name , age)
+{
+	alert("此人名为：" + name + "\n"
+		+ "年龄为：" + age);
+}
+//将test()函数包转成newTest函数，test()函数的第一个参数已经有值
+var newTest = test.curry('yeeku');
+//将输出"此人名为：yeeku\n 年龄为：31
+newTest(31);
+//定义一个函数，函数targe
+var fn1 = function(target , name) 
+{  
+	target.name = name;
+}; 
+//执行fn1.methodize();产生一个新函数
+var fn2 = fn1.methodize();
+//程序将this（代表window）传入fn1。
+fn2("疯狂XML讲义");
+//输出"疯狂XML讲义"
+alert(name);
+</script>
+</body>
+</html>

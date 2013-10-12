@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用jQuery()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		.test{
+			font-size:20pt;
+		}
+	</style>
+</head>
+<body>
+<ul>
+	<li id="java">疯狂Java讲义</li>
+	<li id="javaee" class="test">轻量级Java EE企业应用实战</li>
+	<li id="ajax">疯狂Ajax讲义</li>
+	<li id="xml">疯狂XML讲义</li>
+	<li id="ejb">经典Java EE企业应用实战</li>
+	<li><span id="workflow">疯狂Workflow讲义</span></li>
+</ul>
+<span>疯狂Java联盟</span>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//访问页面中第1、4、7...个li元素
+$("li:nth-child(3n+1)").css("border" , "1px dashed black");
+//访问页面中span元素、且该span元素的父元素下仅包含该span元素。
+$("span:only-child()").append(" <b>是作为父元素唯一子元素的span元素</b>");
+//测试:first和:first-child之间的关系
+alert($("ul>li:first").html() == $("ul>li:first-child").html());
+</script>
+</body>
+</html>

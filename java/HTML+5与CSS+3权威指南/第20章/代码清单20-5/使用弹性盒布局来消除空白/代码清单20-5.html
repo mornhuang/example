@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title>元素宽度与高度的自适应示例</title>
+<style type="text/css">
+#container{
+            display: -moz-box;
+	    display: -webkit-box;
+            border: solid 5px blue;
+	    -moz-box-orient: horizontal; 
+            -webkit-box-orient:horizontal;
+	    width: 500px;
+   	    height: 300px;
+}
+#text-a{
+  	    background-color: orange;
+}
+#text-b{
+ 	    background-color: yellow;
+            -moz-box-flex: 1;
+            -webkit-box-flex: 1;
+}
+#text-c{
+	    background-color: limegreen;
+}
+#text-a, #text-b, #text-c{
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+	    font-size: 1.5em;
+	    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div id="container">
+<div id="text-a">示例文字A</div>
+<div id="text-b">示例文字B</div>
+<div id="text-c">示例文字C</div>
+</div>
+</body>
+</html>

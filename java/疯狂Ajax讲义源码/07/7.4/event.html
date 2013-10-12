@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> DOM 事件绑定 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<!-- 绑定事件处理器时，将event作为参数传入 -->
+<button id="a">按钮</button>
+<script type="text/javascript">
+//定义一个形参evt
+function clickHandler(evt)
+{
+	//DOM 2的事件对象将作为第一个参数传入clickHandler对象
+	alert(evt.target.innerHTML);
+}
+//为按钮a绑定事件处理器
+document.getElementById("a").onclick=clickHandler;
+</script>
+</body>
+</html>

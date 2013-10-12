@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Internet Explorer事件转发测试</title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<!-- 整个DOM树都绑定了事件处理函数 -->
+<body onclick="gotClick('body元素');">
+<table onclick="gotClick('table元素');">
+<tr onclick="gotClick('tr元素');">
+<td onclick="gotClick('td元素');">
+<p onclick="gotClick('p元素');">
+	<input type="button" value="单击我" onclick="gotClick('按钮');" />
+</p>
+</td>
+</tr>
+</table>
+<input id="forward" type="button" value="被转发事件的按钮" 
+	onclick="gotClick('被转发的按钮');" />
+<hr /><br />
+<div id="results"> </div>
+<script type="text/javascript">
+// 事件处理函数
+function gotClick(who) 
+{
+	document.getElementById("results").innerHTML +=
+		who + " 被单击了 <br />";
+	//取消事件的冒泡
+	event.cancelBubble = true;
+	//将事件重定向到id为forward的元素
+	document.getElementById("forward").
+		fireEvent("onClick" , event);
+}
+</script>
+</body>
+</html>

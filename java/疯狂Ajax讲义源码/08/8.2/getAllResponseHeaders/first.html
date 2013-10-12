@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 获取XMLHttpRuquest所有请求头 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<select name="first" id="first" onchange="change(this.value);">
+	<option value="1" selected="selected">中国</option>
+	<option value="2">美国</option>
+	<option value="3">日本</option>
+</select>
+<div id="output"></div>
+<script type="text/javascript">
+	//定义了XMLHttpRequest对象
+	var xmlrequest;
+	//完成XMLHttpRequest对象的初始化
+	function createXMLHttpRequest()
+	{
+		if(window.XMLHttpRequest)
+		{ 
+			//DOM 2浏览器
+			xmlrequest = new XMLHttpRequest();
+		}
+		else if (window.ActiveXObject)
+		{
+			// IE浏览器
+			try
+			{
+				xmlrequest = new ActiveXObject("Msxml2.XMLHTTP");
+			}
+			catch (e)
+			{
+				try
+				{
+					xmlrequest = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				catch (e)
+				{
+				}
+			}
+		}
+	}
+	//事件处理函数，当下拉列表选择改变时，触发该事件
+	function change(id)
+	{
+		//初始化XMLHttpRequest对象
+		createXMLHttpRequest();
+		//设置请求响应的URL
+		var uri = "second.jsp?id=" + id;
+		//打开与服务器响应地址的连接
+		xmlrequest.open("POST", uri, true);
+		//设置请求头
+		xmlrequest.setRequestHeader("Content-Type"
+		, "application/x-www-form-urlencoded");
+		//设置处理响应的回调函数
+		xmlrequest.onreadystatechange = processResponse;
+		//发送请求
+		xmlrequest.send(null);
+	}
+	//定义处理响应的回调函数
+	function processResponse()
+	{
+		//响应完成且响应正常
+		if (xmlrequest.readyState == 4)
+		{
+			if (xmlrequest.status == 200)
+			{
+				// 信息已经成功返回，开始处理信息
+				var headers = xmlrequest.getAllResponseHeaders();
+				//通过警告框输出请求头
+				alert("请求头的类型：" + typeof headers + "\n"
+					+ headers);
+				//在页面输出所有请求头
+				document.getElementById("output").innerHTML = headers;
+			}
+			else
+			{
+				//页面不正常
+				window.alert("您所请求的页面有异常。");
+			}
+		}
+	}
+</script>
+</body>
+</html>

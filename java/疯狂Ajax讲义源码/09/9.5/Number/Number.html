@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 扩展Number </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//下面输出4。
+alert((-4).abs());
+//下面输出-2。
+alert((-2.3).ceil());
+//下面输出-2。
+alert((-1.4).floor());
+//下面输出4。
+alert((4.4).round());
+//下面输出2.2。
+alert((1.2).succ());
+//下面将依次输出0、1、2
+(3).times(function(num)
+{
+	alert(num);	
+});
+//下面将输出'13'
+alert((19).toColorPart());
+//下面将输出'000022'
+alert((12).toPaddedString(6 , 5));
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="GBK"?>
+<Student>
+    <name>张三</name>
+    <age>28</age>
+    <high>1.72</high>
+    <score>
+        <Java>95</Java>
+        <Struts>90</Struts>
+        <Hibernate>90</Hibernate>
+    </score>
+</Student>
+

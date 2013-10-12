@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>随机改变页面背景色</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<script type="text/javascript">
+	function changeBg()
+	{
+		//将背景色的值定义成空字符串
+		var bgColor="";
+		//循环6次，生成一个随机的六位数
+		for (var i = 0 ; i < 6 ; i++)
+		{
+			tmp = Math.random();
+			bgColor += "" + Math.round(Math.random() * 9);
+		}
+		//将随机生成的背景颜色值赋给页面的背景色。
+		document.getElementById("test")
+			.style.backgroundColor="#" + bgColor;
+	}
+	//为页面的单击事件绑定事件处理函数
+	document.onclick = changeBg;
+	</script>
+</head>
+<body id="test">
+</body>
+</html>

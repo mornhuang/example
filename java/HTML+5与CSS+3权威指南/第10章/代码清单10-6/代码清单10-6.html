@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+var worker = new Worker("script.js");
+worker.postMessage("");
+// 从线程中取得计算结果
+worker.onmessage = function(event) {
+    if(event.data!="")
+    {
+        var j;	//行号
+        var k;  //列号
+        var tr;
+        var td;
+        var intArray=event.data.split(";");
+        var table=document.getElementById("table");
+        for(var i=0;i<intArray.length;i++)
+        {            
+            j=parseInt(i/10,0);
+            k=i%10;
+            if(k==0)    //该行不存在
+            {
+                //添加行
+                tr=document.createElement("tr");
+                tr.id="tr"+j;
+                table.appendChild(tr);
+            }
+            else  //该行已存在
+            {
+                //获取该行
+                tr=document.getElementById("tr"+j);
+            }
+            //添加列
+            td=document.createElement("td");
+            tr.appendChild(td);
+            //设置该列内容
+            td.innerHTML=intArray[j*10+k];
+            //设置该列背景色
+            td.style.backgroundColor="blue";
+            //设置该列字体颜色
+            td.style.color="white";
+            //设置列宽
+            td.width="30";
+        }
+    }
+};
+</script>
+</head>
+<body>
+<h1>从随机生成的数字中抽取3的倍数并显示示例</h1>
+<table id="table">
+</table>
+</body>
+
+

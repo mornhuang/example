@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Element对象 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<div id="test" style="border:2px solid black;width:200px;">
+	<div>test元素的第一个子元素</div>
+	<div>test元素的最后一个子元素</div>	
+</div>
+<input type="button" value="After插入" onclick="Element.insert($('test')
+	, {after: '<b>After插入的内容</b><br />'});"><br />
+<input type="button" value="Before插入" onclick="Element.insert($('test')
+	, {before:'<b>Before插入的内容</b><br />'});"><br />
+<input type="button" value="Top插入" onclick="Element.insert($('test')
+	, {top:'<b>Top插入的内容</b><br />'});"><br />
+<input type="button" value="Bottom插入" onclick="Element.insert($('test')
+	, {bottom:'<b>Bottom插入的内容</b><br />'});"><br />
+<input type="button" value="默认插入" onclick="Element.insert($('test')
+	, '<b>默认插入的内容</b><br />');"><br />
+</body>
+</html>

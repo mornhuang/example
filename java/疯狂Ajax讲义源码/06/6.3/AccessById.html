@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 根据ID访问XHTML元素 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<script type="text/javascript">
+		function accessById()
+		{
+			alert(document.getElementById("a").innerHTML + "\n"
+				+ document.getElementById("b").value);
+		}
+	</script>
+</head>
+<body>
+	<div id="a">疯狂Java讲义</div>
+	<textarea id="b" rows="3" cols='25'>轻量级Java EE企业应用实战</textarea>
+	<input type="button" value="访问2个元素" onclick="accessById();" />	
+</body>
+</html>

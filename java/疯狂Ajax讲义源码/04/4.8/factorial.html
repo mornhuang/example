@@ -1,0 +1,27 @@
+<script>
+	//定义求阶乘的函数
+	function factorial(n)
+	{
+		//如果n的类型是数值，才执行函数
+		if (typeof(n) == "number" && n > 0)
+		{
+			//当n等于1时，直接返回1
+			if (n == 1) 
+			{
+				return 1;
+			}
+			//当n不等于1时，通过递归返回值。
+			else
+			{
+				return n * factorial(n - 1);
+			}
+		}
+		//当参数不是数值时，直接返回
+		else
+		{
+			alert("参数类型不对！");
+		}
+	}
+	//调用阶乘函数
+	alert(factorial(5));
+</script>

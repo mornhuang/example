@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<title>其他属性测试</title>
+	<style type="text/css">
+	/* 设置div元素的宽度、高度、背景色和边框 */
+	div{
+		width:300px;
+		height:40px;
+		background-color:#dddddd;
+		border:2px solid black;
+	}
+	</style>
+</head>
+<body>
+<input type="button" value="隐藏" 
+	onclick="document.getElementById('test1').style.display='none'"/>
+<input type="button" value="显示" 
+	onclick="document.getElementById('test1').style.display=''"/>
+<div id = "test1">
+使用display控制对象的显示和隐藏
+</div>
+<input type="button" value="隐藏"
+	onclick="document.getElementById('test2').style.visibility ='hidden'"/>
+<input type="button" value="显示"
+	onclick="document.getElementById('test2').style.visibility ='visible'"/>
+<div id = "test2">
+使用visibility控制对象的显示和隐藏
+</div>
+<div style="cursor:wait;">
+沙漏光标的效果
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Template </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//定义一个新类
+var Person = Class.create({
+	//initialize方法就是构造器
+	initialize: function(name, age)
+	{
+		this.name = name;
+		this.age = age;
+	},
+	//定义一个普通方法
+	info: function()
+	{
+		alert(this.name + "的年龄是: " + this.age );
+	}
+});
+//创建Person类的实例
+var p = new Person('yeeku' , 30);
+//调用方法
+p.info(); 
+//定义Student继承Person
+var Student = Class.create(Person , 
+{
+	//定义新的构造器，$super形参代表父类同名方法
+	initialize: function($super , name , age , grade)
+	{
+		$super(name, age);
+		this.grade = grade;
+	},
+	//定义一个普通方法
+	study: function()
+	{
+		//调用从Person继承到的info()方法
+		this.info();
+		alert("我上 " + this.grade + " 年级");
+	}
+});
+//创建Student对象
+var s = new Student('wawa' , 8 , 3);
+//调用方法
+s.study();
+</script>
+</body>
+</html>

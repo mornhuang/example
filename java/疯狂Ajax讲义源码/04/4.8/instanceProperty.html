@@ -1,0 +1,34 @@
+<script>
+	//定义函数Person
+	function Person(national, age)
+	{
+		//this修饰的属性为实例属性
+		this.age = age;
+		//Person修饰的属性为静态属性
+		Person.national =national;    
+		//以var定义的变量为局部变量
+		var bb = 0;    
+	}
+	//创建Person的第一个对象p1。国籍为中国，年纪为29
+	var p1 = new Person('中国' , 29);
+	document.writeln("创建第一个Person对象<br />");
+	//输出第一个对象p1的年纪和国籍
+	document.writeln("p1的age属性为" + p1.age + "<br />");
+	document.writeln("p1的national属性为" + p1.national + "<br />");
+	document.writeln("通过Person访问静态national属性为" 
+		+ Person.national + "<br />");
+	//输出bb属性
+	document.writeln("p1的bb属性为" + p1.bb + "<br /><hr />");
+	//创建Person的第二个对象p2
+	var p2 = new Person('美国' , 32);
+	document.writeln("创建两个Person对象之后<br />"); 
+	//再次输出p1的年纪和国籍
+	document.writeln("p1的age属性为" + p1.age + "<br />");
+	document.writeln("p1的national属性为" + p1.national + "<br />");
+	//输出p2的年纪和国籍
+	document.writeln("p2的age属性为" + p2.age + "<br>");
+	document.writeln("p2的national属性为" + p2.national + "<br />");
+	//通过类名访问静态属性名
+	document.writeln("通过Person访问静态national属性为"
+		+ Person.national + "<br />");
+</script>

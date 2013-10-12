@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用jQuery()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<input id="user" type="text" /><br />
+<input id="pass" type="password" /><br />
+<textarea id="intro"></textarea><br />
+<select id="gender">
+<option value="male" selected="selected">男</option>
+<option value="female">女</option>
+</select><br /><br /><br />
+<input id="pass" type="checkbox" checked="checked" value="xx"/><br />
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//获取所有的input、textarea、button、select元素
+$(":input").val("test");
+//获取所有指定了selected="selected"的元素
+$(":selected").css("border" , "2px dashed black");
+//获取所有指定了checked="checked"的元素,并取消它们的选中
+$(":checked").attr("checked" , "");;
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 取消事件默认行为 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+
+<body>
+<!-- 增加了事件处理函数的超级链接 -->
+<a id="wjc" href="http://www.leegang.org">疯狂Java联盟</a>
+<script type="text/javascript">
+	function clickHandler()
+	{
+		//使用确认对话框获取一个布尔值
+		var ok = confirm('是否转入疯狂Java联盟？');
+		//修改event的returnValue属性值
+		event.returnValue = ok;
+	}
+	document.getElementById("wjc").onclick=clickHandler;
+</script>
+</body>
+</html>

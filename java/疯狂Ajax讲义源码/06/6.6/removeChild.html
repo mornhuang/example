@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 删除子节点 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body id="test">
+	<input id="add" type="button" value="增加" disabled="disabled"
+		onclick="add();"/>
+	<input id="del" type="button" value="删除" 
+		onclick="del();"/>
+	<div id="target" style="width:240px; height:50px; border:1px solid black">
+		被控制的目标元素
+	</div>
+	<script type="text/javascript">
+		//获取body元素
+		var body = document.getElementById("test");
+		//获取被控制的目标元素
+		var target = document.getElementById("target");
+		function add()
+		{
+			//添加目标元素
+			body.appendChild(target);
+			document.getElementById("add").disabled = "disabled";
+			document.getElementById("del").disabled = "";
+		}
+		function del()
+		{
+			//删除目标元素
+			body.removeChild(target);
+			document.getElementById("del").disabled = "disabled";
+			document.getElementById("add").disabled = "";
+		}
+	</script>
+</body>
+</html>

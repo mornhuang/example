@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Blob对象的type属性利用示例</title>
+<script language=javascript>
+function FileUpload()
+{
+    var file;
+    for(var i=0;i<document.getElementById("file").files.length;i++)
+    {
+        file = document.getElementById("file").files[i];
+        if(!/image\/\w+/.test(file.type))
+        {
+            alert(file.name+"不是图像文件！");
+            break;            
+        }
+        else
+        {
+            //此处可加入文件上传的代码
+            alert(file.name+"文件已上传");
+        }
+    }
+}
+</script>
+选择文件：
+<input type="file" id="file" multiple/>
+<input type="button" value="文件上传" onclick="FileUpload();"/>

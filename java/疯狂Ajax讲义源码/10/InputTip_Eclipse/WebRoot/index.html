@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 输入提示示范 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+	/* 定义输入提示中被选中项的CSS样式 */
+	.selectTip {
+		background-color:#AFEEEE;
+		border:1px solid gold;
+	}
+	/* 定义输入提示中被选中项的CSS样式 */
+	.tip {
+		border:1px solid menu;
+		background-color:#ffffcc;
+		width:160px;
+	}
+	/* 定义显示model详细信息的CSS样式 */
+	.detail {
+		font-size:9pt;
+		width:320px;
+		border:1px solid menu;
+		background-Color:#F0F8FF;
+	}
+	</style>
+	<script src="common/prototype-1.6.0.3.js" type="text/javascript">
+	</script>
+</head>
+<body>
+<div id="loading" style="display:none;position:absolute;
+	left:200px;top:60px;">
+<img src="img/indicator.gif" alt="loading"/>
+</div>
+<h3>请输入想购买的笔记本品牌</h3>
+<div style="width:300px;font-size:9pt">
+输入IBM,DELL,SONY,TOSHIBA,SAMSUNG可看到明显效果:</div>
+<input id="brand" name="brand" type="text"
+	onblur="$('brandTip').hide();"/>
+<div id="brandTip" class="tip" style="display:none;"></div>
+<h3>请输入想购买的笔记本型号</h3>
+<input id="model" name="model" type="text" 
+	onblur="$('modelTip').hide();"/>
+<div id="modelTip" class="tip" style="display:none;"></div>
+<div id="modelDetail" class="detail" style="display:none;"></div>
+<script src="js/tip.js" type="text/javascript">
+</script>
+</body>
+</html>

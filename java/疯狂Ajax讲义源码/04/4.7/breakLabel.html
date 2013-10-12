@@ -1,0 +1,15 @@
+<script>
+	//使用outer标签表明外部循环
+	outer :
+	for (var i = 0 ; i < 5 ; i++)
+	{
+		for (var j = 0 ; j < 5 ; j++)
+		{
+			document.writeln('j的值为：' + j);
+			//当j >= 2时，使用break跳出outer循环。
+			if (j >= 2) break outer;
+			document.writeln('i的值为：' + i);
+			document.writeln('<br>');
+		}
+	}
+</script>

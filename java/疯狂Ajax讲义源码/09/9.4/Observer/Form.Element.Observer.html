@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Form.Element.Observer </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+用户名：<input type="text" id="user" name="user" />
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//为user表单控件绑定事件监听器
+new Form.Element.Observer("user", 1, function()
+{
+	//此处的this.getValue()将返回目标表单的getValue()
+	alert(this.getValue());
+});
+</script>
+</body>
+</html>
+

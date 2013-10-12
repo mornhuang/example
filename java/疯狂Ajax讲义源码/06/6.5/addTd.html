@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 添加表格 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body id="test">
+<script type="text/javascript">
+	//创建一个表格对象
+	var a = document.createElement("table");
+	//设置表格的边框为1。
+	a.border=1;
+	var caption = a.createCaption();
+	caption.innerHTML = "表格标题";
+	//为表格循环插入5行
+	for (var i = 0 ; i < 5 ; i++)
+	{
+		//插入行
+		var tr = a.insertRow(i);
+		//为每行循环插入7列
+		for (var j = 0 ; j < 7 ; j++)
+		{
+			//循环插入7列
+			var td = tr.insertCell(j);
+			//设置每个单元格的内容
+			td.innerHTML = "单元格内容 " + i + j;
+		}
+	}
+	//将表格元素添加到HTML文档内
+	document.getElementById("test").appendChild(a);
+</script>
+</body>
+</html>
+
+

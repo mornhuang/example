@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 输入提示示范 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<h3>请输入您喜欢的水果</h3>
+<div style="width:280px;font-size:9pt">
+输入apple、banana、peach可看到明显效果:</div>
+<br />
+<input id="favorite" name="favorite" type="text" 
+	onblur="$('tips').hide()"/>
+<img id="Loadingimg" src="img/indicator.gif" style="display:none"/>
+<div id="tips" style="width:160px;border:1px solid menu;
+	background-color:#ffffcc;display:none"></div>
+<script src="prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+	//监控目标文本框输入文字发生改变的函数
+	function searchFruit()
+	{
+		//请求的地址
+		var url = 'tips.jsp';
+		//将favorite表单域的值转换为请求参数
+		var params = Form.Element.serialize('favorite');
+		//创建Ajax.Request对象，对应于发送请求
+		var myAjax = new Ajax.Request(
+		url,
+		{
+			//请求方式：POST
+			method:'post',
+			//请求参数
+			parameters: params,
+			//指定回调函数
+			onComplete: showResponse,
+			//是否异步发送请求
+			asynchronous:true
+		});
+	}
+	//定义回调函数
+	function showResponse(request)
+	{
+		//在提示tip元素中输出服务器的响应
+		$('tips').innerHTML = request.responseText;
+		//显示提示tip对象
+		$('tips').show();
+	}
+	//为favorite表单域绑定事件处理函数
+	new Form.Element.Observer("favorite", 1, searchFruit);
+//定义Ajax的全局事件处理器
+var myGlobalHandlers = 
+{
+	//刚刚开始Ajax交互时触发该属性指定的函数。
+	onCreate: function()
+	{
+		$('Loadingimg').show();
+	},
+	//交互失败时触发该属性指定的函数。
+	onFailure:function()
+	{
+		alert('对不起!\n页面加载出错!');
+	},
+	//交互成功时触发该属性指定的函数。
+	onComplete: function()
+	{
+		//如果正在进行Ajax交互的XMLHttpRequest对象数目为0
+		if(Ajax.activeRequestCount == 0)
+		{
+			$('Loadingimg').hide();
+		}
+	}
+};
+//为Ajax事件绑定全局的事件处理器
+Ajax.Responders.register(myGlobalHandlers);
+</script>
+</body>
+</html>

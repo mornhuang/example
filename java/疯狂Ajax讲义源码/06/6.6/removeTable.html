@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 删除表格的行或列 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<input id="delrow" type="button" value="删除表格最后一行"
+	onclick="delrow();" /><br />
+<input id="delcell" type="button" value="删除最后一行的最后一格"
+	onclick="delcell();" /><br />
+<table id="test" border="1" width="400px">
+	<caption>疯狂Java体系</caption>
+	<tr>
+		<td>疯狂Java讲义</td>
+		<td>轻量级Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂Ajax讲义</td>
+		<td>经典Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂XML讲义</td>
+		<td>疯狂Workflow讲义</td>
+	</tr>
+</table>
+<script type="text/javascript">
+	//获取目标表格
+	var tab = document.getElementById("test");
+	//删除行的函数
+	function delrow()
+	{
+		if (tab.rows.length > 0)
+		{
+			//删除最后一行
+			tab.deleteRow(tab.rows.length - 1); 
+		}
+	}
+	//删除目标表格的最后一格
+	function delcell()
+	{
+		//获取表格的所有行
+		var rowList = tab.rows;
+		//获取表格的最后一行
+		var lastRow = rowList.item(rowList.length - 1);
+		if (lastRow.cells.length > 0)
+		{
+			//删除表格的最后一格
+			lastRow.deleteCell(lastRow.cells.length - 1);
+		}
+	}
+</script>
+</body>
+</html>

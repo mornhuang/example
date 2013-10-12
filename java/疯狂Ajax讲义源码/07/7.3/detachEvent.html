@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用attachEvent()绑定事件处理函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+
+<body>
+<input type="button" id="bn1" name="bn1" value="单击我" />
+<script type="text/javascript">
+	function test()
+	{
+		alert("单击按钮");
+	}
+	//使用attachEvent执行事件绑定
+	document.getElementById("bn1").attachEvent("onclick" , test);
+	//使用attachEvent执行事件绑定
+	document.getElementById("bn1").detachEvent("onclick" , test);
+</script>
+</body>
+</html>

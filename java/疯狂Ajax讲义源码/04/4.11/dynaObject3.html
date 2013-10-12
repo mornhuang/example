@@ -1,0 +1,19 @@
+<script>
+	//创建空对象
+	var myObj = new Object();
+	//为空对象增加属性
+	myObj.name = 'yeeku';
+	myObj.age = 29;
+	//创建一个函数
+	function abc()
+	{
+		document.writeln("对象的name属性:" + this.name);
+		document.writeln("<br />");
+		document.writeln("对象的age属性:" + this.age);
+	};
+	//将已有的函数添加为对象的方法
+	myObj.info = abc;
+	document.writeln("<hr>");
+	//调用方法
+	myObj.info();
+</script>

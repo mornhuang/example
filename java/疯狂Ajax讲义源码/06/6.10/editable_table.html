@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 可编辑的表格 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<table id="test" border="1" width="400px">
+	<caption>疯狂Java体系</caption>
+	<tr>
+		<td>疯狂Java讲义</td>
+		<td>轻量级Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂Ajax讲义</td>
+		<td>经典Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂XML讲义</td>
+		<td>疯狂Workflow讲义</td>
+	</tr>
+</table>
+<script>
+	//双击单元格后，在单元格中出现的输入文本框。
+	var tmpIn = document.createElement("input");
+	tmpIn.type="text";
+	//双击单元格后的当前单元格
+	var curCell;
+	//生成可编辑的单元格
+	function edit(event)
+	{
+		//此处是为了兼顾IE浏览器和Firefox浏览器
+		//因为它们所使用的事件机制不同
+		//目标是获取被双击的单元格
+		if( event == null )
+		{
+			curCell = window.event.srcElement;
+		}
+		else
+		{
+			curCell = event.target;
+		}
+		//将单元格的值填充到文本输入框的值
+		tmpIn.value=curCell.innerHTML;
+		//当文本框失去焦点时触发end函数
+		tmpIn.onblur= end;
+		//情况当前单元格的内容
+		curCell.innerHTML = "";
+		//将文本框添加到当前单元格内
+		curCell.appendChild(tmpIn);
+	}
+	//编辑单元格结束后的函数
+	function end()
+	{
+		//将文本框内的值赋给当前单元格内
+		curCell.innerHTML=tmpIn.value;
+	}
+	//为表格的双击事件绑定事件处理函数
+	document.getElementById("test").ondblclick = edit;
+</script>
+</body>
+</html>

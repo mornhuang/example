@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 请求参数的编码试验 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<input id="test" name="test" type="text" size="90" />
+<br />
+<input type="button" value="GET发送"
+	onclick='getSend(document.getElementById("test").value)' />
+<input type="button" value="POST发送"
+	onclick='postSend(document.getElementById("test").value)' />
+<script type="text/javascript">
+//保存XMLHttpRequest对象的变量
+var xmlrequest;
+function createXMLHttpRequest()
+{
+	if(window.XMLHttpRequest)
+	{
+		//DOM 2浏览器
+		xmlrequest = new XMLHttpRequest();
+	}
+	// IE浏览器
+	else if (window.ActiveXObject)
+	{
+		try
+		{
+			xmlrequest = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				xmlrequest = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e){}
+		}
+	}
+}
+//发送POST请求
+function postSend(value)
+{
+	//初始化XMLHttpRequest对象
+	createXMLHttpRequest(); 
+	//服务器的请求URL
+	var uri = "show.jsp";
+	//打开与服务器连接,使用POST方式
+	xmlrequest.open("POST", uri, true); 
+	xmlrequest.setRequestHeader("Content-Type"
+		, "application/x-www-form-urlencoded");
+	//发送请求
+	xmlrequest.send("value="+value);
+}
+//发送GET请求
+function getSend(value)
+{
+	//创建XMLHttpRequest对象
+	createXMLHttpRequest(); 
+	//设置请求的服务器程序URL
+	var uri = "show.jsp?value="+value;
+	//打开连接，使用GET方式
+	xmlrequest.open("GET", uri, true); 
+	//发送请求
+	xmlrequest.send(null);     
+}
+</script>
+</body>
+</html>

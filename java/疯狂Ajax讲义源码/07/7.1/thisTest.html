@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 测试this关键字 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+	<input id="bn1" type="button" value="按钮1" onclick="alert(this.value);"/>
+	<input id="bn2" type="button" value="按钮2" />
+	<input id="bn3" type="button" value="按钮3" />
+	<script type="text/javascript">
+		function test()
+		{
+			alert(this.value);
+		}
+		//将test函数设置为按钮bn3的事件处理器
+		document.getElementById("bn2").onclick = test;
+		//使用JSON格式定义了一个对象
+		var p = 
+		{
+			value: 'p对象',
+			info: function()
+			{
+				alert(this.value);
+			}
+		}
+		//将p对象的info方法设置为按钮bn3的事件处理器
+		document.getElementById("bn3").onclick = p.info;
+		//直接调用p对象的info()方法
+		p.info();
+	</script>
+</body>
+</html>

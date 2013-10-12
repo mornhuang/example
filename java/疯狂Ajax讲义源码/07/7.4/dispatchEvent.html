@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 转发事件 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<!-- 测试用的第一个按钮 -->
+<input id="bn1" type="button" value="按钮1" />
+<!-- 测试用的第二个按钮 -->
+<input id="bn2" type="button" value="按钮2" />
+<div id="show"></div>
+<script type="text/javascript">
+//第一个按钮被单击时的事件处理函数
+function rd(evt)
+{
+	document.getElementById("show").innerHTML += 
+		'事件冒泡阶段:' + evt.currentTarget.value + "被单击了<br />";
+	//创建一个普通事件
+	var e = document.createEvent("Events");
+	//初始化事件对象，指定该事件支持冒泡，不允许取消默认行为
+	e.initEvent("click", true, false);
+	//将事件转发到bn2按钮
+	document.getElementById("bn2").dispatchEvent(e);
+}
+//第二个按钮被单击时的事件处理函数
+function gotClick(evt)
+{
+	document.getElementById("show").innerHTML += 
+		'事件冒泡阶段:' + evt.currentTarget.value + "<br />";
+}
+//分别为两个按钮绑定事件处理函数
+document.getElementById("bn1").addEventListener("click", rd, false);
+document.getElementById("bn2").addEventListener("click", gotClick, false);
+</script>
+</body>
+</html>

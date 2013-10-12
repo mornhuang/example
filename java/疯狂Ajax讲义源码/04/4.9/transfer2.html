@@ -1,0 +1,24 @@
+<script>
+	// 定义函数，该函数接受一个参数
+	function changeAge(person)
+	{
+		//改变person的age属性
+		person.age = 10;
+		//输出person的age属性
+		document.write("函数执行中person的age值为：" 
+			+ person.age + "<br />");
+		//将person变量直接赋为null
+		person = null;
+	}
+	//使用JSON语法定义person对象
+	var person = {age : 5};
+	//输出person的age属性
+	document.write("函数调用之前person的age的值为："
+		+ person.age + "<br />");
+	//调用函数
+	changeAge(person);
+	//输出函数调用后person实例的age属性值
+	document.write("函数调用之后person的age的值为：" 
+		+ person.age + "<br />");
+	document.write("person对象为：" + person);
+</script>

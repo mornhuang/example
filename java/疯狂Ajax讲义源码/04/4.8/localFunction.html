@@ -1,0 +1,26 @@
+<script>
+	//定义全局函数
+	function outer()
+	{
+		//定义第一个局部函数
+		function inner1()
+		{
+			document.write("局部函数11111<br />");
+		}
+		//定义第二个局部函数
+		function inner2()
+		{
+			document.write("局部函数22222<br />");  
+		}
+		document.write("开始测试局部函数...<br />");
+		//在浏览器中调用第一个局部函数
+		inner1();
+		//在浏览器中调用第二个局部函数
+		inner2();
+		document.write("结束测试局部函数...<br />");
+	}
+	document.write("调用outer之前...<br />");
+	//调用全局函数
+	outer();
+	document.write("调用outer之后...<br />");
+</script>

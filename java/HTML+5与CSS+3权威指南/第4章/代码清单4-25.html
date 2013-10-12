@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>fileReader对象的事件先后顺序</title>
+</head>
+<script language=javascript>
+var result=document.getElementById("result");
+var input=document.getElementById("input");
+if(typeof FileReader=='undefined')
+{
+    result.innerHTML = "<p class='warn'>抱歉，你的浏览器不支持 FileReader</p>";
+    input.setAttribute( 'disabled','disabled' );
+} 
+function readFile()
+{
+    var file = document.getElementById("file").files[0];
+    var reader = new FileReader();
+    reader.onload = function(e)
+    {
+        result.innerHTML = '<img src="'+this.result+'" alt=""/>'
+        alert("load");
+    }
+    reader.onprogress = function(e)
+    {
+        alert("progress");
+    }
+    reader.onabort = function(e)
+    {
+        alert("abort");
+    }
+    reader.onerror = function(e)
+    {
+        alert("error");
+    }
+    reader.onloadstart = function(e)
+    {
+        alert("loadstart");
+    }
+    reader.onloadend = function(e)
+    {
+        alert("loadend");
+    }
+    reader.readAsDataURL(file);
+}
+</script> 
+<p>
+<label>请选择一个图像文件：</label>
+<input type="file" id="file" />
+<input type="button" value="显示图像" onclick="readFile()" />
+</p> 
+<div name="result" id="result">
+<!-- 这里用来显示读取结果 -->
+</div>

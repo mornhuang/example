@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>class选择器测试</title>
+	<style type="text/css">
+	/* 对所有class为myclass的元素都起作用的CSS定义 */
+	.myclass {
+		width:240px;
+		height:40px;
+		background-color:#dddddd;
+	}
+	/* 对class为myclass的div元素起作用的CSS定义 */
+	div.myclass {
+		border:2px dotted black;
+		background-color:#888888;
+	}
+	</style>
+</head>
+<body>
+<div class="myclass">class属性为myclass的div元素</div>
+<p class="myclass">class属性为myclass的p元素</p>
+</body>
+</html>

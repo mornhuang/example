@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>background-origin属性使用示例</title>
+<style type="text/css">
+div{        
+    background-color: black;        
+    background-image: url(flower-green.png);        
+    background-repeat: no-repeat;        
+    border: dashed 15px green;        
+    padding: 30px;   
+    color:white;
+    font-size:2em;
+    font-weight:bold;
+    
+}
+div.div1{        
+    -moz-background-origin: border;        
+    -webkit-background-origin: border;        
+}
+div.div2{        
+    -moz-background-origin: padding;        
+    -webkit-background-origin: padding;        
+}
+div.div3{        
+    -moz-background-origin: content;        
+    -webkit-background-origin: content;        
+}
+</style>
+</head>
+<body>
+<div class="div1">示例文字1</div><br/>
+<div class="div2">示例文字2</div><br/>
+<div class="div3">示例文字3</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<script>
+	//声明变量x , y
+	var x , y = null;
+	//判断x的值是否为空
+	if (x === undefined) 
+	{
+		alert('声明变量后默认值为undefined');
+	}
+	if (x === null)
+	{
+		alert('声明变量后默认值为null');
+	}
+	//判断x（其值为undefined）是否与y（其值为null）相等
+	if (x == y) 
+	{
+		alert("x（undefined）==y（null）");
+	}
+	//测试一个并不存在的属性
+	if(String.xyz === undefined)
+	{
+		alert("不存在的属性值默认为undefined");
+	}
+	if (x === y)
+	{
+		alert("x（undefined）===y（null）");
+	} 
+	else
+	{
+		alert("x（undefined）!==y（null）");
+	}
+</script>

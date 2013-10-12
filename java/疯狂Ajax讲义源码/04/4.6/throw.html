@@ -1,0 +1,11 @@
+<script>
+	//对计数器i循环
+	for (var i = 0 ; i < 10 ; i++)
+	{
+		//在页面输出i
+		document.writeln(i + '<br>');
+		//当i > 4时，抛出用户自定义异常
+		if (i > 4) 
+			throw new Error('用户自定义错误');    
+	}
+</script>

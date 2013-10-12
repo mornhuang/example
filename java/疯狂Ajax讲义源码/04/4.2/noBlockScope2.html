@@ -1,0 +1,15 @@
+<script>
+	//定义全局变量
+	var scope = "全局变量";
+	function test()
+	{
+		//因此全局变量被局部变量覆盖
+		//而此时scope局部变量尚未赋值，故此处输出undefined
+		document.writeln(scope + "<br />"); 
+		//定义scope的局部变量，其作用范围为整个函数内
+		var scope = "局部变量";
+		//再次输出scope的值。
+		document.writeln(scope + "<br />"); 
+	}
+	test();
+</script>

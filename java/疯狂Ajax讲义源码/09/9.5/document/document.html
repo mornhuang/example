@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 扩展document </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//为document的loaded事件绑定事件监听器
+document.observe("dom:loaded" , function(event)
+{
+	$("show").innerHTML += ("页面装载完成 <br />");
+});
+//为document的a:b事件绑定事件监听器
+document.observe("a:b" , function(event)
+{
+	$("show").innerHTML += ("myEvent被触发了 <br />");
+	//访问event.memo.book属性
+	$("show").innerHTML += ("event.memo.book属性值为：" 
+		+ event.memo.book);
+});
+</script>
+<!-- 单击该按钮时触发document上的a:b事件 -->
+<input type="button" value="单击我" 
+	onclick='document.fire("a:b" , {book:"疯狂Ajax讲义"});' />
+<div id="show"></div>
+</body>
+</html>

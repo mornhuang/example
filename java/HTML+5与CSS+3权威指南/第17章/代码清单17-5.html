@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>background-break属性的使用示例</title>
+</head>
+<style type="text/css">
+span{
+	background-color: #888888;
+	background-image: url(flower-green.png);
+	padding: 0.2em;
+        color:gray;
+	line-height: 1.5;  
+        font-size:1em;    
+        font-weight:bold;  
+}
+div.div1 span{
+	-moz-background-inline-policy: bounding-box; 
+}
+div.div2 span{
+	-moz-background-inline-policy: each-box; 
+}
+div.div3 span{
+	-moz-background-inline-policy: continuous;
+}
+</style>
+<body>
+<div class="div1" ><span>示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字</span></div><br/>
+<div class="div2"><span>示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字</span></div><br/>
+<div class="div3"><span>示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字</span></div>
+</body>
+</html>

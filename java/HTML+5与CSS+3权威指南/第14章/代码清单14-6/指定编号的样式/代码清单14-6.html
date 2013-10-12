@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>对多个项目追加连续编号的示例</title>
+</head>
+<style type="text/css">
+h1:before{
+    content: counter(mycounter)'.';
+    color:blue;
+    font-size:42px;
+}
+h1{
+    counter-increment: mycounter;
+}
+</style>
+<body>
+<h1>大标题</h1>
+<p>示例文字。</p>
+<h1>大标题</h1>
+<p>示例文字。</p>
+<h1>大标题</h1>
+<p>示例文字。</p>
+</body>
+</html>

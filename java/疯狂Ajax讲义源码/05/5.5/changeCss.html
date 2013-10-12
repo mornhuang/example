@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>立体效果</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<script type="text/javascript">
+	function chg()
+	{	
+		document.getElementById("up").className="solid";
+	}
+	</script>
+	<style type="text/css">
+	/* 对所有class属性值为solid的元素起作用的CSS定义 */
+	.solid {
+		width:160px;
+		text-align:center;
+		border-right: #222222 2px solid; 
+		border-top: #dddddd 2px solid; 
+		border-left: #dddddd 2px solid; 
+		border-bottom: #222222 2px solid;
+		background-color: #cccccc;
+	}
+	</style>
+</head>
+<body>
+	<input type="button" onclick='chg()' value="增加立体效果" />
+	<div id="up">有立体效果的层</div>
+</body>
+</html>

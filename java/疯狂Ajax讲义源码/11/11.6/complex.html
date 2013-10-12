@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 复杂动画效果 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		div {
+			background-color: #cccccc;
+			border: 2px solid black;
+			width: 200px;
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+<input id="bn1" type="button" value="执行动画"/><br />
+<div id="test1">使用toggle控制的元素</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	//为id为bn1的按钮绑定事件处理函数
+	$("#bn1").click(function()
+		{
+			//为id为test1的元素指定自定义动画
+			$("#test1").animate(
+				//下面JavaScript对象指定动画结束时目标元素的状态
+				{
+					fontSize:"24pt",
+					width:"300px",
+					opacity:05
+				},
+				//下面对象指定动画详细选项
+				{
+					duration:800,
+					easing:"swing",
+					step:function()
+					{
+						alert('step回调！');
+					}
+				}
+			)
+		}
+	);
+</script>
+</body>
+</html>

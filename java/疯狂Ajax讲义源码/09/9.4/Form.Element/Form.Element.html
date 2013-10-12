@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> Form.Element对象 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<!-- 下面定义四个单行文本框，用于被下面的按钮事件操作 -->
+<input id="text1" name="text1" type="text" /><br />
+<input id="text2" type="text" /><br />
+<input id="text3" type="text" /><br />
+<input id="text4" type="text" value="crayjava.org"/><br />
+<select size="3" id="st1">
+	<option>疯狂Java讲义</option>
+	<option>轻量级Java EE企业应用实战</option>
+	<option>疯狂Ajax讲义</option>
+</select><br />
+<!-- 单击该按钮将清除第二个文本框的输入 -->
+<input type="button" value="清除第二个表单控件的输入" 
+	onclick="Form.Element.clear('text2');"/><br />
+<!-- 单击该按钮将校验第一个文本框的输入，
+	当第一个文本框有输入时返回true -->
+<input type="button" value="校验第一个表单控件的输入" 
+	onclick="alert($('text1').present());"/><br />
+<!-- 单击该按钮将会把焦点移到第三个输入框 -->
+<input type="button" value="移动焦点到第三个输入框" 
+	onclick="Form.Element.focus('text3');"/><br />
+<!-- 单击该按钮将选中第四个文本框内的文字 -->
+<input type="button" value="选中第四个文本框的文本" 
+	onclick="Form.Element.select('text4');"/><br />
+<!-- 单击该按钮让列表框获得焦点 -->
+<input type="button" value="让下拉列表获得焦点" 
+	onclick="$('st1').activate();"/><br />
+<!-- 单击该按钮会将第一个文本框的内容转换为查询字符串 -->
+<input type="button" value="转换查询字符串" 
+	onclick="alert(Form.Element.serialize('text1'));"/><br />
+<!-- 单击该按钮会将返回第一个文本框的值 -->
+<input type="button" value="返回第一个表单控件的值" 
+	onclick="alert(Form.Element.getValue('text1'));"/><br />
+</body>
+</script>
+</body>
+</html>

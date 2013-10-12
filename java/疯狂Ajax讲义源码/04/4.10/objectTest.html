@@ -1,0 +1,15 @@
+<script>
+    //定义简单函数
+    function Person(name)
+    {
+        this.name = name;
+    }
+    //使用new关键字，简单创建Person类的实例
+    var p = new Person('yeeku');
+    //如果p是Person实例，则输出静态文本
+    if (p instanceof Person)
+		document.writeln("p是Person的实例<br />");
+    //如果p是Object 实例，则输出静态文本
+    if(p instanceof Object)
+		document.writeln("p是Object的实例");
+</script>

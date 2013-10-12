@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title>文章内部的aside元素示例</title>
+</head>
+<body>
+<header>    
+    <h1>F#入门</h1>  
+</header>  
+<article>  
+    <h1>第四节 词法闭包</h1>  
+    <p>lambda表达式可以创建词法闭包...(文章正文）</p>    
+    <aside>      
+        <!-- 因为这个aside元素被放置在一个article元素内部，
+        所以分析器将这个aside元素的内容理解成是和article元素的内容相关联的。 -->      
+        <h1>名词解释</h1>      
+        <dl>        
+            <dt>F#</dt>        
+            <dd>F#为.Net2010中引入的新型函数型编程语言</dd>      
+        </dl>    
+        <dl>        
+            <dt>词法闭包</dt>        
+            <dd>词法闭包是指，将创建lambda表达式时的环境保存起来...(详细解释）</dd>      
+       </dl>       
+    </aside>  
+</article>
+</body>
+
+
+
+
+
+
+
+

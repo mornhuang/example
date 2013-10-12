@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>卷帘效果</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<input id="shen" type="button" value="展开"/>
+<input id="shou" type="button" value="收起"/>
+<div id="wind" style="background-color:#bbbbbb;width:200px;height:1px;">
+</div>
+<script type="text/javascript">
+//控制伸开的旗标
+var shenflag = true;
+//控制收起的旗标
+var shouflag = false;
+//控制卷帘伸开的函数
+function shen()
+{
+	if (shenflag)
+	{
+		//控制收起旗标为false，即在伸开过程中不受收起按钮的影响
+		shouflag = false;
+		var tm;
+		var windHeight = document.getElementById("wind").style.height;
+		//如果目标对象的高度小于100px，则让其高度继续增大
+		if (parseInt(windHeight.substring( 0, windHeight.
+			indexOf("px"))) < 100)
+		{
+			//修改目标对象的高度为原有高度 + 2。
+			document.getElementById("wind").style.height =
+				parseInt(windHeight.substring( 0,
+				windHeight.indexOf("px"))) + 2 + "px";
+			//每50ms将为目标对象的告诉增加2
+			tm = setTimeout("shen()" , 50);
+		}
+		else
+		{
+			clearTimeout(tm);
+			shouflag = true;
+		}
+	}
+}
+function shou()
+{
+	if (shouflag)
+	{
+		//控制展开旗标为false，即在展开过程中不受收起按钮的影响
+		shenflag = false;
+		var tm;
+		var windHeight = document.getElementById("wind").style.height;
+		//如果目标对象的高度大于3px，则让其高度继续增大
+		if (parseInt(windHeight.substring( 0, windHeight.
+			indexOf("px"))) > 3)
+		{
+			//修改目标对象的高度为原有高度 - 2。
+			document.getElementById("wind").style.height = 
+				parseInt(windHeight.substring( 0,
+				windHeight.indexOf("px"))) - 2 + "px";
+			//每隔50ms将目标对象的高度减2
+			tm = setTimeout("shou()" , 50);
+		}
+		else
+		{
+			clearTimeout(tm);
+			shenflag = true;
+		}
+	}
+}
+//为两个按钮绑定事件处理函数
+document.getElementById("shen").onclick=shen;
+document.getElementById("shou").onclick=shou;
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 阻止事件传播 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+
+<body>
+友情链接：<br />
+<!-- 目标超级链接 -->
+<a id="mylink" href="http://www.leegang.org">疯狂Java联盟</a>
+<div id="show"></div>
+<script type="text/javascript">
+	//事件捕获阶段的处理函数
+	function killClick1(event)
+	{
+		//取消默认事件的默认行为。
+		event.preventDefault();
+		//阻止事件传播
+		event.stopPropagation();
+		document.getElementById("show").innerHTML += 
+			'事件捕获阶段' + event.currentTarget + "<br />";
+	}
+	//事件冒泡阶段的处理函数
+	function killClick2(event)
+	{
+		//取消事件的默认行为
+		event.preventDefault();
+		//阻止事件传播
+		event.stopPropagation(); 
+		document.getElementById("show").innerHTML += 
+			'事件冒泡阶段' + event.currentTarget + "<br />";
+	}
+	//在事件冒泡阶段，分别为超级链接对象，document对象绑定事件处理函数。
+	document.addEventListener("click", killClick2, false);
+	document.getElementById("mylink").addEventListener(
+		"click", killClick2, false);
+</script>
+</body>
+</html>

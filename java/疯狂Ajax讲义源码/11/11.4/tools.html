@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//访问浏览器属性
+for (var key in $.browser)
+{
+	document.writeln("当前浏览器的" + key
+		+ "属性为："  + $.browser[key] + "<br />"); 
+}
+//去除字符串前后的空白
+document.writeln("$.trim('	ddd'));的结果是" + $.trim("	ddd") + "<br />");
+//遍历数组
+$.each(["java" , "ajax" ,"java ee"] , function(index, val)
+{
+	document.writeln("['java' , 'ajax' ,'java ee']的第" + index 
+		+ "个元素为:"  + val + "<br />"); 
+});
+//以指定函数过滤数组
+var grepResult = $.grep(["java" , "ajax" ,"java ee"] , function(val, index)
+{
+	//当数组元素的字符个数大于5时被保留
+	return val.length  > 5;
+});
+document.writeln("['java' , 'ajax' ,'java ee']里数组元素的字符个数大于5的还有："	
+	+ grepResult + "<br />"); 
+//以旧数组创建新数组
+var mapResult = $.map(["java" , "ajax" ,"java ee"] , function(val, index)
+{
+	//当数组元素和索引值连缀在一起作为新的数组元素
+	return val + index
+});
+document.writeln("以['java' , 'ajax' ,'java ee']创建的新数组为："	
+	+ mapResult); 
+//创建div元素
+var div = $("<div>aa<div>");
+//以相同的两个div创建数组
+var divArr = [div , div];
+document.writeln("divArr.length的值为：" + divArr.length + "<br />");
+//执行$.unique去除重复元素
+document.writeln("$.unique(divArr).length的结果为："
+	+ $.unique(divArr).length + "<br />");
+var str = "aa";
+//以两个相同的字符串创建数组
+var strArr = [str , str];
+document.writeln("strArr.length的值为：" + strArr.length + "<br />");
+//执行$.unique不能去除重复元素
+document.writeln("$.unique(strArr).length的结果为："
+	+ $.unique(strArr).length + "<br />");
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<script>
+	//创建Person函数
+	function Person()
+	{
+		//locVal是个局部变量，原本应该该函数结束后立即失效
+		var locVal = '疯狂Java联盟';
+		this.info = function()
+		{
+			//此处会形成闭包
+			document.writeln("locVal的值为：" + locVal);
+			return locVal;
+		}
+	}
+	var p = new Person();
+	//调用p对象的info()方法
+	var val = p.info();
+	//输出val返回值，该返回值就是局部变量locVal。
+	alert(val);
+</script>

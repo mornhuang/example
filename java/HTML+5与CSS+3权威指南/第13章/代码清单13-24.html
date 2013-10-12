@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
+<title>E::selection伪类选择器使用示例</title>
+<style type="text/css">
+p::selection{
+    background:red;
+    color:#FFF;
+}
+p::-moz-selection{
+    background:red;
+    color:#FFF;
+}
+input[type="text"]::selection{
+    background:gray;
+    color:#FFF;
+}
+input[type="text"]::-moz-selection{
+    background:gray;
+    color:#FFF;
+}
+td::selection{
+    background:green;
+    color:#FFF;
+}
+td::-moz-selection{
+    background:green;
+    color:#FFF;
+}
+</style>
+</head>
+<body>
+<p>这是一段测试文字。</p>
+<input type="text" value="这是一段测试文字。"/><p/>
+<table border="1" cellspacing="0" cellpadding="0">
+<tr>
+<td>测试文字</td>
+<td>测试文字</td>
+</tr>
+<tr>
+<td>测试文字</td>
+<td>测试文字</td>
+</tr>
+</body>
+</html>

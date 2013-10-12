@@ -1,0 +1,15 @@
+<script>
+	//定义一个函数，函数一个参数
+	function change(arg1)
+	{
+		//对参数值赋值，对实参不会有任何影响
+		arg1 = 10;
+		document.write("函数执行中arg1的值为：" + arg1 + "<br/>");
+	}
+	//定义变量x的值为5
+	var x = 5;
+	//输出函数调用之前x的值
+	document.write("函数调用之前x的值为：" + x + "<br />");
+	change(x);
+	document.write("函数调用之后x的值为：" + x + "<br />");
+</script>

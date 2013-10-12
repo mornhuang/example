@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Internet Explorer事件冒泡机制 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body onclick="gotClick('body元素');">
+	<table onclick="gotClick('table元素');">
+		<tr onclick="gotClick('tr元素');">
+		<td onclick="gotClick('td元素');">
+			<p onclick="gotClick('p元素');">
+				<input type="button" value="单击我" onclick="gotClick('按钮');" />
+			</p>
+		</td>
+		</tr>
+	</table>
+	<hr /><br />
+<div id="results"> </div>
+	<script type="text/javascript">
+	function gotClick(who) 
+	{
+		document.getElementById("results").innerHTML
+			+= who + " 被单击了 <br />";
+	}
+	</script>
+</body>
+</html>

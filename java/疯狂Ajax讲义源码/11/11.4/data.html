@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 操作数据的工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	var target = $("<div>java</div>");
+	//向jQuery对象里添加book数据
+	target.data("book" , "疯狂Java讲义");
+	//访问jQuery对象里的book数据，将输出"疯狂Java讲义"
+	alert(target.data("book"));
+	//删除jQuery对象里的book数据
+	target.removeData("book");
+	//再次访问jQuery对象里的book数据，将输出"undefined"
+	alert(target.data("book"));
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 根据节点关系访问XHTML元素 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		/* 定义改变背景色的CSS，表示被选中的项 */
+		.selected {
+			background-color:#6666ff
+		}
+	</style>
+</head>
+<body>
+	<ol id="books">
+		<li id="java">疯狂Java讲义</li>
+		<li id="ssh">轻量级Java EE企业应用实战</li>
+		<li id="ajax" class="selected">疯狂Ajax讲义</li>
+		<li id="xml">疯狂XML讲义</li>
+		<li id="ejb">经典Java EE企业应用实战</li>
+		<li id="workflow">疯狂Workflow讲义</li>
+	</ol>
+	<input type="button" value="父节点"
+		onclick="change(curTarget.parentNode);" />
+	<input type="button" value="第一个"
+		onclick="change(curTarget.parentNode.firstChild.nextSibling);" />
+	<input type="button" value="上一个"
+		onclick="change(curTarget.previousSibling.previousSibling);" />
+	<input type="button" value="下一个"
+		onclick="change(curTarget.nextSibling.nextSibling);" />
+	<input type="button" value="最后一个"
+		onclick="change(curTarget.parentNode.lastChild.previousSibling);" />
+	<script type="text/javascript">
+		var curTarget = document.getElementById("ajax");
+		function change(target)
+		{
+			alert(target.innerHTML);
+		}
+	</script>
+</body>
+</html>

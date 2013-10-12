@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 操作类数组的工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div>
+	<div id="java">疯狂Java讲义</div>
+	<div id="javaee">轻量级Java EE企业应用实战</div>
+	<div id="ajax">疯狂Ajax讲义</div>
+	<div id="xml">疯狂XML讲义</div>
+	<div id="ejb">经典Java EE企业应用实战</div>
+	<div id="workflow">疯狂Workflow讲义</div>
+</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//获取div之内所有的div元素，并迭代处理每个元素
+$("div>div").each(function(i)
+{
+	this.innerHTML += " 添加的内容" + i;
+})
+//返回div之内的所有div元素的个数，下面将输出6
+alert($("div>div").length);
+//获取div之内的第四个div元素包装的jQuery，下面将输出“疯狂XML讲义...”
+alert($("div>div").eq(3).html());
+//获取div之内的第二个div元素，下面将输出“轻量级Java EE企业应用实战...”
+alert($("div>div").get(1).innerHTML);
+//获取id为java的div元素。注意：$("#java").get()返回一个数组
+alert($("#java").get()[0].innerHTML);
+//所有div元素之内，id为ejb的div的索引，下面将输出4.
+alert($("div>div").index($("#ejb").get(0)));
+</script>
+</body>
+</html>

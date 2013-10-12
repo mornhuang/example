@@ -1,0 +1,14 @@
+<script src="../../prototype-1.4.0.js" type="text/javascript">
+</script>
+<script>
+	var count = 1;
+	
+	function show()
+	{
+		alert(count++);
+	}
+
+	var pe = new PeriodicalExecuter(show, 0.2);
+	if (count > 10) pe = null;
+
+</script>

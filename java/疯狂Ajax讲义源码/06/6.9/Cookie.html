@@ -1,0 +1,38 @@
+<script>
+function setCookie(name , value)
+{
+	//定义变量，保存当前时间
+	var expdate = new Date();
+	//将expdate的月份 + 1。
+	expdate.setMonth(expdate.getMonth() + 1);
+	//添加Cookie
+	document.cookie = name + "=" + escape(value) ;
+		+ "; expires=" + expdate.toGMTString() +  ";";
+}
+function getCookie(name) 
+{
+	//访问Cookie的name开始处
+	var offset = document.cookie.indexOf(name)
+	//如果找到指定Cookie
+	if (offset != -1) 
+	{
+		//从Cookie名后位置开始搜索
+		offset += name.length + 1;
+		//找到Cookie名后第一个分号（;）
+		end = document.cookie.indexOf(";", offset) ;
+		//如果没有找到分号
+		if (end == -1)
+		{
+			end = document.cookie.length;
+		}
+		//截断字符串中Cookie的值
+		return unescape(document.cookie.substring(offset, end));
+	}
+	else
+	{
+		return "";
+	}
+}
+setCookie('user' , 'yeeku');
+alert(getCookie('user'));
+</script>

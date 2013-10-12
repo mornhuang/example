@@ -1,0 +1,21 @@
+<script>
+	function test(o)    
+	{
+		//定义变量i，变量i的作用范围是整个函数
+		var i = 0;
+		if (typeof o == "object") 
+		{
+			//定义变量j，变量j的作用范围是整个函数内，而不是if块内。
+			var j = 5;
+			for(var k = 0; k < 10; k++)
+			{
+				//因为JavaScript没有代码块范围
+				//所以k的作用范围是整个函数内，而不是循环体内
+				document.write(k);
+			}
+		}
+		//即使出了循环体，k的值依然存在
+		alert(k + "\n" + j); 
+	}
+	test(document);
+</script>

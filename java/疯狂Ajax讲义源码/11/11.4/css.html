@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 操作CSS属性的工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		.test {
+			background-color: #ccccff;
+			border: 2px dotted red;
+			font-weight:bold;
+		}
+	</style>
+</head>
+<body>
+<div id="test1">
+整体添加CSS样式的元素
+</div><br/>
+<div id="test2">
+采用css(properties)方法添加CSS样式的元素
+</div><br/>
+<div id="test3" style="position:absolute;">
+可以自由移动的元素
+</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	//为id为test1的元素设置class="text"
+	$("#test1").addClass("test");
+	//为id为test2的元素设置内联CSS样式
+	$("#test2").css({border:"1px solid black" , color:"#888888"});
+	//获取id为test3的元素
+	var target = $("#test3")
+		//设置背景色
+		.css("background-color" , "#cccccc")
+		.css("padding" , 10)
+		//设置宽度
+		.width(200)
+		//设置高度
+		.height(80)
+		//设置位置
+		.css("left" , 40)
+		.css("top" , 64);
+	//获取target的位置
+	var posi = target.position();
+	alert("target的X座标为:" + posi.left + "\n"
+		+ "target的Y座标为:" + posi.top);
+</script>
+</body>
+</html>

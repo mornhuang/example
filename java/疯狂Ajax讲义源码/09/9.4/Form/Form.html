@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> Form元素 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<!-- 被操作的目标表单 -->
+<form id="form1" name="form1" method="post">
+	<!-- 定义四个单行文本框 -->
+	<input id="text1" name="text1" type="text" /><br />
+	<input id="text2" name="text2" type="text" /><br />
+	<input id="text3" name="text3" type="text" /><br />
+	<input id="text4" name="text4" type="text" value="xxxxxxxxx"/><br />
+	<select id="st1" name="st1" size="3" >
+		<option value="java">疯狂Java讲义</option>
+		<option value="javaee">轻量级Java EE企业应用实战</option>
+		<option value="ajax">疯狂Ajax讲义</option>
+	</select><br />
+</form>
+<!-- 下面按钮将所有表单控件的转换成查询字符串 -->
+<input type="button" value="转换查询字符串" 
+	onclick="alert($('form1').serialize());"/><br />
+<!-- 下面按钮将返回表单的第一个有效表单控件 -->
+<input type="button" value="返回第一个有效的表单控件" 
+	onclick="alert($('form1').findFirstElement());"/><br />
+<!-- 下面按钮返回所有表单控件 -->
+<input type="button" value="返回表单的全部表单控件"
+	onclick="alert($('form1').getElements());"/><br />
+<!-- 下面按钮返回所有input控件 -->
+<input type="button" value="返回表单的全部input"
+	onclick="alert($('form1').getInputs());"/><br />
+<!-- 下面按钮启用所有表单控件 -->
+<input type="button" value="启用所有表单控件"
+	onclick="$('form1').enable();"/><br />
+<!-- 下面按钮禁用所有表单控件 -->
+<input type="button" value="禁用所有表单控件"
+	onclick="$('form1').disable();"/><br />
+<!-- 下面按钮将焦点移动到第一个可视的表单控件 -->
+<input type="button" value="将焦点移动到第一个可视的表单控件" 
+	onclick="$('form1').focusFirstElement();"/><br />
+<!-- 下面按钮将重设表单 -->
+<input type="button" value="重设表单"
+	onclick="$('form1').reset();"/><br />
+</body>
+</html>

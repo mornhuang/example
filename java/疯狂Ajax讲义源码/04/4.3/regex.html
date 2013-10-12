@@ -1,0 +1,16 @@
+<script>
+//用正则表达式来匹配超级链接
+alert(/^<a href=(\'|\")[a-zA-Z0-9\/:\.]*(\'|\")>.*<\/a>$/
+	.test("<a href='http://www.leegang.org'>疯狂Java联盟</a>"));
+
+function trim(s)
+{
+	// \s 匹配任何空白字符，包括空格、制表符、换页符等等。
+	//其中^\s*匹配字符串前面的多个空格，\s*$匹配字符串后面的多个空格
+	// /g 表示尽可能多地匹配，
+	//最后将所有匹配的内容替换成''（即截取前、后的空格）
+	return s.replace(/(^\s*)|(\s*$)/g,""); 
+}
+//示范截去前后的空白
+alert(trim('   Hello,JavaScript  '));
+</script>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project name="ajax" basedir="." default="">
+    <path id="classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="classes"/>
+    </path>
+
+	<target name="compile" description="Compile all source code">
+		<delete dir="classes"/>
+		<mkdir dir="classes"/>
+		<copy todir="classes">
+	        <fileset dir="src">
+				<exclude name="**/*.java"/>
+			</fileset>		
+		</copy>
+        <javac destdir="classes" debug="true"
+            deprecation="false" optimize="false" failonerror="true">
+            <src path="src"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+	<target name="run" description="Run the main class" depends="compile">
+        <java classname="lee.DOMGenerate" fork="yes" failonerror="true">
+            <classpath refid="classpath"/>
+        </java>
+    </target>
+
+</project>

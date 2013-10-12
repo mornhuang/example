@@ -1,0 +1,20 @@
+<script>
+	//定义了一个函数，该函数也是一个类
+	function Person(name , age)
+	{
+		//将参数name的值赋给name属性
+		this.name = name;
+		//将参数age的值赋给age属性
+		this.age = age;
+		//为函数分配info方法，使用匿名函数来定义方法
+		this.info = function()
+		{
+			document.writeln("我的名字是：" + this.name + "<br />");
+			document.writeln("我的年纪是：" + this.age + "<br />");
+		};
+	}
+	//创建p对象
+	var p = new Person('yeeku' , 29);
+	//执行info方法
+	p.info();
+ </script>

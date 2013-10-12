@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 删除和复制HTML节点 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div><span id="test1">id为test1的元素</span>Java</div>
+<span id="test2">id为test2的元素</span>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//将div元素内容全部清空
+$("div").empty()
+	//重新添加字符串
+	.append("重新添加");
+//删除所有id为test2的span元素
+$("span").remove("#test2");
+//取得页面中div元素，并复制该元素
+$("div").clone()
+	//添加背景色
+	.css("background-color" , "#cdcdcd")
+	//添加到body元素尾部
+	.appendTo("body");
+</script>
+</body>
+</html>

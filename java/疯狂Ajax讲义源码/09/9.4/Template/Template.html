@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Template </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+objArr = [
+	{book:'Struts2权威指南' , author:"李刚"},
+	{book:'疯狂Java讲义' , author:"李刚"},
+	{book:'轻量级Java EE企业应用实战' , author:"李刚"}
+]
+var template = new Template("书名是#{book} , 作者是#{author}.");
+for (var i = 0 ; i < objArr.length ; i++ )
+{
+	document.writeln(template.evaluate(objArr[i]) + "<br />");
+}
+</script>
+</body>
+</html>

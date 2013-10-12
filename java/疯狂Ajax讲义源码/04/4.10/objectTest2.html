@@ -1,0 +1,19 @@
+<script>
+	function Person(name , age)
+	{
+		//将name、age形参的值分别赋给name、age实例属性。
+		this.name = name;
+		this.age = age;
+		this.info = function()
+		{
+			alert('info method!');
+		}
+	}
+	var p = new Person('yeeku' , 30);
+	for (propName in p)
+	{
+		//遍历Person对象的属性
+		document.writeln('p对象的' + propName 
+			+ "属性值为：" + p[propName] + "<br />");
+	}
+</script>

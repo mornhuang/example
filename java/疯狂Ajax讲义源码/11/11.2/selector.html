@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用jQuery()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		.test{
+			font-size:20pt;
+		}
+	</style>
+</head>
+<body>
+<ul>
+	<li id="java">疯狂Java讲义</li>
+	<li id="javaee" class="test">轻量级Java EE企业应用实战</li>
+	<li id="ajax">疯狂Ajax讲义</li>
+	<li id="xml">疯狂XML讲义</li>
+	<li id="ejb">经典Java EE企业应用实战</li>
+	<li><span id="workflow">疯狂Workflow讲义</span></li>
+</ul>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//获取id为java的元素
+$("#java").append("<b> 是id为java的元素</b>");
+//获取所有包含id属性的<li.../>元素，为它们增加背景色
+$("li[id]").css("background-color" , "#bbbbff");
+//获取class属性为test的元素，并为它们增加边框
+$(".test").css("border" , "3px dotted black");
+//同时获取id为xml、workflow的元素
+$("#xml,#workflow").append("<b>是id为xml、workflow其中之一的元素</b>");
+//获取ul之内，id为ajax的元素
+$("ul #workflow").append("<br /><b>位于ul之内、id为workflow的子元素</b>");
+//获取ul之内，id为ajx的直接子元素
+$("ul>#ajax").append("<b>ul之内、id为ajax的子元素</b>")
+	.css("border" , "2px solid black");
+//获取id为ajax之后的所有li元素
+$("#ajax~li").css("background-color" , "#ff5555");
+</script>
+</body>
+</html>

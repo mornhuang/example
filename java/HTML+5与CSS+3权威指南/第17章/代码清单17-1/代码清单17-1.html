@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>两种background-clip属性值的对比示例</title>
+<style type="text/css">
+div{
+        background-color: black;
+        border: dashed 15px green;
+        padding: 30px;
+        color:white;
+        font-size:2em;
+        font-weight:bold;
+}
+div.div1{
+        -moz-background-clip: border;
+        -webkit-background-clip: border;
+}
+div.div2{
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding;
+}
+</style>
+</head>
+<body>
+<div class="div1">示例文字1</div><br>
+<div class="div2">示例文字2</div>
+</body>

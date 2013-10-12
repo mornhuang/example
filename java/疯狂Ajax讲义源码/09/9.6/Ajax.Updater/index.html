@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 输入提示示范 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<h3>请输入您喜欢的水果</h3>
+<div style="width:280px;font-size:9pt">
+	输入apple、banana、peach可看到明显效果:</div>
+<br />
+<input id="favorite" name="favorite" type="text" 
+	onblur="$('tips').hide();"/>
+<img id="Loadingimg" src="img/indicator.gif" style="display:none"/>
+<div id="tips" style="width:160px;border:1px solid menu;
+	background-color:#ffffcc;display:none;"></div>
+<script src="prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//发送请求的函数
+function searchFruit()
+{
+	//定义发送请求的服务器地址
+	var url = 'tips.jsp';
+	//取得请求参数字符串
+	var params = $('favorite').serialize();
+	//创建Ajax.Updater对象，对应于发送一次请求
+	var myAjax = new Ajax.Updater(
+		//指定tips作为服务器响应的容器
+		'tips',
+		url,
+		{
+		//发送请求的方法
+		method: 'post',
+		//请求参数
+		parameters: params,
+		//指定Ajax交互结束后的回调函数，匿名函数——显示id为tips的元素
+		onComplete:function()
+		{
+			$('tips').show();
+		}
+	});
+}
+//为表单域绑定事件监听器
+new Form.Element.Observer("favorite", 1, searchFruit);
+//定义Ajax事件的全局处理器
+var myGlobalHandlers = 
+{
+	//当开始Ajax交互时，激发该函数
+	onCreate: function()
+	{
+		$('Loadingimg').show();
+	},
+	//当Ajax交互失败后，激发该函数。
+	onFailure:function()
+	{
+		alert('对不起!\n页面加载出错!');
+	},
+	//当Ajax交互结束后，激发该函数。
+	onComplete: function()
+	{
+		//如果所有Ajax交互都已完成，隐藏Loadingimg对象
+		if(Ajax.activeRequestCount == 0)
+		{
+			$('Loadingimg').hide();
+		}
+	}
+};
+//为Ajax事件绑定全局事件处理器
+Ajax.Responders.register(myGlobalHandlers);
+</script>
+</body>
+</html>

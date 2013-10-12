@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> $()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+function clickHandler()
+{
+	//访问a2元素
+	$("out").innerHTML += $("a2").value;
+}
+</script>
+<input id="a1" name="a2" type="text" value="第一个文本框" /><br />
+<input id="a2" name="a1" type="text" value="第二个文本框" /><br />
+<input onclick="clickHandler();" type="button" value="显示" />
+<div id="out" style="font-weight:bold;"></div>
+</body>
+</html>

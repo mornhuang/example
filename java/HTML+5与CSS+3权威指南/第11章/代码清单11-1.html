@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>获取当前位置的地理信息示例</title>
+<script type="text/javascript" src=http://maps.google.com/maps/api/js?sensor=false />
+<script type="text/javascript">
+function showObject(obj,k){
+    //递归显示object
+    if(!obj){return;}
+    for(var i in obj){
+        if(typeof(obj[i])!="object" || obj[i]==null){
+            for(var j=0;j<k;j++){
+                document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+            }
+            document.write(i + " : " + obj[i] + "<br/>");
+        }
+        else
+        {
+            document.write(i + " : " + "<br/>");
+            showObject(obj[i],k+1);
+        }
+    }
+}
+function get_location(){
+    if(navigator.geolocation)    
+        navigator.geolocation.getCurrentPosition(show_map,handle_error,{enableHighAccuracy:true,maximumAge:1000});
+    else
+        alert("你的浏览器不支持使用HTML5来获取地理位置信息。");
+}
+function handle_error(err){
+    //错误处理
+     switch(err.code){
+         case 1 :
+             alert("位置服务被拒绝。");
+             break;
+         case 2:
+             alert("暂时获取不到位置信息。");
+             break;
+         case 3:
+             alert("获取信息超时。");
+             break;
+         default:
+             alert("未知错误。");
+             break;
+    }
+}
+function show_map(position){
+    //显示地理信息
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    showObject(position,0);
+}
+get_location();
+</script>
+</head>
+<body>
+<div id="map" style="width:400px; height:400px"></div>
+</body>

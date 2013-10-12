@@ -1,0 +1,25 @@
+table {
+	background-color: #555555;
+}
+td {
+	font-size:10pt;
+	background-color: #ffffff;
+}
+div {
+	font-size:9pt;
+}
+input {
+	border:1px solid #888888;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	color: #444466;
+	text-decoration: none;
+}
+a:hover {
+	color: #3333ff;
+	font-weight:bold;
+	text-decoration: none;
+}

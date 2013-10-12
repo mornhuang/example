@@ -1,0 +1,33 @@
+<div id="img" style=" z-index:1; position:absolute; width:75px; height:50px; left:64px;top:101px"><img src="car130.gif" /></div>
+
+<script src="../../prototype-1.4.0.js" type="text/javascript">
+</script>
+<script>
+
+
+
+	var car = document.getElementById("img");
+	var timer;
+	function move(event)
+	{
+		shift(Event.pointerX(event), Event.pointerY(event) )
+	}
+	function shift(x , y)
+	{
+		var leftStr = car.style.left;
+		var topStr = car.style.top;
+		car.style.left = Math.round(leftStr.substring(0, leftStr.length - 2) * 19 / 20 + x / 20 );
+		car.style.top = Math.round(topStr.substring(0, topStr.length - 2) * 19 / 20 + y / 20 );
+		timer = setInterval("shift( " + x + "," + y + ")" , 0.2);
+	}
+	function stop(event)
+	{
+		clearInterval(timer);
+	}
+
+	Event.observe(document, 'mousedown', move, false);
+	Event.observe(document, 'mouseup', stop, false);
+
+
+</script>
+

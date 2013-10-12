@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 插入节点 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+	<ul id = "d">
+		<li>疯狂Java讲义</li>
+	</ul>
+	<script type="text/javascript">
+		//获取ID为d的节点
+		var ul = document.getElementById("d");
+		//复制ul的第二个子节点（不复制当前节点的后代节点）
+		var ajax = ul.firstChild.nextSibling.cloneNode(false);
+		//修改被复制的节点
+		ajax.innerHTML = "疯狂Ajax讲义";
+		//将复制的节点插入ul的第一个子节点之前
+		ul.insertBefore(ajax , ul.firstChild);
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>拖放示例</title>
+<script type="text/javascript">
+function init() 
+{
+    var source = document.getElementById("dragme");
+    var dest = document.getElementById("text");
+    // (1) 拖放开始
+    source.addEventListener("dragstart", function(ev) 
+    {
+        var dt = ev.dataTransfer;
+        //设定effectAllowed属性
+        dt.effectAllowed = 'copy';    
+        dt.setData("text/plain", "你好"); 
+    }, false);
+    dest.addEventListener("dragover", function(ev) 
+    {
+        var dt = ev.dataTransfer;
+        //设定dropEffect属性
+        dt.dropEffect = 'copy'; 
+        ev.preventDefault();
+      }, false);
+
+    // (3) dragend：拖放结束
+    dest.addEventListener("dragend", function(ev) 
+    {
+        //不执行默认处理（拒绝被拖放）
+        ev.preventDefault();
+    }, false);
+    // (4) drop:被拖放
+    dest.addEventListener("drop", function(ev) 
+    {
+        // 从DataTransfer对象那里取得数据
+        var dt = ev.dataTransfer;
+        var text = dt.getData("text/plain");
+        dest.textContent += text;
+        //(5) 不执行默认处理（拒绝被拖放）
+        ev.preventDefault();
+        //停止事件传播
+        ev.stopPropagation();
+    }, false);
+}
+//(6) 设置页面属性，不执行默认处理（拒绝被拖放）
+document.ondragover = function(e){e.preventDefault();};
+document.ondrop = function(e){e.preventDefault();};
+</script>
+</head>
+<body onload="init()">
+<h1>简单拖放示例</h1>
+<!-- (7) 把draggable属性设为true -->
+<div id="dragme" draggable="true" style="width: 200px; border: 1px solid gray;">
+  请拖放
+</div>
+<div id="text" style="width: 200px; height: 200px; border: 1px solid gray;"></div>
+</body>

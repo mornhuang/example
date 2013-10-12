@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<title>位置相关属性测试</title>
+</head>
+<body>
+Struts<br />
+Hibernate<br />
+Spring<br />
+jBPM<br />
+<!-- 下面的<div.../>元素定位时使用了absolute值，因此不会受上面文本的影响
+     它将直接基于页面定位-->
+<div id="Layer1" style="position:absolute; 
+	left:40px; top:20px; width:180px; height:88px;
+	z-index:2; background-color: #c1c1c1;">
+Layer1,使用positon属性值为absolute,该Layer将完全漂浮在页面之上，
+不受其他对象位置影响。z-index:2
+</div>
+<!-- 下面的<div.../>元素定位时使用了absolute值，因此不会受上面文本的影响
+     它将定位基于页面文本之后定位 -->
+<div id="Layer2" style="position:relative; 
+	left:50px; top:10px; width:200px; height:88px;
+	z-index:3; background-color: #999999;">
+Layer2,使用positon属性值为relative,该Layer将漂浮在页面之上，
+但会受其他对象位置影响。z-index:3
+</div>
+<!-- 下面的Layer3和Layer4两个<div.../>虽然设置了top一个为40px，另一个为80px。
+	但不会有任何作用,因为其position为static -->
+<div style="position:absolute; left:260px; top:80px; width:250px; 
+	height:200px; border:black solid 1px">
+	<div id="Layer3" style="position:static; left:100px; top:40px;
+		width:80px; height:88px; z-index:1; background-color: #666666;">
+		position:static
+	</div>
+	<div id="Layer4" style="position:static; left:100px; top:80px;
+		width:80px; height:88px; z-index:1; background-color: #999999;">
+		position:static
+	</div>
+</div>
+</body>
+</html>

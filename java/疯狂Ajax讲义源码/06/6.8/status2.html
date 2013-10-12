@@ -1,0 +1,70 @@
+
+
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 状态栏的动画文字 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body onload="stack();">
+<script type="text/javascript">
+	//自定义的状态文字
+	var statusText = "自定义的动画状态栏文字...";
+	var out = "";
+	//动画间隔时间
+	var pause = 25;
+	//动画宽度
+	var animateWidth = 20;
+	var position = animateWidth;
+	var i = 0 ;
+	function stack()
+	{
+		if (statusText.charAt(i) != " ")
+		{
+			out = "";
+			//将0到i-1个字符拼成输出字符串
+			for (var j=0; j<i; j++)
+			{
+				out += statusText.charAt(j);
+			}
+			//增加一定宽度空格
+			for (j=i; j<position; j++)
+			{
+				out += " ";
+			}
+			//将第i个字符添加到输出字符串里去
+			out += statusText.charAt(i);
+			for (j=position; j<animateWidth; j++)
+			{
+				out += " ";
+			}
+			window.status = out;
+			//如果后出来的字紧靠了前面字符串
+			if (position == i)
+			{
+				animateWidth++;
+				position = animateWidth;
+				//i加1，对应为多出现一个字符
+				i++;
+			}
+			else
+			{
+				position--;
+			}
+		}
+		else
+		{
+			i++
+		}		
+		if (i < statusText.length)
+		{
+			setTimeout("stack()",pause);
+		}
+	}
+</script>
+</body>
+</html>

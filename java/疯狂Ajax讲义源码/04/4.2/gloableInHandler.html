@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 事件处理中的局部变量和全局变量 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<script type="text/javascript">
+		//定义全局变量
+		  var x = "全局变量";
+	</script>
+</head>
+
+<body>
+<!-- 在onclick事件中重新定义了x局部变量变量 -->
+<input type="button" value="局部变量" 
+	onclick="var x = '局部变量'; alert('输出x局部变量的值：' + x);" />
+<!-- 直接输出全局变量x的值 -->
+<input type="button" value="全局变量 " 
+	onclick="alert('输出x全局变量的值： ' + x);" />
+</body>
+</html>

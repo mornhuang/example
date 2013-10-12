@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK"?>
+<StudentInfo>
+	<student>
+		<name>张三</name>
+		<sex>男</sex>
+		<lesson>
+			<lessonName>Spring整合开发</lessonName>
+			<lessonScore>85</lessonScore>
+		</lesson>
+		<lesson>
+			<lessonName>轻量级J2EE应用开发</lessonName>
+			<lessonScore>95</lessonScore>
+		</lesson>
+		<lesson>
+			<lessonName>Ajax应用开发</lessonName>
+			<lessonScore>80</lessonScore>
+		</lesson>
+	</student>
+	<student>
+		<name>王小梅</name>
+		<sex>女</sex>
+		<lesson>
+			<lessonName>Word快速入门</lessonName>
+			<lessonScore>80</lessonScore>
+		</lesson>
+		<lesson>
+			<lessonName>Excel应用</lessonName>
+			<lessonScore>95</lessonScore>
+		</lesson>
+		<lesson>
+			<lessonName>使用OutLook</lessonName>
+			<lessonScore>80</lessonScore>
+		</lesson>
+    </student>
+</StudentInfo>

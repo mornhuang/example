@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+<title>服务器端字体使用粗体与斜体示例</title>
+</head>
+<style type="text/css">
+@font-face{
+    font-family: WebFont;
+    src: url('Fontin_Sans_R_45b.otf') format("opentype");
+}
+@font-face{
+    font-family: WebFont;
+    font-style: italic;
+    src: url('Fontin_Sans_I_45b.otf') format("opentype");
+}
+@font-face{
+    font-family: WebFont;
+    font-weight: bold;
+    src: url('Fontin_Sans_B_45b.otf') format("opentype");
+}
+@font-face{
+    font-family: WebFont;
+    font-style: italic;
+    font-weight: bold;
+    src: url('Fontin_Sans_BI_45b.otf') format("opentype");
+}
+div{
+    font-family: WebFont;
+    font-size: 40px;
+}
+div#div1
+{
+    font-style: normal;
+    font-weight: normal;
+}
+div#div2
+{
+    font-style: italic;
+    font-weight: normal;
+}
+div#div3
+{
+    font-style: normal;
+    font-weight: bold;
+}
+div#div4
+{
+    font-weight: bold;
+    font-style: italic;
+}
+</style>
+<body>
+<div id="div1">Text Sample1</div>
+<div id="div2">Text Sample2</div>
+<div id="div3">Text Sample3</div>
+<div id="div4">Text Sample4</div>
+</body>
+</html>

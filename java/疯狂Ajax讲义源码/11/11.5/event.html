@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 事件编程相关的方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<input id="test1" type="button" value="单击我"/><br />
+<input id="test2" type="button" value="切换右边复选框的勾选状态"/>
+<input id="check" type="checkbox" value=""/><br />
+<input id="test3" type="button" value="绑定toggle的按钮"/><br />
+<div id="test4">
+鼠标悬停、移除将触发指定函数
+</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//指定页面加载完成时执行指定函数
+$(document).ready(function()
+{
+	alert("页面加载完成！");
+});
+//为id为test1的元素的click事件绑定事件处理函数
+$("#test1").bind("click" , {book:"疯狂Ajax讲义"} , function(event)
+{
+	alert("id为test1的按钮被单击!\n" + 
+		"事件为：" + event + 
+		"\n事件上data的book属性为：" + event.data.book);
+});
+//为id为test2的元素的click事件绑定事件处理函数
+$("#test2").bind("click" , function(event)
+{
+	//使用代码触发id为check的元素的单击事件，而且执行默认行为
+	$("#check").trigger("click");
+});
+//使用toggle为id为test3的元素绑定3个事件处理函数。
+$("#test3").toggle(
+	function(event)
+	{
+		alert("3n次被单击" + event);
+	},
+	function(event)
+	{
+		alert("3n + 1次被单击");
+	},
+	function(event)
+	{
+		alert("3n + 2次被单击");
+	}
+);
+//使用hover为id为test4的元素绑定2个事件处理函数
+//当鼠标移入该元素时触发第一个函数，移出该元素时触发第二个函数
+$("#test4").css("border" , "1px solid black")
+	.css("background-color" , "#cccccc")
+	.width(200)
+	.height(80)
+	.hover(function(event)
+	{
+		alert("鼠标移入该元素之内！");
+	},
+	function()
+	{
+		alert("鼠标移出该元素！");
+	}
+);
+</script>
+</body>
+</html>

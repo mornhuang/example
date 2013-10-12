@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>使用@font-face属性显示客户端本地的字体示例</title>
+</head>
+<style type="text/css">
+@font-face{
+    font-family: Arial;
+    src: local('Arial');
+}
+@font-face
+{
+    font-family: Arial;
+    font-weight: bold;
+    src: local('Arial Black');
+}
+div{
+    font-family: Arial;
+    font-size: 40px;
+}
+div#div1
+{
+    font-weight: normal;
+}
+div#div2
+{
+    font-weight: bold;
+}
+</style>
+<body>
+<div id="div1">Text Sample1</div>
+<div id="div2">Text Sample2</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>fileReader方法示例</title>
+</head>
+<script language=javascript>
+var result=document.getElementById("result");
+var file=document.getElementById("file");
+if (typeof FileReader == 'undefined' )
+{
+   result.innerHTML = "<p>抱歉，你的浏览器不支持 FileReader</p>";
+   file.setAttribute( 'disabled','disabled' );
+}
+//将文件以Data URL形式进行读入页面
+function readAsDataURL()
+{
+    //检查是否为图像文件
+    var file = document.getElementById("file").files[0];
+    if(!/image\/\w+/.test(file.type))
+    {
+        alert("请确保文件为图像类型");
+        return false;
+    }    
+    var reader = new FileReader();
+    //将文件以Data URL形式进行读入页面
+    reader.readAsDataURL(file);
+    reader.onload = function(e)
+    {
+       var result=document.getElementById("result");
+       //在页面上显示文件
+       result.innerHTML = '<img src="'+this.result+'" alt=""/>'
+    }
+}
+//将文件以二进制形式进行读入页面
+function readAsBinaryString()
+{
+    var file = document.getElementById("file").files[0];
+    var reader = new FileReader();
+    //将文件以二进制形式进行读入页面
+    reader.readAsBinaryString(file);
+    reader.onload = function(f)
+    {
+        var result=document.getElementById("result");
+        //在页面上显示二进制数据
+        result.innerHTML=this.result;
+    }
+}
+//将文件以文本形式进行读入页面
+function readAsText()
+{
+    var file = document.getElementById("file").files[0];
+    var reader = new FileReader();
+    //将文件以文本形式进行读入页面
+    reader.readAsText(file);
+    reader.onload = function(f)
+    {
+        var result=document.getElementById("result");
+        //在页面上显示读入文本
+        result.innerHTML=this.result;
+    }
+}
+</script>
+<p>
+    <label>请选择一个文件：</label>
+    <input type="file" id="file" />
+    <input type="button" value="读取图像" onclick="readAsDataURL()"/>
+    <input type="button" value="读取二进制数据" onclick="readAsBinaryString()"/>
+    <input type="button" value="读取文本文件" onclick="readAsText()"/>
+</p> 
+<div name="result" id="result">
+      <!-- 这里用来显示读取结果 -->
+</div>

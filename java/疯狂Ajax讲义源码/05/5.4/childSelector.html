@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>子元素选择器测试</title>
+	<style type="text/css">
+	/* 对所有的div元素起作用的CSS定义 */
+	div {
+		width:250px;
+		height:35px;
+		background-color:#dddddd;
+	}
+	/* 对处于div之内的div元素起作用的CSS定义 */
+	div > div {
+		width:200px;
+		height:30px;
+		border:2px dotted black;
+		background-color:#999999;
+	}
+	</style>
+</head>
+<body>
+<div>没有任何属性的div元素</div><br />
+<div><div>处于div之内的div子元素元素</div></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>编号嵌套示例</title>
+</head>
+<style type="text/css">
+h1:before{
+    content: counter(mycounter) '. ';
+}
+h1{
+    counter-increment: mycounter;
+}
+h2:before{
+    content: counter(subcounter) '. ';
+}
+h2{
+    counter-increment: subcounter;
+    margin-left: 40px;
+}
+</style>
+<body>
+<h1>大标题</h1>
+<h2>中标题</h2>
+<h2>中标题</h2>
+<h2>中标题</h2>
+<h1>大标题</h1>
+<h2>中标题</h2>
+<h2>中标题</h2>
+<h2>中标题</h2>
+</body>
+</html>

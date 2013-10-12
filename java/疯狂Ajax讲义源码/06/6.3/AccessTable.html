@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 访问表格元素 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<table id="d" border="1">
+	<caption>疯狂Java体系</caption>
+	<tr>
+		<td>疯狂Java讲义</td>
+		<td>轻量级Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂Ajax讲义</td>
+		<td>经典Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂XML讲义</td>
+		<td>疯狂Workflow讲义</td>
+	</tr>
+</table>
+<input type="button" value="表格标题"
+	onclick="alert(document.getElementById('d').caption.innerHTML);" />
+<input type="button" value="第一行、第一格"
+	onclick="alert(document.getElementById('d').rows[0].cells[0].innerHTML);" />
+<input type="button" value="第二行、第二格"
+	onclick="alert(document.getElementById('d').rows[1].cells[1].innerHTML);" />
+<input type="button" value="第三行、第二格"
+	onclick="alert(document.getElementById('d').rows[2].cells[1].innerHTML);" />
+</body>
+</html>

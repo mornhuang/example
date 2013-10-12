@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> this关键字测试 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+
+<body>
+<input type="button" value="按钮" name="bn" onclick="showThisName();"/>
+<script type="text/javascript">
+	//将当前的浏览器窗口的name属性赋值为
+	window.name = "测试窗口";
+	function showThisName() 
+	{
+		//此时的this将引用到脚本所在的窗口
+		alert(this.name);
+	}
+</script>
+</body>
+</html>

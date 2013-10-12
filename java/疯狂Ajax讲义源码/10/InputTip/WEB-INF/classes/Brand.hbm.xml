@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="org.crazyjava.inputtip.model">
+    <class name="Brand" table="brand">
+        <id name="id" column="b_id">
+            <generator class="increment"/>
+        </id>
+        <property name="name" column="b_name" unique="true"/>
+		<set name="models" inverse="true">
+			<key column="b_id"/>
+			<one-to-many class="Model"/>
+		</set>
+    </class>
+
+</hibernate-mapping>

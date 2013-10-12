@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>在页面上使用google地图示例</title>
+<script type="text/javascript" src=http://maps.google.com/maps/api/js?sensor=false />
+<script type="text/javascript">
+  function init() {
+    // 取得当前地理位置
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var coords = position.coords;
+        //设定地图参数，将用户的当前位置的纬度、经度设定为地图的中心点。
+        var latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
+        var myOptions = {
+          zoom: 14,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        //创建地图并在“map”div中显示
+        var map1; 
+        map1= new google.maps.Map(document.getElementById("map"), myOptions);
+        //在地图上创建标记
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map1
+        });
+        //设定标注窗口，并指定该窗口中的注释文字
+        var infowindow = new google.maps.InfoWindow({
+          content: "当前位置!"
+        });
+        //打开标注窗口
+        infowindow.open(map1, marker);
+    });
+  }
+</script>
+</head>
+<body onload="init()">
+  <div id="map" style="width:400px; height:400px"></div>
+</body>
+

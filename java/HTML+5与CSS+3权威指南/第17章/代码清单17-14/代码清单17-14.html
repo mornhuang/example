@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>元素同时具有边框图像和背景图像</title>
+</head>
+<style type="text/css">
+div{
+        background-image: url(bk.jpg);
+        background-repeat: no-repeat;
+        border-image: url("borderimage.png") 20 20 20 20 / 5px;
+        background-origin: border;
+        border-radius: 18px;
+        -webkit-border-image: url("borderimage.png") 20 20 20 20 / 5px;
+        -webkit-background-origin: border;
+        -webkit-border-radius: 18px;
+        -moz-border-image: url("borderimage.png") 20 20 20 20 / 5px;
+        -moz-background-origin: border;
+        -moz-border-radius: 18px;
+        width:711px;
+        height:404px;
+}
+</style>
+<body>
+<div></div>
+</body>
+</html> 

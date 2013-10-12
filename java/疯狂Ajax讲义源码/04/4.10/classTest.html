@@ -1,0 +1,24 @@
+<script>    
+	//创建Person函数
+	function Person(name , age)
+	{
+		this.name = name;
+		this.age = age;
+		//为Person对象指定info方法
+		this.info = function()
+		{
+			//输出Person实例的name和age属性
+			document.writeln("姓名：" + this.name);
+			document.writeln("年龄：" + this.age);
+		}
+	}
+	//创建Person实例p1
+	var p1 = new Person('yeeku' , 29);
+	//执行p1的info方法
+	p1.info();
+	document.writeln("<hr />");
+	//创建Person实例p2
+	var p2 = new Person('wawa' , 20);
+	//执行p2的info方法
+	p2.info();
+</script>

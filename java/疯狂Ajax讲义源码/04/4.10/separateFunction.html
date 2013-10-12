@@ -1,0 +1,30 @@
+<script>
+	//定义Dog函数，等同于定义了Dog类
+	function Dog(name , age , bark)
+	{
+		//将name、age、bark形参赋值给name、age、bark实例属性
+		this.name = name;
+		this.age = age;
+		this.bark = bark;
+		//使用内嵌函数为Dog实例定义方法
+		this.info = function()
+		{
+			return this.name + "的年纪为：" + this.age
+				+ ",它的叫声:" + this.bark;
+		}
+	}
+	//创建Dog的实例
+	var dog = new Dog("旺财" , 3 , '汪汪,汪汪...');
+	//创建Cat函数，对应Cat类
+	function Cat(name,age)
+	{
+		this.name = name;
+		this.age = age;
+	}
+	//创建Cat实例。
+	var cat = new Cat("kitty" , 2);
+	//将dog实例的info方法分离出来
+	var tmp = dog.info;
+	//通过function的call方法完成cat的调用info方法
+	alert(tmp.call(cat));
+</script>

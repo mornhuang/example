@@ -1,0 +1,8 @@
+<script>
+	//定义匿名函数，并将函数赋给变量f
+	var f = new Function('name' ,
+		"document.writeln('Function定义的函数<br>');"
+		+ "document.writeln('你好' + name);");
+	//通过变量调用匿名函数
+	f('yeeku');
+</script>

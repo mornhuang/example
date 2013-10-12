@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 电子相册系统 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<link rel="stylesheet" href="css/flora.dialog.css" type="text/css" />
+	<link rel="stylesheet" href="css/flora.resizable.css" type="text/css" />
+	<link rel="stylesheet" href="css/flora.draggable.css" type="text/css" />
+	<link rel="stylesheet" href="css/flora.css" type="text/css" />
+	<link rel="stylesheet" href="css/album.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+	<script type="text/javascript" src="js/ui.core.js"></script>
+	<script type="text/javascript" src="js/ui.dialog.js"></script>
+	<script type="text/javascript" src="js/ui.resizable.js"></script>
+	<script type="text/javascript" src="js/ui.draggable.js"></script>
+	<script type="text/javascript" src="js/album.js"></script>
+</head>
+<body class="flora">
+<table width="780" border="0" cellspacing="1" align="center">
+<caption><h3>电子相册系统</h3></caption>
+<tr>
+<td height="60" colspan="2">
+<!-- 没有登录显示下面div元素 -->
+<div id="noLogin">
+<!-- 这里是注册/登录的表格 -->
+<table width="100%" border="0" cellspacing="0">
+<tr>
+	<td width="38%">用户名：
+		<input id="user" type="text" name="user" /></td>
+	<td width="38%">密&nbsp;&nbsp;码：
+		<input id="pass" type="text" name="pass" /></td>
+	<td width="24%">我还没有注册，请让我<a href="javascript:void(0);"
+		onclick="changeRegist();">注册</a></td>
+</tr>
+<tr>
+	<td colspan="5">
+	<div id="loginDiv" align="center">
+	<input id="login" type="button" onclick="proLogin();" value="登陆" />
+	<input id="resetLogin" type="button" onclick="reset();" value="重设" />
+	</div>
+	<div id="registDiv" align="center" style="display:none">
+	<a href="javascript:void(0)" onclick="validateName();">验证用户名是否可用</a>
+	<input id="regist" type="button" onclick="regist();" value="注册" />
+	<input id="resetRegist" type="button" onclick="reset();" value="重设" />
+	</div>
+	</td>
+</tr>
+</table>
+</div>
+<!-- 已经登录显示下面div元素 -->
+<div id="hasLogin" align="center" style="display:none">
+	您已经登陆成功，下面是您的相册，您也可以<a href="javascript:void(0);" 
+		onclick="openUpload();">增加相片</a>
+</div>
+</td>
+</tr>
+<tr>
+	<!-- 显示相片列表的元素 -->
+	<td width="120" height="440" valign="top">
+	<div align="center"><h3>相片列表</h3></div>
+	<div id="list"></div><hr />
+	<div align="center"><a href="javascript:void(0);" onclick="turnPage(-1);">上一页</a>
+		&nbsp;<a href="javascript:void(0);" onclick="turnPage(1);">下一页</a></div>
+	</td>
+	<!-- 显示相片的元素 -->
+	<td width="660" align="center" valign="middle">
+		<div style="width:640px;height:430px;overflow:auto">
+		<img id="show" alt="当前相片"></img></div></td>
+</tr>
+</table>
+<div align="center">
+All Rights Reserved.&copy; 
+<a href="http://www.crazyjava.org">http://www.crazyjava.org</a><br />
+版权所有 Copyright&copy;2010 Yeeku.H.Lee <br />
+如有任何问题和建议，请登录
+<a href="http://www.crazyjava.org">http://www.crazyjava.org</a><br />
+建议您使用1024*768分辨率，IE6.0以上版本使用本系统!
+</div>
+<div id="uploadDiv" style="display:none">
+<form action="proUpload" method="post"
+	enctype="multipart/form-data">
+<table width="400" border="0" cellspacing="1" cellpadding="10">
+<caption>上传图片</caption>
+<tr>
+	<td height="25">图片标题：</td>
+	<td><input id="title" name="title" type="text" /></td>
+</tr>
+<tr>
+	<td height="25">浏览图片：</td>
+	<td><input id="file" name="file" type="file" /></td>
+</tr>
+<tr>
+	<td colspan="2" align="center">
+	<input type="submit" value="上传" />
+	<input type="reset" value="重设" />
+	</td>
+</tr> 
+</table>
+</form>
+</div>
+<div id="tipDiv" style="display:none">
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 添加HTML节点 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div id="test1"></div>
+<div id="test2" style="border:1px solid black;">id为test2的元素</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	//直接将一段HTML字符串添加到id为test1的元素的内部的尾端
+	$("#test1").append("<b>疯狂XML讲义</b>");
+	//创建一个<span.../>元素
+	var span = document.createElement("span");
+	span.innerHTML = "疯狂Java讲义"
+	//将一个DOM元素添加到id为test1的元素的内部的顶端
+	$("#test1").prepend(span);
+	//将id为test1的元素添加到id为test2的元素内部的尾端
+	$("#test1").appendTo("#test2");
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 包裹HTML节点 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<span id="test1">id为test1的元素</span><br />
+<span id="test2">id为test2的元素</span>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//将每个span元素之外再包裹一个带点线边框的div元素
+$("span").wrap("<div style='border:1px dotted black'></div>");
+//将每个span元素内部成分再包裹一个灰色背景的span元素
+$("span").wrapInner("<span style='background-color:#dddddd'></span>");
+</script>
+</body>
+</html>

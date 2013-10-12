@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 发送XML请求 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<!-- 支持多选的列表框 -->
+<select name="first" id="first"
+	style="width:80px" size="3" multiple="multiple">
+	<option value="1" selected="selected">中国</option>
+	<option value="2">美国</option>
+	<option value="3">日本</option>
+</select>
+<!-- 用于发送Ajax请求的按钮 -->
+<input type="button" value="发送" onClick="send();" />
+<!-- 被级联改变的列表框 -->
+<select name="second" id="second" style="width:100px" size="5" />
+</select>
+<script type="text/javascript">
+//保存XMLHttpRequest对象的变量
+var xmlrequest;
+function createXMLHttpRequest()
+{
+	if(window.XMLHttpRequest)
+	{
+		//DOM 2浏览器
+		xmlrequest = new XMLHttpRequest();
+	}
+	// IE浏览器
+	else if (window.ActiveXObject)
+	{
+		try
+		{
+			xmlrequest = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				xmlrequest = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e){}
+		}
+	}
+}
+//定义创建XML文档的函数
+function createXML()
+{
+	//初始化XMLHttpRequest对象
+	createXMLHttpRequest();
+	//开始创建XML文档，countrys是根元素
+	var  xml = "<countrys>" ;
+	//获取first元素的，并获取起所有的子节点（选项）
+	var options = document.getElementById("first").childNodes;
+	var  option  =   null ;
+	//遍历国家下拉列表的所有选项
+	for (var i = 0 ; i < options.length; i ++)
+	{
+		option = options[i];
+		//如果某个选项被选中
+		if (option.selected)
+		{
+			//在countrys的根节点下增加一个country的子节点
+			xml = xml + "<country>" + option.value + "<\/country>";
+		}
+	}
+	//结束XML文档的根节点
+	xml = xml + "<\/countrys>" ;
+	//返回XML文档
+	return xml;
+}
+//定义发送XML请求的函数
+function send()
+{
+	//定义请求发送的URL
+	var uri = "second.jsp";
+	//打开与服务器连接
+	xmlrequest.open("POST", uri, true);
+	//设置请求头
+	xmlrequest.setRequestHeader("Content-Type"
+		, "application/x-www-form-urlencoded");
+	//指定当XMLHttpRequest对象状态发生改变时触发processResponse函数
+	xmlrequest.onreadystatechange = processResponse;
+	//发送XML请求
+	xmlrequest.send(createXML());    
+}
+//处理服务器响应
+function processResponse()
+{
+	if(xmlrequest.readyState == 4)
+	{
+		if(xmlrequest.status == 200)
+		{
+			//获取服务器响应字符串，并以$作为分隔符分割成多个字符串
+			var cityList = xmlrequest.responseText.split("$");
+			var displaySelect = document.getElementById("second");
+			//清空second下拉列表的选项
+			displaySelect.innerHTML = null;
+			for (var i = 0 ; i < cityList.length ; i++)
+			{
+				//依次创建多个option元素
+				option = document.createElement("option");
+				option.innerHTML = cityList[i];
+				//将创建的option元素添加到下拉列表最后
+				displaySelect.appendChild(option);
+			}
+		}
+	}
+}
+</script>
+</body>
+</html>

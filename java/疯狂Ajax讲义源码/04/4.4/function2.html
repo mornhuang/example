@@ -1,0 +1,36 @@
+<script>
+function judgeAge(age)
+{
+	//要求age参数必须是数值
+	if( typeof age === "number" )
+	{
+		//如果参数值大于60
+		if(age > 60)
+		{    
+			alert("老人");
+		}
+		//如果参数值大于40
+		else if(age > 40)
+		{
+			alert("中年人");
+		}
+		//如果参数值大于15
+		else if(age > 15)
+		{
+			alert("青年人");
+		}
+		//否则
+		else
+		{
+			alert("儿童");
+		}
+	}
+	else
+	{
+		alert("参数必须为数值");
+	}
+}
+	//调用函数
+	judgeAge(46);
+	judgeAge('dd');
+</script>

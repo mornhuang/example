@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用jQuery()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div id="lee"></div>
+<div id="yeeku"></div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//获取所有<div.../>标签对应的DOM对象
+$("div").append("新增的内容");
+//使用字符串创建一个DOM对象，并将添加到body元素内
+$("<input type='button' value='单击我'/>").appendTo(document.body);
+//直接将一个DOM对象包装成jQuery对象
+$(document.getElementById('lee'))
+	.css("background-color" , "#aaffaa")
+	.css("border" , "1px  solid black");
+//指定页面加载完成后
+$(function()
+{
+	alert("页面加载完成");
+});
+</script>
+</body>
+</html>

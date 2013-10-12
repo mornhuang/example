@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 动态页面 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script>
+//计数器
+var n = 0;
+var win = null;
+//用于显示弹出窗口显示提示信息的函数
+function show(msg)
+{
+	//判断弹出窗口是否为空
+	if ((win == null) || (win.closed)) 
+	{
+		//打开一个新的弹出窗口
+		win = window.open("","console","width=400,height=250,resizable");
+		//将弹出窗口的文档打开成一个普通文档， 而不是一个text/html文档
+		win.document.open("text/plain");
+	}
+	//让弹出窗口得到焦点
+	win.focus();
+	//在弹出窗口装载的文档中输出信息
+	win.document.writeln(msg); 
+	win.doucment.close();
+}
+</script>
+<!-- 激发事件的按钮 -->
+<input type="button" value="单击" 
+	onclick="show('您单击了按钮:' + ++n + '次。');">
+</body>
+</html>

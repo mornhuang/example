@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用fn.extends扩展jQuery </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+用户名：<input name="name" type="text"/><br />
+喜欢的颜色：<br />
+红色：<input name="color" type="checkbox" value="red"/>
+绿色：<input name="color" type="checkbox" value="green"/>
+蓝色：<input name="color" type="checkbox" value="blue"/><br />
+<input id="check" type="button" value="选中所有复选框"/>
+<input id="uncheck" type="button" value="取消选中所有复选框"/><br />
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//为所有jQuery对象扩展新的方法
+$.fn.extend(
+{
+	//为jQuery对象扩展check方法
+	check: function() {
+		//遍历jQuery里每个DOM对象，指定其checked属性为true
+		return this.each(function() 
+		{
+			this.checked = true;
+		});
+	},
+	//为jQuery对象扩展uncheck方法
+	uncheck: function()
+	{
+		//遍历jQuery里每个DOM对象，指定其checked属性为false
+		return this.each(function() 
+		{ 
+			this.checked = false; 
+		});
+	}
+}); 
+$.extend(
+{
+	//为jQuery命名空间扩展新方法
+	test:function()
+	{
+		alert("为jQuery命名空间扩展的测试方法");
+	}
+});
+//为id为check的按钮绑定事件处理函数
+$("#check").click(function()
+{
+	$(":input").check();
+});
+//为id为uncheck的按钮绑定事件处理函数
+$("#uncheck").click(function()
+{
+	$(":input").uncheck();
+});
+//调用为jQuery命名空间扩展的新方法
+$.test();
+</script>
+</body>
+</html>

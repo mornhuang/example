@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 定时刷新价格 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<h3>今天的苹果价格为：</h3>
+苹果价格为：<span style="color:red" id="price"></span>元/斤
+<script src="prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//发送请求的服务器URL
+var url = 'price.jsp';
+//创建Ajax. PeriodicalUpdater对象，周期性发送Ajax请求
+var myAjax = new Ajax.PeriodicalUpdater(
+	//price用于显示服务器响应
+	'price',
+	url,
+	{
+		//定义发送请求的方法
+		method: 'post',
+		//定义请求参数为null
+		parameters: null,
+		//发送请求的频率
+		frequency:1
+	});
+</script>
+</body>
+</html>

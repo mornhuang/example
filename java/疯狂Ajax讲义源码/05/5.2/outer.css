@@ -1,0 +1,10 @@
+/* 设置整个表格的背景色 */
+table {
+	background-color: #003366;
+}
+/* 设置单元格的背景色、过滤器、字体等*/
+td {
+	background-color: #FFFFFF;
+	filter: Blur(Add=20, Direction=20, Strength=20);
+	font-family: "楷体_GB2312";
+}

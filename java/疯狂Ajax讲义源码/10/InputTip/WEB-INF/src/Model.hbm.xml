@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping
+	PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="org.crazyjava.inputtip.model">
+	<class name="Model" table="model">
+		<!-- 映射标识属性 -->
+		<id name="id" column="m_id">
+			<!-- 指定主键生成器策略 -->
+			<generator class="identity"/>
+		</id>
+		<property name="name" type="string" 
+			unique="true" column="m_name"/>
+		<property name="desc" type="string" column="m_desc"/>
+		<!-- 映射Brand关联的Model实体 -->
+		<many-to-one name="brand" 
+			column="b_id" not-null="true"/>
+	</class>
+</hibernate-mapping>

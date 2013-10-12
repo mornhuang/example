@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 动画效果相关的方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		div {
+			background-color: #cccccc;
+			border: 2px solid black;
+			width: 200px;
+			height: 120px;
+		}
+	</style>
+</head>
+<body>
+<input type="button" value="toggle" onclick="$('#test1').toggle(1000);"/><br />
+<div id="test1">使用toggle控制的元素</div>
+<input type="button" value="slide down" onclick="$('#test2').slideDown(1000);"/>
+<input type="button" value="slide up" onclick="$('#test2').slideUp(1000);"/><br />
+<div id="test2">使用Slide动画控制的元素</div>
+<input type="button" value="fade in" onclick="$('#test3').fadeIn(1000);"/>
+<input type="button" value="fade out" onclick="$('#test3').fadeOut(1000);"/><br />
+<div id="test3">使用Fade动画控制的元素</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+</body>
+</html>

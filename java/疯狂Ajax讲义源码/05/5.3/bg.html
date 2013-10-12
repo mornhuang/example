@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<title>背景相关属性设置</title>
+	<style type="text/css">
+	/* 为div元素增加边框 */
+	div{
+		border:1px solid #000000;
+		height: 50px;
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+<!-- 灰色背景 -->
+background-color:#ff0000 <div style="background-color:#aaaaaa">测试文字</div>
+<!-- 以默认样式指定背景图片，将平铺 -->
+background-image:url(logo.gif)<div style="background-image:url(logo.gif)">测试文字</div>
+<!-- 不平铺的背景图片 -->
+background-image:url(logo.gif);background-repeat: no-repeat
+<div style="background-image:url(logo.gif);background-repeat: no-repeat">测试文字</div>
+<!-- 横向平铺的背景图片 -->
+background-image:url(logo.gif);background-repeat: repeat-x
+<div style="background-image:url(logo.gif);
+	background-repeat: repeat-x">测试文字</div>
+<!-- 不平铺的背景图片，并指定背景图片的位置 -->
+background-image:url(a.bmp);background-repeat: no-repeat;background-position: 35% 80%;
+<div style="background-image:url(logo.gif);background-repeat:
+	no-repeat;background-position: 35% 80%; ">测试文字</div>
+</body>
+</html>

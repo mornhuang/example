@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 处理表单 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<form id="test">
+用户名：<input id="user" name="user" type="text" /><br />
+个人介绍：<textarea id="desc" name="desc"></textarea><br />
+喜欢的图书：<select id="book" name="book">
+	<option value="java">疯狂Java讲义</option>
+	<option value="javaee">轻量级Java EE企业应用实战</option>
+	<option value="ajax">疯狂Ajax讲义</option>
+</select>
+</form>
+<button id="bn1">查询字符串</button>
+<button id="bn2">查询JSON对象</button><hr />
+<span id="show"></span>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	//为id为bn1的按钮绑定事件处理函数
+	$("#bn1").click(function()
+	{
+		//将id为test1的表单转换为查询字符串
+		$("#show").html($("#test").serialize());
+	});
+	//为id为bn2的按钮绑定事件处理函数
+	$("#bn2").click(function()
+	{
+		//将所有输入元素转换为数组
+		var arr = $(":input").serializeArray();
+		$("#show").empty();
+		//遍历arr数组
+		for (var index in arr)
+		{
+			$("#show").append("第" + index + "表单控件名为：" 
+				+ arr[index].name + ",值为：" + arr[index].value + "<br />");
+		}
+	});
+</script>
+</body>
+</html>

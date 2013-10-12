@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ajaxchat2"
+  id="myeclipse.1221750708718"
+  context-root="/ajaxchat2"
+  j2ee-spec="1.4"
+  archive="ajaxchat2.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

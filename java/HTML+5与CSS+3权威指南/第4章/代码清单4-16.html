@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<meta charset="UTF-8"/>
+<title>progress元素的使用示例</title>
+<script>
+var progressBar = document.getElementById('p');
+function button_onclick()
+{
+    var progressBar = document.getElementById('p');
+    progressBar.getElementsByTagName('span')[0].textContent ="0";
+    for(var i=0;i<=100;i++)
+        updateProgress(i);
+}
+function updateProgress(newValue) 
+{
+    var progressBar = document.getElementById('p');
+    progressBar.value = newValue;
+    progressBar.getElementsByTagName('span')[0].textContent = newValue;
+}
+</script>
+<section>
+    <h2>progress元素的使用示例</h2>
+    <p>完成百分比: <progress id="p" max=100><span>0</span>%</progress></p>
+    <input type="button" onclick="button_onclick()"  value="请点击"/>
+</section>

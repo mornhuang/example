@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Element对象 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+	.solid
+	{
+		width:160px;
+		text-align:center;
+		border-right: #002200 2px solid; 
+		border-top: #b9ffb9 2px solid; 
+		border-left: #b9ffb9 2px solid; 
+		border-bottom: #002200 2px solid;
+		color: #ffff00;
+		background-color:#008000;
+	}
+	</style>
+</head>
+<body>
+<input type="button" onclick='chg()' value="增加立体效果"/>
+<div id="up">有立体效果的层</div>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+function chg()
+{
+	//为up元素增加solid的CSS样式
+	Element.addClassName("up","solid");
+}
+</script>
+</body>
+</html>

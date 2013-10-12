@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>跨域通信示例</title>
+<script type="text/javascript">
+// (1) 监听message事件
+window.addEventListener("message", function(ev) {
+  // (2) 忽略指定URL地址之外的页面传过来的消息
+  if (ev.origin != "http://www.blue-butterfly.net") {
+    return;
+  }
+  // (3) 显示消息
+  alert("从"+ev.origin + "那里传过来的消息:\n\"" + ev.data + "\"");
+}, false);
+function hello() 
+{
+  var iframe = window.frames[0];
+  // (4) 传递消息
+  iframe.postMessage("你好", "http://www.blue-butterfly.net/test/");
+}
+</script>
+</head>
+<body>
+<h1>跨域通信示例</h1>
+<iframe width="400" src=http://www.blue-butterfly.net/test/ 
+onload="hello()">
+</iframe>
+</body>
+</html>

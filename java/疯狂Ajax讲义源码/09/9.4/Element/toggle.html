@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Element对象 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<input type="button" onClick='chg()' value="切换显示"/>
+<div id="div1">层1</div>
+<div id="div2">层2</div>
+<div id="div3">层3</div>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+function chg()
+{
+    //同时控制div1 div2 div3三个元素的显示和隐藏
+    Element.toggle("div1");
+    Element.toggle("div2");
+    Element.toggle("div3");
+}
+</script>
+</body>
+</html>

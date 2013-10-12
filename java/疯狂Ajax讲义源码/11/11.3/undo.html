@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 操作类数组的工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<div>
+	<div id="java">疯狂Java讲义</div>
+	<div id="javaee">轻量级Java EE企业应用实战</div>
+	<div id="ajax">疯狂Ajax讲义</div>
+	<div id="xml">疯狂XML讲义</div>
+	<div id="ejb">经典Java EE企业应用实战</div>
+	<div id="workflow">疯狂Workflow讲义</div>
+</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+//获取id为ajax节点的下一个兄弟节点，再将id为ajax的节点与此链为一体。
+//实际返回id为ajax的节点、以及id为ajax的下一个节点
+$("#ajax").next().andSelf().css("border" , "2px solid black");
+//先获取ajax节点的下一个节点，再次使用end()方法重新获取之前的ajax节点
+//实际方返回的就是$("#ajax")的结果
+$("#ajax").next().end().css("background-color" , "#ffaaaa");
+</script>
+</body>
+</html>

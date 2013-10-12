@@ -1,0 +1,24 @@
+<script>
+	//为Array增加indexof方法，将该函数增加到prototype属性上
+	Array.prototype.indexof = function(obj)
+	{
+		//定义result的值为-1
+		var result = -1;
+		//遍历数组的每个元素
+		for (var i = 0 ; i < this.length ; i ++)
+		{
+			//当数组的第i个元素值等于obj时
+			if (this[i] == obj)
+			{
+				//将result的值赋为i，并结束循环。
+				result = i;
+				break;
+			}
+		}
+		//返回元素所在的位置。
+		return result;
+	}
+	var arr = [4, 5, 7, -2];
+	//测试为arr新增的indexof方法
+	alert(arr.indexof(-2));
+</script>

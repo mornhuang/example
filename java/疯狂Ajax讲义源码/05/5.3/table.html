@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<title>表格相关属性测试</title>
+	<style type="text/css">
+	td {
+		background-color:#cccccc;
+	}
+	</style>
+</head>
+<body>
+<!-- 表格的单元格边框合并在一起，看起来分割线为单线,并将表格标题放在下边 -->
+border-collapse:collapse;caption-side:bottom;
+<table width="400" border="1" 
+	style="border-collapse:collapse;caption-side:bottom;">
+	<caption>表格标题</caption>
+	<tr>
+		<td>疯狂Java讲义</td>
+		<td>轻量级Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂XML讲义</td>
+		<td>经典Java EE企业应用实战</td>
+	</tr>
+</table>
+<!-- 表格的单元格边框分开，看起来表格分割线为双线，并隐藏空格的边框线 -->
+border-collapse:seperate;empty-cells: hide;
+<table width="400" border="1"
+	style="border-collapse:seperate;empty-cells: hide;">
+	<tr>
+		<td>疯狂Java讲义</td>
+		<td>轻量级Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂XML讲义</td>
+		<td>经典Java EE企业应用实战</td>
+	</tr>
+</table>
+<!-- 表格的单元格边框分开，IE中看起来表格分割线为双线，并设置两个单元格的间距 -->
+border-collapse:seperate;border-spacing:20px;
+<table width="400" border="1"
+	style="border-collapse:seperate;border-spacing:20px">
+	<tr>
+		<td>疯狂Java讲义</td>
+		<td>轻量级Java EE企业应用实战</td>
+	</tr>
+	<tr>
+		<td>疯狂XML讲义</td>
+		<td>经典Java EE企业应用实战</td>
+	</tr>
+</table>
+</body>
+</html>

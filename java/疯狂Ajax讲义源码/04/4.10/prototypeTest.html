@@ -1,0 +1,36 @@
+<script>
+	//定义一个Person函数，同时也定义了Person类
+	function Person(name , age)
+	{
+		//将局部变量name、age赋值给实例属性name、age
+		this.name = name;
+		this.age = age;
+		//使用内嵌的函数定义了Person类的方法
+		this.info = function()
+		{
+			document.writeln("姓名：" + this.name + "<br />");
+			document.writeln("年龄：" + this.age + "<br />");
+		}
+	}
+	//创建Person的实例p1
+	var p1 = new Person('yeeku' , 29);
+	//执行Person的info方法
+	p1.info();
+	//此处不可调用walk方法，变量p还没有walk方法
+	//将walk方法增加到Person的prototype属性上
+	Person.prototype.walk = function()
+	{
+		document.writeln(this.name + '正在慢慢溜达...<br />');
+	}
+	document.writeln('<hr />');
+	//创建Person的实例p2
+	var p2 = new Person('leegang' , 30);
+	//执行p2的info方法
+	p2.info();
+	document.writeln('<hr />');
+	//执行p2的walk方法
+	p2.walk();
+	//此时p1也具有了walk方法——JavaScript允许为类动态增加方法和属性
+	//执行p1的walk方法
+	p1.walk();
+</script>

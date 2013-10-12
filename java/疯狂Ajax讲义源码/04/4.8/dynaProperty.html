@@ -1,0 +1,26 @@
+<script>
+	function Student(grade , subject)
+	{
+		//d定义一个grade实例属性，
+		//将grade形参的值赋值给该实例属性。
+		this.grade = grade;
+		//定义一个subject静态属性，
+		//将subject形参的值赋值给该静态属性。
+		Student.subject = subject;
+	}
+	s1 = new Student(5, 'Java');
+	with(document)
+	{
+		writeln('s1的grade属性：' + s1.grade + "<br />");
+		writeln('s1的subject属性：' + s1.subject + "<br />");
+		writeln('Student的subject属性：' + Student.subject + "<br />");
+	}
+	//为s1对象的subject属性赋值，即为它增加一个subject属性
+	s1.subject = 'Ruby';
+	with(document)
+	{
+		writeln('<hr />为s1的subject属性赋值后<br />');
+		writeln('s1的subject属性：' + s1.subject + "<br />");
+		writeln('Student的subject属性：' + Student.subject + "<br />");
+	}
+</script>

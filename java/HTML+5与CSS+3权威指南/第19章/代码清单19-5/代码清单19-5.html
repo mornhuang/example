@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>让多个属性值同时变化</title>
+</head>
+<style type="text/css">
+div{
+    position: absolute;
+    background-color: yellow;
+    top:100px;
+    width:500px;
+}
+@-webkit-keyframes mycolor{
+    0%{
+           background-color: red;
+           -webkit-transform: rotate(0deg);
+    }
+    40%{
+            background-color: darkblue;
+            -webkit-transform: rotate(30deg);
+    }
+    70%{
+            background-color: yellow;
+            -webkit-transform: rotate(-30deg);
+    }
+    100%{
+            background-color: red;
+            -webkit-transform: rotate(0deg);
+    }
+}
+div:hover{
+        -webkit-animation-name: mycolor;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function: linear;
+}
+</style>
+<body>
+<div>
+示例文字
+</div>
+</body>
+</html>

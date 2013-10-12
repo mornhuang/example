@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="UTF-8"/>  
+<title>视频播放器</title>  
+<script type="text/javascript">  
+function playOrPauseVideo() 
+{  
+    var videoUrl = document.getElementById("videoUrl").value;  
+    var video = document.getElementById("video");  
+    //使用事件监听方式捕捉事件
+    video.addEventListener("timeupdate", function()
+    {  
+        var timeDisplay = document.getElementById("time");  
+        //用秒数来显示当前播放进度
+        timeDisplay.innerHTML = Math.floor(video.currentTime) +"／"+ Math.floor(video.duration) +"（秒）";
+    }, false);  
+        
+    if(video.paused) 
+    {  
+        if(videoUrl != video.src) 
+        {  
+            video.src = videoUrl;  
+            video.load();  
+        } 
+        else 
+        {  
+            video.play();  
+        }  
+        document.getElementById("playButton").value = "暂停";  
+    } 
+    else 
+    {  
+        video.pause();  
+        document.getElementById("playButton").value = "播放";  
+    }  
+}  
+</script>  
+</head>  
+<body>  
+<video id="video" width="400" height="300" autoplay loop="loop">
+</video>  
+<br />  
+视频地址：<input type="text" id="videoUrl"/>  
+<input id="playButton" type="button" 
+onclick="playOrPauseVideo()" value="播放"/>  
+<span id="time"></span>  
+</body>  
+</html>

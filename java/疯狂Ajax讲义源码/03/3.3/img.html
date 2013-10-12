@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 图片相关标签 </title>
+</head>
+<body>
+<img src="img/logo.jpg" alt="疯狂Java的Logo" /><br />
+<!-- 定义图片，指定高、宽 -->
+<img src="img/logo.jpg" width="300" height="120"
+	alt="疯狂Java的Logo" /><br />
+<!-- 定义图片，使用指定的图片映射 -->
+<img src="img/logo.jpg" width="300" 
+	height="120" border="0" usemap="#test"
+	alt="疯狂Java的Logo" /><br />
+<!-- 定义图片映射 -->
+<map name="test" id="test">
+	<!-- 为该图片映射定义2个区域 -->
+	<area shape="circle" coords="57,55,25" 
+		href="http://www.leegang.org" alt="leegang.org" />
+	<area shape="poly" coords="188,28,185,50,200,74,224,72,246,51"
+		href="http://www.crazyjava.org" alt="crazyjava.org" />
+</map>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> Hash对象 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//定义一个JavaScript对象
+var person = 
+{
+	name:'yeeku',
+	age:29
+};
+//将JavaScript对象转换成Hash对象
+var h = $H(person);
+//将Hash对象转换成查询字符串。输出：name=yeeku&age=29
+document.writeln(h.toQueryString() + "<br />");
+//测试merge方法
+var person = 
+{
+	name:'yeeku',
+	age:29
+};
+var teacher = 
+{
+	name:'yeeku.H.lee',
+	gender:'male'
+};
+//将后一个Hash对象merge到前一个Hash对象中
+var h = $H(person).merge($H(teacher));
+//输出：name=yeeku.H.lee&age=29&gender=male
+document.writeln(h.toQueryString() + "<br />");
+//直接使用JavaScript对象来更新Hash对象
+h.update({age : 30 , subject :"java"});
+//将输出：name=yeeku.H.lee&age=30&gender=male&subject=java
+document.writeln(h.toQueryString() + "<br />");
+//遍历Hash对象的每个key-value对
+h.each(function(pair)
+{
+	document.writeln(pair.key + "-->" + pair.value + "<br />");
+});
+</script>
+</body>
+</html>

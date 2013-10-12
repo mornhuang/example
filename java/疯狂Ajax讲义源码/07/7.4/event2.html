@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> DOM 事件绑定 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<button id="a">按钮</button>
+<script type="text/javascript">
+//定义一个形参evt
+function clickHandler(evt)
+{
+	//对于IE浏览器，事件作为隐式可用的全局对象event
+	if (!evt) 
+	{
+		evt = window.event
+	}
+	//对于DOM 2事件模型，访问事件源用target属性
+	if (evt.target)
+	{
+		alert(evt.target.innerHTML);
+	}
+	//对于IE浏览器
+	else
+	{
+		alert(evt.srcElement.innerHTML);
+	}
+}
+//为按钮a绑定事件处理器
+document.getElementById("a").onclick=clickHandler;
+</script>
+</body>
+</html>

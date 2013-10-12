@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="jspchat"
+  id="myeclipse.1221660947015"
+  context-root="/jspchat"
+  j2ee-spec="5.0"
+  archive="jspchat.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

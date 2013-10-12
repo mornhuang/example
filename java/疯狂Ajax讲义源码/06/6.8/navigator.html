@@ -1,0 +1,11 @@
+<script>
+alert(window.navigator);
+var browser = "当前的浏览器信息是:\n";
+//遍历该浏览器的全部属性
+for(var propname in window.navigator)
+{
+	//将所有属性名、属性值连缀在一起
+    browser += propname + ": " + window.navigator[propname] + "\n"
+}
+alert(browser);
+</script>

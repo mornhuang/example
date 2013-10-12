@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 框架集页面 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<!-- 指定cols属性，该框架将被水平划分 -->
+<frameset cols="80,60,*" >
+	<!-- 插入第一个框架页面，指定装载a.html，显示滚动条 -->
+	<frame src="a.html" name="firstFrame" scrolling="yes"
+		frameborder="1" id="firstFrame" title="firstFrame" />
+	<!-- 插入第二个框架页面，指定装载b.html -->
+	<frame src="b.html" name="secondFrame" scrolling="no"
+		noresize="noresize" id="secondFrame" title="secondFrame" />
+	<!-- 再次插入嵌套的框架集 -->
+	<frameset rows="80,*" >
+		<!-- 下面再次插入2个框架页面，这两个页面可拖动大小 -->
+		<frame src="c.html" name="topFrame" 
+			scrolling="no" id="topFrame" title="topFrame" />
+		<frame src="d.html" name="bottomFrame" 
+			id="bottomFrame" title="bottomFrame" />
+	</frameset>
+	<!-- 页面普通部分应该放在noframes里 -->
+	<noframes>
+		<body>
+		主体部分
+		</body>
+	</noframes>
+</frameset>
+</html>

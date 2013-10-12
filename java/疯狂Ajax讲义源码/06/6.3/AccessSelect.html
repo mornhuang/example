@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 访问列表项 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+	<select id="mySelect" name="mySelect" size="6">
+		<option value="java">疯狂Java讲义</option>
+		<option value="ssh">轻量级Java EE企业应用实战</option>
+		<option value="ajax" selected="selected">疯狂Ajax讲义</option>
+		<option value="xml">疯狂XML讲义</option>
+		<option value="ejb">经典Java EE企业应用实战</option>
+		<option value="workflow">疯狂Workflow讲义</option>
+	</select><br />
+	<input type="button" value="第一个"
+		onclick="change(curTarget.options[0]);" />
+	<input type="button" value="上一个"
+		onclick="change(curTarget.options[curTarget.selectedIndex - 1]);" />
+	<input type="button" value="下一个"
+		onclick="change(curTarget.options[curTarget.selectedIndex + 1]);" />
+	<input type="button" value="最后一个"
+		onclick="change(curTarget.options[curTarget.length - 1]);" />
+	<script type="text/javascript">
+		var curTarget = document.getElementById("mySelect");
+		function change(target)
+		{
+			alert(target.text);
+		}
+	</script>
+</body>
+</html>

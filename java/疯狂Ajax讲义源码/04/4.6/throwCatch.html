@@ -1,0 +1,23 @@
+<script>
+try
+{
+	for (var i = 0 ; i < 10 ; i++)
+	{
+		//在页面输出i值
+		document.writeln(i + '<br>');
+		//当i大于4时，抛出异常
+		if (i > 4) 
+			throw new Error('用户自定义错误');    
+	}
+}
+//如果try块中的代码出现异常，自动跳转到catch块执行
+catch (e)
+{
+	document.writeln('系统出现异常' + e.message + '<br>');
+}
+//finally块的代码总可以获得执行的机会
+finally
+{
+	document.writeln('系统的finally块');
+}
+</script>

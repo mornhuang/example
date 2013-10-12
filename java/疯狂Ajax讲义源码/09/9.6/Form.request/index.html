@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用Form.request </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<h3>请输入用户名、密码登录</h3>
+<form id="login" action="login.jsp" method="post">
+用户名：<input name="user" type="text" /><br />
+密码：<input name="pass" type="text" onclick="login();"/><br />
+<input value="登录" type="button" onclick="login();"/>
+</form>
+<script src="prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+//处理登录函数
+function login()
+{
+	//使用Form的request发送异步请求
+	$("login").request(
+	{
+		//指定回调函数
+		onComplete: function(request)
+		{
+			alert(request.responseText);
+		}
+	});
+}
+</script>
+</body>
+</html>

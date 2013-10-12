@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 使用jQuery的get方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<h3>请输入你的信息：</h3>
+<form id="user">
+	用户名:<input type="text" name="user" /><br />
+	喜欢的图书:<select multiple="multiple" name="books">
+		<option value="java">疯狂Java讲义</option>
+		<option value="javaee">轻量级Java EE企业应用实战</option>
+		<option value="ajax">疯狂Ajax讲义</option>
+		<option value="xml">疯狂XML讲义</option>
+	</select><br />
+	<input id="load" type="button" value="发送异步GET请求"/>
+</form><hr />
+<div id="show"></div>
+<script src="jquery-1.2.6.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+	//为id为load的按钮绑定事件处理函数
+	$("#load").click(function()
+	{
+		//指定向pro.jsp发送请求，以id为user表单里各表单空间作为请求参数
+		$.get("pro.jsp" , $("#user").serializeArray() , 
+		//指定回调函数
+		function(data , statusText)
+		{
+			$("#show").empty();
+			$("#show").append("服务器响应状态为：" + statusText + "<br />");
+			$("#show").append(data);
+		},
+		//指定服务器响应为html
+		"html"
+		);
+	});
+</script>
+</body>
+</html>

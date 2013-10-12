@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> Internet Explorer 事件绑定 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<!-- 绑定事件处理器时，将event作为参数传入 -->
+<button onclick="clickHandler(event);">按钮</button>
+<script type="text/javascript">
+	function clickHandler(evt)
+	{
+		alert(evt.srcElement.innerHTML);
+	}
+</script>
+</body>
+</html>

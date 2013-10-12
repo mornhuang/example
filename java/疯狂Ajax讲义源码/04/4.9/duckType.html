@@ -1,0 +1,33 @@
+<script>
+	//定义函数changeAge,函数需要一个参数
+	function changeAge(person)
+	{
+		//首先要求person必须是对象，而且person的age属性为number
+		if (typeof person == 'object' 
+			&& typeof person.age == 'number')
+		{
+			//执行函数所需的逻辑操作
+			document.write("函数执行前person的Age值为：" 
+				+ person.age + "<br/>");
+			person.age = 10;
+			document.write("函数执行中person的Age值为：" 
+				+ person.age + "<br/>");
+		}
+		//否则将输出提示，参数类型不符合
+		else
+		{
+			document.writeln("参数类型不符合" +
+				typeof person + "<br>");
+		}
+	}
+	//分别采用不同方式调用函数
+	changeAge();
+	changeAge('xxx');
+	changeAge(true);
+	//采用JSON语法创建第一个对象
+	p = {abc : 34};
+	changeAge(p);
+	//采用JSON语法创建第二个对象
+	person = {age : 25};
+	changeAge(person);
+</script>

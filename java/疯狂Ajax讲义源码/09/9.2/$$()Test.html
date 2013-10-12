@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> $$()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+	<style type="text/css">
+		.pt9{
+			font-size:9pt;
+		}
+	</style>
+</head>
+<body>
+<script src="../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<span id="a">Struts2权威指南</span>
+<span>疯狂Java讲义</span>
+<span class="pt9">轻量级Java EE企业应用实战</span>
+<div class="pt9">疯狂Ajax讲义</div>
+<hr />
+<script type="text/javascript">
+	//返回页面中所有<span.../>元素
+	var eleList = $$("span");
+	for (var i = 0; i < eleList.length; i++ )
+	{
+		document.writeln('$$("span")的' + i + '个元素为:' 
+			+ eleList[i].innerHTML + "<br />");
+	}
+	//返回页面中ID为a的元素
+	var eleList = $$("#a");
+	for (var i = 0; i < eleList.length; i++ )
+	{
+		document.writeln('$$("#a")的' + i + '个元素为:' 
+			+ eleList[i].innerHTML + "<br />");
+	}
+	//返回页面中ID为a的元素
+	var eleList = $$(".pt9");
+	for (var i = 0; i < eleList.length; i++ )
+	{
+		document.writeln('$$(".pt9")的' + i + '个元素为:' 
+			+ eleList[i].innerHTML + "<br />");
+	}
+</script>
+</body>
+</html>

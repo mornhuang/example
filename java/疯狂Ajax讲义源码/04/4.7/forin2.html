@@ -1,0 +1,11 @@
+<script>
+	//在页面输出静态文本
+	document.write("<h1>Navigator对象的全部属性如下：</h1>");
+	//遍历navigator对象的所有属性
+	for (propName in navigator)
+	{
+		//输出navigator对象的所有属性名，以及对应的属性值
+		document.write('属性' + propName + '的值是：' + navigator[propName]);
+		document.write("<br />");
+	}
+</script>

@@ -1,0 +1,18 @@
+<script>
+	function changeAge(person)
+	{
+		if (typeof person == 'object')
+		{
+			//改变参数的age属性
+			person.age = 10;
+			//输出参数的age属性
+			document.write("函数执行中person的Age值为："
+				+ person.age + "<br />");
+		}
+		else
+		{
+			alert("参数类型不符合:" + typeof person);
+		}
+	}
+	changeAge();
+</script>

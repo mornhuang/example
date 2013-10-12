@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> $()函数 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<script src="../prototype-1.6.0.3.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+function clickHandler()
+{
+	//修改out对象的innerHTML属性
+	$("out").innerHTML = "使用Prototype.js"
+}
+</script>
+<input onclick="clickHandler();" type="button" value="按钮"/>
+<div id="out"></div>
+</body>
+</html>

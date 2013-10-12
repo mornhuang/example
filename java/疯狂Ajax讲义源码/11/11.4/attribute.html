@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 操作属性的工具方法 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.crazyjava.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<img/><img/>
+<div>
+	<img/><img/><img/>
+</div>
+<script type="text/javascript" src="../jquery-1.2.6.min.js">
+</script>
+<script type="text/javascript">
+	//获取body下的img元素，并为这些img元素设置src属性值
+	$("body>img").attr("src" , "logo.jpg")
+		.attr("alt" , "疯狂Java联盟");
+	//获取div下的img元素，并为这些img元素设置src属性值
+	$("div>img").attr("src" , function(index)
+	{
+		return index + 1 + ".gif";
+	});
+</script>
+</body>
+</html>

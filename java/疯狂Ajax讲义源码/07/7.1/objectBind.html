@@ -1,0 +1,54 @@
+<script language=javascript>
+function check(event)
+{
+	alert(event);
+	var form = event.target;
+	var errStr = "";
+	if (trim(form.user.value) == null || trim(form.user.value) == "")
+	{
+		errStr += "\n用户名不能为空!";
+		form.user.focus();
+	}
+	if (trim(form.pass.value) == null || trim(form.pass.value) == "")
+	{
+		errStr += "\n密码不能为空!";
+		form.pass.focus();
+	}
+	if (trim(form.email.value) == null || trim(form.email.value) == "")
+	{
+		errStr += "\n电子邮件不能为空!";
+		form.email.focus();
+	}
+	if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(trim(form.email.value)))
+	{
+		errStr += "\n电子邮件的格式不正确!";
+		form.email.focus();
+	}
+	if( errStr != "" )
+	{
+		alert(errStr);
+		return false;
+	}
+}
+//使用正则表达式截取空格
+function trim(s)
+{
+   	return s.replace( /^\s*/, "" ).replace( /\s*$/, "" );
+}
+
+
+</script>
+
+<div align="center">
+<h2>数据校验表单</h2>
+<form method=post id="register" name="register" action="#">
+	用户名：<input type="text" name="user"/><br>
+	密&nbsp;&nbsp;码：<input type="password" name="pass"/><br>
+	电&nbsp;&nbsp;邮：<INPUT TYPE="text" NAME="email"><br>
+	<INPUT TYPE="submit" value="提交"/>
+</form>
+</div>
+<script>
+	var target = document.getElementById("register");
+	target.onsubmit = check;
+</script>

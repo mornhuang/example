@@ -1,0 +1,10 @@
+<script>
+alert(window.screen);
+var str = "当前的屏幕信息是:\n";
+//遍历screen对象的所有属性
+for(var propname in window.screen)
+{
+    str += propname + ": " + window.screen[propname] + "\n"
+}
+alert(str);
+</script>

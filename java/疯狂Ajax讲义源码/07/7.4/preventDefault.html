@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 取消事件默认行为 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+友情链接：<br />
+<a id="mylink" href="http://www.leegang.org">疯狂Java联盟</a>
+<script type="text/javascript">
+function killClicks(event)
+{
+	//取消事件默认行为
+	event.preventDefault();
+	alert("超级链接被单击");
+}
+//为按钮绑定事件处理函数（捕获阶段）
+document.getElementById("mylink")
+	.addEventListener("click", killClicks, true);
+</script>
+</body>
+</html>

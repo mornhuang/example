@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title> 简单表单 </title>
+	<meta name="author" content="Yeeku.H.Lee" />
+	<meta name="website" content="http://www.leegang.org" />
+	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+</head>
+<body>
+<form action="http://www.leegang.org" method="get">
+	单行文本框：<input id="username" name="username" type="text" /><br />
+	不能编辑的文本框：<input id="username2" name="username" type="text"
+		readonly="readonly" /><br />
+	密码框：<input id="password" name="password" type="password" /><br />
+	隐藏域：<input id="hidden" name="hidden" type="hidden" /><br />
+	第一组单选框：<br />
+	<input id="color" name="color" type="radio" value="red"/>
+	<input id="color2" name="color" type="radio" value="green" />
+	<input id="color3" name="color" type="radio" value="blue"/><br />
+	第二组单选框：<br />
+	<input id="gender" name="gender" type="radio" value="male"/>
+	<input id="gender2" name="gender" type="radio" value="female" /><br />
+	两个复选框：<br />
+	<input id="website" name="website" type="checkbox" 
+		value="leegang.org" />
+	<input id="website2" name="website" type="checkbox" 
+		value="crazyjava.org" /><br />
+	文件上传域：<input id="file" name="file" type="file"/><br />
+	图像域：<input type="image" src="img/wjc.gif" /><br />
+	下面是四个按钮：<br />
+	<input id="ok" name="ok" type="submit" value="提交" />
+	<input id="dis" name="dis" type="submit" value="提交"
+		disabled="disabled" />
+	<input id="cancel" name="cancel" type="reset" value="重填"/>
+	<input id="no" name="no" type="button" value="无动作" />
+</form>
+</body>
+</html>
