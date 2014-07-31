@@ -21,4 +21,5 @@
 *.plg
 *.positions
 .settings
+.idea
 
