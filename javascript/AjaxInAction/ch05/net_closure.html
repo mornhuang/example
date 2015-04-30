@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<script type="text/javascript" src="net.js"></script>
+<script type="text/javascript">
+
+window.onload=function(){
+  var loader1=new net.ContentLoader('planets.xml',onload1);
+  var loader2=new net.ContentLoader('planets.xmll',onload2);
+  var loader3=new net.ContentLoader('planets.xml',onload3);
+  var loader4=new net.ContentLoader('http://www.google.com/',onload4);
+}
+
+function onload1(){
+  alert("egad!\n\n"+this.req.responseText);
+}
+
+function onload2(){
+  alert("gadzooks!\n\n"+this.req.responseText);
+}
+
+function onload3(){
+  alert("huzzah!\n\n"+this.req.responseText);
+}
+
+function onload4(){
+  alert("lawks-a-mercy!\n\n"+this.req.responseText);
+}
+
+
+</script>
+
+</head>
+<body>
+
+
+</body>
+</html>
+
+<iframe  width="0" height="0"></iframe>

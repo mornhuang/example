@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Phone Search</title>
+   <link href="css/xslt.css" rel="stylesheet" type="text/css">
+
+
+   <script src="scripts/prototype.js"></script>
+   <script src="scripts/rico.js"></script>
+   <script src="scripts/xslt.js"></script>
+
+   <script>
+      var onloads = new Array();
+      function bodyOnLoad() {
+         for ( var i = 0 ; i < onloads.length ; i++ )
+            onloads[i]();
+      }
+   onloads.push( createLiveSearch );
+
+   function createLiveSearch() {
+     liveSearch = new LiveSearch(
+       'liveSearchExample.page.htm',
+       document.getElementById('company'),
+       'PhoneXML.php',
+       'Phone.xsl',
+       {}
+     );
+   }
+   </script>
+  </head>
+  <body onload="javascript:bodyOnLoad()" >
+    <form name="Form1">
+    Name: <input id="company" name="user" type="text"/>
+          <input type="submit" name="btnSearch" value="Search" />
+    <br/><br/>
+    <div id="results"></div>
+   </form>
+  </body>
+</html>
+
+
+<iframe  width="0" height="0"></iframe>

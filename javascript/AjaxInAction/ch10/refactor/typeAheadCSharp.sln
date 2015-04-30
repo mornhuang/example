@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "typeAheadCSharp", "http://localhost/typeAheadCSharp/typeAheadCSharp.csproj", "{1DC126CC-7E75-454B-9ABF-C62944665E74}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1DC126CC-7E75-454B-9ABF-C62944665E74}.Debug.ActiveCfg = Debug|.NET
+		{1DC126CC-7E75-454B-9ABF-C62944665E74}.Debug.Build.0 = Debug|.NET
+		{1DC126CC-7E75-454B-9ABF-C62944665E74}.Release.ActiveCfg = Release|.NET
+		{1DC126CC-7E75-454B-9ABF-C62944665E74}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

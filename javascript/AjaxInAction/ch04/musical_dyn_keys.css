@@ -1,0 +1,54 @@
+.body{
+  background-color: white;
+}
+.musicalKeys{
+  background-color: #ffe0d0;
+  border: solid maroon 2px;
+  position: absolute;
+  overflow: auto;
+  margin: 4px;
+}
+.toplong{
+  width: 536px;
+  height: 68px;
+  top: 24px;
+  left: 24px;
+}
+.sidebar{
+  width: 48px;
+  height: 400px;
+  top: 24px;
+  left: 570px;
+}
+
+.musicalButton{
+  border: solid navy 1px;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  margin: 2px;
+  float: left;
+}
+.do{ background-color: red; }
+.re{ background-color: orange; }
+.mi{ background-color: yellow; }
+.fa{ background-color: green; }
+.so{ background-color: blue; }
+.la{ background-color: indigo; }
+.ti{ background-color: violet; }
+
+div.console{
+  font-family: arial, helvetica;
+  font-size: 16px;
+  color: navy;
+  background-color: white;
+  border: solid navy 2px;
+  width: 536px;
+  height: 320px;
+  top: 106px;
+  left: 24px;
+  margin: 4px;
+  position: absolute;
+  overflow: auto;
+}
+

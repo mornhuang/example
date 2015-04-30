@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="com.manning.ajaxinaction.planets">
+
+  <class name="Fact" table="facts">
+    <id name="uid" column="uid" type="long" unsaved-value="-1">
+      <generator class="native"/>
+    </id>
+
+    <property name="text" type="string" not-null="true"/>
+    <property name="author" type="string" not-null="true"/>
+    <property name="date" column="entry_date" type="date" not-null="true"/>
+
+    <many-to-one name="parent" column="planet_id" not-null="true"/>
+
+  </class>
+
+  </hibernate-mapping>

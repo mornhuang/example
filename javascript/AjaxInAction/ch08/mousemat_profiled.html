@@ -1,0 +1,56 @@
+<html>
+
+<head>
+<link rel='stylesheet' type='text/css' href='mousemat.css' />
+<link rel='stylesheet' type='text/css' href='objviewer.css' />
+<script type='text/javascript' src='x/x_core.js'></script>
+<script type='text/javascript' src='extras-array.js'></script>
+<script type='text/javascript' src='styling.js'></script>
+<script type='text/javascript' src='objviewer.js'></script>
+<script type='text/javascript' src='stopwatch.js'></script>
+<script type='text/javascript' src='eventRouter.js'></script>
+<script type='text/javascript'>
+
+var cursor=null;
+
+window.onload=function(){
+  var watch=stopwatch.getWatch("window onload",true);
+  var mat=document.getElementById('mousemat');
+  cursor=document.getElementById('cursor');
+
+  var mouseRouter=new jsEvent.EventRouter(mat,"onmousemove");
+  mouseRouter.addListener(writeStatus);
+  mouseRouter.addListener(drawThumbnail);
+  watch.stop();
+}
+
+function writeStatus(e){
+  var watch=stopwatch.getWatch("write status",true);
+  window.status=e.clientX+","+e.clientY;
+  watch.stop();
+}
+
+function drawThumbnail(e){
+  var watch=stopwatch.getWatch("draw thumbnail",true);
+  cursor.style.left=((e.clientX/5)-2)+"px";
+  cursor.style.top=((e.clientY/5)-2)+"px";
+  watch.stop();
+}
+</script>
+</head>
+
+<body>
+<div>
+<a href='javascript:stopwatch.report("profiler")'>profile</a>
+</div>
+
+<div>
+  <div class='mousemat' id='mousemat'/></div>
+  <div class='thumbnail' id='thumbnail'>
+    <div class='cursor' id='cursor'></div>
+  </div>
+  <div class='profiler objViewBorder' id='profiler'></div>
+</div>
+
+</body>
+</html>

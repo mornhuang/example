@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Portal</title>
+    <script type="text/javascript" src="AJAXWindow.js"></script>
+    <script type="text/javascript" src="net.js"></script>
+    <script type="text/javascript">
+
+      var reqXML;
+
+      function LoginRequest(xAction){
+        if(xAction == "login"){
+          document.getElementById("spanProcessing").innerHTML = " Verifying Credentials";
+            }
+            var url = 'portalLogin.aspx';
+          var strName = document.Form1.username.value;
+        var strPass = document.Form1.password.value;
+            var strParams = "user="+strName + "&pass=" + strPass + "&action=" + xAction
+            var loader1=new net.ContentLoader(url,CreateScript,null,"POST",strParams);
+          }
+
+          function CreateScript(){
+            strText = this.req.responseText;
+            eval(this.req.responseText);
+          }
+
+
+          function Settings(xAction,xHow){
+            if(xHow){
+              document.getElementById("divSettings").style.display = "block";
+              document.getElementById("divSettings").innerHTML = "Loading Data. Please wait!";
+            }
+            var url = "portalLogin.aspx";
+            var strParams = "action=" + xAction
+            var loader1=new net.ContentLoader(url,BuildSettings,ErrorBuildSettings,"POST",strParams);
+          }
+
+          function BuildSettings(){
+            strText = this.req.responseText;
+            document.getElementById("divSettings").innerHTML = strText;
+          }
+          function ErrorBuildSettings(){
+            alert('There was an error trying to connect to the server.');
+            document.getElementById("divSettings").style.display = "none";
+          }
+
+          function ExitSettings(){
+            window.location.replace(window.location.href);
+          }
+
+          function Save(xID){
+            winProps = "&ref=" + xID;
+            winProps += "&x=" + document.Form1.elements("tx_"+xID).value;
+            winProps += "&y=" + document.Form1.elements("ty_"+xID).value;
+            winProps += "&w=" + document.Form1.elements("tw_"+xID).value;
+            winProps += "&h=" + document.Form1.elements("th_"+xID).value;
+            winProps += "&u=" + escape(document.Form1.elements("tu_"+xID).value);
+            winProps += "&t=" + escape(document.Form1.elements("tt_"+xID).value);
+            Settings("UpdateRow" + winProps,true);
+            elemWin = "";
+          }
+
+          function Delete(xID){
+            var bYN =  confirm("Are you sure you want to delete this window?");
+            if(bYN)Settings("DeleteWindow&ref=" + xID,true);
+          }
+
+          function SaveWindowProperties(){
+            winProps = "&ref=" + elemWin.id;
+            winProps += "&x=" + parseInt(elemWin.style.left);
+            winProps += "&y=" + parseInt(elemWin.style.top);
+            winProps += "&w=" + parseInt(elemWin.style.width);
+            winProps += "&h=" + parseInt(elemWin.style.height);
+            Settings("UpdateDragWindow" + winProps,false);
+            elemWin = "";
+          }
+
+          window.onload = function(){
+            LoginRequest('PageLoad')
+          }
+
+    </script>
+    <link href="AjaxWindows.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+       body, html{ padding: 0px; margin: 0pc; height:100%;}
+           #header{ background-color: #C0C0C0; height: 100px; border-bottom: 1px solid black; font-weight: bold; }
+           #login{ text-align: right; float: right; margin-top:15px; margin-right:15px; }
+    </style>
+  </head>
+  <body>
+    <form name="Form1">
+      <div id="header">
+        <span id="login">
+                  Name: <input type="text" name="username"><br>
+                  Password: <input type="password" name="password"><br>
+                  <span id="spanProcessing"></span>
+                  <input type="button" name="btnSub" value="login" onclick="LoginRequest('login')">
+                </span>
+        <span id="sloganText">Ajax Portal</span>
+      </div>
+      <div id="defaultContent">
+        <p>Some text goes here!</p>
+      </div>
+      <div id="divSettings" style="display:none;position:absolute;top:0px;left:0px;z-index:10000;width:100%;height:100%;background-color:white;"></div>
+    </form>
+  </body>
+</html>

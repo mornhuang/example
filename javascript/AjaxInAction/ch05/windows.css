@@ -1,0 +1,40 @@
+/*
+stylesheet for windows module
+*/
+
+div.window{
+  position: absolute;
+  overflow: auto;
+  background-color: #eeefff;
+  border: solid #0066aa 2px;
+  margin: 8px;
+  padding: 6px;
+}
+
+div.dragbar{
+  background-color: white;
+  border: solid red 1px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  float: right;
+}
+
+div.titlebar {
+  background-color: white;
+  border: solid red 1px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  float: left;
+}
+
+.fullWidth{
+  width: 100%
+}
+
+.winContents{
+  position:absolute;
+  background-color: white;
+  border: solid grey 1px;
+}

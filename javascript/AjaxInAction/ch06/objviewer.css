@@ -1,0 +1,73 @@
+/*
+stylesheet for object viewer
+*/
+
+.objViewBorder{
+  position: absolute;
+  padding: 4px;
+  border: solid grey 1px;
+  background-color: white;
+  color: grey;
+}
+
+.objViewInnerBorder{
+  padding: 1px;
+  top-border: solid grey 1px;
+  bottom-border: solid grey 1px;
+  background-color: white;
+  color: grey;
+}
+
+.objViewRow{
+  height: 24px;
+}
+
+.objViewName{
+  width: 64px;
+  overflow: hidden;
+}
+
+.objViewValue{
+  color: #408070;
+}
+
+.objViewButton{
+  color: #40a070;
+  background-color: white;
+  border:solid white 1px;;
+}
+
+.objViewThumbnail{
+  background-color: white;
+  border:none;
+  width:64px;
+  height:64px;
+}
+
+.objViewButton:hover{
+  background-color: #d0d0d0;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #909090;
+  border-left: solid 1px #e0e0e0;
+  border-right: solid 1px #909090;
+}
+
+.right{
+  text-align: right;
+}
+
+.emphasis{
+  border-bottom: solid #909090 1px;
+  width:100%;
+}
+
+.pending{
+  background-color: #d0d0d0;
+  color: #707070;
+  border: solid 1px #707070;
+}
+
+.new{
+  background-color: #a04070;
+  color: white;
+}

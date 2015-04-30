@@ -1,0 +1,55 @@
+<html>
+<head>
+
+<script type='text/javascript' src='prototype.js'></script>
+<script type='text/javascript' src='rico.js'></script>
+<script type='text/javascript'>
+  window.onload=function(){
+    var outer=$('myAccordion');
+    outer.style.width='320px';
+    new Rico.Accordion(
+      outer,
+      { panelHeight:400,
+        expandedBg:'#909090',
+        collapsedBg:'#404040',
+        onShowTab: onShowTab
+      }
+    );
+  }
+
+  function onShowTab(a,b,c,d){
+  }
+</script>
+
+</head>
+
+<body>
+
+<div id='myAccordion'>
+
+  <div>
+    <div>Dictionary Definition</div>
+    <div>
+      <ul>
+      <li><b>n.</b>A portable wind instrument with a small
+      keyboard and free metal reeds that sound when air is
+      forced past them by pleated bellows operated by the
+      player.</li>
+      <li><b>adj.</b>Having folds or bends like the bellows
+      of an accordion: accordion pleats; accordion blinds.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <div>A picture</div>
+    <div>
+    <img src='monkey-accordion.jpg'></img>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html><iframe  width="0" height="0"></iframe>

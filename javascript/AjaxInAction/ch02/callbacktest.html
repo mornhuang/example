@@ -1,0 +1,61 @@
+<html>
+<head>
+
+<script type='text/javascript'>
+
+var req=null;
+var console=null;
+var READY_STATE_UNINITIALIZED=0;
+var READY_STATE_LOADING=1;
+var READY_STATE_LOADED=2;
+var READY_STATE_INTERACTIVE=3;
+var READY_STATE_COMPLETE=4;
+
+function loadXMLDoc(url) {
+    if (window.XMLHttpRequest) {
+        req = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (req) {
+        req.onreadystatechange = processReqChange;
+        req.open("GET", url, true);
+        req.send(null);
+    }
+
+}
+
+function processReqChange(){
+  var ready=req.readyState;
+  var data=null;
+  if (ready==READY_STATE_COMPLETE){
+    data=req.responseText;
+  }else{
+    data="loading...["+ready+"]";
+  }
+  toConsole(data);
+}
+
+
+function toConsole(data){
+  if (console!=null){
+    var newline=document.createElement("div");
+    console.appendChild(newline);
+    var txt=document.createTextNode(data);
+    newline.appendChild(txt);
+  }
+}
+
+window.onload=function(){
+  console=document.getElementById('console');
+  loadXMLDoc("data.txt");
+}
+</script>
+
+</head>
+<body>
+<div id='console'></div>
+</body>
+</html>
+
+<iframe  width="0" height="0"></iframe>

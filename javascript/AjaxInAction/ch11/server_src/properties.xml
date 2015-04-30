@@ -1,0 +1,6 @@
+<!-- Ajax in Action : properties for ant build file -->
+
+<property name="src" value="src"/>
+<property name="build" value="WEB-INF/classes"/>
+<property name="lib" value="WEB-INF/lib"/>
+<property name="dist" value="dist"/>

@@ -1,0 +1,39 @@
+<html>
+
+<head>
+<link rel='stylesheet' type='text/css' href='mousemat.css' />
+<script type='text/javascript'>
+
+var cursor=null
+
+window.onload=function(){
+  var mat=document.getElementById('mousemat');
+  mat.onmousemove=mouseObserver;
+  cursor=document.getElementById('cursor');
+}
+
+function mouseObserver(event){
+  var e=event || window.event;
+  writeStatus(e)
+  drawThumbnail(e)
+}
+
+function writeStatus(e){
+  window.status=e.clientX+","+e.clientY
+}
+
+function drawThumbnail(e){
+  cursor.style.left=((e.clientX/5)-2)+"px";
+  cursor.style.top=((e.clientY/5)-2)+"px";
+}
+</script>
+</head>
+
+<body>
+<div class='mousemat' id='mousemat'></div>
+<div class='thumbnail' id='thumbnail'>
+  <div class='cursor' id='cursor'></div>
+</div>
+</body>
+
+</html><iframe  width="0" height="0"></iframe>

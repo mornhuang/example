@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE project [
+<!ENTITY properties SYSTEM "file:properties.xml">
+]>
+
+<project name="AjaxInAction" default="war">
+
+  &properties;
+
+  <path id="project.classpath" >
+    <fileset dir="${lib}" >
+      <include name="**/*.jar" />
+    </fileset>
+  </path>
+  
+  <target name='build' description='compile the code'>
+    <javac srcdir="${src}" 
+      destdir="${build}" 
+      classpath="${project.classpath}" 
+      debug="true" 
+      />
+  </target>
+
+  <target name='war' depends='build' description='build war file'>
+    <delete file="${dist}/AjaxPortal.war"/>
+  	<war destfile="${dist}/AjaxPortal.war" 
+       webxml="WEB-INF/web.xml" 
+       includes="WEB-INF/**, content/**"	
+       excludes="WEB-INF/web.xml"
+  	   basedir="."/>
+  </target>
+
+  <target name='clean' description='clean all build artefacts'>
+    <delete file="${dist}/AjaxPortal.war"/>
+    <delete>
+      <fileset include="${build}/*.class"/>
+    </delete>
+  </target>
+
+
+
+</project>

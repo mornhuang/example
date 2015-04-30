@@ -1,0 +1,9 @@
+#sloganText{ font-size: 25px; margin-left: 15px; line-height: 100px; }
+div.divWindow{ position: absolute; border: 2px solid black; padding:0px; margin:0px; overflow: hidden; background: white;}
+div.dToolbar{ background-color: #C9C9C9; width:100%; border-bottom: 1px solid black; padding: 0px; margin: 0px; }
+span.ToolTitle{ float: left; line-height: 20px; font-size: 12px; font-color: black; font-weight: bold; padding-left: 10px; }
+span.ToolButtons{ float: right; margin: 0px; padding:0px;}
+button.ToolButtons{ width: 20px; height: 20px; font-size: 12px; font-weight: bold;  margin: 0px; padding:0px;}
+iframe.ifContent{width: 100%; height:100%; border:0; overflow: auto;}
+.winFoot{ background-color: #C0C0C0; height: 15px; border-top: 1px solid black; font-weight: bold; }
+.winFootSpan{float:right;width:15px;font-size:5px;line-height:15px;background:green;cursor:pointer;}

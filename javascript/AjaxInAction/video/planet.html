@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?> <!-- -*- html -*- -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Planet Browser</title>
+    <link rel="stylesheet" type="text/css" href="planet.css"/>
+    <script src="planet.js"></script>
+    <script src="js/prototype.js"></script>
+    <script src="js/rico.js"></script>    
+  </head>
+  <body>
+
+    <div class="planetbar" id="planets">
+      <div class="planetbutton" onclick="showInfo('mercury');">
+        <img src="images/ball-mercury.gif" alt="mercury"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('venus');">
+        <img src="images/ball-venus.gif" alt="venus"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('earth');">
+        <img src="images/ball-earth.gif" alt="earth"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('mars');">
+        <img src="images/ball-mars.gif" alt="mars"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('jupiter');">
+        <img src="images/ball-jupiter.gif" alt="jupiter"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('saturn');">
+        <img src="images/ball-saturn.gif" alt="saturn"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('uranus');">
+        <img src="images/ball-uranus.gif" alt="uranus"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('neptune');">
+        <img src="images/ball-neptune.gif" alt="neptune"/>
+      </div>
+      <div class="planetbutton" onclick="showInfo('pluto');">
+        <img src="images/ball-pluto.gif" alt="pluto"/>
+      </div>
+
+      <p style="font-size: small; color: #666666;">All images Courtesy NASA/JPL-Caltech.</p>
+
+    </div>
+
+    <form action="">
+      <div id="search-form">
+        <p>Search descriptions: <input id="description" name="description" type="text"
+                                       onkeyup="doSearch(this.value);"/></p>
+      </div>
+    </form>
+
+    <div id="search-results"></div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+/*
+stylesheet for windows module
+*/
+
+div.window{
+  position: absolute;
+  overflow: auto;
+  background-color: #eeefff;
+  border: solid #0066aa 2px;
+  margin: 8px;
+  padding: 0px;
+  width: 420px;
+  height: 280px;
+}
+
+div.titlebar{
+  background-color: #0066aa;
+  background-image: url(images/titlebar_bg.png);
+  background-repeat: repeat-x;
+  color:white;
+  border-bottom: solid black 1px;
+  width: 100%;
+  height: 16px;
+  overflow:hidden;
+}
+
+span.titleButton{
+  position: relative;
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+  margin: 0px 1px; 0px 1px;
+  float:right;
+}
+
+span.titleButton:hover{
+  background-color: #ffffff;
+  border: solid white 1px;
+}
+
+span.titleButton#min{
+  background: transparent url(images/min.png) top left no-repeat;
+}
+
+span.titleButton#max{
+  background: transparent url(images/max.png) top left no-repeat;
+}
+
+span.titleButton#close{
+  background: transparent url(images/close.png) top left no-repeat;
+}
+
+div.contents {
+  background-color: #e0e4e8;
+  overflow: auto;
+  padding: 2px;
+  height:240px;
+}
+
+div.item{
+  position : relative;
+  height : 64px;
+  width: 56px;
+  float: left;
+  color : #004488;
+  font-size: 18;
+  padding: 0px;
+  margin: 4px;
+}
+
+div.item div.itemName{
+  margin-top: 48px;
+  font: 10px verdana, arial, helvetica;
+  text-align: center;
+}
+
+div.folder{
+  background: transparent url(images/folder.png) top left no-repeat;
+}
+
+div.file{
+  background: transparent url(images/file.png) top left no-repeat;
+}
+
+div.special{
+  background: transparent url(images/folder_important.png) top left no-repeat;
+}

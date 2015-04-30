@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<phonebook>
+<entry id='1'>
+  <company>ABC</company>
+  <contact>Dave Crane</contact>
+  <country>UK</country>
+  <phone>123456789</phone>
+</entry>
+<entry id='2'>
+  <company>XYZ</company>
+  <contact>Eric Pascarello</contact>
+  <country>USA</country>
+  <phone>123456789</phone>
+</entry>
+</phonebook>

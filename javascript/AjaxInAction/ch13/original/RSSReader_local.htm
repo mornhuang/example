@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>NewsFade</title>
+    <script type="text/javascript" src="net_local.js"></script>
+      <style type="text/css">
+  #divNewsHolder{
+    width: 600px;
+    border: 2px solid black;
+    padding: 0px;
+  }
+  #divNewsTitle{
+    font-size: 20px;
+    line-height: 26px;
+    height: 26px;
+    background-color: #BACCD9;
+  }
+  #spanCount{
+    font-size: 15px;
+    float: right;
+    padding-right: 10px;
+  }
+  #divAd{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  #divNews1, #divNews2{
+    width: 100%;
+    height: 400px;
+    background: #D9CCBA;
+    position: relative;
+    left: 0px;
+    overflow: auto;
+  }
+  #divNews1{
+    top: -400px;
+  }
+  #divNews2{
+    top: -400px;
+  }
+  #divControls{
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #BACCD9;
+  }
+  #divControls input{
+    width: 100px;
+    background-color: #8C8C8C;
+    color: #000000;
+    font-size: 10px;
+  }
+  .opac0{opacity: .0;filter: alpha(opacity=0);}
+  .opac1{opacity: .2;filter: alpha(opacity=20);}
+  .opac2{opacity: .4;filter: alpha(opacity=40);}
+  .opac3{opacity: .6;filter: alpha(opacity=60);}
+  .opac4{opacity: .8;filter: alpha(opacity=80);}
+  .added{background-color:silver;}
+  .RSSFeed{font-weight: bold; color: Green;}
+  .itemTitle{color: navy;}
+      </style>
+      <script type="text/javascript" src="net_closure.js"></script>
+      <script type="text/javascript">
+var flipLength = 5000;
+var timeColor = 100;
+var strErrors = "<hr/>Error List: <br/>"
+var arrayRSSFeeds = new Array(
+  "feeds/dave.xml", "feeds/eric.xml"
+);
+
+var currentMessage = 0;
+var layerFront = 2;
+var timerSwitch;
+var bPaused = false;
+var arrayMessage = new Array();
+var intLoadFile = 0
+var bLoadedOnce = false;
+
+window.onload=function(){
+  var loader= new Array()
+  for(i=0;i<arrayRSSFeeds.length;i++){
+    loader[loader.length] = new
+      net.ContentLoader(arrayRSSFeeds[i],
+        BuildXMLResults,BuildError);
+  }
+}
+
+function BuildXMLResults(){
+  var xmlDoc = this.req.responseXML.documentElement;
+  var RSSTitle = xmlDoc.getElementsByTagName('title')[0].firstChild.nodeValue;
+  var xRows = xmlDoc.getElementsByTagName('item');
+  for(iC=0;iC<xRows.length;iC++){
+    intMessage = arrayMessage.length;
+    arrayMessage[intMessage] = new Array(
+    RSSTitle,
+    xRows[iC].getElementsByTagName('title')[0]
+.firstChild.nodeValue,
+    xRows[iC].getElementsByTagName('link')[0]
+.firstChild.nodeValue,
+    xRows[iC].getElementsByTagName('description')[0]
+.firstChild.nodeValue);
+  }
+  UpdateStatus();
+}
+
+
+function UpdateStatus(){
+  intLoadFile++;
+  if(intLoadFile < arrayRSSFeeds.length){
+  document.getElementById("divNews2").innerHTML =
+    "Loaded File " + intLoadFile + " of "
+    + arrayRSSFeeds.length + strErrors;
+  }else if(intLoadFile >= arrayRSSFeeds.length && !bLoadedOnce){
+    document.getElementById("divNews2").innerHTML =
+      "Loading Completed" + strErrors;
+    if(arrayMessage.length == 0){
+      alert("No RSS information was collected.");
+      return false;
+    }
+    bLoadedOnce = true;
+    var timerX = setTimeout("ChangeView()",1500);
+  }
+}
+
+function BuildError(){
+  strErrors += "Error:" + "" + "<br/>";
+  UpdateStatus();
+}
+
+function ChangeView(){
+  strDisplay = "<span class='RSSFeed'>" +
+    arrayMessage[currentMessage][0] + "</span>: "
+  strDisplay += "<span class='itemTitle'>" +
+    arrayMessage[currentMessage][1] + "</span><hr>";
+  strDisplay += arrayMessage[currentMessage][3]
+  + "<hr>";
+  strDisplay += "<a href='" +
+    arrayMessage[currentMessage][2] +
+    "' title='View Page'>View Page</a>";
+  document.getElementById("spanCount").innerHTML =
+    "Message " + (currentMessage+1) +
+    " of " + arrayMessage.length;
+  var objDiv1 = document.getElementById("divNews1");
+var objDiv2 = document.getElementById("divNews2");
+if(layerFront == 1){
+    objDiv2.className = "opac0";
+    objDiv1.style.zIndex = 1;
+    objDiv2.style.zIndex = 2;
+    objDiv2.innerHTML = strDisplay;
+    layerFront = 2;
+  }
+  else{
+    objDiv1.className = "opac0";
+    objDiv2.style.zIndex = 1;
+    objDiv1.style.zIndex = 2;
+    objDiv1.innerHTML = strDisplay;
+    layerFront = 1;
+  }
+  SetClass(0);
+}
+
+function SetClass(xClass){
+  if(xClass<5){
+    document.getElementById("divNews" +
+layerFront).className = "opac" + xClass;
+    timerAmt = setTimeout("SetClass(" +
+    (xClass+1) + ")",timeColor);
+  }
+  else{
+    document.getElementById("divNews"
+    + layerFront).className = "";
+    currentMessage++;
+    if(currentMessage>=arrayMessage.length)
+      currentMessage = 0;
+    if(!bPaused)
+      timerSwitch = setTimeout(
+        "ChangeView()",flipLength);
+  }
+}
+
+function LoadNews(){
+  var sel = document.Form1.ddlRSS;
+  if(sel.options[sel.selectedIndex].className!="added"){
+    var url = sel.options[sel.selectedIndex].value;
+    sel.options[sel.selectedIndex].className="added";
+    var loader1 = new net.ContentLoader(url,
+                          BuildXMLResults);
+  }
+}
+
+function MoveFeed(xOption){
+  if(xOption == 0){
+    if(!bPaused){
+      bPaused = true;
+      if(timerSwitch)
+        clearTimeout(timerSwitch);
+      document.getElementById("btnPause").value =
+        "RESUME";
+    }
+    else{
+      bPaused = false;
+      setTimeout("ChangeView()",300);
+      document.getElementById("btnPause").value =
+        "PAUSE";
+    }
+  }
+  else{
+    if(timerSwitch)
+      clearTimeout(timerSwitch);
+    if(xOption == -1)currentMessage += -2;
+    if(currentMessage < 0)
+      currentMessage = arrayMessage.length
+        + currentMessage;
+   ChangeView();
+  }
+}
+
+
+
+
+      </script>
+  </head>
+  <body>
+    <form name="Form1">
+      <div id="divNewsHolder">
+  <div id="divNewsTitle">
+    <span id="spanCount">Loading</span>&nbsp;AJAX News Viewer
+  </div>
+        <div id="divAd">
+    <div id="divNews1">Loading Content...</div>
+    <div id="divNews2">Loading Content...</div>
+        </div>
+        <div id="divControls">
+    <input type="button" name="btnPrev" id="btnPrev" value=" <BACK " onclick="MoveFeed(-1)">
+    <input type="button" name="btnPause" id="btnPause" value=" PAUSE " onclick="MoveFeed(0)">
+    <input type="button" name="btnNext" id="btnNext" value="NEXT>" onclick="MoveFeed(1)">
+          <hr/>
+          <select name="ddlRSS">
+            <option value="http://radio.javaranch.com/frank/rss.xml">Frank</option>
+      <option value="http://radio.javaranch.com/gthought/rss.xml">Gregg</option>
+          </select>
+          <input type="button" name="btnAdd" value="Add Feed" onclick="LoadNews()" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+div.planetbar{
+  padding: 8px;
+  margin: 4px;
+  border: solid blue 1px;
+  background-color: #eef0ff;
+  width: 160px;
+}
+
+div.planetbutton{
+  align:center;
+  width: 136px;
+  height:32px;
+  border: solid grey 1px;
+}
+
+div.button{
+  align:right;
+  width:120px;
+  height:32px;
+  color: white;
+  background-color: #00a0ff;
+  top-border: solid 1px #00c0ff;
+  bottom-border: solid 1px #0090e0;
+  left-border: solid 1px #00c0ff;
+  right-border: solid 1px #0090e0;
+}

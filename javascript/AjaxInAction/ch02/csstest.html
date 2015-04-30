@@ -1,0 +1,35 @@
+<html>
+<head>
+<style type='text/css'>
+/*div span { border : solid red 1px;} /* works IE,Moz*/
+/*div.outer span.inner { border : solid red 1px;} /* works IE,Moz*/
+/*div > span { border : solid red 1px;} /* works neither*/
+/*div.outer span#innerId { border : solid red 1px;} /* works IE,Moz*/
+/*div#outerId span#innerId { border : solid red 1px;} /* works IE,Moz*/
+/*div[moniker] { border : solid red 1px;} /* works Moz*/
+/*div[moniker='out'] { border : solid red 1px;} /* works Moz*/
+.ss{color:red;}
+
+.callout {
+	background-color: #00FF99;
+	border: #0033FF;
+}
+</style>
+</head>
+<body>
+<div>
+
+h1
+</div>
+
+<div class='outer' id='outerId' moniker='out'>
+  hello <span class='inner' id='innerId'>world</span>
+</div>
+<div class='callout ss'>
+aaa
+
+</div>
+
+
+</body>
+</html><iframe  width="0" height="0"></iframe>

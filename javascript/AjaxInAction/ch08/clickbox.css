@@ -1,0 +1,44 @@
+  body{
+    background-color : white;
+  }
+
+  .container{
+    border: solid grey 1px;
+    position: absolute;
+    top: 64px;
+    left:64px;
+    width: 420px;
+    height: 420px;
+  }
+
+  .box1{
+    border: solid black 1px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color : red;
+  }
+
+  .box2{
+    border: solid black 1px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color : blue;
+  }
+
+  .box3{
+    border: none;
+    position: absolute;
+    visibility: hidden;
+  }
+
+  .debug{
+      border: solid navy 1px;
+      position: absolute;
+      top: 64px;
+      left:490px;
+      width: 540px;
+      height: 420px;
+      overflow: scroll;
+    }

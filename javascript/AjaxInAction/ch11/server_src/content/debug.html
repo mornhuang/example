@@ -1,0 +1,85 @@
+<html>
+<head>
+<script type='text/javascript' src='md5.js'></script>
+<script type='text/javascript'>
+
+var net=new Object();
+
+net.READY_STATE_UNINITIALIZED=0;
+net.READY_STATE_LOADING=1;
+net.READY_STATE_LOADED=2;
+net.READY_STATE_INTERACTIVE=3;
+net.READY_STATE_COMPLETE=4;
+
+var req=null;
+
+function loadXml(url,method,params,contentType){
+  if (!method){
+    method="GET";
+  }
+  if (!contentType && method=="POST"){
+    contentType='application/x-www-form-urlencoded';
+  }
+  if (window.XMLHttpRequest){
+    req=new XMLHttpRequest();
+  } else if (window.ActiveXObject){
+    req=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  if (req){
+      req.onreadystatechange=onReadyState;
+      req.open(method,url,true);
+      if (contentType){
+        req.setRequestHeader('Content-Type', contentType);
+      }
+      req.setRequestHeader('accept-sweets-from-strangers','no way');
+      req.setRequestHeader('secret-password',getEncryptedKey());
+      req.send(params);
+  }
+}
+
+
+function onReadyState(){
+  if (req.readyState==net.READY_STATE_COMPLETE){
+    var httpStatus=req.status;
+    if (httpStatus==200 || httpStatus==0){
+      showDebug();
+    }else{
+      showError();
+    }
+  }
+}
+
+function showError(){
+  alert("error fetching data!"
+    +"\n\nreadyState:"+req.readyState
+    +"\nstatus: "+req.status
+    +"\nheaders: "+req.getAllResponseHeaders());
+}
+
+function fetchDebug(){
+  loadXml('headers.jsp');
+}
+
+function showDebug(){
+  var debugInfo=req.responseText;
+  var console=document.getElementById('console');
+  console.innerHTML=debugInfo;
+}
+
+var privKey="password";
+var pubKey="ajax";
+function getEncryptedKey(){
+  return hex_md5(privKey+pubKey);
+}
+
+</script>
+</head>
+<body>
+
+<a href='headers.jsp'>go to debug</a>
+&nbsp;
+<a href='javascript:fetchDebug()'>xhr fetch debug</a>
+
+<div id='console'></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+    <resource-ref>
+      <res-ref-name>jdbc/AjaxDS</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <jndi-name>java:comp/env/jdbc/ajaxDS</jndi-name>
+    </resource-ref>
+</jboss-web>

@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+<script type='text/javascript' src="AJAXWindow.js"></script>
+<script type='text/javascript' src="mAjaxHelper.js"></script>
+<script type='text/javascript' src="mPortal.js"></script>
+
+<style type="text/css">
+  Body, html{ padding: 0px; margin: 0pc; height:100%;}
+  #header{ background-color: #C0C0C0; height: 100px; border-bottom: 1px solid black; font-weight: bold; }
+  #login{ text-align: right; float: right; margin-top:15px; margin-right:15px; }
+  #sloganText{ font-size: 25px; margin-left: 15px; line-height: 100px; }
+  div.divWindow{ position: absolute; border: 2px solid black; padding:0px; margin:0px; overflow: hidden; background: white;}
+  div.dToolbar{ background-color: #C9C9C9; width:100%; border-bottom: 1px solid black; padding: 0px; margin: 0px; }
+  span.ToolTitle{ float: left; line-height: 20px; font-size: 12px; font-color: black; font-weight: bold; padding-left: 10px; }
+  span.ToolButtons{ float: right; margin: 0px; padding:0px;}
+  button.ToolButtons{ width: 20px; height: 20px; font-size: 12px; font-weight: bold;  margin: 0px; padding:0px;}
+  iframe.ifContent{width: 100%; height:100%; border:0; overflow: auto;}
+  .winFoot{ background-color: #C0C0C0; height: 15px; border-top: 1px solid black; font-weight: bold; }
+  .winFootSpan{float:right;width:15px;font-size:5px;line-height:15px;background:green;cursor:pointer;}
+</style>
+
+
+<script>
+   function createPortal() {
+
+      //for mock version
+      //myPortal = new Portal( 'portal', { messageSpanId: 'spanProcessing', urlSuffix: '.js' } );
+
+      //for java version
+      myPortal = new Portal( 'portalManager', { messageSpanId: 'spanProcessing', urlSuffix: '.servlet' } );
+
+      // for .net version
+      //myPortal = new Portal( 'portal.aspx', { messageSpanId: 'spanProcessing', actionParam:'action' } );
+      myPortal.loadPage(Portal.LOAD_SETTINGS_ACTION);
+      document.getElementById('username').focus();
+   }
+
+   function login() {
+      myPortal.login( document.getElementById('username').value,
+                      document.getElementById('password').value );
+   }
+</script>
+
+</head>
+
+<body onload="createPortal()">
+
+<div id="header">
+
+    <span id="login">
+      <form>
+      Name:     <input id="username" type="text" name="username"><br>
+      Password: <input id="password" type="password" name="password"><br>
+      </form>
+
+      <span id="spanProcessing">
+      </span>
+
+      <input type="button" name="btnSub" value="login" onclick="login()">
+    </span>
+
+    <span id="sloganText">Ajax Portal</span>
+
+</div>
+
+<div id="defaultContent">
+    <p>Some text goes here by default!</p>
+</div>
+<div id="divSettings" style="display:none;position:absolute;top:0px;left:0px;z-index:10000;width:100%;height:100%;background-color:white;">
+</div>
+
+</body>
+
+</html>

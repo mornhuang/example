@@ -1,0 +1,38 @@
+.body{
+  background-color: white;
+}
+.mousemat{
+  background-color: #ffe0d0;
+  border: solid maroon 2px;
+  width: 500px;
+  height: 500px;
+  top: 36px;
+  left: 24px;
+  position: absolute;
+}
+.thumbnail{
+  background-color: cyan;
+  border: solid navy 1px;
+  width: 100px;
+  height: 100px;
+  top: 36px;
+  left: 534px;
+  position: absolute;
+  margin:0px;
+  padding: 0px;
+}
+.cursor{
+  background-color: navy;
+  width:3px;
+  height: 3px;
+  position: relative;
+}
+.profiler{
+  background-color: white;
+  border: solid grey 1px;
+  top:36px;
+  left:640px;
+  width:200px;
+  height:500px;
+  position: absolute;
+}

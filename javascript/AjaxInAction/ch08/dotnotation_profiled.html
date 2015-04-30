@@ -1,0 +1,232 @@
+<html>
+
+<head>
+<link rel='stylesheet' type='text/css' href='mousemat.css' />
+<link rel='stylesheet' type='text/css' href='objviewer.css' />
+<script type='text/javascript' src='x/x_core.js'></script>
+<script type='text/javascript' src='extras-array.js'></script>
+<script type='text/javascript' src='styling.js'></script>
+<script type='text/javascript' src='objviewer.js'></script>
+<script type='text/javascript' src='stopwatch.js'></script>
+<script type='text/javascript' src='eventRouter.js'></script>
+<script type='text/javascript'>
+
+var moon=null;
+var earth=null;
+
+function init(){
+  moon={
+    physics:{
+      mass:1,
+      pos:{ x:120,y:120 },
+      vel:{ x:1, y:-1 },
+      acc:{ x:0, y:0 }
+    }
+  };
+  earth={
+    physics:{
+      mass:1000,
+      pos:{ x:130,y:120 },
+      vel:{ x:0, y:0 },
+      acc:{ x:0, y:0 }
+    }
+  };
+}
+var gravF=1;
+
+function showOrbit(count,isFast){
+  init();
+  var data=(isFast) ? fastData(count) : slowData(count);
+  var watch=stopwatch.getWatch("render",true);
+  var canvas=document.getElementById('canvas');
+  var dx=data.max.x-data.min.x;
+  var dy=data.max.y-data.min.y;
+  var sx=(dx==0) ? 1 : 500/dx;
+  var sy=(dy==0) ? 1 : 500/dy;
+  var offx=data.min.x*sx;
+  var offy=data.min.y*sy;
+  for (var i=0;i<data.path.length;i+=10){
+    var datum=data.path[i];
+    var dpm=datum.moon;
+    var dpe=datum.earth;
+
+    var moonDiv=document.createElement("div");
+    moonDiv.className='cursor';
+    moonDiv.style.position='absolute';
+    moonDiv.style.left=parseInt((dpm.x*sx)-offx)+"px";
+    moonDiv.style.top=parseInt((dpm.y*sy)-offy)+"px";
+    moonDiv.id="moon_t="+i;
+    canvas.appendChild(moonDiv);
+
+    var earthDiv=document.createElement("div");
+    earthDiv.className='cursor';
+    earthDiv.style.position='absolute';
+    earthDiv.style.left=parseInt((dpe.x*sx)-offx)+"px";
+    earthDiv.style.top=parseInt((dpe.y*sy)-offy)+"px";
+    earthDiv.id="earth_t="+i;
+    canvas.appendChild(earthDiv);
+  }
+  watch.stop();
+}
+
+function slowData(count){
+  var watch=stopwatch.getWatch("slow orbit",true);
+  var data={
+    min:{x:0,y:0},
+    max:{x:0,y:0},
+    path:[]
+  };
+  for(var i=0;i<count;i++){
+    var distX=moon.physics.pos.x-earth.physics.pos.x;
+    var distY=moon.physics.pos.y-earth.physics.pos.y;
+    var dist=Math.sqrt((distX*distX) + (distY*distY));
+    if (dist<5){
+      dist=5;
+    }
+
+    var grav=(earth.physics.mass*moon.physics.mass)/(dist*dist*gravF);
+    var xGrav=grav*(distX/dist);
+    var yGrav=grav*(distY/dist);
+
+    moon.physics.acc.x=-xGrav/(moon.physics.mass);
+    moon.physics.acc.y=-yGrav/(moon.physics.mass);
+    moon.physics.vel.x+=moon.physics.acc.x;
+    moon.physics.vel.y+=moon.physics.acc.y;
+    moon.physics.pos.x+=moon.physics.vel.x;
+    moon.physics.pos.y+=moon.physics.vel.y;
+
+    earth.physics.acc.x=xGrav/(earth.physics.mass);
+    earth.physics.acc.y=yGrav/(earth.physics.mass);
+    earth.physics.vel.x+=earth.physics.acc.x;
+    earth.physics.vel.y+=earth.physics.acc.y;
+    earth.physics.pos.x+=earth.physics.vel.x;
+    earth.physics.pos.y+=earth.physics.vel.y;
+
+    data.path[i]={
+      moon:{x:moon.physics.pos.x,y:moon.physics.pos.y},
+      earth:{x:earth.physics.pos.x,y:earth.physics.pos.y}
+    };
+
+    if (data.max.x<moon.physics.pos.x){
+      data.max.x=moon.physics.pos.x;
+    }
+    if (data.min.x>moon.physics.pos.x){
+      data.min.x=moon.physics.pos.x;
+    }
+    if (data.max.y<moon.physics.pos.y){
+      data.max.y=moon.physics.pos.y;
+    }
+    if (data.min.y>moon.physics.pos.y){
+      data.min.y=moon.physics.pos.y;
+    }
+
+    if (data.max.x<earth.physics.pos.x){
+      data.max.x=earth.physics.pos.x;
+    }
+    if (data.min.x>earth.physics.pos.x){
+      data.min.x=earth.physics.pos.x;
+    }
+    if (data.max.y<earth.physics.pos.y){
+      data.max.y=earth.physics.pos.y;
+    }
+    if (data.min.y>earth.physics.pos.y){
+      data.min.y=earth.physics.pos.y;
+    }
+
+  }
+  watch.stop();
+  return data;
+}
+
+function fastData(count){
+  var watch=stopwatch.getWatch("fast orbit",true);
+  var data={
+    min:{x:0,y:0},
+    max:{x:0,y:0},
+    path:[]
+  };
+  var mp=moon.physics;
+  var mpa=mp.acc;
+  var mpv=mp.vel;
+  var mpp=mp.pos;
+  var mpm=mp.mass;
+  var ep=earth.physics;
+  var epa=ep.acc;
+  var epv=ep.vel;
+  var epp=ep.pos;
+  var epm=ep.mass;
+  var es=earth.style;
+  for(var i=0;i<count;i++){
+    var distX=mpp.x-epp.x;
+    var distY=mpp.y-epp.y;
+    var dist=Math.sqrt((distX*distX) + (distY*distY));
+    if (dist<5){
+      dist=5;
+    }
+
+    var grav=(epm*mpm)/(dist*dist*gravF);
+    var xGrav=grav*(distX/dist);
+    var yGrav=grav*(distY/dist);
+
+    mpa.x=-xGrav/(mpm);
+    mpa.y=-yGrav/(mpm);
+    mpv.x+=mpa.x;
+    mpv.y+=mpa.y;
+    mpp.x+=mpv.x;
+    mpp.y+=mpv.y;
+
+    epa.x=xGrav/(epm);
+    epa.y=yGrav/(epm);
+    epv.x+=epa.x;
+    epv.y+=epa.y;
+    epp.x+=epv.x;
+    epp.y+=epv.y;
+
+    data.path[i]={
+      moon:{x:mpp.x,y:mpp.y},
+      earth:{x:epp.x,y:epp.y}
+    };
+
+    if (data.max.x<mpp.x){ data.max.x=mpp.x; }
+    if (data.min.x>mpp.x){ data.min.x=mpp.x; }
+    if (data.max.y<mpp.y){ data.max.y=mpp.y; }
+    if (data.min.y>mpp.y){ data.min.y=mpp.y; }
+
+    if (data.max.x<epp.x){ data.max.x=epp.x; }
+    if (data.min.x>epp.x){ data.min.x=epp.x; }
+    if (data.max.y<epp.y){ data.max.y=epp.y; }
+    if (data.min.y>epp.y){ data.min.y=epp.y; }
+
+  }
+  watch.stop();
+  return data;
+}
+
+function go(isFast){
+  var count=parseInt(document.getElementById("count").value);
+  if (count==NaN){
+    alert("please enter a valid number");
+  }else{
+    showOrbit(count,isFast);
+  }
+}
+
+</script>
+</head>
+
+<body>
+<div>
+<a href='javascript:stopwatch.report("profiler")'>profile</a>&nbsp;
+<input id='count' value='640'>&nbsp;
+<a href='javascript:go(true)'>fast loop</a>&nbsp;
+<a href='javascript:go(false)'>slow loop</a>
+</div>
+
+<div id='top'>
+  <div class='mousemat' id='canvas'/>
+  </div>
+  <div class='profiler objViewBorder' id='profiler'></div>
+</div>
+
+</body>
+</html>

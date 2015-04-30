@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+
+<rss version="2.0">
+<channel>
+  <title>Eric&#039;s weblog</title>
+  <link>http://radio.javaranch.com/pascarello/</link>
+  <description>Weird Thoughts From Eric&#039;s Head</description>
+  <language>en</language>
+  <copyright>Eric Pascarello</copyright>
+  <lastBuildDate>Fri, 26 Aug 2005 20:18:07 GMT</lastBuildDate>
+  <generator>Pebble</generator>
+  <docs>http://backend.userland.com/rss</docs>
+  <image>
+    <url>http://pebble.sourceforge.net/common/images/powered-by-pebble.gif</url>
+    <title>Eric&#039;s weblog</title>
+    <link>http://radio.javaranch.com/pascarello/</link>
+  </image>
+  
+  <item>
+    <title>Ajax In Action Sample Chapter Released!</title>
+    <link>http://radio.javaranch.com/pascarello/2005/08/26/1125087487792.html</link>
+    
+      
+        <description>
+          &lt;p&gt;&lt;b&gt;&lt;u&gt;Ajax In Action Sample Chapter Released!&lt;/u&gt;&lt;/b&gt;&lt;br/&gt;
+&lt;/p&gt;&lt;p&gt;
+For everyone that has been asking questions about the book, Part of chapter 4 has been released so you can see what it is all about.
+&lt;a href=&#034;http://www.theserverside.com/articles/article.tss?l=AjaxinAction_CH4_PT1&#034;&gt;http://www.theserverside.com/articles/article.tss?l=AjaxinAction_CH4_PT1&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+Eric Pascarello&lt;br&gt;
+&lt;a href=&#034;http://saloon.javaranch.com/cgi-bin/ubb/ultimatebb.cgi?ubb=forum&amp;f=20&#034;&gt;Moderator of HTML/JavaScript at www.JavaRanch.com&lt;/a&gt;&lt;br&gt;
+&lt;/p&gt;
+        </description>
+      
+      
+    
+    
+    
+    <category>PROGRAMMING</category>
+    
+    <comments>http://radio.javaranch.com/pascarello/2005/08/26/1125087487792.html#comments</comments>
+    <guid isPermaLink="true">http://radio.javaranch.com/pascarello/2005/08/26/1125087487792.html</guid>
+    <pubDate>Fri, 26 Aug 2005 20:18:07 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Win a copy of Ajax in Action or a T-Shirt</title>
+    <link>http://radio.javaranch.com/pascarello/2005/08/22/1124735177543.html</link>
+    
+      
+        <description>
+          &lt;p&gt;&lt;b&gt;&lt;u&gt;Win a copy of Ajax in Action or a T-Shirt&lt;/u&gt;&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;For everyone that has been reading my blog, I thought that I would share the contest I got started with the support of Manning and JavaRanch. We want you to help us create the slogan for our Ajax in Action T-Shirt! Below is the contest email that was sent out in the JavaRanch newsletter. If you are not a current member, sign on up!
+&lt;br/&gt;&lt;br/&gt;Eric Pascarello
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;&lt;u&gt;Contest Details:&lt;/u&gt;&lt;/b&gt;&lt;/
+Our friendly bartender Eric Pascarello has a new book on Ajax coming out soon and the publisher,
+Manning, is looking for some ideas for slogans for the book. Come up with something clever and
+you could win a free MEAP Ebook copy of the book or a t-shirt!  Be the first on your block to
+own a copy of what is sure to be a very interesting book.  Manning will choose the winner from
+among the entries.  If a slogan is chosen, the first person who posted the slogan will win. If
+Manning doesn&#039;t like any of the entries then one random winner will be chosen. Also two random
+posters will be selected to win an Ajax in Action T-Shirt. Only one entry per person will be
+considered for the random drawings. 
+&lt;br/&gt;&lt;br/&gt;
+If you can not come up with a slogan, you still have a chance to win a t-shirt! Manning would
+love to hear what you think about Ajax, what it means to you, how you have implemented it, and
+so on. Our resident moderator and co-author of Ajax in Action, Eric Pascarello, will be in the
+HTML and JavaScript forum like always to answer any questions you may have about Ajax or Ajax In
+Action. Get your thinking caps on and start coming up with your best slogan ideas! 
+&lt;br/&gt;&lt;br/&gt;
+You can take a look at the description of the book here:
+&lt;br/&gt;&lt;br/&gt;
+&lt;a href=&#034;http://www.manning.com/books/crane&#034;&gt;http://www.manning.com/books/crane&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+Read about the book, come up with a catchy slogan suitable for t-shirts and post it in our HTML
+and JavaScript forum:
+&lt;br/&gt;&lt;br/&gt;
+&lt;a href=&#034;http://saloon.javaranch.com/cgi-bin/ubb/ultimatebb.cgi?ubb=get_topic&amp;f=20&amp;t=004837&#034;&gt;http://saloon.javaranch.com/cgi-bin/ubb/ultimatebb.cgi?ubb=get_topic&amp;f=20&amp;t=004837&lt;/a&gt;
+&lt;br/&gt;&lt;br/&gt;
+Legal stuff: All entries (no matter how awful) become the property of Manning. Contest Ends
+Friday, August 26th at midnight MST.
+&lt;/p&gt; 
+        </description>
+      
+      
+    
+    
+    
+    <category>PROGRAMMING</category>
+    
+    <comments>http://radio.javaranch.com/pascarello/2005/08/22/1124735177543.html#comments</comments>
+    <guid isPermaLink="true">http://radio.javaranch.com/pascarello/2005/08/22/1124735177543.html</guid>
+    <pubDate>Mon, 22 Aug 2005 18:26:17 GMT</pubDate>
+  </item>
+  
+  <item>
+    <title>Sending XML to the Sever with AJAX</title>
+    <link>http://radio.javaranch.com/pascarello/2005/07/20/1121878017742.html</link>
+    
+      
+      
+        <description>
+          &lt;p&gt;&lt;b&gt;&lt;u&gt;Sending XML to the Sever with AJAX&lt;/u&gt;&lt;/b&gt;&lt;br/&gt;
+A question that has come up to lately by people on &lt;a href=&#034;http://JavaRanch.com&#034;&gt;JavaRanch&lt;/a&gt; and emails I received is how do I send an XML to the server using Ajax. It is possible to send an XML document in the request parameter. One thing you need to make sure is that you set the header correctly to text/xml and post the document to the server. This following is a basic example that highlights the fact that we are not limited to just sending query string and form values to the server, which seems to be implanted into certain developer’s minds. &lt;/p&gt;
+
+          &lt;p&gt;&lt;a href="http://radio.javaranch.com/pascarello/2005/07/20/1121878017742.html"&gt;Read more...&lt;/a&gt;.&lt;/p&gt;
+        </description>
+      
+    
+    
+    
+    <category>PROGRAMMING</category>
+    
+    <comments>http://radio.javaranch.com/pascarello/2005/07/20/1121878017742.html#comments</comments>
+    <guid isPermaLink="true">http://radio.javaranch.com/pascarello/2005/07/20/1121878017742.html</guid>
+    <pubDate>Wed, 20 Jul 2005 16:46:57 GMT</pubDate>
+  </item>
+  
+  </channel>
+</rss>

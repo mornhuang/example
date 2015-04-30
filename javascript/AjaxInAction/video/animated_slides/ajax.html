@@ -1,0 +1,125 @@
+<html>
+<head>
+<style type='text/css'>
+*{
+  font-family: verdana, tahoma, arial;
+  font-size: 16;
+}
+.user{
+  position: absolute;
+  width:  80px;
+  height: 173px;
+  top:    96px;
+  left:   32px;
+  border: none;
+  color: blue;
+  background-color: #ffffff;
+  background-image:url(crane_cover150.jpg);
+}
+
+.client{
+  position: absolute;
+  width:  200px;
+  height: 256px;
+  top:    32px;
+  left:   120px;
+  border: solid blue 1px;
+  color: blue;
+  background-color: #a0a0e0;
+}
+
+.server{
+  position: absolute;
+  width:  20px;
+  height: 128px;
+  top:    32px;
+  left:   400px;
+  border: solid green 1px;
+  color: green;
+  background-color: #a0e0a0;
+  padding:64px;
+}
+
+.comms{
+  position: absolute;
+  width:  100px;
+  height: 48px;
+  top:    180px;
+  left:   120px;
+  border: none;
+  color: #fffff;
+  background-color: red;
+}
+
+.new{
+  background-color: #ffffff;
+}
+</style>
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript" src="scriptaculous.js"></script>
+<script type="text/javascript" src="effects.js"></script>
+<script type="text/javascript">
+
+Effect.BlindRight = function(element) {
+  $(element).style.width   = '0px';
+  Element.makeClipping(element);
+  Element.show(element);
+  return new Effect.Scale(element, 6700,
+    Object.extend({ scaleContent: false,
+      scaleY: false,
+      scaleX: true,
+      scaleMode: 'contents',
+      scaleFrom: 0,
+      afterFinish: function(effect) {
+        Element.undoClipping(effect.element);
+      }
+    }, arguments[1] || {})
+  );
+}
+
+
+window.onload=function(){
+  play();
+  //refresh();
+}
+
+function play(){
+  //t=0 user is happily pulsating
+  new Effect.Pulsate('user',{duration:8.0,from:0.6,to:1.0});
+
+  //t=1 request fired
+  setTimeout("new Effect.MoveBy('comms',0,330,{duration:3.0})"          ,1000);
+
+  //t=4 request returns
+  setTimeout("new Effect.MoveBy('comms',0,-330,{duration:3.0})"         ,4000);
+
+  //t=7 page refreshes
+  setTimeout("refresh()"                                                ,7000);
+
+}
+
+function refresh(){
+  new Effect.Grow('refreshMe');
+  var refreshed=$('refreshMe');
+  refreshed.className='new';
+  refreshed.innerHTML='four';
+}
+
+</script>
+</head>
+<body>
+
+<div class='user' id='user'>&nbsp;</div>
+<div class='client' id='client'>
+<p>This is a web page. Here is some data.</p>
+<ul>
+<li>one
+<li id='refreshMe'>two
+<li>three
+</ul>
+</div>
+<div class='server' id='server'>server</div>
+<div class='comms' id='comms'>&nbsp;</div>
+
+</body>
+</html>

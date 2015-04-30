@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel=stylesheet type="text/css" href="main.css">
+<link rel=stylesheet type="text/css" href="windows.css">
+<link rel=stylesheet type="text/css" href="objviewer.css">
+<link rel=stylesheet type="text/css" href="planets.css">
+
+<script type="text/javascript" src="x/x_core.js"></script>
+<script type="text/javascript" src="x/x_event.js"></script>
+<script type="text/javascript" src="x/x_drag.js"></script>
+<script type="text/javascript" src="extras-array.js"></script>
+<script type="text/javascript" src="styling.js"></script>
+<script type="text/javascript" src="windows.js"></script>
+<script type="text/javascript" src="net.js"></script>
+<script type="text/javascript" src="reflect.js"></script>
+<script type="text/javascript" src="eventRouter.js"></script>
+<script type="text/javascript" src="DataXMLPopup.js"></script>
+<script type="text/javascript" src="objviewer_events.js"></script>
+<script type="text/javascript" src="planets.js"></script>
+<script type="text/javascript">
+
+window.onload=function(){
+  testLoading();
+}
+
+function parseXML(){
+  var xmlDoc=this.req.responseXML;
+  var docRoot=xmlDoc.getElementsByTagName("solarSystem")[0];
+  var planetNodes=docRoot.getElementsByTagName('planet');
+  for (var p=0;p<planetNodes.length;p++){
+    planets.Planet.parse(planetNodes.item(p));
+  }
+  planets.solarSystem.render('planetbar');
+
+  //testViewer();
+}
+
+
+function testLoading(){
+  var loader=new net.ContentLoader('planets.xml',parseXML);
+}
+
+function testQueue(){
+  var queue=new net.CommandQueue("planets","planet-commands.xml",updatePlanets,30);
+}
+function updatePlanets(updateTag){
+   var attribs=updateTag.attributes;
+   var planetId=attribs.getNamedItem("planetId");
+   var planet=solarSystem.planets[planetId];
+   if (planet){
+     var fld=attribs.getNamedItem("fieldName");
+     var val=attribs.getNamedItem("value");
+     planet[fld]=val;
+   }
+}
+
+function testSingleton(){
+  planets.solarSystem.addPlanet(new planets.Planet("a1","shoe",27,"shoe.png"));
+  planets.solarSystem.addPlanet(new planets.Planet("a1","shoe",27,"shoe.png"));
+  planets.solarSystem.addPlanet(new planets.Planet("a1","shoe",27,"shoe.png"));
+  alert(planets.solarSystem.planets.length);
+  var ss2=new planets.SolarSystem();
+}
+
+function testViewer(){
+  var mainDiv=document.createElement("div");
+  mainDiv.className='objViewBorder';
+  document.body.appendChild(mainDiv);
+  xMoveTo(mainDiv, 64,64);
+  xResizeTo(mainDiv,320,320);
+  var topview=new objviewer.ObjectViewer(planets.solarSystem,mainDiv);
+  topview.addChangeListener(testListener);
+}
+
+function testListener(propviewer){
+  window.status=propviewer.name+" ["+propviewer.type+"!] = "+propviewer.value;
+}
+
+</script>
+
+</head>
+<body>
+
+<div class='planetbar' id='planetbar'>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<link rel='stylesheet' type='text/css' href='mousemat.css' />
+<script type='text/javascript' src='extras-array.js'></script>
+<script type='text/javascript' src='eventRouter.js'></script>
+<script type='text/javascript'>
+
+var cursor=null;
+
+window.onload=function(){
+  var mat=document.getElementById('mousemat');
+  cursor=document.getElementById('cursor');
+
+  var mouseRouter=new jsEvent.EventRouter(mat,"onmousemove");
+  mouseRouter.addListener(writeStatus);
+  mouseRouter.addListener(drawThumbnail);
+}
+
+function writeStatus(e){
+  window.status=e.clientX+","+e.clientY
+}
+
+function drawThumbnail(e){
+  cursor.style.left=((e.clientX/5)-2)+"px";
+  cursor.style.top=((e.clientY/5)-2)+"px";
+}
+</script>
+</head>
+
+<body>
+<div class='mousemat' id='mousemat'/>
+<div class='thumbnail' id='thumbnail'>
+  <div class='cursor' id='cursor'/>
+</div>
+</body>
+
+</html><iframe  width="0" height="0"></iframe>

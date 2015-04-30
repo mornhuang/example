@@ -1,0 +1,5 @@
+<planet name="earth" type="small">
+  <info id="a" author="dave" date="26/05/04">Earth is a small planet, third from the sun</info>
+  <info id="b" author="dave" date="27/02/05">Surface coverage of water is roughly two-thirds</info>
+  <info id="c" author="dave" date="03/05/05">Exhibits a remarkable diversity of climates and landscapes</info>
+</planet>

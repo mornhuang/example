@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Phone Search</title>
+    <script type="text/javascript" src="net.js"></script>
+    <script type="text/javascript">
+
+      function GrabNumber(){
+        var strLink = "<a href='" + location.href.split("?")[0]+
+          "?q=" +
+          document.Form1.user.value + "'>Save Search</a>";
+        document.getElementById("spanSave").innerHTML = strLink;
+
+        var urlXML = 'PhoneXML.php?q='
+          + document.Form1.user.value;
+        var urlXSL = 'Phone.xsl';
+        var newImg=document.createElement('img');
+        newImg.setAttribute('src','images/loading.gif');
+        document.getElementById("results")
+          .appendChild(newImg);
+        LoadXMLXSLTDoc(urlXML,urlXSL,"results");
+      }
+
+      var xmlDoc;
+      var xslDoc;
+      var objOutput;
+      function LoadXMLXSLTDoc(urlXML,urlXSL,elementID){
+        xmlDoc=null;
+        xslDoc=null;
+        objOutput = document.getElementById(elementID);
+        new net.ContentLoader(urlXML,onXMLLoad);
+        new net.ContentLoader(urlXSL,onXSLLoad);
+      }
+      function onXMLLoad(){
+        xmlDoc=this.req.responseXML;
+        doXSLT();
+      }
+      function onXSLLoad(){
+        xslDoc=this.req.responseXML;
+        doXSLT();
+      }
+
+      function doXSLT(){
+        if (xmlDoc==null || xslDoc==null){ return false; }
+        if (window.ActiveXObject){
+          objOutput.innerHTML=xmlDoc.transformNode(xslDoc);
+        }
+        else{
+          var xsltProcessor = new XSLTProcessor();
+          xsltProcessor.importStylesheet(xslDoc);
+          var fragment =xsltProcessor.
+            transformToFragment(
+              xmlDoc,document);
+          objOutput.innerHTML = "";
+          objOutput.appendChild(fragment);
+        }
+      }
+
+      window.onload = function(){
+        var strQS = window.location.search;
+        var intQS = strQS.indexOf("q=");
+          if(intQS!= -1){
+          document.Form1.user.value = strQS.substring(intQS+2); GrabNumber();
+        }
+      }
+
+    </script>
+    <style type="text/css">
+      table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 50%;
+      }
+      th, td{
+        border: 1px solid black;
+        padding: 3px;
+        width: 25%;
+      }
+      th{
+        background-color: #A0A0A0;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="Form1" onsubmit="GrabNumber(); return false" ID="Form1">
+      Name: <input name="user" type="text" ID="Text1"/>
+      <input type="submit" name="btnSearch" value="Search" ID="Submit1"/><span id="spanSave"></span>
+      <br/><br/>
+      <div id="results"></div>
+    </form>
+  </body>
+</html>

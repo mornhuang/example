@@ -1,0 +1,58 @@
+/*
+stylesheet for windows module
+*/
+
+* {
+  border: solid black 1px;
+}
+
+div.window{
+  position: absolute;
+  overflow: auto;
+  margin: 8px;
+  padding: 0px;
+  width: 420px;
+  height: 280px;
+}
+
+div.titlebar{
+  width: 100%;
+  height: 16px;
+  overflow:hidden;
+}
+
+span.titleButton{
+  position: relative;
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+  margin: 0px 1px; 0px 1px;
+  float:right;
+}
+
+span.titleButton:hover{
+  background-color: #ffffff;
+}
+
+
+div.contents {
+  overflow: auto;
+  padding: 2px;
+  height:240px;
+}
+
+div.item{
+  position : relative;
+  height : 64px;
+  width: 56px;
+  float: left;
+  padding: 0px;
+  margin: 4px;
+}
+
+div.itemName{
+  margin-top: 48px;
+  font: 10px verdana, arial, helvetica;
+  text-align: center;
+}
+

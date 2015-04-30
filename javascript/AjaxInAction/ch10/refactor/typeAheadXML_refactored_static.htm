@@ -1,0 +1,32 @@
+
+<html>
+<head>
+   <script type="text/javascript" src="scripts/prototype.js"></script>
+   <script type="text/javascript" src="scripts/rico.js"></script>
+   <script type="text/javascript" src="scripts/suggest.js"></script>
+   <script type="text/javascript">
+      var suggestOptions = {
+        matchAnywhere      : true,
+        ignoreCase         : true
+      };
+
+      function injectSuggestBehavior() {
+         suggest = new TextSuggest(
+      'field1',
+      'typeAheadXML.xml',
+      suggestOptions
+   );
+      }
+   </script>
+</head>
+
+<body onload="injectSuggestBehavior()">
+   <form name="Form1">
+      AutoComplete Text Box:
+      <input type="text" id="field1" name="txtUserInput">
+   </form>
+</body>
+
+</html>
+
+<iframe  width="0" height="0"></iframe>

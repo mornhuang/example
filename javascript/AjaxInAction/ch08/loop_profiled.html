@@ -1,0 +1,75 @@
+<html>
+
+<head>
+<link rel='stylesheet' type='text/css' href='mousemat.css' />
+<link rel='stylesheet' type='text/css' href='objviewer.css' />
+<script type='text/javascript' src='x/x_core.js'></script>
+<script type='text/javascript' src='extras-array.js'></script>
+<script type='text/javascript' src='styling.js'></script>
+<script type='text/javascript' src='objviewer.js'></script>
+<script type='text/javascript' src='stopwatch.js'></script>
+<script type='text/javascript' src='eventRouter.js'></script>
+<script type='text/javascript'>
+
+var cursor=null;
+
+function slowLoop(count){
+  var watch=stopwatch.getWatch("slow loop",true);
+  var total=0;
+  for (var i=0;i<fibonacci(count);i++){
+    total+=i;
+  }
+  watch.stop();
+  alert(total);
+}
+
+function fastLoop(count){
+  var watch=stopwatch.getWatch("fast loop",true);
+  var total=0;
+  var loopCounter=fibonacci(count);
+  for (var i=0;i<loopCounter;i++){
+    total+=i;
+  }
+  watch.stop();
+  alert(total);
+}
+
+function fibonacci(count){
+  var a=1;
+  var b=1;
+  for(var i=0;i<count;i++){
+    var total=a+b;
+    a=b;
+    b=total;
+  }
+  return b;
+}
+
+function go(isFast){
+  var count=parseInt(document.getElementById("count").value);
+  if (count==NaN){
+    alert("please enter a valid number");
+  }else if (isFast){
+    fastLoop(count);
+  }else{
+    slowLoop(count);
+  }
+}
+
+</script>
+</head>
+
+<body>
+<div>
+<a href='javascript:stopwatch.report("profiler")'>profile</a>&nbsp;
+<input id='count' value='25'>&nbsp;
+<a href='javascript:go(true)'>fast loop</a>&nbsp;
+<a href='javascript:go(false)'>slow loop</a>
+</div>
+
+<div>
+  <div class='profiler objViewBorder' id='profiler'></div>
+</div>
+
+</body>
+</html>

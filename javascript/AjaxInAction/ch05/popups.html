@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Planet Browser</title>
+<link rel=stylesheet type="text/css" href="main.css">
+<link rel=stylesheet type="text/css" href="windows.css">
+<link rel=stylesheet type="text/css" href="planets_popup.css">
+
+<script type="text/javascript" src="x/x_core.js"></script>
+<script type="text/javascript" src="x/x_event.js"></script>
+<script type="text/javascript" src="x/x_drag.js"></script>
+<script type="text/javascript" src="windows.js"></script>
+<script type="text/javascript" src="net.js"></script>
+<script type="text/javascript" src="ContentPopup.js"></script>
+<!--<script type="text/javascript" src="ScriptIframePopup.js"></script>-->
+<!--<script type="text/javascript" src="ScriptEvalPopup.js"></script>-->
+<!--<script type="text/javascript" src="DataXMLPopup.js"></script>-->
+<!--<script type="text/javascript" src="DataJSONPopup.js"></script>-->
+<script type="text/javascript">
+
+window.onload=function(){
+  var pbar=document.getElementById('planets');
+  var children=pbar.getElementsByTagName('div');
+  for(var i=0;i<children.length;i++){
+    children[i].onclick=showInfo;
+  }
+}
+
+function testWindows(){
+  var win1=new windows.Window("win1","window 1",64,64,400,400);
+  var win2=new windows.Window("win2","window 2",128,128,600,250);
+  var win3=new ContentPopup("http://www.google.com","googlePopup","google",192,192,280,420);
+}
+
+</script>
+
+</head>
+<body>
+
+<div class='planetbar' id='planets'>
+<div class='planetbutton' id='mercury'><img src='img/ball-mercury.gif' alt='mercury'/></div>
+<div class='planetbutton' id='venus'><img src='img/ball-venus.gif' alt='venus'/></div>
+<div class='planetbutton' id='earth'><img src='img/ball-earth.gif' alt='earth'/></div>
+<div class='planetbutton' id='mars'><img src='img/ball-mars.gif' alt='mars'/></div>
+<div class='planetbutton' id='jupiter'><img src='img/ball-jupiter.gif' alt='jupiter'/></div>
+<div class='planetbutton' id='saturn'><img src='img/ball-saturn.gif' alt='saturn'/></div>
+<div class='planetbutton' id='uranus'><img src='img/ball-uranus.gif' alt='uranus'/></div>
+<div class='planetbutton' id='neptune'><img src='img/ball-neptune.gif' alt='neptune'/></div>
+<div class='planetbutton' id='pluto'><img src='img/ball-pluto.gif' alt='pluto'/></div>
+</div>
+
+</body>
+</html>
+

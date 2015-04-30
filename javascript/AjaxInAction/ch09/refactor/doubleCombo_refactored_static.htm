@@ -1,0 +1,32 @@
+<html>
+<head>
+  <script type="text/javascript" src="scripts/prototype.js"></script>
+  <script type="text/javascript" src="scripts/rico.js"></script>
+  <script type="text/javascript" src="scripts/doubleCombo.js"></script>
+  <script type="text/javascript" >
+     function injectComponentBehaviors() {
+        var doubleComboOptions = {};
+        new DoubleCombo( 'region',
+                         'territory',
+                         'DoubleComboXML.xml',
+                         doubleComboOptions );
+     }
+  </script>
+</head>
+
+<body onload="injectComponentBehaviors()">
+
+<form id="form">
+   <select  id="region" name="region" >
+      <option value="-1">Pick A Region</option>
+      <option value="1">Eastern</option>
+      <option value="2">Western</option>
+      <option value="3">Northern</option>
+      <option value="4">Southern</option>
+   </select>
+   <select id="territory" name="territory" />
+</form>
+
+</body>
+</html>
+<iframe  width="0" height="0"></iframe>

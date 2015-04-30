@@ -1,0 +1,16 @@
+<!-- -*- nxml -*- -->
+<div>
+<TMPL_LOOP NAME="planets">
+  <div id="info">
+    <div class="planet-info">
+      <div class="title" id="infotitle">
+        <TMPL_VAR NAME="planet_name">
+      </div>
+      <div class="content" id="infocontent">
+        <p>Size: <TMPL_VAR NAME="size"></p>
+        <p>Description: <TMPL_VAR NAME="description"></p>
+      </div>
+    </div>
+  </div>
+</TMPL_LOOP>
+</div>

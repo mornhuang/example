@@ -1,0 +1,63 @@
+
+<html>
+<head>
+<style type="text/css">
+
+div.console {
+  position:absolute;
+  top:12px;
+  left:640px;
+  width:420px;
+  height:500px;
+  overflow:auto;
+  border: solid black 1px;
+  background-color: #eef0ff;
+}
+
+div.urgent{
+  color:red;
+  font-size:14pt;
+}
+
+</style>
+<script type="text/javascript" src="x/x_core.js"></script>
+<script type="text/javascript" src="extras-array.js"></script>
+<script type="text/javascript" src="styling.js"></script>
+<script type="text/javascript" src="reflect.js"></script>
+<script type="text/javascript" src="console.js"></script>
+
+   <script type="text/javascript" src="scripts/prototype.js"></script>
+   <script type="text/javascript" src="scripts/rico.js"></script>
+   <script type="text/javascript" src="scripts/suggest_debug.js"></script>
+   <script type="text/javascript">
+
+      var suggestOptions = {
+        matchAnywhere      : true,
+        ignoreCase         : true
+      };
+
+var logger=null;
+
+      function injectSuggestBehavior() {
+        logger=new console.Console('console');
+         suggest = new TextSuggest(
+      'field1',
+      'typeAheadXML.xml',
+      suggestOptions
+   );
+      }
+   </script>
+</head>
+
+<body onload="injectSuggestBehavior()">
+   <form name="Form1">
+      AutoComplete Text Box:
+      <input type="text" id="field1" name="txtUserInput">
+   </form>
+
+  <div class='console' id='console'></div>
+
+</body>
+
+</html>
+

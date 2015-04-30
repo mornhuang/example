@@ -1,0 +1,76 @@
+.msg_small_icon{
+  height: 32px;
+  width: 32px;
+  position:relative;
+  float:left;
+}
+
+.msg_dialog_icon{
+  height: 32px;
+  width: 32px;
+  position:relative;
+  float:right;
+}
+
+.msg_large_icon{
+  height: 64px;
+  width: 64px;
+}
+
+.msg_text{
+  font-family: arial;
+  font-weight: light;
+  font-size: 14pt;
+  color: blue;
+}
+
+.msgbar{
+  position:relative;
+  background-color: white;
+  border: solid blue 1px;
+  width: 100%;
+  height: 38px;
+  padding: 2px;
+}
+
+.dialog{
+  position: absolute;
+  background-color: white;
+  border: solid blue 1px;
+  width: 420px;
+  top: 64px;
+  left: 64px;
+  padding: 4px;
+}
+
+.popup{
+  position: absolute;
+  background-color: white;
+  border: solid blue 1px;
+  padding: 4px;
+}
+
+.non-modal{
+}
+
+.modal{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image:url(img/modal_overlay.gif);
+}
+
+.content{
+  position: relative;
+  padding:4px;
+  margin:16px;
+  width:600px;
+  height:400px;
+  border:solid red 2px;
+  color:maroon;
+  background-color:tan;
+  font-family: arial;
+  font-size: 16pt;
+}

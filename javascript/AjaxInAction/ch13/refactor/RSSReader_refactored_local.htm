@@ -1,0 +1,81 @@
+<html>
+<head>
+
+<style type="text/css">
+   .reader   { width: 600px; border: 2px solid black; padding: 0px; }
+   .title    { font-size: 20px; line-height: 26px; height: 26px; background-color: #BACCD9; }
+   .content  { width: 100%; height: 400px; overflow: hidden; border-top: 2px solid black; border-bottom: 2px solid black; }
+   .layer1   { width: 100%; height: 400px; background: #ffffee; position: relative; top: 0px; left: 0px; overflow: auto; }
+   .layer2   { width: 100%; height: 400px; background: #ffffee; position: relative; top: -400px; left: 0; overflow: auto; }
+   .controls { text-align: center; padding-top: 4px; padding-bottom: 4px; background-color: #BACCD9; }
+   .added    { background-color:silver; }
+   .RSSFeed  { font-weight: bold; color: Green; }
+   .itemTitle{ color: navy; }
+
+   .rssItemContent {
+      border-top : 1px solid black;
+      width      : 590px;
+      height     : 350px;
+      overflow   : auto;
+      padding    : 5px;
+      margin-top : 2px;
+   }
+
+
+</style>
+
+<script src="prototype.js"></script>
+<script src="rico.js"></script>
+<script src="mContentLoader_local.js"></script>
+<script src="mrssReader_local.js"></script>
+
+
+
+<script>
+   function createRSSReader() {
+      var options = { rssFeeds: [
+      "feeds/dave.xml", "feeds/eric.html"
+      ] };
+
+      var rssReader = new RSSReader('rssReader', options );
+   }
+
+</script>
+
+</head>
+
+<body onload="createRSSReader()">
+
+<form name="Form1">
+   <div class="reader" id="rssReader">
+
+      <!-- Title -->
+      <div class="title" id="rssReader_title">
+         Manning Sample RSS Reader
+      </div>
+
+       <!-- Content area -->
+       <div class="content" id="rssReader_content">
+          <div class="layer1">Layer 0</div>
+          <div class="layer2">Layer 1</div>
+       </div>
+
+       <!-- Controls -->
+       <div class="controls" id="rssReader_controls">
+          <input type="button" id="rssReader_prevBtn"  value=" << "  />
+          <input type="button" id="rssReader_pauseBtn" value=" | | " />
+          <input type="button" id="rssReader_nextBtn"  value=" >> "  />
+          <hr/>
+          <select name="rssReader_newFeeds">
+             <option value="http://radio.javaranch.com/frank/rss.xml">Frank</option>
+             <option value="http://radio.javaranch.com/gthought/rss.xml">Gregg</option>
+          </select>
+          <input type="button" id="rssReader_addBtn" value="Add Feed" />
+       </div>
+
+   </div>
+</form>
+
+</body>
+</html>
+

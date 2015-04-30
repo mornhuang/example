@@ -1,0 +1,14 @@
+
+# laugh, it's that funny.
+
+%planet_db = ( 
+    mercury => { size => "tiny",
+                 description => "A small hot (400 C) planet. Bring sun-screen." },
+    venus => { size => "small",
+                 description => "Another hot planet." },
+    earth => { size => "small",
+               description => "Earth is a small planet, third from the sun. Roughly two-thirds of its surface is covered by water." },
+    mars => { size => "medium",
+              description => "Friendly hospitable green people." },
+    saturn => { size => "large",
+                description => "Saturn is a large planet" });

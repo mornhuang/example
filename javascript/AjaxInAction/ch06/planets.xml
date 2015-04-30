@@ -1,0 +1,12 @@
+
+<solarSystem>
+  <planet id="p1" name="mercury" distance="0.39" diameter="0.38" img="img/ball-mercury.gif"/>
+  <planet id="p2" name="venus"   distance="0.72" diameter="0.95" img="img/ball-venus.gif"/>
+  <planet id="p3" name="earth"   distance="1.0"  diameter="1.0"  img="img/ball-earth.gif"/>
+  <planet id="p4" name="mars"    distance="1.52" diameter="0.53" img="img/ball-mars.gif"/>
+  <planet id="p5" name="jupiter" distance="5.2"  diameter="11.2" img="img/ball-jupiter.gif"/>
+  <planet id="p6" name="saturn"  distance="9.5"  diameter="9.4"  img="img/ball-saturn.gif"/>
+  <planet id="p7" name="uranus"  distance="19"   diameter="4.0"  img="img/ball-uranus.gif"/>
+  <planet id="p8" name="neptune" distance="30"   diameter="3.88" img="img/ball-neptune.gif"/>
+  <planet id="p9" name="pluto"   distance="39.5" diameter="0.18" img="img/ball-pluto.gif"/>
+</solarSystem>

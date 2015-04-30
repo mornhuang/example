@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="wordpress/1.5.1.2" -->
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+>
+
+<channel>
+  <title>classical geek</title>
+  <link>http://dave.sunwheeltech.com/wordpress</link>
+  <description>Dave Crane's weblog</description>
+  <pubDate>Wed, 07 Sep 2005 13:23:21 +0000</pubDate>
+  <generator>http://wordpress.org/?v=1.5.1.2</generator>
+  <language>en</language>
+
+    <item>
+    <title>1. The Coders&#8217; Pyramid</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/09/07/the-coders-pyramid/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/09/07/the-coders-pyramid/#comments</comments>
+    <pubDate>Wed, 07 Sep 2005 12:06:08 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+  <category>Ajax</category>
+  <category>Java</category>
+  <category>Scripting</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/09/07/the-coders-pyramid/</guid>
+    <description><![CDATA[  It&#8217;s a truism to say that there&#8217;s a food chain in software development, whereby a few highly-skilled developers at the level above create components and frameworks for use by the larger, less-skilled mases in the layer below. A small handful build operating systems, on top of which are built virtual machines and interpreters. On top [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/09/07/the-coders-pyramid/feed/</wfw:commentRSS>
+  </item>
+
+    <item>
+    <title>2. Joe Walker On Ajax Architecture</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/09/06/joe-walker-on-ajax-architecture/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/09/06/joe-walker-on-ajax-architecture/#comments</comments>
+    <pubDate>Tue, 06 Sep 2005 21:13:27 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+  <category>Ajax</category>
+  <category>Scripting</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/09/06/joe-walker-on-ajax-architecture/</guid>
+    <description><![CDATA[  Joe Walker of DWR fame has written an interesting piece on Ajax Architecture here, questioning how the existing round of web frameworks measure up to Ajax. He describes the extreme case in which most processing logic is moved into the Javascript code, and the server is relegated to providing data feeds.
+  It&#8217;s a topic that I&#8217;ve [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/09/06/joe-walker-on-ajax-architecture/feed/</wfw:commentRSS>
+  </item>
+
+    <item>
+    <title>3. Early Precursor to JavaScript</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/09/05/early-precursor-to-javascript/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/09/05/early-precursor-to-javascript/#comments</comments>
+    <pubDate>Mon, 05 Sep 2005 21:14:43 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Stuff</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/09/05/early-precursor-to-javascript/</guid>
+    <description><![CDATA[  In a quick fit of creativity, I twiddled the header picture of the blog tonight (driven in part by the embarrassment of seeing so many other blogs with the default &#8216;Kubrick&#8217; theme, which is very nice, but I felt the need to mark my territory).
+  The picture was taken this Summer inside Bodiam castle in Kent, [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/09/05/early-precursor-to-javascript/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>4. Loops and Closures</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/09/05/loops-and-closures/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/09/05/loops-and-closures/#comments</comments>
+    <pubDate>Mon, 05 Sep 2005 20:34:29 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+  <category>Ajax</category>
+  <category>Scripting</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/09/05/loops-and-closures/</guid>
+    <description><![CDATA[  Q: When is a refactoring not a refactoring? A: When it involves closures in a loop.
+  JavaScript closures can be quite powerful, and provide useful workarounds for many of the stranger bits of web browser implementations. They&#8217;re also far too easy to create unintentionally, and, in my opinion, best avoided unless you&#8217;re an expert, or there [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/09/05/loops-and-closures/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>5. The Big Faceless Technology Challenge</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/08/10/the-big-faceless-technology-challenge/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/08/10/the-big-faceless-technology-challenge/#comments</comments>
+    <pubDate>Wed, 10 Aug 2005 20:54:18 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/08/10/the-big-faceless-technology-challenge/</guid>
+    <description><![CDATA[  I came acrss an interesting article on theServerSide.com today (here), some guy claiming that Ajax could infringe on your privacy. He&#8217;s right you know, up to a point. I gave my reply on TSS, I won&#8217;t repeat it here.
+  Well, not all of it, anyway. Computers have the potential to infringe on your civil liberty, by [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/08/10/the-big-faceless-technology-challenge/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>6. Reading the JavaScript Tea Leaves</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/08/04/reading-the-javascript-tea-leaves/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/08/04/reading-the-javascript-tea-leaves/#comments</comments>
+    <pubDate>Thu, 04 Aug 2005 21:35:13 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+  <category>Ajax</category>
+  <category>Scripting</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/08/04/reading-the-javascript-tea-leaves/</guid>
+    <description><![CDATA[  Reading other people&#8217;s code is an interesting, and often under-rated pastime. Particularly in a language like Javascript, in which there are so many ways of doing things. Particularly particularly when coming from a language like Java that offers relatively little flexibility in how to get things done. As Ajax takes off in the java/enterprise programming [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/08/04/reading-the-javascript-tea-leaves/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>7. Language != Design</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/07/27/language-design/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/07/27/language-design/#comments</comments>
+    <pubDate>Wed, 27 Jul 2005 21:02:28 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+  <category>Java</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/07/27/language-design/</guid>
+    <description><![CDATA[  I came across an interesting interview with Mono&#8217;s Miguel de Icaza recently, in which he discusses .Net and J2EE integration, amongst other things, and the GrassHopper project to run ASP.Net on top of J2EE. The argument for doing so is that J2EE is unassailable inthe high-end market ($2million plus), but that development shops find it [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/07/27/language-design/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>8. Plain Text Obfuscation</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/07/22/plain-text-obfuscation/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/07/22/plain-text-obfuscation/#comments</comments>
+    <pubDate>Fri, 22 Jul 2005 08:53:34 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Stuff</category>
+  <category>Tech</category>
+  <category>Ajax</category>
+  <category>Scripting</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/07/22/plain-text-obfuscation/</guid>
+    <description><![CDATA[  The Code Behind the Harry Potter Theory Post
+  As regular readers will know, I&#8217;m spending a lot of my time at the moment writing a gripping adventure book &#8216;Ajax in Action&#8217;, in which our hero, a young half-ancient greek, half-dutch football player combats the forces of darkness armed only with a bottle of cleaning fluid. Oh, [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/07/22/plain-text-obfuscation/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>9. Harry Potter Theories</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/07/21/harry-potter-theories/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/07/21/harry-potter-theories/#comments</comments>
+    <pubDate>Thu, 21 Jul 2005 22:45:34 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Stuff</category>
+  <category>Tech</category>
+  <category>Ajax</category>
+  <category>Scripting</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/07/21/harry-potter-theories/</guid>
+    <description><![CDATA[
+Warning! Plot spoilers in this posting have been hidden using an Ajax-based Scrutio charm. Click here to reveal them.
+
+What about the new harry potter book, eh? I finished reading it last night and was fairly blown away. Here's a few of my pet theories about what was going on, and some predictions for book 7.
+
+Let's [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/07/21/harry-potter-theories/feed/</wfw:commentRSS>
+  </item>
+    <item>
+    <title>10. Tip for Working with JSON Lists</title>
+    <link>http://dave.sunwheeltech.com/wordpress/2005/07/18/tip-for-working-with-json-lists/</link>
+    <comments>http://dave.sunwheeltech.com/wordpress/2005/07/18/tip-for-working-with-json-lists/#comments</comments>
+    <pubDate>Mon, 18 Jul 2005 21:25:18 +0000</pubDate>
+    <dc:creator>dave</dc:creator>
+    
+  <category>Tech</category>
+  <category>Ajax</category>
+    <guid>http://dave.sunwheeltech.com/wordpress/2005/07/18/tip-for-working-with-json-lists/</guid>
+    <description><![CDATA[  JSON - the JavaScript Object Notation - is a very neat way of generating object graphs concisely in java. I&#8217;ve recently used it in conjunction with JSPs to generate some data dynamically, and was rather pleased to see that it allows lists to be defined with a trailing comma, like this:
+  
+var mydata=[
+  1,
+  [...]]]></description>
+    <wfw:commentRSS>http://dave.sunwheeltech.com/wordpress/2005/07/18/tip-for-working-with-json-lists/feed/</wfw:commentRSS>
+  </item>
+  </channel>
+</rss>

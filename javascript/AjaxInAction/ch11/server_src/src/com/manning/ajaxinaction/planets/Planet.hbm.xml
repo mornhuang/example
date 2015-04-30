@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="com.manning.ajaxinaction.planets">
+
+  <class name="Planet" table="planets">
+    <id name="uid" column="uid" type="long" unsaved-value="-1">
+      <generator class="native"/>
+    </id>
+
+    <property name="text" type="string" not-null="true"/>
+    <property name="imageUrl" type="string" not-null="true"/>
+    <property name="distance" type="double" not-null="true"/>
+    <property name="diameter" type="double" not-null="true"/>
+
+    <many-to-one name="parent" column="solar_id" not-null="true"/>
+
+    <bag name="facts" inverse="false" lazy="true" cascade="all"></bag>
+    
+  </class>
+
+  </hibernate-mapping>

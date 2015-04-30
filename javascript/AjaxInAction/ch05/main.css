@@ -1,0 +1,31 @@
+/*
+stylesheet for main document
+*/
+
+html {
+  font-family: inherit;
+}
+
+* {
+  font-family: verdana, tahoma, arial;
+  font-size: 10pt;
+}
+
+body{
+  border: none;
+  top : 0px;
+  left: 0px;
+  margin: 0 0 0 0px;
+  padding: 0 0 0 0px;
+  background-color : #ffffff;
+}
+
+h1{ color: #446688;font-size: 18pt; font-weight:bold; }
+h2{ color: #446688;font-size: 16pt; font-weight:lighter; }
+h3{ color: #446688;font-size: 14pt; font-weight: lighter; }
+p { color: #223344;font-size: 11pt; }
+li{ color: #223344;font-size: 11pt; }
+
+th{ color: #446688;font-size: 12pt; font-weight: bold; background-color: #ddeeff; }
+td{ color: #223344;font-size: 11pt; }
+

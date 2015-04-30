@@ -1,0 +1,82 @@
+.planetbar {
+  background: #000000;
+  border: 0.2em solid #cccccc;
+  float: left;
+  padding: 1em;  
+}
+
+.planetbutton {
+  padding: 0.1em;
+}
+
+.planetbutton img {
+  border: 0.2em #333333 solid;
+}
+
+.planet-info {
+  border: 1px #000000 solid;
+  float: left;
+  width: 20em;
+  margin-left: 1em;
+  margin-top:  2em;
+}
+
+.planet-info .title {
+  background: #cccccc;
+  text-align: center;
+  font-size: large;
+  font-family: Verdana;
+  border-bottom: 1px solid #000000;
+}
+
+.planet-info .content {
+  padding: 1em;
+}
+
+#search-form { 
+  margin-left: 15em; 
+  width: 22em;
+  padding: 0.2em;
+  border-left: 3px solid #000000;
+  border-right: 3px solid #000000;
+  border-bottom: 5px solid #000000;
+  border-top: 1px solid #000000;
+  background: #cccccc;
+  text-align: center;
+}
+
+#search-form .search-field label {
+  font-family: verdana;
+  
+}
+
+#results-table {
+  margin: 3em;
+  border-spacing: 0px;
+}
+
+#results-table * td, #results-table * th {
+  margin: 0px; padding: 0px;
+}
+
+#results-table * td.name {
+  background: #cccccc;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  padding: 0.3em;
+}
+
+#results-table * td.size {
+  padding: 0.3em;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+#results-table * td.description {
+  padding: 0.3em;
+  border-top: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+

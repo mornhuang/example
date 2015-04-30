@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="com.manning.ajaxinaction.planets">
+
+  <class name="SolarSystem" table="solarsystems">
+    <id name="uid" column="uid" type="long" unsaved-value="-1">
+      <generator class="native"/>
+    </id>
+
+    <bag name="planets" inverse="false" lazy="true" cascade="all"></bag>
+    
+  </class>
+
+  </hibernate-mapping>

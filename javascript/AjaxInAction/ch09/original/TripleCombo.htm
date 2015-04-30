@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+  <head>
+    <title>Triple Combo - Ajax In Action</title>
+    <script type="text/javascript" src="net.js"></script>
+    <script type="text/javascript">         
+      function FillTerritory(oElem,oTarget){                           
+        var strValue = oElem.options[                                  
+                     oElem.selectedIndex].value;                       
+        var url = 'TripleComboXML.aspx';                               
+        var strParams = 'q=' + strValue +                              
+          "&f=" + oTarget.form.name +                                   
+          "&e=" + oTarget.name;                                        
+        var loader1 = new                                              
+        net.ContentLoader(url,FillDropDown,null,                       
+                    "POST",strParams);                           
+      }
+      function FillDropDown(){
+        var xmlDoc = this.req.responseXML.documentElement;              
+
+        var xSel = xmlDoc.                                             
+           getElementsByTagName('selectElement')[0];                   
+        var strFName = xSel.                                           
+           childNodes[0].firstChild.nodeValue;                         
+        var strEName = xSel.                                           
+           childNodes[1].firstChild.nodeValue;                         
+            
+        var objDDL = document.forms[strFName].                         
+           elements[strEName];                                         
+        objDDL.options.length = 0;                                     
+            
+        var xRows = xmlDoc.                                            
+          getElementsByTagName('entry');                               
+        for(i=0;i<xRows.length;i++){                                   
+          var theText = xRows[i].                                      
+              childNodes[0].firstChild.nodeValue;                      
+          var theValue = xRows[i].                                     
+              childNodes[1].firstChild.nodeValue;                      
+          var option = new Option(theText,                             
+                            theValue);                           
+          objDDL.options.add(option,                                   
+                          objDDL.options.length);                      
+        }                                                              
+      }           
+    </script>
+  </head>
+  <body>
+    <form name="Form1" ID="Form1">
+      <select name="ddlRegion" onchange="FillTerritory(this,document.Form1.ddlTerritory)" ID="Select1">
+        <option value="-1">Pick A Region</option>
+        <option value="1">Eastern</option>
+        <option value="2">Western</option>
+        <option value="3">Northern</option>
+        <option value="4">Southern</option>
+      </select>
+      <select name="ddlTerritory" ID="Select2" onchange="FillTerritory(this,document.Form1.ddlEmp)"></select>
+      <select name="ddlEmp" ID="Select3"></select>
+    </form>
+  </body>
+</html>

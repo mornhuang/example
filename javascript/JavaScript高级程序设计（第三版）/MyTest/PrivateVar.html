@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Test Private Variant</title>
+    <script type="text/javascript">
+        function MyObjectFun() {
+            var privateVariant = 10;
+
+            function privateFunction() {
+                return false;
+            }
+
+            this.publicMethod = function() {
+                privateVariant++;
+                return privateFunction();
+            }
+        }
+
+        function test() {
+            var tt = "hello";
+        }
+
+        (function () {
+            var privateVariant = 10;
+
+            function privateFunction() {
+                return false;
+            }
+
+            MyObject = function() {
+            };
+
+            MyObject.prototype.publicMethod = function(){
+                privateVariant++;
+                return privateFunction();
+            }
+        })();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

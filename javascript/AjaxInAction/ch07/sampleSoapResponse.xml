@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='utf-8'?>
+<soap-env:envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/1999/xmlschema-instance" xmlns:xsd="http://www.w3.org/1999/xmlschema">
+<soap-env:body>
+<ns1:dogooglesearchresponse xmlns:ns1="urn:googlesearch" soap-env:encodingstyle="http://schemas.xmlsoap.org/soap/encoding/">
+<return xsi:type="ns1:googlesearchresult">
+<directorycategories xmlns:ns2="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns2:array" ns2:arraytype="ns1:directorycategory[1]">
+<item xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string">top/sports/soccer/uefa/netherlands/division_1/ajax</fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</item>
+</directorycategories>
+<documentfiltering xsi:type="xsd:boolean">false</documentfiltering>
+<endindex xsi:type="xsd:int">10</endindex>
+<estimateisexact xsi:type="xsd:boolean">false</estimateisexact>
+<estimatedtotalresultscount xsi:type="xsd:int">741000</estimatedtotalresultscount>
+<resultelements xmlns:ns3="http://schemas.xmlsoap.org/soap/encoding/" xsi:type="ns3:array" ns3:arraytype="ns1:resultelement[10]">
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.ajax.nl/</url>
+<cachedsize xsi:type="xsd:string">6k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string">top/sports/soccer/uefa/netherlands/clubs/ajax</fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt;</directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">de officiële site van afc &lt;b&gt;ajax&lt;/b&gt;.</snippet>
+<summary xsi:type="xsd:string">official club site, including roster, history, wallpapers, and video clips.&lt;br&gt;  [english/dutch]</summary>
+<title xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt;.nl - splashpagina</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.adaptivepath.com/publications/essays/archives/000385.php</url>
+<cachedsize xsi:type="xsd:string">22k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">q. is adaptive path selling &lt;b&gt;ajax&lt;/b&gt; components or trademarking the name? &lt;b&gt;...&lt;/b&gt;&lt;br&gt;  neither the &lt;b&gt;ajax&lt;/b&gt; name nor the approach are proprietary to adaptive path. &lt;b&gt;...&lt;/b&gt;</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">adaptive path » &lt;b&gt;ajax&lt;/b&gt;: a new approach to web applications</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://en.wikipedia.org/wiki/ajax</url>
+<cachedsize xsi:type="xsd:string">29k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt; or &lt;b&gt;asynchronous&lt;/b&gt; &lt;b&gt;javascript&lt;/b&gt; &lt;b&gt;and&lt;/b&gt; &lt;b&gt;xml&lt;/b&gt; is a term describing a web &lt;b&gt;...&lt;/b&gt;&lt;br&gt;  &lt;b&gt;ajax&lt;/b&gt; applications use web browsers that support the above technologies as a platform &lt;b&gt;...&lt;/b&gt;</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt; - wikipedia, the free encyclopedia</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.townofajax.com/scripts/home.asp?action=31&amp;p_id=1&amp;n_id=1&amp;u_id=0&amp;op_id=2</url>
+<cachedsize xsi:type="xsd:string">22k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">town of &lt;b&gt;ajax&lt;/b&gt; and black&amp;#39;s superstore amateur photography contest. date: august&lt;br&gt;  14, 2005 &lt;b&gt;...&lt;/b&gt; &lt;b&gt;ajax&lt;/b&gt; residents and businesses are asked to conserve water &lt;b&gt;...&lt;/b&gt;</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt; - home</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://sourcelabs.com/ajb/archives/2005/05/ajax_mistakes.html</url>
+<cachedsize xsi:type="xsd:string">12k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">but &lt;b&gt;ajax&lt;/b&gt; is also a dangerous technology for web developers, &lt;b&gt;...&lt;/b&gt; i&amp;#39;ve compiled a&lt;br&gt;  list of the many mistakes developers using &lt;b&gt;ajax&lt;/b&gt; often make. &lt;b&gt;...&lt;/b&gt;</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">alex bosworth&amp;#39;s weblog: &lt;b&gt;ajax&lt;/b&gt; mistakes</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.ajaxgrips.com/</url>
+<cachedsize xsi:type="xsd:string">11k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string">top/shopping/recreation/guns/accessories/grips_and_stocks</fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt; custom grips, inc.</directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">custom, shooter, and speciality grips; magazines, parts and supplies.</snippet>
+<summary xsi:type="xsd:string">custom, shooter, and speciality grips; magazines, parts and supplies.</summary>
+<title xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt; home page</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.sagal.com/ajax/</url>
+<cachedsize xsi:type="xsd:string">2k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">designed with frames. to be viewed with netscape 2.0 or greater. click here to&lt;br&gt;  view our frameless site.</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt; us &amp;amp; international government military, intelligence &amp;amp; law &lt;b&gt;...&lt;/b&gt;</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.modernmethod.com/sajax/</url>
+<cachedsize xsi:type="xsd:string">8k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">sajax is an open source tool to make programming websites using the &lt;b&gt;ajax&lt;/b&gt; framework —&lt;br&gt;  also known as xmlhttprequest or remote scripting — as easy as possible. &lt;b&gt;...&lt;/b&gt;</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">sajax - simple &lt;b&gt;ajax&lt;/b&gt; toolkit by modernmethod - xmlhttprequest &lt;b&gt;...&lt;/b&gt;</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.onlamp.com/pub/a/onlamp/2005/06/09/rails_ajax.html</url>
+<cachedsize xsi:type="xsd:string">51k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">curt hibbs demonstrates the use of &lt;b&gt;ajax&lt;/b&gt; within ruby on rails applications.</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">onlamp.com: &lt;b&gt;ajax&lt;/b&gt; on rails</title>
+</item>
+<item xsi:type="ns1:resultelement">
+<url xsi:type="xsd:string">http://www.sitepoint.com/article/remote-scripting-ajax</url>
+<cachedsize xsi:type="xsd:string">43k</cachedsize>
+<directorycategory xsi:type="ns1:directorycategory">
+<fullviewablename xsi:type="xsd:string"></fullviewablename>
+<specialencoding xsi:type="xsd:string"></specialencoding>
+</directorycategory>
+<directorytitle xsi:type="xsd:string"></directorytitle>
+<hostname xsi:type="xsd:string"></hostname>
+<relatedinformationpresent xsi:type="xsd:boolean">true</relatedinformationpresent>
+<snippet xsi:type="xsd:string">remote scripting, more sensationally known as &lt;b&gt;ajax&lt;/b&gt;, enables slick and powerful&lt;br&gt;  interactivity by making on-the-fly server requests without page reloads.</snippet>
+<summary xsi:type="xsd:string"></summary>
+<title xsi:type="xsd:string">&lt;b&gt;ajax&lt;/b&gt;: usable interactivity with remote scripting [javascript &lt;b&gt;...&lt;/b&gt;</title>
+</item>
+</resultelements>
+<searchcomments xsi:type="xsd:string"></searchcomments>
+<searchquery xsi:type="xsd:string">ajax</searchquery>
+<searchtime xsi:type="xsd:double">0.038889</searchtime>
+<searchtips xsi:type="xsd:string"></searchtips>
+<startindex xsi:type="xsd:int">1</startindex>
+</return>
+</ns1:dogooglesearchresponse>
+
+</soap-env:body>
+</soap-env:envelope>

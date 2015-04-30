@@ -1,0 +1,12 @@
+<TMPL_IF NAME="planet_name">
+  <div id="info">
+    <div class="planet-info">
+      <div class="title" id="infotitle">
+        <TMPL_VAR NAME="planet_name">
+      </div>
+      <div class="content" id="infocontent">
+        <TMPL_VAR NAME="description">
+      </div>
+    </div>
+  </div>
+</TMPL_IF>

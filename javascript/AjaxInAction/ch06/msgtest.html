@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>Message Test</title>
+<link rel=stylesheet type="text/css" href="msg.css">
+
+<script type="text/javascript" src="x/x_core.js"></script>
+<script type="text/javascript" src="extras-array.js"></script>
+<script type="text/javascript" src="styling.js"></script>
+<script type="text/javascript" src="msg.js"></script>
+<script type="text/javascript" src="net_notify.js"></script>
+<script type="text/javascript">
+
+window.onload=function(){
+  msg.suppressRender=true;
+  var msg1=new msg.Message("m001","here is a message",msg.PRIORITY_LOW.id);
+  var msg2=new msg.Message("m002","here is another message",msg.PRIORITY_LOW.id,20);
+  var msg3=new msg.Message("m003","the sky is blue today",msg.PRIORITY_LOW.id,-1,"img/ball-neptune.gif");
+  var msg4=new msg.Message("m004","you are not very fond of cabbage",msg.PRIORITY_LOW.id,55);
+
+  var msg5=new msg.Message("m005","the butler did it!",msg.PRIORITY_DEFAULT.id);
+  var msg6=new msg.Message("m006","there's a cat playing the bagpipes over there",msg.PRIORITY_DEFAULT.id);
+  var msg7=new msg.Message("m007","scientists have discovered that the moon really is made of cheese",msg.PRIORITY_DEFAULT.id);
+
+  var msg8=new msg.Message("m008","watch out for that falling piano!!!",msg.PRIORITY_HIGH.id);
+
+  msg.render('msgbar');
+  msg.suppressRender=false;
+}
+
+var msgId=1;
+
+function submitUrl(){
+  var url=document.getElementById('urlbar').value;
+  var loader=new net.ContentLoader(url,notifyLoaded);
+}
+
+function notifyLoaded(){
+  var doneMsg=new msg.Message(
+    "done00"+msgId,
+    "loaded that resource you asked for: "+this.url,
+    msg.PRIORITY_LOW.id
+  );
+  msgId++;
+  msg.render('msgbar');
+}
+
+</script>
+</head>
+<body>
+<div class='content'>
+<p>here is some content. This is what the web application is up to when not being bugged silly by all these messages and notifications and stuff.
+<p>Type in a URL in the box below, and hit 'submit'. A souped-up contentloader that understands the notification system will be invoked.
+<input id='urlbar' type='text'/>&nbsp;<a href='javascript:submitUrl()'>submit</a>
+</div>
+<div id='msgbar' class='msgbar'></div>
+</body>
+</html>

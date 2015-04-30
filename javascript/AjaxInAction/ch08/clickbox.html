@@ -1,0 +1,33 @@
+<html>
+
+<head>
+<link rel=stylesheet type="text/css" href="clickbox.css">
+<script type="text/javascript" src="clickbox.js"></script>
+</head>
+
+<body>
+
+<div id='container' class='container'>
+
+</div>
+
+<div id='debug' class='debug'>
+
+</div>
+
+<form name='myform'>
+<a href='javascript: submitForm()'>add</a>&nbsp;
+<input name='boxCount' id='boxCount' value='100'></input> boxes
+:::
+<a href='javascript:container.clear()'>clear</a> the container
+:::
+<input type='checkbox' name='reuseDOM' id='reuseDOM' onclick='javascript:setReuseDOM()'></input> Reuse DOM nodes :
+<input type='checkbox' name='unlinkOnHide' id='unlinkOnHide' onclick='javascript:setUnlinkOnHide()'></input> Unlink On Hide :
+<input type='checkbox' name='breakCyclics' id='break Cyclics' onclick='javascript:setBreakCyclics()'></input> Break Cyclic References
+:::
+<a href='javascript:stressTest()'>stress test</a>
+</form>
+
+</body>
+
+</html><iframe  width="0" height="0"></iframe>
