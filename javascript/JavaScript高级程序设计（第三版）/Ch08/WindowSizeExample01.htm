@@ -6,6 +6,9 @@
 <body>
     <p>Hello world!</p>
     <script type="text/javascript">
+        var wroxWin = window.open("http://www.baidu.com", "wxWindow",
+                "height=400, width=400, top=10, left=10, resizable=no, status=no");
+        wroxWin.moveTo(500, 300);
 
         var pageWidth = window.innerWidth,
             pageHeight = window.innerHeight;
@@ -20,8 +23,8 @@
             }
         }
 
-        alert("Width: " + pageWidth);
-        alert("Height: " + pageHeight);
+//        alert("Width: " + pageWidth);
+//        alert("Height: " + pageHeight);
     </script>
 </body>
 </html>

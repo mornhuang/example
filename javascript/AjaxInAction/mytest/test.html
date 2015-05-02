@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style type="text/css">
+        .news {
+            background-color: gray;
+            border: solid 1px black;
+        }
+
+        .news img {
+            float: left;
+        }
+
+        .news p {
+            float: right;
+        }
+
+        .clear {
+
+            clear: both;
+
+        }
+    </style>
+</head>
+<body>
+<div class="news">
+    <img src="earth.jpg"/>
+
+    <p>some text</p>
+    <div class="clear"></div>
+
+    <script type="text/javascript">
+        function Test(arg1, arg2) {
+            this.argu1 = arg1;
+            this.argu2 = arg2;
+            this.showArg1(arg1);
+        }
+
+        Test.prototype.showArg1 = function(arg) {
+            console.log(arg);
+        };
+
+        var a = new Test(1, 2);
+        a.showArg1(18);
+
+    </script>
+</div>
+</body>
+</html>
+
+
+
+

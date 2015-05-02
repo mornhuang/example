@@ -25,7 +25,7 @@ div.titlebar{
 }
 
 span.titleButton{
-  position: relative;
+  /*position: relative;*/
   height: 16px;
   width: 16px;
   padding: 0px;
@@ -58,7 +58,7 @@ div.contents {
 }
 
 div.item{
-  position : relative;
+  /*position : relative;*/
   height : 64px;
   width: 56px;
   float: left;
