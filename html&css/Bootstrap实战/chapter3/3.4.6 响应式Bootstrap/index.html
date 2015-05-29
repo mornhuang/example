@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- viewport meta to reset iPhone inital scale -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="bootstrap/css/bootstrap-responsive.css"  rel="stylesheet"  type="text/css">
+<title></title>
+<!-- css3-mediaqueries.js for IE8 or older -->
+<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<style type="text/css">
+body {
+	font: 1em/150% Arial, Helvetica, sans-serif;
+}
+a {
+	color: #669;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1 {
+	font: bold 36px/100% Arial, Helvetica, sans-serif;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#pagewrap {
+	padding: 5px;
+	width: 960px;
+	margin: 20px auto;
+}
+#header {
+	height: 180px;
+}
+
+
+
+/* border & guideline (you can ignore these) */
+#content {
+	background: #f8f8f8;
+}
+#sidebar {
+	background: #f0efef;
+}
+#header, #content, #sidebar {
+	margin-bottom: 5px;
+}
+#pagewrap, #header, #content, #sidebar, #footer {
+	border: solid 1px #ccc;
+}
+
+</style>
+</head>
+<body>
+<div id="pagewrap">
+	<div id="header">
+		<h1>Header</h1>
+		<p>Tutorial by <a href="#">Myself</a> (read <a href="#">related article</a>)</p>
+	</div>
+    <div class="row-fluid">
+        <div id="content" class="span8">
+            <h2>Content</h2>
+            <p>text</p>
+            <p>text</p>       
+            <p>text</p>        
+            <p>text</p>        
+            
+        </div>
+        <div id="sidebar" class="span4 hidden-phone">
+            <h3>Sidebar</h3>
+            <p>text</p>
+        </div>
+    </div>
+	<div id="footer">
+		<h4>Footer</h4>
+	</div>
+</div>	
+</body>
+</html>

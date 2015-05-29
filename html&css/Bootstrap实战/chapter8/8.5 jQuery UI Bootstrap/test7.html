@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link type="text/css" href="jquery-ui-bootstrap/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="jquery-ui-bootstrap/js/jquery-ui-1.9.2.custom.min.js"></script>
+<style type="text/css">
+body { padding: 12px; }
+</style>
+<script>
+$(function(){
+	
+	$('#dialog_simple').dialog({
+        autoOpen: false,
+		modal: true
+    });
+	
+	$('#dialog_link').button().click(function () {
+		$('#dialog_simple').dialog('open');
+		return false;
+	});
+
+	
+})
+</script>
+</head>
+<body>
+<button id="dialog_link" class="ui-button-primary">打开对话框</button>
+<div id="dialog_simple" title="对话框标题">
+    <p>对话框内容</p>
+</div>
+</body>
+</html>

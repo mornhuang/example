@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" >
+(function($){
+    $.extend($.fn,{
+        color : function(options){
+            var options = $.extend({}, $.fn.color.defaults, options); //覆盖原来参数
+            return this.each(function(){
+                $(this).css("color", options.fcolor);
+                $(this).css("backgroundColor", options.bcolor);
+                var _html = $(this).html();        //获取当前元素包含的HTML字符串
+                _html = $.fn.color.format(_html);  //调用格式化功能函数对其进行格式化
+                $(this).html(_html);             //使用格式化的HTML字符串重写当前元素内容
+            })
+        }
+    })
+    $.fn.color.defaults = {//独立设置$.fn.color对象的默认参数值
+        bcolor : "white",
+        fcolor : "black"
+    }
+    $.fn.color.format = function(str){ //开放的功能函数
+        return str;
+    };
+})(jQuery);
+$(function(){
+    $.fn.color.defaults = { //预设默认的前景色和背景色
+        bcolor : "#eea",
+        fcolor : "red"
+    }
+    $.fn.color.format = function(str){ //扩展color()插件的功能，使内部文本加粗显示
+        return "<strong>" + str + "</strong>";
+    }
+    $("p").color();
+    $("p:gt(2)").color({bcolor:"#fff"});
+    $.fn.color.format = function(str){ //扩展color()插件的功能，使内部文本放大显示
+        return "<span style='font-size:30px;'>" + str + "</span>";
+    }
+    $("p:gt(4)").color();
+})
+</script>
+
+</head>
+<body>
+<p>段落文本1</p>
+<p>段落文本2</p>
+<p>段落文本3</p>
+<p>段落文本4</p>
+<p>段落文本5</p>
+<p>段落文本6</p>
+</body>
+</html>

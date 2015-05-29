@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" src="datepicker/js/bootstrap-datepicker.js" ></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="datepicker/css/datepicker.css">
+<style type="text/css">
+body{
+    padding:12px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	
+		
+	var startDate = new Date(2013,5,20);
+	var endDate = new Date(2013,6,25);
+	$('#alert').hide();
+	$('#start').datepicker().on('changeDate', function(e){
+		if (e.date.valueOf() > endDate.valueOf()){
+			$('#alert').show().text('起始日期不能够大于终点日期');
+		} else {
+			$('#alert').hide();
+			startDate = new Date(e.date);
+			$('#startDate').text($('#start').data('date'));
+		}
+		$('#start').datepicker('hide');
+	});
+	$('#end').datepicker().on('changeDate', function(e){
+		if (e.date.valueOf() < startDate.valueOf()){
+			$('#alert').show().text('终点日期值不能够小于起始日期值');
+		} else {
+			$('#alert').hide();
+			endDate = new Date(e.date);
+			$('#endDate').text($('#end').data('date'));
+		}
+		$('#end').datepicker('hide');
+	});
+
+
+});       
+</script>
+</head>
+<body>
+
+
+<button class="btn small" id="start" data-date-format="yyyy-mm-dd" data-date="2013-05-20">起始日期</button>
+<span id="startDate">2013-05-20</span><br>
+<button class="btn small" id="end" data-date-format="yyyy-mm-dd" data-date="2013-06-20">结束日期</button>
+<span id="endDate">2013-06-20</span><br>	
+<div class="alert alert-error" id="alert"></div>
+
+
+
+</body>
+</html>

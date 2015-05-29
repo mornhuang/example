@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" src="datepicker/js/bootstrap-datepicker.js" ></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="datepicker/css/datepicker.css">
+<style type="text/css">
+body{
+    padding:12px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$('#date').datepicker();                          
+});       
+</script>
+</head>
+<body>
+
+<div class="input-append date" id="date" data-date="6-02-2013" data-date-format="dd-mm-yyyy" data-date-viewmode="years">
+    <input class="span2" size="16" type="text" value="6-02-2013" readonly>
+    <span class="add-on"><i class="icon-calendar"></i></span>
+</div>
+
+
+</body>
+</html>

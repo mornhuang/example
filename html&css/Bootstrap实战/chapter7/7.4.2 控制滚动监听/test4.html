@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<style type="text/css">
+body { padding: 10px; }
+#navbar {
+    top: 50px;
+    right: 10px;
+    position: fixed;
+    width: 200px;
+    background-color: #FFF;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	$("body").scrollspy({
+		offset:0
+	});
+	$("body").on("activate",function(e){
+		if(e.target && $(e.target).hasClass("dropdown")){
+			$(e.target).children("ul.dropdown-menu").css("display","block");
+		}
+		else{	
+			$(e.target).parent().find("ul.dropdown-menu").css("display","none");
+		}
+	});	
+})
+</script>
+</head>
+<body>
+<div id="navbar">
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="#1">列表1</a></li>
+        <li><a href="#2">列表2</a></li>
+        <li class="dropdown"> <a href="#" data-toggle="dropdown">下拉列表 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#3">列表3</a></li>
+                <li><a href="#4">列表4</a></li>
+                <li><a href="#5">列表5</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<h3 id="1">列表1</h3>
+<p><img src="images/1.jpg"></p>
+<h3 id="2">列表2</h3>
+<p><img src="images/2.jpg"></p>
+<h3 id="3">列表3</h3>
+<p><img src="images/3.jpg"></p>
+<h3 id="4">列表4</h3>
+<p><img src="images/4.jpg"></p>
+<h3 id="5">列表5</h3>
+<p><img src="images/5.jpg"></p>
+</body>
+</html>

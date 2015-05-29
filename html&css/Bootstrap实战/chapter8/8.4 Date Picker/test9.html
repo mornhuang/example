@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" src="datepicker/js/bootstrap-datepicker.js" ></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="datepicker/css/datepicker.css">
+<style type="text/css">
+body{
+    padding:12px;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+	var nowTemp = new Date();
+	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+	var checkin = $('#start').datepicker({
+		onRender: function(date) {
+			return date.valueOf() < now.valueOf() ? 'disabled' : '';
+		}
+	}).on('changeDate', function(e) {
+		if (e.date.valueOf() > checkout.date.valueOf()) {
+			var newDate = new Date(ev.date)
+			newDate.setDate(newDate.getDate() + 1);
+			checkout.setValue(newDate);
+		}
+		checkin.hide();
+		$('#end')[0].focus();
+	}).data('datepicker');
+	var checkout = $('#end').datepicker({
+		onRender: function(date) {
+			return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+		}
+	}).on('changeDate', function(e) {
+		checkout.hide();
+	}).data('datepicker');
+	
+});       
+</script>
+</head>
+<body>
+
+
+<button class="btn small" id="start" data-date-format="yyyy-mm-dd" data-date="2013-06-17">起始日期</button><br>	
+<button class="btn small" id="end" data-date-format="yyyy-mm-dd" data-date="2013-06-27">结束日期</button>
+
+
+
+
+
+</body>
+</html>

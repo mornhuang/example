@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tabs组件</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="bootstrap/css/bootstrap.css" rel="stylesheet"  type="text/css">
+<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"  type="text/css">
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<ul class="nav nav-tabs">
+	<li class="active"><a href="#tab1" data-toggle="tab">Tab1</a></li>
+	<li><a href="#tab2" data-toggle="tab">Tab2</a></li>    
+	<li><a href="#tab3" data-toggle="tab">Tab3</a></li> 
+	<li><a href="#tab4" data-toggle="tab">Tab4</a></li>       
+</ul>
+<div class="tab-content">
+	<div class="tab-pane active" id="tab1"><img src="images/1.png"></div>
+	<div class="tab-pane" id="tab2"><img src="images/2.png"></div>
+ 	<div class="tab-pane" id="tab3"><img src="images/3.png"></div>
+ 	<div class="tab-pane" id="tab4"><img src="images/4.png"></div>      
+</div>
+
+
+</div>
+<script type="text/javascript">
+$(function(){
+	 $('.tabs a:last').tab('show')
+})
+
+</script>
+
+<script src="http://code.jquery.com/jquery.js"></script> 
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap-tab.js"></script>
+</body>
+</html>

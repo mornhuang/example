@@ -1,0 +1,14 @@
+@blue: #369;
+.submit {
+  padding: 5px 10px;
+  border: 1px solid @blue;
+  background: -moz-linear-gradient(top, lighten(@blue, 10%), @blue 100%); /*Moz*/
+  background: -webkit-gradient(linear, center top, center bottom, from(lighten(@blue, 10%)), color-stop(100%, @blue)); /*Webkit*/
+  background: -o-linear-gradient(top, lighten(@blue, 10%) 0%, @blue 100%); /*Opera*/
+  background: -ms-linear-gradient(top, lighten(@blue, 10%) 0%, @blue 100%); /*IE 10+*/
+  background: linear-gradient(top, lighten(@blue, 10%) 0%, @blue 100%); /*W3C*/
+  color: #fff;
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+  height:50px;
+  width:200px;  
+}

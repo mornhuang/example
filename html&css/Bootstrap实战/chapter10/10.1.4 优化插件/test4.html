@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" >
+//自定义插件，扩展jQuery对象方法，获取所有匹配元素的父元素
+(function($){
+    $.extend($.fn,{
+        parent : function(options){
+            var arr = [];
+            $.each(this, function(index, value){ //遍历匹配的DOM元素
+                arr.push(value.parentNode); //把匹配元素的父元素推入临时数组 
+            });
+            arr = $.unique(arr); //把临时数组中过滤重复的元素
+            this.length = 0;
+            Array.prototype.push.apply( this, arr ); //把变量arr打包为伪数组类型返回
+            return this;
+        }
+    })
+})(jQuery);
+
+$(function(){
+    var $p = $("p"); 
+    $p.parent().css("border","solid 1px red");
+    $p.hide();
+})
+
+
+</script>
+<style type="text/css">
+div.big { width:400px; height:400px; }
+div.small { width:200px; height:200px; }
+</style>
+</head>
+<body>
+<div class="big"> 
+    <p> </p>
+    <div class="small"> 
+        <p> </p>
+    </div>
+</div>
+
+</body>
+</html>

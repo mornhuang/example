@@ -1,0 +1,52 @@
+@colors:#333;
+@fonts:12px;
+div
+{
+	margin:5px;
+}
+
+.div1
+{
+	color:@colors;
+	font-weight:bold;
+	background-color:#CCC;
+}
+.div2
+{
+	color:@colors;
+}
+.div3
+{
+	border:#222 solid 1px;
+	.div1
+}
+.div4
+{
+	border:#333 solid 1px;
+	padding:10px;
+	div
+	{
+		background-color:red;
+		span
+		{
+			color:red;
+		}
+	}
+	span
+	{
+		background-color:@colors;
+		font-size:@fonts * 2;
+		color:@colors;
+	}
+}
+.div5(@widths:5px)
+{
+	color:red;
+	border-style:solid;
+	border-color:@colors;
+	border-width:@widths;
+}
+.div6
+{
+	.div5(10px);
+}

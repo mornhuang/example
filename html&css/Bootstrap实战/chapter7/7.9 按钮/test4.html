@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<style type="text/css">
+body { padding: 20px; padding-left: 20px; }
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".btn").click(function(){
+		$(this).button("loading");
+		setTimeout((function(_this){
+			return function(){
+				$(_this).button("complete");
+			}
+		})(this), 2000);	
+		setTimeout((function(_this){
+			return function(){
+				$(_this).button("reset");
+			}
+		})(this), 4000);		
+	})
+});  
+     
+</script>
+</head>
+<body>
+
+
+<button  class="btn btn-primary" data-loading-text="正在加载..." data-reset-text="重新加载" data-complete-text="完成加载">加载</button>
+
+
+</body>
+</html>

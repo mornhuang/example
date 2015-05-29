@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<style type="text/css">
+body { padding: 20px; padding-left: 20px; }
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".close").click(function(){
+		$(this).alert("close");
+	})
+	$(".alert").on("close",function(e){
+		$("#myModal").modal();
+	})	
+});  
+     
+</script>
+</head>
+<body>
+
+
+<div class="alert fade in">
+    <button type="button" class="close">&times;</button>
+    <strong>警告框标题</strong> 说明文字。
+</div>
+
+<div id="myModal" class="modal hide fade">
+    <div class="modal-header">
+        <h3>提示</h3>
+    </div>
+    <div class="modal-body">
+        <p>确定要关闭警告框信息？</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-info" data-dismiss="modal">关闭</button>
+    </div>
+</div>
+</body>
+</html>

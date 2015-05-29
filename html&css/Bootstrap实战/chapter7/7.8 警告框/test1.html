@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<style type="text/css">
+body { padding: 20px; padding-left: 20px; }
+</style>
+<script type="text/javascript">
+$(function(){
+	$(".close").click(function(){
+		$(this).alert("close");
+	})
+});  
+     
+</script>
+</head>
+<body>
+
+
+<div class="alert fade in">
+    <button type="button" class="close">&times;</button>
+    <strong>警告框标题</strong> 说明文字。
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="bootstrap/js/jquery-1.9.1.js" ></script>
+<script type="text/javascript" >
+(function($){
+    $.extend($.fn,{
+        color : function(options){
+            var options = $.extend({}, $.fn.color.defaults, options); //覆盖原来参数
+            return this.each(function(){
+                $(this).css("color", options.fcolor);
+                $(this).css("backgroundColor", options.bcolor);
+            })
+        }
+    })
+    $.fn.color.defaults = {//独立设置$.fn.color对象的默认参数值
+        bcolor : "white",
+        fcolor : "black"
+    }
+})(jQuery);
+$(function(){
+    $.fn.color.defaults = {    //预设默认的前景色和背景色
+        bcolor : "red",
+        fcolor : "blue"
+    }
+    $("p").color();  //设置默认色
+    $("p:gt(2)").color({bcolor:"#fff"});//设置默认色，同时覆盖背景色为白色
+})
+</script>
+</head>
+<body>
+<p>段落文本1</p>
+<p>段落文本2</p>
+<p>段落文本3</p>
+<p>段落文本4</p>
+<p>段落文本5</p>
+<p>段落文本6</p>
+</body>
+</html>
