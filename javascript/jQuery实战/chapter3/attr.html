@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>test jquery attr</title>
+</head>
+<body>
+<div id="hello test">test</div>
+<p>你好<cite>kk</cite></p>
+<input type="text" value="12">
+<script type="text/javascript" src="../scripts/jquery-1.2.1.js"></script>
+<script type="text/javascript">
+    $('*').attr("title", function(index) {
+        return "I am element " + index + " and my name is " +
+                (this.id ? this.id : 'unset');
+    });
+
+    $('input').attr(
+            {value: '', title: 'input value', className: 'cc'}
+    );
+</script>
+</body>
+</html>

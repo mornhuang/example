@@ -6,9 +6,10 @@ from random import randint, choice
 ops = {'+': add, '-': sub}
 MAXTRIES = 2
 
+
 def doprob():
     op = choice('+-')
-    nums = [ randint(1,10) for i in range(2) ]
+    nums = [randint(1, 10) for i in range(2)]
     nums.sort(reverse=True)
     ans = ops[op](*nums)
     pr = '%d %s %s = ' % (nums[0], op, nums[1])
@@ -27,6 +28,7 @@ def doprob():
                 EOFError, ValueError):
             print 'invalid input... try again'
 
+
 def main():
     while True:
         doprob()
@@ -36,6 +38,7 @@ def main():
                 break
         except (KeyboardInterrupt, EOFError):
             break
+
 
 if __name__ == '__main__':
     main()

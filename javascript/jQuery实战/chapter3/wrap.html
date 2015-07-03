@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>test jquery wrap</title>
+</head>
+<body>
+    <ul>
+        <li>aa</li>
+        <li>bb</li>
+        <li>cc</li>
+    </ul>
+    <a class="surprise" href="#">akdkd</a>
+    <a class="surprise" href="#">deee</a>
+
+    <div id="here"></div>
+
+    <script type="text/javascript" src="../scripts/jquery-1.2.1.js"></script>
+    <script type="text/javascript" >
+//        $('a.surprise').wrap('<div class="hello"></div>');
+        $('a.surprise').wrapAll('<div class="cc"></div>');
+        $('ul').clone().insertBefore($('#here'));
+    </script>
+</body>
+</html>

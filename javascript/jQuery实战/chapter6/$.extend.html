@@ -15,14 +15,16 @@
       $(function(){
         $('#targetBeforeDisplay').html($.toSource(target));
         $('#source1Display').html($.toSource(source1));
-        $('#source2Display').html($.toSource(source2));
+//        $('#source2Display').html($.toSource(source2));
+        $('#source2Display').html($.toSource("hehehd"));
         $.extend(target,source1,source2);
         $('#targetAfterDisplay').html($.toSource(target));
       });
     </script>
     <style>
-      label { float: left; width: 108px; text-align: right; }
-      p { clear: both; }
+      /*label { float: left; width: 108px; text-align: right; }*/
+      label { display:inline-block; width: 108px; text-align: right; }
+      /*p { clear: both; }*/
       label + span { margin-left: 6px; }
       fieldset { width: 360px }
     </style>

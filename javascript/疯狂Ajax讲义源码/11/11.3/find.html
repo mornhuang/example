@@ -29,7 +29,7 @@ $("#ajax").prev().css("border" , "2px solid black");
 $("#ajax").siblings("#java")
 	.append("<b> 是ID为ajax的节点的、id为java的兄弟节点</b>");
 //取出所有div元素的父元素，将会输出body元素、和一个div元素
-$("div").parent().each(function()
+$("div").parents().each(function()
 {
 	alert($(this).html());
 });

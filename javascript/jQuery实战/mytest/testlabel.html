@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ttttt</title>
+<!--
+    <script type="text/javascript" src="../scripts/jquery-1.2.1.js"></script>
+    <script type="text/javascript">
+        var cc = $.map(['this', 'that', 'other thing'],
+            function(value) {return value.split(' ')}
+        );
+        $.each(cc, function(n, v){
+            $('#log').append('<p>' + v + '</p>');
+        });
+    </script>
+-->
+</head>
+<body>
+    <input type="radio" id="1" name="test"><label for="1">test</label>
+    <input type="radio" id="2" name="test"><label for="2">test</label>
+    <div id="log"></div>
+    <script type="text/javascript" src="../scripts/jquery-1.2.1.js"></script>
+    <script type="text/javascript">
+        var cc = $.map(['this', 'that', 'other thing'],
+            function(value) {return value.split('')}
+        );
+        $.each(cc, function(n, v){
+            $('#log').append('<p>' + v + '</p>');
+        });
+    </script>
+</body>
+</html>

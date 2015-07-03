@@ -1,6 +1,7 @@
 #!/usr/bin/env python
+# -*- coding:utf-8 -*-
 
-'makeTextFile.py -- create text file'
+"""makeTextFile.py -- create text file"""
 
 import os
 
@@ -8,7 +9,7 @@ import os
 while True:
     fname = raw_input('Enter file name: ')
     if os.path.exists(fname):
-        print"*** ERROR: '%s' already exists" % fname
+        print "*** ERROR: '%s' already exists" % fname
     else:
         break
 
